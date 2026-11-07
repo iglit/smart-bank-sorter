@@ -101,7 +101,6 @@ public class SmartBankSorterPlugin extends Plugin
 	@Inject
 	private BankSearch bankSearch;
 
-
 	private Categoriser categoriser;
 	private UserRules gearSets;
 	private List<String> categoryOrder;
@@ -132,7 +131,7 @@ public class SmartBankSorterPlugin extends Plugin
 		migrateSettings();
 		tabStrip = new TabStrip(client, config, () -> focusedTab, this::focus);
 		eventBus.register(afterBankTags);
-		itemCopies = new ItemCopies(client, this::equipmentOf);
+		itemCopies = new ItemCopies(this::equipmentOf);
 		moveToMenu = new MoveToMenu(client, config, configManager, itemManager, () -> categoryOrder);
 		loadSettings();
 		clientThread.invokeLater(this::rebuildBank);
@@ -386,7 +385,6 @@ public class SmartBankSorterPlugin extends Plugin
 		Item[] items = bank.getItems();
 		Set<Widget> ours = new HashSet<>(headerWidgets);
 		ours.addAll(dividerWidgets);
-		itemCopies.addWidgetsTo(ours);
 
 		// The game has already hidden items that don't match the search; the tab range is checked too.
 		int from = 0;

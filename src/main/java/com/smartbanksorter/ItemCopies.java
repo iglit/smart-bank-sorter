@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.function.Function;
-import net.runelite.api.Client;
 import net.runelite.api.EquipmentInventorySlot;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.gameval.InterfaceID;
@@ -15,7 +13,6 @@ import net.runelite.client.game.ItemEquipmentStats;
 
 class ItemCopies
 {
-	private final Client client;
 	private final Function<Slot, ItemEquipmentStats> equipmentOf;
 	// Spare empty-slot widgets the bank interface already has past the last item. Copies reuse these, like
 	// core Bank Tags layouts do for duplicates: the game treats them as real bank slots, so it builds their
@@ -24,15 +21,9 @@ class ItemCopies
 	// Copy widget's child index -> the real item's bank slot index.
 	private final Map<Integer, Integer> copyTargets = new HashMap<>();
 
-	ItemCopies(Client client, Function<Slot, ItemEquipmentStats> equipmentOf)
+	ItemCopies(Function<Slot, ItemEquipmentStats> equipmentOf)
 	{
-		this.client = client;
 		this.equipmentOf = equipmentOf;
-	}
-
-	void addWidgetsTo(Set<Widget> ours)
-	{
-		// Spares are the game's own widgets and are reset by every bank build; nothing to exclude.
 	}
 
 	void setSpares(List<Widget> spares)
@@ -73,7 +64,6 @@ class ItemCopies
 			}
 		}
 	}
-
 
 	/**
 	 * Gear useful to several styles (barrows gloves, fire cape) lives in one category. Show a faded copy in
@@ -197,10 +187,8 @@ class ItemCopies
 	}
 
 	/**
-	 * A copy shows the real item's icon and quantity; its menu comes from {@link #addCopyMenu}.
-	 */
-	/**
-	 * Draws a copy of {@code slot}'s item in the next spare slot widget, with the real item's options.
+	 * Draws a copy of {@code slot}'s item in the next spare slot widget, showing the real item's icon and
+	 * quantity and carrying its options.
 	 *
 	 * @return the copy widget, or null when the bank has no spare slots left
 	 */
