@@ -25,7 +25,9 @@ import net.runelite.api.FontID;
 import net.runelite.api.Item;
 import net.runelite.api.ItemComposition;
 import net.runelite.api.ItemContainer;
+import net.runelite.api.Menu;
 import net.runelite.api.MenuAction;
+import net.runelite.api.MenuEntry;
 import net.runelite.api.Point;
 import net.runelite.api.ScriptID;
 import net.runelite.api.events.MenuEntryAdded;
@@ -57,7 +59,7 @@ import net.runelite.client.util.Text;
 @Slf4j
 @PluginDescriptor(
 	name = "Bank Sorter",
-	description = "Groups and sorts your bank by category, client-side only",
+	description = "Groups and sorts your bank by category, client-side only. Not for use with Bank Tags tag tabs.",
 	tags = {"bank", "sort", "category", "organize", "layout"}
 )
 public class BankSorterPlugin extends Plugin
@@ -89,7 +91,6 @@ public class BankSorterPlugin extends Plugin
 		Categories.MELEE, Categories.RANGED, Categories.MAGIC));
 	private static final String BUILT_IN_SETS = readResource("sets.txt");
 	private static final Map<String, Integer> FOOD_HEALS = parseHeals(readResource("food.txt"));
-	private static final String SEARCH_TITLE = "Showing items:";
 	// Number of items in bank tabs 1-9; tab N's items follow those of tabs 1..N-1.
 	private static final int[] TAB_SIZE_VARBITS = {
 		VarbitID.BANK_TAB_1, VarbitID.BANK_TAB_2, VarbitID.BANK_TAB_3, VarbitID.BANK_TAB_4, VarbitID.BANK_TAB_5,
@@ -135,7 +136,6 @@ public class BankSorterPlugin extends Plugin
 	private UserRules tabGroups;
 	private int tabScroll;
 	private int maxTabScroll;
-	private boolean bankDumped;
 	// Bank Tags is showing tag tabs of its own, so its arrows are busy scrolling those.
 	private boolean bankTagsHasTabs;
 	private List<String> lastTabs = Collections.emptyList();
@@ -233,6 +233,12 @@ public class BankSorterPlugin extends Plugin
 			addCopyMenu();
 			return;
 		}
+		if (config.enabled() && event.getActionParam1() == InterfaceID.Bankmain.ITEMS && "Examine".equals(event.getOption())
+			&& event.getMenuEntry().getItemId() > 0)
+		{
+			addMoveToMenu(event.getMenuEntry().getItemId());
+			return;
+		}
 		if (event.getActionParam1() == InterfaceID.Bankmain.SEARCH && "Search".equals(event.getOption()))
 		{
 			client.getMenu().createMenuEntry(-1)
@@ -327,6 +333,84 @@ public class BankSorterPlugin extends Plugin
 			}
 			return;
 		}
+	}
+
+	/**
+	 * "Move to" sub-menu on bank items. Picking a category writes a rule to the Custom categories setting, so
+	 * one-off fixes don't need a plugin change. Doses and charges are covered by one rule.
+	 */
+	private void addMoveToMenu(int itemId)
+	{
+		String name = itemManager.getItemComposition(itemManager.canonicalize(itemId)).getName();
+		String pattern = movePattern(name);
+		boolean hasRule = findRule(pattern) >= 0;
+
+		MenuEntry parent = client.getMenu().createMenuEntry(1)
+			.setOption("Move to")
+			.setTarget(ColorUtil.wrapWithColorTag(name, config.headerColor()))
+			.setType(MenuAction.RUNELITE);
+		Menu sub = parent.createSubMenu();
+		List<String> targets = new ArrayList<>(categoryOrder);
+		Collections.reverse(targets);
+		for (String category : targets)
+		{
+			sub.createMenuEntry(-1)
+				.setOption(category)
+				.setType(MenuAction.RUNELITE)
+				.onClick(e -> setRule(pattern, category));
+		}
+		if (hasRule)
+		{
+			sub.createMenuEntry(-1)
+				.setOption("Reset")
+				.setTarget(ColorUtil.wrapWithColorTag("automatic", config.headerColor()))
+				.setType(MenuAction.RUNELITE)
+				.onClick(e -> setRule(pattern, null));
+		}
+	}
+
+	// "Prayer potion(4)" -> "Prayer potion(*"; other names match exactly.
+	private static String movePattern(String name)
+	{
+		Matcher m = DOSE.matcher(name);
+		return m.matches() ? m.group(1) + "(*" : name;
+	}
+
+	/**
+	 * Line index of the "Category: pattern" rule written for this exact pattern, or -1.
+	 */
+	private int findRule(String pattern)
+	{
+		String[] lines = config.customRules().split("\\R", -1);
+		for (int i = 0; i < lines.length; i++)
+		{
+			int colon = lines[i].indexOf(':');
+			if (colon > 0 && lines[i].substring(colon + 1).trim().equalsIgnoreCase(pattern))
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	/**
+	 * Replaces this item's rule with one for {@code category}, or removes it when null. New rules go first so
+	 * they win over broader lines the user wrote.
+	 */
+	private void setRule(String pattern, String category)
+	{
+		List<String> lines = new ArrayList<>(Arrays.asList(config.customRules().split("\\R", -1)));
+		int existing = findRule(pattern);
+		if (existing >= 0)
+		{
+			lines.remove(existing);
+		}
+		if (category != null)
+		{
+			lines.add(0, category + ": " + pattern);
+		}
+		lines.removeIf(String::isEmpty);
+		configManager.setConfiguration(BankSorterConfig.GROUP, "customRules", String.join("\n", lines));
 	}
 
 	private void loadSettings()
@@ -431,8 +515,7 @@ public class BankSorterPlugin extends Plugin
 		ours.addAll(dividerWidgets);
 		ours.addAll(copyWidgets);
 
-		// Work out the selected tab and search ourselves: the game also hides items scrolled out of view, so its
-		// hidden flags can't tell us what's filtered out.
+		// The game has already hidden items that don't match the search; the tab range is checked too.
 		int from = 0;
 		int to = items.length;
 		int bankTab = client.getVarbitValue(VarbitID.BANK_CURRENTTAB);
@@ -444,7 +527,6 @@ public class BankSorterPlugin extends Plugin
 			}
 			to = Math.min(items.length, from + client.getVarbitValue(TAB_SIZE_VARBITS[bankTab - 1]));
 		}
-		String query = searchQuery();
 
 		List<Slot> slots = new ArrayList<>();
 		for (int i = 0; i < children.length; i++)
@@ -454,9 +536,9 @@ public class BankSorterPlugin extends Plugin
 			{
 				continue;
 			}
-			if (i >= items.length || i < from || i >= to || items[i].getId() <= 0)
+			if (i >= items.length || i < from || i >= to || w.isHidden() || items[i].getId() <= 0)
 			{
-				// Tab separators, "tab N" labels, empty slots and items in other tabs.
+				// Tab separators, "tab N" labels, empty slots, search misses and items in other tabs.
 				w.setHidden(true);
 				continue;
 			}
@@ -468,22 +550,7 @@ public class BankSorterPlugin extends Plugin
 
 			int id = itemManager.canonicalize(items[i].getId());
 			String name = itemManager.getItemComposition(id).getName();
-			if (query != null && !name.toLowerCase().contains(query))
-			{
-				w.setHidden(true);
-				continue;
-			}
 			slots.add(new Slot(w, i, id, items[i].getQuantity(), name, categoryOf(id, name)));
-		}
-
-		// TEMP: one-time dump of the bank for building item data; only complete with no search and all-items view.
-		if (!bankDumped && query == null && bankTab == 0)
-		{
-			bankDumped = true;
-			for (Slot s : slots)
-			{
-				log.debug("BANKDUMP {}|{}|{}", s.itemId, s.name, s.category);
-			}
 		}
 
 		Map<String, List<Slot>> groups = new LinkedHashMap<>();
@@ -949,22 +1016,6 @@ public class BankSorterPlugin extends Plugin
 		return Collections.singletonList(slots);
 	}
 
-	/**
-	 * The bank search text, lower case, or null when not searching. Read from the bank title, which shows
-	 * "Showing items: <query>" while a search is active.
-	 */
-	private String searchQuery()
-	{
-		Widget title = client.getWidget(InterfaceID.Bankmain.TITLE);
-		String text = title == null || title.getText() == null ? "" : Text.removeTags(title.getText());
-		if (!text.startsWith(SEARCH_TITLE))
-		{
-			return null;
-		}
-		String query = text.substring(SEARCH_TITLE.length()).replace("*", "").trim().toLowerCase();
-		return query.isEmpty() ? null : query;
-	}
-
 	private static int firstItem(List<List<Slot>> rows)
 	{
 		for (List<Slot> row : rows)
@@ -1034,9 +1085,6 @@ public class BankSorterPlugin extends Plugin
 		int top = Math.max(belowOtherTabs, up != null ? up.getOriginalY() + up.getOriginalHeight() + TAB_MARGIN : TAB_MARGIN);
 		int bottom = down != null ? down.getOriginalY() - TAB_MARGIN : stripBottom(parent) - TAB_MARGIN;
 		int visible = (bottom - top + TAB_MARGIN) / TAB_PITCH;
-		// DEBUG: strip geometry, logged on every bank build and every scroll step.
-		log.debug("Tab strip: container height {}, x {}, top {}, bottom {}, {} of {} tabs visible, scroll {}, Bank Tags arrows {}, Bank Tags tabs {}",
-			parent.getHeight(), x, top, bottom, visible, categories.size(), tabScroll, up != null && down != null, bankTagsHasTabs);
 		if (visible <= 0)
 		{
 			// Bank Tags has filled the strip with its own tabs; stay out of its way.
@@ -1135,8 +1183,6 @@ public class BankSorterPlugin extends Plugin
 	private void scrollTabs(int direction)
 	{
 		int next = Math.max(0, Math.min(tabScroll + Integer.signum(direction), maxTabScroll));
-		// DEBUG: every wheel notch or arrow click over the strip lands here.
-		log.debug("Tab strip scroll by {}: {} -> {} (max {})", direction, tabScroll, next, maxTabScroll);
 		// At an end already (or everything fits): leave the strip alone so it doesn't flicker.
 		if (next != tabScroll)
 		{
