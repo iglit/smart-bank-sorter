@@ -54,7 +54,7 @@ import net.runelite.client.util.Text;
 @Slf4j
 @PluginDescriptor(
 	name = "Smart Bank Sorter",
-	description = "Groups and sorts your bank by category, client-side only. Not for use with Bank Tags tag tabs.",
+	description = "Groups and sorts your bank by category, client-side only. If you use Bank Tags tag tabs, turn off Category tabs.",
 	tags = {"bank", "sort", "category", "organize", "layout"}
 )
 public class SmartBankSorterPlugin extends Plugin

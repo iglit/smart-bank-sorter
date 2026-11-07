@@ -35,8 +35,9 @@ Right-click the bank's search button to turn sorting on and off.
 
 ## Compatibility
 
-Don't use Bank Tags **tag tabs** with this plugin; both use the left edge of the bank. The Bank Tags plugin
-itself can stay enabled, and the category tabs use its tab style.
+Works alongside Bank Tags, including tag tabs: opening a tag tab shows it as normal, and the sorted view comes
+back when you close it. Both plugins use the left edge of the bank for tabs, so if you use tag tabs, turn off
+**Category tabs** in this plugin's settings to keep that edge for Bank Tags.
 
 Copies need free bank space: each copy uses one empty bank slot, so they don't show when your bank is full.
 
