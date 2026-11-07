@@ -211,6 +211,18 @@ public class BankSorterPlugin extends Plugin
 		}
 	}
 
+	// Bank Tags' layoutTabs runs on this script, after the bank build, and treats every child of the item container
+	// past its first four as one of its own tab backgrounds and icons: it hides them all and repositions whichever
+	// pairs it thinks it owns, which includes ours. Run after it (priority -1) to put our tabs back.
+	@Subscribe(priority = -1)
+	public void onScriptPostFiredAfterBankTags(ScriptPostFired event)
+	{
+		if (event.getScriptId() == ScriptID.BANKMAIN_POPUP_TAB_DRAW && config.enabled() && config.categoryTabs() && shouldSort())
+		{
+			tabStrip.refresh();
+		}
+	}
+
 	private void loadSettings()
 	{
 		UserRules rules = UserRules.parse(config.customRules());
@@ -481,15 +493,6 @@ public class BankSorterPlugin extends Plugin
 			List<Integer> icons = new ArrayList<>();
 			tabs.forEach(t -> icons.add(tabIcons.get(t)));
 			tabStrip.placeTabs(tabs, icons);
-			// On bank open the first placement draws wrong (icons hidden behind the backgrounds) until the strip
-			// is laid out again, which scrolling did; so lay it out once more on the next frame.
-			clientThread.invokeLater(() ->
-			{
-				if (config.enabled() && config.categoryTabs() && client.getWidget(InterfaceID.Bankmain.ITEMS_CONTAINER) != null)
-				{
-					tabStrip.refresh();
-				}
-			});
 		}
 		else
 		{

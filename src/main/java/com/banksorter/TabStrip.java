@@ -3,10 +3,8 @@ package com.banksorter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -155,7 +153,6 @@ class TabStrip
 		}
 		maxTabScroll = Math.max(0, categories.size() - visible);
 		tabScroll = Math.max(0, Math.min(tabScroll, maxTabScroll));
-		resetTabsIfMisordered(parent);
 
 		// Created before the tabs so it sits under them, like Bank Tags' own. Covering the margins too means the
 		// wheel never reaches the bank items through a gap in the strip.
@@ -244,40 +241,6 @@ class TabStrip
 			// Only the strip moves; rebuilding the bank here made the item view jump.
 			tabScroll = next;
 			placeTabs(lastTabs, lastTabIcons);
-		}
-	}
-
-	/**
-	 * Widgets draw in child order. When the bank interface is rebuilt some of our tab widgets can be dropped
-	 * while others survive, and re-creating only the dropped ones puts backgrounds above surviving icons. If
-	 * anything is missing or out of order, start the whole strip over so it's created wheel area, then
-	 * background and icon per tab.
-	 */
-	private void resetTabsIfMisordered(Widget parent)
-	{
-		Widget[] children = parent.getDynamicChildren();
-		Map<Widget, Integer> index = new HashMap<>();
-		for (int i = 0; children != null && i < children.length; i++)
-		{
-			index.put(children[i], i);
-		}
-
-		boolean ok = tabBackgrounds.size() == tabWidgets.size();
-		int previous = tabScrollWidgets.isEmpty() ? -1 : index.getOrDefault(tabScrollWidgets.get(0), Integer.MAX_VALUE);
-		for (int i = 0; ok && i < tabWidgets.size(); i++)
-		{
-			int back = index.getOrDefault(tabBackgrounds.get(i), -1);
-			int icon = index.getOrDefault(tabWidgets.get(i), -1);
-			ok = back > previous && icon > back;
-			previous = icon;
-		}
-		if (!ok)
-		{
-			for (List<Widget> pool : Arrays.asList(tabScrollWidgets, tabBackgrounds, tabWidgets))
-			{
-				pool.forEach(w -> w.setHidden(true));
-				pool.clear();
-			}
 		}
 	}
 
