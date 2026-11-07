@@ -207,7 +207,7 @@ public interface BankSorterConfig extends Config
 	}
 
 	@ConfigItem(
-		keyName = "tabGroupsV2",
+		keyName = "tabGroupsV3",
 		name = "Tabs",
 		description = "The bank tabs, one per line: 'Tab name: category, category'. Categories not in any tab"
 			+ " only show in the full bank.",
@@ -216,7 +216,7 @@ public interface BankSorterConfig extends Config
 	)
 	default String tabGroups()
 	{
-		return "Combat: Melee, Ranged, Magic, Slayer, Jewellery, Ammo\n"
+		return "Combat: Melee, Ranged, Magic, Slayer, Ammo\n"
 			+ "Runes & teleports: Runes, Teleports\n"
 			+ "Food & potions: Food, Potions\n"
 			+ "Skilling: Mining, Smithing, Fishing, Cooking, Woodcutting, Firemaking, Fletching, Crafting, Herblore,"
@@ -227,8 +227,8 @@ public interface BankSorterConfig extends Config
 		keyName = "categoryOrder",
 		name = "Category order",
 		description = "Category names, one per line, top to bottom. Unlisted categories follow in their default order."
-			+ " Built-in: Currency, Melee, Ranged, Magic, Slayer, Jewellery, Ammo, Runes, Teleports, Potions, Food, Prayer,"
-			+ " one per skill (Mining ... Sailing), Tools, Clues, Quest, Cosmetic, Other gear, Misc",
+			+ " Built-in: Currency, Melee, Ranged, Magic, Slayer, Ammo, Runes, Teleports, Potions, Food, Prayer,"
+			+ " one per skill (Mining ... Sailing), Tools, Clues, Quest, Jewellery, Cosmetic, Other gear, Misc",
 		position = 1,
 		section = categoriesSection
 	)

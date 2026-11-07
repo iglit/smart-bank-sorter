@@ -375,7 +375,7 @@ Mourner cloak|Quest||5
 Mourner gloves|Melee||4
 Mourner top|Quest||5
 Mourner trousers|Quest||5
-Noose wand|Melee|Slayer|4
+Noose wand|Hunter||2
 Steel platelegs|Melee||4
 Unholy book|Melee||4
 Unholy symbol|Melee||4
@@ -673,7 +673,7 @@ Blighted vengeance sack|Runes||4
 Salve amulet (e)|Slayer|Melee|1
 Slayer helmet (i)|Slayer||1
 Salve amulet(ei)|Slayer||2
-Gas mask|Slayer||3
+Gas mask|Quest||5
 Ring of visibility|Misc||4
 Hammer|Smithing|Construction|1
 Adamantite bar|Smithing||2

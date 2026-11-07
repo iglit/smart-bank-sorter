@@ -39,10 +39,11 @@ final class Categories
 	);
 
 	static final List<String> DEFAULT_ORDER = Arrays.asList(
-		CURRENCY, MELEE, RANGED, MAGIC, SLAYER, JEWELLERY, AMMO, RUNES, TELEPORTS, POTIONS, FOOD, PRAYER,
+		CURRENCY, MELEE, RANGED, MAGIC, SLAYER, AMMO, RUNES, TELEPORTS, POTIONS, FOOD, PRAYER,
 		"Mining", "Smithing", "Fishing", "Cooking", "Woodcutting", "Firemaking", "Fletching", "Crafting",
 		HERBLORE, FARMING, "Hunter", "Construction", "Agility", "Thieving", "Runecraft", "Sailing",
-		TOOLS, CLUES, QUEST, COSMETIC, OTHER_GEAR, MISC
+		// Jewellery left here has no combat or teleport use (those go to the styles / Teleports).
+		TOOLS, CLUES, QUEST, JEWELLERY, COSMETIC, OTHER_GEAR, MISC
 	);
 
 	private Categories()
