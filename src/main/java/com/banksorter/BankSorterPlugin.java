@@ -39,6 +39,7 @@ import net.runelite.api.widgets.WidgetTextAlignment;
 import net.runelite.api.widgets.WidgetType;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
+import net.runelite.client.eventbus.EventBus;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.game.ItemEquipmentStats;
@@ -86,6 +87,9 @@ public class BankSorterPlugin extends Plugin
 	private ClientThread clientThread;
 
 	@Inject
+	private EventBus eventBus;
+
+	@Inject
 	private BankSorterConfig config;
 
 	@Inject
@@ -126,6 +130,7 @@ public class BankSorterPlugin extends Plugin
 	protected void startUp()
 	{
 		tabStrip = new TabStrip(client, config, () -> focusedTab, this::focus);
+		eventBus.register(afterBankTags);
 		itemCopies = new ItemCopies(client, this::equipmentOf);
 		moveToMenu = new MoveToMenu(client, config, configManager, itemManager, () -> categoryOrder);
 		loadSettings();
@@ -135,6 +140,7 @@ public class BankSorterPlugin extends Plugin
 	@Override
 	protected void shutDown()
 	{
+		eventBus.unregister(afterBankTags);
 		clientThread.invokeLater(() ->
 		{
 			restoreDrag();
@@ -214,8 +220,29 @@ public class BankSorterPlugin extends Plugin
 	// Bank Tags' layoutTabs runs on this script, after the bank build, and treats every child of the item container
 	// past its first four as one of its own tab backgrounds and icons: it hides them all and repositions whichever
 	// pairs it thinks it owns, which includes ours. Run after it (priority -1) to put our tabs back.
-	@Subscribe(priority = -1)
-	public void onScriptPostFiredAfterBankTags(ScriptPostFired event)
+	/**
+	 * RuneLite requires a subscriber method to be named after its event, and the plugin already has an
+	 * onScriptPostFired, so this lower-priority one lives on its own object registered with the event bus.
+	 */
+	public static final class AfterBankTags
+	{
+		private final BankSorterPlugin plugin;
+
+		AfterBankTags(BankSorterPlugin plugin)
+		{
+			this.plugin = plugin;
+		}
+
+		@Subscribe(priority = -1)
+		public void onScriptPostFired(ScriptPostFired event)
+		{
+			plugin.afterBankTagsScript(event);
+		}
+	}
+
+	private final AfterBankTags afterBankTags = new AfterBankTags(this);
+
+	private void afterBankTagsScript(ScriptPostFired event)
 	{
 		if (!config.enabled() || !config.categoryTabs() || !shouldSort())
 		{
