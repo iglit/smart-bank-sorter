@@ -1,4 +1,4 @@
-package com.banksorter;
+package com.smartbanksorter;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;

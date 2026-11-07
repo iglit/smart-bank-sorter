@@ -1,4 +1,4 @@
-package com.banksorter;
+package com.smartbanksorter;
 
 import java.io.IOException;
 import java.io.InputStream;

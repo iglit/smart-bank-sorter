@@ -1,4 +1,4 @@
-package com.banksorter;
+package com.smartbanksorter;
 
 import java.util.ArrayList;
 import java.util.Collections;

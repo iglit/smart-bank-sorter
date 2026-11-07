@@ -1,39 +1,57 @@
-# Bank Sorter
+# Smart Bank Sorter
 
-Client-side bank organiser for RuneLite. Items are only drawn in a different place; nothing in your real bank
-moves.
+A client-side bank organiser for RuneLite. It only changes where items are *drawn*; nothing in your real bank
+moves, and turning the plugin off gives you your normal bank back.
 
-- Categories for each combat style, Slayer, every skill, and supplies (food, potions, runes, teleports).
-- Combat gear in best-in-slot outfit columns (head to feet), with set-effect sets kept together.
-- Potions in dose columns (raid potions first), food by heal amount with combo food separate, teleports by
-  usefulness, blighted supplies last.
-- Multi-use items (barrows gloves, glory, Graceful, logs...) also appear as withdrawable copies in their other
-  categories.
-- Tabs down the left edge filter the bank to a group of categories.
-- Right-click an item, **Move to**, to put it in another category (saved under Custom categories).
+## What it does
+
+- **Categories**: one per combat style, Slayer, every skill, plus Food, Potions, Runes, Teleports, Prayer, Clues,
+  Quest, Jewellery, Cosmetic and Misc. Each has a header you can click to collapse it.
+- **Combat gear as outfits**: weapons first, then armour in best-in-slot columns read head to feet (your best
+  outfit is the leftmost column). Armour sets with set effects (Barrows, Void, Blood moon, Inquisitor's...) stay
+  together.
+- **Supplies laid out properly**: potions in dose columns with raid potions first, food by how much it heals with
+  combo food on its own row, teleports by how often they're used, blighted supplies last.
+- **Items in more than one place**: multi-use items (Barrows gloves, glory, Graceful, logs...) also appear in
+  their other categories. These copies work exactly like the real item, including withdrawing.
+- **Tabs**: tabs down the left edge show just Combat, Runes & teleports, Food & potions, or Skilling.
+- **Your own rules**: right-click any item, **Move to**, and pick a category. Or write rules under
+  *Custom categories*, e.g. `Slayer: slayer helm*, enchanted gem`.
+
+Right-click the bank's search button to turn sorting on and off.
+
+## Settings
+
+| Setting | What it does |
+|---|---|
+| Sort bank | Turn the sorted view on or off |
+| Order within category | Name, value, or bank order for categories without a special layout |
+| Rank combat gear | Outfit columns for Melee, Ranged and Magic |
+| Arrange food & potions | Heal order for food, dose columns for potions, usefulness order for teleports |
+| Sort inside bank tabs | Also group items when a numbered bank tab is open |
+| Category tabs / Tabs | Show the left-edge tabs and choose what each tab contains |
+| Outfit layout | Outfits as columns (default) or rows |
+| Custom categories / Category order / Gear sets | Your own rules, the order of sections, and extra armour sets to keep together |
 
 ## Compatibility
 
-Don't use Bank Tags **tag tabs** with this plugin. While a tag tab is open the sorter steps aside, but the two
-share the left edge of the bank. The Bank Tags plugin itself can stay enabled.
+Don't use Bank Tags **tag tabs** with this plugin; both use the left edge of the bank. The Bank Tags plugin
+itself can stay enabled, and the category tabs use its tab style.
+
+Copies need free bank space: each copy uses one empty bank slot, so they don't show when your bank is full.
+
+## Item data
+
+Categories come from bundled data classified from the OSRS Wiki (`src/main/resources/com/smartbanksorter/`):
+`items.txt` (category and tier for ~5,000 items), `food.txt` (heal amounts), `sets.txt` (set-effect armour sets)
+and `overrides.txt`. Items not listed fall back to rules based on their stats and right-click options.
+Corrections are welcome as pull requests.
 
 ## Development
 
 ```sh
-./gradlew run     # dev client with the plugin loaded
+./gradlew run     # RuneLite dev client with the plugin loaded
 ./gradlew build   # compile and run tests
 ```
 
-Item data lives in `src/main/resources/com/banksorter/`: `items.txt` (categories and tiers), `food.txt`
-(heal amounts), `sets.txt` (set-effect sets), `overrides.txt`.
-
-## Running day to day
-
-The normal RuneLite launcher can't load plugins that aren't on the Plugin Hub, so this runs its own RuneLite:
-
-1. `gradlew.bat shadowJar` once (and again after changing the plugin) builds `build/libs/bank-sorter-unspecified-all.jar`.
-2. Double-click `RuneLite (Bank Sorter).bat` (pin a shortcut to it if you like).
-
-It logs in with the Jagex session saved in `%USERPROFILE%\.runelite\credentials.properties`. To create or refresh that
-file, start RuneLite once from the Jagex Launcher with `--insecure-write-credentials` added in RuneLite (configure).
-It uses your normal RuneLite profile and settings.
+Licensed under BSD 2-Clause.

@@ -1,4 +1,4 @@
-package com.banksorter;
+package com.smartbanksorter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -81,7 +81,7 @@ class ItemCopies
 	 */
 	void addHybridCopies(Map<String, List<Slot>> groups)
 	{
-		for (String style : BankSorterPlugin.GEAR_CATEGORIES)
+		for (String style : SmartBankSorterPlugin.GEAR_CATEGORIES)
 		{
 			List<Slot> styleSlots = groups.get(style);
 			if (styleSlots == null)
@@ -100,7 +100,7 @@ class ItemCopies
 			}
 
 			Map<Integer, Slot> candidates = new HashMap<>();
-			for (String other : BankSorterPlugin.GEAR_CATEGORIES)
+			for (String other : SmartBankSorterPlugin.GEAR_CATEGORIES)
 			{
 				if (other.equals(style) || !groups.containsKey(other))
 				{
@@ -179,13 +179,13 @@ class ItemCopies
 			{
 				continue;
 			}
-			best.merge(BankSorterPlugin.baseName(s.name).toLowerCase(), s, (a, b) -> BankSorterPlugin.dose(a.name) >= BankSorterPlugin.dose(b.name) ? a : b);
+			best.merge(SmartBankSorterPlugin.baseName(s.name).toLowerCase(), s, (a, b) -> SmartBankSorterPlugin.dose(a.name) >= SmartBankSorterPlugin.dose(b.name) ? a : b);
 		}
 		for (Slot s : best.values())
 		{
 			ItemEquipmentStats e = equipmentOf.apply(s);
 			String style = Categoriser.gear(s.name.toLowerCase(), e);
-			if (BankSorterPlugin.GEAR_CATEGORIES.contains(style) && GearOrder.offence(style, e) > 0)
+			if (SmartBankSorterPlugin.GEAR_CATEGORIES.contains(style) && GearOrder.offence(style, e) > 0)
 			{
 				List<Slot> target = groups.computeIfAbsent(style, k -> new ArrayList<>());
 				if (target.stream().noneMatch(t -> t.itemId == s.itemId))

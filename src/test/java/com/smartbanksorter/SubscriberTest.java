@@ -1,4 +1,4 @@
-package com.banksorter;
+package com.smartbanksorter;
 
 import net.runelite.client.eventbus.EventBus;
 import org.junit.Test;
@@ -13,8 +13,8 @@ public class SubscriberTest
 	public void subscribersRegister()
 	{
 		EventBus bus = new EventBus();
-		BankSorterPlugin plugin = new BankSorterPlugin();
+		SmartBankSorterPlugin plugin = new SmartBankSorterPlugin();
 		bus.register(plugin);
-		bus.register(new BankSorterPlugin.AfterBankTags(plugin));
+		bus.register(new SmartBankSorterPlugin.AfterBankTags(plugin));
 	}
 }

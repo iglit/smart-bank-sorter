@@ -1,4 +1,4 @@
-package com.banksorter;
+package com.smartbanksorter;
 
 import java.awt.Color;
 import net.runelite.client.config.Config;
@@ -6,10 +6,10 @@ import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 import net.runelite.client.config.ConfigSection;
 
-@ConfigGroup(BankSorterConfig.GROUP)
-public interface BankSorterConfig extends Config
+@ConfigGroup(SmartBankSorterConfig.GROUP)
+public interface SmartBankSorterConfig extends Config
 {
-	String GROUP = "banksorter";
+	String GROUP = "smartbanksorter";
 	String COLLAPSED_KEY = "collapsed";
 
 	enum ItemOrder

@@ -1,6 +1,6 @@
-package com.banksorter;
+package com.smartbanksorter;
 
-import static com.banksorter.Categories.*;
+import static com.smartbanksorter.Categories.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;

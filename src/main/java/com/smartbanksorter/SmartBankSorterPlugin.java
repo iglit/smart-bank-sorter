@@ -1,4 +1,4 @@
-package com.banksorter;
+package com.smartbanksorter;
 
 import com.google.inject.Provides;
 import java.io.IOException;
@@ -53,11 +53,11 @@ import net.runelite.client.util.Text;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Bank Sorter",
+	name = "Smart Bank Sorter",
 	description = "Groups and sorts your bank by category, client-side only. Not for use with Bank Tags tag tabs.",
 	tags = {"bank", "sort", "category", "organize", "layout"}
 )
-public class BankSorterPlugin extends Plugin
+public class SmartBankSorterPlugin extends Plugin
 {
 	// Bank grid geometry; the bank is 8 columns wide in both fixed and resizable mode.
 	private static final int COLUMNS = 8;
@@ -90,7 +90,7 @@ public class BankSorterPlugin extends Plugin
 	private EventBus eventBus;
 
 	@Inject
-	private BankSorterConfig config;
+	private SmartBankSorterConfig config;
 
 	@Inject
 	private ConfigManager configManager;
@@ -121,14 +121,15 @@ public class BankSorterPlugin extends Plugin
 	private int originalDragDeadTime = -1;
 
 	@Provides
-	BankSorterConfig provideConfig(ConfigManager configManager)
+	SmartBankSorterConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(BankSorterConfig.class);
+		return configManager.getConfig(SmartBankSorterConfig.class);
 	}
 
 	@Override
 	protected void startUp()
 	{
+		migrateSettings();
 		tabStrip = new TabStrip(client, config, () -> focusedTab, this::focus);
 		eventBus.register(afterBankTags);
 		itemCopies = new ItemCopies(client, this::equipmentOf);
@@ -157,7 +158,7 @@ public class BankSorterPlugin extends Plugin
 	@Subscribe
 	public void onConfigChanged(ConfigChanged event)
 	{
-		if (!BankSorterConfig.GROUP.equals(event.getGroup()))
+		if (!SmartBankSorterConfig.GROUP.equals(event.getGroup()))
 		{
 			return;
 		}
@@ -188,7 +189,7 @@ public class BankSorterPlugin extends Plugin
 				.setOption(config.enabled() ? "Unsort" : "Sort")
 				.setTarget(ColorUtil.wrapWithColorTag("Bank", config.headerColor()))
 				.setType(MenuAction.RUNELITE)
-				.onClick(e -> configManager.setConfiguration(BankSorterConfig.GROUP, "enabled", !config.enabled()));
+				.onClick(e -> configManager.setConfiguration(SmartBankSorterConfig.GROUP, "enabled", !config.enabled()));
 		}
 	}
 
@@ -226,9 +227,9 @@ public class BankSorterPlugin extends Plugin
 	 */
 	public static final class AfterBankTags
 	{
-		private final BankSorterPlugin plugin;
+		private final SmartBankSorterPlugin plugin;
 
-		AfterBankTags(BankSorterPlugin plugin)
+		AfterBankTags(SmartBankSorterPlugin plugin)
 		{
 			this.plugin = plugin;
 		}
@@ -259,6 +260,32 @@ public class BankSorterPlugin extends Plugin
 		}
 	}
 
+	// Settings group used during development, before the rename. An unrelated, disabled Hub plugin also used
+	// "banksorter", so only migrate when keys that exist only in this plugin are present.
+	private static final String OLD_GROUP = "banksorter";
+	private static final List<String> OLD_ONLY_KEYS = Arrays.asList(
+		"gearByQuality", "outfitLayout", "smartConsumables", "tabGroupsV3", "customSets", "categoryTabs");
+
+	private void migrateSettings()
+	{
+		boolean ours = OLD_ONLY_KEYS.stream()
+			.anyMatch(k -> configManager.getConfiguration(OLD_GROUP, k) != null);
+		if (!ours || configManager.getConfiguration(SmartBankSorterConfig.GROUP, "migrated") != null)
+		{
+			return;
+		}
+		for (String key : configManager.getConfigurationKeys(OLD_GROUP + "."))
+		{
+			String name = key.substring(OLD_GROUP.length() + 1);
+			String value = configManager.getConfiguration(OLD_GROUP, name);
+			if (value != null && configManager.getConfiguration(SmartBankSorterConfig.GROUP, name) == null)
+			{
+				configManager.setConfiguration(SmartBankSorterConfig.GROUP, name, value);
+			}
+		}
+		configManager.setConfiguration(SmartBankSorterConfig.GROUP, "migrated", "true");
+	}
+
 	private void loadSettings()
 	{
 		UserRules rules = UserRules.parse(config.customRules());
@@ -280,7 +307,7 @@ public class BankSorterPlugin extends Plugin
 
 	private static String readResource(String name)
 	{
-		try (InputStream in = BankSorterPlugin.class.getResourceAsStream(name))
+		try (InputStream in = SmartBankSorterPlugin.class.getResourceAsStream(name))
 		{
 			return in == null ? "" : new String(in.readAllBytes(), StandardCharsets.UTF_8);
 		}
@@ -425,7 +452,7 @@ public class BankSorterPlugin extends Plugin
 		}
 
 		Comparator<Slot> comparator = comparator();
-		boolean large = config.headerSize() == BankSorterConfig.HeaderSize.LARGE;
+		boolean large = config.headerSize() == SmartBankSorterConfig.HeaderSize.LARGE;
 		int headerHeight = large ? 18 : 14;
 		int y = 0;
 		int section = 0;
@@ -677,7 +704,7 @@ public class BankSorterPlugin extends Plugin
 		{
 			return GearOrder.order(slots, category, this::equipmentOf,
 				s -> itemManager.getItemPrice(s.itemId), s -> gearSets.match(s.itemId, s.name), comparator,
-				config.outfitLayout() == BankSorterConfig.OutfitLayout.COLUMNS, COLUMNS);
+				config.outfitLayout() == SmartBankSorterConfig.OutfitLayout.COLUMNS, COLUMNS);
 		}
 		if (config.smartConsumables() && Categories.FOOD.equals(category))
 		{
@@ -732,7 +759,7 @@ public class BankSorterPlugin extends Plugin
 		}
 		List<String> sorted = new ArrayList<>(collapsed);
 		Collections.sort(sorted);
-		configManager.setConfiguration(BankSorterConfig.GROUP, BankSorterConfig.COLLAPSED_KEY, Text.toCSV(sorted));
+		configManager.setConfiguration(SmartBankSorterConfig.GROUP, SmartBankSorterConfig.COLLAPSED_KEY, Text.toCSV(sorted));
 	}
 
 	// Items are only moved visually, so dragging one would swap real bank slots the user can't see.

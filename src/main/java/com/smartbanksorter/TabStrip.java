@@ -1,4 +1,4 @@
-package com.banksorter;
+package com.smartbanksorter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,7 +36,7 @@ class TabStrip
 	private static final int TAB_BOTTOM_OFFSET = 39;
 
 	private final Client client;
-	private final BankSorterConfig config;
+	private final SmartBankSorterConfig config;
 	// The category the plugin currently filters to (null = all), and what to do when a tab is clicked.
 	private final Supplier<String> focused;
 	private final Consumer<String> onFocus;
@@ -52,7 +52,7 @@ class TabStrip
 	private List<String> lastTabs = Collections.emptyList();
 	private List<Integer> lastTabIcons = Collections.emptyList();
 
-	TabStrip(Client client, BankSorterConfig config, Supplier<String> focused, Consumer<String> onFocus)
+	TabStrip(Client client, SmartBankSorterConfig config, Supplier<String> focused, Consumer<String> onFocus)
 	{
 		this.client = client;
 		this.config = config;
@@ -190,8 +190,8 @@ class TabStrip
 			tab.setBorderType(1);
 			tab.setOriginalX(x + TAB_ICON_X);
 			tab.setOriginalY(y + TAB_ICON_Y);
-			tab.setOriginalWidth(BankSorterPlugin.ITEM_WIDTH);
-			tab.setOriginalHeight(BankSorterPlugin.ITEM_HEIGHT);
+			tab.setOriginalWidth(SmartBankSorterPlugin.ITEM_WIDTH);
+			tab.setOriginalHeight(SmartBankSorterPlugin.ITEM_HEIGHT);
 			tab.setName(ColorUtil.wrapWithColorTag(category, config.headerColor()));
 			tab.setAction(0, active ? "Show all" : "Show");
 			tab.setHasListener(true);

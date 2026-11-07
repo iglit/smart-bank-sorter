@@ -1,4 +1,4 @@
-package com.banksorter;
+package com.smartbanksorter;
 
 import net.runelite.api.widgets.Widget;
 

@@ -1,6 +1,6 @@
-package com.banksorter;
+package com.smartbanksorter;
 
-import static com.banksorter.Categories.*;
+import static com.smartbanksorter.Categories.*;
 import static org.junit.Assert.assertEquals;
 import net.runelite.api.EquipmentInventorySlot;
 import net.runelite.client.game.ItemEquipmentStats;

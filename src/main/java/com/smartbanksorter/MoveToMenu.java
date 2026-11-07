@@ -1,4 +1,4 @@
-package com.banksorter;
+package com.smartbanksorter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,12 +17,12 @@ import net.runelite.client.util.ColorUtil;
 class MoveToMenu
 {
 	private final Client client;
-	private final BankSorterConfig config;
+	private final SmartBankSorterConfig config;
 	private final ConfigManager configManager;
 	private final ItemManager itemManager;
 	private final Supplier<List<String>> categoryOrder;
 
-	MoveToMenu(Client client, BankSorterConfig config, ConfigManager configManager, ItemManager itemManager,
+	MoveToMenu(Client client, SmartBankSorterConfig config, ConfigManager configManager, ItemManager itemManager,
 		Supplier<List<String>> categoryOrder)
 	{
 		this.client = client;
@@ -69,7 +69,7 @@ class MoveToMenu
 	// "Prayer potion(4)" -> "Prayer potion(*"; other names match exactly.
 	private static String movePattern(String name)
 	{
-		Matcher m = BankSorterPlugin.DOSE.matcher(name);
+		Matcher m = SmartBankSorterPlugin.DOSE.matcher(name);
 		return m.matches() ? m.group(1) + "(*" : name;
 	}
 
@@ -107,6 +107,6 @@ class MoveToMenu
 			lines.add(0, category + ": " + pattern);
 		}
 		lines.removeIf(String::isEmpty);
-		configManager.setConfiguration(BankSorterConfig.GROUP, "customRules", String.join("\n", lines));
+		configManager.setConfiguration(SmartBankSorterConfig.GROUP, "customRules", String.join("\n", lines));
 	}
 }

@@ -1,13 +1,13 @@
-package com.banksorter;
+package com.smartbanksorter;
 
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
-public class BankSorterPluginTest
+public class SmartBankSorterPluginTest
 {
 	public static void main(String[] args) throws Exception
 	{
-		ExternalPluginManager.loadBuiltin(BankSorterPlugin.class);
+		ExternalPluginManager.loadBuiltin(SmartBankSorterPlugin.class);
 		RuneLite.main(args);
 	}
 }
