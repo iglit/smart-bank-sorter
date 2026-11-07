@@ -217,9 +217,18 @@ public class BankSorterPlugin extends Plugin
 	@Subscribe(priority = -1)
 	public void onScriptPostFiredAfterBankTags(ScriptPostFired event)
 	{
-		if (event.getScriptId() == ScriptID.BANKMAIN_POPUP_TAB_DRAW && config.enabled() && config.categoryTabs() && shouldSort())
+		if (!config.enabled() || !config.categoryTabs() || !shouldSort())
+		{
+			return;
+		}
+		if (event.getScriptId() == ScriptID.BANKMAIN_POPUP_TAB_DRAW)
 		{
 			tabStrip.refresh();
+		}
+		else if (event.getScriptId() == ScriptID.BANKMAIN_SIZE_CHECK)
+		{
+			// On resize Bank Tags re-lays out its strip from an invokeLater; queue ours after it.
+			clientThread.invokeLater(tabStrip::refresh);
 		}
 	}
 
