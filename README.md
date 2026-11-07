@@ -26,3 +26,14 @@ share the left edge of the bank. The Bank Tags plugin itself can stay enabled.
 
 Item data lives in `src/main/resources/com/banksorter/`: `items.txt` (categories and tiers), `food.txt`
 (heal amounts), `sets.txt` (set-effect sets), `overrides.txt`.
+
+## Running day to day
+
+The normal RuneLite launcher can't load plugins that aren't on the Plugin Hub, so this runs its own RuneLite:
+
+1. `gradlew.bat shadowJar` once (and again after changing the plugin) builds `build/libs/bank-sorter-unspecified-all.jar`.
+2. Double-click `RuneLite (Bank Sorter).bat` (pin a shortcut to it if you like).
+
+It logs in with the Jagex session saved in `%USERPROFILE%\.runelite\credentials.properties`. To create or refresh that
+file, start RuneLite once from the Jagex Launcher with `--insecure-write-credentials` added in RuneLite (configure).
+It uses your normal RuneLite profile and settings.
