@@ -47,7 +47,9 @@ import net.runelite.client.game.ItemManager;
 import net.runelite.client.game.ItemStats;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
+import net.runelite.client.plugins.PluginManager;
 import net.runelite.client.plugins.bank.BankSearch;
+import net.runelite.client.plugins.banktags.BankTagsService;
 import net.runelite.client.util.ColorUtil;
 import net.runelite.client.util.Text;
 
@@ -100,6 +102,9 @@ public class SmartBankSorterPlugin extends Plugin
 
 	@Inject
 	private BankSearch bankSearch;
+
+	@Inject
+	private PluginManager pluginManager;
 
 	private Categoriser categoriser;
 	private UserRules gearSets;
@@ -364,13 +369,34 @@ public class SmartBankSorterPlugin extends Plugin
 
 	private boolean shouldSort()
 	{
-		// RuneLite's Bank Tags plugin lays out tag tabs itself.
+		// Tag tabs, and other plugins' views opened through Bank Tags (e.g. an Inventory Setups setup), lay out the
+		// bank themselves.
+		if (activeBankTag() != null)
+		{
+			return false;
+		}
 		Widget title = client.getWidget(InterfaceID.Bankmain.TITLE);
 		if (title != null && title.getText() != null && title.getText().startsWith("Tag tab"))
 		{
 			return false;
 		}
 		return config.applyInTabs() || client.getVarbitValue(VarbitID.BANK_CURRENTTAB) == 0;
+	}
+
+	/**
+	 * The tag Bank Tags currently shows, or null. Looked up rather than injected: injecting BankTagsService would
+	 * need a plugin dependency, which forces Bank Tags on.
+	 */
+	private String activeBankTag()
+	{
+		for (Plugin plugin : pluginManager.getPlugins())
+		{
+			if (plugin instanceof BankTagsService && pluginManager.isPluginEnabled(plugin))
+			{
+				return ((BankTagsService) plugin).getActiveTag();
+			}
+		}
+		return null;
 	}
 
 	private void layout()
