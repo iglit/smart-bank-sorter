@@ -295,9 +295,10 @@ public class SmartBankSorterPlugin extends Plugin
 		// The user's sets first, so they can redefine a built-in one.
 		gearSets = UserRules.parse(config.customSets() + "\n" + BUILT_IN_SETS);
 
+		// Rules only say what goes in a category, not where it sits: new categories they name go after the built-ins.
 		Set<String> order = new LinkedHashSet<>(splitList(config.categoryOrder()));
-		order.addAll(rules.categories());
 		order.addAll(Categories.DEFAULT_ORDER);
+		order.addAll(rules.categories());
 		categoryOrder = new ArrayList<>(order);
 
 		collapsed.clear();
