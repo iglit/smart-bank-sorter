@@ -52,6 +52,8 @@ class ItemCopies
 
 	/**
 	 * Points a click on a copy at the real item's bank slot, so the game withdraws the real item.
+	 * Same as core Bank Tags' LayoutManager.onMenuOptionClicked for layout duplicates: only the slot index of
+	 * the game's own menu action is changed; no menu entries are added.
 	 */
 	void onMenuOptionClicked(MenuOptionClicked event)
 	{
