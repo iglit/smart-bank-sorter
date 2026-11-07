@@ -170,12 +170,6 @@ public class BankSorterPlugin extends Plugin
 	@Subscribe
 	public void onMenuEntryAdded(MenuEntryAdded event)
 	{
-		// Cancel is the first entry the client adds each frame; anything we add after it sits above it.
-		if (event.getMenuEntry().getType() == MenuAction.CANCEL)
-		{
-			itemCopies.addCopyMenu();
-			return;
-		}
 		if (config.enabled() && event.getActionParam1() == InterfaceID.Bankmain.ITEMS && "Examine".equals(event.getOption())
 			&& event.getMenuEntry().getItemId() > 0)
 		{
@@ -196,6 +190,7 @@ public class BankSorterPlugin extends Plugin
 	public void onMenuOptionClicked(MenuOptionClicked event)
 	{
 		tabStrip.onMenuOptionClicked(event);
+		itemCopies.onMenuOptionClicked(event);
 	}
 
 	@Subscribe
@@ -332,12 +327,17 @@ public class BankSorterPlugin extends Plugin
 		}
 
 		List<Slot> slots = new ArrayList<>();
+		List<Widget> spares = new ArrayList<>();
 		for (int i = 0; i < children.length; i++)
 		{
 			Widget w = children[i];
 			if (w == null || ours.contains(w))
 			{
 				continue;
+			}
+			if (i >= items.length && w.getOriginalHeight() == ITEM_HEIGHT)
+			{
+				spares.add(w);
 			}
 			if (i >= items.length || i < from || i >= to || w.isHidden() || items[i].getId() <= 0)
 			{
@@ -383,6 +383,7 @@ public class BankSorterPlugin extends Plugin
 		int section = 0;
 		int copies = 0;
 		itemCopies.clearTargets();
+		itemCopies.setSpares(spares);
 		// Tab name -> icon item, for tabs that have something in them.
 		Map<String, Integer> tabIcons = new HashMap<>();
 		for (Map.Entry<String, List<Slot>> group : groups.entrySet())
@@ -448,6 +449,11 @@ public class BankSorterPlugin extends Plugin
 						continue;
 					}
 					Widget w = slot.copy ? itemCopies.placeCopy(container, copies++, slot) : slot.widget;
+					if (w == null)
+					{
+						// No spare bank slot left for this copy.
+						continue;
+					}
 					if (isCollapsed || filteredOut)
 					{
 						w.setHidden(true);

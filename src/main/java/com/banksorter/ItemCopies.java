@@ -8,21 +8,21 @@ import java.util.Set;
 import java.util.function.Function;
 import net.runelite.api.Client;
 import net.runelite.api.EquipmentInventorySlot;
-import net.runelite.api.MenuAction;
-import net.runelite.api.Point;
+import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.gameval.InterfaceID;
 import net.runelite.api.widgets.Widget;
-import net.runelite.api.widgets.WidgetType;
 import net.runelite.client.game.ItemEquipmentStats;
 
 class ItemCopies
 {
 	private final Client client;
 	private final Function<Slot, ItemEquipmentStats> equipmentOf;
-	// Faded display-only copies of hybrid gear shown in a second combat style.
-	private final List<Widget> copyWidgets = new ArrayList<>();
-	// Copy widget -> the real bank slot it mirrors.
-	private final Map<Widget, Slot> copyTargets = new HashMap<>();
+	// Spare empty-slot widgets the bank interface already has past the last item. Copies reuse these, like
+	// core Bank Tags layouts do for duplicates: the game treats them as real bank slots, so it builds their
+	// menus itself, and onMenuOptionClicked points the click at the real item's slot.
+	private List<Widget> spares = new ArrayList<>();
+	// Copy widget's child index -> the real item's bank slot index.
+	private final Map<Integer, Integer> copyTargets = new HashMap<>();
 
 	ItemCopies(Client client, Function<Slot, ItemEquipmentStats> equipmentOf)
 	{
@@ -32,7 +32,12 @@ class ItemCopies
 
 	void addWidgetsTo(Set<Widget> ours)
 	{
-		ours.addAll(copyWidgets);
+		// Spares are the game's own widgets and are reset by every bank build; nothing to exclude.
+	}
+
+	void setSpares(List<Widget> spares)
+	{
+		this.spares = spares;
 	}
 
 	void clearTargets()
@@ -42,65 +47,33 @@ class ItemCopies
 
 	void hideFrom(int from)
 	{
-		for (int i = from; i < copyWidgets.size(); i++)
+		for (int i = from; i < spares.size(); i++)
 		{
-			copyWidgets.get(i).setHidden(true);
+			spares.get(i).setHidden(true);
 		}
 	}
 
 	void clear()
 	{
-		copyWidgets.clear();
+		spares = new ArrayList<>();
 		copyTargets.clear();
 	}
 
 	/**
-	 * The client builds no menu for widgets we create, so when hovering a copy add the real item's options,
-	 * each targeting the real bank slot. Picking one does exactly what picking it on the real item does.
+	 * Points a click on a copy at the real item's bank slot, so the game withdraws the real item.
 	 */
-	void addCopyMenu()
+	void onMenuOptionClicked(MenuOptionClicked event)
 	{
-		if (copyTargets.isEmpty())
+		if (event.getParam1() == InterfaceID.Bankmain.ITEMS)
 		{
-			return;
-		}
-		Widget container = client.getWidget(InterfaceID.Bankmain.ITEMS);
-		Point mouse = client.getMouseCanvasPosition();
-		if (container == null || container.isHidden() || !container.getBounds().contains(mouse.getX(), mouse.getY()))
-		{
-			return;
-		}
-
-		for (Map.Entry<Widget, Slot> entry : copyTargets.entrySet())
-		{
-			Widget copy = entry.getKey();
-			if (copy.isHidden() || !copy.getBounds().contains(mouse.getX(), mouse.getY()))
+			Integer real = copyTargets.get(event.getParam0());
+			if (real != null)
 			{
-				continue;
+				event.getMenuEntry().setParam0(real);
 			}
-
-			Slot slot = entry.getValue();
-			Widget real = slot.widget;
-			String[] actions = real.getActions();
-			// Added lowest first; the last entry added becomes the left-click option.
-			for (int i = actions == null ? -1 : actions.length - 1; i >= 0; i--)
-			{
-				if (actions[i] == null || actions[i].isEmpty())
-				{
-					continue;
-				}
-				client.getMenu().createMenuEntry(-1)
-					.setOption(actions[i])
-					.setTarget(real.getName())
-					.setType(i >= 5 ? MenuAction.CC_OP_LOW_PRIORITY : MenuAction.CC_OP)
-					.setIdentifier(i + 1)
-					.setParam0(slot.index)
-					.setParam1(InterfaceID.Bankmain.ITEMS)
-					.setItemId(real.getItemId());
-			}
-			return;
 		}
 	}
+
 
 	/**
 	 * Gear useful to several styles (barrows gloves, fire cape) lives in one category. Show a faded copy in
@@ -226,24 +199,36 @@ class ItemCopies
 	/**
 	 * A copy shows the real item's icon and quantity; its menu comes from {@link #addCopyMenu}.
 	 */
+	/**
+	 * Draws a copy of {@code slot}'s item in the next spare slot widget, with the real item's options.
+	 *
+	 * @return the copy widget, or null when the bank has no spare slots left
+	 */
 	Widget placeCopy(Widget container, int index, Slot slot)
 	{
+		if (index >= spares.size())
+		{
+			return null;
+		}
 		Widget real = slot.widget;
-		Widget w = WidgetPool.pooled(container, copyWidgets, index, WidgetType.GRAPHIC);
+		Widget w = spares.get(index);
 		w.setItemId(real.getItemId());
 		w.setItemQuantity(real.getItemQuantity());
 		w.setItemQuantityMode(real.getItemQuantityMode());
-		w.setOriginalWidth(BankSorterPlugin.ITEM_WIDTH);
-		w.setOriginalHeight(BankSorterPlugin.ITEM_HEIGHT);
 		w.setOpacity(real.getOpacity());
 		// Item outline and drop shadow, so the copy is drawn exactly like the real item.
 		w.setBorderType(real.getBorderType());
 		w.setTextShadowed(real.getTextShadowed());
 		w.setName(real.getName());
+		String[] actions = real.getActions();
+		for (int i = 0; i < 10; i++)
+		{
+			w.setAction(i, actions != null && i < actions.length ? actions[i] : null);
+		}
 		w.setDragDeadZone(Integer.MAX_VALUE);
 		w.setDragDeadTime(Integer.MAX_VALUE);
 		w.setHidden(false);
-		copyTargets.put(w, slot);
+		copyTargets.put(w.getIndex(), slot.index);
 		return w;
 	}
 }
