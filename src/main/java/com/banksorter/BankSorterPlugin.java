@@ -20,15 +20,11 @@ import java.util.regex.Pattern;
 import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
-import net.runelite.api.EquipmentInventorySlot;
 import net.runelite.api.FontID;
 import net.runelite.api.Item;
 import net.runelite.api.ItemComposition;
 import net.runelite.api.ItemContainer;
-import net.runelite.api.Menu;
 import net.runelite.api.MenuAction;
-import net.runelite.api.MenuEntry;
-import net.runelite.api.Point;
 import net.runelite.api.ScriptID;
 import net.runelite.api.events.MenuEntryAdded;
 import net.runelite.api.events.MenuOptionClicked;
@@ -37,7 +33,6 @@ import net.runelite.api.gameval.InterfaceID;
 import net.runelite.api.gameval.InventoryID;
 import net.runelite.api.gameval.ItemID;
 import net.runelite.api.gameval.VarbitID;
-import net.runelite.api.widgets.ItemQuantityMode;
 import net.runelite.api.widgets.JavaScriptCallback;
 import net.runelite.api.widgets.Widget;
 import net.runelite.api.widgets.WidgetTextAlignment;
@@ -52,7 +47,6 @@ import net.runelite.client.game.ItemStats;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.plugins.bank.BankSearch;
-import net.runelite.client.plugins.banktags.tabs.TabSprites;
 import net.runelite.client.util.ColorUtil;
 import net.runelite.client.util.Text;
 
@@ -69,25 +63,12 @@ public class BankSorterPlugin extends Plugin
 	private static final int START_X = 51;
 	private static final int PITCH_X = 48;
 	private static final int PITCH_Y = 36;
-	private static final int ITEM_WIDTH = 36;
-	private static final int ITEM_HEIGHT = 32;
-	// Tab strip geometry copied from Bank Tags' TabInterface so ours looks like its own; position and width come
-	// from its arrows when present. The tab sprite is 39x40 and doesn't scale, so tabs are never squeezed.
-	private static final int TAB_X = 1;
-	private static final int TAB_WIDTH = 39;
-	private static final int TAB_HEIGHT = 40;
-	private static final int TAB_MARGIN = 1;
-	private static final int TAB_PITCH = TAB_HEIGHT + TAB_MARGIN;
-	// Bank Tags draws the icon 3px in and 4px down from its tab background. Item sprites carry their shadow on
-	// the right, so this looks centred where true centring looks left-heavy.
-	private static final int TAB_ICON_X = 3;
-	private static final int TAB_ICON_Y = 4;
-	// Bank Tags keeps this much of the item container's bottom clear of its strip.
-	private static final int TAB_BOTTOM_OFFSET = 39;
+	static final int ITEM_WIDTH = 36;
+	static final int ITEM_HEIGHT = 32;
 	private static final int GRID_WIDTH = COLUMNS * PITCH_X - 12;
 	private static final int SECTION_GAP = 4;
 	private static final int DIVIDER_COLOR = 0x4E4639;
-	private static final List<String> GEAR_CATEGORIES = Collections.unmodifiableList(Arrays.asList(
+	static final List<String> GEAR_CATEGORIES = Collections.unmodifiableList(Arrays.asList(
 		Categories.MELEE, Categories.RANGED, Categories.MAGIC));
 	private static final String BUILT_IN_SETS = readResource("sets.txt");
 	private static final Map<String, Integer> FOOD_HEALS = parseHeals(readResource("food.txt"));
@@ -96,7 +77,7 @@ public class BankSorterPlugin extends Plugin
 		VarbitID.BANK_TAB_1, VarbitID.BANK_TAB_2, VarbitID.BANK_TAB_3, VarbitID.BANK_TAB_4, VarbitID.BANK_TAB_5,
 		VarbitID.BANK_TAB_6, VarbitID.BANK_TAB_7, VarbitID.BANK_TAB_8, VarbitID.BANK_TAB_9,
 	};
-	private static final Pattern DOSE = Pattern.compile("^(.*)\\((\\d+)\\)$");
+	static final Pattern DOSE = Pattern.compile("^(.*)\\((\\d+)\\)$");
 
 	@Inject
 	private Client client;
@@ -125,53 +106,15 @@ public class BankSorterPlugin extends Plugin
 	// Header text + divider widgets we created inside the bank item container, reused between builds.
 	private final List<Widget> headerWidgets = new ArrayList<>();
 	private final List<Widget> dividerWidgets = new ArrayList<>();
-	// Faded display-only copies of hybrid gear shown in a second combat style.
-	private final List<Widget> copyWidgets = new ArrayList<>();
-	// Category tabs on the left edge of the bank, and the category they currently filter to (null = all).
-	private final List<Widget> tabWidgets = new ArrayList<>();
-	private final List<Widget> tabBackgrounds = new ArrayList<>();
-	// Invisible widget under the strip that takes the mouse wheel, as Bank Tags does for its tag tabs.
-	private final List<Widget> tabScrollWidgets = new ArrayList<>();
+	// Category the tab strip currently filters to (null = all).
 	private String focusedTab;
 	private UserRules tabGroups;
-	private int tabScroll;
-	private int maxTabScroll;
-	// Bank Tags is showing tag tabs of its own, so its arrows are busy scrolling those.
-	private boolean bankTagsHasTabs;
-	private List<String> lastTabs = Collections.emptyList();
-	private List<Integer> lastTabIcons = Collections.emptyList();
 	private boolean scrollToTop;
-	// Copy widget -> the real bank slot it mirrors.
-	private final Map<Widget, Slot> copyTargets = new HashMap<>();
+	private TabStrip tabStrip;
+	private ItemCopies itemCopies;
+	private MoveToMenu moveToMenu;
 	private int originalDragDeadZone = -1;
 	private int originalDragDeadTime = -1;
-
-	private static final class Slot
-	{
-		final Widget widget;
-		final int index;
-		final int itemId;
-		final int quantity;
-		final String name;
-		final String category;
-		final boolean copy;
-
-		Slot(Widget widget, int index, int itemId, int quantity, String name, String category)
-		{
-			this(widget, index, itemId, quantity, name, category, false);
-		}
-
-		Slot(Widget widget, int index, int itemId, int quantity, String name, String category, boolean copy)
-		{
-			this.copy = copy;
-			this.widget = widget;
-			this.index = index;
-			this.itemId = itemId;
-			this.quantity = quantity;
-			this.name = name;
-			this.category = category;
-		}
-	}
 
 	@Provides
 	BankSorterConfig provideConfig(ConfigManager configManager)
@@ -182,6 +125,9 @@ public class BankSorterPlugin extends Plugin
 	@Override
 	protected void startUp()
 	{
+		tabStrip = new TabStrip(client, config, () -> focusedTab, this::focus);
+		itemCopies = new ItemCopies(client, this::equipmentOf);
+		moveToMenu = new MoveToMenu(client, config, configManager, itemManager, () -> categoryOrder);
 		loadSettings();
 		clientThread.invokeLater(this::rebuildBank);
 	}
@@ -195,11 +141,8 @@ public class BankSorterPlugin extends Plugin
 			hideOurWidgets();
 			headerWidgets.clear();
 			dividerWidgets.clear();
-			copyWidgets.clear();
-			copyTargets.clear();
-			tabWidgets.clear();
-			tabBackgrounds.clear();
-			tabScrollWidgets.clear();
+			itemCopies.clear();
+			tabStrip.clear();
 			focusedTab = null;
 			rebuildBank();
 		});
@@ -230,13 +173,13 @@ public class BankSorterPlugin extends Plugin
 		// Cancel is the first entry the client adds each frame; anything we add after it sits above it.
 		if (event.getMenuEntry().getType() == MenuAction.CANCEL)
 		{
-			addCopyMenu();
+			itemCopies.addCopyMenu();
 			return;
 		}
 		if (config.enabled() && event.getActionParam1() == InterfaceID.Bankmain.ITEMS && "Examine".equals(event.getOption())
 			&& event.getMenuEntry().getItemId() > 0)
 		{
-			addMoveToMenu(event.getMenuEntry().getItemId());
+			moveToMenu.addMenu(event.getMenuEntry().getItemId());
 			return;
 		}
 		if (event.getActionParam1() == InterfaceID.Bankmain.SEARCH && "Search".equals(event.getOption()))
@@ -252,21 +195,7 @@ public class BankSorterPlugin extends Plugin
 	@Subscribe
 	public void onMenuOptionClicked(MenuOptionClicked event)
 	{
-		// Bank Tags' arrows scroll its tag tabs. With none of those shown they'd do nothing, so scroll ours.
-		Widget w = event.getWidget();
-		if (bankTagsHasTabs || maxTabScroll == 0 || w == null
-			|| event.getMenuAction() != MenuAction.CC_OP || event.getParam1() != InterfaceID.Bankmain.ITEMS_CONTAINER)
-		{
-			return;
-		}
-		if (w.getSpriteId() == TabSprites.UP_ARROW.getSpriteId())
-		{
-			scrollTabs(-1);
-		}
-		else if (w.getSpriteId() == TabSprites.DOWN_ARROW.getSpriteId())
-		{
-			scrollTabs(1);
-		}
+		tabStrip.onMenuOptionClicked(event);
 	}
 
 	@Subscribe
@@ -285,132 +214,6 @@ public class BankSorterPlugin extends Plugin
 			// e.g. a Bank Tags tag tab is open: leave the bank to it.
 			hideOurWidgets();
 		}
-	}
-
-	/**
-	 * The client builds no menu for widgets we create, so when hovering a copy add the real item's options,
-	 * each targeting the real bank slot. Picking one does exactly what picking it on the real item does.
-	 */
-	private void addCopyMenu()
-	{
-		if (copyTargets.isEmpty())
-		{
-			return;
-		}
-		Widget container = client.getWidget(InterfaceID.Bankmain.ITEMS);
-		Point mouse = client.getMouseCanvasPosition();
-		if (container == null || container.isHidden() || !container.getBounds().contains(mouse.getX(), mouse.getY()))
-		{
-			return;
-		}
-
-		for (Map.Entry<Widget, Slot> entry : copyTargets.entrySet())
-		{
-			Widget copy = entry.getKey();
-			if (copy.isHidden() || !copy.getBounds().contains(mouse.getX(), mouse.getY()))
-			{
-				continue;
-			}
-
-			Slot slot = entry.getValue();
-			Widget real = slot.widget;
-			String[] actions = real.getActions();
-			// Added lowest first; the last entry added becomes the left-click option.
-			for (int i = actions == null ? -1 : actions.length - 1; i >= 0; i--)
-			{
-				if (actions[i] == null || actions[i].isEmpty())
-				{
-					continue;
-				}
-				client.getMenu().createMenuEntry(-1)
-					.setOption(actions[i])
-					.setTarget(real.getName())
-					.setType(i >= 5 ? MenuAction.CC_OP_LOW_PRIORITY : MenuAction.CC_OP)
-					.setIdentifier(i + 1)
-					.setParam0(slot.index)
-					.setParam1(InterfaceID.Bankmain.ITEMS)
-					.setItemId(real.getItemId());
-			}
-			return;
-		}
-	}
-
-	/**
-	 * "Move to" sub-menu on bank items. Picking a category writes a rule to the Custom categories setting, so
-	 * one-off fixes don't need a plugin change. Doses and charges are covered by one rule.
-	 */
-	private void addMoveToMenu(int itemId)
-	{
-		String name = itemManager.getItemComposition(itemManager.canonicalize(itemId)).getName();
-		String pattern = movePattern(name);
-		boolean hasRule = findRule(pattern) >= 0;
-
-		MenuEntry parent = client.getMenu().createMenuEntry(1)
-			.setOption("Move to")
-			.setTarget(ColorUtil.wrapWithColorTag(name, config.headerColor()))
-			.setType(MenuAction.RUNELITE);
-		Menu sub = parent.createSubMenu();
-		List<String> targets = new ArrayList<>(categoryOrder);
-		Collections.reverse(targets);
-		for (String category : targets)
-		{
-			sub.createMenuEntry(-1)
-				.setOption(category)
-				.setType(MenuAction.RUNELITE)
-				.onClick(e -> setRule(pattern, category));
-		}
-		if (hasRule)
-		{
-			sub.createMenuEntry(-1)
-				.setOption("Reset")
-				.setTarget(ColorUtil.wrapWithColorTag("automatic", config.headerColor()))
-				.setType(MenuAction.RUNELITE)
-				.onClick(e -> setRule(pattern, null));
-		}
-	}
-
-	// "Prayer potion(4)" -> "Prayer potion(*"; other names match exactly.
-	private static String movePattern(String name)
-	{
-		Matcher m = DOSE.matcher(name);
-		return m.matches() ? m.group(1) + "(*" : name;
-	}
-
-	/**
-	 * Line index of the "Category: pattern" rule written for this exact pattern, or -1.
-	 */
-	private int findRule(String pattern)
-	{
-		String[] lines = config.customRules().split("\\R", -1);
-		for (int i = 0; i < lines.length; i++)
-		{
-			int colon = lines[i].indexOf(':');
-			if (colon > 0 && lines[i].substring(colon + 1).trim().equalsIgnoreCase(pattern))
-			{
-				return i;
-			}
-		}
-		return -1;
-	}
-
-	/**
-	 * Replaces this item's rule with one for {@code category}, or removes it when null. New rules go first so
-	 * they win over broader lines the user wrote.
-	 */
-	private void setRule(String pattern, String category)
-	{
-		List<String> lines = new ArrayList<>(Arrays.asList(config.customRules().split("\\R", -1)));
-		int existing = findRule(pattern);
-		if (existing >= 0)
-		{
-			lines.remove(existing);
-		}
-		if (category != null)
-		{
-			lines.add(0, category + ": " + pattern);
-		}
-		lines.removeIf(String::isEmpty);
-		configManager.setConfiguration(BankSorterConfig.GROUP, "customRules", String.join("\n", lines));
 	}
 
 	private void loadSettings()
@@ -513,7 +316,7 @@ public class BankSorterPlugin extends Plugin
 		Item[] items = bank.getItems();
 		Set<Widget> ours = new HashSet<>(headerWidgets);
 		ours.addAll(dividerWidgets);
-		ours.addAll(copyWidgets);
+		itemCopies.addWidgetsTo(ours);
 
 		// The game has already hidden items that don't match the search; the tab range is checked too.
 		int from = 0;
@@ -565,12 +368,12 @@ public class BankSorterPlugin extends Plugin
 
 		if (config.gearByQuality())
 		{
-			addHybridCopies(groups);
+			itemCopies.addHybridCopies(groups);
 		}
-		addDataCopies(groups);
+		itemCopies.addDataCopies(groups);
 		if (config.gearByQuality())
 		{
-			addTeleportGearCopies(groups);
+			itemCopies.addTeleportGearCopies(groups);
 		}
 
 		Comparator<Slot> comparator = comparator();
@@ -579,7 +382,7 @@ public class BankSorterPlugin extends Plugin
 		int y = 0;
 		int section = 0;
 		int copies = 0;
-		copyTargets.clear();
+		itemCopies.clearTargets();
 		// Tab name -> icon item, for tabs that have something in them.
 		Map<String, Integer> tabIcons = new HashMap<>();
 		for (Map.Entry<String, List<Slot>> group : groups.entrySet())
@@ -644,7 +447,7 @@ public class BankSorterPlugin extends Plugin
 						// Gap in an outfit column, or a copy we don't need to draw.
 						continue;
 					}
-					Widget w = slot.copy ? placeCopy(container, copies++, slot) : slot.widget;
+					Widget w = slot.copy ? itemCopies.placeCopy(container, copies++, slot) : slot.widget;
 					if (isCollapsed || filteredOut)
 					{
 						w.setHidden(true);
@@ -671,25 +474,22 @@ public class BankSorterPlugin extends Plugin
 			tabs.retainAll(tabIcons.keySet());
 			List<Integer> icons = new ArrayList<>();
 			tabs.forEach(t -> icons.add(tabIcons.get(t)));
-			placeTabs(tabs, icons);
+			tabStrip.placeTabs(tabs, icons);
 			// On bank open the first placement draws wrong (icons hidden behind the backgrounds) until the strip
 			// is laid out again, which scrolling did; so lay it out once more on the next frame.
 			clientThread.invokeLater(() ->
 			{
 				if (config.enabled() && config.categoryTabs() && client.getWidget(InterfaceID.Bankmain.ITEMS_CONTAINER) != null)
 				{
-					placeTabs(lastTabs, lastTabIcons);
+					tabStrip.refresh();
 				}
 			});
 		}
 		else
 		{
-			hideTabs(0);
+			tabStrip.hideTabs(0);
 		}
-		for (int i = copies; i < copyWidgets.size(); i++)
-		{
-			copyWidgets.get(i).setHidden(true);
-		}
+		itemCopies.hideFrom(copies);
 		hideHeaders(section);
 
 		int scrollHeight = Math.max(y, container.getHeight());
@@ -701,151 +501,6 @@ public class BankSorterPlugin extends Plugin
 		// We're inside the bank build script's callback and scripts can't nest, so redraw the scrollbar after it.
 		clientThread.invokeLater(() ->
 			client.runScript(ScriptID.UPDATE_SCROLLBAR, InterfaceID.Bankmain.SCROLLBAR, InterfaceID.Bankmain.ITEMS, scrollY));
-	}
-
-	/**
-	 * Gear useful to several styles (barrows gloves, fire cape) lives in one category. Show a faded copy in
-	 * each other combat style where it beats everything that style already has in that slot.
-	 */
-	/**
-	 * Items the bundled data lists under extra categories (logs for Firemaking, Graceful for Farming...) get a
-	 * withdrawable copy in each of them.
-	 */
-	private void addDataCopies(Map<String, List<Slot>> groups)
-	{
-		List<Slot> originals = new ArrayList<>();
-		groups.values().forEach(list -> list.stream().filter(s -> !s.copy).forEach(originals::add));
-		for (Slot s : originals)
-		{
-			ItemData.Entry data = ItemData.get(s.name);
-			if (data == null || !data.category.equals(s.category))
-			{
-				// A user rule moved it; their placement wins.
-				continue;
-			}
-			for (String extra : data.extras)
-			{
-				List<Slot> target = groups.computeIfAbsent(extra, k -> new ArrayList<>());
-				if (target.stream().noneMatch(t -> t.itemId == s.itemId))
-				{
-					target.add(new Slot(s.widget, s.index, s.itemId, s.quantity, s.name, extra, true));
-				}
-			}
-		}
-	}
-
-	/**
-	 * Teleport items that are also combat gear (charged glory, combat bracelet, max cape...) get a copy in
-	 * their combat style, where the outfit columns rank them by stats. Only the most-charged version of each
-	 * item is copied, so five glories don't fill the amulet row.
-	 */
-	private void addTeleportGearCopies(Map<String, List<Slot>> groups)
-	{
-		List<Slot> teleports = groups.get(Categories.TELEPORTS);
-		if (teleports == null)
-		{
-			return;
-		}
-
-		Map<String, Slot> best = new HashMap<>();
-		for (Slot s : teleports)
-		{
-			ItemEquipmentStats e = equipmentOf(s);
-			if (s.copy || e == null || e.getSlot() == EquipmentInventorySlot.WEAPON.getSlotIdx())
-			{
-				continue;
-			}
-			best.merge(baseName(s.name).toLowerCase(), s, (a, b) -> dose(a.name) >= dose(b.name) ? a : b);
-		}
-		for (Slot s : best.values())
-		{
-			ItemEquipmentStats e = equipmentOf(s);
-			String style = Categoriser.gear(s.name.toLowerCase(), e);
-			if (GEAR_CATEGORIES.contains(style) && GearOrder.offence(style, e) > 0)
-			{
-				List<Slot> target = groups.computeIfAbsent(style, k -> new ArrayList<>());
-				if (target.stream().noneMatch(t -> t.itemId == s.itemId))
-				{
-					target.add(new Slot(s.widget, s.index, s.itemId, s.quantity, s.name, style, true));
-				}
-			}
-		}
-	}
-
-	private void addHybridCopies(Map<String, List<Slot>> groups)
-	{
-		for (String style : GEAR_CATEGORIES)
-		{
-			List<Slot> styleSlots = groups.get(style);
-			if (styleSlots == null)
-			{
-				continue;
-			}
-
-			Map<Integer, Integer> bestBySlot = new HashMap<>();
-			for (Slot s : styleSlots)
-			{
-				ItemEquipmentStats e = equipmentOf(s);
-				if (e != null)
-				{
-					bestBySlot.merge(e.getSlot(), GearOrder.score(style, e), Math::max);
-				}
-			}
-
-			Map<Integer, Slot> candidates = new HashMap<>();
-			for (String other : GEAR_CATEGORIES)
-			{
-				if (other.equals(style) || !groups.containsKey(other))
-				{
-					continue;
-				}
-				for (Slot s : groups.get(other))
-				{
-					ItemEquipmentStats e = equipmentOf(s);
-					boolean blessing = e != null && e.getSlot() == EquipmentInventorySlot.AMMO.getSlotIdx();
-					if (s.copy || e == null || e.getSlot() == EquipmentInventorySlot.WEAPON.getSlotIdx()
-						|| (!blessing && GearOrder.offence(style, e) <= 0))
-					{
-						continue;
-					}
-					int score = GearOrder.score(style, e);
-					Slot current = candidates.get(e.getSlot());
-					if (score > bestBySlot.getOrDefault(e.getSlot(), 0)
-						&& (current == null || score > GearOrder.score(style, equipmentOf(current))))
-					{
-						candidates.put(e.getSlot(), s);
-					}
-				}
-			}
-			for (Slot s : candidates.values())
-			{
-				styleSlots.add(new Slot(s.widget, s.index, s.itemId, s.quantity, s.name, style, true));
-			}
-		}
-	}
-
-	/**
-	 * A copy shows the real item's icon and quantity; its menu comes from {@link #addCopyMenu}.
-	 */
-	private Widget placeCopy(Widget container, int index, Slot slot)
-	{
-		Widget real = slot.widget;
-		Widget w = pooled(container, copyWidgets, index, WidgetType.GRAPHIC);
-		w.setItemId(real.getItemId());
-		w.setItemQuantity(real.getItemQuantity());
-		w.setItemQuantityMode(real.getItemQuantityMode());
-		w.setOriginalWidth(ITEM_WIDTH);
-		w.setOriginalHeight(ITEM_HEIGHT);
-		w.setOpacity(real.getOpacity());
-		// Item outline and drop shadow, so the copy is drawn exactly like the real item.
-		w.setBorderType(real.getBorderType());
-		w.setTextShadowed(real.getTextShadowed());
-		w.setName(real.getName());
-		w.setDragDeadZone(Integer.MAX_VALUE);
-		w.setDragDeadTime(Integer.MAX_VALUE);
-		w.setHidden(false);
-		copyTargets.put(w, slot);
-		return w;
 	}
 
 	private String categoryOf(int itemId, String name)
@@ -895,7 +550,7 @@ public class BankSorterPlugin extends Plugin
 		return heal == null ? 0 : heal;
 	}
 
-	private ItemEquipmentStats equipmentOf(Slot slot)
+	ItemEquipmentStats equipmentOf(Slot slot)
 	{
 		ItemStats stats = itemManager.getItemStats(slot.itemId);
 		return stats != null && stats.isEquipable() ? stats.getEquipment() : null;
@@ -907,13 +562,13 @@ public class BankSorterPlugin extends Plugin
 	}
 
 	// "Prayer potion(4)" -> "Prayer potion" so doses of one potion stay together, highest first.
-	private static String baseName(String name)
+	static String baseName(String name)
 	{
 		Matcher m = DOSE.matcher(name);
 		return m.matches() ? m.group(1) : name;
 	}
 
-	private static int dose(String name)
+	static int dose(String name)
 	{
 		Matcher m = DOSE.matcher(name);
 		return m.matches() ? Integer.parseInt(m.group(2)) : 0;
@@ -922,7 +577,7 @@ public class BankSorterPlugin extends Plugin
 	private void placeHeader(Widget container, int index, String category, int count, boolean isCollapsed,
 		int y, int height, boolean large)
 	{
-		Widget header = pooled(container, headerWidgets, index, WidgetType.TEXT);
+		Widget header = WidgetPool.pooled(container, headerWidgets, index, WidgetType.TEXT);
 		String text = (isCollapsed ? "+ " : "- ") + category;
 		if (config.showCounts())
 		{
@@ -945,7 +600,7 @@ public class BankSorterPlugin extends Plugin
 		header.setHidden(false);
 		header.revalidate();
 
-		Widget divider = pooled(container, dividerWidgets, index, WidgetType.RECTANGLE);
+		Widget divider = WidgetPool.pooled(container, dividerWidgets, index, WidgetType.RECTANGLE);
 		divider.setFilled(true);
 		divider.setTextColor(DIVIDER_COLOR);
 		divider.setOriginalX(START_X);
@@ -954,27 +609,6 @@ public class BankSorterPlugin extends Plugin
 		divider.setOriginalHeight(1);
 		divider.setHidden(!config.dividers());
 		divider.revalidate();
-	}
-
-	/**
-	 * Returns our widget at {@code index}, creating it if the bank rebuild deleted it.
-	 */
-	private Widget pooled(Widget container, List<Widget> pool, int index, int type)
-	{
-		Widget[] children = container.getChildren();
-		if (index < pool.size())
-		{
-			Widget w = pool.get(index);
-			if (children != null && Arrays.asList(children).contains(w))
-			{
-				return w;
-			}
-			// The bank interface was rebuilt from scratch; start the pool over.
-			pool.subList(index, pool.size()).clear();
-		}
-		Widget w = container.createChild(-1, type);
-		pool.add(w);
-		return w;
 	}
 
 	private void hideHeaders(int from)
@@ -1031,148 +665,6 @@ public class BankSorterPlugin extends Plugin
 		return -1;
 	}
 
-	/**
-	 * Tabs down the left edge of the bank, under Bank Tags' own tab buttons if it shows any. Each tab is a
-	 * group of categories; clicking one shows only those categories, clicking it again shows everything.
-	 * Laid out the way Bank Tags lays out its tag tabs: full-size tabs, a window of them when they don't all
-	 * fit, and an invisible widget under the strip that takes the mouse wheel.
-	 */
-	private void placeTabs(List<String> categories, List<Integer> icons)
-	{
-		lastTabs = categories;
-		lastTabIcons = icons;
-		Widget parent = client.getWidget(InterfaceID.Bankmain.ITEMS_CONTAINER);
-		if (parent == null)
-		{
-			return;
-		}
-		if (categories.isEmpty())
-		{
-			hideTabs(0);
-			return;
-		}
-
-		// Fit between Bank Tags' up and down arrows, below any tag tabs it is showing, so the strip looks like
-		// its own. Its tag tabs use the same sprites as ours, so skip our own backgrounds while looking.
-		Widget up = null;
-		Widget down = null;
-		int belowOtherTabs = 0;
-		Set<Widget> ours = new HashSet<>(tabBackgrounds);
-		Widget[] existing = parent.getDynamicChildren();
-		for (Widget w : existing == null ? new Widget[0] : existing)
-		{
-			if (w == null || w.isHidden() || ours.contains(w))
-			{
-				continue;
-			}
-			int sprite = w.getSpriteId();
-			if (sprite == TabSprites.UP_ARROW.getSpriteId())
-			{
-				up = w;
-			}
-			else if (sprite == TabSprites.DOWN_ARROW.getSpriteId())
-			{
-				down = w;
-			}
-			else if (sprite == TabSprites.TAB_BACKGROUND.getSpriteId() || sprite == TabSprites.TAB_BACKGROUND_ACTIVE.getSpriteId())
-			{
-				belowOtherTabs = Math.max(belowOtherTabs, w.getOriginalY() + w.getOriginalHeight() + TAB_MARGIN);
-			}
-		}
-		bankTagsHasTabs = belowOtherTabs > 0;
-		int x = up != null ? up.getOriginalX() : TAB_X;
-		int width = up != null ? up.getOriginalWidth() : TAB_WIDTH;
-		int top = Math.max(belowOtherTabs, up != null ? up.getOriginalY() + up.getOriginalHeight() + TAB_MARGIN : TAB_MARGIN);
-		int bottom = down != null ? down.getOriginalY() - TAB_MARGIN : stripBottom(parent) - TAB_MARGIN;
-		int visible = (bottom - top + TAB_MARGIN) / TAB_PITCH;
-		if (visible <= 0)
-		{
-			// Bank Tags has filled the strip with its own tabs; stay out of its way.
-			hideTabs(0);
-			return;
-		}
-		maxTabScroll = Math.max(0, categories.size() - visible);
-		tabScroll = Math.max(0, Math.min(tabScroll, maxTabScroll));
-		resetTabsIfMisordered(parent);
-
-		// Created before the tabs so it sits under them, like Bank Tags' own. Covering the margins too means the
-		// wheel never reaches the bank items through a gap in the strip.
-		Widget scroll = pooled(parent, tabScrollWidgets, 0, WidgetType.TEXT);
-		scroll.setOriginalX(x - TAB_MARGIN);
-		scroll.setOriginalY(top - TAB_MARGIN);
-		scroll.setOriginalWidth(width + 2 * TAB_MARGIN);
-		scroll.setOriginalHeight(visible * TAB_PITCH);
-		scroll.setHasListener(true);
-		scroll.setNoScrollThrough(true);
-		scroll.setOnScrollWheelListener((JavaScriptCallback) e -> scrollTabs(e.getMouseY()));
-		scroll.setHidden(false);
-		scroll.revalidate();
-
-		for (int i = 0; i < categories.size(); i++)
-		{
-			String category = categories.get(i);
-			boolean active = category.equals(focusedTab);
-			int row = i - tabScroll;
-			boolean shown = row >= 0 && row < visible;
-			int y = top + row * TAB_PITCH;
-
-			Widget back = pooled(parent, tabBackgrounds, i, WidgetType.GRAPHIC);
-			back.setSpriteId(active ? TabSprites.TAB_BACKGROUND_ACTIVE.getSpriteId() : TabSprites.TAB_BACKGROUND.getSpriteId());
-			back.setOriginalX(x);
-			back.setOriginalY(y);
-			back.setOriginalWidth(width);
-			back.setOriginalHeight(TAB_HEIGHT);
-			back.setHidden(!shown);
-			back.revalidate();
-
-			Widget tab = pooled(parent, tabWidgets, i, WidgetType.GRAPHIC);
-			tab.setItemId(icons.get(i));
-			tab.setItemQuantityMode(ItemQuantityMode.NEVER);
-			tab.setBorderType(1);
-			tab.setOriginalX(x + TAB_ICON_X);
-			tab.setOriginalY(y + TAB_ICON_Y);
-			tab.setOriginalWidth(ITEM_WIDTH);
-			tab.setOriginalHeight(ITEM_HEIGHT);
-			tab.setName(ColorUtil.wrapWithColorTag(category, config.headerColor()));
-			tab.setAction(0, active ? "Show all" : "Show");
-			tab.setHasListener(true);
-			tab.setOnOpListener((JavaScriptCallback) e -> focus(category));
-			tab.setHidden(!shown);
-			tab.revalidate();
-		}
-		hideTabs(categories.size());
-	}
-
-	/**
-	 * Without Bank Tags' arrows, use the space its strip would: the item container less the bank's bottom bar
-	 * and whichever buttons (incinerator, storage popup) are shown down there. Mirrors its repositionButtons.
-	 */
-	private int stripBottom(Widget parent)
-	{
-		int height = parent.getHeight() - TAB_BOTTOM_OFFSET;
-		for (int id : new int[]{InterfaceID.Bankmain.INCINERATOR_TARGET, InterfaceID.Bankmain.POPUP_BUTTON_OUT})
-		{
-			Widget w = client.getWidget(id);
-			if (w != null && !w.isHidden())
-			{
-				height = Math.min(height, w.getRelativeY());
-			}
-		}
-		Widget popup = client.getWidget(InterfaceID.Bankmain.STORAGE_POPUP_TAB);
-		if (popup != null && !popup.isHidden())
-		{
-			for (int id : new int[]{InterfaceID.Bankmain.GIM_STORAGE, InterfaceID.Bankmain.POTIONSTORE_BUTTON})
-			{
-				Widget w = client.getWidget(id);
-				if (w != null && !w.isHidden())
-				{
-					height = Math.min(height, popup.getRelativeY() + w.getRelativeY());
-				}
-			}
-		}
-		return height;
-	}
-
 	private void focus(String category)
 	{
 		focusedTab = category.equals(focusedTab) ? null : category;
@@ -1180,74 +672,11 @@ public class BankSorterPlugin extends Plugin
 		clientThread.invokeLater(this::rebuildBank);
 	}
 
-	private void scrollTabs(int direction)
-	{
-		int next = Math.max(0, Math.min(tabScroll + Integer.signum(direction), maxTabScroll));
-		// At an end already (or everything fits): leave the strip alone so it doesn't flicker.
-		if (next != tabScroll)
-		{
-			// Only the strip moves; rebuilding the bank here made the item view jump.
-			tabScroll = next;
-			placeTabs(lastTabs, lastTabIcons);
-		}
-	}
-
-	/**
-	 * Widgets draw in child order. When the bank interface is rebuilt some of our tab widgets can be dropped
-	 * while others survive, and re-creating only the dropped ones puts backgrounds above surviving icons. If
-	 * anything is missing or out of order, start the whole strip over so it's created wheel area, then
-	 * background and icon per tab.
-	 */
-	private void resetTabsIfMisordered(Widget parent)
-	{
-		Widget[] children = parent.getDynamicChildren();
-		Map<Widget, Integer> index = new HashMap<>();
-		for (int i = 0; children != null && i < children.length; i++)
-		{
-			index.put(children[i], i);
-		}
-
-		boolean ok = tabBackgrounds.size() == tabWidgets.size();
-		int previous = tabScrollWidgets.isEmpty() ? -1 : index.getOrDefault(tabScrollWidgets.get(0), Integer.MAX_VALUE);
-		for (int i = 0; ok && i < tabWidgets.size(); i++)
-		{
-			int back = index.getOrDefault(tabBackgrounds.get(i), -1);
-			int icon = index.getOrDefault(tabWidgets.get(i), -1);
-			ok = back > previous && icon > back;
-			previous = icon;
-		}
-		if (!ok)
-		{
-			for (List<Widget> pool : Arrays.asList(tabScrollWidgets, tabBackgrounds, tabWidgets))
-			{
-				pool.forEach(w -> w.setHidden(true));
-				pool.clear();
-			}
-		}
-	}
-
-	private void hideTabs(int from)
-	{
-		for (List<Widget> pool : Arrays.asList(tabWidgets, tabBackgrounds))
-		{
-			for (int i = from; i < pool.size(); i++)
-			{
-				pool.get(i).setHidden(true);
-			}
-		}
-		if (from == 0)
-		{
-			// No tabs showing, so nothing to scroll: this also stops arrow clicks from bringing them back.
-			tabScrollWidgets.forEach(w -> w.setHidden(true));
-			maxTabScroll = 0;
-		}
-	}
-
 	private void hideOurWidgets()
 	{
 		hideHeaders(0);
-		hideTabs(0);
-		copyWidgets.forEach(w -> w.setHidden(true));
+		tabStrip.hideTabs(0);
+		itemCopies.hideFrom(0);
 	}
 
 	private void toggleCollapsed(String category)
