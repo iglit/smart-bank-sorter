@@ -1,110 +1,1574 @@
-# Item categories for the author's bank, classified from the OSRS Wiki by Haiku agents (2026-11-07), then rule-checked.
-# Format: Item name|Main category|Extra categories (copies)|Tier 1-5 (1 = most used). User rules override these.
+# Item categories classified from the OSRS Wiki by Haiku agents (2026-11-07), rule-checked; the author's bank items hand-reviewed.
+# Format: Item name|Main category|Extra categories (copies)|Tier 1-5 (1 = most used). Variants (charges, (i), degrade) fall back to the base name.
+# For combat gear, item stats decide Melee/Ranged/Magic; this file only moves gear out of the styles. User rules override everything.
+Graceful boots|Agility|Farming,Hunter,Runecraft,Thieving|2
+Graceful cape|Agility|Farming,Hunter,Runecraft,Thieving|2
 Graceful gloves|Agility|Farming,Hunter,Runecraft,Thieving|2
+Graceful hood|Agility|Farming,Hunter,Runecraft,Thieving|2
 Graceful legs|Agility|Farming,Hunter,Runecraft,Thieving|2
 Graceful top|Agility|Farming,Hunter,Runecraft,Thieving|2
 Mark of Grace|Agility||2
 Climbing boots|Agility|Melee|3
 Mith grapple|Agility||3
+Mith grapple tip|Agility||3
+Boots of lightness|Agility||4
+Runner boots|Agility||4
+Runner hat|Agility||4
+Sigil of the Gnomes|Agility||4
+Casket|Clues||2
 Scroll box (beginner)|Clues||2
 Scroll box (easy)|Clues||2
 Scroll box (elite)|Clues||2
 Scroll box (hard)|Clues||2
 Scroll box (medium)|Clues||2
+Clue box|Clues||3
+Clue hunter boots|Clues||3
+Clue hunter cloak|Clues||3
+Clue hunter garb|Clues||3
+Clue hunter gloves|Clues||3
+Clue hunter trousers|Clues||3
 Crystal key|Clues||3
+Heavy casket|Clues||3
+Crushed nest|Clues||4
+Kharedst's memoirs|Clues||4
+M. treasure chest|Clues||4
+Scroll sack|Clues||4
+Sigil of the Treasure Hunter|Clues||4
 Tooth half of key|Clues||4
+Clueless scroll|Clues||5
 Bolt of cloth|Construction||2
 Iron nails|Construction||2
 Plank|Construction||2
 Steel nails|Construction||2
+Adamantite nails|Construction||3
+Bolt of canvas|Construction||3
+Bolt of cotton|Construction||3
+Bolt of linen|Construction||3
+Builder's boots|Construction||3
+Builder's shirt|Construction||3
+Builder's trousers|Construction||3
+Carpenter's boots|Construction||3
+Carpenter's helmet|Construction||3
+Carpenter's shirt|Construction||3
+Carpenter's trousers|Construction||3
+Construct. cape|Construction||3
+Construct. hood|Construction||3
+Crate of planks|Construction||3
+Dragon nails|Construction||3
+Granite (2kg)|Construction||3
+Granite (500g)|Construction||3
+Granite (5kg)|Construction||3
+Ironwood plank|Construction||3
 Mahogany plank|Construction||3
+Marble block|Construction||3
 Mithril nails|Construction||3
 Oak plank|Construction||3
+Rune nails|Construction||3
+Sandstone (10kg)|Construction||3
+Sandstone (1kg)|Construction||3
+Sandstone (2kg)|Construction||3
+Sandstone (5kg)|Construction||3
 Saw|Construction||3
+Teak plank|Construction||3
+Bolt rack|Construction||4
+Bookcase|Construction||4
 Bronze nails|Construction||4
+Camphor plank|Construction||4
+Carved oak bench|Construction||4
+Carved oak magic wardrobe|Construction||4
+Carved oak table|Construction||4
+Carved teak bench|Construction||4
+Carved teak magic wardrobe|Construction||4
+Carved teak table|Construction||4
 Construction guide|Construction||4
+Crate of granite|Construction||4
+Crate of sandstone|Construction||4
+Crude chair|Construction||4
+Fancy teak dresser|Construction||4
+Four-poster bed|Construction||4
+Gilded bench|Construction||4
+Kitchen table|Construction||4
+Large oak bed|Construction||4
+Large teak bed|Construction||4
 Limestone brick|Construction||4
+Log brace|Construction||4
+Magic cape rack|Construction||4
+Mahogany armchair|Construction||4
+Mahogany armour case|Construction||4
+Mahogany bench|Construction||4
+Mahogany bookcase|Construction||4
+Mahogany cape rack|Construction||4
+Mahogany dresser|Construction||4
+Mahogany fancy dress box|Construction||4
+Mahogany magic wardrobe|Construction||4
+Mahogany table|Construction||4
+Mahogany toy box|Construction||4
+Mahogany wardrobe|Construction||4
+Marble cape rack|Construction||4
+Marble magic wardrobe|Construction||4
+Nail beast nails|Construction||4
+Oak armchair|Construction||4
+Oak armour case|Construction||4
+Oak bed|Construction||4
+Oak bench|Construction||4
+Oak bookcase|Construction||4
+Oak cape rack|Construction||4
+Oak chair|Construction||4
+Oak clock|Construction||4
+Oak dining table|Construction||4
+Oak drawers|Construction||4
+Oak dresser|Construction||4
+Oak fancy dress box|Construction||4
+Oak kitchen table|Construction||4
+Oak magic wardrobe|Construction||4
+Oak shaving stand|Construction||4
+Oak toy box|Construction||4
+Oak wardrobe|Construction||4
+Rocking chair|Construction||4
+Sawmill voucher|Construction||4
+Small box hedge|Construction||4
+Steel coffin|Construction||4
+Tall box hedge|Construction||4
+Tall fancy hedge|Construction||4
+Teak armchair|Construction||4
+Teak armour case|Construction||4
+Teak bed|Construction||4
+Teak cape rack|Construction||4
+Teak clock|Construction||4
+Teak dining bench|Construction||4
+Teak drawers|Construction||4
+Teak dresser|Construction||4
+Teak fancy dress box|Construction||4
+Teak kitchen table|Construction||4
+Teak magic wardrobe|Construction||4
+Teak repair kit|Construction||4
+Teak table|Construction||4
+Teak toy box|Construction||4
+Teak treasure chest|Construction||4
+Teak wardrobe|Construction||4
+Thatch spar dense|Construction||4
+Thatch spar light|Construction||4
+Thatch spar med|Construction||4
+Thorny hedge|Construction||4
+Timber beam|Construction||4
+Topiary hedge|Construction||4
+Wood dining table|Construction||4
+Wooden bed|Construction||4
+Wooden bench|Construction||4
+Wooden chair|Construction||4
+Amy's saw|Construction||5
+Amy's saw (off-hand)|Construction||5
+Black coffin|Construction||5
+Black nails|Construction||5
+Bronze coffin|Construction||5
+Fancy hedge|Construction||5
+Gilded armour set (lg)|Construction||5
+Gilded cape rack|Construction||5
+Gilded clock|Construction||5
+Gilded dresser|Construction||5
+Gilded four-poster|Construction||5
+Gilded magic wardrobe|Construction||5
+Gilded wardrobe|Construction||5
+Guthix armour set (lg)|Construction||5
+Nice hedge|Construction||5
+Oak treasure chest|Construction||5
+Open black coffin|Construction||5
+Open bronze coffin|Construction||5
+Open gold coffin|Construction||5
+Open silver coffin|Construction||5
+Open steel coffin|Construction||5
+Opulent table|Construction||5
+Raging echoes curtains|Construction||5
+Wooden cat|Construction||5
+Grapes|Cooking||2
 Leaping trout|Cooking||2
 Raw swordfish|Cooking||2
 Raw tuna|Cooking||2
+Bluegill|Cooking||3
+Bread dough|Cooking||3
+Bucket of milk|Cooking||3
+Chicken|Cooking||3
+Cleaver|Cooking||3
+Coconut|Cooking||3
 Coconut milk|Cooking||3
+Cooking apple|Cooking||3
+Cooking cape|Cooking||3
 Cooking gauntlets|Cooking||3
+Cooking hood|Cooking||3
+Frying pan|Cooking||3
+Garlic|Cooking||3
+Grain|Cooking||3
+Lean snail|Cooking||3
+Leaping salmon|Cooking||3
+Leaping sturgeon|Cooking||3
+Mottled eel|Cooking||3
+Olive oil(4)|Cooking||3
+Onions(10)|Cooking||3
 Pie dish|Cooking||3
+Raw anglerfish|Cooking||3
+Raw dark crab|Cooking||3
+Raw karambwan|Cooking||3
 Raw karambwanji|Cooking||3
+Raw lobster|Cooking||3
+Raw marlin|Cooking||3
+Raw monkfish|Cooking||3
+Raw sea turtle|Cooking||3
+Raw shark|Cooking||3
+Rolling pin|Cooking||3
+Saucepan|Cooking||3
+Skewer|Cooking||3
+Spatula|Cooking||3
+Spice|Cooking||3
+Thin snail|Cooking||3
 Trout|Cooking||3
+Ugthanki & onion|Cooking||3
+Ugthanki & tomato|Cooking||3
+Wrapped oomlie|Cooking||3
+Apple mush|Cooking||4
+Barley|Cooking||4
+Cake tin|Cooking||4
+Chef's hat|Cooking||4
+Chocolate dust|Cooking||4
+Chopped garlic|Cooking||4
+Chopped ugthanki|Cooking||4
+Common tench|Cooking||4
+Crab paste|Cooking||4
+Crate of antelope meat|Cooking||4
+Crate of bananas|Cooking||4
+Crate of barley|Cooking||4
+Crate of bear meat|Cooking||4
+Crate of berries|Cooking||4
+Crate of coconuts|Cooking||4
+Crate of crab paste|Cooking||4
+Crate of fish|Cooking||4
+Crate of fruit|Cooking||4
+Crate of honey|Cooking||4
+Crate of karambwans|Cooking||4
+Crate of lobsters|Cooking||4
+Crate of meat|Cooking||4
+Crate of monkfish|Cooking||4
+Crate of onions|Cooking||4
+Crate of oranges|Cooking||4
+Crate of pineapples|Cooking||4
+Crate of potatoes|Cooking||4
+Crate of rabbit meat|Cooking||4
+Crate of spices|Cooking||4
+Crate of vegetables|Cooking||4
+Curry leaf|Cooking||4
+Egg whisk|Cooking||4
+Fine fish offcuts|Cooking||4
+Fish offcuts|Cooking||4
+Garlic powder|Cooking||4
+Gianne dough|Cooking||4
+Gnome spice|Cooking||4
+Golden tench|Cooking||4
+Ham joint|Cooking||4
+Iron spit|Cooking||4
+Kebab mix|Cooking||4
+Meat tenderiser|Cooking||4
+Oranges(5)|Cooking||4
+Oyster|Cooking||4
+Pastry dough|Cooking||4
+Pat of butter|Cooking||4
+Pie recipe book|Cooking||4
+Pie shell|Cooking||4
+Pitta bread|Cooking||4
+Pizza base|Cooking||4
+Pot of cornflour|Cooking||4
+Pot of flour|Cooking||4
+Raw admiral pie|Cooking||4
+Raw anchovies|Cooking||4
+Raw barb-tailed kebbit|Cooking||4
+Raw bass|Cooking||4
+Raw bear meat|Cooking||4
+Raw beast meat|Cooking||4
+Raw beef|Cooking||4
+Raw bird meat|Cooking||4
+Raw bluefin|Cooking||4
+Raw cave eel|Cooking||4
+Raw chicken|Cooking||4
+Raw chompy|Cooking||4
+Raw cod|Cooking||4
+Raw dashing kebbit|Cooking||4
+Raw fish pie|Cooking||4
+Raw garden pie|Cooking||4
+Raw giant krill|Cooking||4
+Raw graahk|Cooking||4
+Raw haddock|Cooking||4
+Raw halibut|Cooking||4
+Raw herring|Cooking||4
+Raw jubbly|Cooking||4
+Raw kyatt|Cooking||4
+Raw larupia|Cooking||4
+Raw mackerel|Cooking||4
+Raw manta ray|Cooking||4
+Raw moonlight antelope|Cooking||4
+Raw mud pie|Cooking||4
+Raw oomlie|Cooking||4
+Raw pike|Cooking||4
+Raw pyre fox|Cooking||4
+Raw rabbit|Cooking||4
+Raw rainbow fish|Cooking||4
+Raw rat meat|Cooking||4
+Raw salmon|Cooking||4
+Raw sardine|Cooking||4
+Raw shrimps|Cooking||4
+Raw slimy eel|Cooking||4
+Raw summer pie|Cooking||4
+Raw sunlight antelope|Cooking||4
+Raw t-bone steak|Cooking||4
+Raw trout|Cooking||4
+Raw ugthanki meat|Cooking||4
+Raw wild kebbit|Cooking||4
+Raw wild pie|Cooking||4
+Raw yak meat|Cooking||4
+Raw yellowfin|Cooking||4
+Redberries|Cooking||4
+Sigil of the Chef|Cooking||4
+Skewer stick|Cooking||4
+Sliced mushrooms|Cooking||4
+Spider carcass|Cooking||4
+Squid paste|Cooking||4
+Te salt|Cooking||4
+Uncooked apple pie|Cooking||4
+Uncooked berry pie|Cooking||4
+Uncooked botanical pie|Cooking||4
+Uncooked dragonfruit pie|Cooking||4
+Uncooked egg|Cooking||4
+Uncooked meat pie|Cooking||4
+Uncooked mushroom pie|Cooking||4
+Urt salt|Cooking||4
+Yellow fin|Cooking||4
+Zamorak's grapes|Cooking||4
+Ale yeast|Cooking||5
+Amylase crystal|Cooking||5
+Barley malt|Cooking||5
+Batta tin|Cooking||5
 Bowl|Cooking||5
+Cabbages(10)|Cooking||5
+Crunchy tray|Cooking||5
+Egg|Cooking||5
+Empty cup|Cooking||5
+Gianne's cook book|Cooking||5
+Golden chef's hat|Cooking||5
 Pot|Cooking||5
+Pot lid|Cooking||5
+Spork|Cooking||5
+Wooden spoon|Cooking||5
+Max cape|Cosmetic||2
+Max hood|Cosmetic||2
+Saradomin max cape|Cosmetic||2
+Saradomin max hood|Cosmetic||2
+Accumulator max cape|Cosmetic||3
+Accumulator max hood|Cosmetic||3
+Agility cape|Cosmetic||3
+Ardougne max cape|Cosmetic||3
+Ardougne max hood|Cosmetic||3
+Assembler max cape|Cosmetic||3
+Assembler max hood|Cosmetic||3
+Attack cape|Cosmetic||3
+Farming cape|Cosmetic||3
+Farming hood|Cosmetic||3
+Firemaking cape|Cosmetic||3
+Firemaking hood|Cosmetic||3
+Fishing cape|Cosmetic||3
+Fishing hood|Cosmetic||3
+Fletching cape|Cosmetic||3
+Fletching hood|Cosmetic||3
+Guthix max cape|Cosmetic||3
+Guthix max hood|Cosmetic||3
+Herblore cape|Cosmetic||3
+Herblore hood|Cosmetic||3
+Hitpoints cape|Cosmetic||3
+Hitpoints hood|Cosmetic||3
+Hunter cape|Cosmetic||3
+Hunter hood|Cosmetic||3
+Imbued ancient max cape|Cosmetic||3
+Imbued ancient max hood|Cosmetic||3
+Imbued Guthix cape|Cosmetic||3
+Imbued Guthix max cape|Cosmetic||3
+Imbued Guthix max hood|Cosmetic||3
+Imbued Saradomin cape|Cosmetic||3
+Imbued Saradomin max cape|Cosmetic||3
+Imbued Saradomin max hood|Cosmetic||3
+Imbued Zamorak cape|Cosmetic||3
+Imbued Zamorak max cape|Cosmetic||3
+Imbued Zamorak max hood|Cosmetic||3
+Infernal max cape|Cosmetic||3
+Infernal max hood|Cosmetic||3
+Mythical cape|Cosmetic||3
+Mythical max cape|Cosmetic||3
+Mythical max hood|Cosmetic||3
+Prayer cape|Cosmetic||3
+Prayer hood|Cosmetic||3
+Runecraft cape|Cosmetic||3
+Runecraft hood|Cosmetic||3
+Sailing cape|Cosmetic||3
+Sailing hood|Cosmetic||3
+Smithing cape|Cosmetic||3
+Smithing hood|Cosmetic||3
+Zamorak max cape|Cosmetic||3
+Zamorak max hood|Cosmetic||3
+Achievement diary hood|Cosmetic||4
+Adamant gold-trimmed set (lg)|Cosmetic||4
+Adamant set (lg)|Cosmetic||4
+Adamant trimmed set (lg)|Cosmetic||4
+Agility hood|Cosmetic||4
+Ancient halo|Cosmetic||4
+Anguish ornament kit|Cosmetic||4
+Armadyl godsword ornament kit|Cosmetic||4
+Armadyl halo|Cosmetic||4
+Attack hood|Cosmetic||4
+Bandos godsword ornament kit|Cosmetic||4
+Bandos halo|Cosmetic||4
+Berserker necklace ornament kit|Cosmetic||4
+Castlewars cloak|Cosmetic||4
+Castlewars hood|Cosmetic||4
+Crab helmet|Cosmetic||4
+Crate of dyes|Cosmetic||4
+Dark infinity colour kit|Cosmetic||4
+Deadman's cape|Cosmetic||4
+Defence cape|Cosmetic||4
+Defence hood|Cosmetic||4
+Eagle cape|Cosmetic||4
 Emissary hood|Cosmetic||4
 Emissary robe bottom|Cosmetic||4
 Emissary robe top|Cosmetic||4
 Emissary sandals|Cosmetic||4
+Farmer's jacket|Cosmetic||4
+Frog mask|Cosmetic||4
+Fury ornament kit|Cosmetic||4
 Gorilla greegree|Cosmetic||4
+Gravedigger boots|Cosmetic||4
+Gravedigger gloves|Cosmetic||4
+Gravedigger leggings|Cosmetic||4
+Gravedigger mask|Cosmetic||4
+Gravedigger top|Cosmetic||4
+Guthix cloak|Cosmetic||4
+Hosidius hood|Cosmetic||4
+Infernal max cape (l) (mangled)|Cosmetic||4
+Magic cape|Cosmetic||4
+Mithril gold-trimmed set (lg)|Cosmetic||4
+Mithril trimmed set (lg)|Cosmetic||4
+Mudskipper hat|Cosmetic||4
+Music cape|Cosmetic||4
+Music hood|Cosmetic||4
 Ninja monkey greegree|Cosmetic||4
+Occult ornament kit|Cosmetic||4
+Quest point cape|Cosmetic||4
+Quest point hood|Cosmetic||4
+Right eye patch|Cosmetic||4
+Royal crown|Cosmetic||4
+Royal sceptre|Cosmetic||4
+Rune defender ornament kit|Cosmetic||4
+Rune dragon mask|Cosmetic||4
+Rune scimitar ornament kit (Guthix)|Cosmetic||4
+Rune scimitar ornament kit (Saradomin)|Cosmetic||4
+Rune scimitar ornament kit (Zamorak)|Cosmetic||4
+Samurai boots|Cosmetic||4
+Samurai gloves|Cosmetic||4
+Samurai greaves|Cosmetic||4
+Samurai kasa|Cosmetic||4
+Samurai shirt|Cosmetic||4
+Saradomin cape|Cosmetic||4
+Saradomin cloak|Cosmetic||4
+Saradomin godsword ornament kit|Cosmetic||4
+Saradomin halo|Cosmetic||4
+Saradomin stole|Cosmetic||4
+Seren halo|Cosmetic||4
+Shaman mask|Cosmetic||4
+Shattered cannon ornament kit|Cosmetic||4
+Shayzien scarf|Cosmetic||4
+Shoulder parrot|Cosmetic||4
+Slave boots|Cosmetic||4
+Slave robe|Cosmetic||4
+Slave shirt|Cosmetic||4
+Tormented ornament kit|Cosmetic||4
+Torture ornament kit|Cosmetic||4
+Tzhaar-ket-om ornament kit|Cosmetic||4
+White dark bow paint|Cosmetic||4
+Yellow dark bow paint|Cosmetic||4
+Zamorak godsword ornament kit|Cosmetic||4
 Zombie monkey greegree|Cosmetic||4
+10th birthday balloons|Cosmetic||5
+10th birthday cape|Cosmetic||5
+10th squad sigil|Cosmetic||5
+20th anniversary boots|Cosmetic||5
+20th anniversary bottom|Cosmetic||5
+20th anniversary cape|Cosmetic||5
+20th anniversary gloves|Cosmetic||5
+20th anniversary hat|Cosmetic||5
+20th anniversary necklace|Cosmetic||5
+20th anniversary top|Cosmetic||5
+25th anniversary 5x5 hat|Cosmetic||5
+25th anniversary helmet|Cosmetic||5
+25th anniversary skeleton tabard|Cosmetic||5
+25th anniversary warrior tabard|Cosmetic||5
+4th birthday hat|Cosmetic||5
+A jester stick|Cosmetic||5
+A powdered wig|Cosmetic||5
+Adventurer's cape|Cosmetic||5
+Afro|Cosmetic||5
+Alchemist gloves|Cosmetic||5
+Alchemist labcoat|Cosmetic||5
+Alchemist pants|Cosmetic||5
+Ancient rune armour set (lg)|Cosmetic||5
+Ankou gloves|Cosmetic||5
+Ankou mask|Cosmetic||5
+Ankou socks|Cosmetic||5
+Ankou top|Cosmetic||5
+Ankou's leggings|Cosmetic||5
+Anti-panties|Cosmetic||5
+Antisanta boots|Cosmetic||5
+Antisanta gloves|Cosmetic||5
+Antisanta jacket|Cosmetic||5
+Antisanta mask|Cosmetic||5
+Antisanta pantaloons|Cosmetic||5
+Arceuus banner|Cosmetic||5
+Armadyl rune armour set (lg)|Cosmetic||5
+Armageddon rug|Cosmetic||5
+Banana cape|Cosmetic||5
+Banana hat|Cosmetic||5
+Bandana eyepatch (blue)|Cosmetic||5
+Bandana eyepatch (brown)|Cosmetic||5
+Bandana eyepatch (red)|Cosmetic||5
+Bandana eyepatch (white)|Cosmetic||5
+Bandos rune armour set (lg)|Cosmetic||5
+Beanie|Cosmetic||5
+Bear feet|Cosmetic||5
+Bedsheet|Cosmetic||5
+Beer belly sweater|Cosmetic||5
+Beige pumpkin (angry)|Cosmetic||5
+Beige pumpkin (depressed)|Cosmetic||5
+Beige pumpkin (disgusted)|Cosmetic||5
+Beige pumpkin (evil)|Cosmetic||5
+Beige pumpkin (happy)|Cosmetic||5
+Beige pumpkin (laughing)|Cosmetic||5
+Beige pumpkin (sad)|Cosmetic||5
+Beige pumpkin (shocked)|Cosmetic||5
+Beige pumpkin (silly)|Cosmetic||5
+Beret mask|Cosmetic||5
+Big pirate hat|Cosmetic||5
+Bird mask|Cosmetic||5
+Birthday balloons|Cosmetic||5
+Birthday cake|Cosmetic||5
+Black beret|Cosmetic||5
+Black boater|Cosmetic||5
+Black cane|Cosmetic||5
+Black cape|Cosmetic||5
+Black desert robe|Cosmetic||5
+Black desert shirt|Cosmetic||5
+Black dragon mask|Cosmetic||5
+Black elegant legs|Cosmetic||5
+Black elegant shirt|Cosmetic||5
+Black gold-trimmed set (lg)|Cosmetic||5
+Black h'ween mask|Cosmetic||5
+Black headband|Cosmetic||5
+Black leprechaun hat|Cosmetic||5
+Black locks|Cosmetic||5
+Black naval shirt|Cosmetic||5
+Black navy slacks|Cosmetic||5
+Black partyhat|Cosmetic||5
+Black santa hat|Cosmetic||5
+Black set (lg)|Cosmetic||5
+Black skirt|Cosmetic||5
+Black toy horsey|Cosmetic||5
+Black tricorn hat|Cosmetic||5
+Black trimmed set (lg)|Cosmetic||5
+Black unicorn mask|Cosmetic||5
+Blue beret|Cosmetic||5
+Blue boater|Cosmetic||5
+Blue boots|Cosmetic||5
 Blue cape|Cosmetic||5
+Blue dark bow paint|Cosmetic||5
+Blue dragon mask|Cosmetic||5
+Blue elegant blouse|Cosmetic||5
+Blue elegant legs|Cosmetic||5
+Blue elegant shirt|Cosmetic||5
+Blue elegant skirt|Cosmetic||5
+Blue halloween mask|Cosmetic||5
+Blue hat|Cosmetic||5
+Blue headband|Cosmetic||5
+Blue naval shirt|Cosmetic||5
+Blue navy slacks|Cosmetic||5
+Blue partyhat|Cosmetic||5
+Blue skirt|Cosmetic||5
+Blue tricorn hat|Cosmetic||5
+Bob the cat slippers|Cosmetic||5
+Bob's black shirt|Cosmetic||5
+Bob's blue shirt|Cosmetic||5
+Bob's green shirt|Cosmetic||5
+Bob's purple shirt|Cosmetic||5
+Bob's red shirt|Cosmetic||5
+Bobble hat|Cosmetic||5
+Bobble scarf|Cosmetic||5
 Bomber cap|Cosmetic||5
 Bomber jacket|Cosmetic||5
+Bowl wig|Cosmetic||5
+Brassica halo|Cosmetic||5
+Broken zombie helmet|Cosmetic||5
+Bronze dragon mask|Cosmetic||5
+Bronze fist flag|Cosmetic||5
+Bronze gold-trimmed set (lg)|Cosmetic||5
+Bronze set (lg)|Cosmetic||5
+Bronze trimmed set (lg)|Cosmetic||5
+Brown apron|Cosmetic||5
+Brown headband|Cosmetic||5
+Brown naval shirt|Cosmetic||5
+Brown navy slacks|Cosmetic||5
+Brown toy horsey|Cosmetic||5
+Brown tricorn hat|Cosmetic||5
+Brutus slippers|Cosmetic||5
+Bunny ears|Cosmetic||5
+Bunny feet|Cosmetic||5
+Bunny legs|Cosmetic||5
+Bunny paws|Cosmetic||5
+Bunny top|Cosmetic||5
+Bunnyman mask|Cosmetic||5
+Butler's tray|Cosmetic||5
+Butler's uniform|Cosmetic||5
+Cabbage cape|Cosmetic||5
+Cake hat|Cosmetic||5
+Camel mask|Cosmetic||5
+Candy cane|Cosmetic||5
+Cap and goggles|Cosmetic||5
+Cape of skulls|Cosmetic||5
+Carrot costume body|Cosmetic||5
+Carrot costume gloves|Cosmetic||5
+Carrot costume hat|Cosmetic||5
+Carrot costume tights|Cosmetic||5
+Cat ears|Cosmetic||5
+Cat mask|Cosmetic||5
+Champion's cape|Cosmetic||5
+Chicken feet|Cosmetic||5
+Chicken head|Cosmetic||5
+Chicken legs|Cosmetic||5
+Chicken wings|Cosmetic||5
+Christmas cracker|Cosmetic||5
+Christmas jumper|Cosmetic||5
+Citizen shoes|Cosmetic||5
+Citizen top|Cosmetic||5
+Citizen trousers|Cosmetic||5
+Clan cloak|Cosmetic||5
+Classic imp hood|Cosmetic||5
+Classic imp tail|Cosmetic||5
+Cloak of Ruin|Cosmetic||5
+Clockwork suit|Cosmetic||5
+Clown bow tie|Cosmetic||5
+Clown gown|Cosmetic||5
+Clown mask|Cosmetic||5
+Clown shoes|Cosmetic||5
+Clown trousers|Cosmetic||5
+Cobweb cape|Cosmetic||5
+Colourful cape|Cosmetic||5
+Colourful crown shirt|Cosmetic||5
+Colourful jumper|Cosmetic||5
+Colourful scarf|Cosmetic||5
+Cow gloves|Cosmetic||5
+Cow mask|Cosmetic||5
+Cow shoes|Cosmetic||5
+Cow slippers|Cosmetic||5
+Cow top|Cosmetic||5
+Cow trousers|Cosmetic||5
+Cowbell amulet|Cosmetic||5
+Crate of clothes|Cosmetic||5
+Crate of eye patches|Cosmetic||5
+Crate of peg legs|Cosmetic||5
+Crate of protective clothing|Cosmetic||5
+Cream boots|Cosmetic||5
+Cream hat|Cosmetic||5
+Cream robe bottoms|Cosmetic||5
+Cream robe top|Cosmetic||5
+Crier coat|Cosmetic||5
+Crier hat|Cosmetic||5
+Crystal crown|Cosmetic||5
+Crystal glider's hat|Cosmetic||5
+Crystal glider's jacket|Cosmetic||5
+Crystal glider's shoes|Cosmetic||5
+Crystal glider's trousers|Cosmetic||5
+Dark bow tie|Cosmetic||5
+Dark cavalier|Cosmetic||5
+Dark green pumpkin (angry)|Cosmetic||5
+Dark green pumpkin (depressed)|Cosmetic||5
+Dark green pumpkin (disgusted)|Cosmetic||5
+Dark green pumpkin (evil)|Cosmetic||5
+Dark green pumpkin (happy)|Cosmetic||5
+Dark green pumpkin (laughing)|Cosmetic||5
+Dark green pumpkin (sad)|Cosmetic||5
+Dark green pumpkin (shocked)|Cosmetic||5
+Dark green pumpkin (silly)|Cosmetic||5
+Dark trousers|Cosmetic||5
+Dark tuxedo cuffs|Cosmetic||5
+Dark tuxedo jacket|Cosmetic||5
+Dark tuxedo shoes|Cosmetic||5
+Decorative armour|Cosmetic||5
+Decorative boots (broken)|Cosmetic||5
+Decorative full helm|Cosmetic||5
+Decorative helm|Cosmetic||5
+Decorative shield|Cosmetic||5
+Decorative sword|Cosmetic||5
+Deerstalker|Cosmetic||5
 Demonic pacts bronze trophy|Cosmetic||5
 Demonic pacts iron trophy|Cosmetic||5
+Desert camo legs|Cosmetic||5
+Desert camo top|Cosmetic||5
+Desert disguise|Cosmetic||5
+Desert legs|Cosmetic||5
 Desert robe|Cosmetic||5
+Desert robes|Cosmetic||5
 Desert shirt|Cosmetic||5
+Desert top|Cosmetic||5
+Dni23 arms bare|Cosmetic||5
+Dni23 arms bareshoulders|Cosmetic||5
+Dni23 arms frilly|Cosmetic||5
+Dni23 arms loosesleeves|Cosmetic||5
+Dni23 arms princely|Cosmetic||5
+Dni23 arms ripped|Cosmetic||5
+Dni23 arms shoulderpads|Cosmetic||5
+Dni23 arms tattylong|Cosmetic||5
+Dni23 arms tattyshort|Cosmetic||5
+Dni23 arms thickstripe|Cosmetic||5
+Dni23 arms thin|Cosmetic||5
+Dni23 legs beach|Cosmetic||5
+Dni23 legs bighem|Cosmetic||5
+Dni23 legs layered|Cosmetic||5
+Dni23 legs leggings|Cosmetic||5
+Dni23 legs longnarrowskirt|Cosmetic||5
+Dni23 legs longskirt|Cosmetic||5
+Dni23 legs patched|Cosmetic||5
+Dni23 legs patchedskirt|Cosmetic||5
+Dni23 legs patterned|Cosmetic||5
+Dni23 legs princely|Cosmetic||5
+Dni23 legs ripped|Cosmetic||5
+Dni23 legs sashdots|Cosmetic||5
+Dni23 legs sashtrousers|Cosmetic||5
+Dni23 legs shorts|Cosmetic||5
+Dni23 legs shortskirt|Cosmetic||5
+Dni23 legs sidestripes|Cosmetic||5
+Dni23 legs skirt|Cosmetic||5
+Dni23 legs tornskirt|Cosmetic||5
+Dni23 torso bodice|Cosmetic||5
+Dni23 torso corsetry|Cosmetic||5
+Dni23 torso croptops|Cosmetic||5
+Dni23 torso darkbuttons|Cosmetic||5
+Dni23 torso frilly|Cosmetic||5
+Dni23 torso lightbuttons|Cosmetic||5
+Dni23 torso poloneck|Cosmetic||5
+Dni23 torso princely|Cosmetic||5
+Dni23 torso rippedweskit|Cosmetic||5
+Dni23 torso shirt|Cosmetic||5
+Dni23 torso simple|Cosmetic||5
+Dni23 torso stitching|Cosmetic||5
+Dni23 torso twotoned|Cosmetic||5
+Doctor's hat|Cosmetic||5
+Dog boots|Cosmetic||5
+Dog disguise|Cosmetic||5
+Double eye patch|Cosmetic||5
+Dragon boots ornament kit|Cosmetic||5
+Dragon cane|Cosmetic||5
+Dragon chainbody ornament kit|Cosmetic||5
+Dragon defender ornament kit|Cosmetic||5
+Dragon full helm ornament kit|Cosmetic||5
+Dragon kiteshield ornament kit|Cosmetic||5
+Dragon legs/skirt ornament kit|Cosmetic||5
+Dragon platebody ornament kit|Cosmetic||5
+Dragon scimitar ornament kit|Cosmetic||5
+Dragon sq shield ornament kit|Cosmetic||5
+Easter basket|Cosmetic||5
+Easter egg helm|Cosmetic||5
+Easter hat|Cosmetic||5
+Easter ring|Cosmetic||5
+Egg priest mitre|Cosmetic||5
+Egg priest necklace|Cosmetic||5
+Egg priest robe|Cosmetic||5
+Egg priest robe top|Cosmetic||5
+Elven boots|Cosmetic||5
+Elven gloves|Cosmetic||5
+Elven legwear|Cosmetic||5
+Elven skirt|Cosmetic||5
+Elven top|Cosmetic||5
+Fake beak|Cosmetic||5
+Fake beard|Cosmetic||5
+Fancier boots|Cosmetic||5
+Fancy boots|Cosmetic||5
+Farmer's boro trousers|Cosmetic||5
+Farmer's shirt|Cosmetic||5
+Farmer's strawhat|Cosmetic||5
+Fedora|Cosmetic||5
+Festive elf hat|Cosmetic||5
+Festive elf slippers|Cosmetic||5
+Festive games crown|Cosmetic||5
+Festive nutcracker boots|Cosmetic||5
+Festive nutcracker hat|Cosmetic||5
+Festive nutcracker staff|Cosmetic||5
+Festive nutcracker top|Cosmetic||5
+Festive nutcracker trousers|Cosmetic||5
+Festive scarf|Cosmetic||5
+Fez|Cosmetic||5
+Fighter hat|Cosmetic||5
+Fishy prison uniform top|Cosmetic||5
+Flared trousers|Cosmetic||5
+Flower crown|Cosmetic||5
+Fremennik beige shirt|Cosmetic||5
+Fremennik black cloak|Cosmetic||5
+Fremennik blue cloak|Cosmetic||5
+Fremennik blue shirt|Cosmetic||5
+Fremennik boots|Cosmetic||5
+Fremennik brown cloak|Cosmetic||5
+Fremennik brown shirt|Cosmetic||5
+Fremennik cyan cloak|Cosmetic||5
+Fremennik gloves|Cosmetic||5
+Fremennik green cloak|Cosmetic||5
+Fremennik grey cloak|Cosmetic||5
+Fremennik grey shirt|Cosmetic||5
+Fremennik hat|Cosmetic||5
+Fremennik helm|Cosmetic||5
+Fremennik kilt|Cosmetic||5
+Fremennik pink cloak|Cosmetic||5
+Fremennik purple cloak|Cosmetic||5
+Fremennik red cloak|Cosmetic||5
+Fremennik red shirt|Cosmetic||5
+Fremennik robe|Cosmetic||5
+Fremennik skirt|Cosmetic||5
+Fremennik teal cloak|Cosmetic||5
+Fremennik yellow cloak|Cosmetic||5
+Frog slippers|Cosmetic||5
 Gauntlet cape|Cosmetic||5
+Giant easter egg|Cosmetic||5
+Gilded smile flag|Cosmetic||5
+Gnome child backpack|Cosmetic||5
+Gnome child hat|Cosmetic||5
+Gnome child mask|Cosmetic||5
+Gnome child plush|Cosmetic||5
+Gnome goggles|Cosmetic||5
+Gnome scarf|Cosmetic||5
+Goblin mask|Cosmetic||5
+Gold elegant blouse|Cosmetic||5
+Gold elegant legs|Cosmetic||5
+Gold elegant shirt|Cosmetic||5
+Gold elegant skirt|Cosmetic||5
+Gold headband|Cosmetic||5
+Gold speedrun trophy|Cosmetic||5
+Golden apron|Cosmetic||5
+Golovanova fruit top|Cosmetic||5
+Greater demon mask|Cosmetic||5
+Green boater|Cosmetic||5
+Green cape|Cosmetic||5
+Green dark bow paint|Cosmetic||5
+Green dragon mask|Cosmetic||5
+Green elegant blouse|Cosmetic||5
+Green elegant legs|Cosmetic||5
+Green elegant shirt|Cosmetic||5
+Green elegant skirt|Cosmetic||5
+Green halloween mask|Cosmetic||5
+Green hat|Cosmetic||5
+Green headband|Cosmetic||5
+Green naval shirt|Cosmetic||5
+Green navy slacks|Cosmetic||5
+Green partyhat|Cosmetic||5
+Green tricorn hat|Cosmetic||5
+Greenman mask|Cosmetic||5
+Greenman mask (magic)|Cosmetic||5
+Greenman mask (maple)|Cosmetic||5
+Greenman mask (normal)|Cosmetic||5
+Greenman mask (willow)|Cosmetic||5
+Grey boots|Cosmetic||5
+Grey gloves|Cosmetic||5
+Grey hat|Cosmetic||5
+Grey naval shirt|Cosmetic||5
+Grey navy slacks|Cosmetic||5
+Grey tricorn hat|Cosmetic||5
+Grid master tabard|Cosmetic||5
+Grim reaper bottoms|Cosmetic||5
+Grim reaper gloves|Cosmetic||5
+Grim reaper hood|Cosmetic||5
+Grim reaper top|Cosmetic||5
+Guthix halo|Cosmetic||5
+Guthix mitre|Cosmetic||5
+Guthix stole|Cosmetic||5
 Hair clip|Cosmetic||5
+Half moon spectacles|Cosmetic||5
+Halloween mask set|Cosmetic||5
+Halloween wig|Cosmetic||5
 Ham cloak|Cosmetic||5
 Ham gloves|Cosmetic||5
 Ham hood|Cosmetic||5
 Ham logo|Cosmetic||5
 Ham robe|Cosmetic||5
 Ham shirt|Cosmetic||5
-Ice gloves|Smithing||2
+Hard hat|Cosmetic||5
+Hat eyepatch|Cosmetic||5
+Hat of the Eye|Cosmetic||5
+Hat of the Eye (blue)|Cosmetic||5
+Hat of the Eye (green)|Cosmetic||5
+Healer hat|Cosmetic||5
+Healer icon|Cosmetic||5
+Hell cat ears|Cosmetic||5
+Highwayman mask|Cosmetic||5
+Holy sandals|Cosmetic||5
+Hosidius banner|Cosmetic||5
+Hosidius scarf|Cosmetic||5
+Icy jumper|Cosmetic||5
+Imp mask|Cosmetic||5
+Inverted santa hat|Cosmetic||5
+Iron gold-trimmed set (lg)|Cosmetic||5
+Iron trimmed set (lg)|Cosmetic||5
+Jack lantern mask|Cosmetic||5
+Jad jumper|Cosmetic||5
+Jad plush|Cosmetic||5
+Jad slippers|Cosmetic||5
+Jaguar mask|Cosmetic||5
+Jester cape|Cosmetic||5
+Jester hat|Cosmetic||5
+Jester scarf|Cosmetic||5
+Jonas mask|Cosmetic||5
+Jungle camo legs|Cosmetic||5
+Jungle camo top|Cosmetic||5
+Jungle demon mask|Cosmetic||5
+Kandarin headgear 1|Cosmetic||5
+Kharidian headpiece|Cosmetic||5
+Kyatt hat|Cosmetic||5
+Kyatt legs|Cosmetic||5
+Kyatt top|Cosmetic||5
+Larupia hat|Cosmetic||5
+Larupia legs|Cosmetic||5
+Larupia top|Cosmetic||5
 Lederhosen hat|Cosmetic||5
 Lederhosen shorts|Cosmetic||5
 Lederhosen top|Cosmetic||5
+Left eye patch|Cosmetic||5
+Leprechaun hat|Cosmetic||5
+Lesser demon mask|Cosmetic||5
+Light bow tie|Cosmetic||5
+Light infinity colour kit|Cosmetic||5
+Light trousers|Cosmetic||5
+Light tuxedo cuffs|Cosmetic||5
+Light tuxedo jacket|Cosmetic||5
+Light tuxedo shoes|Cosmetic||5
+Lovakengj banner|Cosmetic||5
+Lovakengj hood|Cosmetic||5
+Lovakengj scarf|Cosmetic||5
+Lovley{{sic}} jubbly bib|Cosmetic||5
+Medical gown|Cosmetic||5
+Menaphite purple hat|Cosmetic||5
+Menaphite purple kilt|Cosmetic||5
+Menaphite purple robe|Cosmetic||5
+Menaphite purple top|Cosmetic||5
+Menaphite red hat|Cosmetic||5
+Menaphite red kilt|Cosmetic||5
+Menaphite red robe|Cosmetic||5
+Menaphite red top|Cosmetic||5
+Metztonalli white|Cosmetic||5
+Mime boots|Cosmetic||5
+Mime gloves|Cosmetic||5
+Mime legs|Cosmetic||5
+Mime mask|Cosmetic||5
+Mime top|Cosmetic||5
+Mole slippers|Cosmetic||5
+Monocle|Cosmetic||5
+Mummy's body|Cosmetic||5
+Mummy's feet|Cosmetic||5
+Mummy's hands|Cosmetic||5
+Mummy's head|Cosmetic||5
+Mummy's legs|Cosmetic||5
+Musketeer hat|Cosmetic||5
+Musketeer pants|Cosmetic||5
+Musketeer tabard|Cosmetic||5
+Nest hat|Cosmetic||5
 Nurse hat|Cosmetic||5
+Odd spectacles|Cosmetic||5
+Old demon mask|Cosmetic||5
+Oldschool jumper|Cosmetic||5
+Orange boater|Cosmetic||5
+Orange cape|Cosmetic||5
+Orange pumpkin (angry)|Cosmetic||5
+Orange pumpkin (depressed)|Cosmetic||5
+Orange pumpkin (disgusted)|Cosmetic||5
+Orange pumpkin (evil)|Cosmetic||5
+Orange pumpkin (happy)|Cosmetic||5
+Orange pumpkin (laughing)|Cosmetic||5
+Orange pumpkin (sad)|Cosmetic||5
+Orange pumpkin (shocked)|Cosmetic||5
+Orange pumpkin (silly)|Cosmetic||5
+Pantaloons|Cosmetic||5
+Partyhat & specs|Cosmetic||5
+Partyhat set|Cosmetic||5
+Peaceful handegg|Cosmetic||5
+Penguin mask|Cosmetic||5
+Petal garland|Cosmetic||5
+Phasmatys flag|Cosmetic||5
+Pheasant boots|Cosmetic||5
+Pheasant cape|Cosmetic||5
+Pheasant hat|Cosmetic||5
+Pheasant legs|Cosmetic||5
+Pink boater|Cosmetic||5
+Pink boots|Cosmetic||5
+Pink cape|Cosmetic||5
+Pink elegant blouse|Cosmetic||5
+Pink elegant legs|Cosmetic||5
+Pink elegant shirt|Cosmetic||5
+Pink elegant skirt|Cosmetic||5
+Pink hat|Cosmetic||5
+Pink headband|Cosmetic||5
+Pink robe bottoms|Cosmetic||5
+Pink robe top|Cosmetic||5
+Pink skirt|Cosmetic||5
+Pirate bandana|Cosmetic||5
+Pirate boots|Cosmetic||5
+Pirate hat|Cosmetic||5
+Pirate hat & patch|Cosmetic||5
+Pirate leggings|Cosmetic||5
+Pirate's hat|Cosmetic||5
+Pirate's hook|Cosmetic||5
+Piscarilius banner|Cosmetic||5
+Piscarilius hood|Cosmetic||5
+Piscarilius scarf|Cosmetic||5
+Pith helmet|Cosmetic||5
 Plague jacket|Cosmetic||5
 Plague trousers|Cosmetic||5
+Platinum speedrun trophy|Cosmetic||5
+Poet's jacket|Cosmetic||5
+Polar camo legs|Cosmetic||5
+Polar camo top|Cosmetic||5
+Powder grey pumpkin (angry)|Cosmetic||5
+Powder grey pumpkin (depressed)|Cosmetic||5
+Powder grey pumpkin (disgusted)|Cosmetic||5
+Powder grey pumpkin (evil)|Cosmetic||5
+Powder grey pumpkin (happy)|Cosmetic||5
+Powder grey pumpkin (laughing)|Cosmetic||5
+Powder grey pumpkin (sad)|Cosmetic||5
+Powder grey pumpkin (shocked)|Cosmetic||5
+Powder grey pumpkin (silly)|Cosmetic||5
+Prescription goggles|Cosmetic||5
+Present box hat|Cosmetic||5
+Priest gown|Cosmetic||5
+Princely monkey|Cosmetic||5
+Prison uniform top|Cosmetic||5
+Prison uniform trousers|Cosmetic||5
+Progress hat|Cosmetic||5
+Prop sword|Cosmetic||5
+Propeller hat|Cosmetic||5
+Protest banner|Cosmetic||5
+Pumpkin lantern|Cosmetic||5
+Purple boater|Cosmetic||5
+Purple boots|Cosmetic||5
+Purple cape|Cosmetic||5
+Purple elegant blouse|Cosmetic||5
+Purple elegant legs|Cosmetic||5
+Purple elegant shirt|Cosmetic||5
+Purple elegant skirt|Cosmetic||5
+Purple gloves|Cosmetic||5
+Purple hat|Cosmetic||5
+Purple naval shirt|Cosmetic||5
+Purple navy slacks|Cosmetic||5
+Purple partyhat|Cosmetic||5
+Purple robe bottoms|Cosmetic||5
+Purple robe top|Cosmetic||5
+Purple tricorn hat|Cosmetic||5
+Raging echoes adamant trophy|Cosmetic||5
+Raging echoes banner|Cosmetic||5
+Raging echoes bronze trophy|Cosmetic||5
+Raging echoes dragon trophy|Cosmetic||5
+Raging echoes iron trophy|Cosmetic||5
+Raging echoes mithril trophy|Cosmetic||5
+Raging echoes rune trophy|Cosmetic||5
+Raging echoes steel trophy|Cosmetic||5
+Rainbow cape|Cosmetic||5
+Rainbow crown shirt|Cosmetic||5
+Rainbow jumper|Cosmetic||5
+Rainbow partyhat|Cosmetic||5
+Rainbow scarf|Cosmetic||5
+Ram mask|Cosmetic||5
+Red beret|Cosmetic||5
+Red boater|Cosmetic||5
+Red boots|Cosmetic||5
+Red cape|Cosmetic||5
+Red dragon mask|Cosmetic||5
+Red elegant blouse|Cosmetic||5
+Red elegant legs|Cosmetic||5
+Red elegant shirt|Cosmetic||5
+Red elegant skirt|Cosmetic||5
+Red gingerbread shield|Cosmetic||5
+Red gloves|Cosmetic||5
+Red halloween mask|Cosmetic||5
+Red hat|Cosmetic||5
+Red headband|Cosmetic||5
+Red naval shirt|Cosmetic||5
+Red navy slacks|Cosmetic||5
 Red partyhat|Cosmetic||5
+Red pumpkin (angry)|Cosmetic||5
+Red pumpkin (depressed)|Cosmetic||5
+Red pumpkin (disgusted)|Cosmetic||5
+Red pumpkin (evil)|Cosmetic||5
+Red pumpkin (happy)|Cosmetic||5
+Red pumpkin (laughing)|Cosmetic||5
+Red pumpkin (sad)|Cosmetic||5
+Red pumpkin (shocked)|Cosmetic||5
+Red pumpkin (silly)|Cosmetic||5
+Red tricorn hat|Cosmetic||5
+Reindeer hat|Cosmetic||5
+Royal frog blouse|Cosmetic||5
+Royal frog leggings|Cosmetic||5
+Royal frog skirt|Cosmetic||5
+Royal frog tunic|Cosmetic||5
+Royal gown bottom|Cosmetic||5
+Royal gown top|Cosmetic||5
+Runefest shield|Cosmetic||5
+Sandwich lady bottom|Cosmetic||5
+Sandwich lady hat|Cosmetic||5
+Sandwich lady top|Cosmetic||5
+Santa boots|Cosmetic||5
+Santa gloves|Cosmetic||5
+Santa hat|Cosmetic||5
+Santa jacket|Cosmetic||5
+Santa mask|Cosmetic||5
+Santa pantaloons|Cosmetic||5
+Scarecrow shirt|Cosmetic||5
+Shattered relics adamant trophy|Cosmetic||5
+Shattered relics bronze trophy|Cosmetic||5
+Shattered relics dragon trophy|Cosmetic||5
+Shattered relics iron trophy|Cosmetic||5
+Shattered relics mithril trophy|Cosmetic||5
+Shattered relics mystic ornament kit|Cosmetic||5
+Shattered relics rune trophy|Cosmetic||5
+Shattered relics steel trophy|Cosmetic||5
+Shattered relics variety ornament kit|Cosmetic||5
+Shattered relics void ornament kit|Cosmetic||5
+Shirt|Cosmetic||5
+Shoes|Cosmetic||5
+Shorts|Cosmetic||5
 Silly jester boots|Cosmetic||5
 Silly jester hat|Cosmetic||5
 Silly jester tights|Cosmetic||5
 Silly jester top|Cosmetic||5
+Silver partyhat|Cosmetic||5
+Silver speedrun trophy|Cosmetic||5
+Skeleton boots|Cosmetic||5
+Skeleton gloves|Cosmetic||5
+Skeleton lantern|Cosmetic||5
+Skeleton leggings|Cosmetic||5
+Skeleton mask|Cosmetic||5
+Skeleton monkey|Cosmetic||5
+Skeleton shirt|Cosmetic||5
+Skirt|Cosmetic||5
+Sleeping cap|Cosmetic||5
+Snow goggles & hat|Cosmetic||5
+Snow imp costume body|Cosmetic||5
+Snow imp costume feet|Cosmetic||5
+Snow imp costume gloves|Cosmetic||5
+Snow imp costume head|Cosmetic||5
+Snow imp costume legs|Cosmetic||5
+Snow imp costume tail|Cosmetic||5
+Snowglobe helmet|Cosmetic||5
+Snowman ring|Cosmetic||5
+Snowy knight|Cosmetic||5
+Spider hat|Cosmetic||5
+Spookier boots|Cosmetic||5
+Spookier gloves|Cosmetic||5
+Spookier hood|Cosmetic||5
+Spookier robe|Cosmetic||5
+Spookier skirt|Cosmetic||5
+Spooky boots|Cosmetic||5
+Spooky gloves|Cosmetic||5
+Spooky hood|Cosmetic||5
+Spooky pumpkin lantern|Cosmetic||5
+Spooky robe|Cosmetic||5
+Spooky skirt|Cosmetic||5
+Staff of Bob the Cat|Cosmetic||5
+Starter cape|Cosmetic||5
+Steel dragon mask|Cosmetic||5
+Steel gold-trimmed set (lg)|Cosmetic||5
+Steel set (lg)|Cosmetic||5
+Steel trimmed set (lg)|Cosmetic||5
+Stray dog plush|Cosmetic||5
+Strength hood|Cosmetic||5
+Stripy pirate shirt|Cosmetic||5
+Sweet nutcracker boots|Cosmetic||5
+Sweet nutcracker hat|Cosmetic||5
+Sweet nutcracker staff|Cosmetic||5
+Sweet nutcracker top|Cosmetic||5
+Sweet nutcracker trousers|Cosmetic||5
+Tan cavalier|Cosmetic||5
+Teal boots|Cosmetic||5
+Teal gloves|Cosmetic||5
+Teal hat|Cosmetic||5
+Teal robe bottoms|Cosmetic||5
+Teal robe top|Cosmetic||5
+Team cape i|Cosmetic||5
+Team cape x|Cosmetic||5
+Team cape zero|Cosmetic||5
 Team-1 cape|Cosmetic||5
+Team-10 cape|Cosmetic||5
+Team-11 cape|Cosmetic||5
+Team-12 cape|Cosmetic||5
+Team-13 cape|Cosmetic||5
+Team-14 cape|Cosmetic||5
+Team-15 cape|Cosmetic||5
+Team-16 cape|Cosmetic||5
+Team-17 cape|Cosmetic||5
+Team-18 cape|Cosmetic||5
+Team-19 cape|Cosmetic||5
+Team-2 cape|Cosmetic||5
+Team-20 cape|Cosmetic||5
+Team-21 cape|Cosmetic||5
+Team-22 cape|Cosmetic||5
+Team-23 cape|Cosmetic||5
+Team-24 cape|Cosmetic||5
+Team-25 cape|Cosmetic||5
+Team-26 cape|Cosmetic||5
+Team-27 cape|Cosmetic||5
+Team-28 cape|Cosmetic||5
+Team-29 cape|Cosmetic||5
+Team-3 cape|Cosmetic||5
+Team-30 cape|Cosmetic||5
+Team-31 cape|Cosmetic||5
+Team-32 cape|Cosmetic||5
+Team-33 cape|Cosmetic||5
+Team-34 cape|Cosmetic||5
+Team-35 cape|Cosmetic||5
+Team-36 cape|Cosmetic||5
+Team-37 cape|Cosmetic||5
+Team-38 cape|Cosmetic||5
+Team-39 cape|Cosmetic||5
+Team-4 cape|Cosmetic||5
+Team-40 cape|Cosmetic||5
+Team-41 cape|Cosmetic||5
+Team-42 cape|Cosmetic||5
+Team-43 cape|Cosmetic||5
+Team-44 cape|Cosmetic||5
+Team-45 cape|Cosmetic||5
+Team-46 cape|Cosmetic||5
+Team-47 cape|Cosmetic||5
+Team-48 cape|Cosmetic||5
+Team-49 cape|Cosmetic||5
+Team-5 cape|Cosmetic||5
+Team-50 cape|Cosmetic||5
+Team-6 cape|Cosmetic||5
+Team-7 cape|Cosmetic||5
+Team-8 cape|Cosmetic||5
+Team-9 cape|Cosmetic||5
+Top hat|Cosmetic||5
+Top hat & monocle|Cosmetic||5
+Trailblazer adamant trophy|Cosmetic||5
+Trailblazer banner|Cosmetic||5
+Trailblazer boots (t3)|Cosmetic||5
+Trailblazer bronze trophy|Cosmetic||5
+Trailblazer cane|Cosmetic||5
+Trailblazer dragon trophy|Cosmetic||5
+Trailblazer globe|Cosmetic||5
+Trailblazer graceful ornament kit|Cosmetic||5
+Trailblazer hood (t3)|Cosmetic||5
+Trailblazer iron trophy|Cosmetic||5
+Trailblazer mithril trophy|Cosmetic||5
+Trailblazer reloaded adamant trophy|Cosmetic||5
+Trailblazer reloaded banner|Cosmetic||5
+Trailblazer reloaded boots (t1)|Cosmetic||5
+Trailblazer reloaded bronze trophy|Cosmetic||5
+Trailblazer reloaded bulwark ornament kit|Cosmetic||5
+Trailblazer reloaded dragon trophy|Cosmetic||5
+Trailblazer reloaded headband (t1)|Cosmetic||5
+Trailblazer reloaded iron trophy|Cosmetic||5
+Trailblazer reloaded mithril trophy|Cosmetic||5
+Trailblazer reloaded rune trophy|Cosmetic||5
+Trailblazer reloaded steel trophy|Cosmetic||5
+Trailblazer reloaded top (t1)|Cosmetic||5
+Trailblazer reloaded torch|Cosmetic||5
+Trailblazer reloaded trousers (t1)|Cosmetic||5
+Trailblazer rug|Cosmetic||5
+Trailblazer rune trophy|Cosmetic||5
+Trailblazer steel trophy|Cosmetic||5
+Trailblazer tool ornament kit|Cosmetic||5
+Trailblazer top (t3)|Cosmetic||5
+Trailblazer trousers (t3)|Cosmetic||5
+Tree skirt|Cosmetic||5
+Tree top|Cosmetic||5
+Tri-jester hat|Cosmetic||5
+Tri-jester scarf|Cosmetic||5
+Tribal mask|Cosmetic||5
+Tribal top|Cosmetic||5
+Trousers|Cosmetic||5
+Ugly halloween jumper (black)|Cosmetic||5
+Ugly halloween jumper (orange)|Cosmetic||5
+Vampyre costume bottom|Cosmetic||5
+Vampyre costume cape|Cosmetic||5
+Vampyre costume top|Cosmetic||5
+Vampyre monocle|Cosmetic||5
+Villager armband|Cosmetic||5
+Villager hat|Cosmetic||5
+Villager robe|Cosmetic||5
+Villager sandals|Cosmetic||5
+Vyre noble blazer|Cosmetic||5
+Vyre noble coat tails|Cosmetic||5
+Vyre noble corset|Cosmetic||5
+Vyre noble dress bottom|Cosmetic||5
+Vyre noble dress top|Cosmetic||5
+Vyre noble legs|Cosmetic||5
+Vyre noble pants|Cosmetic||5
+Vyre noble shoes|Cosmetic||5
+Vyre noble skirt|Cosmetic||5
+Vyre noble top|Cosmetic||5
+Vyre noble vest|Cosmetic||5
+White apron|Cosmetic||5
+White beret|Cosmetic||5
+White boater|Cosmetic||5
+White boots|Cosmetic||5
+White cavalier|Cosmetic||5
+White elegant blouse|Cosmetic||5
+White elegant skirt|Cosmetic||5
+White gloves|Cosmetic||5
+White headband|Cosmetic||5
+White partyhat|Cosmetic||5
+White pumpkin (angry)|Cosmetic||5
+White pumpkin (depressed)|Cosmetic||5
+White pumpkin (disgusted)|Cosmetic||5
+White pumpkin (evil)|Cosmetic||5
+White pumpkin (happy)|Cosmetic||5
+White pumpkin (laughing)|Cosmetic||5
+White pumpkin (sad)|Cosmetic||5
+White pumpkin (shocked)|Cosmetic||5
+White pumpkin (silly)|Cosmetic||5
+White toy horsey|Cosmetic||5
+White unicorn mask|Cosmetic||5
+Wilderness cape|Cosmetic||5
+Wise old man's santa hat|Cosmetic||5
+Witch boots|Cosmetic||5
+Witch cape|Cosmetic||5
+Witch hat|Cosmetic||5
+Witch robes|Cosmetic||5
+Witch top|Cosmetic||5
+Wolf cloak|Cosmetic||5
+Wolf mask|Cosmetic||5
+Woolly hat|Cosmetic||5
+Woolly scarf|Cosmetic||5
+Woven top|Cosmetic||5
+Wyrmscraig boots|Cosmetic||5
+Wyrmscraig noble skirt|Cosmetic||5
+Wyrmscraig shoes|Cosmetic||5
+Wyrmscraig villager robe bottom|Cosmetic||5
+Wyrmscraig villager robe top|Cosmetic||5
+Wyrmscraig villager skirt|Cosmetic||5
+Wyrmscraig villager work skirt|Cosmetic||5
+Yellow boots|Cosmetic||5
+Yellow cape|Cosmetic||5
+Yellow gloves|Cosmetic||5
+Yellow hat|Cosmetic||5
+Yellow partyhat|Cosmetic||5
+Yellow pumpkin (angry)|Cosmetic||5
+Yellow pumpkin (depressed)|Cosmetic||5
+Yellow pumpkin (disgusted)|Cosmetic||5
+Yellow pumpkin (evil)|Cosmetic||5
+Yellow pumpkin (happy)|Cosmetic||5
+Yellow pumpkin (laughing)|Cosmetic||5
+Yellow pumpkin (sad)|Cosmetic||5
+Yellow pumpkin (shocked)|Cosmetic||5
+Yellow pumpkin (silly)|Cosmetic||5
+Yellow robe bottoms|Cosmetic||5
+Yellow robe top|Cosmetic||5
+Zamorak halo|Cosmetic||5
+Zamorak mitre|Cosmetic||5
+Zamorak monk bottom|Cosmetic||5
+Zamorak monk top|Cosmetic||5
+Zamorak stole|Cosmetic||5
+Zombie boots|Cosmetic||5
+Zombie gloves|Cosmetic||5
+Zombie head|Cosmetic||5
+Zombie helmet|Cosmetic||5
+Zombie mask|Cosmetic||5
+Zombie monkey|Cosmetic||5
+Zombie shirt|Cosmetic||5
+Zombie trousers|Cosmetic||5
 Chisel|Crafting||2
+Clay|Crafting||2
+Dragonstone|Crafting||2
+Glassblowing pipe|Crafting||2
 Needle|Crafting||2
 Scaly blue dragonhide|Crafting||2
 Soft clay|Crafting||2
 Thread|Crafting||2
+Thread of Elidinis|Crafting||2
 Uncut diamond|Crafting||2
 Uncut opal|Crafting||2
+Amethyst|Crafting||3
+Amulet mould|Crafting||3
+Bale of flax|Crafting||3
 Ball of wool|Crafting||3
+Black dragon leather|Crafting||3
 Black dragonhide|Crafting||3
+Blue dragon leather|Crafting||3
 Blue dragon scale|Crafting||3
 Blue dragonhide|Crafting||3
+Blue dye|Crafting||3
+Bracelet mould|Crafting||3
+Calquat fruit|Crafting||3
+Cotton yarn|Crafting||3
+Cowhide|Crafting||3
+Crafting cape|Crafting||3
+Crafting hood|Crafting||3
 Diamond|Crafting||3
+Diamond amulet (u)|Crafting||3
+Dragonstone amulet (u)|Crafting||3
 Emerald|Crafting||3
+Emerald amulet (u)|Crafting||3
+Fine cloth|Crafting||3
+Flattened hide|Crafting||3
+Flax|Crafting||3
+Fur|Crafting||3
 Goldsmith gauntlets|Crafting||3
+Green dragon leather|Crafting||3
+Green dragonhide|Crafting||3
+Grey wolf fur|Crafting||3
+Hard leather|Crafting||3
+Hemp|Crafting||3
+Hemp yarn|Crafting||3
+Hydra leather|Crafting||3
+Jade|Crafting||3
+Jade amulet (u)|Crafting||3
+Klank's gauntlets|Crafting||3
 Masori crafting kit|Crafting||3
+Molten glass|Crafting||3
 Onyx|Crafting||3
+Ring mould|Crafting||3
 Ruby|Crafting||3
 Sapphire|Crafting||3
 Silk|Crafting||3
+Silver dust|Crafting||3
+Snake hide|Crafting||3
+Snakeskin|Crafting||3
+Soda ash|Crafting||3
+Spotted kebbit fur|Crafting||3
+Stretched hide|Crafting||3
 Uncut dragonstone|Crafting||3
 Uncut emerald|Crafting||3
 Uncut jade|Crafting||3
 Uncut ruby|Crafting||3
 Uncut sapphire|Crafting||3
+Zenyte|Crafting||3
+Zenyte amulet (u)|Crafting||3
+Zenyte shard|Crafting||3
+Air orb|Crafting||4
+Armageddon cape fabric|Crafting||4
 Bear fur|Crafting||4
+Black tourmaline core|Crafting||4
+Blamish bark shell|Crafting||4
+Blamish blue shell|Crafting||4
+Blamish myre shell|Crafting||4
+Blamish ochre shell|Crafting||4
+Blamish red shell|Crafting||4
+Bracelet of clay|Crafting||4
+Bucket of sand|Crafting||4
+Bucket of wax|Crafting||4
 Bullseye lantern (unf)|Crafting||4
+Cave goblin wire|Crafting||4
+Circular hide|Crafting||4
+Common kebbit fur|Crafting||4
+Crate of alpaca wool|Crafting||4
+Crate of antelope fur|Crafting||4
+Crate of coral|Crafting||4
+Crate of dragonhide|Crafting||4
+Crate of fabrics|Crafting||4
+Crate of flax|Crafting||4
+Crate of furs|Crafting||4
+Crate of gems|Crafting||4
+Crate of glassmaking supplies|Crafting||4
+Crate of kebbit fur|Crafting||4
+Crate of leather|Crafting||4
+Crate of red coral|Crafting||4
+Crate of rope|Crafting||4
+Crate of sand|Crafting||4
+Crate of silk|Crafting||4
+Crate of snakeskin|Crafting||4
+Crate of suqah hides|Crafting||4
+Crate of wax|Crafting||4
+Crate of xerician fabrics|Crafting||4
+Crate of yak hair|Crafting||4
+Cured yak-hide|Crafting||4
+Dagannoth hide|Crafting||4
+Dark kebbit fur|Crafting||4
+Dashing kebbit fur|Crafting||4
+Feldip weasel fur|Crafting||4
+Fire orb|Crafting||4
+Gold leaf|Crafting||4
+Graahk fur|Crafting||4
+Green dye|Crafting||4
+Heat-proof vessel|Crafting||4
+Holy mould|Crafting||4
+Jaguar fur|Crafting||4
+Jute fibre|Crafting||4
+Kyatt fur|Crafting||4
 Lantern lens|Crafting||4
+Larupia fur|Crafting||4
+Lava scale|Crafting||4
+Lava scale shard|Crafting||4
+Leather|Crafting||4
 Leather gloves|Crafting||4
+Limestone|Crafting||4
+Linen|Crafting||4
+Linen yarn|Crafting||4
+Marlin scales|Crafting||4
+Mole skin|Crafting||4
+Moonlight antelope fur|Crafting||4
+Necklace mould|Crafting||4
+Onyx amulet (u)|Crafting||4
+Opal|Crafting||4
+Opal amulet (u)|Crafting||4
+Orange dye|Crafting||4
+Oyster pearl|Crafting||4
+Oyster pearls|Crafting||4
+Polar kebbit fur|Crafting||4
+Red bead|Crafting||4
+Red dragon leather|Crafting||4
+Red dragonhide|Crafting||4
+Red dragonhide set|Crafting||4
+Red topaz|Crafting||4
 Rose-tinted lens|Crafting||4
+Sapphire amulet (u)|Crafting||4
+Sickle mould|Crafting||4
+Sigil of the Craftsman|Crafting||4
+Sigil of the Eternal Jeweller|Crafting||4
+Sinew|Crafting||4
+Steel studs|Crafting||4
 Suqah hide|Crafting||4
+Tatty graahk fur|Crafting||4
+Tatty kyatt fur|Crafting||4
+Tatty larupia fur|Crafting||4
+Tortoise shell|Crafting||4
+Unfired bowl|Crafting||4
+Unfired pie dish|Crafting||4
+Unfired plant pot|Crafting||4
+Unfired pot|Crafting||4
+Unfired pot lid|Crafting||4
+Unpowered orb|Crafting||4
+Unpowered symbol|Crafting||4
+Unstrung symbol|Crafting||4
+White bead|Crafting||4
+Wool|Crafting||4
+Xerician fabric|Crafting||4
+Yak-hide|Crafting||4
+Yellow bead|Crafting||4
 Yellow dye|Crafting||4
+Bronze wire|Crafting||5
+Earth orb|Crafting||5
+Eldritch orb|Crafting||5
+Oil lantern frame|Crafting||5
+Polished buttons|Crafting||5
 Coins|Currency||1
+Old school bond|Currency||1
 Tokkul|Currency||3
+Archery ticket|Currency||4
+Bounty hunter hat (tier 1)|Currency||4
+Bounty hunter hat (tier 2)|Currency||4
+Bounty hunter hat (tier 3)|Currency||4
+Bounty hunter hat (tier 4)|Currency||4
+Bounty hunter hat (tier 5)|Currency||4
+Bounty hunter hat (tier 6)|Currency||4
+Bounty supply crate (anglerfish)|Currency||4
+Bounty supply crate (manta ray)|Currency||4
+Crate of tokens|Currency||4
 Frog token|Currency||4
 Pete's vouchers|Currency||4
 Warrior guild token|Currency||4
+Infinite money bag|Currency||5
+Ring of coins|Currency||5
 Spade|Farming||1
 Bottomless compost bucket|Farming||2
 Gardening trowel|Farming||2
@@ -118,67 +1582,273 @@ Watering can|Farming||2
 Watering can(4)|Farming||2
 Willow seed|Farming||2
 Yew seed|Farming||2
+Adamant seeds|Farming||3
 Apple tree seed|Farming||3
+Apples(5)|Farming||3
 Banana tree seed|Farming||3
 Cadantine seed|Farming||3
 Calquat sapling|Farming||3
 Calquat tree seed|Farming||3
+Celastrus sapling|Farming||3
 Celastrus seed|Farming||3
+Compost|Farming||3
 Curry tree seed|Farming||3
+Dragonfruit sapling|Farming||3
 Dragonfruit tree seed|Farming||3
 Empty plant pot|Farming||3
 Filled plant pot|Farming||3
+Hammerstone hops|Farming||3
 Harralander seed|Farming||3
 Hespori seed|Farming||3
 Lantadyme seed|Farming||3
 Limpwurt seed|Farming||3
+Magic sapling|Farming||3
 Magic seed|Farming||3
+Mahogany sapling|Farming||3
 Mahogany seed|Farming||3
 Maple sapling|Farming||3
 Maple seed|Farming||3
 Mithril seeds|Farming||3
+Oak sapling|Farming||3
+Orange sapling|Farming||3
 Orange tree seed|Farming||3
 Palm tree seed|Farming||3
 Papaya sapling|Farming||3
 Papaya tree seed|Farming||3
+Pineapple sapling|Farming||3
 Pineapple seed|Farming||3
+Plant cure|Farming||3
 Potato cactus|Farming||3
+Potatoes(10)|Farming||3
+Redwood sapling|Farming||3
+Scythe|Farming||3
+Seaweed spore|Farming||3
+Secateurs|Farming||3
 Seed dibber|Farming||3
 Snapdragon seed|Farming||3
 Spirit seed|Farming||3
+Sweetcorn|Farming||3
 Teak seed|Farming||3
 Torstol seed|Farming||3
+Ultracompost|Farming||3
 Watermelon seed|Farming||3
+White berries|Farming||3
 Whiteberry seed|Farming||3
 Acorn|Farming||4
+Apple sapling|Farming||4
+Banana sapling|Farming||4
+Bananas(5)|Farming||4
+Beekeeper's boots|Farming||4
+Beekeeper's gloves|Farming||4
+Beekeeper's hat|Farming||4
 Cabbage seed|Farming||4
+Calquat keg|Farming||4
+Crate of cacti|Farming||4
+Crate of calquat|Farming||4
+Crate of compost|Farming||4
+Crate of huasca|Farming||4
+Crate of seeds|Farming||4
+Curry sapling|Farming||4
+Fairy mushroom|Farming||4
 Farmer's boots|Farming||4
+Forager's pouch|Farming||4
+Gardening boots|Farming||4
+Gilded spade|Farming||4
+Large spade|Farming||4
+Mushroom|Farming||4
+Mushroom spore|Farming||4
+Potato sack|Farming||4
 Rake|Farming||4
+Ruby harvest|Farming||4
+Secateurs attachment|Farming||4
 Shears|Farming|Crafting|4
+Shrunk ogleroot|Farming||4
+Sigil of Enhanced Harvest|Farming||4
+Sigil of the Fortune Farmer|Farming||4
+Teak sapling|Farming||4
+Tomatoes(5)|Farming||4
+White flowers|Farming||4
+Wildblood hops|Farming||4
+Willow roots|Farming||4
+Willow sapling|Farming||4
+Yanillian hops|Farming||4
+Yellow flowers|Farming||4
+Yew roots|Farming||4
+Assorted flowers|Farming||5
 Auguste's sapling|Farming||5
+Bagged bluebells|Farming||5
+Bagged daffodils|Farming||5
+Bagged dead tree|Farming||5
+Bagged flower|Farming||5
+Bagged magic tree|Farming||5
+Bagged maple tree|Farming||5
+Bagged marigolds|Farming||5
+Bagged nice tree|Farming||5
+Bagged oak tree|Farming||5
+Bagged plant 1|Farming||5
+Bagged roses|Farming||5
+Bagged sunflower|Farming||5
+Bagged willow tree|Farming||5
+Bagged yew tree|Farming||5
+Basket|Farming||5
+Beekeeper's legs|Farming||5
+Beekeeper's top|Farming||5
+Black flowers|Farming||5
+Blue flowers|Farming||5
 Cactus spine|Farming||5
 Lily of the Sands|Farming||5
 Mixed flowers|Farming||5
+Nasturtiums|Farming||5
 Onion seed|Farming||5
+Orange flowers|Farming||5
 Palm sapling|Farming||5
+Purple flowers|Farming||5
+Red flowers|Farming||5
 Yew sapling|Farming||5
 Tinderbox|Firemaking||1
+Abyssal lantern|Firemaking||3
+Blue firelighter|Firemaking||3
+Bruma torch|Firemaking||3
+Bruma torch (off-hand)|Firemaking||3
+Pyromancer boots|Firemaking||3
+Pyromancer garb|Firemaking||3
+Pyromancer hood|Firemaking||3
+Pyromancer robe|Firemaking||3
+Unlit torch|Firemaking||3
+White firelighter|Firemaking||3
+Abyssal lantern (blisterwood logs)|Firemaking||4
+Abyssal lantern (blue logs)|Firemaking||4
+Abyssal lantern (green logs)|Firemaking||4
+Abyssal lantern (magic logs)|Firemaking||4
+Abyssal lantern (maple logs)|Firemaking||4
+Abyssal lantern (normal logs)|Firemaking||4
+Abyssal lantern (oak logs)|Firemaking||4
+Abyssal lantern (purple logs)|Firemaking||4
+Abyssal lantern (red logs)|Firemaking||4
+Abyssal lantern (redwood logs)|Firemaking||4
+Abyssal lantern (white logs)|Firemaking||4
+Abyssal lantern (willow logs)|Firemaking||4
+Abyssal lantern (yew logs)|Firemaking||4
+Bark|Firemaking||4
+Charcoal|Firemaking||4
+Empty candle lantern|Firemaking||4
+Empty oil lamp|Firemaking||4
+Empty oil lantern|Firemaking||4
+Gnomish firelighter|Firemaking||4
+Green firelighter|Firemaking||4
+Purple firelighter|Firemaking||4
+Red firelighter|Firemaking||4
 Lit torch|Firemaking||5
 Fishing rod|Fishing||1
 Fly fishing rod|Fishing||1
+Barb-tail harpoon|Fishing||2
 Barbarian rod|Fishing||2
 Big fishing net|Fishing||2
+Corrupted harpoon|Fishing||2
+Crystal harpoon|Fishing||2
+Dragon harpoon|Fishing||2
+Harpoon|Fishing||2
+Infernal harpoon|Fishing||2
+Karambwan vessel|Fishing||2
 Oily fishing rod|Fishing||2
 Small fishing net|Fishing||2
+Angler boots|Fishing||3
+Angler hat|Fishing||3
+Angler top|Fishing||3
+Angler waders|Fishing||3
+Cormorant's glove|Fishing||3
 Dark fishing bait|Fishing||3
+Deep sea apparatus|Fishing||3
+Deep sea helmet|Fishing||3
+Diabolic worms|Fishing||3
+Drift net|Fishing||3
+Fishing bait|Fishing||3
+Lobster pot|Fishing||3
+Oily pearl fishing rod|Fishing||3
+Pearl barbarian rod|Fishing||3
+Pearl fishing rod|Fishing||3
+Pearl fly fishing rod|Fishing||3
+Sandworms|Fishing||3
+Seasoned sardine|Fishing||3
+Shark lure|Fishing||3
+Spirit angler boots|Fishing||3
+Spirit angler headband|Fishing||3
+Spirit angler top|Fishing||3
+Spirit angler waders|Fishing||3
+Crabclaw hook|Fishing||4
+Crate of angler outfit pieces|Fishing||4
+Crate of bait|Fishing||4
+Crate of fishing supplies|Fishing||4
+Echo harpoon|Fishing||4
+Fish crate (bluefin)|Fishing||4
+Fish crate (empty)|Fishing||4
+Fish crate (giant krill)|Fishing||4
+Fish crate (haddock)|Fishing||4
+Fish crate (halibut)|Fishing||4
+Fish crate (marlin)|Fishing||4
+Fish crate (yellowfin)|Fishing||4
+Fish food|Fishing||4
+Fish sack|Fishing||4
+Fish sack barrel|Fishing||4
+Giant seaweed|Fishing||4
+Open fish sack barrel|Fishing||4
+Seaweed|Fishing||4
+Empty fishbowl|Fishing||5
 Knife|Fletching||1
 Feather|Fletching||2
+Fletching knife|Fletching||2
 Logs|Fletching|Firemaking|2
 Magic logs|Fletching|Firemaking|2
 Mahogany logs|Fletching|Firemaking|2
 Maple logs|Fletching|Firemaking|2
+Steel knife|Fletching||2
+Adamant knife|Fletching||3
+Arrow shaft|Fletching||3
+Blue feather|Fletching||3
+Bow string|Fletching||3
+Crossbow string|Fletching||3
+Gryphon feather|Fletching||3
+Mithril knife|Fletching||3
+Mithril limbs|Fletching||3
 Onyx bolt tips|Fletching||3
+Unstrung comp bow|Fletching||3
+Willow longbow (u)|Fletching||3
+Willow shortbow (u)|Fletching||3
+Willow stock|Fletching||3
+Wooden stock|Fletching||3
+Yew longbow (u)|Fletching||3
+Yew shortbow (u)|Fletching||3
+Yew stock|Fletching||3
+Crate of feathers|Fletching||4
+Iron knife|Fletching||4
+Iron limbs|Fletching||4
+Javelin shaft|Fletching||4
+Longbow (u)|Fletching||4
+Magic longbow (u)|Fletching||4
+Magic shortbow (u)|Fletching||4
+Magic shortbow scroll|Fletching||4
+Magic stock|Fletching||4
+Magic string|Fletching||4
+Mahogany stock|Fletching||4
+Maple longbow (u)|Fletching||4
+Maple shortbow (u)|Fletching||4
+Maple stock|Fletching||4
 Metal feather|Fletching||4
+Oak longbow (u)|Fletching||4
+Oak shortbow (u)|Fletching||4
+Oak stock|Fletching||4
+Ogre arrow shaft|Fletching||4
+Orange feather|Fletching||4
+Ray barbs|Fletching||4
+Red feather|Fletching||4
+Sigil of the Fletcher|Fletching||4
+Split log|Fletching|Firemaking|4
+Stripy feather|Fletching||4
+Swift albatross feather|Fletching||4
+Teak stock|Fletching||4
+Willow branch|Fletching|Firemaking|4
+Yellow feather|Fletching||4
+Kitchen knife|Fletching||5
 Banana|Food||2
 Blighted anglerfish|Food||2
 Blighted karambwan|Food||2
@@ -192,10 +1862,11 @@ Shark|Food||2
 Spinach roll|Food||2
 Swordfish|Food||2
 Tuna potato|Food||2
-Apples(5)|Farming||3
 Chocolate bar|Food||3
 Curry|Food||3
+Forester's ration|Food||3
 Half a mushroom pie|Food||3
+Mint cake|Food||3
 Potato with cheese|Food||3
 Sardine|Food||3
 Stew|Food||3
@@ -203,15 +1874,11 @@ Triangle sandwich|Food||3
 Tuna|Food||3
 Bass|Food||4
 Cake|Food||4
-Grapes|Cooking||2
-Jug of sunfire wine|Prayer||2
 Jug of wine|Food||4
 Strange fruit|Food||4
 Baked potato|Food||5
 Cabbage|Food||5
 Lemon|Food||5
-Pink candy|Misc||5
-Potatoes(10)|Farming||3
 Shrimps|Food||5
 Grimy harralander|Herblore||1
 Grimy irit leaf|Herblore||1
@@ -225,6 +1892,8 @@ Marrentill|Herblore||1
 Pestle and mortar|Herblore||1
 Ranarr weed|Herblore||1
 Vial of water|Herblore||1
+Avantoe|Herblore||2
+Avantoe potion (unf)|Herblore||2
 Grimy avantoe|Herblore||2
 Grimy guam leaf|Herblore||2
 Grimy kwuarm|Herblore||2
@@ -232,62 +1901,367 @@ Grimy marrentill|Herblore||2
 Grimy tarromin|Herblore||2
 Grimy toadflax|Herblore||2
 Limpwurt root|Herblore||2
+Snapdragon|Herblore||2
+Tarromin|Herblore||2
+Toadflax|Herblore||2
+Torstol|Herblore||2
+Unfinished potion|Herblore||2
 Vial|Herblore||2
+Cadantine|Herblore||3
+Cadantine blood potion (unf)|Herblore||3
+Cadantine potion (unf)|Herblore||3
+Cadava berries|Herblore||3
+Celastrus bark|Herblore||3
 Empty vial|Herblore||3
 Eye of newt|Herblore||3
+Goat horn dust|Herblore||3
+Guam potion (unf)|Herblore||3
+Guam tar|Herblore||3
+Harralander potion (unf)|Herblore||3
+Harralander tar|Herblore||3
+Huasca potion (unf)|Herblore||3
 Jug of water|Herblore||3
+Red spiders' eggs|Herblore||3
+Rosemary|Herblore||3
+Snapdragon potion (unf)|Herblore||3
+Snape grass|Herblore||3
 Swamp tar|Herblore||3
+Tarromin potion (unf)|Herblore||3
+Toadflax potion (unf)|Herblore||3
+Torstol potion (unf)|Herblore||3
+Amulet of chemistry|Herblore||4
+Asgarnian hops|Herblore||4
+Bowl of hot water|Herblore||4
+Bowl of water|Herblore||4
+Bucket of water|Herblore||4
+Crate of herbs|Herblore||4
+Crate of swamp paste|Herblore||4
+Crate of vials|Herblore||4
+Doogle leaves|Herblore||4
+Dwarf weed|Herblore||4
+Dwarf weed potion (unf)|Herblore||4
+Elkhorn potion (unf)|Herblore||4
+Ground guam|Herblore||4
+Irit potion (unf)|Herblore||4
+Irit tar|Herblore||4
+Krandorian hops|Herblore||4
+Kwuarm potion (unf)|Herblore||4
+Lantadyme|Herblore||4
+Lantadyme potion (unf)|Herblore||4
+Marigolds|Herblore||4
+Marrentill potion (unf)|Herblore||4
+Marrentill tar|Herblore||4
+Moonlight moth mix (2)|Herblore||4
+Mort myre fungus|Herblore||4
+Mort myre stem|Herblore||4
+Ranarr potion (unf)|Herblore||4
+Sigil of the Alchemist|Herblore||4
+Sigil of the Potion Master|Herblore||4
+Swamp paste|Herblore||4
+Swamp weed|Herblore||4
+Tarromin tar|Herblore||4
+Trollweiss|Herblore||4
+Unicorn horn dust|Herblore||4
+Vial of blood|Herblore||4
+Volcanic ash|Herblore||4
+Wine of Zamorak|Herblore||4
+Woad leaf|Herblore||4
+Wolfbane|Herblore||4
+Facility bottle (empty)|Herblore||5
 Goutweed|Herblore||5
+Poison ivy berries|Herblore||5
+Rainbow crab paste|Herblore||5
 Bird snare|Hunter||2
+Noose wand|Hunter||2
+Bird house|Hunter||3
 Box trap|Hunter||3
 Butterfly net|Hunter||3
+Magic bird house|Hunter||3
+Magic box|Hunter||3
+Magic butterfly net|Hunter||3
+Mahogany bird house|Hunter||3
+Maple bird house|Hunter||3
+Red salamander|Hunter||3
+Redwood bird house|Hunter||3
+Spotted cape|Hunter||3
+Spottier cape|Hunter||3
+Swamp lizard|Hunter||3
+Twitcher's gloves|Hunter||3
+Baby impling jar|Hunter||4
 Bird nest|Hunter||4
 Butterfly jar|Hunter||4
+Camo bottoms|Hunter||4
+Camo helmet|Hunter||4
+Camo top|Hunter||4
+Chompy bird hat|Hunter||4
+Crate of salamanders|Hunter||4
+Falconer's glove|Hunter||4
+Gourmet impling jar|Hunter||4
+Guild hunter boots|Hunter||4
+Guild hunter headwear|Hunter||4
+Guild hunter legs|Hunter||4
+Guild hunter top|Hunter||4
+Hunter spear tips|Hunter||4
+Hunter's honour|Hunter||4
+Hunting knife|Hunter||4
+Impling jar|Hunter||4
 Jerboa tail|Hunter||4
+Magpie impling jar|Hunter||4
+Moonlight moth|Hunter||4
+Nature impling jar|Hunter||4
+Ninja impling jar|Hunter||4
+Oak bird house|Hunter||4
+Orange salamander|Hunter||4
+Strung rabbit foot|Hunter||4
+Swamp toad|Hunter||4
+Teak bird house|Hunter||4
+Tecu salamander|Hunter||4
+Twisted relic hunter (t1) armour set|Hunter||4
+Twisted relic hunter (t2) armour set|Hunter||4
+Twisted relic hunter (t3) armour set|Hunter||4
+Willow bird house|Hunter||4
+Wood camo legs|Hunter||4
+Wood camo top|Hunter||4
+Yew bird house|Hunter||4
+Ancient gorilla greegree|Hunter||5
+Bearded gorilla greegree|Hunter||5
+Bearhead|Hunter||5
 Bird's egg|Hunter||5
+Dragon impling jar|Hunter||5
+Earth impling jar|Hunter||5
+Eclectic impling jar|Hunter||5
+Essence impling jar|Hunter||5
+Rabbit foot|Hunter||5
+Rabbit snare|Hunter||5
+Young impling jar|Hunter||5
+Ring of suffering|Jewellery||2
+Ring of the gods|Jewellery||2
+Zenyte bracelet|Jewellery||2
+Zenyte necklace|Jewellery||2
+Zenyte ring|Jewellery||2
+3rd Age amulet|Jewellery||3
+Combat bracelet(4)|Jewellery||3
+Dragonbone necklace|Jewellery||3
+Dragonstone bracelet|Jewellery||3
+Dragonstone ring|Jewellery||3
+Regen bracelet|Jewellery||3
+Ring of Charos|Jewellery||3
+Ring of endurance (uncharged)|Jewellery||3
 Ring of life|Jewellery||3
+Ring of wealth|Jewellery||3
+Seers ring|Jewellery||3
+Alchemist's amulet|Jewellery||4
+Amulet of Nature|Jewellery||4
+Brass necklace|Jewellery||4
+Crate of amulets|Jewellery||4
+Crate of jewellery|Jewellery||4
+Crone-made amulet|Jewellery||4
+Diamond bracelet|Jewellery||4
+Diamond necklace|Jewellery||4
+Diamond ring|Jewellery||4
+Dragon necklace|Jewellery||4
+Elven signet|Jewellery||4
+Emerald bracelet|Jewellery||4
+Emerald necklace|Jewellery||4
+Explorer's ring 1|Jewellery||4
 Ghostspeak amulet|Jewellery||4
 Giantsoul amulet (uncharged)|Jewellery||4
 Gold amulet|Jewellery||4
+Granite ring|Jewellery||4
+Inoculation bracelet|Jewellery||4
+Jade bracelet|Jewellery||4
+Jade necklace|Jewellery||4
+Jade ring|Jewellery||4
 M'speak amulet|Jewellery||4
+Medallion of the Deep|Jewellery||4
+Necklace of faith|Jewellery||4
+Onyx bracelet|Jewellery||4
+Onyx necklace|Jewellery||4
+Onyx ring|Jewellery||4
+Opal bracelet|Jewellery||4
+Opal necklace|Jewellery||4
+Opal ring|Jewellery||4
+Pendant of Ates|Jewellery||4
 Ring of Charos(a)|Jewellery||4
 Ring of pursuit|Jewellery||4
+Ring of shadows|Jewellery||4
+Ring of stone|Jewellery||4
 Ruby amulet|Jewellery||4
+Ruby bracelet|Jewellery||4
+Ruby necklace|Jewellery||4
+Sapphire bracelet|Jewellery||4
+Sapphire glacialis|Jewellery||4
+Sapphire necklace|Jewellery||4
 Seal of Passage|Jewellery||4
+Silver necklace|Jewellery||4
+Tarnished locket|Jewellery||4
+Topaz amulet (u)|Jewellery||4
+Topaz bracelet|Jewellery||4
+Topaz necklace|Jewellery||4
+Topaz ring|Jewellery||4
+Wilderness champion amulet|Jewellery||4
+Yin yang amulet|Jewellery||4
+'perfect' necklace|Jewellery||5
+'perfect' ring|Jewellery||5
 Beacon ring|Jewellery||5
+Catspeak amulet|Jewellery||5
 Catspeak amulet(e)|Jewellery||5
 Emerald ring|Jewellery||5
 Gnome amulet|Jewellery||5
+Gold bracelet|Jewellery||5
+Gold necklace|Jewellery||5
 Gold ring|Jewellery||5
+Hallowed ring|Jewellery||5
+Hallowed symbol|Jewellery||5
+Pendant of Ates (inert)|Jewellery||5
+Pre-nature amulet|Jewellery||5
 Ruby ring|Jewellery||5
 Sapphire ring|Jewellery||5
+Steel ring|Jewellery||5
+Corrupted staff (perfected)|Magic||1
+Corrupted tumeken's shadow|Magic||1
+Crystal staff (perfected)|Magic||1
+Nightmare staff|Magic||1
+Sanguinesti staff|Magic||1
+Staff of the Dead|Magic||1
+Toxic staff (uncharged)|Magic||1
+Toxic Staff of the Dead|Magic||1
+Tumeken's shadow|Magic||1
+Ancestral hat|Magic||2
+Ancestral robe bottom|Magic||2
+Ancestral robe top|Magic||2
+Ancestral robes set|Magic||2
 Ancient staff|Magic||2
+Armadyl crozier|Magic||2
+Blue Moon armour set|Magic||2
 Chaos gauntlets|Magic|Melee|2
+Confliction gauntlets|Magic||2
+Corrupted sceptre|Magic||2
+Corrupted staff (attuned)|Magic||2
+Corrupted Volatile Nightmare staff|Magic||2
+Crystal sceptre|Magic||2
+Crystal staff (attuned)|Magic||2
+Dark infinity bottoms|Magic||2
+Dark infinity hat|Magic||2
+Dark infinity top|Magic||2
 Earth battlestaff|Magic||2
+Eldritch Nightmare staff|Magic||2
+Elite void robe|Magic||2
+Elite void top|Magic||2
+Fire max cape|Magic||2
+Fire max hood|Magic||2
+Harmonised Nightmare staff|Magic||2
+Harmonised orb|Magic||2
+Kodai wand|Magic||2
 Mystic boots|Magic||2
+Mystic boots (light)|Magic||2
+Mystic earth staff|Magic||2
+Mystic fire staff|Magic||2
 Mystic gloves|Magic||2
+Mystic gloves (light)|Magic||2
 Mystic hat|Magic||2
+Mystic hat (light)|Magic||2
 Mystic robe bottom|Magic||2
 Mystic robe bottom (light)|Magic||2
 Mystic robe top|Magic||2
+Mystic robe top (light)|Magic||2
+Mystic set (light)|Magic||2
+Saradomin robe legs|Magic||2
+Saradomin robe top|Magic||2
+Smoke battlestaff|Magic||2
+Staff of Light|Magic||2
+Sunfire fanatic chausses|Magic||2
+Sunfire fanatic cuirass|Magic||2
+Sunfire fanatic helm|Magic||2
+Tormented bracelet|Magic||2
 Trident of the Swamp|Magic||2
 Twinflame staff|Magic||2
+Twisted ancestral hat|Magic||2
+Twisted ancestral robe bottom|Magic||2
+Twisted ancestral robe top|Magic||2
+Uncharged toxic trident|Magic||2
+Uncharged toxic trident (e) (o)|Magic||2
+Virtus armour set|Magic||2
+Virtus mask|Magic||2
+Virtus robe bottom|Magic||2
+Virtus robe top|Magic||2
+Void knight robe|Magic|Melee,Ranged|2
+Void mage helm|Magic||2
+Volatile Nightmare staff|Magic||2
 Water battlestaff|Magic||2
+3rd Age druidic cloak|Magic||3
+3rd Age druidic robe bottoms|Magic||3
+3rd Age druidic robe top|Magic||3
+3rd Age druidic staff|Magic||3
+3rd Age mage hat|Magic||3
+3rd Age robe|Magic||3
+3rd Age robe top|Magic||3
+3rd Age wand|Magic||3
+Ahrim's armour set|Magic||3
+Ahrim's hood|Magic||3
+Ahrim's robeskirt|Magic||3
+Ahrim's robetop|Magic||3
+Ahrim's staff|Magic||3
 Air battlestaff|Magic||3
+Amulet of magic|Magic||3
+Ancient crozier|Magic||3
+Ancient sceptre|Magic||3
+Armadyl mitre|Magic||3
+Armadyl robe legs|Magic||3
+Armadyl robe top|Magic||3
+Armadyl stole|Magic||3
+Binding necklace|Magic||3
+Blessed spirit shield|Magic||3
+Blood ancient sceptre|Magic||3
 Blue Moon chestplate|Magic||3
 Blue Moon helm|Magic||3
 Blue Moon tassets|Magic||3
+Bones to bananas|Magic||3
+Bones to peaches|Magic||3
 Book of Darkness|Magic||3
+Boots of the Eye|Magic||3
+Bryophyta's staff (uncharged)|Magic||3
+Camulet|Magic||3
+Corrupted staff (basic)|Magic||3
+Corrupted zuriel's hood (bh)|Magic||3
+Corrupted zuriel's robe bottom (bh)|Magic||3
+Corrupted zuriel's robe top (bh)|Magic||3
+Crystal staff (basic)|Magic||3
+Dagon'hai hat|Magic||3
+Dagon'hai robe bottom|Magic||3
+Dagon'hai robe top|Magic||3
 Dark squall hood|Magic||3
 Dark squall robe bottom|Magic||3
 Dark squall robe top|Magic||3
+Demonic robe bottom (t1)|Magic||3
+Demonic robe top (t1)|Magic||3
+Dragon hunter wand|Magic||3
 Dramen staff|Magic||3
+Druid's robe|Magic||3
+Druid's robe top|Magic||3
+Druidic wreath|Magic||3
+Dust battlestaff|Magic||3
 Elemental shield|Magic||3
+Enchanted robe|Magic||3
+Enchanted top|Magic||3
+Eternal boots|Magic||3
 Fire battlestaff|Magic||3
+Glarial's amulet|Magic||3
 Guthix cape|Magic||3
 Guthix staff|Magic||3
+Holy sanguinesti staff|Magic||3
+Ice ancient sceptre|Magic||3
 Imbued ancient cape|Magic||3
+Infinity boots|Magic||3
+Infinity bottoms|Magic||3
+Infinity gloves|Magic||3
+Infinity hat|Magic||3
+Infinity top|Magic||3
+Kodai insignia|Magic||3
 Lava battlestaff|Magic||3
+Light infinity bottoms|Magic||3
+Light infinity hat|Magic||3
+Light infinity top|Magic||3
 Lunar amulet|Magic||3
 Lunar boots|Magic||3
 Lunar gloves|Magic||3
@@ -296,174 +2270,1691 @@ Lunar legs|Magic||3
 Lunar ring|Magic||3
 Lunar staff|Magic||3
 Lunar torso|Magic||3
+Magic staff|Magic||3
+Magus ring|Magic||3
+Malediction ward|Magic||3
+Mist battlestaff|Magic||3
+Mud battlestaff|Magic||3
 Mystic air staff|Magic||3
+Mystic boots (dark)|Magic||3
+Mystic boots (dusk)|Magic||3
+Mystic dust staff|Magic||3
+Mystic gloves (dark)|Magic||3
+Mystic gloves (dusk)|Magic||3
+Mystic hat (dark)|Magic||3
+Mystic hat (dusk)|Magic||3
+Mystic lava staff|Magic||3
+Mystic mist staff|Magic||3
+Mystic mud staff|Magic||3
+Mystic robe bottom (dark)|Magic||3
+Mystic robe bottom (dusk)|Magic||3
+Mystic robe top (dark)|Magic||3
+Mystic robe top (dusk)|Magic||3
+Mystic set (blue)|Magic||3
+Mystic set (dark)|Magic||3
+Mystic set (dusk)|Magic||3
+Mystic smoke staff|Magic||3
+Mystic steam staff|Magic||3
 Mystic water staff|Magic||3
+Noble robe top|Magic||3
+Purging staff|Magic||3
+Ring of the elements|Magic||3
+Robe bottom of Ruin|Magic||3
+Robe bottoms of the Eye|Magic||3
+Robe bottoms of the Eye (blue)|Magic||3
+Robe bottoms of the Eye (green)|Magic||3
+Robe of Elidinis|Magic||3
+Robe top of Ruin|Magic||3
+Robe top of the Eye|Magic||3
+Robe top of the Eye (blue)|Magic||3
+Robe top of the Eye (green)|Magic||3
+Saradomin crozier|Magic||3
 Saradomin staff|Magic||3
+Shade robe|Magic||3
+Shade robe top|Magic||3
+Shadow ancient sceptre|Magic||3
+Sinhaza shroud tier 1|Magic||3
+Skull sceptre|Magic||3
+Slayer's staff|Magic||3
+Smoke ancient sceptre|Magic||3
 Soulflame horn|Magic||3
+Staff of air|Magic||3
+Staff of Balance|Magic||3
+Staff of earth|Magic||3
+Staff of fire|Magic||3
+Staff of water|Magic||3
+Steam battlestaff|Magic||3
+Thammaron's sceptre (u)|Magic||3
+Tome of Earth|Magic||3
+Tome of Fire|Magic||3
+Tome of Water|Magic||3
+Trident of the Seas (e) (o)|Magic||3
+Trident of the Seas (full)|Magic||3
+Trident of the Seas (full) (o)|Magic||3
+Trident of the Swamp (e) (o)|Magic||3
+Turquoise robe bottoms|Magic||3
+Turquoise robe top|Magic||3
+Uncharged trident|Magic||3
+Uncharged trident (e) (o)|Magic||3
+Warped sceptre (uncharged)|Magic||3
+Xerician robe|Magic||3
+Xerician top|Magic||3
 Zamorak cape|Magic|Melee|3
+Zamorak crozier|Magic||3
 Zamorak staff|Magic||3
-Air orb|Crafting||4
+Zealot's boots|Magic||3
+Zealot's helm|Magic||3
+Zealot's robe bottom|Magic||3
+Zealot's robe top|Magic||3
+Zuriel's hood|Magic||3
+Zuriel's robe bottom|Magic||3
+Zuriel's robe top|Magic||3
+Zuriel's staff|Magic||3
+Accursed sceptre (u)|Magic||4
+Amulet of the Damned (full)|Magic||4
+Ancient bracers|Magic||4
+Ancient medallion|Magic||4
+Ancient mitre|Magic||4
+Ancient robe legs|Magic||4
+Ancient robe top|Magic||4
+Ancient stole|Magic||4
+Arcane grimoire|Magic||4
+Arceuus hood|Magic||4
+Arceuus scarf|Magic||4
+Awakener's orb|Magic||4
 Battlestaff|Magic||4
+Black robe|Magic||4
+Black warlock|Magic||4
+Black wizard hat (g)|Magic||4
+Black wizard robe (g)|Magic||4
+Blue robe bottoms|Magic||4
+Blue robe top|Magic||4
+Blue wizard hat|Magic||4
+Blue wizard robe|Magic||4
+Bone staff|Magic||4
+Bottled dragonbreath|Magic||4
+Bottled dragonbreath (unpowered)|Magic||4
+Bottled storm|Magic||4
+Charge dragonstone jewellery scroll|Magic||4
 Circlet of water (uncharged)|Magic|Runecraft|4
+Corrupted zuriel's hood (bh)(inactive)|Magic||4
+Corrupted zuriel's robe bottom (bh)(inactive)|Magic||4
+Corrupted zuriel's robe top (bh)(inactive)|Magic||4
+Crate of staffs|Magic||4
+Cursed amulet of magic|Magic||4
+Demonic sceptre|Magic||4
+Echo ahrim's hood|Magic||4
+Echo ahrim's robeskirt|Magic||4
+Echo ahrim's robetop|Magic||4
+Echo ahrim's staff|Magic||4
+Echo virtus mask|Magic||4
+Echo virtus robe bottom|Magic||4
+Echo virtus robe top|Magic||4
+Elder chaos hood|Magic||4
+Elder chaos robe|Magic||4
+Elder chaos top|Magic||4
 Elemental amulet|Magic||4
+Elemental helmet|Magic||4
+Elite void robe (l)(or)|Magic||4
+Elite void top (l)(or)|Magic||4
+Emberlight|Magic||4
+Enchant diamond|Magic||4
+Enchant dragonstone|Magic||4
+Enchant emerald or jade|Magic||4
+Enchant onyx|Magic||4
+Enchant ruby or topaz|Magic||4
+Enchant sapphire or opal|Magic||4
+Enchanted hat|Magic||4
 Eye of Ayak|Magic||4
-Fire orb|Crafting||4
+Farseer helm|Magic||4
+Fire element staff crown|Magic||4
+Ghostly boots|Magic||4
+Ghostly cloak|Magic||4
+Ghostly gloves|Magic||4
+Ghostly hood|Magic||4
+Ghostly robe|Magic||4
+Green robe bottoms|Magic||4
+Green robe top|Magic||4
+Grey robe bottoms|Magic||4
+Grey robe top|Magic||4
+Guthix robe legs|Magic||4
+Guthix robe top|Magic||4
+Helmet of the moon|Magic||4
+Holy wraps|Magic||4
 Iban's staff|Magic||4
+Iban's staff (u) (o)|Magic||4
+Ice ancient sceptre (l) (mangled)|Magic||4
+Ice element staff crown|Magic||4
+Icthlarin's shroud (tier 1)|Magic||4
+Icthlarin's shroud (tier 2)|Magic||4
+Icthlarin's shroud (tier 3)|Magic||4
+Icthlarin's shroud (tier 4)|Magic||4
+Lava staff upgrade kit|Magic||4
 Lunar cape|Magic||4
-Unpowered orb|Crafting||4
+Lunar staff - pt1|Magic||4
+Lunar staff - pt2|Magic||4
+Lunar staff - pt3|Magic||4
+Mage's book|Magic||4
+Magic hood|Magic||4
+Magic shield|Magic||4
+Master wand|Magic||4
+Merfolk trident|Magic||4
+Mind helmet|Magic||4
+Red robe bottoms|Magic||4
+Red robe top|Magic||4
+Robe bottom of darkness|Magic||4
+Robe top of darkness|Magic||4
+Rod of Ivandis (10)|Magic||4
+Shadow ancient sceptre (l) (mangled)|Magic||4
+Socks of Ruin|Magic||4
+Spectral sigil|Magic||4
+Void knight robe (l)(or)|Magic|Melee,Ranged|4
+Void mage helm (l)(or)|Magic||4
+Volatile orb|Magic||4
+White magic staff|Magic||4
+Wizard boots|Magic||4
+Wizard hat|Magic||4
 Xerician hat|Magic||4
+Zamorak robe legs|Magic||4
+Zamorak robe top|Magic||4
+Zuriel's hood (bh)(inactive)|Magic||4
+Zuriel's robe bottom (bh)(inactive)|Magic||4
+Zuriel's robe top (bh)(inactive)|Magic||4
+Zuriel's staff (bh)(inactive)|Magic||4
+Adamant staff of collection|Magic||5
+Amulet of air|Magic||5
+Amulet of earth|Magic||5
+Amulet of fire|Magic||5
+Amulet of water|Magic||5
+Ancient sceptre (l) (mangled)|Magic||5
+Apprentice wand|Magic||5
+Beginner wand|Magic||5
+Blood ancient sceptre (l) (mangled)|Magic||5
 Book of the Dead|Magic||5
+Cursed goblin staff|Magic||5
+Elite calamity breeches (broken)|Magic||5
+Elite calamity chest (broken)|Magic||5
+Elite void robe (l) (mangled)|Magic||5
+Elite void top (l) (mangled)|Magic||5
+Hallowed focus|Magic||5
+Hood of darkness|Magic||5
+Icthlarin's hood (tier 5)|Magic||5
+Icthlarin's shroud (tier 5)|Magic||5
+Smoke ancient sceptre (l) (mangled)|Magic||5
+Staff|Magic||5
+Starter staff|Magic||5
+Steam staff upgrade kit|Magic||5
+Void knight robe (l) (mangled)|Magic|Melee,Ranged|5
+Void mage helm (l) (mangled)|Magic||5
+Water orb|Magic||5
 Abyssal bludgeon|Melee||1
 Abyssal whip|Melee||1
 Amulet of fury|Melee|Ranged,Magic|1
+Amulet of torture|Melee||1
+Armadyl godsword|Melee||1
+Bandos godsword|Melee||1
 Barrows gloves|Melee|Ranged,Magic|1
+Corrupted armadyl godsword|Melee||1
+Corrupted body (perfected)|Melee||1
+Corrupted dragon claws|Melee||1
+Corrupted halberd (perfected)|Melee||1
+Corrupted helm (perfected)|Melee||1
+Corrupted legs (perfected)|Melee||1
+Corrupted Scythe of Vitur|Melee||1
+Corrupted voidwaker|Melee||1
+Crystal body (perfected)|Melee||1
+Crystal dagger (perfected)|Melee||1
+Crystal halberd (perfected)|Melee||1
+Crystal helm (perfected)|Melee||1
+Crystal legs (perfected)|Melee||1
 Dragon dagger(p)|Melee||1
 Dragon dagger(p+)|Melee||1
 Dragon scimitar|Melee||1
 Helm of Neitiznot|Melee||1
 Osmumten's fang|Melee||1
+Sanguine Scythe of Vitur|Melee||1
+Sanguine torva full helm|Melee||1
+Sanguine torva platebody|Melee||1
+Sanguine torva platelegs|Melee||1
+Scythe of Vitur|Melee||1
+Spectral spirit shield|Melee||1
+Torva armour set|Melee||1
 Voidwaker|Melee||1
+Abyssal dagger|Melee||2
+Abyssal tentacle|Melee||2
+Adamant platebody|Melee||2
+Adamant platelegs|Melee||2
+Adamant plateskirt|Melee||2
+Amulet of blood fury|Melee||2
 Arclight|Melee|Slayer|2
+Armadyl hilt|Melee||2
+Avernic defender|Melee||2
+Avernic treads|Melee||2
+Bandos boots|Melee||2
 Bandos bracers|Melee|Ranged|2
 Bandos chaps|Melee|Ranged|2
+Bandos chestplate|Melee||2
+Bandos cloak|Melee||2
+Bandos coif|Melee||2
+Bandos full helm|Melee||2
+Bandos hilt|Melee||2
+Bandos platebody|Melee||2
+Bandos platelegs|Melee||2
+Bandos plateskirt|Melee||2
+Barrelchest anchor|Melee||2
+Barrows gloves (wrapped)|Melee|Ranged,Magic|2
+Berserker helm|Melee||2
+Berserker necklace|Melee||2
+Berserker ring|Melee||2
+Blood Moon armour set|Melee||2
 Blood Moon chestplate|Melee|Magic|2
 Blood Moon helm|Melee|Magic|2
 Blood Moon tassets|Melee|Magic|2
+Boots of Brimstone|Melee||2
 Cape of Legends|Melee|Ranged,Magic|2
+Corrupted body (attuned)|Melee||2
+Corrupted halberd (attuned)|Melee||2
+Corrupted helm|Melee||2
+Corrupted helm (attuned)|Melee||2
+Corrupted kiteshield|Melee||2
+Corrupted legs (attuned)|Melee||2
+Corrupted platebody|Melee||2
+Corrupted platelegs|Melee||2
+Corrupted plateskirt|Melee||2
+Crystal body|Melee||2
+Crystal body (attuned)|Melee||2
+Crystal halberd|Melee||2
+Crystal halberd (attuned)|Melee||2
+Crystal helm|Melee||2
+Crystal helm (attuned)|Melee||2
+Crystal legs|Melee||2
+Crystal legs (attuned)|Melee||2
+Crystal shield|Melee||2
+Dawnbringer|Melee||2
+Dharok's armour set|Melee||2
+Dharok's greataxe|Melee||2
+Dharok's helm|Melee||2
+Dharok's platebody|Melee||2
+Dharok's platelegs|Melee||2
+Dinh's blazing bulwark|Melee||2
+Dinh's bulwark|Melee||2
+Dragon 2h sword|Melee||2
+Dragon armour set (lg)|Melee||2
+Dragon battleaxe|Melee||2
 Dragon boots|Melee||2
+Dragon chainbody|Melee||2
+Dragon claws|Melee||2
+Dragon dagger|Melee||2
 Dragon defender|Melee||2
+Dragon defender (l)(t)|Melee||2
+Dragon full helm|Melee||2
+Dragon gloves|Melee||2
+Dragon halberd|Melee||2
+Dragon hasta|Melee||2
+Dragon kiteshield|Melee||2
+Dragon longsword|Melee||2
+Dragon mace|Melee||2
+Dragon med helm|Melee||2
+Dragon platebody|Melee||2
+Dragon platelegs|Melee||2
+Dragon plateskirt|Melee||2
+Dragon shortsword|Melee||2
+Dragon spear|Melee||2
+Dragon sq shield|Melee||2
+Dragon warhammer|Melee||2
+Dragonfire shield|Melee||2
+Dragonfire ward|Melee||2
+Dragonstone boots|Melee||2
+Dragonstone full helm|Melee||2
+Dragonstone gauntlets|Melee||2
+Dragonstone platebody|Melee||2
+Dragonstone platelegs|Melee||2
 Dual macuahuitl|Melee||2
+Elder maul|Melee||2
+Elidinis' ward|Melee||2
+Elysian sigil|Melee||2
+Elysian spirit shield|Melee||2
 Excalibur|Melee||2
+Fangs of Venenatis|Melee||2
+Ferocious gloves|Melee||2
+Ghommal's avernic defender 5|Melee||2
+Ghrazi rapier|Melee||2
+Holy Scythe of Vitur|Melee||2
 Honourable blessing|Melee|Ranged,Magic|2
+Infernal cape|Melee||2
+Inquisitor's great helm|Melee||2
+Inquisitor's hauberk|Melee||2
+Inquisitor's mace|Melee||2
+Inquisitor's plateskirt|Melee||2
+Justiciar armour set|Melee||2
+Justiciar chestguard|Melee||2
+Justiciar faceguard|Melee||2
+Justiciar legguards|Melee||2
+Keris partisan of amascut|Melee||2
+Keris partisan of breaching|Melee||2
+Keris partisan of corruption|Melee||2
 Lightbearer|Melee||2
+Neitiznot faceguard|Melee||2
+Oathplate armour set|Melee||2
+Oathplate chest|Melee||2
+Oathplate helm|Melee||2
+Oathplate legs|Melee||2
 Occult necklace|Melee||2
+Primordial boots|Melee||2
+Proselyte cuisse|Melee||2
+Proselyte harness f|Melee||2
+Proselyte harness m|Melee||2
+Proselyte hauberk|Melee||2
+Proselyte sallet|Melee||2
+Proselyte tasset|Melee||2
+Radiant oathplate chest|Melee||2
+Radiant oathplate helm|Melee||2
+Radiant oathplate legs|Melee||2
+Ring of 3rd Age|Melee|Ranged,Magic|2
+Rune 2h sword|Melee||2
+Rune armour set (lg)|Melee||2
+Rune boots|Melee||2
+Rune chainbody|Melee||2
+Rune dagger|Melee||2
 Rune defender|Melee||2
+Rune full helm|Melee||2
+Rune gloves|Melee||2
+Rune halberd|Melee||2
+Rune kiteshield|Melee||2
+Rune longsword|Melee||2
+Rune mace|Melee||2
+Rune med helm|Melee||2
+Rune platebody|Melee||2
+Rune platelegs|Melee||2
+Rune plateskirt|Melee||2
+Rune scimitar|Melee||2
+Rune shortsword|Melee||2
+Rune sq shield|Melee||2
+Rune warhammer|Melee||2
+Sarachnis cudgel|Melee||2
+Saradomin godsword|Melee||2
+Saradomin platebody|Melee||2
+Saradomin platelegs|Melee||2
+Saradomin plateskirt|Melee||2
+Saradomin sword|Melee||2
+Soulreaper axe|Melee||2
+Splitbark body|Melee||2
+Splitbark boots|Melee||2
+Splitbark gauntlets|Melee||2
+Splitbark helm|Melee||2
+Splitbark legs|Melee||2
+Statius's full helm|Melee||2
+Statius's platebody|Melee||2
+Statius's platelegs|Melee||2
+Statius's warhammer|Melee||2
+Sunspear|Melee||2
+Swampbark armour set|Melee||2
+Swampbark body|Melee||2
+Swampbark boots|Melee||2
+Swampbark gauntlets|Melee||2
+Swampbark helm|Melee||2
+Swampbark legs|Melee||2
+Tanzanite fang|Melee||2
+Toktz-mej-tal|Melee||2
+Torag's armour set|Melee||2
+Torag's hammers|Melee||2
+Torag's helm|Melee||2
+Torag's platebody|Melee||2
+Torag's platelegs|Melee||2
+Tzhaar-ket-em|Melee||2
+Tzhaar-ket-om|Melee||2
+Unholy blessing|Melee|Ranged,Magic|2
+Vesta's longsword|Melee||2
+Vesta's spear|Melee||2
+Void knight gloves|Melee|Magic,Ranged|2
+Void knight top|Melee|Magic,Ranged|2
+Void melee helm|Melee||2
+Volcanic abyssal whip|Melee||2
+War blessing|Melee|Ranged,Magic|2
+Zamorak godsword|Melee||2
+3rd Age axe|Melee||3
+3rd Age cloak|Melee||3
+3rd Age full helmet|Melee||3
+3rd Age kiteshield|Melee||3
+3rd Age longsword|Melee||3
+3rd Age platebody|Melee||3
+3rd Age platelegs|Melee||3
+3rd Age plateskirt|Melee||3
+3rd Age vambraces|Melee||3
+Adamant 2h sword|Melee||3
+Adamant battleaxe|Melee||3
+Adamant boots|Melee||3
+Adamant chainbody|Melee||3
+Adamant claws|Melee||3
+Adamant dagger|Melee||3
+Adamant defender|Melee||3
+Adamant dragon mask|Melee||3
 Adamant full helm|Melee||3
+Adamant gloves|Melee||3
+Adamant halberd|Melee||3
+Adamant hasta|Melee||3
+Adamant kiteshield|Melee||3
+Adamant longsword|Melee||3
+Adamant mace|Melee||3
+Adamant med helm|Melee||3
+Adamant scimitar|Melee||3
+Adamant shortsword|Melee||3
+Adamant spear|Melee||3
+Adamant sq shield|Melee||3
+Adamant warhammer|Melee||3
+Amulet of accuracy|Melee||3
+Amulet of defence|Melee||3
 Amulet of power|Melee||3
+Amulet of strength|Melee||3
+Ancient ceremonial boots|Melee||3
+Ancient ceremonial gloves|Melee||3
+Ancient ceremonial legs|Melee||3
+Ancient ceremonial mask|Melee||3
+Ancient ceremonial top|Melee||3
+Ancient godsword|Melee||3
 Ancient mace|Melee||3
 Anti-dragon shield|Melee||3
+Armadyl full helm|Melee||3
+Armadyl kiteshield|Melee||3
+Avernic defender hilt|Melee||3
+Avernic treads (pe)(et)|Melee||3
+Avernic treads (pr)(pe)|Melee||3
+Bandos crozier|Melee||3
+Bandos d'hide shield|Melee||3
+Bandos dragonhide set|Melee||3
+Bandos kiteshield|Melee||3
+Bandos mitre|Melee||3
+Bandos robe legs|Melee||3
+Bandos robe top|Melee||3
+Bandos stole|Melee||3
+Bandos tassets|Melee||3
+Barronite mace|Melee||3
 Berserker ring (i)|Melee||3
+Blade of Saeldor|Melee||3
+Blisterwood flail|Melee||3
+Blisterwood sickle|Melee||3
+Blisterwood stake|Melee||3
+Bloodbark armour set|Melee||3
+Bloodbark body|Melee||3
+Bloodbark boots|Melee||3
+Bloodbark gauntlets|Melee||3
+Bloodbark helm|Melee||3
+Bloodbark legs|Melee||3
 Bone dagger (p++)|Melee||3
 Brimstone ring|Melee||3
+Brine sabre|Melee||3
+Burning claw|Melee||3
+Burning claws|Melee||3
+Corrupted body (basic)|Melee||3
+Corrupted halberd (basic)|Melee||3
+Corrupted helm (basic)|Melee||3
+Corrupted legs (basic)|Melee||3
+Corrupted statius's full helm (bh)|Melee||3
+Corrupted statius's platebody (bh)|Melee||3
+Corrupted statius's platelegs (bh)|Melee||3
+Corrupted vesta's chainbody (bh)|Melee||3
+Corrupted vesta's plateskirt (bh)|Melee||3
+Crystal body (basic)|Melee||3
+Crystal halberd (basic)|Melee||3
+Crystal helm (basic)|Melee||3
+Crystal legs (basic)|Melee||3
+Dark dagger|Melee||3
+Darklight|Melee||3
+Demonic boots (t1)|Melee||3
+Demonic hood (t1)|Melee||3
+Devout boots|Melee||3
+Diamond sickle (b)|Melee||3
+Dragon dagger (p)(cr)|Melee||3
+Dragon dagger (p+)(cr)|Melee||3
+Dragon dagger (p++)(cr)|Melee||3
+Dragon dagger(p++)|Melee||3
+Dragon hasta(p+)|Melee||3
+Dragon hasta(p++)|Melee||3
+Dragon hunter lance|Melee||3
+Dragon spear (p)(cr)|Melee||3
+Dragon spear (p+)(cr)|Melee||3
+Dragon spear (p++)(cr)|Melee||3
+Dragon spear(p+)|Melee||3
+Dragon spear(p++)|Melee||3
+Dual sai|Melee||3
+Eclipse Moon armour set|Melee||3
 Elite black full helm|Melee||3
 Elite black platebody|Melee||3
 Elite black platelegs|Melee||3
+Emerald sickle (b)|Melee||3
+Enchanted diamond sickle (b)|Melee||3
+Enchanted emerald sickle (b)|Melee||3
+Enchanted ruby sickle (b)|Melee||3
 Fighter torso|Melee||3
+Fighting boots|Melee||3
+Fremennik blade|Melee||3
+Frozen abyssal whip|Melee||3
+Gilded 2h sword|Melee||3
+Glacial temotli|Melee||3
+Godsword blade|Melee||3
+Granite body|Melee||3
 Granite longsword|Melee||3
+Granite maul|Melee||3
+Holy blessing|Melee|Ranged,Magic|3
+Holy ghrazi rapier|Melee||3
+Ivandis flail|Melee||3
+Jade machete|Melee||3
 Keris|Melee||3
+Keris partisan|Melee||3
 Keris partisan of the sun|Melee||3
+Lava dragon mask|Melee||3
+Leaf-bladed battleaxe|Melee||3
+Leaf-bladed spear|Melee||3
+Leaf-bladed sword|Melee||3
+Mask of Balance|Melee||3
+Mithril 2h sword|Melee||3
+Mithril battleaxe|Melee||3
+Mithril boots|Melee||3
+Mithril chainbody|Melee||3
+Mithril claws|Melee||3
+Mithril dagger|Melee||3
+Mithril dagger(p+)|Melee||3
+Mithril dagger(p++)|Melee||3
+Mithril defender|Melee||3
+Mithril dragon mask|Melee||3
+Mithril full helm|Melee||3
+Mithril gloves|Melee||3
+Mithril gloves (wrapped)|Melee||3
+Mithril halberd|Melee||3
+Mithril hasta|Melee||3
+Mithril hasta(p+)|Melee||3
+Mithril hasta(p++)|Melee||3
+Mithril kiteshield|Melee||3
+Mithril longsword|Melee||3
+Mithril mace|Melee||3
+Mithril med helm|Melee||3
 Mithril platebody|Melee||3
+Mithril platelegs|Melee||3
+Mithril plateskirt|Melee||3
+Mithril scimitar|Melee||3
+Mithril set (lg)|Melee||3
+Mithril shortsword|Melee||3
+Mithril spear|Melee||3
+Mithril spear(p+)|Melee||3
+Mithril spear(p++)|Melee||3
+Mithril sq shield|Melee||3
+Mithril warhammer|Melee||3
 Neitiznot shield|Melee||3
+Obsidian armour set|Melee||3
+Obsidian cape|Melee||3
+Obsidian helmet|Melee||3
+Obsidian platebody|Melee||3
+Obsidian platelegs|Melee||3
+Odium ward|Melee||3
+Ornate boots|Melee||3
+Ornate cape|Melee||3
+Ornate gloves|Melee||3
+Ornate helm|Melee||3
+Ornate legs|Melee||3
+Ornate top|Melee||3
+Peaceful blessing|Melee|Ranged,Magic|3
+Phoenix necklace|Melee||3
+Rada's blessing 1|Melee|Ranged,Magic|3
+Rapier|Melee||3
 Ring of recoil|Melee||3
+Rock-shell boots|Melee||3
+Rock-shell gloves|Melee||3
+Rock-shell helm|Melee||3
+Rock-shell legs|Melee||3
+Rock-shell plate|Melee||3
+Rondache|Melee||3
+Rune battleaxe|Melee||3
+Rune claws|Melee||3
+Rune dagger(p+)|Melee||3
+Rune dagger(p++)|Melee||3
+Rune defender (l)(t)|Melee||3
+Rune gloves (wrapped)|Melee||3
+Rune gold-trimmed set (lg)|Melee||3
+Rune hasta|Melee||3
+Rune hasta(p+)|Melee||3
+Rune hasta(p++)|Melee||3
+Rune helm (h1)|Melee||3
+Rune heraldic helm|Melee||3
+Rune shield (h1)|Melee||3
+Rune spear|Melee||3
+Rune spear(p+)|Melee||3
+Rune spear(p++)|Melee||3
+Rune trimmed set (lg)|Melee||3
+Sara's blessed sword (full)|Melee||3
+Saradomin armour set (lg)|Melee||3
+Saradomin bracers|Melee||3
+Saradomin chaps|Melee||3
+Saradomin coif|Melee||3
+Saradomin d'hide body|Melee|Ranged|3
+Saradomin d'hide boots|Melee|Ranged|3
+Saradomin d'hide shield|Melee||3
+Saradomin dragonhide set|Melee|Ranged|3
+Saradomin full helm|Melee||3
+Saradomin hilt|Melee||3
+Saradomin kiteshield|Melee||3
+Saradomin mitre|Melee||3
+Saradomin mjolnir|Melee||3
+Saradomin's blessed sword|Melee||3
+Shadow sword|Melee||3
+Shayzien body (5)|Melee||3
+Shayzien boots (1)|Melee||3
+Shayzien gloves (1)|Melee||3
+Shayzien greaves (1)|Melee||3
+Shayzien helm (1)|Melee||3
+Shayzien hood|Melee||3
+Shayzien platebody (1)|Melee||3
+Shield left half|Melee||3
+Shield right half|Melee||3
+Silverlight|Melee||3
+Skeletal armour set|Melee||3
+Skeletal boots|Melee||3
+Skeletal bottoms|Melee||3
+Skeletal gloves|Melee||3
+Skeletal helm|Melee||3
+Skeletal top|Melee||3
+Spined body|Melee||3
+Spined boots|Melee||3
+Spined chaps|Melee||3
+Spined gloves|Melee||3
+Spined helm|Melee||3
+Spirit shield|Melee||3
+Steel platebody|Melee||3
+Steel plateskirt|Melee||3
+Strength amulet (t)|Melee||3
+Strength cape|Melee||3
+Tanzanite helm (uncharged)|Melee||3
+The dogsword|Melee||3
+Thunder khopesh|Melee||3
 Toktz-ket-xil|Melee||3
+Toktz-xil-ak|Melee||3
+Toktz-xil-ek|Melee||3
+Toktz-xil-ul|Melee||3
+Turquoise boots|Melee||3
+Turquoise hat|Melee||3
+Twisted buckler|Melee||3
+Twisted cane|Melee||3
+Tyras helm|Melee||3
 Ursine chainmace|Melee||3
+Verac's armour set|Melee||3
+Verac's brassard|Melee||3
+Verac's flail|Melee||3
+Verac's helm|Melee||3
+Verac's plateskirt|Melee||3
+Vesta's chainbody|Melee||3
+Vesta's plateskirt|Melee||3
+Viggora's chainmace (u)|Melee||3
+Void knight mace|Melee||3
+Voidwaker blade|Melee||3
+Zamorak d'hide body|Melee||3
+Zamorak d'hide boots|Melee||3
+Zamorak d'hide shield|Melee||3
+Zamorak dragonhide set|Melee||3
 Zamorakian hasta|Melee||3
+Zamorakian spear|Melee||3
+Abyssal dagger (bh)(p)|Melee||4
+Abyssal dagger (bh)(p+)|Melee||4
+Abyssal dagger (bh)(p++)|Melee||4
+Abyssal dagger (p+)|Melee||4
+Abyssal dagger (p++)|Melee||4
+Adamant dagger(p+)|Melee||4
+Adamant dagger(p++)|Melee||4
+Adamant hasta(p+)|Melee||4
+Adamant hasta(p++)|Melee||4
+Adamant helm (h1)|Melee||4
+Adamant heraldic helm|Melee||4
+Adamant shield (h1)|Melee||4
+Adamant spear(p+)|Melee||4
+Adamant spear(p++)|Melee||4
+Amulet of avarice|Melee||4
+Amulet of rancour|Melee||4
+Ancient blessing|Melee|Ranged,Magic|4
+Ancient cloak|Melee||4
+Ancient d'hide shield|Melee||4
+Ancient full helm|Melee||4
+Ancient kiteshield|Melee||4
+Ancient platebody|Melee||4
+Ancient platelegs|Melee||4
+Ancient plateskirt|Melee||4
+Ancient wyvern shield|Melee||4
+Anger battleaxe|Melee||4
+Anger mace|Melee||4
+Anger spear|Melee||4
+Anger sword|Melee||4
+Antler guard|Melee||4
 Ardougne knight helm|Melee||4
 Ardougne knight platebody|Melee||4
+Ardougne knight platelegs|Melee||4
+Arkan blade|Melee||4
+Arrav's axe|Melee||4
+Black 2h sword|Melee||4
+Black axe|Melee||4
+Black battleaxe|Melee||4
+Black boots|Melee||4
+Black cavalier|Melee||4
+Black chainbody|Melee||4
+Black claws|Melee||4
+Black dagger|Melee||4
+Black dagger(p+)|Melee||4
+Black dagger(p++)|Melee||4
+Black defender|Melee||4
 Black full helm|Melee||4
+Black gloves|Melee||4
+Black goblin mail|Melee||4
+Black halberd|Melee||4
+Black helm (h1)|Melee||4
+Black kiteshield|Melee||4
+Black longsword|Melee||4
+Black mace|Melee||4
+Black med helm|Melee||4
 Black platebody|Melee||4
 Black platelegs|Melee||4
+Black plateskirt|Melee||4
+Black scimitar|Melee||4
+Black shield (h1)|Melee||4
+Black shortsword|Melee||4
+Black spear|Melee||4
+Black spear(p+)|Melee||4
+Black spear(p++)|Melee||4
+Black spiky vambraces|Melee||4
+Black sq shield|Melee||4
+Black warhammer|Melee||4
+Blessed axe|Melee||4
+Blood'n'tar snelm|Melee||4
+Blue goblin mail|Melee||4
 Blue Moon spear|Melee||4
+Blue spiky vambraces|Melee||4
+Blurite sword|Melee||4
+Bone club|Melee||4
+Bone dagger|Melee||4
+Bone dagger (p+)|Melee||4
+Bone mace|Melee||4
+Bone spear|Melee||4
 Book of War|Melee||4
+Boots of darkness|Melee||4
 Boots of stone|Melee||4
+Broken dragon hasta|Melee||4
+Broodoo shield (10)|Melee||4
+Bruise blue snelm|Melee||4
+Bucket helm|Melee||4
+Carnillean armour|Melee||4
+Cattleprod|Melee||4
+Cavalier mask|Melee||4
+Colossal blade|Melee||4
+Corrupted statius's full helm (bh)(inactive)|Melee||4
+Corrupted statius's platebody (bh)(inactive)|Melee||4
+Corrupted statius's platelegs (bh)(inactive)|Melee||4
+Corrupted vesta's chainbody (bh)(inactive)|Melee||4
+Corrupted vesta's plateskirt (bh)(inactive)|Melee||4
+Crate of battleaxes|Melee||4
+Crate of chainbodies|Melee||4
+Crate of daggers|Melee||4
+Crate of halberds|Melee||4
+Crate of maces|Melee||4
+Crate of platebodies|Melee||4
+Crate of scimitars|Melee||4
+Crate of shields|Melee||4
+Crate of spears|Melee||4
+Crate of swords|Melee||4
+Crate of warhammers|Melee||4
+Defensive shield|Melee||4
+Desert boots|Melee||4
+Draconic visage|Melee||4
+Dwarven helmet|Melee||4
+Earthbound tecpatl|Melee||4
+Echo boots|Melee||4
+Efaritay's aid|Melee||4
+Eggshell platebody|Melee||4
+Eggshell platelegs|Melee||4
+Falador shield 1|Melee||4
+Fighter torso (l)(or)|Melee||4
 Fire cape|Melee||4
+Fremennik shield|Melee||4
+Gadderhammer|Melee||4
 Ghommal's hilt 1|Melee||4
 Ghommal's hilt 2|Melee||4
+Gilded boots|Melee||4
+Gilded chainbody|Melee||4
+Gilded full helm|Melee||4
+Gilded hasta|Melee||4
+Gilded kiteshield|Melee||4
+Gilded med helm|Melee||4
+Gilded platebody|Melee||4
+Gilded platelegs|Melee||4
+Gilded plateskirt|Melee||4
+Gilded scimitar|Melee||4
+Gilded spear|Melee||4
+Gilded sq shield|Melee||4
+Gloves of Ruin|Melee||4
+Godsword shard 1|Melee||4
 Gold helmet|Melee||4
+Granite boots|Melee||4
+Granite gloves|Melee||4
+Granite helm|Melee||4
+Granite legs|Melee||4
+Granite shield|Melee||4
+Green spiky vambraces|Melee||4
+Group ironman helm|Melee||4
+Group ironman helm (unranked)|Melee||4
+Group ironman platebody|Melee||4
+Group ironman platebody (unranked)|Melee||4
+Group ironman platelegs|Melee||4
+Group ironman platelegs (unranked)|Melee||4
+Guthan's armour set|Melee||4
+Guthan's chainskirt|Melee||4
+Guthan's helm|Melee||4
+Guthan's platebody|Melee||4
+Guthan's warspear|Melee||4
+Guthix crozier|Melee||4
+Guthix full helm|Melee||4
+Guthix kiteshield|Melee||4
+Guthix mjolnir|Melee||4
+Guthix platebody|Melee||4
+Guthix platelegs|Melee||4
+Guthix plateskirt|Melee||4
+Ham boots|Melee||4
+Hardcore group ironman helm|Melee||4
+Hardcore group ironman platebody|Melee||4
+Hardcore group ironman platelegs|Melee||4
+Hardcore ironman helm|Melee||4
+Hardcore ironman platebody|Melee||4
+Hardcore ironman platelegs|Melee||4
+Helm of Raedwald|Melee||4
+Hill giant club|Melee||4
+Hood of Ruin|Melee||4
+Hornwood helm|Melee||4
+Hunter's spear|Melee||4
+Infernal cape (l) (mangled)|Melee||4
+Infernal tecpatl|Melee||4
+Initiate cuisse|Melee||4
+Initiate harness m|Melee||4
+Initiate hauberk|Melee||4
+Iron 2h sword|Melee||4
+Iron battleaxe|Melee||4
+Iron boots|Melee||4
+Iron claws|Melee||4
+Iron dagger|Melee||4
+Iron dagger(p+)|Melee||4
+Iron dagger(p++)|Melee||4
+Iron defender|Melee||4
+Iron dragon mask|Melee||4
+Iron full helm|Melee||4
+Iron gloves|Melee||4
+Iron halberd|Melee||4
+Iron hasta|Melee||4
+Iron hasta(p+)|Melee||4
+Iron hasta(p++)|Melee||4
+Iron kiteshield|Melee||4
+Iron longsword|Melee||4
+Iron mace|Melee||4
+Iron med helm|Melee||4
+Iron platebody|Melee||4
+Iron platelegs|Melee||4
+Iron plateskirt|Melee||4
+Iron scimitar|Melee||4
+Iron set (lg)|Melee||4
+Iron shortsword|Melee||4
+Iron spear|Melee||4
+Iron spear(p+)|Melee||4
+Iron spear(p++)|Melee||4
+Iron sq shield|Melee||4
+Iron warhammer|Melee||4
+Karamja gloves 1|Melee||4
+Katana|Melee||4
+Keris(p+)|Melee||4
+Keris(p++)|Melee||4
+Khazard armour|Melee||4
+Khazard helmet|Melee||4
+Killer's knife|Melee||4
+Lithic sceptre|Melee||4
+Magma helm (uncharged)|Melee||4
+Maple blackjack|Melee||4
+Maple shield|Melee||4
+Monk's robe|Melee||4
+Monk's robe top|Melee||4
+Moonclan armour|Melee||4
+Moonclan boots|Melee||4
+Moonclan cape|Melee||4
+Moonclan gloves|Melee||4
+Moonclan hat|Melee||4
+Moonclan helm|Melee||4
+Moonclan skirt|Melee||4
+Morytania legs 1|Melee||4
 Mourner boots|Melee||4
-Mourner cloak|Quest||5
 Mourner gloves|Melee||4
-Mourner top|Quest||5
-Mourner trousers|Quest||5
-Noose wand|Hunter||2
+Navy cavalier|Melee||4
+Necklace of Fangs|Melee||4
+Necklace of rupture|Melee||4
+Noxious halberd|Melee||4
+Nunchaku|Melee||4
+Opal machete|Melee||4
+Pegasian boots|Melee||4
+Penance gloves|Melee||4
+Penance skirt|Melee||4
+Raging echoes boots (t1)|Melee||4
+Raging echoes hat (t1)|Melee||4
+Raging echoes robeskirt (t1)|Melee||4
+Raging echoes top (t1)|Melee||4
+Rat pole|Melee||4
+Red cavalier|Melee||4
+Red spiky vambraces|Melee||4
+Red topaz machete|Melee||4
+Redwood shield|Melee||4
+Rogue's revenge|Melee||4
+Ruby sickle (b)|Melee||4
+Rune cane|Melee||4
+Saradomin's light|Melee||4
+Searing boots|Melee||4
+Shattered boots (t1)|Melee||4
+Shattered cane|Melee||4
+Shattered hood (t1)|Melee||4
+Shattered top (t1)|Melee||4
+Shattered trousers (t1)|Melee||4
+Silver sickle|Melee||4
+Skeletal visage|Melee||4
+Snakeskin shield|Melee||4
+Spiky vambraces|Melee||4
+Statius's full helm (bh)(inactive)|Melee||4
+Statius's platebody (bh)(inactive)|Melee||4
+Statius's platelegs (bh)(inactive)|Melee||4
+Statius's warhammer (bh)(inactive)|Melee||4
+Steel boots|Melee||4
+Steel claws|Melee||4
+Steel defender|Melee||4
+Steel full helm|Melee||4
+Steel gauntlets|Melee||4
+Steel gloves|Melee||4
+Steel kiteshield|Melee||4
+Steel longsword|Melee||4
+Steel med helm|Melee||4
 Steel platelegs|Melee||4
+Steel scimitar|Melee||4
+Steel sq shield|Melee||4
+Sulphur blades|Melee||4
+Superior calamity breeches (broken)|Melee||4
+Superior calamity chest (broken)|Melee||4
+Swift blade|Melee||4
+Tortugan shield|Melee||4
+Torva full helm (damaged)|Melee||4
+Torva platebody (damaged)|Melee||4
+Torva platelegs (damaged)|Melee||4
+Treasonous ring|Melee||4
+Tyrannical ring|Melee||4
+Ultor ring|Melee||4
 Unholy book|Melee||4
 Unholy symbol|Melee||4
+V's helm|Melee||4
+V's shield|Melee||4
+Vampyre snelm|Melee||4
+Vesta's blighted longsword|Melee||4
+Vesta's chainbody (bh)(inactive)|Melee||4
+Vesta's longsword (bh)(inactive)|Melee||4
+Vesta's plateskirt (bh)(inactive)|Melee||4
+Vesta's spear (bh)(inactive)|Melee||4
+Victor's cape (1)|Melee||4
+Void knight gloves (l)(or)|Melee|Magic,Ranged|4
+Void knight top (l)(or)|Melee|Magic,Ranged|4
+Void melee helm (l)(or)|Melee||4
+Voidwaker hilt|Melee||4
+Vyrewatch legs|Melee||4
+Vyrewatch shoes|Melee||4
+Vyrewatch top|Melee||4
+Warrior helm|Melee||4
+Warrior ring|Melee||4
+White 2h sword|Melee||4
+White battleaxe|Melee||4
+White chainbody|Melee||4
+White dagger|Melee||4
+White dagger(p+)|Melee||4
+White dagger(p++)|Melee||4
+White full helm|Melee||4
+White goblin mail|Melee||4
+White halberd|Melee||4
+White kiteshield|Melee||4
+White longsword|Melee||4
+White mace|Melee||4
+White med helm|Melee||4
+White platebody|Melee||4
+White platelegs|Melee||4
+White plateskirt|Melee||4
+White scimitar|Melee||4
+White shortsword|Melee||4
+White sq shield|Melee||4
+White warhammer|Melee||4
+Wilderness sword 1|Melee||4
 Wilderness sword 2|Melee||4
+Willow shield|Melee||4
+Wooden shield|Melee||4
+Wooden shortsword|Melee||4
+Yak-hide armour|Melee||4
+Yellow goblin mail|Melee||4
+Yew shield|Melee||4
+Zamorak armour set (lg)|Melee||4
+Zamorak bracers|Melee||4
+Zamorak chaps|Melee||4
+Zamorak cloak|Melee||4
+Zamorak coif|Melee||4
+Zamorak full helm|Melee||4
+Zamorak hilt|Melee||4
+Zamorak kiteshield|Melee||4
+Zamorak mjolnir|Melee||4
+Zamorak platebody|Melee||4
+Zamorak platelegs|Melee||4
+Zamorak plateskirt|Melee||4
+'24-carat' sword|Melee||5
+Adamant cane|Melee||5
+Adventurer's boots (t1)|Melee||5
+Adventurer's hood (t1)|Melee||5
+Adventurer's top (t1)|Melee||5
+Adventurer's trousers (t1)|Melee||5
+Adventurer's vambraces|Melee||5
+Beach boxing gloves|Melee||5
+Blue gingerbread shield|Melee||5
+Boxing gloves|Melee||5
+Broken bark snelm|Melee||5
+Bronze 2h sword|Melee||5
+Bronze battleaxe|Melee||5
+Bronze boots|Melee||5
+Bronze chainbody|Melee||5
+Bronze claws|Melee||5
+Bronze dagger|Melee||5
+Bronze dagger(p+)|Melee||5
+Bronze dagger(p++)|Melee||5
+Bronze defender|Melee||5
+Bronze full helm|Melee||5
+Bronze gloves|Melee||5
+Bronze halberd|Melee||5
+Bronze hasta|Melee||5
+Bronze hasta(p+)|Melee||5
+Bronze hasta(p++)|Melee||5
+Bronze kiteshield|Melee||5
+Bronze longsword|Melee||5
+Bronze mace|Melee||5
 Bronze med helm|Melee||5
+Bronze platebody|Melee||5
+Bronze platelegs|Melee||5
+Bronze plateskirt|Melee||5
+Bronze scimitar|Melee||5
+Bronze shortsword|Melee||5
+Bronze spear|Melee||5
+Bronze spear(p+)|Melee||5
+Bronze spear(p++)|Melee||5
+Bronze sq shield|Melee||5
+Bronze warhammer|Melee||5
+Cabbage round shield|Melee||5
+Calamity breeches (broken)|Melee||5
+Calamity chest (broken)|Melee||5
+Carrot sword|Melee||5
+Centurion cuirass (broken)|Melee||5
+Cursed goblin hammer|Melee||5
+Dragon candle dagger|Melee||5
+Fighter torso (l) (mangled)|Melee||5
+Giant bronze dagger|Melee||5
+Gloves of darkness|Melee||5
+Glowing dagger|Melee||5
+Goblin mail|Melee||5
+Green boots|Melee||5
+Green gingerbread shield|Melee||5
+Green goblin mail|Melee||5
+Group ironman bracers|Melee||5
+Group ironman bracers (unranked)|Melee||5
+Hallowed flail|Melee||5
+Hallowed hammer|Melee||5
+Hardcore group ironman bracers|Melee||5
+Hardened wristbands of the arena (broken)|Melee||5
+Harry's cutlass|Melee||5
 Initiate sallet|Melee||5
 Iron chainbody|Melee||5
+Ironman helm|Melee||5
+Ironman platebody|Melee||5
+Ironman platelegs|Melee||5
+Lucky cutlass|Melee||5
 Machete|Melee||5
+Maoma's full helm (broken)|Melee||5
+Maoma's great helm (broken)|Melee||5
+Maoma's med helm (broken)|Melee||5
 Mind shield|Melee||5
 Oak blackjack|Melee|Thieving|5
+Oak shield|Melee||5
+Orange goblin mail|Melee||5
+Ornate maul handle|Melee||5
+Pink goblin mail|Melee||5
+Purple goblin mail|Melee||5
+Ram skull helm|Melee||5
+Red d'hide shield|Melee||5
+Red goblin mail|Melee||5
 Silver sickle (b)|Melee||5
 Spiked boots|Melee||5
+Starter sword|Melee||5
+Steel 2h sword|Melee||5
+Steel battleaxe|Melee||5
+Steel chainbody|Melee||5
+Steel dagger|Melee||5
+Steel dagger(p+)|Melee||5
+Steel dagger(p++)|Melee||5
+Steel halberd|Melee||5
+Steel hasta|Melee||5
+Steel hasta(p+)|Melee||5
+Steel hasta(p++)|Melee||5
+Steel heraldic helm|Melee||5
+Steel mace|Melee||5
+Steel shortsword|Melee||5
+Steel spear|Melee||5
+Steel spear(p+)|Melee||5
+Steel spear(p++)|Melee||5
+Steel warhammer|Melee||5
+Studded body|Melee||5
+Studded chaps|Melee||5
+Void knight gloves (l) (mangled)|Melee|Magic,Ranged|5
+Void knight top (l) (mangled)|Melee|Magic,Ranged|5
+Void melee helm (l) (mangled)|Melee||5
+Zombie axe|Melee||5
 Dragon pickaxe|Mining||1
 Rune pickaxe|Mining||1
 Adamant pickaxe|Mining||2
 Celestial ring (uncharged)|Mining||2
+Corrupted pickaxe|Mining||2
+Crystal pickaxe|Mining||2
+Infernal pickaxe|Mining||2
 Prospector helmet|Mining||2
 Prospector jacket|Mining||2
 Prospector legs|Mining||2
+Steel pickaxe|Mining||2
+Varrock armour 1|Mining|Smithing|2
+3rd Age pickaxe|Mining||3
+Dragon pickaxe upgrade kit|Mining||3
+Dynamite|Mining||3
+Expert mining gloves|Mining||3
+Golden prospector boots|Mining||3
+Golden prospector helmet|Mining||3
+Golden prospector jacket|Mining||3
+Golden prospector legs|Mining||3
+Icy basalt|Mining||3
+Mithril pickaxe|Mining||3
+Prospector boots|Mining||3
 Reinforced goggles|Mining||3
+Sack of coal|Mining||3
+Superior mining gloves|Mining||3
+Zalcano shard|Mining||3
+Basalt|Mining||4
+Black pickaxe|Mining||4
+Calcite|Mining||4
+Crate of pickaxes|Mining||4
+Echo pickaxe|Mining||4
+Expeditious bracelet|Mining||4
+Gilded pickaxe|Mining||4
 Golden nugget|Mining||4
+Iron pickaxe|Mining||4
+Mining cape|Mining||4
+Mining gloves|Mining||4
+Mining helmet|Mining||4
+Mining hood|Mining||4
+Sigil of the Dwarves|Mining||4
 Bronze pickaxe|Mining||5
+Collection log|Misc||2
 Crystal armour seed|Misc||3
+Crystal blessing|Misc||3
+Crystal grail|Misc||3
 Enhanced crystal weapon seed|Misc||3
+Insect repellent|Misc||3
 Looting bag|Misc||3
+Looting bag note|Misc||3
 Rope|Misc||3
+Shantay pass|Misc||3
 Ancient shard|Misc||4
+Annihilation blueprints|Misc||4
+Annihilation weapon scroll|Misc||4
+Arena book|Misc||4
+Armageddon weapon scroll|Misc||4
+Banker's briefcase|Misc||4
+Book of Balance|Misc||4
+Book of Balance page set|Misc||4
+Book of Darkness page set|Misc||4
+Book of Law page set|Misc||4
+Book of War page set|Misc||4
 Bucket|Misc||4
 Bullseye lantern|Misc||4
+Chugging barrel (disassembled)|Misc||4
+Clockwork|Misc||4
+Contract of Bloodied Blows|Misc||4
+Contract of Catalyst Acquisition|Misc||4
+Contract of Divine Severance|Misc||4
+Contract of Familiar Acquisition|Misc||4
+Contract of Forfeit Breath|Misc||4
+Contract of Glyphic Attenuation|Misc||4
+Contract of Harmony Acquisition|Misc||4
+Contract of Oathplate Acquisition|Misc||4
+Contract of Sensory Clouding|Misc||4
+Contract of Shard Acquisition|Misc||4
+Contract of Worm Acquisition|Misc||4
+Crab claw|Misc||4
+Crate of crystal seeds|Misc||4
+Crate of kyatt teeth|Misc||4
+Crate of machinery parts|Misc||4
+Crate of pest remains|Misc||4
+Crate of poison|Misc||4
+Crate ring|Misc||4
+Crushed infernal shale|Misc||4
+Crystal pendant|Misc||4
 Crystal shard|Misc||4
+Demon tear|Misc||4
+Devil's element|Misc||4
 Diving apparatus|Misc||4
+Dragon staff of collection|Misc||4
+Drake's claw|Misc||4
+Drake's tooth|Misc||4
+Eclipse red|Misc||4
+Elkhorn coral|Misc||4
+Elkhorn frag|Misc||4
 Emerald lantern|Misc||4
+Eternal crystal|Misc||4
+Eternal gem|Misc||4
+Explorer backpack|Misc||4
+Fang of the hound|Misc||4
+Flippers|Misc||4
 Frozen tear|Misc||4
 Giant key|Misc||4
+Haemostatic dressing (4)|Misc||4
+Haemostatic poultice|Misc||4
+Horn of Plenty|Misc||4
+Hydra tail|Misc||4
+Hydra's claw|Misc||4
+Kebbit claws|Misc||4
+Kebbit spike|Misc||4
+Kebbit teeth|Misc||4
+Kebbit teeth dust|Misc||4
+Kraken tentacle|Misc||4
+Larran's key|Misc||4
+Lit bug lantern|Misc||4
+Living record (tier 1)|Misc||4
+Living record (tier 2)|Misc||4
+Living record (tier 3)|Misc||4
+Living record (tier 4)|Misc||4
+Living record (tier 5)|Misc||4
+Lizardman fang|Misc||4
+Long kebbit spike|Misc||4
+Magic fang|Misc||4
+Magic lantern|Misc||4
+Malediction shard 1|Misc||4
+Masori assembler|Misc||4
+Masori assembler max cape|Misc||4
+Masori assembler max hood|Misc||4
+Master scroll book (empty)|Misc||4
+Mithril staff of collection|Misc||4
+Mokhaiotl waystone|Misc||4
+Mole claw|Misc||4
+Moonlight antelope antler|Misc||4
+Mort myre pear|Misc||4
+Mud pie|Misc||4
+Narwhal horn|Misc||4
 Numulite|Misc||4
+Oil lamp|Misc||4
+Oil lantern|Misc||4
 Purple dye|Misc||4
 Red dye|Misc||4
+Red satchel|Misc||4
+Redwood hiking staff|Misc||4
+Repair kit|Misc||4
 Revenant ether|Misc||4
+Ring of visibility|Misc||4
+Rock-shell chunk|Misc||4
+Rock-shell shard|Misc||4
+Rock-shell splinter|Misc||4
+Rubium splinters|Misc||4
+Rune satchel|Misc||4
+Rune staff of collection|Misc||4
+Sagacious spectacles|Misc||4
+Saltpetre|Misc||4
 Sapphire lantern|Misc||4
+Saradomin banner|Misc||4
+Saturated heart|Misc||4
+Shark paint|Misc||4
+Shattered banner|Misc||4
+Shayzien banner|Misc||4
 Sieve|Misc||4
+Sigil of Aggression|Misc||4
+Sigil of Barrows|Misc||4
+Sigil of Binding|Misc||4
+Sigil of Consistency|Misc||4
+Sigil of Deft Strikes|Misc||4
+Sigil of Devotion|Misc||4
+Sigil of Escaping|Misc||4
+Sigil of Exaggeration|Misc||4
+Sigil of Finality|Misc||4
+Sigil of Fortification|Misc||4
+Sigil of Freedom|Misc||4
+Sigil of Garments|Misc||4
+Sigil of Mobility|Misc||4
+Sigil of Nature|Misc||4
+Sigil of Preservation|Misc||4
+Sigil of Prosperity|Misc||4
+Sigil of Rampage|Misc||4
+Sigil of Remote Storage|Misc||4
+Sigil of Resilience|Misc||4
+Sigil of Specialised Strikes|Misc||4
+Sigil of Stamina|Misc||4
+Sigil of Storage|Misc||4
+Sigil of Supreme Stamina|Misc||4
+Sigil of the Abyss|Misc||4
+Sigil of the Barbarians|Misc||4
+Sigil of the Elves|Misc||4
+Sigil of the Feral Fighter|Misc||4
+Sigil of the Formidable Fighter|Misc||4
+Sigil of the Guardian Angel|Misc||4
+Sigil of the Menacing Mage|Misc||4
+Sigil of the Meticulous Mage|Misc||4
+Sigil of the Porcupine|Misc||4
+Sigil of the Rigorous Ranger|Misc||4
+Sigil of the Ruthless Ranger|Misc||4
+Sigil of the Serpent|Misc||4
+Sigil of the Skiller|Misc||4
+Sigil of Versatility|Misc||4
+Skis|Misc||4
+Skull of Vet'ion|Misc||4
 Steel key ring|Misc||4
 Sunfire splinters|Misc||4
+Teasing stick|Misc||4
+Tormented synapse|Misc||4
+Ultimate ironman helm|Misc||4
+Ultimate ironman platebody|Misc||4
+Ultimate ironman platelegs|Misc||4
 Unidentified large fossil|Misc||4
 Unidentified medium fossil|Misc||4
-Varrock armour 1|Mining|Smithing|2
+Unlit bug lantern|Misc||4
+Voidwaker gem|Misc||4
+Ward upgrade kit|Misc||4
+Zulrah's scales|Misc||4
+A chair|Misc||5
 Abyssal book|Misc||5
-Aquanite hopper|Ranged||2
+Airtight pot|Misc||5
+Ancient crystal|Misc||5
+Ancient effigy|Misc||5
+Ancient emblem|Misc||5
+Ancient relic|Misc||5
+Ancient statuette|Misc||5
+Ancient totem|Misc||5
+Archibald|Misc||5
 Ascension shards|Misc||5
+Asyn remains|Misc||5
+Banner|Misc||5
 Barrel|Misc||5
 Beer|Misc||5
+Beer barrel|Misc||5
 Beer glass|Misc||5
+Belle's folly|Misc||5
 Bird book|Misc||5
+Black bead|Misc||5
+Black salamander|Misc||5
+Black satchel|Misc||5
+Black staff of collection|Misc||5
+Blood pint|Misc||5
+Blue icon|Misc||5
+Book of Egg|Misc||5
 Bottle|Misc||5
+Briefcase|Misc||5
 Broav|Misc||5
+Bronze speedrun trophy|Misc||5
+Bronze staff of collection|Misc||5
 Burnt meat|Misc||5
+Calcified moth|Misc||5
 Candle|Misc||5
+Candle lantern|Misc||5
+Cat training medal|Misc||5
+Chaotic handegg|Misc||5
 Chores|Misc||5
+Christmas dinner|Misc||5
+Cider barrel|Misc||5
+Clan vexillum|Misc||5
+Clean necklace|Misc||5
+Cleaning cloth|Misc||5
+Cocktail glass|Misc||5
+Cocktail guide|Misc||5
+Cocktail shaker|Misc||5
+Collector icon|Misc||5
 Commorb|Misc||5
+Crate of beer glasses|Misc||5
+Crate of books|Misc||5
+Crate of high importance|Misc||5
+Crate of historical artefacts|Misc||5
+Crate of looty|Misc||5
+Crate of nothing sinister|Misc||5
+Crate of rotten bananas|Misc||5
+Crate of sea shells|Misc||5
+Crate of secret stuff|Misc||5
+Crate of secret things|Misc||5
+Crate with zanik|Misc||5
+Crier bell|Misc||5
+Crimson kisten|Misc||5
+Cruciferous codex|Misc||5
 Crystal chime|Misc||5
 Crystal saw seed|Misc||5
+Cursed banana|Misc||5
+Cutthroat flag|Misc||5
+Cyclops head|Misc||5
+Damaged monkey tail|Misc||5
+Dark flippers|Misc||5
+Deadman's chest|Misc||5
+Deadman's legs|Misc||5
+Defender icon|Misc||5
+Demon feet|Misc||5
+Demonic pacts adamant trophy|Misc||5
+Demonic pacts banner|Misc||5
+Demonic pacts dragon trophy|Misc||5
+Demonic pacts mithril trophy|Misc||5
+Demonic pacts rune trophy|Misc||5
+Demonic pacts steel trophy|Misc||5
+Demonic tallow|Misc||5
+Desert devil fur|Misc||5
+Diamond speedrun trophy|Misc||5
 Druid pouch|Misc||5
+Dust|Misc||5
+Echo crystal|Misc||5
+Eek|Misc||5
 Empty sack|Misc||5
+Enchanted lyre|Misc||5
+Evil chicken feet|Misc||5
+Evil chicken head|Misc||5
+Evil chicken legs|Misc||5
+Evil chicken wings|Misc||5
+Evil eye|Misc||5
+Fat snail|Misc||5
 Fishbowl helmet|Misc||5
+Five barrels|Misc||5
 Fossilised dung|Misc||5
+Four barrels|Misc||5
+Fox|Misc||5
+Giant boot|Misc||5
+Giant boulder|Misc||5
+Giant egg sac(full)|Misc||5
+Giant present|Misc||5
+Giant stopwatch|Misc||5
+Gilded staff of collection|Misc||5
+Gnomeball|Misc||5
+Gnomebowl mould|Misc||5
+Goat horn|Misc||5
+Goblin book|Misc||5
+Goblin paint cannon|Misc||5
+Gold coffin|Misc||5
+Gold locks|Misc||5
+Gold satchel|Misc||5
+Gold seal|Misc||5
+Golden scarab|Misc||5
+Golden statuette|Misc||5
+Greater siren|Misc||5
+Green banner|Misc||5
+Green satchel|Misc||5
+Gregg's eastdoor|Misc||5
 Grey toy horsey|Misc||5
+Hair|Misc||5
+Hallowed grapple|Misc||5
+Hallowfell|Misc||5
+Hand fan|Misc||5
+Haunted wine bottle|Misc||5
+Headless head|Misc||5
 Hell cat|Misc||5
-House keys|Thieving||2
+Holy handegg|Misc||5
+Holy moleys|Misc||5
+Inky paint|Misc||5
 Instruction manual|Misc||5
+Iron sickle|Misc||5
+Iron staff of collection|Misc||5
+Ivory comb|Misc||5
+Jar of Chemicals|Misc||5
 Jar of Darkness|Misc||5
+Jar of Decay|Misc||5
+Jar of Dirt|Misc||5
+Jar of Dreams|Misc||5
+Jar of Eyes|Misc||5
+Jar of Miasma|Misc||5
+Jar of Sand|Misc||5
+Jar of Smoke|Misc||5
+Jar of Souls|Misc||5
+Jar of Spirits|Misc||5
+Jar of Stone|Misc||5
+Jar of Swamp|Misc||5
 Jewel of Amascut|Misc||5
 Jug|Misc||5
+Karamjan monkey|Misc||5
 Karamjan monkey greegree|Misc||5
 Key|Misc||5
+Kruk jr|Misc||5
 Kruk monkey greegree|Misc||5
+Leaves|Misc||5
+Light orb|Misc||5
+Lost bag|Misc||5
+Lucky shot flag|Misc||5
 Lyre|Misc||5
+Magic stone|Misc||5
+Maniacal monkey|Misc||5
+Mask of Ranul|Misc||5
+Mask of Rebirth|Misc||5
+Monkey|Misc||5
+Monkey tail|Misc||5
+Mooleta|Misc||5
 Mouse toy|Misc||5
+Mouth grip|Misc||5
+Mystic cards|Misc||5
 New key|Misc||5
+Nihil dust|Misc||5
+Nihil shard|Misc||5
+Obligator|Misc||5
+Oddskull|Misc||5
 Ode to eternity|Misc||5
+Odium shard 1|Misc||5
 Ogre bellows|Misc||5
+One barrel|Misc||5
 Papyrus|Misc||5
+Pegasian crystal|Misc||5
+Perfected quetzal whistle blueprint|Misc||5
 Pet cat|Misc||5
 Pet rock|Misc||5
+Phrin remains|Misc||5
+Pile of salt|Misc||5
+Pillar coral|Misc||5
+Pillar frag|Misc||5
+Pink candy|Misc||5
+Plain satchel|Misc||5
+Poison chalice|Misc||5
+Pottery scarab|Misc||5
+Pottery statuette|Misc||5
+Primordial crystal|Misc||5
+Proboscis|Misc||5
+Pugel|Misc||5
+Pyrophosphite|Misc||5
+Quetzal feed|Misc||5
+Raging echoes cane|Misc||5
+Red icon|Misc||5
+Ribcage piece|Misc||5
+Rubber chicken|Misc||5
+Runescroll of bloodbark|Misc||5
+Runescroll of swampbark|Misc||5
+Sack of presents|Misc||5
+Saika's hood (broken)|Misc||5
+Saika's shroud (broken)|Misc||5
+Saika's veil (broken)|Misc||5
+Santa's list|Misc||5
+Secret santa present (black)|Misc||5
+Secret santa present (blue)|Misc||5
+Secret santa present (gold)|Misc||5
+Secret santa present (green)|Misc||5
+Secret santa present (red)|Misc||5
+Severed leg|Misc||5
+Shaving stand|Misc||5
+Shoe box|Misc||5
+Silver coffin|Misc||5
+Skull piece|Misc||5
+Sled|Misc||5
 Smelly sock|Misc||5
+Smouldering stone|Misc||5
+Snowball|Misc||5
+Spine|Misc||5
+Stale baguette|Misc||5
+Star-face|Misc||5
+Steel limbs|Misc||5
+Steel locks|Misc||5
+Steel staff of collection|Misc||5
+Stick|Misc||5
+Stone scarab|Misc||5
+Stone seal|Misc||5
+Stone statuette|Misc||5
+Sulliuscep cap|Misc||5
+Swords and emblem|Misc||5
+Teacher wand|Misc||5
+Terrifying charm|Misc||5
+Three barrels|Misc||5
+Tin cup|Misc||5
+Toy cat|Misc||5
+Toy doll|Misc||5
+Toy doll (wound)|Misc||5
+Toy mouse|Misc||5
+Toy mouse (wound)|Misc||5
+Toy soldier|Misc||5
+Toy soldier (wound)|Misc||5
+Trading sticks|Misc||5
 Translation book|Misc||5
+Transmutation ledger|Misc||5
+Treasure flag|Misc||5
+Treat cauldron|Misc||5
 Trouver parchment|Misc||5
+Twisted adamant trophy|Misc||5
+Twisted banner|Misc||5
+Twisted blueprints|Misc||5
+Twisted bronze trophy|Misc||5
+Twisted dragon trophy|Misc||5
+Twisted horns|Misc||5
+Twisted iron trophy|Misc||5
+Twisted mithril trophy|Misc||5
+Twisted rune trophy|Misc||5
+Twisted steel trophy|Misc||5
+Two barrels|Misc||5
+Umbral coral|Misc||5
+Umbral frag|Misc||5
+Undead chicken|Misc||5
+Unholy book page set|Misc||5
+Unicorn horn|Misc||5
 Unidentified small fossil|Misc||5
-Valuables|Thieving||2
+Unstrung emblem|Misc||5
+Uri's hat|Misc||5
+Urium remains|Misc||5
+Vacuum pump and gull|Misc||5
+Void seal(8)|Misc||5
+Warm gloves|Misc||5
+Web cloak|Misc||5
 Weeds|Misc||5
+Western banner 1|Misc||5
+White claws|Misc||5
+White lily|Misc||5
+Wristbands of the arena (broken)|Misc||5
+Xeric's champion|Misc||5
+Xeric's general|Misc||5
+Xeric's guard|Misc||5
+Xeric's sentinel|Misc||5
+Xeric's warrior|Misc||5
+Yew leaves|Misc||5
+Zamorak banner|Misc||5
+Zamorak page 1|Misc||5
+Zombie pirate key|Misc||5
+Zorya's tome|Misc||5
+Anti-venom+(4)|Potions||1
 Divine super combat potion(1)|Potions||1
 Divine super combat potion(2)|Potions||1
 Divine super combat potion(3)|Potions||1
@@ -494,6 +3985,8 @@ Anti-venom(1)|Potions||2
 Anti-venom(2)|Potions||2
 Anti-venom(3)|Potions||2
 Anti-venom(4)|Potions||2
+Antidote++(4)|Potions||2
+Blighted overload (4)|Potions||2
 Blighted super restore(1)|Potions||2
 Blighted super restore(2)|Potions||2
 Blighted super restore(3)|Potions||2
@@ -530,35 +4023,150 @@ Stamina potion(1)|Potions||2
 Stamina potion(2)|Potions||2
 Stamina potion(3)|Potions||2
 Stamina potion(4)|Potions||2
+Super defence(3)|Potions||2
+Super energy(4)|Potions||2
 Superantipoison(3)|Potions||2
 Superantipoison(4)|Potions||2
+Ale of the gods|Potions||3
+Antidote+(4)|Potions||3
+Combat potion set|Potions||3
+Extended super antifire mix(2)|Potions||3
+Extended super antifire(4)|Potions||3
 Goading potion(4)|Potions||3
 Hunter potion(4)|Potions||3
+Relicym's balm(4)|Potions||3
+Sacred oil(4)|Potions||3
 Sanfew serum(3)|Potions||3
 Sanfew serum(4)|Potions||3
+Serum 207 (4)|Potions||3
+Strength mix(1)|Potions||3
+Super antifire mix(2)|Potions||3
+Volcanic whip mix|Potions||3
+Weapon poison|Potions||3
+Weapon poison(+)|Potions||3
+Weapon poison(++)|Potions||3
+Zamorak brew(3)|Potions||3
+Ancient brew(4)|Potions||4
+Antipoison(3)|Potions||4
+Crate of cocktails|Potions||4
+Crate of dragon bitter|Potions||4
+Crate of khali brews|Potions||4
+Crate of potions|Potions||4
+Forgotten brew(4)|Potions||4
+Guthix balance(4)|Potions||4
+Holy elixir|Potions||4
+Holy water|Potions||4
 Menaphite remedy(4)|Potions||4
+Sunlight moth mix (2)|Potions||4
+Super potion set|Potions||4
+Trapper's tipple|Potions||4
 Waterskin(1)|Potions||4
 Waterskin(3)|Potions||4
 Waterskin(4)|Potions||4
+Crate of beer|Potions||5
+Crate of gin|Potions||5
+Crate of grog|Potions||5
+Crate of rum|Potions||5
+Crate of sunbeam ale|Potions||5
+Crate of vodka|Potions||5
+Crate of wine|Potions||5
+Cup of hot water|Potions||5
+Cup of water|Potions||5
+Frozen whip mix|Potions||5
 Jug of bad wine|Potions||5
+Poison|Potions||5
 Bones|Prayer||1
 Dragon bones|Prayer||1
+Ashes|Prayer||2
 Babydragon bones|Prayer||2
+Big bones|Prayer||2
+Bonecrusher necklace|Prayer||2
 Dagannoth bones|Prayer||2
+Jug of sunfire wine|Prayer||2
 Wyrmling bones|Prayer||2
 Wyvern bones|Prayer||2
+Abyssal ashes|Prayer||3
+Arcane prayer scroll|Prayer||3
+Arcane sigil|Prayer||3
+Arcane spirit shield|Prayer||3
+Bonesack|Prayer||3
+Dexterous prayer scroll|Prayer||3
+Drake bones|Prayer||3
+Ensouled abyssal head|Prayer||3
+Ensouled aviansie head|Prayer||3
+Ensouled bear head|Prayer||3
+Ensouled bloodveld head|Prayer||3
+Ensouled chaos druid head|Prayer||3
 Ensouled dagannoth head|Prayer||3
 Ensouled demon head|Prayer||3
+Ensouled dog head|Prayer||3
 Ensouled dragon head|Prayer||3
+Ensouled giant head|Prayer||3
+Ensouled goblin head|Prayer||3
+Ensouled horror head|Prayer||3
+Ensouled imp head|Prayer||3
+Ensouled kalphite head|Prayer||3
+Ensouled minotaur head|Prayer||3
+Ensouled monkey head|Prayer||3
+Ensouled ogre head|Prayer||3
+Ensouled scorpion head|Prayer||3
+Ensouled troll head|Prayer||3
+Ensouled tzhaar head|Prayer||3
+Ensouled unicorn head|Prayer||3
+Fayrg bones|Prayer||3
+Fiendish ashes|Prayer||3
+Fiyr remains|Prayer||3
+Frost dragon bones|Prayer||3
+Hydra bones|Prayer||3
+Infernal ashes|Prayer||3
+Lava dragon bones|Prayer||3
+Shaikahan bones|Prayer||3
+Soul cape|Prayer||3
 Sun-kissed bones|Prayer||3
+Superior dragon bones|Prayer||3
+Torn prayer scroll|Prayer||3
 Wolf bones|Prayer||3
+Bat bones|Prayer||4
+Beads of the Dead|Prayer||4
 Blessed bone shards|Prayer||4
 Blessed bone statuette|Prayer||4
+Bone fragments|Prayer||4
+Burnt bones|Prayer||4
+Crushed superior dragon bones|Prayer||4
 Ensouled elf head|Prayer||4
 Ensouled hellhound head|Prayer||4
+Holy book|Prayer||4
+Holy symbol|Prayer||4
+Jogre bones|Prayer||4
+Loar remains|Prayer||4
 Long bone|Prayer||4
-Ancient tablet|Quest||5
+Monkey bones|Prayer||4
+Ourg bones|Prayer||4
+Raurg bones|Prayer||4
+Sigil of Pious Protection|Prayer||4
+Unblessed symbol|Prayer||4
+Vile ashes|Prayer||4
+Wyrm bones|Prayer||4
+Zogre bones|Prayer||4
+Holy book page set|Prayer||5
 Book of Law|Quest|Ranged|4
+Burnt page|Quest||4
+Chronicle|Quest||4
+Crystal of Echoes|Quest||4
+Loop half of key|Quest||4
+Ogre coffin key|Quest||4
+Pendant of Lucien|Quest||4
+Saradomin page 1|Quest||4
+Saradomin's tear|Quest||4
+Searing page|Quest||4
+Shadowflame quadrant|Quest||4
+Soaked page|Quest||4
+Soiled page|Quest||4
+Ancient page 1|Quest||5
+Ancient tablet|Quest||5
+Armadyl page 1|Quest||5
+Bandos page 1|Quest||5
+Brass key|Quest||5
 Crystal trinket|Quest||5
 Damaged book|Quest||5
 Dark journal|Quest||5
@@ -567,89 +4175,513 @@ Dark totem base|Quest||5
 Dark totem middle|Quest||5
 Dark totem top|Quest||5
 Demonic quill|Quest||5
+Desert amulet 1|Quest||5
 Desiccated page|Quest||5
 Dirty note|Quest||5
 Enchanted key|Quest||5
 Enchanted symbol|Quest||5
+Fibula piece|Quest||5
 Fixed device|Quest||5
 Fossil island note book|Quest||5
+Gas mask|Quest||5
 Glarial's pebble|Quest||5
+Guthix page 1|Quest||5
+Hazeel's mark|Quest||5
 Jewel of the Sun|Quest||5
 Kasonde's journal|Quest||5
+Mourner cloak|Quest||5
+Mourner top|Quest||5
+Mourner trousers|Quest||5
 Movario's notes (volume 1)|Quest||5
 Movario's notes (volume 2)|Quest||5
+Muddy key|Quest||5
+Riyl remains|Quest||5
 Salve shard|Quest||5
+Security book|Quest||5
 Sin'keth's diary|Quest||5
+Stronghold notes|Quest||5
 Tarn's diary|Quest||5
 Tarnished key|Quest||5
-Thread of Elidinis|Crafting||2
 Vampyre dust|Quest||5
 Warning note|Quest||5
 Word translations|Quest||5
 Yewnock's notes|Quest||5
 Zaff's instructions|Quest||5
+Armadyl crossbow|Ranged||1
+Blazing blowpipe (empty)|Ranged||1
+Corrupted bow (perfected)|Ranged||1
+Corrupted dark bow|Ranged||1
+Corrupted twisted bow|Ranged||1
+Crystal bow (perfected)|Ranged||1
+Drygore blowpipe (empty)|Ranged||1
 Toxic blowpipe|Ranged||1
+Twisted bow|Ranged||1
+Zaryte bow|Ranged||1
 Amethyst arrow|Ranged||2
+Aquanite hopper|Ranged||2
+Armadyl bracers|Ranged||2
+Armadyl chainskirt|Ranged||2
+Armadyl chaps|Ranged||2
+Armadyl chestplate|Ranged||2
+Armadyl cloak|Ranged||2
+Armadyl coif|Ranged||2
+Armadyl helmet|Ranged||2
 Ava's accumulator|Ranged||2
 Bandos d'hide body|Ranged|Melee|2
 Bandos d'hide boots|Ranged|Melee|2
 Black d'hide body|Ranged||2
 Black d'hide chaps|Ranged||2
+Chinchompa|Ranged||2
+Corrupted bow (attuned)|Ranged||2
+Craw's bow (u)|Ranged||2
+Crossbow|Ranged||2
 Crystal bow|Ranged||2
+Crystal bow (attuned)|Ranged||2
+Dark bow|Ranged||2
+Diamond bolt tips|Ranged||2
 Diamond bolts (e)|Ranged||2
+Diamond dragon bolts (e)|Ranged||2
 Dragon arrow|Ranged||2
 Dragon crossbow|Ranged||2
 Dragon javelin|Ranged||2
+Dragon knife|Ranged||2
+Dragon thrownaxe|Ranged||2
+Dragonstone bolt tips|Ranged||2
 Dragonstone bolts (e)|Ranged||2
+Dragonstone dragon bolts (e)|Ranged||2
+Emerald bolt tips|Ranged||2
+Emerald bolts (e)|Ranged||2
+Emerald dragon bolts (e)|Ranged||2
+Heavy ballista|Ranged||2
+Magic comp bow|Ranged||2
 Magic shortbow (i)|Ranged||2
+Masori armour set (f)|Ranged||2
+Masori body|Ranged||2
+Masori chaps|Ranged||2
+Masori mask|Ranged||2
 Necklace of anguish|Ranged||2
+Onyx bolts (e)|Ranged||2
+Onyx dragon bolts (e)|Ranged||2
+Opal dragon bolts (e)|Ranged||2
+Pearl dragon bolts (e)|Ranged||2
 Ruby bolts (e)|Ranged||2
 Ruby dragon bolts (e)|Ranged||2
 Rune arrow|Ranged||2
+Rune crossbow|Ranged||2
+Rune knife|Ranged||2
 Runite bolts|Ranged||2
+Runite bolts (p+)|Ranged||2
+Runite bolts (p++)|Ranged||2
+Runite limbs|Ranged||2
+Scorching bow|Ranged||2
+Seercull|Ranged||2
+Serpentine helm (uncharged)|Ranged|Magic|2
+Tonalztics of Ralos (uncharged)|Ranged||2
+Venator bow|Ranged||2
+Void ranger helm|Ranged||2
+Yew comp bow|Ranged||2
+Zaryte crossbow|Ranged||2
+Zaryte vambraces|Ranged||2
+3rd Age bow|Ranged||3
+3rd Age range coif|Ranged||3
+3rd Age range legs|Ranged||3
+3rd Age range top|Ranged||3
 Adamant arrow|Ranged||3
 Adamant bolts|Ranged||3
+Adamant brutal|Ranged||3
+Adamant cannonball|Ranged||3
+Adamant crossbow|Ranged||3
+Adamantite limbs|Ranged||3
 Aranea boots|Ranged||3
+Archer helm|Ranged||3
+Archers ring|Ranged||3
+Armadyl d'hide body|Ranged||3
+Armadyl d'hide boots|Ranged||3
+Armadyl d'hide shield|Ranged||3
+Armadyl dragonhide set|Ranged||3
+Armadyl platebody|Ranged||3
+Armadyl platelegs|Ranged||3
+Armadyl plateskirt|Ranged||3
+Ascension crossbows|Ranged||3
 Atlatl dart|Ranged||3
+Ava's assembler|Ranged||3
+Ava's attractor|Ranged||3
+Ballista limbs|Ranged||3
+Ballista spring|Ranged||3
+Barb bolttips|Ranged||3
+Bellator ring|Ranged||3
+Black chinchompa|Ranged||3
 Black d'hide vambraces|Ranged||3
+Blessed Dizana's quiver|Ranged||3
+Bolt mould|Ranged||3
+Bow of Faerdhinen (inactive)|Ranged||3
+Broad arrowheads|Ranged||3
+Broad arrows|Ranged||3
 Cannon barrels|Ranged||3
 Cannon base|Ranged||3
 Cannon furnace|Ranged||3
 Cannon stand|Ranged||3
+Comp ogre bow|Ranged||3
+Corrupted bow (basic)|Ranged||3
+Corrupted morrigan's coif (bh)|Ranged||3
+Corrupted morrigan's leather body (bh)|Ranged||3
+Corrupted morrigan's leather chaps (bh)|Ranged||3
+Crate of cannonballs|Ranged||3
+Crate of chinchompas|Ranged||3
+Crystal bow (basic)|Ranged||3
 Dorgeshuun crossbow|Ranged||3
+Dragon arrow(p+)|Ranged||3
+Dragon arrow(p++)|Ranged||3
+Dragon bolts (p+)|Ranged||3
+Dragon bolts (p++)|Ranged||3
+Dragon cannonball|Ranged||3
+Dragon dart tip|Ranged||3
+Dragon dart(p+)|Ranged||3
+Dragon dart(p++)|Ranged||3
+Dragon hunter crossbow|Ranged||3
+Dragon javelin tips|Ranged||3
+Dragon javelin(p+)|Ranged||3
+Dragon javelin(p++)|Ranged||3
+Dragon knife(p+)|Ranged||3
+Dragon knife(p++)|Ranged||3
+Dwarf cannon set|Ranged||3
+Eclipse atlatl|Ranged||3
 Eclipse Moon chestplate|Ranged||3
 Eclipse Moon helm|Ranged||3
 Eclipse Moon tassets|Ranged||3
-Eclipse atlatl|Ranged||3
+Frog-leather body|Ranged||3
+Green dragonhide set|Ranged||3
+Hueycoatl hide body|Ranged||3
+Hueycoatl hide chaps|Ranged||3
+Hueycoatl hide coif|Ranged||3
+Hueycoatl hide vambraces|Ranged||3
+Ice arrows|Ranged||3
+Jade bolt tips|Ranged||3
+Jade bolts (e)|Ranged||3
+Jade dragon bolts (e)|Ranged||3
+Karil's armour set|Ranged||3
+Karil's coif|Ranged||3
+Karil's crossbow|Ranged||3
+Karil's leatherskirt|Ranged||3
+Karil's leathertop|Ranged||3
+King's barrage|Ranged||3
+Light ballista|Ranged||3
 Mithril arrow|Ranged||3
+Mithril arrow(p+)|Ranged||3
+Mithril arrow(p++)|Ranged||3
+Mithril bolts (p+)|Ranged||3
+Mithril bolts (p++)|Ranged||3
+Mithril brutal|Ranged||3
+Mithril cannonball|Ranged||3
+Mithril crossbow|Ranged||3
+Mithril dart tip|Ranged||3
+Mithril dart(p+)|Ranged||3
+Mithril dart(p++)|Ranged||3
+Mithril javelin tips|Ranged||3
+Mithril javelin(p+)|Ranged||3
+Mithril javelin(p++)|Ranged||3
+Mithril knife(p+)|Ranged||3
+Mithril knife(p++)|Ranged||3
+Mithril thrownaxe|Ranged||3
+Mixed hide boots|Ranged||3
+Mixed hide cape|Ranged||3
 Mixed hide legs|Ranged||3
+Mixed hide top|Ranged||3
+Morrigan's coif|Ranged||3
+Morrigan's leather body|Ranged||3
+Morrigan's leather chaps|Ranged||3
+Morrigan's throwing axe|Ranged||3
+Nature's recurve|Ranged||3
 Ogre arrow|Ranged||3
+Ranger boots|Ranged||3
+Ranger gloves|Ranged||3
+Ranger hat|Ranged||3
+Rangers' tights|Ranged||3
+Rangers' tunic|Ranged||3
+Ranging cape|Ranged||3
+Ranging hood|Ranged||3
 Red chinchompa|Ranged|Hunter|3
+Rosewood blowpipe|Ranged||3
+Ruby bolt tips|Ranged||3
+Rune arrow(p+)|Ranged||3
+Rune arrow(p++)|Ranged||3
+Rune brutal|Ranged||3
+Rune cannonball|Ranged||3
+Rune dart tip|Ranged||3
+Rune dart(p+)|Ranged||3
+Rune dart(p++)|Ranged||3
+Rune javelin tips|Ranged||3
+Rune javelin(p+)|Ranged||3
+Rune javelin(p++)|Ranged||3
+Rune knife(p+)|Ranged||3
+Rune knife(p++)|Ranged||3
 Rune thrownaxe|Ranged||3
+Runite crossbow (u)|Ranged||3
+Sapphire bolt tips|Ranged||3
+Sapphire bolts (e)|Ranged||3
+Sapphire dragon bolts (e)|Ranged||3
+Seeking broad arrows|Ranged||3
+Serpentine visage|Ranged||3
+Shortbow (u)|Ranged||3
+Silver bolts (p+)|Ranged||3
+Silver bolts (p++)|Ranged||3
+Silvthrill ballista|Ranged||3
+Snakeskin bandana|Ranged||3
+Snakeskin body|Ranged||3
 Snakeskin boots|Ranged||3
+Snakeskin chaps|Ranged||3
+Snakeskin vambraces|Ranged||3
 Steel cannonball|Ranged||3
+Topaz bolts (e)|Ranged||3
+Topaz dragon bolts (e)|Ranged||3
+Venator ring|Ranged||3
+Willow comp bow|Ranged||3
+Adamant arrow(p+)|Ranged||4
+Adamant arrow(p++)|Ranged||4
+Adamant bolts (p+)|Ranged||4
+Adamant bolts (p++)|Ranged||4
+Adamant dart tip|Ranged||4
+Adamant dart(p+)|Ranged||4
+Adamant dart(p++)|Ranged||4
+Adamant javelin tips|Ranged||4
+Adamant javelin(p+)|Ranged||4
+Adamant javelin(p++)|Ranged||4
+Adamant knife(p+)|Ranged||4
+Adamant knife(p++)|Ranged||4
+Adamant thrownaxe|Ranged||4
+Amethyst arrow(p+)|Ranged||4
+Amethyst arrow(p++)|Ranged||4
+Amethyst bolt tips|Ranged||4
+Amethyst dart tip|Ranged||4
+Amethyst dart(p+)|Ranged||4
+Amethyst dart(p++)|Ranged||4
+Amethyst javelin tips|Ranged||4
+Amethyst javelin(p+)|Ranged||4
+Amethyst javelin(p++)|Ranged||4
+Amulet of sight|Ranged||4
+Amulet of the Eye|Ranged||4
+Ancient chaps|Ranged||4
+Ancient coif|Ranged||4
+Ancient d'hide body|Ranged||4
+Ancient d'hide boots|Ranged||4
+Ancient dragonhide set|Ranged||4
+Armadyl pendant|Ranged||4
+Atlatl dart shaft|Ranged||4
+Atlatl dart tips|Ranged||4
+Black brutal|Ranged||4
+Black d'hide shield|Ranged||4
+Black dart(p+)|Ranged||4
+Black dart(p++)|Ranged||4
+Black dragonhide set|Ranged||4
+Black knife|Ranged||4
+Black knife(p+)|Ranged||4
+Black knife(p++)|Ranged||4
+Blue d'hide body|Ranged||4
+Blue d'hide chaps|Ranged||4
+Blue d'hide shield|Ranged||4
+Blue d'hide vambraces|Ranged||4
+Blue dragonhide set|Ranged||4
+Blurite bolts (p+)|Ranged||4
+Blurite bolts (p++)|Ranged||4
+Blurite crossbow|Ranged||4
+Bone shortbow|Ranged||4
+Camphor blowpipe|Ranged||4
+Coif|Ranged||4
+Corrupted morrigan's coif (bh)(inactive)|Ranged||4
+Corrupted morrigan's leather body (bh)(inactive)|Ranged||4
+Corrupted morrigan's leather chaps (bh)(inactive)|Ranged||4
+Crate of bows|Ranged||4
+Crate of gunpowder|Ranged||4
+Crate of javelins|Ranged||4
+Dizana's max cape|Ranged||4
+Dizana's max hood|Ranged||4
+Dizana's quiver (l) (uncharged)|Ranged||4
+Dizana's quiver (uncharged)|Ranged||4
+Dragon cannon barrel|Ranged||4
+Echo venator bow|Ranged||4
+Frog-leather boots|Ranged||4
+Frog-leather chaps|Ranged||4
+Gilded coif|Ranged||4
+Gilded d'hide body|Ranged||4
+Gilded d'hide chaps|Ranged||4
+Gilded d'hide vambraces|Ranged||4
+Gilded dragonhide set|Ranged||4
+Gloves of silence|Ranged||4
+Graahk headdress|Ranged||4
+Graahk legs|Ranged||4
+Graahk top|Ranged||4
+Green d'hide body|Ranged||4
+Green d'hide chaps|Ranged||4
+Green d'hide shield|Ranged||4
+Green d'hide vambraces|Ranged||4
+Guthix bracers|Ranged||4
+Guthix chaps|Ranged||4
+Guthix coif|Ranged||4
+Guthix d'hide body|Ranged||4
+Guthix d'hide boots|Ranged||4
+Guthix d'hide shield|Ranged||4
+Guthix dragonhide set|Ranged||4
+Hard leather shield|Ranged||4
+Hardleather body|Ranged||4
+Hardleather gloves|Ranged||4
+Heavy frame|Ranged||4
+Hunters' crossbow|Ranged||4
+Hunters' sunlight crossbow|Ranged||4
+Incomplete heavy ballista|Ranged||4
+Incomplete light ballista|Ranged||4
+Iron arrow(p+)|Ranged||4
+Iron arrow(p++)|Ranged||4
 Iron bolts|Ranged||4
+Iron bolts (p+)|Ranged||4
+Iron bolts (p++)|Ranged||4
+Iron brutal|Ranged||4
+Iron cannonball|Ranged||4
+Iron crossbow|Ranged||4
+Iron dart tip|Ranged||4
+Iron dart(p+)|Ranged||4
+Iron dart(p++)|Ranged||4
+Iron javelin tips|Ranged||4
+Iron javelin(p+)|Ranged||4
+Iron javelin(p++)|Ranged||4
+Iron knife(p+)|Ranged||4
+Iron knife(p++)|Ranged||4
+Iron thrownaxe|Ranged||4
+Ironwood blowpipe|Ranged||4
+Leather body|Ranged||4
+Leather boots|Ranged||4
+Leather chaps|Ranged||4
+Leather cowl|Ranged||4
+Leather vambraces|Ranged||4
 Mithril dart|Ranged||4
+Myre snelm|Ranged||4
+Ochre snelm|Ranged||4
 Ogre bow|Ranged||4
+Opal bolt tips|Ranged||4
+Pearl bolt tips|Ranged||4
+Phoenix crossbow|Ranged||4
+Pointed blood'n'tar snelm|Ranged||4
+Pointed bruise blue snelm|Ranged||4
+Pointed myre snelm|Ranged||4
+Pointed ochre snelm|Ranged||4
+Rain bow|Ranged||4
+Red d'hide body|Ranged||4
+Red d'hide chaps|Ranged||4
+Red d'hide vambraces|Ranged||4
 Robin Hood hat|Ranged||4
+Rock thrownhammer|Ranged||4
+Signed oak bow|Ranged||4
 Steel arrow|Ranged||4
+Steel arrow(p+)|Ranged||4
+Steel arrow(p++)|Ranged||4
+Steel bolts (p+)|Ranged||4
+Steel bolts (p++)|Ranged||4
+Steel brutal|Ranged||4
+Steel crossbow|Ranged||4
+Steel dart tip|Ranged||4
+Steel dart(p+)|Ranged||4
+Steel dart(p++)|Ranged||4
+Steel javelin tips|Ranged||4
+Steel javelin(p+)|Ranged||4
+Steel javelin(p++)|Ranged||4
+Steel thrownaxe|Ranged||4
+Topaz bolt tips|Ranged||4
+Twisted boots (t3)|Ranged||4
+Twisted coat (t3)|Ranged||4
+Twisted hat (t3)|Ranged||4
+Twisted trousers (t3)|Ranged||4
+Unstrung heavy ballista|Ranged||4
+Unstrung light ballista|Ranged||4
+Venator fang|Ranged||4
+Venator shard|Ranged||4
+Venator tooth|Ranged||4
+Void ranger helm (l)(or)|Ranged||4
+Webweaver bow (u)|Ranged||4
+Blessed Dizana's quiver (l) (mangled)|Ranged||5
+Bronze arrow(p+)|Ranged||5
+Bronze arrow(p++)|Ranged||5
+Bronze bolts (p+)|Ranged||5
+Bronze bolts (p++)|Ranged||5
+Bronze brutal|Ranged||5
+Bronze cannonball|Ranged||5
+Bronze crossbow|Ranged||5
+Bronze dart tip|Ranged||5
+Bronze dart(p+)|Ranged||5
+Bronze dart(p++)|Ranged||5
+Bronze javelin tips|Ranged||5
+Bronze javelin(p+)|Ranged||5
+Bronze javelin(p++)|Ranged||5
+Bronze knife|Ranged||5
+Bronze knife(p+)|Ranged||5
+Bronze knife(p++)|Ranged||5
+Bronze limbs|Ranged||5
+Bronze locks|Ranged||5
+Bronze thrownaxe|Ranged||5
+Cursed goblin bow|Ranged||5
+Dizana's max cape (l) (mangled)|Ranged||5
+Koriff's coif (broken)|Ranged||5
+Koriff's cowl (broken)|Ranged||5
+Koriff's headband (broken)|Ranged||5
+Love crossbow|Ranged||5
+Morrigan's coif (bh)(inactive)|Ranged||5
+Morrigan's javelin (bh)(inactive)|Ranged||5
+Morrigan's leather body (bh)(inactive)|Ranged||5
+Morrigan's leather chaps (bh)(inactive)|Ranged||5
+Morrigan's throwing axe (bh)(inactive)|Ranged||5
+Starter bow|Ranged||5
+Steel knife(p+)|Ranged||5
+Steel knife(p++)|Ranged||5
+Void ranger helm (l) (mangled)|Ranged||5
 Pure essence|Runecraft||1
 Air talisman|Runecraft||2
 Chaos talisman|Runecraft||2
+Cosmic talisman|Runecraft||2
 Law talisman|Runecraft||2
 Medium pouch|Runecraft||2
+Rune essence|Runecraft||2
 Small pouch|Runecraft||2
 Air tiara|Runecraft||3
 Blood essence|Runecraft||3
+Blood shard|Runecraft||3
+Blood tiara|Runecraft||3
+Body talisman|Runecraft||3
+Body tiara|Runecraft||3
+Bracelet of ethereum|Runecraft||3
+Bryophyta's essence|Runecraft||3
+Catalytic talisman|Runecraft||3
+Catalytic tiara|Runecraft||3
+Chaos tiara|Runecraft||3
+Cosmic tiara|Runecraft||3
 Dark essence block|Runecraft||3
+Death tiara|Runecraft||3
 Earth talisman|Runecraft||3
+Earth tiara|Runecraft||3
+Elemental talisman|Runecraft||3
+Elemental tiara|Runecraft||3
 Fire talisman|Runecraft||3
+Fire tiara|Runecraft||3
 Gold tiara|Runecraft||3
+Law tiara|Runecraft||3
+Monkey talisman|Runecraft||3
 Nature talisman|Runecraft||3
+Nature tiara|Runecraft||3
+Ring of nature|Runecraft||3
 Tiara|Runecraft||3
+Aether catalyst|Runecraft||4
+Ancient essence|Runecraft||4
+Celestial signet (uncharged)|Runecraft||4
 Death talisman|Runecraft||4
+Fancy tiara|Runecraft||4
+Imbued heart|Runecraft||4
+Imbued tephra|Runecraft||4
+Mind talisman|Runecraft||4
+Mind tiara|Runecraft||4
 Stardust|Runecraft||4
+Tiara mould|Runecraft||4
 Water talisman|Runecraft||4
+Water tiara|Runecraft||4
+Wrath talisman|Runecraft||4
+Wrath tiara|Runecraft||4
+Guardian boots|Runecraft||5
 Air rune|Runes||1
 Body rune|Runes||1
 Chaos rune|Runes||1
@@ -666,23 +4698,136 @@ Astral rune|Runes||2
 Blood rune|Runes||2
 Soul rune|Runes||2
 Wrath rune|Runes||2
+Blighted bind sack|Runes||3
+Blighted snare sack|Runes||3
+Crate of astral runes|Runes||3
+Crate of runes|Runes||3
+Rune pouch note|Runes||3
 Blighted ancient ice sack|Runes||4
 Blighted entangle sack|Runes||4
 Blighted teleport spell sack|Runes||4
 Blighted vengeance sack|Runes||4
+Crate of wrath runes|Runes||4
+Large dragon keel parts|Sailing||2
+Fremennik sea boots 1|Sailing||3
+Iron keel parts|Sailing||3
+Ironwood hull parts|Sailing||3
+Ironwood repair kit|Sailing||3
+Large adamant keel parts|Sailing||3
+Large camphor hull parts|Sailing||3
+Large ironwood hull parts|Sailing||3
+Large mahogany hull parts|Sailing||3
+Large mithril keel parts|Sailing||3
+Large rosewood hull parts|Sailing||3
+Large rune keel parts|Sailing||3
+Large steel keel parts|Sailing||3
+Large teak hull parts|Sailing||3
+Mahogany hull parts|Sailing||3
+Mahogany repair kit|Sailing||3
+Mithril keel parts|Sailing||3
+Rosewood hull parts|Sailing||3
+Rune keel parts|Sailing||3
+Sailors' amulet|Sailing||3
+Steel keel parts|Sailing||3
+Wooden hull parts|Sailing||3
+Adamant keel parts|Sailing||4
+Boat bottle (empty)|Sailing||4
+Camphor hull parts|Sailing||4
+Crate of bread|Sailing||4
+Crate of kebabs|Sailing||4
+Crate of pies|Sailing||4
+Crate of ship parts|Sailing||4
+Dragon keel parts|Sailing||4
+Dragon limbs|Sailing||4
+Large bronze keel parts|Sailing||4
+Large iron keel parts|Sailing||4
+Large wooden hull parts|Sailing||4
+Light frame|Sailing||4
+Oak hull parts|Sailing||4
+Oak repair kit|Sailing||4
+Paddle|Sailing||4
+Rosewood repair kit|Sailing||4
+Sailors' amulet (inert)|Sailing||4
+Ship ticket|Sailing||4
+Storm cruiser's coat|Sailing||4
+Storm cruiser's hat|Sailing||4
+Storm cruiser's shoes|Sailing||4
+Storm cruiser's trousers|Sailing||4
+Swamp cruiser's hat|Sailing||4
+Swamp cruiser's jacket|Sailing||4
+Swamp cruiser's shoes|Sailing||4
+Swamp cruiser's trousers|Sailing||4
+Teak hull parts|Sailing||4
+Bronze keel parts|Sailing||5
+Camphor crate|Sailing||5
+Camphor repair kit|Sailing||5
+Bag of salt|Slayer||1
+Facemask|Slayer||1
 Salve amulet (e)|Slayer|Melee|1
+Slayer cape|Slayer||1
+Slayer helmet|Slayer||1
 Slayer helmet (i)|Slayer||1
+Abyssal bracelet(5)|Slayer||2
+Araxyte slayer helmet|Slayer||2
+Black slayer helmet|Slayer||2
+Bracelet of slaughter|Slayer||2
+Earmuffs|Slayer||2
+Hydra slayer helmet|Slayer||2
+Insulated boots|Slayer||2
+Nose peg|Slayer||2
+Oathplate slayer helmet|Slayer|Melee|2
+Radiant slayer helmet|Slayer||2
+Red slayer helmet|Slayer||2
+Rock hammer|Slayer||2
+Salve amulet|Slayer||2
 Salve amulet(ei)|Slayer||2
-Gas mask|Quest||5
-Ring of visibility|Misc||4
+Slayer gloves|Slayer||2
+Slayer's enchantment|Slayer||2
+Turquoise slayer helmet|Slayer||2
+Twisted slayer helmet|Slayer||2
+Tzkal slayer helmet|Slayer||2
+Tztok slayer helmet|Slayer||2
+Vampyric slayer helmet|Slayer||2
+Wyvern visage|Slayer||2
+Black mask (1) (i)|Slayer||3
+Black mask (10)|Slayer||3
+Black mask (10) (i)|Slayer||3
+Black mask (2) (i)|Slayer||3
+Black mask (3) (i)|Slayer||3
+Black mask (4) (i)|Slayer||3
+Black mask (5) (i)|Slayer||3
+Black mask (6) (i)|Slayer||3
+Black mask (7) (i)|Slayer||3
+Black mask (8) (i)|Slayer||3
+Black mask (9) (i)|Slayer||3
+Green slayer helmet|Slayer||3
+Hooded slayer helmet|Slayer||3
+Mirror shield|Slayer||3
+Purple slayer helmet|Slayer||3
+Slayer bell|Slayer||3
+Snake mask|Slayer||3
+Spiny helmet|Slayer||3
+Witchwood icon|Slayer||3
+Araxyte venom sac|Slayer||4
+Attacker icon|Slayer||4
+Banshee mask|Slayer||4
+Banshee robe|Slayer||4
+Banshee top|Slayer||4
+Black demon mask|Slayer||4
+Efh salt|Slayer||4
+Sigil of Slaughter|Slayer||4
+Slayer hood|Slayer||4
 Hammer|Smithing|Construction|1
 Adamantite bar|Smithing||2
 Adamantite ore|Smithing||2
 Bronze bar|Smithing||2
 Coal|Smithing||2
 Copper ore|Smithing||2
+Dragon metal lump|Smithing||2
+Dragon metal shard|Smithing||2
 Gold bar|Smithing||2
 Gold ore|Smithing||2
+Ice gloves|Smithing||2
 Iron bar|Smithing||2
 Iron ore|Smithing||2
 Mithril bar|Smithing||2
@@ -691,11 +4836,40 @@ Runite bar|Smithing||2
 Runite ore|Smithing||2
 Steel bar|Smithing||2
 Tin ore|Smithing||2
+Blacksmith's helm|Smithing||3
+Crate of coal|Smithing||3
+Dragon metal sheet|Smithing||3
+Dragon metal slice|Smithing||3
+Dragon scale dust|Smithing||3
+Granite clamp|Smithing||3
+Imcando hammer|Smithing|Construction|3
+Imcando hammer (off-hand)|Smithing|Construction|3
+Ring of forging|Smithing||3
 Silver bar|Smithing||3
 Silver ore|Smithing||3
+Smiths boots|Smithing||3
+Smiths gloves|Smithing||3
+Smiths trousers|Smithing||3
+Smiths tunic|Smithing||3
+Stony basalt|Smithing||3
+Aldarium|Smithing||4
 Ammo mould|Smithing||4
+Chromium ingot|Smithing||4
+Crate of gold bars|Smithing||4
+Crate of iron bars|Smithing||4
+Crate of ores|Smithing||4
+Crate of steel bars|Smithing||4
+Flamtaer hammer|Smithing|Construction|4
+Granite hammer|Smithing|Construction|4
+Orikalkum gravel|Smithing||4
+Preform|Smithing||4
+Sigil of the Smith|Smithing||4
+Amulet of eternal glory|Teleports||1
+Amulet of glory|Teleports||1
 Amulet of glory(3)|Teleports||1
 Amulet of glory(6)|Teleports||1
+Slayer ring (eternal)|Teleports||1
+Achievement diary cape (t)|Teleports||2
 Ardougne teleport|Teleports||2
 Camelot teleport|Teleports||2
 Falador teleport|Teleports||2
@@ -714,27 +4888,45 @@ Ring of wealth (5)|Teleports||2
 Skills necklace|Teleports||2
 Skills necklace(5)|Teleports||2
 Skills necklace(6)|Teleports||2
+Slayer ring (8)|Teleports||2
 Ardougne cloak 1|Teleports|Cosmetic|3
 Burning amulet(2)|Teleports||3
 Burning amulet(5)|Teleports||3
+Castle wars bracelet(3)|Teleports||3
 Crystal teleport seed|Teleports||3
+Disk of Returning|Teleports||3
+Drakan's medallion|Teleports||3
+Escape crystal|Teleports||3
+Flamtaer bracelet|Teleports||3
 Giantsoul amulet|Teleports||3
+Grand seed pod|Teleports||3
 Kharyrll teleport|Teleports||3
 Kourend castle teleport|Teleports||3
 Lassar teleport|Teleports||3
 Lumbridge teleport|Teleports||3
 Lunar isle teleport|Teleports||3
 Necklace of passage(1)|Teleports||3
+Necklace of passage(5)|Teleports||3
+Pharaoh's sceptre (uncharged)|Teleports||3
 Ring of dueling(1)|Teleports||3
 Ring of dueling(5)|Teleports||3
+Ring of returning(5)|Teleports||3
+Ring of wealth scroll|Teleports||3
 Royal seed pod|Teleports||3
 Salve graveyard teleport|Teleports||3
+Teleport anchoring scroll|Teleports||3
 Teleport crystal (3)|Teleports||3
 Teleport to house|Teleports||3
+Twisted teleport scroll|Teleports||3
+Xeric's talisman|Teleports||3
+Amulet of bounty|Teleports||4
 Annakarl teleport|Teleports||4
+Annihilation teleport scroll|Teleports||4
 Ape atoll teleport|Teleports||4
+Armageddon teleport scroll|Teleports||4
 Carrallanger teleport|Teleports||4
 Dareeyak teleport|Teleports||4
+Digsite pendant (1)|Teleports||4
 Digsite pendant (2)|Teleports||4
 Digsite pendant (5)|Teleports||4
 Digsite teleport|Teleports||4
@@ -742,12 +4934,77 @@ Ghorrock teleport|Teleports||4
 Guthixian temple teleport|Teleports||4
 Iorwerth camp teleport|Teleports||4
 Revenant cave teleport|Teleports||4
+Sigil of Last Recall|Teleports||4
 Strange teleorb|Teleports||4
 Target teleport|Teleports||4
+Target teleport scroll|Teleports||4
+Teleport card|Teleports||4
+Trailblazer teleport scroll|Teleports||4
 Wilderness crabs teleport|Teleports||4
+Xeric's talisman (inert)|Teleports||4
 Zul-andra teleport|Teleports||4
 Dorgesh-kaan sphere|Teleports||5
+Trailblazer reloaded death scroll|Teleports||5
+Trailblazer reloaded home teleport scroll|Teleports||5
+House keys|Thieving||2
+Valuables|Thieving||2
+Dodgy necklace|Thieving||3
 Lockpick|Thieving||3
+Rogue boots|Thieving||3
+Rogue gloves|Thieving||3
+Rogue mask|Thieving||3
+Rogue top|Thieving||3
+Rogue trousers|Thieving||3
+Sinister key|Thieving||3
+Strange old lockpick (full)|Thieving||3
+Thieving cape|Thieving||3
+Thieving hood|Thieving||3
+Grubby key|Thieving||4
+Silver locks|Thieving||4
+Spiked manacles|Thieving||4
+Thieving bag|Thieving||4
+Willow blackjack|Thieving||4
+Corrupted axe|Woodcutting||2
+Crystal axe|Woodcutting||2
+Crystal felling axe|Woodcutting||2
 Dragon axe|Woodcutting||2
+Infernal axe|Woodcutting||2
 Rune axe|Woodcutting||2
+Rune felling axe|Woodcutting||2
+Steel axe|Woodcutting||2
+3rd Age felling axe|Woodcutting||3
+Adamant axe|Woodcutting||3
+Adamant felling axe|Woodcutting||3
+Forestry boots|Woodcutting||3
+Forestry hat|Woodcutting||3
+Forestry legs|Woodcutting||3
+Forestry top|Woodcutting||3
+Lumberjack boots|Woodcutting||3
+Lumberjack hat|Woodcutting||3
+Lumberjack legs|Woodcutting||3
+Lumberjack top|Woodcutting||3
+Mithril axe|Woodcutting||3
+Mithril felling axe|Woodcutting||3
+Steel felling axe|Woodcutting||3
+Woodcut. cape(t)|Woodcutting||3
+Woodcutting cape|Woodcutting||3
+Woodcutting hood|Woodcutting||3
+Black felling axe|Woodcutting||4
+Bucket of sap|Woodcutting||4
+Dragon felling axe|Woodcutting||4
+Echo axe|Woodcutting||4
+Forestry basket|Woodcutting||4
+Forestry kit|Woodcutting||4
+Gilded axe|Woodcutting||4
+Iron axe|Woodcutting||4
+Iron felling axe|Woodcutting||4
+Log basket|Woodcutting||4
+Magic roots|Woodcutting||4
+Maple roots|Woodcutting||4
+Open forestry basket|Woodcutting||4
+Open log basket|Woodcutting||4
+Sage's axe|Woodcutting||4
+Sigil of the Forager|Woodcutting||4
 Bronze axe|Woodcutting||5
+Bronze felling axe|Woodcutting||5
+Oak roots|Woodcutting||5

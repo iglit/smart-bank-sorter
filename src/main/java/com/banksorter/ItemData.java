@@ -8,6 +8,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Bundled per-item data, classified from the OSRS Wiki. One line per item:
@@ -38,9 +40,30 @@ final class ItemData
 	{
 	}
 
+	// Trailing variant markers: "(4)", "(i)", "(uncharged)", or a Barrows degrade level like " 75".
+	private static final Pattern VARIANT = Pattern.compile("(\\s*\\([^()]*\\)|\\s+\\d+)$");
+
+	/**
+	 * Entry for this exact name, else for the name with variant suffixes stripped one at a time, so
+	 * "Dharok's helm 75" and "Amulet of glory(4)" find "Dharok's helm" and "Amulet of glory".
+	 */
 	static Entry get(String name)
 	{
-		return ITEMS.get(name.toLowerCase());
+		String n = name.toLowerCase().trim();
+		while (true)
+		{
+			Entry e = ITEMS.get(n);
+			if (e != null)
+			{
+				return e;
+			}
+			Matcher m = VARIANT.matcher(n);
+			if (!m.find() || m.start() == 0)
+			{
+				return null;
+			}
+			n = n.substring(0, m.start()).trim();
+		}
 	}
 
 	static int tier(String name)
