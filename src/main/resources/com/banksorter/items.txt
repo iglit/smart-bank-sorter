@@ -1,0 +1,753 @@
+# Item categories for the author's bank, classified from the OSRS Wiki by Haiku agents (2026-11-07), then rule-checked.
+# Format: Item name|Main category|Extra categories (copies)|Tier 1-5 (1 = most used). User rules override these.
+Graceful gloves|Agility|Farming,Hunter,Runecraft,Thieving|2
+Graceful legs|Agility|Farming,Hunter,Runecraft,Thieving|2
+Graceful top|Agility|Farming,Hunter,Runecraft,Thieving|2
+Mark of Grace|Agility||2
+Climbing boots|Agility|Melee|3
+Mith grapple|Agility||3
+Scroll box (beginner)|Clues||2
+Scroll box (easy)|Clues||2
+Scroll box (elite)|Clues||2
+Scroll box (hard)|Clues||2
+Scroll box (medium)|Clues||2
+Crystal key|Clues||3
+Tooth half of key|Clues||4
+Bolt of cloth|Construction||2
+Iron nails|Construction||2
+Plank|Construction||2
+Steel nails|Construction||2
+Mahogany plank|Construction||3
+Mithril nails|Construction||3
+Oak plank|Construction||3
+Saw|Construction||3
+Bronze nails|Construction||4
+Construction guide|Construction||4
+Limestone brick|Construction||4
+Leaping trout|Cooking||2
+Raw swordfish|Cooking||2
+Raw tuna|Cooking||2
+Coconut milk|Cooking||3
+Cooking gauntlets|Cooking||3
+Pie dish|Cooking||3
+Raw karambwanji|Cooking||3
+Trout|Cooking||3
+Bowl|Cooking||5
+Pot|Cooking||5
+Emissary hood|Cosmetic||4
+Emissary robe bottom|Cosmetic||4
+Emissary robe top|Cosmetic||4
+Emissary sandals|Cosmetic||4
+Gorilla greegree|Cosmetic||4
+Ninja monkey greegree|Cosmetic||4
+Zombie monkey greegree|Cosmetic||4
+Blue cape|Cosmetic||5
+Bomber cap|Cosmetic||5
+Bomber jacket|Cosmetic||5
+Demonic pacts bronze trophy|Cosmetic||5
+Demonic pacts iron trophy|Cosmetic||5
+Desert robe|Cosmetic||5
+Desert shirt|Cosmetic||5
+Gauntlet cape|Cosmetic||5
+Hair clip|Cosmetic||5
+Ham cloak|Cosmetic||5
+Ham gloves|Cosmetic||5
+Ham hood|Cosmetic||5
+Ham logo|Cosmetic||5
+Ham robe|Cosmetic||5
+Ham shirt|Cosmetic||5
+Ice gloves|Smithing||2
+Lederhosen hat|Cosmetic||5
+Lederhosen shorts|Cosmetic||5
+Lederhosen top|Cosmetic||5
+Nurse hat|Cosmetic||5
+Plague jacket|Cosmetic||5
+Plague trousers|Cosmetic||5
+Red partyhat|Cosmetic||5
+Silly jester boots|Cosmetic||5
+Silly jester hat|Cosmetic||5
+Silly jester tights|Cosmetic||5
+Silly jester top|Cosmetic||5
+Team-1 cape|Cosmetic||5
+Chisel|Crafting||2
+Needle|Crafting||2
+Scaly blue dragonhide|Crafting||2
+Soft clay|Crafting||2
+Thread|Crafting||2
+Uncut diamond|Crafting||2
+Uncut opal|Crafting||2
+Ball of wool|Crafting||3
+Black dragonhide|Crafting||3
+Blue dragon scale|Crafting||3
+Blue dragonhide|Crafting||3
+Diamond|Crafting||3
+Emerald|Crafting||3
+Goldsmith gauntlets|Crafting||3
+Masori crafting kit|Crafting||3
+Onyx|Crafting||3
+Ruby|Crafting||3
+Sapphire|Crafting||3
+Silk|Crafting||3
+Uncut dragonstone|Crafting||3
+Uncut emerald|Crafting||3
+Uncut jade|Crafting||3
+Uncut ruby|Crafting||3
+Uncut sapphire|Crafting||3
+Bear fur|Crafting||4
+Bullseye lantern (unf)|Crafting||4
+Lantern lens|Crafting||4
+Leather gloves|Crafting||4
+Rose-tinted lens|Crafting||4
+Suqah hide|Crafting||4
+Yellow dye|Crafting||4
+Coins|Currency||1
+Tokkul|Currency||3
+Frog token|Currency||4
+Pete's vouchers|Currency||4
+Warrior guild token|Currency||4
+Spade|Farming||1
+Bottomless compost bucket|Farming||2
+Gardening trowel|Farming||2
+Gricoller's can|Farming||2
+Irit seed|Farming||2
+Kwuarm seed|Farming||2
+Magic secateurs|Farming||2
+Marrentill seed|Farming||2
+Supercompost|Farming||2
+Watering can|Farming||2
+Watering can(4)|Farming||2
+Willow seed|Farming||2
+Yew seed|Farming||2
+Apple tree seed|Farming||3
+Banana tree seed|Farming||3
+Cadantine seed|Farming||3
+Calquat sapling|Farming||3
+Calquat tree seed|Farming||3
+Celastrus seed|Farming||3
+Curry tree seed|Farming||3
+Dragonfruit tree seed|Farming||3
+Empty plant pot|Farming||3
+Filled plant pot|Farming||3
+Harralander seed|Farming||3
+Hespori seed|Farming||3
+Lantadyme seed|Farming||3
+Limpwurt seed|Farming||3
+Magic seed|Farming||3
+Mahogany seed|Farming||3
+Maple sapling|Farming||3
+Maple seed|Farming||3
+Mithril seeds|Farming||3
+Orange tree seed|Farming||3
+Palm tree seed|Farming||3
+Papaya sapling|Farming||3
+Papaya tree seed|Farming||3
+Pineapple seed|Farming||3
+Potato cactus|Farming||3
+Seed dibber|Farming||3
+Snapdragon seed|Farming||3
+Spirit seed|Farming||3
+Teak seed|Farming||3
+Torstol seed|Farming||3
+Watermelon seed|Farming||3
+Whiteberry seed|Farming||3
+Acorn|Farming||4
+Cabbage seed|Farming||4
+Farmer's boots|Farming||4
+Rake|Farming||4
+Shears|Farming|Crafting|4
+Auguste's sapling|Farming||5
+Cactus spine|Farming||5
+Lily of the Sands|Farming||5
+Mixed flowers|Farming||5
+Onion seed|Farming||5
+Palm sapling|Farming||5
+Yew sapling|Farming||5
+Tinderbox|Firemaking||1
+Lit torch|Firemaking||5
+Fishing rod|Fishing||1
+Fly fishing rod|Fishing||1
+Barbarian rod|Fishing||2
+Big fishing net|Fishing||2
+Oily fishing rod|Fishing||2
+Small fishing net|Fishing||2
+Dark fishing bait|Fishing||3
+Knife|Fletching||1
+Feather|Fletching||2
+Logs|Fletching|Firemaking|2
+Magic logs|Fletching|Firemaking|2
+Mahogany logs|Fletching|Firemaking|2
+Maple logs|Fletching|Firemaking|2
+Onyx bolt tips|Fletching||3
+Metal feather|Fletching||4
+Banana|Food||2
+Blighted anglerfish|Food||2
+Blighted karambwan|Food||2
+Blighted manta ray|Food||2
+Cooked karambwan|Food||2
+Halibut|Food||2
+Manta ray|Food||2
+Meat pie|Food||2
+Salmon|Food||2
+Shark|Food||2
+Spinach roll|Food||2
+Swordfish|Food||2
+Tuna potato|Food||2
+Apples(5)|Farming||3
+Chocolate bar|Food||3
+Curry|Food||3
+Half a mushroom pie|Food||3
+Potato with cheese|Food||3
+Sardine|Food||3
+Stew|Food||3
+Triangle sandwich|Food||3
+Tuna|Food||3
+Bass|Food||4
+Cake|Food||4
+Grapes|Cooking||2
+Jug of sunfire wine|Prayer||2
+Jug of wine|Food||4
+Strange fruit|Food||4
+Baked potato|Food||5
+Cabbage|Food||5
+Lemon|Food||5
+Pink candy|Misc||5
+Potatoes(10)|Farming||3
+Shrimps|Food||5
+Grimy harralander|Herblore||1
+Grimy irit leaf|Herblore||1
+Grimy ranarr weed|Herblore||1
+Grimy snapdragon|Herblore||1
+Guam leaf|Herblore||1
+Harralander|Herblore||1
+Irit leaf|Herblore||1
+Kwuarm|Herblore||1
+Marrentill|Herblore||1
+Pestle and mortar|Herblore||1
+Ranarr weed|Herblore||1
+Vial of water|Herblore||1
+Grimy avantoe|Herblore||2
+Grimy guam leaf|Herblore||2
+Grimy kwuarm|Herblore||2
+Grimy marrentill|Herblore||2
+Grimy tarromin|Herblore||2
+Grimy toadflax|Herblore||2
+Limpwurt root|Herblore||2
+Vial|Herblore||2
+Empty vial|Herblore||3
+Eye of newt|Herblore||3
+Jug of water|Herblore||3
+Swamp tar|Herblore||3
+Goutweed|Herblore||5
+Bird snare|Hunter||2
+Box trap|Hunter||3
+Butterfly net|Hunter||3
+Bird nest|Hunter||4
+Butterfly jar|Hunter||4
+Jerboa tail|Hunter||4
+Bird's egg|Hunter||5
+Ring of life|Jewellery||3
+Ghostspeak amulet|Jewellery||4
+Giantsoul amulet (uncharged)|Jewellery||4
+Gold amulet|Jewellery||4
+M'speak amulet|Jewellery||4
+Ring of Charos(a)|Jewellery||4
+Ring of pursuit|Jewellery||4
+Ruby amulet|Jewellery||4
+Seal of Passage|Jewellery||4
+Beacon ring|Jewellery||5
+Catspeak amulet(e)|Jewellery||5
+Emerald ring|Jewellery||5
+Gnome amulet|Jewellery||5
+Gold ring|Jewellery||5
+Ruby ring|Jewellery||5
+Sapphire ring|Jewellery||5
+Ancient staff|Magic||2
+Chaos gauntlets|Magic|Melee|2
+Earth battlestaff|Magic||2
+Mystic boots|Magic||2
+Mystic gloves|Magic||2
+Mystic hat|Magic||2
+Mystic robe bottom|Magic||2
+Mystic robe bottom (light)|Magic||2
+Mystic robe top|Magic||2
+Trident of the Swamp|Magic||2
+Twinflame staff|Magic||2
+Water battlestaff|Magic||2
+Air battlestaff|Magic||3
+Blue Moon chestplate|Magic||3
+Blue Moon helm|Magic||3
+Blue Moon tassets|Magic||3
+Book of Darkness|Magic||3
+Dark squall hood|Magic||3
+Dark squall robe bottom|Magic||3
+Dark squall robe top|Magic||3
+Dramen staff|Magic||3
+Elemental shield|Magic||3
+Fire battlestaff|Magic||3
+Guthix cape|Magic||3
+Guthix staff|Magic||3
+Imbued ancient cape|Magic||3
+Lava battlestaff|Magic||3
+Lunar amulet|Magic||3
+Lunar boots|Magic||3
+Lunar gloves|Magic||3
+Lunar helm|Magic||3
+Lunar legs|Magic||3
+Lunar ring|Magic||3
+Lunar staff|Magic||3
+Lunar torso|Magic||3
+Mystic air staff|Magic||3
+Mystic water staff|Magic||3
+Saradomin staff|Magic||3
+Soulflame horn|Magic||3
+Zamorak cape|Magic|Melee|3
+Zamorak staff|Magic||3
+Air orb|Crafting||4
+Battlestaff|Magic||4
+Circlet of water (uncharged)|Magic|Runecraft|4
+Elemental amulet|Magic||4
+Eye of Ayak|Magic||4
+Fire orb|Crafting||4
+Iban's staff|Magic||4
+Lunar cape|Magic||4
+Unpowered orb|Crafting||4
+Xerician hat|Magic||4
+Book of the Dead|Magic||5
+Abyssal bludgeon|Melee||1
+Abyssal whip|Melee||1
+Amulet of fury|Melee|Ranged,Magic|1
+Barrows gloves|Melee|Ranged,Magic|1
+Dragon dagger(p)|Melee||1
+Dragon dagger(p+)|Melee||1
+Dragon scimitar|Melee||1
+Helm of Neitiznot|Melee||1
+Osmumten's fang|Melee||1
+Voidwaker|Melee||1
+Arclight|Melee|Slayer|2
+Bandos bracers|Melee|Ranged|2
+Bandos chaps|Melee|Ranged|2
+Blood Moon chestplate|Melee|Magic|2
+Blood Moon helm|Melee|Magic|2
+Blood Moon tassets|Melee|Magic|2
+Cape of Legends|Melee|Ranged,Magic|2
+Dragon boots|Melee||2
+Dragon defender|Melee||2
+Dual macuahuitl|Melee||2
+Excalibur|Melee||2
+Honourable blessing|Melee|Ranged,Magic|2
+Lightbearer|Melee||2
+Occult necklace|Melee||2
+Rune defender|Melee||2
+Adamant full helm|Melee||3
+Amulet of power|Melee||3
+Ancient mace|Melee||3
+Anti-dragon shield|Melee||3
+Berserker ring (i)|Melee||3
+Bone dagger (p++)|Melee||3
+Brimstone ring|Melee||3
+Elite black full helm|Melee||3
+Elite black platebody|Melee||3
+Elite black platelegs|Melee||3
+Fighter torso|Melee||3
+Granite longsword|Melee||3
+Keris|Melee||3
+Keris partisan of the sun|Melee||3
+Mithril platebody|Melee||3
+Neitiznot shield|Melee||3
+Ring of recoil|Melee||3
+Toktz-ket-xil|Melee||3
+Ursine chainmace|Melee||3
+Zamorakian hasta|Melee||3
+Ardougne knight helm|Melee||4
+Ardougne knight platebody|Melee||4
+Black full helm|Melee||4
+Black platebody|Melee||4
+Black platelegs|Melee||4
+Blue Moon spear|Melee||4
+Book of War|Melee||4
+Boots of stone|Melee||4
+Fire cape|Melee||4
+Ghommal's hilt 1|Melee||4
+Ghommal's hilt 2|Melee||4
+Gold helmet|Melee||4
+Mourner boots|Melee||4
+Mourner cloak|Quest||5
+Mourner gloves|Melee||4
+Mourner top|Quest||5
+Mourner trousers|Quest||5
+Noose wand|Melee|Slayer|4
+Steel platelegs|Melee||4
+Unholy book|Melee||4
+Unholy symbol|Melee||4
+Wilderness sword 2|Melee||4
+Bronze med helm|Melee||5
+Initiate sallet|Melee||5
+Iron chainbody|Melee||5
+Machete|Melee||5
+Mind shield|Melee||5
+Oak blackjack|Melee|Thieving|5
+Silver sickle (b)|Melee||5
+Spiked boots|Melee||5
+Dragon pickaxe|Mining||1
+Rune pickaxe|Mining||1
+Adamant pickaxe|Mining||2
+Celestial ring (uncharged)|Mining||2
+Prospector helmet|Mining||2
+Prospector jacket|Mining||2
+Prospector legs|Mining||2
+Reinforced goggles|Mining||3
+Golden nugget|Mining||4
+Bronze pickaxe|Mining||5
+Crystal armour seed|Misc||3
+Enhanced crystal weapon seed|Misc||3
+Looting bag|Misc||3
+Rope|Misc||3
+Ancient shard|Misc||4
+Bucket|Misc||4
+Bullseye lantern|Misc||4
+Crystal shard|Misc||4
+Diving apparatus|Misc||4
+Emerald lantern|Misc||4
+Frozen tear|Misc||4
+Giant key|Misc||4
+Numulite|Misc||4
+Purple dye|Misc||4
+Red dye|Misc||4
+Revenant ether|Misc||4
+Sapphire lantern|Misc||4
+Sieve|Misc||4
+Steel key ring|Misc||4
+Sunfire splinters|Misc||4
+Unidentified large fossil|Misc||4
+Unidentified medium fossil|Misc||4
+Varrock armour 1|Mining|Smithing|2
+Abyssal book|Misc||5
+Aquanite hopper|Ranged||2
+Ascension shards|Misc||5
+Barrel|Misc||5
+Beer|Misc||5
+Beer glass|Misc||5
+Bird book|Misc||5
+Bottle|Misc||5
+Broav|Misc||5
+Burnt meat|Misc||5
+Candle|Misc||5
+Chores|Misc||5
+Commorb|Misc||5
+Crystal chime|Misc||5
+Crystal saw seed|Misc||5
+Druid pouch|Misc||5
+Empty sack|Misc||5
+Fishbowl helmet|Misc||5
+Fossilised dung|Misc||5
+Grey toy horsey|Misc||5
+Hell cat|Misc||5
+House keys|Thieving||2
+Instruction manual|Misc||5
+Jar of Darkness|Misc||5
+Jewel of Amascut|Misc||5
+Jug|Misc||5
+Karamjan monkey greegree|Misc||5
+Key|Misc||5
+Kruk monkey greegree|Misc||5
+Lyre|Misc||5
+Mouse toy|Misc||5
+New key|Misc||5
+Ode to eternity|Misc||5
+Ogre bellows|Misc||5
+Papyrus|Misc||5
+Pet cat|Misc||5
+Pet rock|Misc||5
+Smelly sock|Misc||5
+Translation book|Misc||5
+Trouver parchment|Misc||5
+Unidentified small fossil|Misc||5
+Valuables|Thieving||2
+Weeds|Misc||5
+Divine super combat potion(1)|Potions||1
+Divine super combat potion(2)|Potions||1
+Divine super combat potion(3)|Potions||1
+Divine super combat potion(4)|Potions||1
+Prayer potion(1)|Potions||1
+Prayer potion(2)|Potions||1
+Prayer potion(3)|Potions||1
+Prayer potion(4)|Potions||1
+Super attack(1)|Potions||1
+Super attack(3)|Potions||1
+Super attack(4)|Potions||1
+Super combat potion(1)|Potions||1
+Super combat potion(2)|Potions||1
+Super combat potion(3)|Potions||1
+Super combat potion(4)|Potions||1
+Super defence(1)|Potions||1
+Super defence(2)|Potions||1
+Super defence(4)|Potions||1
+Super restore(1)|Potions||1
+Super restore(2)|Potions||1
+Super restore(3)|Potions||1
+Super restore(4)|Potions||1
+Super strength(1)|Potions||1
+Super strength(2)|Potions||1
+Super strength(3)|Potions||1
+Super strength(4)|Potions||1
+Anti-venom(1)|Potions||2
+Anti-venom(2)|Potions||2
+Anti-venom(3)|Potions||2
+Anti-venom(4)|Potions||2
+Blighted super restore(1)|Potions||2
+Blighted super restore(2)|Potions||2
+Blighted super restore(3)|Potions||2
+Blighted super restore(4)|Potions||2
+Divine magic potion(1)|Potions||2
+Divine magic potion(2)|Potions||2
+Divine magic potion(3)|Potions||2
+Divine magic potion(4)|Potions||2
+Divine ranging potion(1)|Potions||2
+Divine ranging potion(2)|Potions||2
+Divine ranging potion(3)|Potions||2
+Divine ranging potion(4)|Potions||2
+Dwarven stout(m)|Potions||2
+Extended anti-venom+(1)|Potions||2
+Extended anti-venom+(2)|Potions||2
+Extended anti-venom+(3)|Potions||2
+Extended anti-venom+(4)|Potions||2
+Extended antifire(1)|Potions||2
+Extended antifire(2)|Potions||2
+Extended antifire(4)|Potions||2
+Extended stamina potion(1)|Potions||2
+Extended stamina potion(2)|Potions||2
+Extended stamina potion(3)|Potions||2
+Extended stamina potion(4)|Potions||2
+Ranging potion(1)|Potions||2
+Ranging potion(2)|Potions||2
+Ranging potion(3)|Potions||2
+Ranging potion(4)|Potions||2
+Saradomin brew(1)|Potions||2
+Saradomin brew(2)|Potions||2
+Saradomin brew(3)|Potions||2
+Saradomin brew(4)|Potions||2
+Stamina potion(1)|Potions||2
+Stamina potion(2)|Potions||2
+Stamina potion(3)|Potions||2
+Stamina potion(4)|Potions||2
+Superantipoison(3)|Potions||2
+Superantipoison(4)|Potions||2
+Goading potion(4)|Potions||3
+Hunter potion(4)|Potions||3
+Sanfew serum(3)|Potions||3
+Sanfew serum(4)|Potions||3
+Menaphite remedy(4)|Potions||4
+Waterskin(1)|Potions||4
+Waterskin(3)|Potions||4
+Waterskin(4)|Potions||4
+Jug of bad wine|Potions||5
+Bones|Prayer||1
+Dragon bones|Prayer||1
+Babydragon bones|Prayer||2
+Dagannoth bones|Prayer||2
+Wyrmling bones|Prayer||2
+Wyvern bones|Prayer||2
+Ensouled dagannoth head|Prayer||3
+Ensouled demon head|Prayer||3
+Ensouled dragon head|Prayer||3
+Sun-kissed bones|Prayer||3
+Wolf bones|Prayer||3
+Blessed bone shards|Prayer||4
+Blessed bone statuette|Prayer||4
+Ensouled elf head|Prayer||4
+Ensouled hellhound head|Prayer||4
+Long bone|Prayer||4
+Ancient tablet|Quest||5
+Book of Law|Quest|Ranged|4
+Crystal trinket|Quest||5
+Damaged book|Quest||5
+Dark journal|Quest||5
+Dark totem|Quest||5
+Dark totem base|Quest||5
+Dark totem middle|Quest||5
+Dark totem top|Quest||5
+Demonic quill|Quest||5
+Desiccated page|Quest||5
+Dirty note|Quest||5
+Enchanted key|Quest||5
+Enchanted symbol|Quest||5
+Fixed device|Quest||5
+Fossil island note book|Quest||5
+Glarial's pebble|Quest||5
+Jewel of the Sun|Quest||5
+Kasonde's journal|Quest||5
+Movario's notes (volume 1)|Quest||5
+Movario's notes (volume 2)|Quest||5
+Salve shard|Quest||5
+Sin'keth's diary|Quest||5
+Tarn's diary|Quest||5
+Tarnished key|Quest||5
+Thread of Elidinis|Crafting||2
+Vampyre dust|Quest||5
+Warning note|Quest||5
+Word translations|Quest||5
+Yewnock's notes|Quest||5
+Zaff's instructions|Quest||5
+Toxic blowpipe|Ranged||1
+Amethyst arrow|Ranged||2
+Ava's accumulator|Ranged||2
+Bandos d'hide body|Ranged|Melee|2
+Bandos d'hide boots|Ranged|Melee|2
+Black d'hide body|Ranged||2
+Black d'hide chaps|Ranged||2
+Crystal bow|Ranged||2
+Diamond bolts (e)|Ranged||2
+Dragon arrow|Ranged||2
+Dragon crossbow|Ranged||2
+Dragon javelin|Ranged||2
+Dragonstone bolts (e)|Ranged||2
+Magic shortbow (i)|Ranged||2
+Necklace of anguish|Ranged||2
+Ruby bolts (e)|Ranged||2
+Ruby dragon bolts (e)|Ranged||2
+Rune arrow|Ranged||2
+Runite bolts|Ranged||2
+Adamant arrow|Ranged||3
+Adamant bolts|Ranged||3
+Aranea boots|Ranged||3
+Atlatl dart|Ranged||3
+Black d'hide vambraces|Ranged||3
+Cannon barrels|Ranged||3
+Cannon base|Ranged||3
+Cannon furnace|Ranged||3
+Cannon stand|Ranged||3
+Dorgeshuun crossbow|Ranged||3
+Eclipse Moon chestplate|Ranged||3
+Eclipse Moon helm|Ranged||3
+Eclipse Moon tassets|Ranged||3
+Eclipse atlatl|Ranged||3
+Mithril arrow|Ranged||3
+Mixed hide legs|Ranged||3
+Ogre arrow|Ranged||3
+Red chinchompa|Ranged|Hunter|3
+Rune thrownaxe|Ranged||3
+Snakeskin boots|Ranged||3
+Steel cannonball|Ranged||3
+Iron bolts|Ranged||4
+Mithril dart|Ranged||4
+Ogre bow|Ranged||4
+Robin Hood hat|Ranged||4
+Steel arrow|Ranged||4
+Pure essence|Runecraft||1
+Air talisman|Runecraft||2
+Chaos talisman|Runecraft||2
+Law talisman|Runecraft||2
+Medium pouch|Runecraft||2
+Small pouch|Runecraft||2
+Air tiara|Runecraft||3
+Blood essence|Runecraft||3
+Dark essence block|Runecraft||3
+Earth talisman|Runecraft||3
+Fire talisman|Runecraft||3
+Gold tiara|Runecraft||3
+Nature talisman|Runecraft||3
+Tiara|Runecraft||3
+Death talisman|Runecraft||4
+Stardust|Runecraft||4
+Water talisman|Runecraft||4
+Air rune|Runes||1
+Body rune|Runes||1
+Chaos rune|Runes||1
+Cosmic rune|Runes||1
+Death rune|Runes||1
+Earth rune|Runes||1
+Fire rune|Runes||1
+Law rune|Runes||1
+Mind rune|Runes||1
+Nature rune|Runes||1
+Rune pouch|Runes||1
+Water rune|Runes||1
+Astral rune|Runes||2
+Blood rune|Runes||2
+Soul rune|Runes||2
+Wrath rune|Runes||2
+Blighted ancient ice sack|Runes||4
+Blighted entangle sack|Runes||4
+Blighted teleport spell sack|Runes||4
+Blighted vengeance sack|Runes||4
+Salve amulet (e)|Slayer|Melee|1
+Slayer helmet (i)|Slayer||1
+Salve amulet(ei)|Slayer||2
+Gas mask|Slayer||3
+Ring of visibility|Misc||4
+Hammer|Smithing|Construction|1
+Adamantite bar|Smithing||2
+Adamantite ore|Smithing||2
+Bronze bar|Smithing||2
+Coal|Smithing||2
+Copper ore|Smithing||2
+Gold bar|Smithing||2
+Gold ore|Smithing||2
+Iron bar|Smithing||2
+Iron ore|Smithing||2
+Mithril bar|Smithing||2
+Mithril ore|Smithing||2
+Runite bar|Smithing||2
+Runite ore|Smithing||2
+Steel bar|Smithing||2
+Tin ore|Smithing||2
+Silver bar|Smithing||3
+Silver ore|Smithing||3
+Ammo mould|Smithing||4
+Amulet of glory(3)|Teleports||1
+Amulet of glory(6)|Teleports||1
+Ardougne teleport|Teleports||2
+Camelot teleport|Teleports||2
+Falador teleport|Teleports||2
+Games necklace(1)|Teleports||2
+Games necklace(2)|Teleports||2
+Games necklace(4)|Teleports||2
+Games necklace(6)|Teleports||2
+Games necklace(7)|Teleports||2
+Games necklace(8)|Teleports||2
+Ring of dueling(4)|Teleports||2
+Ring of dueling(6)|Teleports||2
+Ring of dueling(7)|Teleports||2
+Ring of dueling(8)|Teleports||2
+Ring of wealth (4)|Teleports||2
+Ring of wealth (5)|Teleports||2
+Skills necklace|Teleports||2
+Skills necklace(5)|Teleports||2
+Skills necklace(6)|Teleports||2
+Ardougne cloak 1|Teleports|Cosmetic|3
+Burning amulet(2)|Teleports||3
+Burning amulet(5)|Teleports||3
+Crystal teleport seed|Teleports||3
+Giantsoul amulet|Teleports||3
+Kharyrll teleport|Teleports||3
+Kourend castle teleport|Teleports||3
+Lassar teleport|Teleports||3
+Lumbridge teleport|Teleports||3
+Lunar isle teleport|Teleports||3
+Necklace of passage(1)|Teleports||3
+Ring of dueling(1)|Teleports||3
+Ring of dueling(5)|Teleports||3
+Royal seed pod|Teleports||3
+Salve graveyard teleport|Teleports||3
+Teleport crystal (3)|Teleports||3
+Teleport to house|Teleports||3
+Annakarl teleport|Teleports||4
+Ape atoll teleport|Teleports||4
+Carrallanger teleport|Teleports||4
+Dareeyak teleport|Teleports||4
+Digsite pendant (2)|Teleports||4
+Digsite pendant (5)|Teleports||4
+Digsite teleport|Teleports||4
+Ghorrock teleport|Teleports||4
+Guthixian temple teleport|Teleports||4
+Iorwerth camp teleport|Teleports||4
+Revenant cave teleport|Teleports||4
+Strange teleorb|Teleports||4
+Target teleport|Teleports||4
+Wilderness crabs teleport|Teleports||4
+Zul-andra teleport|Teleports||4
+Dorgesh-kaan sphere|Teleports||5
+Lockpick|Thieving||3
+Dragon axe|Woodcutting||2
+Rune axe|Woodcutting||2
+Bronze axe|Woodcutting||5

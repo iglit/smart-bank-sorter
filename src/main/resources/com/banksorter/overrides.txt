@@ -1,0 +1,3 @@
+# Built-in category overrides for items whose stats or name don't say where they belong.
+# Same format as the "Custom categories" setting; the user's own rules still win over these.
+Melee: Lightbearer

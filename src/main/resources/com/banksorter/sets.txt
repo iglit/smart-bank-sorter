@@ -1,0 +1,20 @@
+# Armour sets whose strength comes from a set effect. Owned pieces of one set are kept in the same outfit
+# column. Same format as the "Gear sets" setting: Set name: item names (* = wildcard), comma separated.
+Blood moon: Blood moon helm*, Blood moon chestplate*, Blood moon tassets*
+Blue moon: Blue moon helm*, Blue moon chestplate*, Blue moon tassets*
+Eclipse moon: Eclipse moon helm*, Eclipse moon chestplate*, Eclipse moon tassets*
+Ahrim's: Ahrim's hood*, Ahrim's robetop*, Ahrim's robeskirt*
+Dharok's: Dharok's helm*, Dharok's platebody*, Dharok's platelegs*
+Guthan's: Guthan's helm*, Guthan's platebody*, Guthan's chainskirt*
+Karil's: Karil's coif*, Karil's leathertop*, Karil's leatherskirt*
+Torag's: Torag's helm*, Torag's platebody*, Torag's platelegs*
+Verac's: Verac's helm*, Verac's brassard*, Verac's plateskirt*
+Void: Void melee helm*, Void ranger helm*, Void mage helm*, Void knight top*, Void knight robe*, Void knight gloves*, Elite void top*, Elite void robe*
+Obsidian: Obsidian helmet, Obsidian platebody, Obsidian platelegs
+Justiciar: Justiciar faceguard, Justiciar chestguard, Justiciar legguards
+Inquisitor's: Inquisitor's great helm, Inquisitor's hauberk, Inquisitor's plateskirt
+Virtus: Virtus mask, Virtus robe top, Virtus robe bottom
+Crystal: Crystal helm*, Crystal body*, Crystal legs*
+Bloodbark: Bloodbark helm, Bloodbark body, Bloodbark legs, Bloodbark gauntlets, Bloodbark boots
+Swampbark: Swampbark helm, Swampbark body, Swampbark legs, Swampbark gauntlets, Swampbark boots
+Dagon'hai: Dagon'hai hat*, Dagon'hai robe top*, Dagon'hai robe bottom*
