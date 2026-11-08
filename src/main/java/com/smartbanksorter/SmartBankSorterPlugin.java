@@ -29,6 +29,7 @@ import net.runelite.api.ScriptID;
 import net.runelite.api.events.MenuEntryAdded;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.events.ScriptPostFired;
+import net.runelite.api.events.ScriptPreFired;
 import net.runelite.api.gameval.InterfaceID;
 import net.runelite.api.gameval.InventoryID;
 import net.runelite.api.gameval.ItemID;
@@ -118,6 +119,8 @@ public class SmartBankSorterPlugin extends Plugin
 	private String focusedTab;
 	private UserRules tabGroups;
 	private boolean scrollToTop;
+	// Scroll position before the bank build script clamps it to the vanilla grid, which is shorter than ours.
+	private int scrollBeforeBuild = -1;
 	private TabStrip tabStrip;
 	private ItemCopies itemCopies;
 	private MoveToMenu moveToMenu;
@@ -202,6 +205,16 @@ public class SmartBankSorterPlugin extends Plugin
 	{
 		tabStrip.onMenuOptionClicked(event);
 		itemCopies.onMenuOptionClicked(event);
+	}
+
+	@Subscribe
+	public void onScriptPreFired(ScriptPreFired event)
+	{
+		if (event.getScriptId() == ScriptID.BANKMAIN_BUILD)
+		{
+			Widget container = client.getWidget(InterfaceID.Bankmain.ITEMS);
+			scrollBeforeBuild = container == null ? -1 : container.getScrollY();
+		}
 	}
 
 	@Subscribe
@@ -591,8 +604,10 @@ public class SmartBankSorterPlugin extends Plugin
 
 		int scrollHeight = Math.max(y, container.getHeight());
 		container.setScrollHeight(scrollHeight);
-		int scrollY = scrollToTop ? 0 : Math.min(container.getScrollY(), Math.max(0, scrollHeight - container.getHeight()));
+		int previous = scrollBeforeBuild >= 0 ? scrollBeforeBuild : container.getScrollY();
+		int scrollY = scrollToTop ? 0 : Math.min(previous, Math.max(0, scrollHeight - container.getHeight()));
 		scrollToTop = false;
+		scrollBeforeBuild = -1;
 		container.setScrollY(scrollY);
 		container.revalidateScroll();
 		// We're inside the bank build script's callback and scripts can't nest, so redraw the scrollbar after it.
