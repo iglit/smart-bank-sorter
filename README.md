@@ -20,6 +20,12 @@ moves, and turning the plugin off gives you your normal bank back.
 
 Right-click the bank's search button to turn sorting on and off.
 
+## Searching by category
+
+Type three or more letters of a category's name in the bank search, e.g. `cra`, and a **Jump to Crafting** row
+appears above the results: press **Enter** or click it to close the search and jump to that category in the full
+bank. Searching a category's full name also adds its items to the results.
+
 ## Settings
 
 | Setting | What it does |
@@ -29,6 +35,7 @@ Right-click the bank's search button to turn sorting on and off.
 | Rank combat gear | Outfit columns for Melee, Ranged and Magic |
 | Arrange food & potions | Heal order for food, dose columns for potions, usefulness order for teleports |
 | Sort inside bank tabs | Also group items when a numbered bank tab is open |
+| Category search | Suggest a category to jump to while searching, and show a category's items when you search its name |
 | Category tabs / Tabs | Show the left-edge tabs and choose what each tab contains |
 | Outfit layout | Outfits as columns (default) or rows |
 | Custom categories / Category order / Gear sets | Your own rules, the order of sections, and extra armour sets to keep together |

@@ -1,6 +1,9 @@
 package com.smartbanksorter;
 
+import com.google.common.base.Strings;
 import com.google.inject.Provides;
+import java.awt.Color;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -28,13 +31,16 @@ import net.runelite.api.MenuAction;
 import net.runelite.api.ScriptID;
 import net.runelite.api.events.MenuEntryAdded;
 import net.runelite.api.events.MenuOptionClicked;
+import net.runelite.api.events.ScriptCallbackEvent;
 import net.runelite.api.events.ScriptPostFired;
 import net.runelite.api.events.ScriptPreFired;
+import net.runelite.api.events.WidgetClosed;
 import net.runelite.api.gameval.InterfaceID;
 import net.runelite.api.gameval.InventoryID;
 import net.runelite.api.gameval.ItemID;
 import net.runelite.api.gameval.VarClientID;
 import net.runelite.api.gameval.VarbitID;
+import net.runelite.api.vars.InputType;
 import net.runelite.api.widgets.JavaScriptCallback;
 import net.runelite.api.widgets.Widget;
 import net.runelite.api.widgets.WidgetTextAlignment;
@@ -47,6 +53,8 @@ import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.game.ItemEquipmentStats;
 import net.runelite.client.game.ItemManager;
 import net.runelite.client.game.ItemStats;
+import net.runelite.client.input.KeyListener;
+import net.runelite.client.input.KeyManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.plugins.PluginManager;
@@ -108,6 +116,9 @@ public class SmartBankSorterPlugin extends Plugin
 	@Inject
 	private PluginManager pluginManager;
 
+	@Inject
+	private KeyManager keyManager;
+
 	private Categoriser categoriser;
 	private UserRules gearSets;
 	private List<String> categoryOrder;
@@ -116,6 +127,8 @@ public class SmartBankSorterPlugin extends Plugin
 	// Header text + divider widgets we created inside the bank item container, reused between builds.
 	private final List<Widget> headerWidgets = new ArrayList<>();
 	private final List<Widget> dividerWidgets = new ArrayList<>();
+	// The "jump to <category>" line shown in the chatbox above the bank search prompt.
+	private final List<Widget> suggestionWidgets = new ArrayList<>();
 	// Category the tab strip currently filters to (null = all).
 	private String focusedTab;
 	private UserRules tabGroups;
@@ -123,6 +136,17 @@ public class SmartBankSorterPlugin extends Plugin
 	// Scroll position before the bank build script clamps it to the vanilla grid, which is shorter than ours.
 	// Read from the varc the game keeps it in, which also survives closing the bank.
 	private int scrollBeforeBuild = -1;
+	// Category the next layout scrolls to.
+	private String jumpCategory;
+	// Categories each item was last shown in, copies included, so a category search finds the copies too, and the
+	// categories that had anything in them, which are the ones worth suggesting.
+	private Map<Integer, Set<String>> shownIn = new HashMap<>();
+	private List<String> shownCategories = Collections.emptyList();
+	// Whether the current bank build is ours to sort. Worked out once per build, as the search filter runs per item.
+	private boolean sortingThisBuild;
+	// The last search the filter saw and the category it names, kept since the filter runs once per item.
+	private String filterText;
+	private String filterCategory;
 	private TabStrip tabStrip;
 	private ItemCopies itemCopies;
 	private MoveToMenu moveToMenu;
@@ -144,6 +168,7 @@ public class SmartBankSorterPlugin extends Plugin
 		itemCopies = new ItemCopies(this::equipmentOf);
 		moveToMenu = new MoveToMenu(client, config, configManager, itemManager, () -> categoryOrder);
 		loadSettings();
+		keyManager.registerKeyListener(searchEnter);
 		clientThread.invokeLater(this::rebuildBank);
 	}
 
@@ -151,12 +176,14 @@ public class SmartBankSorterPlugin extends Plugin
 	protected void shutDown()
 	{
 		eventBus.unregister(afterBankTags);
+		keyManager.unregisterKeyListener(searchEnter);
 		clientThread.invokeLater(() ->
 		{
 			restoreDrag();
 			hideOurWidgets();
 			headerWidgets.clear();
 			dividerWidgets.clear();
+			suggestionWidgets.clear();
 			itemCopies.clear();
 			tabStrip.clear();
 			focusedTab = null;
@@ -215,12 +242,152 @@ public class SmartBankSorterPlugin extends Plugin
 		if (event.getScriptId() == ScriptID.BANKMAIN_BUILD)
 		{
 			scrollBeforeBuild = client.getVarcIntValue(VarClientID.BANK_SCROLLPOS);
+			sortingThisBuild = config.enabled() && shouldSort();
 		}
+	}
+
+	@Subscribe
+	public void onWidgetClosed(WidgetClosed event)
+	{
+		if (event.getGroupId() == InterfaceID.BANKMAIN)
+		{
+			hideSuggestion();
+		}
+	}
+
+	@Subscribe
+	public void onScriptCallbackEvent(ScriptCallbackEvent event)
+	{
+		if (!"bankSearchFilter".equals(event.getEventName()) || !sortingThisBuild || !config.categorySearch())
+		{
+			return;
+		}
+		int[] intStack = client.getIntStack();
+		int intStackSize = client.getIntStackSize();
+		Object[] objectStack = client.getObjectStack();
+		int itemId = intStack[intStackSize - 1];
+		String text = (String) objectStack[client.getObjectStackSize() - 1];
+		if (itemId <= 0 || text.isEmpty())
+		{
+			return;
+		}
+		if (!text.equals(filterText))
+		{
+			filterText = text;
+			filterCategory = CategorySearch.parse(text, categoryOrder);
+		}
+		if (filterCategory == null)
+		{
+			return;
+		}
+
+		int id = itemManager.canonicalize(itemId);
+		Set<String> categories = shownIn.get(id);
+		if (categories == null)
+		{
+			categories = Collections.singleton(categoryOf(id, itemManager.getItemComposition(id).getName()));
+		}
+		// On top of the game's own name matches.
+		if (categories.contains(filterCategory))
+		{
+			intStack[intStackSize - 2] = 1;
+		}
+	}
+
+	/**
+	 * Enter in the bank search while a category is suggested closes the search and jumps to that category.
+	 */
+	private final KeyListener searchEnter = new KeyListener()
+	{
+		@Override
+		public void keyTyped(KeyEvent e)
+		{
+		}
+
+		@Override
+		public void keyPressed(KeyEvent e)
+		{
+			// Read before the game handles the key, which may clear the input.
+			if (e.getKeyCode() == KeyEvent.VK_ENTER && config.categorySearch()
+				&& client.getVarcIntValue(VarClientID.MESLAYERMODE) == InputType.SEARCH.getType())
+			{
+				String text = client.getVarcStrValue(VarClientID.MESLAYERINPUT);
+				clientThread.invokeLater(() -> jumpFromSearch(text));
+			}
+		}
+
+		@Override
+		public void keyReleased(KeyEvent e)
+		{
+		}
+	};
+
+	private void jumpFromSearch(String text)
+	{
+		if (Strings.isNullOrEmpty(text) || !config.enabled() || client.getWidget(InterfaceID.Bankmain.ITEMS) == null
+			|| !shouldSort())
+		{
+			return;
+		}
+		String category = CategorySearch.suggest(text, shownCategories);
+		if (category != null)
+		{
+			jumpTo(category);
+		}
+	}
+
+	// Closes the search and scrolls the full bank to a category.
+	private void jumpTo(String category)
+	{
+		jumpCategory = category;
+		focusedTab = null;
+		bankSearch.reset(true);
+	}
+
+	private void placeSuggestion(String category)
+	{
+		Widget layer = client.getWidget(InterfaceID.Chatbox.MES_LAYER);
+		Widget prompt = client.getWidget(InterfaceID.Chatbox.MES_TEXT);
+		Widget input = client.getWidget(InterfaceID.Chatbox.MES_TEXT2);
+		if (layer == null || prompt == null || input == null)
+		{
+			return;
+		}
+		// In the empty space above the search prompt, styled like it, with the category in the colour of the input.
+		int height = 16;
+		Widget w = WidgetPool.pooled(layer, suggestionWidgets, 0, WidgetType.TEXT);
+		w.setText("Press Enter to jump to " + ColorUtil.wrapWithColorTag(category, new Color(input.getTextColor())));
+		w.setFontId(prompt.getFontId());
+		w.setTextColor(prompt.getTextColor());
+		w.setTextShadowed(prompt.getTextShadowed());
+		w.setXTextAlignment(WidgetTextAlignment.CENTER);
+		w.setYTextAlignment(WidgetTextAlignment.CENTER);
+		w.setOriginalX(prompt.getRelativeX());
+		w.setOriginalY(Math.max(0, prompt.getRelativeY() - height - 2));
+		w.setOriginalWidth(prompt.getWidth());
+		w.setOriginalHeight(height);
+		w.setName(ColorUtil.wrapWithColorTag(category, config.headerColor()));
+		w.setAction(0, "Jump to");
+		w.setHasListener(true);
+		w.setOnOpListener((JavaScriptCallback) e -> jumpTo(category));
+		w.setHidden(false);
+		w.revalidate();
+	}
+
+	private void hideSuggestion()
+	{
+		suggestionWidgets.forEach(w -> w.setHidden(true));
 	}
 
 	@Subscribe
 	public void onScriptPostFired(ScriptPostFired event)
 	{
+		if (event.getScriptId() == ScriptID.MESSAGE_LAYER_OPEN || event.getScriptId() == ScriptID.MESSAGE_LAYER_CLOSE)
+		{
+			// The chatbox reuses this layer for other prompts (Withdraw-X, ...); the next bank build puts it back.
+			hideSuggestion();
+			return;
+		}
 		if (event.getScriptId() != ScriptID.BANKMAIN_BUILD)
 		{
 			return;
@@ -309,6 +476,7 @@ public class SmartBankSorterPlugin extends Plugin
 		UserRules rules = UserRules.parse(config.customRules());
 		categoriser = new Categoriser(rules);
 		categoryCache.clear();
+		filterText = null;
 		// Tab lines are "Tab: category, category"; matching category names with the same rule syntax.
 		tabGroups = UserRules.parse(config.tabGroups());
 		// The user's sets first, so they can redefine a built-in one.
@@ -512,6 +680,18 @@ public class SmartBankSorterPlugin extends Plugin
 		{
 			focusedTab = null;
 		}
+		boolean searching = searching();
+		String suggestion = searching && config.categorySearch()
+			? CategorySearch.suggest(client.getVarcStrValue(VarClientID.MESLAYERINPUT), shownCategories) : null;
+		if (suggestion != null)
+		{
+			placeSuggestion(suggestion);
+		}
+		else
+		{
+			hideSuggestion();
+		}
+		int jumpY = -1;
 		for (Map.Entry<String, List<Slot>> group : groups.entrySet())
 		{
 			List<Slot> groupSlots = group.getValue();
@@ -546,6 +726,10 @@ public class SmartBankSorterPlugin extends Plugin
 				if (section > 0)
 				{
 					y += SECTION_GAP;
+				}
+				if (jumpY < 0 && category.equals(jumpCategory))
+				{
+					jumpY = y;
 				}
 				int realCount = (int) groupSlots.stream().filter(s -> !s.copy).count();
 				placeHeader(container, section++, category, realCount, isCollapsed, y, headerHeight, large);
@@ -602,13 +786,29 @@ public class SmartBankSorterPlugin extends Plugin
 		}
 		itemCopies.hideFrom(copies);
 		hideHeaders(section);
+		if (!searching)
+		{
+			Map<Integer, Set<String>> shown = new HashMap<>();
+			List<String> shownGroups = new ArrayList<>();
+			groups.forEach((category, groupSlots) ->
+			{
+				groupSlots.forEach(s -> shown.computeIfAbsent(s.itemId, k -> new HashSet<>()).add(category));
+				if (!groupSlots.isEmpty())
+				{
+					shownGroups.add(category);
+				}
+			});
+			shownIn = shown;
+			shownCategories = shownGroups;
+		}
 
 		int scrollHeight = Math.max(y, container.getHeight());
 		container.setScrollHeight(scrollHeight);
 		int previous = scrollBeforeBuild >= 0 ? scrollBeforeBuild : container.getScrollY();
-		int wanted = scrollToTop ? 0 : previous;
+		int wanted = jumpY >= 0 ? jumpY : scrollToTop ? 0 : previous;
 		scrollToTop = false;
 		scrollBeforeBuild = -1;
+		jumpCategory = null;
 		container.setScrollY(Math.min(wanted, Math.max(0, scrollHeight - container.getHeight())));
 		container.revalidateScroll();
 		// bankmain_finishbuilding has just clamped the saved position to the vanilla grid height. Put ours back now
@@ -798,9 +998,18 @@ public class SmartBankSorterPlugin extends Plugin
 		clientThread.invokeLater(this::rebuildBank);
 	}
 
+	// Mirrors the bank's ~bankmain_searching: the search box is open, or closed with a search still applied.
+	private boolean searching()
+	{
+		int mode = client.getVarcIntValue(VarClientID.MESLAYERMODE);
+		return mode == InputType.SEARCH.getType()
+			|| mode <= 0 && !Strings.isNullOrEmpty(client.getVarcStrValue(VarClientID.MESLAYERINPUT));
+	}
+
 	private void hideOurWidgets()
 	{
 		hideHeaders(0);
+		hideSuggestion();
 		tabStrip.hideTabs(0);
 		itemCopies.hideFrom(0);
 	}

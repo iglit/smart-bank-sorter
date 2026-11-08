@@ -107,6 +107,18 @@ public interface SmartBankSorterConfig extends Config
 	}
 
 	@ConfigItem(
+		keyName = "categorySearch",
+		name = "Category search",
+		description = "While searching the bank, typing three or more letters of a category's name suggests it above"
+			+ " the search box: press Enter or click to jump to it. Searching a category's full name also shows its items.",
+		position = 5
+	)
+	default boolean categorySearch()
+	{
+		return true;
+	}
+
+	@ConfigItem(
 		keyName = "categoryTabs",
 		name = "Category tabs",
 		description = "Tabs down the left edge of the bank. Click one to show only its categories, again to show all.",
