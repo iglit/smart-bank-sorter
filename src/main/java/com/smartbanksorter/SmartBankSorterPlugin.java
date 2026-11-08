@@ -33,6 +33,7 @@ import net.runelite.api.events.ScriptPreFired;
 import net.runelite.api.gameval.InterfaceID;
 import net.runelite.api.gameval.InventoryID;
 import net.runelite.api.gameval.ItemID;
+import net.runelite.api.gameval.VarClientID;
 import net.runelite.api.gameval.VarbitID;
 import net.runelite.api.widgets.JavaScriptCallback;
 import net.runelite.api.widgets.Widget;
@@ -120,6 +121,7 @@ public class SmartBankSorterPlugin extends Plugin
 	private UserRules tabGroups;
 	private boolean scrollToTop;
 	// Scroll position before the bank build script clamps it to the vanilla grid, which is shorter than ours.
+	// Read from the varc the game keeps it in, which also survives closing the bank.
 	private int scrollBeforeBuild = -1;
 	private TabStrip tabStrip;
 	private ItemCopies itemCopies;
@@ -212,8 +214,7 @@ public class SmartBankSorterPlugin extends Plugin
 	{
 		if (event.getScriptId() == ScriptID.BANKMAIN_BUILD)
 		{
-			Widget container = client.getWidget(InterfaceID.Bankmain.ITEMS);
-			scrollBeforeBuild = container == null ? -1 : container.getScrollY();
+			scrollBeforeBuild = client.getVarcIntValue(VarClientID.BANK_SCROLLPOS);
 		}
 	}
 
@@ -605,14 +606,27 @@ public class SmartBankSorterPlugin extends Plugin
 		int scrollHeight = Math.max(y, container.getHeight());
 		container.setScrollHeight(scrollHeight);
 		int previous = scrollBeforeBuild >= 0 ? scrollBeforeBuild : container.getScrollY();
-		int scrollY = scrollToTop ? 0 : Math.min(previous, Math.max(0, scrollHeight - container.getHeight()));
+		int wanted = scrollToTop ? 0 : previous;
 		scrollToTop = false;
 		scrollBeforeBuild = -1;
-		container.setScrollY(scrollY);
+		container.setScrollY(Math.min(wanted, Math.max(0, scrollHeight - container.getHeight())));
 		container.revalidateScroll();
-		// We're inside the bank build script's callback and scripts can't nest, so redraw the scrollbar after it.
+		// bankmain_finishbuilding has just clamped the saved position to the vanilla grid height. Put ours back now
+		// rather than from the deferred scrollbar redraw: the bank is often built several times in one client cycle
+		// (on open, the init build is followed by the inv and var transmit builds), and a later build would otherwise
+		// read the clamped value as the position to keep.
+		client.setVarcIntValue(VarClientID.BANK_SCROLLPOS, wanted);
+		// We're inside the bank build script's callback and scripts can't nest, so redraw the scrollbar after it. It
+		// clamps the saved position against our scroll height and stores the result. Read the position when it runs,
+		// so a redraw queued by an earlier build in the same cycle can't put back a stale value.
 		clientThread.invokeLater(() ->
-			client.runScript(ScriptID.UPDATE_SCROLLBAR, InterfaceID.Bankmain.SCROLLBAR, InterfaceID.Bankmain.ITEMS, scrollY));
+		{
+			if (client.getWidget(InterfaceID.Bankmain.ITEMS) != null)
+			{
+				client.runScript(ScriptID.UPDATE_SCROLLBAR, InterfaceID.Bankmain.SCROLLBAR, InterfaceID.Bankmain.ITEMS,
+					client.getVarcIntValue(VarClientID.BANK_SCROLLPOS));
+			}
+		});
 	}
 
 	private String categoryOf(int itemId, String name)
