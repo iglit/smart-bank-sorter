@@ -15,8 +15,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
@@ -88,7 +86,6 @@ public class SmartBankSorterPlugin extends Plugin
 		VarbitID.BANK_TAB_1, VarbitID.BANK_TAB_2, VarbitID.BANK_TAB_3, VarbitID.BANK_TAB_4, VarbitID.BANK_TAB_5,
 		VarbitID.BANK_TAB_6, VarbitID.BANK_TAB_7, VarbitID.BANK_TAB_8, VarbitID.BANK_TAB_9,
 	};
-	static final Pattern DOSE = Pattern.compile("^(.*)\\((\\d+)\\)$");
 
 	@Inject
 	private Client client;
@@ -813,8 +810,9 @@ public class SmartBankSorterPlugin extends Plugin
 	private Comparator<Slot> comparator()
 	{
 		Comparator<Slot> byIndex = Comparator.comparingInt(s -> s.index);
-		Comparator<Slot> byName = Comparator.<Slot, String>comparing(s -> baseName(s.name), String.CASE_INSENSITIVE_ORDER)
-			.thenComparing(Comparator.comparingInt((Slot s) -> dose(s.name)).reversed())
+		// Doses of one potion stay together, highest first.
+		Comparator<Slot> byName = Comparator.<Slot, String>comparing(s -> Doses.baseName(s.name), String.CASE_INSENSITIVE_ORDER)
+			.thenComparing(Comparator.comparingInt((Slot s) -> Doses.dose(s.name)).reversed())
 			.thenComparing(byIndex);
 		switch (config.itemOrder())
 		{
@@ -855,19 +853,6 @@ public class SmartBankSorterPlugin extends Plugin
 	private long stackValue(Slot slot)
 	{
 		return (long) itemManager.getItemPrice(slot.itemId) * slot.quantity;
-	}
-
-	// "Prayer potion(4)" -> "Prayer potion" so doses of one potion stay together, highest first.
-	static String baseName(String name)
-	{
-		Matcher m = DOSE.matcher(name);
-		return m.matches() ? m.group(1) : name;
-	}
-
-	static int dose(String name)
-	{
-		Matcher m = DOSE.matcher(name);
-		return m.matches() ? Integer.parseInt(m.group(2)) : 0;
 	}
 
 	private void placeHeader(Widget container, int index, String category, int count, boolean isCollapsed,

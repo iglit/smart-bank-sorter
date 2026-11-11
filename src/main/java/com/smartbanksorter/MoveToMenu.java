@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Supplier;
-import java.util.regex.Matcher;
 import net.runelite.api.Client;
 import net.runelite.api.Menu;
 import net.runelite.api.MenuAction;
@@ -69,8 +68,7 @@ class MoveToMenu
 	// "Prayer potion(4)" -> "Prayer potion(*"; other names match exactly.
 	private static String movePattern(String name)
 	{
-		Matcher m = SmartBankSorterPlugin.DOSE.matcher(name);
-		return m.matches() ? m.group(1) + "(*" : name;
+		return Doses.dose(name) < 0 ? name : name.substring(0, name.lastIndexOf('(')) + "(*";
 	}
 
 	/**

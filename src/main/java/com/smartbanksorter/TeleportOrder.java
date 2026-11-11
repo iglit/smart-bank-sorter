@@ -5,8 +5,6 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Orders teleports by how commonly they're used: everyday jewellery and tablets first, niche ones after,
@@ -14,7 +12,6 @@ import java.util.regex.Pattern;
  */
 final class TeleportOrder
 {
-	private static final Pattern CHARGES = Pattern.compile("^(.*?)\\s*\\((\\d+)\\)$");
 	// Matched by "name contains", first match wins, so more specific names come before general ones.
 	private static final List<String> BY_USE = Arrays.asList(
 		// Unlimited / most used
@@ -39,7 +36,7 @@ final class TeleportOrder
 		List<T> out = new ArrayList<>(items);
 		out.sort(Comparator.<T>comparingInt(t -> rank(baseName(name.apply(t))))
 			.thenComparing(t -> baseName(name.apply(t)))
-			.thenComparing(Comparator.<T>comparingInt(t -> charges(name.apply(t))).reversed())
+			.thenComparing(Comparator.<T>comparingInt(t -> Doses.dose(name.apply(t))).reversed())
 			.thenComparing(tiebreak));
 		return out;
 	}
@@ -58,13 +55,6 @@ final class TeleportOrder
 
 	private static String baseName(String name)
 	{
-		Matcher m = CHARGES.matcher(name);
-		return (m.matches() ? m.group(1) : name).toLowerCase();
-	}
-
-	private static int charges(String name)
-	{
-		Matcher m = CHARGES.matcher(name);
-		return m.matches() ? Integer.parseInt(m.group(2)) : 0;
+		return Doses.baseName(name).toLowerCase();
 	}
 }

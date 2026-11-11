@@ -9,8 +9,6 @@ import java.util.Map;
 import java.util.TreeSet;
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Layouts for Food (best heal first, combo food on its own rows) and Potions (one column per potion,
@@ -18,7 +16,6 @@ import java.util.regex.Pattern;
  */
 final class ConsumableOrder
 {
-	private static final Pattern DOSE = Pattern.compile("^(.*?)\\s*\\((\\d+)\\)$");
 	// Foods that can be eaten on the same tick as normal food.
 	private static final List<String> COMBO_FOOD = Arrays.asList(
 		"karambwan", "halibut", "batta", "crunchies", "chocolate bomb", "toad's legs", "worm hole", "veg ball", "tangled toad"
@@ -83,15 +80,16 @@ final class ConsumableOrder
 		sorted.sort(tiebreak);
 		for (T item : sorted)
 		{
-			Matcher m = DOSE.matcher(name.apply(item));
-			if (!m.matches())
+			String itemName = name.apply(item);
+			int dose = Doses.dose(itemName);
+			if (dose < 0)
 			{
 				loose.add(item);
 				continue;
 			}
-			Map<Integer, T> doses = families.computeIfAbsent(m.group(1).toLowerCase(), k -> new LinkedHashMap<>());
+			Map<Integer, T> doses = families.computeIfAbsent(Doses.baseName(itemName).toLowerCase(), k -> new LinkedHashMap<>());
 			// A second item with the same name and dose (rare) can't share the cell.
-			if (doses.putIfAbsent(Integer.parseInt(m.group(2)), item) != null)
+			if (doses.putIfAbsent(dose, item) != null)
 			{
 				loose.add(item);
 			}

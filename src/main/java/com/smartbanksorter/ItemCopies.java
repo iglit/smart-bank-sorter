@@ -171,7 +171,7 @@ class ItemCopies
 			{
 				continue;
 			}
-			best.merge(SmartBankSorterPlugin.baseName(s.name).toLowerCase(), s, (a, b) -> SmartBankSorterPlugin.dose(a.name) >= SmartBankSorterPlugin.dose(b.name) ? a : b);
+			best.merge(Doses.baseName(s.name).toLowerCase(), s, (a, b) -> Doses.dose(a.name) >= Doses.dose(b.name) ? a : b);
 		}
 		for (Slot s : best.values())
 		{
