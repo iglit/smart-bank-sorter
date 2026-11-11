@@ -167,6 +167,7 @@ public class SmartBankSorterPlugin extends Plugin
 		eventBus.register(afterBankTags);
 		itemCopies = new ItemCopies(this::equipmentOf);
 		moveToMenu = new MoveToMenu(client, config, configManager, itemManager, () -> categoryOrder);
+		ItemData.load();
 		loadSettings();
 		keyManager.registerKeyListener(searchEnter);
 		spriteManager.addSpriteOverrides(TabSprite.values());

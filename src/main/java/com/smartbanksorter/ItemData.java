@@ -37,6 +37,15 @@ final class ItemData
 	{
 	}
 
+	/**
+	 * Reads the bundled data if it hasn't been already. Called at start-up, so that the first bank open doesn't
+	 * read it on the client thread.
+	 */
+	static void load()
+	{
+		// Initialising the class is what reads it.
+	}
+
 	// Trailing variant markers: "(4)", "(i)", "(uncharged)", or a Barrows degrade level like " 75".
 	private static final Pattern VARIANT = Pattern.compile("(\\s*\\([^()]*\\)|\\s+\\d+)$");
 
