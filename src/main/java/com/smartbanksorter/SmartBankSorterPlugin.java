@@ -79,11 +79,6 @@ public class SmartBankSorterPlugin extends Plugin
 	private static final int DIVIDER_COLOR = 0x4E4639;
 	private static final String BUILT_IN_SETS = Resources.read("sets.txt");
 	private static final Map<String, Integer> FOOD_HEALS = parseHeals(Resources.read("food.txt"));
-	// Number of items in bank tabs 1-9; tab N's items follow those of tabs 1..N-1.
-	private static final int[] TAB_SIZE_VARBITS = {
-		VarbitID.BANK_TAB_1, VarbitID.BANK_TAB_2, VarbitID.BANK_TAB_3, VarbitID.BANK_TAB_4, VarbitID.BANK_TAB_5,
-		VarbitID.BANK_TAB_6, VarbitID.BANK_TAB_7, VarbitID.BANK_TAB_8, VarbitID.BANK_TAB_9,
-	};
 
 	@Inject
 	private Client client;
@@ -559,19 +554,6 @@ public class SmartBankSorterPlugin extends Plugin
 		Set<Widget> ours = new HashSet<>(headerWidgets);
 		ours.addAll(dividerWidgets);
 
-		// The game has already hidden items that don't match the search; the tab range is checked too.
-		int from = 0;
-		int to = items.length;
-		int bankTab = client.getVarbitValue(VarbitID.BANK_CURRENTTAB);
-		if (bankTab > 0 && bankTab <= TAB_SIZE_VARBITS.length)
-		{
-			for (int t = 1; t < bankTab; t++)
-			{
-				from += client.getVarbitValue(TAB_SIZE_VARBITS[t - 1]);
-			}
-			to = Math.min(items.length, from + client.getVarbitValue(TAB_SIZE_VARBITS[bankTab - 1]));
-		}
-
 		List<Slot> slots = new ArrayList<>();
 		List<Widget> spares = new ArrayList<>();
 		for (int i = 0; i < children.length; i++)
@@ -585,9 +567,10 @@ public class SmartBankSorterPlugin extends Plugin
 			{
 				spares.add(w);
 			}
-			if (i >= items.length || i < from || i >= to || w.isHidden() || items[i].getId() <= 0)
+			if (i >= items.length || w.isHidden() || items[i].getId() <= 0)
 			{
-				// Tab separators, "tab N" labels, empty slots, search misses and items in other tabs.
+				// Tab separators, "tab N" labels and empty slots, and what the game has already hidden: search
+				// misses and items in other tabs.
 				w.setHidden(true);
 				continue;
 			}
