@@ -166,8 +166,7 @@ public class SmartBankSorterPlugin extends Plugin
 	@Override
 	protected void startUp()
 	{
-		migrateSettings();
-		tabStrip = new TabStrip(client, config, () -> focusedTab, this::focus);
+		tabStrip =new TabStrip(client, config, () -> focusedTab, this::focus);
 		eventBus.register(afterBankTags);
 		itemCopies = new ItemCopies(this::equipmentOf);
 		moveToMenu = new MoveToMenu(client, config, configManager, itemManager, () -> categoryOrder);
@@ -454,32 +453,6 @@ public class SmartBankSorterPlugin extends Plugin
 			// On resize Bank Tags re-lays out its strip from an invokeLater; queue ours after it.
 			clientThread.invokeLater(tabStrip::refresh);
 		}
-	}
-
-	// Settings group used during development, before the rename. An unrelated, disabled Hub plugin also used
-	// "banksorter", so only migrate when keys that exist only in this plugin are present.
-	private static final String OLD_GROUP = "banksorter";
-	private static final List<String> OLD_ONLY_KEYS = Arrays.asList(
-		"gearByQuality", "outfitLayout", "smartConsumables", "tabGroupsV3", "customSets", "categoryTabs");
-
-	private void migrateSettings()
-	{
-		boolean ours = OLD_ONLY_KEYS.stream()
-			.anyMatch(k -> configManager.getConfiguration(OLD_GROUP, k) != null);
-		if (!ours || configManager.getConfiguration(SmartBankSorterConfig.GROUP, "migrated") != null)
-		{
-			return;
-		}
-		for (String key : configManager.getConfigurationKeys(OLD_GROUP + "."))
-		{
-			String name = key.substring(OLD_GROUP.length() + 1);
-			String value = configManager.getConfiguration(OLD_GROUP, name);
-			if (value != null && configManager.getConfiguration(SmartBankSorterConfig.GROUP, name) == null)
-			{
-				configManager.setConfiguration(SmartBankSorterConfig.GROUP, name, value);
-			}
-		}
-		configManager.setConfiguration(SmartBankSorterConfig.GROUP, "migrated", "true");
 	}
 
 	private void loadSettings()
