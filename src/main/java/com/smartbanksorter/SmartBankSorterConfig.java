@@ -88,7 +88,7 @@ public interface SmartBankSorterConfig extends Config
 		keyName = "applyInTabs",
 		name = "Sort inside bank tabs",
 		description = "Also group items when a numbered bank tab is open, not just the all-items view",
-		position = 3
+		position = 4
 	)
 	default boolean applyInTabs()
 	{
@@ -99,7 +99,7 @@ public interface SmartBankSorterConfig extends Config
 		keyName = "hideFillers",
 		name = "Hide bank fillers",
 		description = "Don't show bank filler items",
-		position = 4
+		position = 5
 	)
 	default boolean hideFillers()
 	{
@@ -111,7 +111,7 @@ public interface SmartBankSorterConfig extends Config
 		name = "Category search",
 		description = "While searching the bank, typing three or more letters of a category's name suggests it above"
 			+ " the search box: press Enter or click to jump to it. Searching a category's full name also shows its items.",
-		position = 5
+		position = 6
 	)
 	default boolean categorySearch()
 	{
