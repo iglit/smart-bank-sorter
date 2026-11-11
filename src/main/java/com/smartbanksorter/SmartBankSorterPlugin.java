@@ -53,6 +53,7 @@ import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.game.ItemEquipmentStats;
 import net.runelite.client.game.ItemManager;
 import net.runelite.client.game.ItemStats;
+import net.runelite.client.game.SpriteManager;
 import net.runelite.client.input.KeyListener;
 import net.runelite.client.input.KeyManager;
 import net.runelite.client.plugins.Plugin;
@@ -119,6 +120,9 @@ public class SmartBankSorterPlugin extends Plugin
 	@Inject
 	private KeyManager keyManager;
 
+	@Inject
+	private SpriteManager spriteManager;
+
 	private Categoriser categoriser;
 	private UserRules gearSets;
 	private List<String> categoryOrder;
@@ -169,6 +173,7 @@ public class SmartBankSorterPlugin extends Plugin
 		moveToMenu = new MoveToMenu(client, config, configManager, itemManager, () -> categoryOrder);
 		loadSettings();
 		keyManager.registerKeyListener(searchEnter);
+		spriteManager.addSpriteOverrides(TabSprite.values());
 		clientThread.invokeLater(this::rebuildBank);
 	}
 
@@ -177,6 +182,7 @@ public class SmartBankSorterPlugin extends Plugin
 	{
 		eventBus.unregister(afterBankTags);
 		keyManager.unregisterKeyListener(searchEnter);
+		spriteManager.removeSpriteOverrides(TabSprite.values());
 		clientThread.invokeLater(() ->
 		{
 			hideOurWidgets();

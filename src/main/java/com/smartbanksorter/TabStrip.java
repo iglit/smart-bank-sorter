@@ -3,9 +3,7 @@ package com.smartbanksorter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import net.runelite.api.Client;
@@ -113,15 +111,14 @@ class TabStrip
 		}
 
 		// Fit between Bank Tags' up and down arrows, below any tag tabs it is showing, so the strip looks like
-		// its own. Its tag tabs use the same sprites as ours, so skip our own backgrounds while looking.
+		// its own.
 		Widget up = null;
 		Widget down = null;
 		int belowOtherTabs = 0;
-		Set<Widget> ours = new HashSet<>(tabBackgrounds);
 		Widget[] existing = parent.getDynamicChildren();
 		for (Widget w : existing == null ? new Widget[0] : existing)
 		{
-			if (w == null || w.isHidden() || ours.contains(w))
+			if (w == null || w.isHidden())
 			{
 				continue;
 			}
@@ -176,7 +173,7 @@ class TabStrip
 			int y = top + row * TAB_PITCH;
 
 			Widget back = WidgetPool.pooled(parent, tabBackgrounds, i, WidgetType.GRAPHIC);
-			back.setSpriteId(active ? TabSprites.TAB_BACKGROUND_ACTIVE.getSpriteId() : TabSprites.TAB_BACKGROUND.getSpriteId());
+			back.setSpriteId(active ? TabSprite.TAB_BACKGROUND_ACTIVE.getSpriteId() : TabSprite.TAB_BACKGROUND.getSpriteId());
 			back.setOriginalX(x);
 			back.setOriginalY(y);
 			back.setOriginalWidth(width);
