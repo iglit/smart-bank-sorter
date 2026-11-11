@@ -179,7 +179,6 @@ public class SmartBankSorterPlugin extends Plugin
 		keyManager.unregisterKeyListener(searchEnter);
 		clientThread.invokeLater(() ->
 		{
-			restoreDrag();
 			hideOurWidgets();
 			headerWidgets.clear();
 			dividerWidgets.clear();
@@ -198,12 +197,12 @@ public class SmartBankSorterPlugin extends Plugin
 		{
 			return;
 		}
-		loadSettings();
+		// On the client thread: the config panel changes settings from the Swing thread, mid-layout for all we know.
 		clientThread.invokeLater(() ->
 		{
+			loadSettings();
 			if (!config.enabled())
 			{
-				restoreDrag();
 				hideOurWidgets();
 			}
 			rebuildBank();
@@ -430,15 +429,21 @@ public class SmartBankSorterPlugin extends Plugin
 
 	private void afterBankTagsScript(ScriptPostFired event)
 	{
+		// This sees every script the client runs, so rule out the rest before the dearer checks.
+		int script = event.getScriptId();
+		if (script != ScriptID.BANKMAIN_POPUP_TAB_DRAW && script != ScriptID.BANKMAIN_SIZE_CHECK)
+		{
+			return;
+		}
 		if (!config.enabled() || !config.categoryTabs() || !shouldSort())
 		{
 			return;
 		}
-		if (event.getScriptId() == ScriptID.BANKMAIN_POPUP_TAB_DRAW)
+		if (script == ScriptID.BANKMAIN_POPUP_TAB_DRAW)
 		{
 			tabStrip.refresh();
 		}
-		else if (event.getScriptId() == ScriptID.BANKMAIN_SIZE_CHECK)
+		else
 		{
 			// On resize Bank Tags re-lays out its strip from an invokeLater; queue ours after it.
 			clientThread.invokeLater(tabStrip::refresh);
@@ -676,7 +681,8 @@ public class SmartBankSorterPlugin extends Plugin
 				tabIcons.putIfAbsent(tab, -1);
 			}
 		}
-		if (focusedTab != null && !tabIcons.containsKey(focusedTab))
+		// Without the strip there'd be no tab to click to show everything again.
+		if (focusedTab != null && (!config.categoryTabs() || !tabIcons.containsKey(focusedTab)))
 		{
 			focusedTab = null;
 		}
@@ -1006,12 +1012,17 @@ public class SmartBankSorterPlugin extends Plugin
 			|| mode <= 0 && !Strings.isNullOrEmpty(client.getVarcStrValue(VarClientID.MESLAYERINPUT));
 	}
 
+	// Hands the bank back to the game, or to whichever plugin is laying it out.
 	private void hideOurWidgets()
 	{
 		hideHeaders(0);
 		hideSuggestion();
 		tabStrip.hideTabs(0);
 		itemCopies.hideFrom(0);
+		// The spare slots become real ones as the bank fills; a click there must not go to a copy's old target.
+		itemCopies.clearTargets();
+		// The game only sets the drag dead zone when the bank opens, so later builds don't undo ours.
+		restoreDrag();
 	}
 
 	private void toggleCollapsed(String category)
