@@ -1,9 +1,6 @@
 package com.smartbanksorter;
 
 import static com.smartbanksorter.Categories.*;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -39,7 +36,7 @@ final class Categoriser
 	));
 
 	private static final Set<String> COMBAT_STYLES = new HashSet<>(Arrays.asList(MELEE, RANGED, MAGIC));
-	private static final UserRules OVERRIDES = UserRules.parse(readResource("overrides.txt"));
+	private static final UserRules OVERRIDES = UserRules.parse(Resources.read("overrides.txt"));
 
 	private final UserRules userRules;
 
@@ -212,18 +209,6 @@ final class Categoriser
 		boolean defensive = e.getDstab() > 0 || e.getDslash() > 0 || e.getDcrush() > 0
 			|| e.getDmagic() > 0 || e.getDrange() > 0;
 		return defensive ? MELEE : OTHER_GEAR;
-	}
-
-	private static String readResource(String name)
-	{
-		try (InputStream in = Categoriser.class.getResourceAsStream(name))
-		{
-			return in == null ? "" : new String(in.readAllBytes(), StandardCharsets.UTF_8);
-		}
-		catch (IOException e)
-		{
-			return "";
-		}
 	}
 
 	static boolean isTool(String name)

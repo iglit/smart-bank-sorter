@@ -1,8 +1,5 @@
 package com.smartbanksorter;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -34,7 +31,7 @@ final class ItemData
 		}
 	}
 
-	private static final Map<String, Entry> ITEMS = parse(readResource("items.txt"));
+	private static final Map<String, Entry> ITEMS = parse(Resources.read("items.txt"));
 
 	private ItemData()
 	{
@@ -109,17 +106,5 @@ final class ItemData
 			items.put(parts[0].trim().toLowerCase(), new Entry(parts[1].trim(), Collections.unmodifiableList(extras), tier));
 		}
 		return items;
-	}
-
-	private static String readResource(String name)
-	{
-		try (InputStream in = ItemData.class.getResourceAsStream(name))
-		{
-			return in == null ? "" : new String(in.readAllBytes(), StandardCharsets.UTF_8);
-		}
-		catch (IOException e)
-		{
-			return "";
-		}
 	}
 }

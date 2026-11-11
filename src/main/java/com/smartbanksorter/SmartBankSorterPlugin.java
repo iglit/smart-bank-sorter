@@ -4,9 +4,6 @@ import com.google.common.base.Strings;
 import com.google.inject.Provides;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -84,8 +81,8 @@ public class SmartBankSorterPlugin extends Plugin
 	private static final int DIVIDER_COLOR = 0x4E4639;
 	static final List<String> GEAR_CATEGORIES = Collections.unmodifiableList(Arrays.asList(
 		Categories.MELEE, Categories.RANGED, Categories.MAGIC));
-	private static final String BUILT_IN_SETS = readResource("sets.txt");
-	private static final Map<String, Integer> FOOD_HEALS = parseHeals(readResource("food.txt"));
+	private static final String BUILT_IN_SETS = Resources.read("sets.txt");
+	private static final Map<String, Integer> FOOD_HEALS = parseHeals(Resources.read("food.txt"));
 	// Number of items in bank tabs 1-9; tab N's items follow those of tabs 1..N-1.
 	private static final int[] TAB_SIZE_VARBITS = {
 		VarbitID.BANK_TAB_1, VarbitID.BANK_TAB_2, VarbitID.BANK_TAB_3, VarbitID.BANK_TAB_4, VarbitID.BANK_TAB_5,
@@ -474,19 +471,6 @@ public class SmartBankSorterPlugin extends Plugin
 
 		collapsed.clear();
 		collapsed.addAll(splitList(config.collapsed()));
-	}
-
-	private static String readResource(String name)
-	{
-		try (InputStream in = SmartBankSorterPlugin.class.getResourceAsStream(name))
-		{
-			return in == null ? "" : new String(in.readAllBytes(), StandardCharsets.UTF_8);
-		}
-		catch (IOException e)
-		{
-			log.warn("Couldn't read {}", name, e);
-			return "";
-		}
 	}
 
 	// "Name|heal" lines, keyed by lower-case name.
