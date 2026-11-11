@@ -73,7 +73,7 @@ class ItemCopies
 	 */
 	void addHybridCopies(Map<String, List<Slot>> groups)
 	{
-		for (String style : SmartBankSorterPlugin.GEAR_CATEGORIES)
+		for (String style : Categories.COMBAT_STYLES)
 		{
 			List<Slot> styleSlots = groups.get(style);
 			if (styleSlots == null)
@@ -92,7 +92,7 @@ class ItemCopies
 			}
 
 			Map<Integer, Slot> candidates = new HashMap<>();
-			for (String other : SmartBankSorterPlugin.GEAR_CATEGORIES)
+			for (String other : Categories.COMBAT_STYLES)
 			{
 				if (other.equals(style) || !groups.containsKey(other))
 				{
@@ -177,7 +177,7 @@ class ItemCopies
 		{
 			ItemEquipmentStats e = equipmentOf.apply(s);
 			String style = Categoriser.gear(s.name.toLowerCase(), e);
-			if (SmartBankSorterPlugin.GEAR_CATEGORIES.contains(style) && GearOrder.offence(style, e) > 0)
+			if (Categories.COMBAT_STYLES.contains(style) && GearOrder.offence(style, e) > 0)
 			{
 				List<Slot> target = groups.computeIfAbsent(style, k -> new ArrayList<>());
 				if (target.stream().noneMatch(t -> t.itemId == s.itemId))

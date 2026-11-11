@@ -35,7 +35,6 @@ final class Categoriser
 		"zenyte"
 	));
 
-	private static final Set<String> COMBAT_STYLES = new HashSet<>(Arrays.asList(MELEE, RANGED, MAGIC));
 	private static final UserRules OVERRIDES = UserRules.parse(Resources.read("overrides.txt"));
 
 	private final UserRules userRules;

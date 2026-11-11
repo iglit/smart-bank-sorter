@@ -33,10 +33,7 @@ final class Categories
 	static final String OTHER_GEAR = "Other gear";
 	static final String MISC = "Misc";
 
-	static final List<String> SKILLS = Arrays.asList(
-		"Mining", "Smithing", "Fishing", "Cooking", "Woodcutting", "Firemaking", "Fletching", "Crafting",
-		HERBLORE, FARMING, "Hunter", "Construction", "Agility", "Thieving", "Runecraft", "Sailing"
-	);
+	static final List<String> COMBAT_STYLES = Arrays.asList(MELEE, RANGED, MAGIC);
 
 	static final List<String> DEFAULT_ORDER = Arrays.asList(
 		CURRENCY, MELEE, RANGED, MAGIC, SLAYER, AMMO, RUNES, TELEPORTS, POTIONS, FOOD, PRAYER,

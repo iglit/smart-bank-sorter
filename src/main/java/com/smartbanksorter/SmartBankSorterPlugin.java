@@ -77,8 +77,6 @@ public class SmartBankSorterPlugin extends Plugin
 	private static final int GRID_WIDTH = COLUMNS * PITCH_X - 12;
 	private static final int SECTION_GAP = 4;
 	private static final int DIVIDER_COLOR = 0x4E4639;
-	static final List<String> GEAR_CATEGORIES = Collections.unmodifiableList(Arrays.asList(
-		Categories.MELEE, Categories.RANGED, Categories.MAGIC));
 	private static final String BUILT_IN_SETS = Resources.read("sets.txt");
 	private static final Map<String, Integer> FOOD_HEALS = parseHeals(Resources.read("food.txt"));
 	// Number of items in bank tabs 1-9; tab N's items follow those of tabs 1..N-1.
@@ -909,7 +907,7 @@ public class SmartBankSorterPlugin extends Plugin
 		{
 			return Collections.emptyList();
 		}
-		if (config.gearByQuality() && GEAR_CATEGORIES.contains(category))
+		if (config.gearByQuality() && Categories.COMBAT_STYLES.contains(category))
 		{
 			return GearOrder.order(slots, category, this::equipmentOf,
 				s -> itemManager.getItemPrice(s.itemId), s -> gearSets.match(s.itemId, s.name), comparator,
