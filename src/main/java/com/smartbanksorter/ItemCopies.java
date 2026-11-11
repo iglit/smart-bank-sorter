@@ -194,7 +194,7 @@ class ItemCopies
 	 *
 	 * @return the copy widget, or null when the bank has no spare slots left
 	 */
-	Widget placeCopy(Widget container, int index, Slot slot)
+	Widget placeCopy(int index, Slot slot)
 	{
 		if (index >= spares.size())
 		{

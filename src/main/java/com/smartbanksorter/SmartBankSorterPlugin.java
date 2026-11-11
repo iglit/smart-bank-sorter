@@ -711,7 +711,7 @@ public class SmartBankSorterPlugin extends Plugin
 						// Gap in an outfit column, or a copy we don't need to draw.
 						continue;
 					}
-					Widget w = slot.copy ? itemCopies.placeCopy(container, copies++, slot) : slot.widget;
+					Widget w = slot.copy ? itemCopies.placeCopy(copies++, slot) : slot.widget;
 					if (w == null)
 					{
 						// No spare bank slot left for this copy.
