@@ -23,8 +23,10 @@ import net.runelite.api.Item;
 import net.runelite.api.ItemComposition;
 import net.runelite.api.ItemContainer;
 import net.runelite.api.MenuAction;
+import net.runelite.api.MenuEntry;
 import net.runelite.api.ScriptID;
 import net.runelite.api.events.MenuEntryAdded;
+import net.runelite.api.events.MenuOpened;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.events.ScriptCallbackEvent;
 import net.runelite.api.events.ScriptPostFired;
@@ -205,12 +207,6 @@ public class SmartBankSorterPlugin extends Plugin
 	@Subscribe
 	public void onMenuEntryAdded(MenuEntryAdded event)
 	{
-		if (config.enabled() && event.getActionParam1() == InterfaceID.Bankmain.ITEMS && "Examine".equals(event.getOption())
-			&& event.getMenuEntry().getItemId() > 0)
-		{
-			moveToMenu.addMenu(event.getMenuEntry().getItemId());
-			return;
-		}
 		if (event.getActionParam1() == InterfaceID.Bankmain.SEARCH && "Search".equals(event.getOption()))
 		{
 			client.getMenu().createMenuEntry(-1)
@@ -218,6 +214,24 @@ public class SmartBankSorterPlugin extends Plugin
 				.setTarget(ColorUtil.wrapWithColorTag("Bank", config.headerColor()))
 				.setType(MenuAction.RUNELITE)
 				.onClick(e -> configManager.setConfiguration(SmartBankSorterConfig.GROUP, "enabled", !config.enabled()));
+		}
+	}
+
+	// Built when the menu opens rather than as its entries are added, which is every tick the mouse is over an item.
+	@Subscribe
+	public void onMenuOpened(MenuOpened event)
+	{
+		if (!config.enabled())
+		{
+			return;
+		}
+		for (MenuEntry entry : event.getMenuEntries())
+		{
+			if (entry.getParam1() == InterfaceID.Bankmain.ITEMS && "Examine".equals(entry.getOption()) && entry.getItemId() > 0)
+			{
+				moveToMenu.addMenu(entry.getItemId());
+				return;
+			}
 		}
 	}
 
