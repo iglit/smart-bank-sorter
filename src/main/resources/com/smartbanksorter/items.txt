@@ -2049,8 +2049,8 @@ Regen bracelet|Melee||3
 Ring of Charos|Jewellery||3
 Ring of endurance (uncharged)|Jewellery||3
 Ring of life|Jewellery||3
-Ring of wealth|Jewellery||3
-Seers ring|Jewellery||3
+Ring of wealth|Teleports||3
+Seers ring|Magic||3
 Alchemist's amulet|Jewellery||4
 Amulet of Nature|Jewellery||4
 Brass necklace|Jewellery||4
@@ -2074,7 +2074,7 @@ Jade bracelet|Jewellery||4
 Jade necklace|Jewellery||4
 Jade ring|Jewellery||4
 M'speak amulet|Jewellery||4
-Medallion of the Deep|Jewellery||4
+Medallion of the Deep|Sailing||4
 Necklace of faith|Jewellery||4
 Onyx bracelet|Jewellery||4
 Onyx necklace|Jewellery||4
@@ -2082,7 +2082,7 @@ Onyx ring|Jewellery||4
 Opal bracelet|Jewellery||4
 Opal necklace|Jewellery||4
 Opal ring|Jewellery||4
-Pendant of Ates|Jewellery||4
+Pendant of Ates|Teleports||4
 Ring of Charos(a)|Jewellery||4
 Ring of pursuit|Jewellery||4
 Ring of shadows|Melee||4
@@ -2091,7 +2091,7 @@ Ruby amulet|Jewellery||4
 Ruby bracelet|Jewellery||4
 Ruby necklace|Jewellery||4
 Sapphire bracelet|Jewellery||4
-Sapphire glacialis|Jewellery||4
+Sapphire glacialis|Hunter||4
 Sapphire necklace|Jewellery||4
 Seal of Passage|Jewellery||4
 Silver necklace|Jewellery||4
@@ -2118,7 +2118,7 @@ Pendant of Ates (inert)|Jewellery||5
 Pre-nature amulet|Jewellery||5
 Ruby ring|Jewellery||5
 Sapphire ring|Jewellery||5
-Steel ring|Jewellery||5
+Steel ring|Melee||5
 Corrupted staff (perfected)|Magic||1
 Corrupted tumeken's shadow|Magic||1
 Crystal staff (perfected)|Magic||1
@@ -2150,7 +2150,7 @@ Eldritch Nightmare staff|Magic||2
 Elite void robe|Melee|Magic,Ranged|2
 Elite void top|Melee|Magic,Ranged|2
 Fire max cape|Magic||2
-Fire max hood|Magic||2
+Fire max hood|Cosmetic||2
 Harmonised Nightmare staff|Magic||2
 Harmonised orb|Magic||2
 Kodai wand|Magic||2
@@ -2211,7 +2211,7 @@ Armadyl mitre|Magic||3
 Armadyl robe legs|Magic||3
 Armadyl robe top|Magic||3
 Armadyl stole|Magic||3
-Binding necklace|Magic||3
+Binding necklace|Runecraft||3
 Blessed spirit shield|Magic||3
 Blood ancient sceptre|Magic||3
 Blue Moon chestplate|Magic||3
@@ -2220,7 +2220,7 @@ Blue Moon tassets|Magic||3
 Bones to bananas|Magic||3
 Bones to peaches|Magic||3
 Book of Darkness|Magic||3
-Boots of the Eye|Magic||3
+Boots of the Eye|Runecraft||3
 Bryophyta's staff (uncharged)|Magic||3
 Camulet|Magic||3
 Corrupted staff (basic)|Magic||3
@@ -2234,8 +2234,8 @@ Dagon'hai robe top|Magic||3
 Dark squall hood|Magic||3
 Dark squall robe bottom|Magic||3
 Dark squall robe top|Magic||3
-Demonic robe bottom (t1)|Magic||3
-Demonic robe top (t1)|Magic||3
+Demonic robe bottom (t1)|Cosmetic||3
+Demonic robe top (t1)|Cosmetic||3
 Dragon hunter wand|Magic||3
 Dramen staff|Magic||3
 Druid's robe|Magic||3
@@ -2299,16 +2299,16 @@ Mystic steam staff|Magic||3
 Mystic water staff|Magic||3
 Noble robe top|Magic||3
 Purging staff|Magic||3
-Ring of the elements|Magic||3
-Robe bottom of Ruin|Magic||3
-Robe bottoms of the Eye|Magic||3
-Robe bottoms of the Eye (blue)|Magic||3
-Robe bottoms of the Eye (green)|Magic||3
+Ring of the elements|Teleports||3
+Robe bottom of Ruin|Cosmetic||3
+Robe bottoms of the Eye|Runecraft||3
+Robe bottoms of the Eye (blue)|Runecraft||3
+Robe bottoms of the Eye (green)|Runecraft||3
 Robe of Elidinis|Magic||3
-Robe top of Ruin|Magic||3
-Robe top of the Eye|Magic||3
-Robe top of the Eye (blue)|Magic||3
-Robe top of the Eye (green)|Magic||3
+Robe top of Ruin|Cosmetic||3
+Robe top of the Eye|Runecraft||3
+Robe top of the Eye (blue)|Runecraft||3
+Robe top of the Eye (green)|Runecraft||3
 Saradomin crozier|Magic||3
 Saradomin staff|Magic||3
 Shade robe|Magic||3
@@ -2360,12 +2360,12 @@ Ancient robe legs|Magic||4
 Ancient robe top|Magic||4
 Ancient stole|Magic||4
 Arcane grimoire|Magic||4
-Arceuus hood|Magic||4
+Arceuus hood|Cosmetic||4
 Arceuus scarf|Magic||4
 Awakener's orb|Magic||4
 Battlestaff|Magic||4
 Black robe|Magic||4
-Black warlock|Magic||4
+Black warlock|Hunter||4
 Black wizard hat (g)|Magic||4
 Black wizard robe (g)|Magic||4
 Blue robe bottoms|Magic||4
@@ -2375,7 +2375,7 @@ Blue wizard robe|Magic||4
 Bone staff|Magic||4
 Bottled dragonbreath|Magic||4
 Bottled dragonbreath (unpowered)|Magic||4
-Bottled storm|Magic||4
+Bottled storm|Sailing||4
 Charge dragonstone jewellery scroll|Magic||4
 Circlet of water (uncharged)|Magic|Runecraft|4
 Corrupted zuriel's hood (bh)(inactive)|Magic||4
@@ -2383,7 +2383,7 @@ Corrupted zuriel's robe bottom (bh)(inactive)|Magic||4
 Corrupted zuriel's robe top (bh)(inactive)|Magic||4
 Crate of staffs|Magic||4
 Cursed amulet of magic|Magic||4
-Demonic sceptre|Magic||4
+Demonic sceptre|Cosmetic||4
 Echo ahrim's hood|Magic||4
 Echo ahrim's robeskirt|Magic||4
 Echo ahrim's robetop|Magic||4
@@ -2426,11 +2426,8 @@ Iban's staff|Magic||4
 Iban's staff (u) (o)|Magic||4
 Ice ancient sceptre (l) (mangled)|Magic||4
 Ice element staff crown|Magic||4
-Icthlarin's shroud (tier 1)|Magic||4
-Icthlarin's shroud (tier 2)|Magic||4
-Icthlarin's shroud (tier 3)|Magic||4
-Icthlarin's shroud (tier 4)|Magic||4
-Lava staff upgrade kit|Magic||4
+Icthlarin's shroud|Cosmetic||5
+Lava staff upgrade kit|Cosmetic||4
 Lunar cape|Magic||4
 Lunar staff - pt1|Magic||4
 Lunar staff - pt2|Magic||4
@@ -2447,7 +2444,7 @@ Robe bottom of darkness|Magic||4
 Robe top of darkness|Magic||4
 Rod of Ivandis (10)|Magic||4
 Shadow ancient sceptre (l) (mangled)|Magic||4
-Socks of Ruin|Magic||4
+Socks of Ruin|Cosmetic||4
 Spectral sigil|Magic||4
 Void knight robe (l)(or)|Melee|Magic,Ranged|4
 Void mage helm (l)(or)|Magic||4
@@ -2479,15 +2476,14 @@ Elite void robe (l) (mangled)|Melee|Magic,Ranged|5
 Elite void top (l) (mangled)|Melee|Magic,Ranged|5
 Hallowed focus|Magic||5
 Hood of darkness|Magic||5
-Icthlarin's hood (tier 5)|Magic||5
-Icthlarin's shroud (tier 5)|Magic||5
+Icthlarin's hood|Cosmetic||5
 Smoke ancient sceptre (l) (mangled)|Magic||5
 Staff|Magic||5
 Starter staff|Magic||5
-Steam staff upgrade kit|Magic||5
+Steam staff upgrade kit|Cosmetic||5
 Void knight robe (l) (mangled)|Melee|Magic,Ranged|5
 Void mage helm (l) (mangled)|Magic||5
-Water orb|Magic||5
+Water orb|Crafting||5
 Abyssal bludgeon|Melee||1
 Abyssal whip|Melee||1
 Amulet of fury|Melee|Ranged,Magic|1
@@ -4239,7 +4235,7 @@ Crossbow|Ranged||2
 Crystal bow|Ranged||2
 Crystal bow (attuned)|Ranged||2
 Dark bow|Ranged||2
-Diamond bolt tips|Ranged||2
+Diamond bolt tips|Fletching||2
 Diamond bolts (e)|Ranged||2
 Diamond dragon bolts (e)|Ranged||2
 Dragon arrow|Ranged||2
@@ -4247,10 +4243,10 @@ Dragon crossbow|Ranged||2
 Dragon javelin|Ranged||2
 Dragon knife|Ranged||2
 Dragon thrownaxe|Ranged||2
-Dragonstone bolt tips|Ranged||2
+Dragonstone bolt tips|Fletching||2
 Dragonstone bolts (e)|Ranged||2
 Dragonstone dragon bolts (e)|Ranged||2
-Emerald bolt tips|Ranged||2
+Emerald bolt tips|Fletching||2
 Emerald bolts (e)|Ranged||2
 Emerald dragon bolts (e)|Ranged||2
 Heavy ballista|Ranged||2
@@ -4273,7 +4269,7 @@ Rune knife|Ranged||2
 Runite bolts|Ranged||2
 Runite bolts (p+)|Ranged||2
 Runite bolts (p++)|Ranged||2
-Runite limbs|Ranged||2
+Runite limbs|Fletching||2
 Scorching bow|Ranged||2
 Seercull|Ranged||2
 Serpentine helm (uncharged)|Ranged|Magic|2
@@ -4292,7 +4288,7 @@ Adamant bolts|Ranged||3
 Adamant brutal|Ranged||3
 Adamant cannonball|Ranged||3
 Adamant crossbow|Ranged||3
-Adamantite limbs|Ranged||3
+Adamantite limbs|Fletching||3
 Aranea boots|Ranged||3
 Archer helm|Ranged||3
 Archers ring|Ranged||3
@@ -4309,14 +4305,14 @@ Ava's assembler|Ranged||3
 Ava's attractor|Ranged||3
 Ballista limbs|Ranged||3
 Ballista spring|Ranged||3
-Barb bolttips|Ranged||3
+Barb bolttips|Fletching||3
 Bellator ring|Ranged||3
 Black chinchompa|Ranged||3
 Black d'hide vambraces|Ranged||3
 Blessed Dizana's quiver|Ranged||3
-Bolt mould|Ranged||3
+Bolt mould|Tools||3
 Bow of Faerdhinen (inactive)|Ranged||3
-Broad arrowheads|Ranged||3
+Broad arrowheads|Fletching||3
 Broad arrows|Ranged||3
 Cannon barrels|Ranged||3
 Cannon base|Ranged||3
@@ -4336,11 +4332,11 @@ Dragon arrow(p++)|Ranged||3
 Dragon bolts (p+)|Ranged||3
 Dragon bolts (p++)|Ranged||3
 Dragon cannonball|Ranged||3
-Dragon dart tip|Ranged||3
+Dragon dart tip|Fletching||3
 Dragon dart(p+)|Ranged||3
 Dragon dart(p++)|Ranged||3
 Dragon hunter crossbow|Ranged||3
-Dragon javelin tips|Ranged||3
+Dragon javelin tips|Fletching||3
 Dragon javelin(p+)|Ranged||3
 Dragon javelin(p++)|Ranged||3
 Dragon knife(p+)|Ranged||3
@@ -4357,7 +4353,7 @@ Hueycoatl hide chaps|Ranged||3
 Hueycoatl hide coif|Ranged||3
 Hueycoatl hide vambraces|Ranged||3
 Ice arrows|Ranged||3
-Jade bolt tips|Ranged||3
+Jade bolt tips|Fletching||3
 Jade bolts (e)|Ranged||3
 Jade dragon bolts (e)|Ranged||3
 Karil's armour set|Ranged||3
@@ -4375,10 +4371,10 @@ Mithril bolts (p++)|Ranged||3
 Mithril brutal|Ranged||3
 Mithril cannonball|Ranged||3
 Mithril crossbow|Ranged||3
-Mithril dart tip|Ranged||3
+Mithril dart tip|Fletching||3
 Mithril dart(p+)|Ranged||3
 Mithril dart(p++)|Ranged||3
-Mithril javelin tips|Ranged||3
+Mithril javelin tips|Fletching||3
 Mithril javelin(p+)|Ranged||3
 Mithril javelin(p++)|Ranged||3
 Mithril knife(p+)|Ranged||3
@@ -4403,27 +4399,27 @@ Ranging cape|Ranged||3
 Ranging hood|Ranged||3
 Red chinchompa|Ranged|Hunter|3
 Rosewood blowpipe|Ranged||3
-Ruby bolt tips|Ranged||3
+Ruby bolt tips|Fletching||3
 Rune arrow(p+)|Ranged||3
 Rune arrow(p++)|Ranged||3
 Rune brutal|Ranged||3
 Rune cannonball|Ranged||3
-Rune dart tip|Ranged||3
+Rune dart tip|Fletching||3
 Rune dart(p+)|Ranged||3
 Rune dart(p++)|Ranged||3
-Rune javelin tips|Ranged||3
+Rune javelin tips|Fletching||3
 Rune javelin(p+)|Ranged||3
 Rune javelin(p++)|Ranged||3
 Rune knife(p+)|Ranged||3
 Rune knife(p++)|Ranged||3
 Rune thrownaxe|Ranged||3
-Runite crossbow (u)|Ranged||3
-Sapphire bolt tips|Ranged||3
+Runite crossbow (u)|Fletching||3
+Sapphire bolt tips|Fletching||3
 Sapphire bolts (e)|Ranged||3
 Sapphire dragon bolts (e)|Ranged||3
 Seeking broad arrows|Ranged||3
 Serpentine visage|Ranged||3
-Shortbow (u)|Ranged||3
+Shortbow (u)|Fletching||3
 Silver bolts (p+)|Ranged||3
 Silver bolts (p++)|Ranged||3
 Silvthrill ballista|Ranged||3
@@ -4441,10 +4437,10 @@ Adamant arrow(p+)|Ranged||4
 Adamant arrow(p++)|Ranged||4
 Adamant bolts (p+)|Ranged||4
 Adamant bolts (p++)|Ranged||4
-Adamant dart tip|Ranged||4
+Adamant dart tip|Fletching||4
 Adamant dart(p+)|Ranged||4
 Adamant dart(p++)|Ranged||4
-Adamant javelin tips|Ranged||4
+Adamant javelin tips|Fletching||4
 Adamant javelin(p+)|Ranged||4
 Adamant javelin(p++)|Ranged||4
 Adamant knife(p+)|Ranged||4
@@ -4452,23 +4448,23 @@ Adamant knife(p++)|Ranged||4
 Adamant thrownaxe|Ranged||4
 Amethyst arrow(p+)|Ranged||4
 Amethyst arrow(p++)|Ranged||4
-Amethyst bolt tips|Ranged||4
-Amethyst dart tip|Ranged||4
+Amethyst bolt tips|Fletching||4
+Amethyst dart tip|Fletching||4
 Amethyst dart(p+)|Ranged||4
 Amethyst dart(p++)|Ranged||4
-Amethyst javelin tips|Ranged||4
+Amethyst javelin tips|Fletching||4
 Amethyst javelin(p+)|Ranged||4
 Amethyst javelin(p++)|Ranged||4
 Amulet of sight|Ranged||4
-Amulet of the Eye|Ranged||4
+Amulet of the Eye|Teleports||4
 Ancient chaps|Ranged||4
 Ancient coif|Ranged||4
 Ancient d'hide body|Ranged||4
 Ancient d'hide boots|Ranged||4
 Ancient dragonhide set|Ranged||4
-Armadyl pendant|Ranged||4
-Atlatl dart shaft|Ranged||4
-Atlatl dart tips|Ranged||4
+Armadyl pendant|Quest||4
+Atlatl dart shaft|Fletching||4
+Atlatl dart tips|Fletching||4
 Black brutal|Ranged||4
 Black d'hide shield|Ranged||4
 Black dart(p+)|Ranged||4
@@ -4495,7 +4491,7 @@ Crate of bows|Ranged||4
 Crate of gunpowder|Ranged||4
 Crate of javelins|Ranged||4
 Dizana's max cape|Ranged||4
-Dizana's max hood|Ranged||4
+Dizana's max hood|Cosmetic||4
 Dizana's quiver (l) (uncharged)|Ranged||4
 Dizana's quiver (uncharged)|Ranged||4
 Dragon cannon barrel|Ranged||4
@@ -4507,10 +4503,10 @@ Gilded d'hide body|Ranged||4
 Gilded d'hide chaps|Ranged||4
 Gilded d'hide vambraces|Ranged||4
 Gilded dragonhide set|Ranged||4
-Gloves of silence|Ranged||4
-Graahk headdress|Ranged||4
-Graahk legs|Ranged||4
-Graahk top|Ranged||4
+Gloves of silence|Thieving||4
+Graahk headdress|Cosmetic||4
+Graahk legs|Cosmetic||4
+Graahk top|Cosmetic||4
 Green d'hide body|Ranged||4
 Green d'hide chaps|Ranged||4
 Green d'hide shield|Ranged||4
@@ -4538,10 +4534,10 @@ Iron bolts (p++)|Ranged||4
 Iron brutal|Ranged||4
 Iron cannonball|Ranged||4
 Iron crossbow|Ranged||4
-Iron dart tip|Ranged||4
+Iron dart tip|Fletching||4
 Iron dart(p+)|Ranged||4
 Iron dart(p++)|Ranged||4
-Iron javelin tips|Ranged||4
+Iron javelin tips|Fletching||4
 Iron javelin(p+)|Ranged||4
 Iron javelin(p++)|Ranged||4
 Iron knife(p+)|Ranged||4
@@ -4557,8 +4553,8 @@ Mithril dart|Ranged||4
 Myre snelm|Ranged||4
 Ochre snelm|Ranged||4
 Ogre bow|Ranged||4
-Opal bolt tips|Ranged||4
-Pearl bolt tips|Ranged||4
+Opal bolt tips|Fletching||4
+Pearl bolt tips|Fletching||4
 Phoenix crossbow|Ranged||4
 Pointed blood'n'tar snelm|Ranged||4
 Pointed bruise blue snelm|Ranged||4
@@ -4569,7 +4565,7 @@ Red d'hide body|Ranged||4
 Red d'hide chaps|Ranged||4
 Red d'hide vambraces|Ranged||4
 Robin Hood hat|Ranged||4
-Rock thrownhammer|Ranged||4
+Rock thrownhammer|Slayer||4
 Signed oak bow|Ranged||4
 Steel arrow|Ranged||4
 Steel arrow(p+)|Ranged||4
@@ -4578,18 +4574,18 @@ Steel bolts (p+)|Ranged||4
 Steel bolts (p++)|Ranged||4
 Steel brutal|Ranged||4
 Steel crossbow|Ranged||4
-Steel dart tip|Ranged||4
+Steel dart tip|Fletching||4
 Steel dart(p+)|Ranged||4
 Steel dart(p++)|Ranged||4
-Steel javelin tips|Ranged||4
+Steel javelin tips|Fletching||4
 Steel javelin(p+)|Ranged||4
 Steel javelin(p++)|Ranged||4
 Steel thrownaxe|Ranged||4
-Topaz bolt tips|Ranged||4
-Twisted boots (t3)|Ranged||4
-Twisted coat (t3)|Ranged||4
-Twisted hat (t3)|Ranged||4
-Twisted trousers (t3)|Ranged||4
+Topaz bolt tips|Fletching||4
+Twisted boots (t3)|Cosmetic||4
+Twisted coat (t3)|Cosmetic||4
+Twisted hat (t3)|Cosmetic||4
+Twisted trousers (t3)|Cosmetic||4
 Unstrung heavy ballista|Ranged||4
 Unstrung light ballista|Ranged||4
 Venator fang|Ranged||4
@@ -4605,16 +4601,16 @@ Bronze bolts (p++)|Ranged||5
 Bronze brutal|Ranged||5
 Bronze cannonball|Ranged||5
 Bronze crossbow|Ranged||5
-Bronze dart tip|Ranged||5
+Bronze dart tip|Fletching||5
 Bronze dart(p+)|Ranged||5
 Bronze dart(p++)|Ranged||5
-Bronze javelin tips|Ranged||5
+Bronze javelin tips|Fletching||5
 Bronze javelin(p+)|Ranged||5
 Bronze javelin(p++)|Ranged||5
 Bronze knife|Ranged||5
 Bronze knife(p+)|Ranged||5
 Bronze knife(p++)|Ranged||5
-Bronze limbs|Ranged||5
+Bronze limbs|Fletching||5
 Bronze locks|Ranged||5
 Bronze thrownaxe|Ranged||5
 Cursed goblin bow|Ranged||5
@@ -4809,12 +4805,12 @@ Slayer bell|Slayer||3
 Snake mask|Slayer||3
 Spiny helmet|Slayer||3
 Witchwood icon|Slayer||3
-Araxyte venom sac|Slayer||4
+Araxyte venom sac|Herblore||4
 Attacker icon|Slayer||4
-Banshee mask|Slayer||4
-Banshee robe|Slayer||4
-Banshee top|Slayer||4
-Black demon mask|Slayer||4
+Banshee mask|Cosmetic||4
+Banshee robe|Cosmetic||4
+Banshee top|Cosmetic||4
+Black demon mask|Cosmetic||4
 Efh salt|Slayer||4
 Sigil of Slaughter|Slayer||4
 Slayer hood|Slayer||4
@@ -4890,7 +4886,7 @@ Skills necklace|Teleports||2
 Skills necklace(5)|Teleports||2
 Skills necklace(6)|Teleports||2
 Slayer ring (8)|Teleports||2
-Ardougne cloak 1|Teleports|Cosmetic|3
+Ardougne cloak 1|Teleports||3
 Burning amulet(2)|Teleports||3
 Burning amulet(5)|Teleports||3
 Castle wars bracelet(3)|Teleports||3
@@ -4908,7 +4904,7 @@ Lumbridge teleport|Teleports||3
 Lunar isle teleport|Teleports||3
 Necklace of passage(1)|Teleports||3
 Necklace of passage(5)|Teleports||3
-Pharaoh's sceptre (uncharged)|Teleports||3
+Pharaoh's sceptre|Teleports||3
 Ring of dueling(1)|Teleports||3
 Ring of dueling(5)|Teleports||3
 Ring of returning(5)|Teleports||3
@@ -4920,7 +4916,7 @@ Teleport crystal (3)|Teleports||3
 Teleport to house|Teleports||3
 Twisted teleport scroll|Teleports||3
 Xeric's talisman|Teleports||3
-Amulet of bounty|Teleports||4
+Amulet of bounty|Farming||4
 Annakarl teleport|Teleports||4
 Annihilation teleport scroll|Teleports||4
 Ape atoll teleport|Teleports||4
