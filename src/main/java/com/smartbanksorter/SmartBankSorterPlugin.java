@@ -622,13 +622,10 @@ public class SmartBankSorterPlugin extends Plugin
 
 		if (config.gearByQuality())
 		{
+			itemCopies.addTeleportGearCopies(groups);
 			itemCopies.addHybridCopies(groups);
 		}
 		itemCopies.addDataCopies(groups, s -> categoriser.ruleCategory(s.itemId, s.name) != null);
-		if (config.gearByQuality())
-		{
-			itemCopies.addTeleportGearCopies(groups);
-		}
 
 		Comparator<Slot> comparator = comparator();
 		boolean large = config.headerSize() == SmartBankSorterConfig.HeaderSize.LARGE;

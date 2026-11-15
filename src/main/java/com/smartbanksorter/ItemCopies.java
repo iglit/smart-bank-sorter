@@ -2,8 +2,10 @@ package com.smartbanksorter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import net.runelite.api.EquipmentInventorySlot;
@@ -70,7 +72,8 @@ class ItemCopies
 
 	/**
 	 * Gear useful to several styles (barrows gloves, fire cape) lives in one category. Show a faded copy in
-	 * each other combat style where it beats everything that style already has in that slot.
+	 * each other combat style where it beats everything that style already has in that slot. Copies count too,
+	 * so teleport gear copied into its best style (a charged glory in Melee) can reach the others.
 	 */
 	void addHybridCopies(Map<String, List<Slot>> groups)
 	{
@@ -83,8 +86,10 @@ class ItemCopies
 			}
 
 			Map<Integer, Integer> bestBySlot = new HashMap<>();
+			Set<Integer> shown = new HashSet<>();
 			for (Slot s : styleSlots)
 			{
+				shown.add(s.itemId);
 				ItemEquipmentStats e = equipmentOf.apply(s);
 				if (e != null)
 				{
@@ -103,7 +108,7 @@ class ItemCopies
 				{
 					ItemEquipmentStats e = equipmentOf.apply(s);
 					boolean blessing = e != null && e.getSlot() == EquipmentInventorySlot.AMMO.getSlotIdx();
-					if (s.copy || e == null || e.getSlot() == EquipmentInventorySlot.WEAPON.getSlotIdx()
+					if (shown.contains(s.itemId) || e == null || e.getSlot() == EquipmentInventorySlot.WEAPON.getSlotIdx()
 						|| (!blessing && GearOrder.offence(style, e) <= 0))
 					{
 						continue;
