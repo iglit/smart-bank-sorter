@@ -60,6 +60,11 @@ Categories come from bundled data classified from the OSRS Wiki (`src/main/resou
 and `overrides.txt`. Items not listed fall back to rules based on their stats and right-click options.
 Corrections are welcome as pull requests.
 
+## Support
+
+The plugin is free and always will be. If it saves you some bank-scrolling and you'd like to say thanks, you can
+[buy me a coffee on Ko-fi](https://ko-fi.com/iglit).
+
 ## Development
 
 ```sh
