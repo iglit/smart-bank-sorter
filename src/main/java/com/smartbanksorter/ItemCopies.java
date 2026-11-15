@@ -211,10 +211,12 @@ class ItemCopies
 		w.setBorderType(real.getBorderType());
 		w.setTextShadowed(real.getTextShadowed());
 		w.setName(real.getName());
+		// Every op, Examine (op 11) included, so the copy's menu is the real item's, Move to and all.
+		w.clearActions();
 		String[] actions = real.getActions();
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; actions != null && i < actions.length; i++)
 		{
-			w.setAction(i, actions != null && i < actions.length ? actions[i] : null);
+			w.setAction(i, actions[i]);
 		}
 		w.setDragDeadZone(Integer.MAX_VALUE);
 		w.setDragDeadTime(Integer.MAX_VALUE);
