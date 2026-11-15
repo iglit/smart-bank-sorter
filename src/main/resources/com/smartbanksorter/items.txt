@@ -1,5 +1,5 @@
 # Item categories classified from the OSRS Wiki by Haiku agents (2026-11-07), rule-checked; the author's bank items hand-reviewed.
-# Format: Item name|Main category|Extra categories (copies)|Tier 1-5 (1 = most used). Variants (charges, (i), degrade) fall back to the base name.
+# Format: Item name|Main category|Extra categories (copies)|Tier 1-5 (1 = most used). Variants (charges, (i), degrade) fall back to the base name; a numbered entry ("Ardougne cloak 1", "Black mask (10)") covers its siblings.
 # For combat gear, item stats decide Melee/Ranged/Magic; this file only moves gear out of the styles. User rules override everything.
 Graceful boots|Agility|Farming,Hunter,Runecraft,Thieving|2
 Graceful cape|Agility|Farming,Hunter,Runecraft,Thieving|2

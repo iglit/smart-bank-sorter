@@ -31,6 +31,10 @@ final class ItemData
 		}
 	}
 
+	// A trailing number alone: a charge, dose or level like "(10)" or " 1". Not "(i)", "(broken)" or "(uncharged)".
+	// Before ITEMS, which parse() fills using it.
+	private static final Pattern NUMBER = Pattern.compile("(\\s*\\(\\d+\\)|\\s+\\d+)$");
+
 	private static final Map<String, Entry> ITEMS = parse(Resources.read("items.txt"));
 
 	private ItemData()
@@ -46,8 +50,9 @@ final class ItemData
 		// Initialising the class is what reads it.
 	}
 
-	// Trailing variant markers: "(4)", "(i)", "(uncharged)", or a Barrows degrade level like " 75".
-	private static final Pattern VARIANT = Pattern.compile("(\\s*\\([^()]*\\)|\\s+\\d+)$");
+	// Trailing variant markers: "(4)", "(i)", "(uncharged)", or a Barrows degrade level like " 75". Not "(unf)": an
+	// unfinished potion or bolt isn't a variant of the finished one.
+	private static final Pattern VARIANT = Pattern.compile("(\\s*\\((?!unf\\))[^()]*\\)|\\s+\\d+)$");
 
 	/**
 	 * Entry for this exact name, else for the name with variant suffixes stripped one at a time, so
@@ -81,6 +86,7 @@ final class ItemData
 	static Map<String, Entry> parse(String text)
 	{
 		Map<String, Entry> items = new HashMap<>();
+		Map<String, Entry> bases = new HashMap<>();
 		for (String line : text.split("\\R"))
 		{
 			String[] parts = line.split("\\|", -1);
@@ -112,8 +118,19 @@ final class ItemData
 					// Leave as unknown.
 				}
 			}
-			items.put(parts[0].trim().toLowerCase(), new Entry(parts[1].trim(), Collections.unmodifiableList(extras), tier));
+			String name = parts[0].trim().toLowerCase();
+			Entry entry = new Entry(parts[1].trim(), Collections.unmodifiableList(extras), tier);
+			items.put(name, entry);
+			Matcher m = NUMBER.matcher(name);
+			if (m.find() && m.start() > 0)
+			{
+				bases.putIfAbsent(name.substring(0, m.start()).trim(), entry);
+			}
 		}
+		// A numbered entry stands for its siblings: lookup strips "Ardougne cloak 3" and "Black mask (5)" to
+		// "ardougne cloak" and "black mask", which find "Ardougne cloak 1" and "Black mask (10)" this way. The first
+		// sibling listed wins, and a base name listed itself wins over all of them.
+		bases.forEach(items::putIfAbsent);
 		return items;
 	}
 }
