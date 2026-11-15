@@ -76,6 +76,9 @@ public class SmartBankSorterPlugin extends Plugin
 	private static final int PITCH_Y = 36;
 	static final int ITEM_WIDTH = 36;
 	static final int ITEM_HEIGHT = 32;
+	// The bank's item container has a widget per bank slot first. The tab separators, "Tab N" labels and row padding
+	// rectangles after them can't show an item, so copies never go there.
+	private static final int BANK_SLOTS = 1410;
 	private static final int GRID_WIDTH = COLUMNS * PITCH_X - 12;
 	private static final int SECTION_GAP = 4;
 	private static final int DIVIDER_COLOR = 0x4E4639;
@@ -577,7 +580,7 @@ public class SmartBankSorterPlugin extends Plugin
 			{
 				continue;
 			}
-			if (i >= items.length && w.getOriginalHeight() == ITEM_HEIGHT)
+			if (i >= items.length && i < BANK_SLOTS)
 			{
 				spares.add(w);
 			}
