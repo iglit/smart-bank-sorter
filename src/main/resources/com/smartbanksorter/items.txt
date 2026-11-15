@@ -2123,9 +2123,9 @@ Twitcher's gloves|Hunter||3
 Baby impling jar|Hunter||4
 Bird nest|Woodcutting||4
 Butterfly jar|Hunter||4
-Camo bottoms|Hunter||4
-Camo helmet|Hunter||4
-Camo top|Hunter||4
+Camo bottoms|Cosmetic||4
+Camo helmet|Cosmetic||4
+Camo top|Cosmetic||4
 Chompy bird hat|Cosmetic||5
 Crate of salamanders|Hunter||4
 Falconer's glove|Hunter||4
@@ -2155,8 +2155,8 @@ Twisted relic hunter (t1) armour set|Cosmetic||5
 Twisted relic hunter (t2) armour set|Cosmetic||5
 Twisted relic hunter (t3) armour set|Cosmetic||5
 Willow bird house|Hunter||4
-Wood camo legs|Hunter||4
-Wood camo top|Hunter||4
+Wood camo legs|Cosmetic||4
+Wood camo top|Cosmetic||4
 Yew bird house|Hunter||4
 Ancient gorilla greegree|Hunter||5
 Bearded gorilla greegree|Hunter||5
