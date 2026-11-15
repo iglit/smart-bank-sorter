@@ -635,7 +635,7 @@ Bronze set|Cosmetic||5
 Bronze set (lg)|Cosmetic||5
 Bronze trimmed set|Cosmetic||5
 Bronze trimmed set (lg)|Cosmetic||5
-Brown apron|Cosmetic||5
+Brown apron|Crafting||5
 Brown headband|Cosmetic||5
 Brown naval shirt|Cosmetic||5
 Brown navy slacks|Cosmetic||5
@@ -1652,7 +1652,7 @@ Plant cure|Farming||3
 Potato cactus|Herblore||3
 Potatoes(10)|Farming||3
 Redwood sapling|Farming||3
-Scythe|Farming||3
+Scythe|Cosmetic||5
 Seaweed spore|Farming||3
 Secateurs|Farming||3
 Seed dibber|Farming||3
@@ -1809,7 +1809,7 @@ Spirit angler headband|Fishing||3
 Spirit angler top|Fishing||3
 Spirit angler waders|Fishing||3
 Tackle box|Fishing||3
-Crabclaw hook|Fishing||4
+Crabclaw hook|Cosmetic||4
 Crate of angler outfit pieces|Fishing||4
 Crate of bait|Fishing||4
 Crate of fishing supplies|Fishing||4
@@ -2306,7 +2306,7 @@ Dragon hunter wand|Magic||3
 Dramen staff|Magic||3
 Druid's robe|Magic||3
 Druid's robe top|Magic||3
-Druidic wreath|Magic||3
+Druidic wreath|Cosmetic||3
 Dust battlestaff|Magic||3
 Elemental shield|Magic||3
 Enchanted robe|Magic||3
@@ -2363,7 +2363,7 @@ Mystic set (dusk)|Magic||3
 Mystic smoke staff|Magic||3
 Mystic steam staff|Magic||3
 Mystic water staff|Magic||3
-Noble robe top|Magic||3
+Noble robe top|Cosmetic||3
 Purging staff|Magic||3
 Ring of the elements|Teleports||3
 Robe bottom of Ruin|Cosmetic||3
@@ -2399,8 +2399,8 @@ Trident of the Seas (e) (o)|Magic||3
 Trident of the Seas (full)|Magic||3
 Trident of the Seas (full) (o)|Magic||3
 Trident of the Swamp (e) (o)|Magic||3
-Turquoise robe bottoms|Magic||3
-Turquoise robe top|Magic||3
+Turquoise robe bottoms|Cosmetic||3
+Turquoise robe top|Cosmetic||3
 Uncharged trident|Magic||3
 Uncharged trident (e) (o)|Magic||3
 Warped sceptre (uncharged)|Magic||3
@@ -2427,15 +2427,15 @@ Ancient robe top|Magic||4
 Ancient stole|Magic||4
 Arcane grimoire|Magic||4
 Arceuus hood|Cosmetic||4
-Arceuus scarf|Magic||4
+Arceuus scarf|Cosmetic||4
 Awakener's orb|Magic||4
 Battlestaff|Magic||4
 Black robe|Magic||4
 Black warlock|Hunter||4
 Black wizard hat (g)|Magic||4
 Black wizard robe (g)|Magic||4
-Blue robe bottoms|Magic||4
-Blue robe top|Magic||4
+Blue robe bottoms|Cosmetic||4
+Blue robe top|Cosmetic||4
 Blue wizard hat|Magic||4
 Blue wizard robe|Magic||4
 Bone staff|Magic||4
@@ -2480,10 +2480,10 @@ Ghostly cloak|Magic||4
 Ghostly gloves|Magic||4
 Ghostly hood|Magic||4
 Ghostly robe|Magic||4
-Green robe bottoms|Magic||4
-Green robe top|Magic||4
-Grey robe bottoms|Magic||4
-Grey robe top|Magic||4
+Green robe bottoms|Cosmetic||4
+Green robe top|Cosmetic||4
+Grey robe bottoms|Cosmetic||4
+Grey robe top|Cosmetic||4
 Guthix robe legs|Magic||4
 Guthix robe top|Magic||4
 Helmet of the moon|Magic||4
@@ -2504,8 +2504,8 @@ Magic shield|Magic||4
 Master wand|Magic||4
 Merfolk trident|Magic||4
 Mind helmet|Magic||4
-Red robe bottoms|Magic||4
-Red robe top|Magic||4
+Red robe bottoms|Cosmetic||4
+Red robe top|Cosmetic||4
 Robe bottom of darkness|Magic||4
 Robe top of darkness|Magic||4
 Rod of Ivandis (10)|Magic||4
@@ -2525,7 +2525,7 @@ Zuriel's hood (bh)(inactive)|Magic||4
 Zuriel's robe bottom (bh)(inactive)|Magic||4
 Zuriel's robe top (bh)(inactive)|Magic||4
 Zuriel's staff (bh)(inactive)|Magic||4
-Adamant staff of collection|Magic||5
+Adamant staff of collection|Cosmetic||5
 Amulet of air|Magic||5
 Amulet of earth|Magic||5
 Amulet of fire|Magic||5
@@ -2535,7 +2535,7 @@ Apprentice wand|Magic||5
 Beginner wand|Magic||5
 Blood ancient sceptre (l) (mangled)|Magic||5
 Book of the Dead|Magic||5
-Cursed goblin staff|Magic||5
+Cursed goblin staff|Cosmetic||5
 Elite calamity breeches (broken)|Magic||5
 Elite calamity chest (broken)|Magic||5
 Elite void robe (l) (mangled)|Melee|Magic,Ranged|5
@@ -2714,7 +2714,7 @@ Proselyte tasset|Melee||2
 Radiant oathplate chest|Melee||2
 Radiant oathplate helm|Melee||2
 Radiant oathplate legs|Melee||2
-Ring of 3rd Age|Melee|Ranged,Magic|2
+Ring of 3rd Age|Cosmetic||4
 Rune 2h sword|Melee||2
 Rune armour set|Melee||2
 Rune armour set (lg)|Melee||2
@@ -3166,7 +3166,7 @@ Crate of spears|Melee||4
 Crate of swords|Melee||4
 Crate of warhammers|Melee||4
 Defensive shield|Melee||4
-Desert boots|Melee||4
+Desert boots|Cosmetic||4
 Draconic visage|Melee||4
 Dwarven helmet|Melee||4
 Earthbound tecpatl|Melee||4
@@ -3220,7 +3220,7 @@ Guthix mjolnir|Melee||4
 Guthix platebody|Melee||4
 Guthix platelegs|Melee||4
 Guthix plateskirt|Melee||4
-Ham boots|Melee||4
+Ham boots|Cosmetic||4
 Hardcore group ironman helm|Melee||4
 Hardcore group ironman platebody|Melee||4
 Hardcore group ironman platelegs|Melee||4
@@ -3281,13 +3281,13 @@ Maple blackjack|Thieving||4
 Maple shield|Melee||4
 Monk's robe|Melee||4
 Monk's robe top|Melee||4
-Moonclan armour|Melee||4
-Moonclan boots|Melee||4
-Moonclan cape|Melee||4
-Moonclan gloves|Melee||4
-Moonclan hat|Melee||4
-Moonclan helm|Melee||4
-Moonclan skirt|Melee||4
+Moonclan armour|Cosmetic||4
+Moonclan boots|Cosmetic||4
+Moonclan cape|Cosmetic||4
+Moonclan gloves|Cosmetic||4
+Moonclan hat|Cosmetic||4
+Moonclan helm|Cosmetic||4
+Moonclan skirt|Cosmetic||4
 Morytania legs 1|Melee||4
 Mourner boots|Quest||4
 Mourner gloves|Quest||4
@@ -3419,7 +3419,7 @@ Adventurer's boots (t1)|Cosmetic||5
 Adventurer's hood (t1)|Cosmetic||5
 Adventurer's top (t1)|Cosmetic||5
 Adventurer's trousers (t1)|Cosmetic||5
-Adventurer's vambraces|Melee||5
+Adventurer's vambraces|Cosmetic||5
 Beach boxing gloves|Cosmetic||5
 Blue gingerbread shield|Cosmetic||5
 Boxing gloves|Melee||5
@@ -3453,7 +3453,7 @@ Bronze spear(p+)|Melee||5
 Bronze spear(p++)|Melee||5
 Bronze sq shield|Melee||5
 Bronze warhammer|Melee||5
-Cabbage round shield|Melee||5
+Cabbage round shield|Cosmetic||5
 Calamity breeches (broken)|Melee||5
 Calamity chest (broken)|Melee||5
 Carrot sword|Cosmetic||5
@@ -3581,9 +3581,9 @@ Rope|Tools||3
 Shantay pass|Misc||3
 Ancient shard|Misc||4
 Annihilation blueprints|Misc||4
-Annihilation weapon scroll|Misc||4
+Annihilation weapon scroll|Cosmetic||4
 Arena book|Misc||4
-Armageddon weapon scroll|Misc||4
+Armageddon weapon scroll|Cosmetic||4
 Banker's briefcase|Misc||4
 Book of Balance|Magic||4
 Book of Balance page set|Misc||4
@@ -3611,7 +3611,7 @@ Crate of kyatt teeth|Misc||4
 Crate of machinery parts|Misc||4
 Crate of pest remains|Misc||4
 Crate of poison|Misc||4
-Crate ring|Misc||4
+Crate ring|Cosmetic||4
 Crushed infernal shale|Smithing||4
 Crystal pendant|Quest||4
 Crystal shard|Misc||4
@@ -3670,7 +3670,7 @@ Oil lamp|Misc||4
 Oil lantern|Misc||4
 Purple dye|Misc||4
 Red dye|Misc||4
-Red satchel|Misc||4
+Red satchel|Cosmetic||4
 Redwood hiking staff|Misc||4
 Repair kit|Sailing||4
 Revenant ether|Misc||4
@@ -3679,7 +3679,7 @@ Rock-shell chunk|Misc||4
 Rock-shell shard|Misc||4
 Rock-shell splinter|Misc||4
 Rubium splinters|Misc||4
-Rune satchel|Misc||4
+Rune satchel|Cosmetic||4
 Rune staff of collection|Misc||4
 Sagacious spectacles|Cosmetic||4
 Saltpetre|Farming||4
@@ -3687,8 +3687,8 @@ Sapphire lantern|Misc||4
 Saradomin banner|Misc||4
 Saturated heart|Misc||4
 Shark paint|Sailing||4
-Shattered banner|Misc||4
-Shayzien banner|Misc||4
+Shattered banner|Cosmetic||4
+Shayzien banner|Cosmetic||4
 Sieve|Misc||4
 Sigil of Aggression|Misc||4
 Sigil of Barrows|Misc||4
@@ -3727,7 +3727,7 @@ Sigil of the Ruthless Ranger|Misc||4
 Sigil of the Serpent|Misc||4
 Sigil of the Skiller|Misc||4
 Sigil of Versatility|Misc||4
-Skis|Misc||4
+Skis|Cosmetic||4
 Skull of Vet'ion|Magic||4
 Steel key ring|Quest||4
 Sunfire splinters|Misc||4
@@ -3763,11 +3763,11 @@ Belle's folly|Melee||5
 Bird book|Misc||5
 Black bead|Quest||5
 Black salamander|Misc||5
-Black satchel|Misc||5
+Black satchel|Cosmetic||5
 Black staff of collection|Misc||5
 Blood pint|Misc||5
 Blue icon|Misc||5
-Book of Egg|Misc||5
+Book of Egg|Cosmetic||5
 Bottle|Misc||5
 Briefcase|Cosmetic||5
 Broav|Misc||5
@@ -3777,13 +3777,13 @@ Burnt meat|Misc||5
 Calcified moth|Teleports||5
 Candle|Misc||5
 Candle lantern|Misc||5
-Cat training medal|Misc||5
-Chaotic handegg|Misc||5
+Cat training medal|Cosmetic||5
+Chaotic handegg|Cosmetic||5
 Chores|Quest||5
-Christmas dinner|Misc||5
+Christmas dinner|Cosmetic||5
 Cider barrel|Misc||5
-Clan vexillum|Misc||5
-Clean necklace|Misc||5
+Clan vexillum|Cosmetic||5
+Clean necklace|Cosmetic||5
 Cleaning cloth|Misc||5
 Cocktail glass|Misc||5
 Cocktail guide|Misc||5
@@ -3803,16 +3803,16 @@ Crate of secret things|Misc||5
 Crate with zanik|Misc||5
 Crier bell|Cosmetic||5
 Crimson kisten|Melee||5
-Cruciferous codex|Misc||5
+Cruciferous codex|Cosmetic||5
 Crystal chime|Quest||5
 Crystal saw seed|Misc||5
-Cursed banana|Misc||5
-Cutthroat flag|Misc||5
+Cursed banana|Cosmetic||5
+Cutthroat flag|Cosmetic||5
 Cyclops head|Cosmetic||5
 Damaged monkey tail|Misc||5
 Dark flippers|Misc||5
-Deadman's chest|Misc||5
-Deadman's legs|Misc||5
+Deadman's chest|Cosmetic||5
+Deadman's legs|Cosmetic||5
 Defender icon|Misc||5
 Demon feet|Cosmetic||5
 Demonic pacts adamant trophy|Cosmetic||5
@@ -3842,36 +3842,36 @@ Fossilised dung|Misc||5
 Four barrels|Misc||5
 Fox|Misc||5
 Giant boot|Cosmetic||5
-Giant boulder|Misc||5
+Giant boulder|Cosmetic||5
 Giant egg sac(full)|Misc||5
-Giant present|Misc||5
-Giant stopwatch|Misc||5
+Giant present|Cosmetic||5
+Giant stopwatch|Cosmetic||5
 Gilded staff of collection|Misc||5
 Gnomeball|Misc||5
 Gnomebowl mould|Misc||5
 Goat horn|Misc||5
 Goblin book|Misc||5
-Goblin paint cannon|Misc||5
+Goblin paint cannon|Cosmetic||5
 Gold coffin|Misc||5
 Gold locks|Misc||5
-Gold satchel|Misc||5
+Gold satchel|Cosmetic||5
 Gold seal|Thieving||5
 Golden scarab|Thieving||5
 Golden statuette|Thieving||5
 Greater siren|Misc||5
-Green banner|Misc||5
-Green satchel|Misc||5
-Gregg's eastdoor|Misc||5
+Green banner|Cosmetic||5
+Green satchel|Cosmetic||5
+Gregg's eastdoor|Cosmetic||5
 Grey toy horsey|Misc||5
 Hair|Misc||5
 Hallowed grapple|Agility||5
 Hallowfell|Melee||5
-Hand fan|Misc||5
-Haunted wine bottle|Misc||5
-Headless head|Misc||5
+Hand fan|Cosmetic||5
+Haunted wine bottle|Cosmetic||5
+Headless head|Cosmetic||5
 Hell cat|Misc||5
-Holy handegg|Misc||5
-Holy moleys|Misc||5
+Holy handegg|Cosmetic||5
+Holy moleys|Cosmetic||5
 Inky paint|Sailing||5
 Instruction manual|Misc||5
 Iron sickle|Misc||5
@@ -3892,26 +3892,26 @@ Jar of Stone|Misc||5
 Jar of Swamp|Misc||5
 Jewel of Amascut|Misc||5
 Jug|Tools||5
-Karamjan monkey|Misc||5
+Karamjan monkey|Cosmetic||5
 Karamjan monkey greegree|Misc||5
 Key|Misc||5
-Kruk jr|Misc||5
+Kruk jr|Cosmetic||5
 Kruk monkey greegree|Misc||5
 Leaves|Misc||5
 Light orb|Misc||5
-Lost bag|Misc||5
-Lucky shot flag|Misc||5
+Lost bag|Cosmetic||5
+Lucky shot flag|Cosmetic||5
 Lyre|Misc||5
 Magic stone|Construction||5
-Maniacal monkey|Misc||5
-Mask of Ranul|Misc||5
-Mask of Rebirth|Misc||5
-Monkey|Misc||5
+Maniacal monkey|Cosmetic||5
+Mask of Ranul|Cosmetic||5
+Mask of Rebirth|Cosmetic||5
+Monkey|Cosmetic||5
 Monkey tail|Misc||5
 Mooleta|Melee||5
-Mouse toy|Misc||5
+Mouse toy|Cosmetic||5
 Mouth grip|Misc||5
-Mystic cards|Misc||5
+Mystic cards|Cosmetic||5
 New key|Quest||5
 Nihil dust|Herblore||5
 Nihil shard|Misc||5
@@ -3931,7 +3931,7 @@ Pile of salt|Quest||5
 Pillar coral|Misc||5
 Pillar frag|Farming||5
 Pink candy|Misc||5
-Plain satchel|Misc||5
+Plain satchel|Cosmetic||5
 Poison chalice|Misc||5
 Pottery scarab|Thieving||5
 Pottery statuette|Thieving||5
@@ -3940,23 +3940,23 @@ Proboscis|Misc||5
 Pugel|Misc||5
 Pyrophosphite|Misc||5
 Quetzal feed|Misc||5
-Raging echoes cane|Misc||5
+Raging echoes cane|Cosmetic||5
 Red icon|Misc||5
 Ribcage piece|Misc||5
-Rubber chicken|Misc||5
+Rubber chicken|Cosmetic||5
 Runescroll of bloodbark|Misc||5
 Runescroll of swampbark|Misc||5
-Sack of presents|Misc||5
+Sack of presents|Cosmetic||5
 Saika's hood (broken)|Misc||5
 Saika's shroud (broken)|Misc||5
 Saika's veil (broken)|Misc||5
-Santa's list|Misc||5
-Secret santa present (black)|Misc||5
-Secret santa present (blue)|Misc||5
-Secret santa present (gold)|Misc||5
-Secret santa present (green)|Misc||5
-Secret santa present (red)|Misc||5
-Severed leg|Misc||5
+Santa's list|Cosmetic||5
+Secret santa present (black)|Cosmetic||5
+Secret santa present (blue)|Cosmetic||5
+Secret santa present (gold)|Cosmetic||5
+Secret santa present (green)|Cosmetic||5
+Secret santa present (red)|Cosmetic||5
+Severed leg|Cosmetic||5
 Shaving stand|Misc||5
 Shoe box|Misc||5
 Silver coffin|Misc||5
@@ -3966,8 +3966,8 @@ Smelly sock|Misc||5
 Smouldering stone|Misc||5
 Snowball|Misc||5
 Spine|Misc||5
-Stale baguette|Misc||5
-Star-face|Misc||5
+Stale baguette|Cosmetic||5
+Star-face|Cosmetic||5
 Steel limbs|Fletching||5
 Steel locks|Misc||5
 Steel staff of collection|Misc||5
@@ -3976,9 +3976,9 @@ Stone scarab|Thieving||5
 Stone seal|Thieving||5
 Stone statuette|Thieving||5
 Sulliuscep cap|Misc||5
-Swords and emblem|Misc||5
+Swords and emblem|Cosmetic||5
 Teacher wand|Magic||5
-Terrifying charm|Misc||5
+Terrifying charm|Cosmetic||5
 Three barrels|Misc||5
 Tin cup|Misc||5
 Toy cat|Misc||5
@@ -3991,8 +3991,8 @@ Toy soldier (wound)|Misc||5
 Trading sticks|Currency||5
 Translation book|Misc||5
 Transmutation ledger|Misc||5
-Treasure flag|Misc||5
-Treat cauldron|Misc||5
+Treasure flag|Cosmetic||5
+Treat cauldron|Cosmetic||5
 Trouver parchment|Misc||5
 Twisted adamant trophy|Cosmetic||5
 Twisted banner|Cosmetic||5
@@ -4007,7 +4007,7 @@ Twisted steel trophy|Cosmetic||5
 Two barrels|Misc||5
 Umbral coral|Misc||5
 Umbral frag|Farming||5
-Undead chicken|Misc||5
+Undead chicken|Cosmetic||5
 Unholy book page set|Misc||5
 Unicorn horn|Misc||5
 Unidentified small fossil|Misc||5
@@ -4017,7 +4017,7 @@ Urium remains|Misc||5
 Vacuum pump and gull|Misc||5
 Void seal(8)|Misc||5
 Warm gloves|Firemaking||5
-Web cloak|Misc||5
+Web cloak|Cosmetic||5
 Weeds|Farming||5
 Western banner 1|Misc||5
 White claws|Melee||5
@@ -4170,7 +4170,7 @@ Abyssal ashes|Prayer||3
 Arcane prayer scroll|Prayer||3
 Arcane sigil|Magic||3
 Arcane spirit shield|Magic||3
-Bonesack|Prayer||3
+Bonesack|Cosmetic||3
 Dexterous prayer scroll|Prayer||3
 Drake bones|Prayer||3
 Ensouled abyssal head|Prayer||3
@@ -4648,7 +4648,7 @@ Pointed blood'n'tar snelm|Ranged||4
 Pointed bruise blue snelm|Ranged||4
 Pointed myre snelm|Ranged||4
 Pointed ochre snelm|Ranged||4
-Rain bow|Ranged||4
+Rain bow|Cosmetic||4
 Red d'hide body|Ranged||4
 Red d'hide chaps|Ranged||4
 Red d'hide vambraces|Ranged||4
@@ -4701,12 +4701,12 @@ Bronze knife(p++)|Ranged||5
 Bronze limbs|Fletching||5
 Bronze locks|Ranged||5
 Bronze thrownaxe|Ranged||5
-Cursed goblin bow|Ranged||5
+Cursed goblin bow|Cosmetic||5
 Dizana's max cape (l) (mangled)|Ranged||5
 Koriff's coif (broken)|Ranged||5
 Koriff's cowl (broken)|Ranged||5
 Koriff's headband (broken)|Ranged||5
-Love crossbow|Ranged||5
+Love crossbow|Cosmetic||5
 Morrigan's coif (bh)(inactive)|Ranged||5
 Morrigan's javelin (bh)(inactive)|Ranged||5
 Morrigan's leather body (bh)(inactive)|Ranged||5
@@ -4842,14 +4842,14 @@ Paddle|Sailing||4
 Rosewood repair kit|Sailing||4
 Sailors' amulet (inert)|Sailing||4
 Ship ticket|Sailing||4
-Storm cruiser's coat|Sailing||4
-Storm cruiser's hat|Sailing||4
-Storm cruiser's shoes|Sailing||4
-Storm cruiser's trousers|Sailing||4
-Swamp cruiser's hat|Sailing||4
-Swamp cruiser's jacket|Sailing||4
-Swamp cruiser's shoes|Sailing||4
-Swamp cruiser's trousers|Sailing||4
+Storm cruiser's coat|Cosmetic||4
+Storm cruiser's hat|Cosmetic||4
+Storm cruiser's shoes|Cosmetic||4
+Storm cruiser's trousers|Cosmetic||4
+Swamp cruiser's hat|Cosmetic||4
+Swamp cruiser's jacket|Cosmetic||4
+Swamp cruiser's shoes|Cosmetic||4
+Swamp cruiser's trousers|Cosmetic||4
 Teak hull parts|Sailing||4
 Bronze keel parts|Sailing||5
 Camphor crate|Sailing||5
@@ -4900,7 +4900,7 @@ Hooded slayer helmet|Slayer||3
 Mirror shield|Slayer||3
 Purple slayer helmet|Slayer||3
 Slayer bell|Slayer||3
-Snake mask|Slayer||3
+Snake mask|Cosmetic||3
 Spiny helmet|Slayer||3
 Witchwood icon|Slayer||3
 Araxyte venom sac|Herblore||4
@@ -5019,13 +5019,13 @@ Salve graveyard teleport|Teleports||3
 Teleport anchoring scroll|Teleports||3
 Teleport crystal (3)|Teleports||3
 Teleport to house|Teleports||3
-Twisted teleport scroll|Teleports||3
+Twisted teleport scroll|Cosmetic||3
 Xeric's talisman|Teleports||3
 Amulet of bounty|Farming||4
 Annakarl teleport|Teleports||4
-Annihilation teleport scroll|Teleports||4
+Annihilation teleport scroll|Cosmetic||4
 Ape atoll teleport|Teleports||4
-Armageddon teleport scroll|Teleports||4
+Armageddon teleport scroll|Cosmetic||4
 Carrallanger teleport|Teleports||4
 Dareeyak teleport|Teleports||4
 Digsite pendant (1)|Teleports||4
@@ -5042,13 +5042,13 @@ Strange teleorb|Quest||4
 Target teleport|Teleports||4
 Target teleport scroll|Teleports||4
 Teleport card|Teleports||4
-Trailblazer teleport scroll|Teleports||4
+Trailblazer teleport scroll|Cosmetic||4
 Wilderness crabs teleport|Teleports||4
 Xeric's talisman (inert)|Teleports||4
 Zul-andra teleport|Teleports||4
 Dorgesh-kaan sphere|Teleports||5
-Trailblazer reloaded death scroll|Teleports||5
-Trailblazer reloaded home teleport scroll|Teleports||5
+Trailblazer reloaded death scroll|Cosmetic||5
+Trailblazer reloaded home teleport scroll|Cosmetic||5
 House keys|Thieving||2
 Valuables|Thieving||2
 Dodgy necklace|Thieving||3
