@@ -132,6 +132,13 @@ public class CategoriserTest
 	}
 
 	@Test
+	public void costumeNeedleIsCrafting()
+	{
+		Categoriser c = new Categoriser(UserRules.parse(""));
+		assertEquals("Crafting", c.categorise(29920, "Costume needle", NONE, null));
+	}
+
+	@Test
 	public void userRulesOverrideBuiltIns()
 	{
 		Categoriser c = new Categoriser(UserRules.parse("Slayer: slayer helm*"));

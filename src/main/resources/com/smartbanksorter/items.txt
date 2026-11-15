@@ -1379,6 +1379,7 @@ Zombie shirt|Cosmetic||5
 Zombie trousers|Cosmetic||5
 Chisel|Crafting||2
 Clay|Crafting||2
+Costume needle|Crafting||2
 Dragonstone|Crafting||2
 Glassblowing pipe|Crafting||2
 Needle|Crafting||2
