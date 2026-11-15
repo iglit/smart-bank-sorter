@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import net.runelite.api.EquipmentInventorySlot;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.gameval.InterfaceID;
@@ -127,16 +128,16 @@ class ItemCopies
 	 * Items the bundled data lists under extra categories (logs for Firemaking, Graceful for Farming...) get a
 	 * withdrawable copy in each of them.
 	 */
-	void addDataCopies(Map<String, List<Slot>> groups)
+	void addDataCopies(Map<String, List<Slot>> groups, Predicate<Slot> placedByRule)
 	{
 		List<Slot> originals = new ArrayList<>();
 		groups.values().forEach(list -> list.stream().filter(s -> !s.copy).forEach(originals::add));
 		for (Slot s : originals)
 		{
 			ItemData.Entry data = ItemData.get(s.name);
-			if (data == null || !data.category.equals(s.category))
+			// A rule's placement wins. Combat gear can still sit outside its data category: its stats pick the style.
+			if (data == null || placedByRule.test(s))
 			{
-				// A user rule moved it; their placement wins.
 				continue;
 			}
 			for (String extra : data.extras)

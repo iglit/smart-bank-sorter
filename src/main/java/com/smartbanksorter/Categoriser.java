@@ -49,11 +49,7 @@ final class Categoriser
 	 */
 	String categorise(int itemId, String name, String[] actions, ItemEquipmentStats equipment)
 	{
-		String custom = userRules.match(itemId, name);
-		if (custom == null)
-		{
-			custom = OVERRIDES.match(itemId, name);
-		}
+		String custom = ruleCategory(itemId, name);
 		if (custom == null)
 		{
 			ItemData.Entry data = ItemData.get(name);
@@ -70,6 +66,15 @@ final class Categoriser
 			}
 		}
 		return custom != null ? custom : builtIn(name.toLowerCase(), actions, equipment);
+	}
+
+	/**
+	 * @return the category a user rule or bundled override puts the item in, or null if none matches
+	 */
+	String ruleCategory(int itemId, String name)
+	{
+		String custom = userRules.match(itemId, name);
+		return custom != null ? custom : OVERRIDES.match(itemId, name);
 	}
 
 	static String builtIn(String name, String[] actions, ItemEquipmentStats equipment)

@@ -122,6 +122,16 @@ public class CategoriserTest
 	}
 
 	@Test
+	public void voidHelmsPickTheirStyle()
+	{
+		Categoriser c = new Categoriser(UserRules.parse(""));
+		ItemEquipmentStats helm = slot(EquipmentInventorySlot.HEAD).dstab(6).dslash(6).dcrush(6).dmagic(6).drange(6).build();
+		assertEquals(MELEE, c.categorise(11665, "Void melee helm", NONE, helm));
+		assertEquals(RANGED, c.categorise(11664, "Void ranger helm", NONE, helm));
+		assertEquals(MAGIC, c.categorise(11663, "Void mage helm (or)", NONE, helm));
+	}
+
+	@Test
 	public void userRulesOverrideBuiltIns()
 	{
 		Categoriser c = new Categoriser(UserRules.parse("Slayer: slayer helm*"));

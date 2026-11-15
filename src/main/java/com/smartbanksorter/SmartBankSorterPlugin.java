@@ -613,7 +613,7 @@ public class SmartBankSorterPlugin extends Plugin
 		{
 			itemCopies.addHybridCopies(groups);
 		}
-		itemCopies.addDataCopies(groups);
+		itemCopies.addDataCopies(groups, s -> categoriser.ruleCategory(s.itemId, s.name) != null);
 		if (config.gearByQuality())
 		{
 			itemCopies.addTeleportGearCopies(groups);

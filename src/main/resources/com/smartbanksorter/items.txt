@@ -2146,8 +2146,8 @@ Dark infinity hat|Magic||2
 Dark infinity top|Magic||2
 Earth battlestaff|Magic||2
 Eldritch Nightmare staff|Magic||2
-Elite void robe|Magic||2
-Elite void top|Magic||2
+Elite void robe|Melee|Magic,Ranged|2
+Elite void top|Melee|Magic,Ranged|2
 Fire max cape|Magic||2
 Fire max hood|Magic||2
 Harmonised Nightmare staff|Magic||2
@@ -2185,7 +2185,7 @@ Virtus armour set|Magic||2
 Virtus mask|Magic||2
 Virtus robe bottom|Magic||2
 Virtus robe top|Magic||2
-Void knight robe|Magic|Melee,Ranged|2
+Void knight robe|Melee|Magic,Ranged|2
 Void mage helm|Magic||2
 Volatile Nightmare staff|Magic||2
 Water battlestaff|Magic||2
@@ -2395,8 +2395,8 @@ Elder chaos robe|Magic||4
 Elder chaos top|Magic||4
 Elemental amulet|Magic||4
 Elemental helmet|Magic||4
-Elite void robe (l)(or)|Magic||4
-Elite void top (l)(or)|Magic||4
+Elite void robe (l)(or)|Melee|Magic,Ranged|4
+Elite void top (l)(or)|Melee|Magic,Ranged|4
 Emberlight|Magic||4
 Enchant diamond|Magic||4
 Enchant dragonstone|Magic||4
@@ -2448,7 +2448,7 @@ Rod of Ivandis (10)|Magic||4
 Shadow ancient sceptre (l) (mangled)|Magic||4
 Socks of Ruin|Magic||4
 Spectral sigil|Magic||4
-Void knight robe (l)(or)|Magic|Melee,Ranged|4
+Void knight robe (l)(or)|Melee|Magic,Ranged|4
 Void mage helm (l)(or)|Magic||4
 Volatile orb|Magic||4
 White magic staff|Magic||4
@@ -2474,8 +2474,8 @@ Book of the Dead|Magic||5
 Cursed goblin staff|Magic||5
 Elite calamity breeches (broken)|Magic||5
 Elite calamity chest (broken)|Magic||5
-Elite void robe (l) (mangled)|Magic||5
-Elite void top (l) (mangled)|Magic||5
+Elite void robe (l) (mangled)|Melee|Magic,Ranged|5
+Elite void top (l) (mangled)|Melee|Magic,Ranged|5
 Hallowed focus|Magic||5
 Hood of darkness|Magic||5
 Icthlarin's hood (tier 5)|Magic||5
@@ -2484,7 +2484,7 @@ Smoke ancient sceptre (l) (mangled)|Magic||5
 Staff|Magic||5
 Starter staff|Magic||5
 Steam staff upgrade kit|Magic||5
-Void knight robe (l) (mangled)|Magic|Melee,Ranged|5
+Void knight robe (l) (mangled)|Melee|Magic,Ranged|5
 Void mage helm (l) (mangled)|Magic||5
 Water orb|Magic||5
 Abyssal bludgeon|Melee||1
