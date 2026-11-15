@@ -357,14 +357,14 @@ Spork|Cooking||5
 Wooden spoon|Cooking||5
 Max cape|Cosmetic||2
 Max hood|Cosmetic||2
-Saradomin max cape|Cosmetic||2
+Saradomin max cape|Magic||2
 Saradomin max hood|Cosmetic||2
-Accumulator max cape|Cosmetic||3
+Accumulator max cape|Ranged||3
 Accumulator max hood|Cosmetic||3
 Agility cape|Cosmetic||3
-Ardougne max cape|Cosmetic||3
+Ardougne max cape|Melee||3
 Ardougne max hood|Cosmetic||3
-Assembler max cape|Cosmetic||3
+Assembler max cape|Ranged||3
 Assembler max hood|Cosmetic||3
 Attack cape|Cosmetic||3
 Farming cape|Cosmetic||3
@@ -375,7 +375,7 @@ Fishing cape|Cosmetic||3
 Fishing hood|Cosmetic||3
 Fletching cape|Cosmetic||3
 Fletching hood|Cosmetic||3
-Guthix max cape|Cosmetic||3
+Guthix max cape|Magic||3
 Guthix max hood|Cosmetic||3
 Herblore cape|Cosmetic||3
 Herblore hood|Cosmetic||3
@@ -383,21 +383,21 @@ Hitpoints cape|Cosmetic||3
 Hitpoints hood|Cosmetic||3
 Hunter cape|Cosmetic||3
 Hunter hood|Cosmetic||3
-Imbued ancient max cape|Cosmetic||3
+Imbued ancient max cape|Magic||3
 Imbued ancient max hood|Cosmetic||3
-Imbued Guthix cape|Cosmetic||3
-Imbued Guthix max cape|Cosmetic||3
+Imbued Guthix cape|Magic||3
+Imbued Guthix max cape|Magic||3
 Imbued Guthix max hood|Cosmetic||3
-Imbued Saradomin cape|Cosmetic||3
-Imbued Saradomin max cape|Cosmetic||3
+Imbued Saradomin cape|Magic||3
+Imbued Saradomin max cape|Magic||3
 Imbued Saradomin max hood|Cosmetic||3
-Imbued Zamorak cape|Cosmetic||3
-Imbued Zamorak max cape|Cosmetic||3
+Imbued Zamorak cape|Magic||3
+Imbued Zamorak max cape|Magic||3
 Imbued Zamorak max hood|Cosmetic||3
-Infernal max cape|Cosmetic||3
+Infernal max cape|Melee||3
 Infernal max hood|Cosmetic||3
-Mythical cape|Cosmetic||3
-Mythical max cape|Cosmetic||3
+Mythical cape|Melee||3
+Mythical max cape|Melee||3
 Mythical max hood|Cosmetic||3
 Prayer cape|Cosmetic||3
 Prayer hood|Cosmetic||3
@@ -407,7 +407,7 @@ Sailing cape|Cosmetic||3
 Sailing hood|Cosmetic||3
 Smithing cape|Cosmetic||3
 Smithing hood|Cosmetic||3
-Zamorak max cape|Cosmetic||3
+Zamorak max cape|Magic||3
 Zamorak max hood|Cosmetic||3
 Achievement diary hood|Cosmetic||4
 Adamant gold-trimmed set (lg)|Cosmetic||4
@@ -446,7 +446,7 @@ Gravedigger mask|Cosmetic||4
 Gravedigger top|Cosmetic||4
 Guthix cloak|Cosmetic||4
 Hosidius hood|Cosmetic||4
-Infernal max cape (l) (mangled)|Cosmetic||4
+Infernal max cape (l) (mangled)|Melee||4
 Magic cape|Cosmetic||4
 Mithril gold-trimmed set (lg)|Cosmetic||4
 Mithril trimmed set (lg)|Cosmetic||4
@@ -470,7 +470,7 @@ Samurai gloves|Cosmetic||4
 Samurai greaves|Cosmetic||4
 Samurai kasa|Cosmetic||4
 Samurai shirt|Cosmetic||4
-Saradomin cape|Cosmetic||4
+Saradomin cape|Magic||4
 Saradomin cloak|Cosmetic||4
 Saradomin godsword ornament kit|Cosmetic||4
 Saradomin halo|Cosmetic||4
@@ -2040,12 +2040,12 @@ Ring of the gods|Jewellery||2
 Zenyte bracelet|Jewellery||2
 Zenyte necklace|Jewellery||2
 Zenyte ring|Jewellery||2
-3rd Age amulet|Jewellery||3
-Combat bracelet(4)|Jewellery||3
-Dragonbone necklace|Jewellery||3
+3rd Age amulet|Magic||3
+Combat bracelet(4)|Teleports||3
+Dragonbone necklace|Ranged||3
 Dragonstone bracelet|Jewellery||3
 Dragonstone ring|Jewellery||3
-Regen bracelet|Jewellery||3
+Regen bracelet|Melee||3
 Ring of Charos|Jewellery||3
 Ring of endurance (uncharged)|Jewellery||3
 Ring of life|Jewellery||3
@@ -2085,7 +2085,7 @@ Opal ring|Jewellery||4
 Pendant of Ates|Jewellery||4
 Ring of Charos(a)|Jewellery||4
 Ring of pursuit|Jewellery||4
-Ring of shadows|Jewellery||4
+Ring of shadows|Melee||4
 Ring of stone|Jewellery||4
 Ruby amulet|Jewellery||4
 Ruby bracelet|Jewellery||4
@@ -3507,7 +3507,7 @@ Annihilation weapon scroll|Misc||4
 Arena book|Misc||4
 Armageddon weapon scroll|Misc||4
 Banker's briefcase|Misc||4
-Book of Balance|Misc||4
+Book of Balance|Magic||4
 Book of Balance page set|Misc||4
 Book of Darkness page set|Misc||4
 Book of Law page set|Misc||4
@@ -3576,8 +3576,8 @@ Long kebbit spike|Misc||4
 Magic fang|Misc||4
 Magic lantern|Misc||4
 Malediction shard 1|Misc||4
-Masori assembler|Misc||4
-Masori assembler max cape|Misc||4
+Masori assembler|Ranged||4
+Masori assembler max cape|Ranged||4
 Masori assembler max hood|Misc||4
 Master scroll book (empty)|Misc||4
 Mithril staff of collection|Misc||4
@@ -4089,7 +4089,7 @@ Wyvern bones|Prayer||2
 Abyssal ashes|Prayer||3
 Arcane prayer scroll|Prayer||3
 Arcane sigil|Prayer||3
-Arcane spirit shield|Prayer||3
+Arcane spirit shield|Magic||3
 Bonesack|Prayer||3
 Dexterous prayer scroll|Prayer||3
 Drake bones|Prayer||3
@@ -4136,7 +4136,7 @@ Burnt bones|Prayer||4
 Crushed superior dragon bones|Prayer||4
 Ensouled elf head|Prayer||4
 Ensouled hellhound head|Prayer||4
-Holy book|Prayer||4
+Holy book|Melee||4
 Holy symbol|Prayer||4
 Jogre bones|Prayer||4
 Loar remains|Prayer||4
@@ -4150,7 +4150,7 @@ Vile ashes|Prayer||4
 Wyrm bones|Prayer||4
 Zogre bones|Prayer||4
 Holy book page set|Prayer||5
-Book of Law|Quest|Ranged|4
+Book of Law|Ranged||4
 Burnt page|Quest||4
 Chronicle|Quest||4
 Crystal of Echoes|Quest||4
@@ -4682,7 +4682,7 @@ Water talisman|Runecraft||4
 Water tiara|Runecraft||4
 Wrath talisman|Runecraft||4
 Wrath tiara|Runecraft||4
-Guardian boots|Runecraft||5
+Guardian boots|Melee||5
 Air rune|Runes||1
 Body rune|Runes||1
 Chaos rune|Runes||1
@@ -4962,7 +4962,7 @@ Thieving cape|Thieving||3
 Thieving hood|Thieving||3
 Grubby key|Thieving||4
 Silver locks|Thieving||4
-Spiked manacles|Thieving||4
+Spiked manacles|Melee||4
 Thieving bag|Thieving||4
 Willow blackjack|Thieving||4
 Corrupted axe|Woodcutting||2
