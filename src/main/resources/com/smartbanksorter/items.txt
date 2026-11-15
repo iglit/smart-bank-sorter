@@ -409,7 +409,7 @@ Smithing cape|Cosmetic||3
 Smithing hood|Cosmetic||3
 Zamorak max cape|Magic||3
 Zamorak max hood|Cosmetic||3
-Achievement diary hood|Cosmetic||4
+Achievement diary hood|Teleports||4
 Adamant gold-trimmed set (lg)|Cosmetic||4
 Adamant set (lg)|Cosmetic||4
 Adamant trimmed set (lg)|Cosmetic||4
@@ -435,7 +435,7 @@ Emissary hood|Cosmetic||4
 Emissary robe bottom|Cosmetic||4
 Emissary robe top|Cosmetic||4
 Emissary sandals|Cosmetic||4
-Farmer's jacket|Cosmetic||4
+Farmer's jacket|Farming||4
 Frog mask|Cosmetic||4
 Fury ornament kit|Cosmetic||4
 Gorilla greegree|Cosmetic||4
@@ -765,7 +765,7 @@ Dog boots|Cosmetic||5
 Dog disguise|Cosmetic||5
 Double eye patch|Cosmetic||5
 Dragon boots ornament kit|Cosmetic||5
-Dragon cane|Cosmetic||5
+Dragon cane|Melee||4
 Dragon chainbody ornament kit|Cosmetic||5
 Dragon defender ornament kit|Cosmetic||5
 Dragon full helm ornament kit|Cosmetic||5
@@ -791,9 +791,9 @@ Fake beak|Cosmetic||5
 Fake beard|Cosmetic||5
 Fancier boots|Cosmetic||5
 Fancy boots|Cosmetic||5
-Farmer's boro trousers|Cosmetic||5
-Farmer's shirt|Cosmetic||5
-Farmer's strawhat|Cosmetic||5
+Farmer's boro trousers|Farming||4
+Farmer's shirt|Farming||4
+Farmer's strawhat|Farming||4
 Fedora|Cosmetic||5
 Festive elf hat|Cosmetic||5
 Festive elf slippers|Cosmetic||5
@@ -850,7 +850,7 @@ Gold elegant skirt|Cosmetic||5
 Gold headband|Cosmetic||5
 Gold speedrun trophy|Cosmetic||5
 Golden apron|Cosmetic||5
-Golovanova fruit top|Cosmetic||5
+Golovanova fruit top|Cooking||5
 Greater demon mask|Cosmetic||5
 Green boater|Cosmetic||5
 Green cape|Cosmetic||5
@@ -898,9 +898,9 @@ Ham robe|Cosmetic||5
 Ham shirt|Cosmetic||5
 Hard hat|Cosmetic||5
 Hat eyepatch|Cosmetic||5
-Hat of the Eye|Cosmetic||5
-Hat of the Eye (blue)|Cosmetic||5
-Hat of the Eye (green)|Cosmetic||5
+Hat of the Eye|Runecraft||3
+Hat of the Eye (blue)|Runecraft||3
+Hat of the Eye (green)|Runecraft||3
 Healer hat|Cosmetic||5
 Healer icon|Cosmetic||5
 Hell cat ears|Cosmetic||5
@@ -948,7 +948,7 @@ Light tuxedo shoes|Cosmetic||5
 Lovakengj banner|Cosmetic||5
 Lovakengj hood|Cosmetic||5
 Lovakengj scarf|Cosmetic||5
-Lovley{{sic}} jubbly bib|Cosmetic||5
+Lovley jubbly bib|Cosmetic||5
 Medical gown|Cosmetic||5
 Menaphite purple hat|Cosmetic||5
 Menaphite purple kilt|Cosmetic||5
@@ -1039,7 +1039,7 @@ Powder grey pumpkin (laughing)|Cosmetic||5
 Powder grey pumpkin (sad)|Cosmetic||5
 Powder grey pumpkin (shocked)|Cosmetic||5
 Powder grey pumpkin (silly)|Cosmetic||5
-Prescription goggles|Cosmetic||5
+Prescription goggles|Herblore||4
 Present box hat|Cosmetic||5
 Priest gown|Cosmetic||5
 Princely monkey|Cosmetic||5
@@ -1161,7 +1161,7 @@ Snow imp costume legs|Cosmetic||5
 Snow imp costume tail|Cosmetic||5
 Snowglobe helmet|Cosmetic||5
 Snowman ring|Cosmetic||5
-Snowy knight|Cosmetic||5
+Snowy knight|Hunter||5
 Spider hat|Cosmetic||5
 Spookier boots|Cosmetic||5
 Spookier gloves|Cosmetic||5
