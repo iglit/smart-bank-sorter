@@ -16,9 +16,11 @@ moves, and turning the plugin off gives you your normal bank back.
   their other categories. These copies work exactly like the real item, including withdrawing.
 - **Tabs**: tabs down the left edge show just Combat, Runes & teleports, Food & potions, or Skilling.
 - **Your own rules**: right-click any item, **Move to**, and pick a category. Or write rules under
-  *Custom categories*, e.g. `Slayer: slayer helm*, enchanted gem`.
+  *Custom categories*, e.g. `Slayer: slayer helm*, enchanted gem`. A name that isn't a built-in category makes a
+  new one, e.g. `Bossing: dragon defender, *salve amulet*`.
 
-Right-click the bank's search button to turn sorting on and off.
+**Turning it on and off**: right-click the bank's search button (the magnifying glass under the items) and pick
+**Sort** or **Unsort**, or use *Sort bank* in the plugin's settings.
 
 ## Searching by category
 
@@ -35,9 +37,11 @@ bank. Searching a category's full name also adds its items to the results.
 | Rank combat gear | Outfit columns for Melee, Ranged and Magic |
 | Arrange food & potions | Heal order for food, dose columns for potions, usefulness order for teleports |
 | Sort inside bank tabs | Also group items when a numbered bank tab is open |
+| Hide bank fillers | Leave bank fillers out of the sorted view |
 | Category search | Suggest a category to jump to while searching, and show a category's items when you search its name |
 | Category tabs / Tabs | Show the left-edge tabs and choose what each tab contains |
 | Outfit layout | Outfits as columns (default) or rows |
+| Header size / Header colour / Show item counts / Divider lines | How category headers look |
 | Custom categories / Category order / Gear sets | Your own rules, the order of sections, and extra armour sets to keep together |
 
 ## Compatibility
