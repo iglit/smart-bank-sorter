@@ -32,6 +32,7 @@ import net.runelite.api.events.ScriptCallbackEvent;
 import net.runelite.api.events.ScriptPostFired;
 import net.runelite.api.events.ScriptPreFired;
 import net.runelite.api.events.WidgetClosed;
+import net.runelite.api.events.WidgetDrag;
 import net.runelite.api.gameval.InterfaceID;
 import net.runelite.api.gameval.InventoryID;
 import net.runelite.api.gameval.ItemID;
@@ -146,8 +147,6 @@ public class SmartBankSorterPlugin extends Plugin
 	private TabStrip tabStrip;
 	private ItemCopies itemCopies;
 	private MoveToMenu moveToMenu;
-	private int originalDragDeadZone = -1;
-	private int originalDragDeadTime = -1;
 
 	@Provides
 	SmartBankSorterConfig provideConfig(ConfigManager configManager)
@@ -261,6 +260,26 @@ public class SmartBankSorterPlugin extends Plugin
 		if (event.getGroupId() == InterfaceID.BANKMAIN)
 		{
 			hideSuggestion();
+		}
+	}
+
+	// Items are only moved visually, so dropping one on another would swap real bank slots the user can't see. Other
+	// drops still go through: onto a Bank Tags tag tab to tag the item, or onto a bank tab. A copy sits in an empty
+	// slot, so it may only be dropped on a tag tab (Bank Tags' tabs are in the items container).
+	@Subscribe
+	public void onWidgetDrag(WidgetDrag event)
+	{
+		Widget dragged = client.getDraggedWidget();
+		Widget draggedOn = client.getDraggedOnWidget();
+		if (!sortingThisBuild || dragged == null || dragged.getId() != InterfaceID.Bankmain.ITEMS || draggedOn == null)
+		{
+			return;
+		}
+		if (draggedOn.getId() == InterfaceID.Bankmain.ITEMS
+			|| itemCopies.isCopy(dragged) && draggedOn.getId() != InterfaceID.Bankmain.ITEMS_CONTAINER)
+		{
+			// Nulling the drop target is the only way to cancel a drop; Bank Tags does the same.
+			client.setDraggedOnWidget(null);
 		}
 	}
 
@@ -748,10 +767,6 @@ public class SmartBankSorterPlugin extends Plugin
 					w.setHidden(false);
 					w.setOriginalX(START_X + (i % COLUMNS) * PITCH_X);
 					w.setOriginalY(y + (i / COLUMNS) * PITCH_Y);
-					if (!slot.copy)
-					{
-						blockDrag(w);
-					}
 					w.revalidate();
 				}
 				if (!isCollapsed && !filteredOut)
@@ -1046,8 +1061,6 @@ public class SmartBankSorterPlugin extends Plugin
 		itemCopies.hideFrom(0);
 		// The spare slots become real ones as the bank fills; a click there must not go to a copy's old target.
 		itemCopies.clearTargets();
-		// The game only sets the drag dead zone when the bank opens, so later builds don't undo ours.
-		restoreDrag();
 	}
 
 	private void toggleCollapsed(String category)
@@ -1059,34 +1072,5 @@ public class SmartBankSorterPlugin extends Plugin
 		List<String> sorted = new ArrayList<>(collapsed);
 		Collections.sort(sorted);
 		configManager.setConfiguration(SmartBankSorterConfig.GROUP, SmartBankSorterConfig.COLLAPSED_KEY, Text.toCSV(sorted));
-	}
-
-	// Items are only moved visually, so dragging one would swap real bank slots the user can't see.
-	private void blockDrag(Widget w)
-	{
-		if (originalDragDeadZone < 0)
-		{
-			originalDragDeadZone = w.getDragDeadZone();
-			originalDragDeadTime = w.getDragDeadTime();
-		}
-		w.setDragDeadZone(Integer.MAX_VALUE);
-		w.setDragDeadTime(Integer.MAX_VALUE);
-	}
-
-	private void restoreDrag()
-	{
-		Widget container = client.getWidget(InterfaceID.Bankmain.ITEMS);
-		if (container == null || container.getChildren() == null || originalDragDeadZone < 0)
-		{
-			return;
-		}
-		for (Widget w : container.getChildren())
-		{
-			if (w != null && w.getDragDeadZone() == Integer.MAX_VALUE)
-			{
-				w.setDragDeadZone(originalDragDeadZone);
-				w.setDragDeadTime(originalDragDeadTime);
-			}
-		}
 	}
 }

@@ -39,6 +39,11 @@ class ItemCopies
 		copyTargets.clear();
 	}
 
+	boolean isCopy(Widget w)
+	{
+		return copyTargets.containsKey(w.getIndex());
+	}
+
 	void hideFrom(int from)
 	{
 		for (int i = from; i < spares.size(); i++)
@@ -223,8 +228,8 @@ class ItemCopies
 		{
 			w.setAction(i, actions[i]);
 		}
-		w.setDragDeadZone(Integer.MAX_VALUE);
-		w.setDragDeadTime(Integer.MAX_VALUE);
+		w.setDragDeadZone(real.getDragDeadZone());
+		w.setDragDeadTime(real.getDragDeadTime());
 		w.setHidden(false);
 		copyTargets.put(w.getIndex(), slot.index);
 		return w;
