@@ -184,7 +184,7 @@ Open silver coffin|Construction||5
 Open steel coffin|Construction||5
 Opulent table|Construction||5
 Raging echoes curtains|Construction||5
-Wooden cat|Construction||5
+Wooden cat|Quest||5
 Grapes|Cooking||2
 Leaping trout|Cooking||2
 Raw swordfish|Cooking||2
@@ -443,10 +443,10 @@ Deadman's cape|Cosmetic||4
 Defence cape|Cosmetic||4
 Defence hood|Cosmetic||4
 Eagle cape|Cosmetic||4
-Emissary hood|Cosmetic||4
-Emissary robe bottom|Cosmetic||4
-Emissary robe top|Cosmetic||4
-Emissary sandals|Cosmetic||4
+Emissary hood|Quest||4
+Emissary robe bottom|Quest||4
+Emissary robe top|Quest||4
+Emissary sandals|Quest||4
 Farmer's jacket|Farming||4
 Frog mask|Cosmetic||4
 Fury ornament kit|Cosmetic||4
@@ -506,7 +506,7 @@ Zamorak godsword ornament kit|Cosmetic||4
 Zombie monkey greegree|Cosmetic||4
 10th birthday balloons|Cosmetic||5
 10th birthday cape|Cosmetic||5
-10th squad sigil|Cosmetic||5
+10th squad sigil|Quest||5
 20th anniversary boots|Cosmetic||5
 20th anniversary bottom|Cosmetic||5
 20th anniversary cape|Cosmetic||5
@@ -1326,17 +1326,17 @@ Villager armband|Cosmetic||5
 Villager hat|Cosmetic||5
 Villager robe|Cosmetic||5
 Villager sandals|Cosmetic||5
-Vyre noble blazer|Cosmetic||5
-Vyre noble coat tails|Cosmetic||5
-Vyre noble corset|Cosmetic||5
-Vyre noble dress bottom|Cosmetic||5
-Vyre noble dress top|Cosmetic||5
-Vyre noble legs|Cosmetic||5
-Vyre noble pants|Cosmetic||5
-Vyre noble shoes|Cosmetic||5
-Vyre noble skirt|Cosmetic||5
-Vyre noble top|Cosmetic||5
-Vyre noble vest|Cosmetic||5
+Vyre noble blazer|Quest||5
+Vyre noble coat tails|Quest||5
+Vyre noble corset|Quest||5
+Vyre noble dress bottom|Quest||5
+Vyre noble dress top|Quest||5
+Vyre noble legs|Quest||5
+Vyre noble pants|Quest||5
+Vyre noble shoes|Quest||5
+Vyre noble skirt|Quest||5
+Vyre noble top|Quest||5
+Vyre noble vest|Quest||5
 White apron|Cosmetic||5
 White beret|Cosmetic||5
 White boater|Cosmetic||5
@@ -1454,7 +1454,7 @@ Hueycoatl hide|Crafting||3
 Hydra leather|Crafting||3
 Jade|Crafting||3
 Jade amulet (u)|Crafting||3
-Klank's gauntlets|Crafting||3
+Klank's gauntlets|Quest||4
 Masori crafting kit|Crafting||3
 Molten glass|Crafting||3
 Onyx|Crafting||3
@@ -1581,7 +1581,7 @@ Bronze wire|Crafting||5
 Earth orb|Crafting||5
 Eldritch orb|Magic||4
 Oil lantern frame|Crafting||5
-Polished buttons|Crafting||5
+Polished buttons|Quest||5
 Coins|Currency||1
 Old school bond|Currency||1
 Tokkul|Currency||3
@@ -1693,7 +1693,7 @@ Rake|Farming||4
 Ruby harvest|Hunter||4
 Secateurs attachment|Woodcutting||4
 Shears|Farming|Crafting|4
-Shrunk ogleroot|Farming||4
+Shrunk ogleroot|Quest||5
 Sigil of Enhanced Harvest|Farming||4
 Sigil of the Fortune Farmer|Farming||4
 Teak sapling|Farming||4
@@ -1802,7 +1802,7 @@ Pearl barbarian rod|Fishing||3
 Pearl fishing rod|Fishing||3
 Pearl fly fishing rod|Fishing||3
 Sandworms|Fishing||3
-Seasoned sardine|Fishing||3
+Seasoned sardine|Quest||5
 Shark lure|Fishing||3
 Spirit angler boots|Fishing||3
 Spirit angler headband|Fishing||3
@@ -2014,7 +2014,7 @@ Sigil of the Potion Master|Herblore||4
 Swamp paste|Herblore||4
 Swamp weed|Herblore||4
 Tarromin tar|Herblore||4
-Trollweiss|Herblore||4
+Trollweiss|Quest||5
 Unicorn horn dust|Herblore||4
 Vial of blood|Herblore||4
 Volcanic ash|Farming||4
@@ -2313,7 +2313,7 @@ Enchanted robe|Magic||3
 Enchanted top|Magic||3
 Eternal boots|Magic||3
 Fire battlestaff|Magic||3
-Glarial's amulet|Magic||3
+Glarial's amulet|Quest||3
 Guthix cape|Magic||3
 Guthix staff|Magic||3
 Holy sanguinesti staff|Magic||3
@@ -2370,7 +2370,7 @@ Robe bottom of Ruin|Cosmetic||3
 Robe bottoms of the Eye|Runecraft||3
 Robe bottoms of the Eye (blue)|Runecraft||3
 Robe bottoms of the Eye (green)|Runecraft||3
-Robe of Elidinis|Magic||3
+Robe of Elidinis|Quest||3
 Robe top of Ruin|Cosmetic||3
 Robe top of the Eye|Runecraft||3
 Robe top of the Eye (blue)|Runecraft||3
@@ -2495,9 +2495,9 @@ Ice element staff crown|Magic||4
 Icthlarin's shroud|Cosmetic||5
 Lava staff upgrade kit|Cosmetic||4
 Lunar cape|Magic||4
-Lunar staff - pt1|Magic||4
-Lunar staff - pt2|Magic||4
-Lunar staff - pt3|Magic||4
+Lunar staff - pt1|Quest||4
+Lunar staff - pt2|Quest||4
+Lunar staff - pt3|Quest||4
 Mage's book|Magic||4
 Magic hood|Magic||4
 Magic shield|Magic||4
@@ -2868,7 +2868,7 @@ Darklight|Melee||3
 Demonic boots (t1)|Cosmetic||3
 Demonic hood (t1)|Cosmetic||3
 Devout boots|Melee||3
-Diamond sickle (b)|Melee||3
+Diamond sickle (b)|Quest||3
 Dragon dagger (p)(cr)|Melee||3
 Dragon dagger (p+)(cr)|Melee||3
 Dragon dagger (p++)(cr)|Melee||3
@@ -2886,10 +2886,10 @@ Eclipse Moon armour set|Ranged||3
 Elite black full helm|Melee||3
 Elite black platebody|Melee||3
 Elite black platelegs|Melee||3
-Emerald sickle (b)|Melee||3
-Enchanted diamond sickle (b)|Melee||3
-Enchanted emerald sickle (b)|Melee||3
-Enchanted ruby sickle (b)|Melee||3
+Emerald sickle (b)|Quest||3
+Enchanted diamond sickle (b)|Quest||3
+Enchanted emerald sickle (b)|Quest||3
+Enchanted ruby sickle (b)|Quest||3
 Fighter torso|Melee||3
 Fighting boots|Melee||3
 Fremennik blade|Melee||3
@@ -3108,7 +3108,7 @@ Black dagger(p++)|Melee||4
 Black defender|Melee||4
 Black full helm|Melee||4
 Black gloves|Melee||4
-Black goblin mail|Melee||4
+Black goblin mail|Quest||4
 Black halberd|Melee||4
 Black helm (h1)|Melee||4
 Black kiteshield|Melee||4
@@ -3127,9 +3127,9 @@ Black spear(p++)|Melee||4
 Black spiky vambraces|Melee||4
 Black sq shield|Melee||4
 Black warhammer|Melee||4
-Blessed axe|Melee||4
+Blessed axe|Quest||4
 Blood'n'tar snelm|Melee||4
-Blue goblin mail|Melee||4
+Blue goblin mail|Quest||4
 Blue Moon spear|Melee||4
 Blue spiky vambraces|Melee||4
 Blurite sword|Melee||4
@@ -3313,7 +3313,7 @@ Red spiky vambraces|Melee||4
 Red topaz machete|Melee||4
 Redwood shield|Melee||4
 Rogue's revenge|Cosmetic||4
-Ruby sickle (b)|Melee||4
+Ruby sickle (b)|Quest||4
 Rune cane|Melee||4
 Saradomin's light|Misc||4
 Searing boots|Melee||4
@@ -3380,7 +3380,7 @@ White dagger|Melee||4
 White dagger(p+)|Melee||4
 White dagger(p++)|Melee||4
 White full helm|Melee||4
-White goblin mail|Melee||4
+White goblin mail|Quest||4
 White halberd|Melee||4
 White kiteshield|Melee||4
 White longsword|Melee||4
@@ -3399,7 +3399,7 @@ Willow shield|Melee||4
 Wooden shield|Melee||4
 Wooden shortsword|Melee||4
 Yak-hide armour|Melee||4
-Yellow goblin mail|Melee||4
+Yellow goblin mail|Quest||4
 Yew shield|Melee||4
 Zamorak armour set (lg)|Melee||4
 Zamorak bracers|Melee||4
@@ -3464,10 +3464,10 @@ Fighter torso (l) (mangled)|Melee||5
 Giant bronze dagger|Cosmetic||5
 Gloves of darkness|Melee||5
 Glowing dagger|Quest||5
-Goblin mail|Melee||5
+Goblin mail|Quest||5
 Green boots|Melee||5
 Green gingerbread shield|Cosmetic||5
-Green goblin mail|Melee||5
+Green goblin mail|Quest||5
 Group ironman bracers|Melee||5
 Group ironman bracers (unranked)|Melee||5
 Hallowed flail|Melee||5
@@ -3488,13 +3488,13 @@ Maoma's med helm (broken)|Melee||5
 Mind shield|Melee||5
 Oak blackjack|Thieving||5
 Oak shield|Melee||5
-Orange goblin mail|Melee||5
+Orange goblin mail|Quest||5
 Ornate maul handle|Melee||5
-Pink goblin mail|Melee||5
-Purple goblin mail|Melee||5
+Pink goblin mail|Quest||5
+Purple goblin mail|Quest||5
 Ram skull helm|Melee||5
 Red d'hide shield|Melee||5
-Red goblin mail|Melee||5
+Red goblin mail|Quest||5
 Silver sickle (b)|Melee||5
 Spiked boots|Melee||5
 Starter sword|Melee||5
@@ -3613,7 +3613,7 @@ Crate of pest remains|Misc||4
 Crate of poison|Misc||4
 Crate ring|Misc||4
 Crushed infernal shale|Smithing||4
-Crystal pendant|Misc||4
+Crystal pendant|Quest||4
 Crystal shard|Misc||4
 Demon tear|Misc||4
 Devil's element|Misc||4
@@ -3652,7 +3652,7 @@ Living record (tier 5)|Cosmetic||4
 Lizardman fang|Misc||4
 Long kebbit spike|Misc||4
 Magic fang|Magic||4
-Magic lantern|Misc||4
+Magic lantern|Quest||4
 Malediction shard 1|Misc||4
 Masori assembler|Ranged||4
 Masori assembler max cape|Ranged||4
@@ -3729,7 +3729,7 @@ Sigil of the Skiller|Misc||4
 Sigil of Versatility|Misc||4
 Skis|Misc||4
 Skull of Vet'ion|Magic||4
-Steel key ring|Misc||4
+Steel key ring|Quest||4
 Sunfire splinters|Misc||4
 Teasing stick|Hunter||4
 Tormented synapse|Misc||4
@@ -3744,7 +3744,7 @@ Ward upgrade kit|Cosmetic||4
 Zulrah's scales|Misc||4
 A chair|Misc||5
 Abyssal book|Misc||5
-Airtight pot|Misc||5
+Airtight pot|Quest||5
 Ancient crystal|Misc||5
 Ancient effigy|Misc||5
 Ancient emblem|Misc||5
@@ -3761,7 +3761,7 @@ Beer barrel|Misc||5
 Beer glass|Misc||5
 Belle's folly|Melee||5
 Bird book|Misc||5
-Black bead|Misc||5
+Black bead|Quest||5
 Black salamander|Misc||5
 Black satchel|Misc||5
 Black staff of collection|Misc||5
@@ -3779,7 +3779,7 @@ Candle|Misc||5
 Candle lantern|Misc||5
 Cat training medal|Misc||5
 Chaotic handegg|Misc||5
-Chores|Misc||5
+Chores|Quest||5
 Christmas dinner|Misc||5
 Cider barrel|Misc||5
 Clan vexillum|Misc||5
@@ -3789,7 +3789,7 @@ Cocktail glass|Misc||5
 Cocktail guide|Misc||5
 Cocktail shaker|Misc||5
 Collector icon|Misc||5
-Commorb|Misc||5
+Commorb|Quest||5
 Crate of beer glasses|Misc||5
 Crate of books|Misc||5
 Crate of high importance|Misc||5
@@ -3804,7 +3804,7 @@ Crate with zanik|Misc||5
 Crier bell|Cosmetic||5
 Crimson kisten|Melee||5
 Cruciferous codex|Misc||5
-Crystal chime|Misc||5
+Crystal chime|Quest||5
 Crystal saw seed|Misc||5
 Cursed banana|Misc||5
 Cutthroat flag|Misc||5
@@ -3912,12 +3912,12 @@ Mooleta|Melee||5
 Mouse toy|Misc||5
 Mouth grip|Misc||5
 Mystic cards|Misc||5
-New key|Misc||5
+New key|Quest||5
 Nihil dust|Herblore||5
 Nihil shard|Misc||5
 Obligator|Melee||5
 Oddskull|Misc||5
-Ode to eternity|Misc||5
+Ode to eternity|Quest||5
 Odium shard 1|Misc||5
 Ogre bellows|Misc||5
 One barrel|Misc||5
@@ -3927,7 +3927,7 @@ Perfected quetzal whistle blueprint|Misc||5
 Pet cat|Misc||5
 Pet rock|Misc||5
 Phrin remains|Misc||5
-Pile of salt|Misc||5
+Pile of salt|Quest||5
 Pillar coral|Misc||5
 Pillar frag|Farming||5
 Pink candy|Misc||5
@@ -4208,7 +4208,7 @@ Superior dragon bones|Prayer||3
 Torn prayer scroll|Prayer||3
 Wolf bones|Prayer||3
 Bat bones|Prayer||4
-Beads of the Dead|Prayer||4
+Beads of the Dead|Quest||4
 Blessed bone shards|Prayer||4
 Blessed bone statuette|Prayer||4
 Bone fragments|Prayer||4
@@ -4508,7 +4508,7 @@ Serpentine visage|Ranged||3
 Shortbow (u)|Fletching||3
 Silver bolts (p+)|Ranged||3
 Silver bolts (p++)|Ranged||3
-Silvthrill ballista|Ranged||3
+Silvthrill ballista|Quest||3
 Snakeskin bandana|Ranged||3
 Snakeskin body|Ranged||3
 Snakeskin boots|Ranged||3
@@ -4751,7 +4751,7 @@ Fire talisman|Runecraft||3
 Fire tiara|Runecraft||3
 Gold tiara|Runecraft||3
 Law tiara|Runecraft||3
-Monkey talisman|Runecraft||3
+Monkey talisman|Quest||4
 Nature talisman|Runecraft||3
 Nature tiara|Runecraft||3
 Ring of nature|Cosmetic||5
@@ -5038,7 +5038,7 @@ Iorwerth camp teleport|Teleports||4
 Master scroll book|Teleports||4
 Revenant cave teleport|Teleports||4
 Sigil of Last Recall|Teleports||4
-Strange teleorb|Teleports||4
+Strange teleorb|Quest||4
 Target teleport|Teleports||4
 Target teleport scroll|Teleports||4
 Teleport card|Teleports||4
