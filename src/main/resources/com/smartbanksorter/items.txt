@@ -269,7 +269,7 @@ Fish offcuts|Fishing||4
 Garlic powder|Cooking||4
 Gianne dough|Cooking||4
 Gnome spice|Cooking||4
-Golden tench|Cooking||4
+Golden tench|Fishing||5
 Ham joint|Cooking||4
 Iron spit|Cooking||4
 Kebab mix|Cooking||4
@@ -337,8 +337,8 @@ Sigil of the Chef|Cooking||4
 Skewer stick|Cooking||4
 Sliced mushrooms|Cooking||4
 Spider carcass|Cooking||4
-Squid paste|Cooking||4
-Te salt|Cooking||4
+Squid paste|Herblore||4
+Te salt|Mining||4
 Uncooked apple pie|Cooking||4
 Uncooked berry pie|Cooking||4
 Uncooked botanical pie|Cooking||4
@@ -346,7 +346,7 @@ Uncooked dragonfruit pie|Cooking||4
 Uncooked egg|Cooking||4
 Uncooked meat pie|Cooking||4
 Uncooked mushroom pie|Cooking||4
-Urt salt|Cooking||4
+Urt salt|Mining||4
 Yellow fin|Herblore||4
 Zamorak's grapes|Cooking||4
 Ale yeast|Cooking||5
@@ -984,7 +984,7 @@ Menaphite red hat|Cosmetic||5
 Menaphite red kilt|Cosmetic||5
 Menaphite red robe|Cosmetic||5
 Menaphite red top|Cosmetic||5
-Metztonalli white|Cosmetic||5
+Metztonalli white|Runecraft||5
 Mime boots|Cosmetic||5
 Mime gloves|Cosmetic||5
 Mime legs|Cosmetic||5
@@ -1462,7 +1462,7 @@ Ring mould|Crafting||3
 Ruby|Crafting||3
 Sapphire|Crafting||3
 Silk|Crafting||3
-Silver dust|Crafting||3
+Silver dust|Herblore||4
 Snake hide|Crafting||3
 Snakeskin|Crafting||3
 Soda ash|Crafting||3
@@ -1485,7 +1485,7 @@ Blamish blue shell|Crafting||4
 Blamish myre shell|Crafting||4
 Blamish ochre shell|Crafting||4
 Blamish red shell|Crafting||4
-Bracelet of clay|Crafting||4
+Bracelet of clay|Mining||4
 Bucket of sand|Crafting||4
 Bucket of wax|Crafting||4
 Bullseye lantern (unf)|Crafting||4
@@ -1726,7 +1726,7 @@ Beekeeper's legs|Farming||5
 Beekeeper's top|Farming||5
 Black flowers|Farming||5
 Blue flowers|Farming||5
-Cactus spine|Farming||5
+Cactus spine|Herblore||5
 Lily of the Sands|Herblore||5
 Mixed flowers|Farming||5
 Nasturtiums|Farming||5
@@ -1760,7 +1760,7 @@ Abyssal lantern (redwood logs)|Firemaking||4
 Abyssal lantern (white logs)|Firemaking||4
 Abyssal lantern (willow logs)|Firemaking||4
 Abyssal lantern (yew logs)|Firemaking||4
-Bark|Firemaking||4
+Bark|Crafting||4
 Charcoal|Firemaking||4
 Empty candle lantern|Firemaking||4
 Empty oil lamp|Firemaking||4
@@ -1824,9 +1824,9 @@ Fish crate (yellowfin)|Fishing||4
 Fish food|Fishing||4
 Fish sack|Fishing||4
 Fish sack barrel|Fishing||4
-Giant seaweed|Fishing||4
+Giant seaweed|Crafting||4
 Open fish sack barrel|Fishing||4
-Seaweed|Fishing||4
+Seaweed|Crafting||4
 Empty fishbowl|Fishing||5
 Knife|Fletching||1
 Feather|Fletching||2
@@ -1885,13 +1885,13 @@ Orange feather|Fletching||4
 Ray barbs|Sailing||4
 Red feather|Fletching||4
 Sigil of the Fletcher|Fletching||4
-Split log|Fletching|Firemaking|4
+Split log|Woodcutting||4
 Steel arrowtips|Fletching||4
 Stripy feather|Fletching||4
 Swift albatross feather|Sailing||4
 Teak stock|Fletching||4
 Unfinished broad bolts|Fletching||4
-Willow branch|Fletching|Firemaking|4
+Willow branch|Crafting||4
 Yellow feather|Fletching||4
 Flighted ogre arrow|Fletching||5
 Wolfbone arrowtips|Fletching||5
@@ -1970,13 +1970,13 @@ Guam tar|Herblore||3
 Harralander potion (unf)|Herblore||3
 Harralander tar|Herblore||3
 Huasca potion (unf)|Herblore||3
-Jug of water|Herblore||3
+Jug of water|Cooking||4
 Lye paste|Herblore||3
 Mox paste|Herblore||3
 Open reagent pouch|Herblore||3
 Reagent pouch|Herblore||3
 Red spiders' eggs|Herblore||3
-Rosemary|Herblore||3
+Rosemary|Farming||3
 Snapdragon potion (unf)|Herblore||3
 Snape grass|Herblore||3
 Swamp tar|Herblore||3
@@ -2019,7 +2019,7 @@ Unicorn horn dust|Herblore||4
 Vial of blood|Herblore||4
 Volcanic ash|Farming||4
 Wine of Zamorak|Herblore||4
-Woad leaf|Herblore||4
+Woad leaf|Farming||4
 Wolfbane|Melee||4
 Facility bottle (empty)|Sailing||5
 Goutweed|Herblore||5
@@ -2055,7 +2055,7 @@ Spottier cape|Hunter||3
 Swamp lizard|Hunter||3
 Twitcher's gloves|Hunter||3
 Baby impling jar|Hunter||4
-Bird nest|Hunter||4
+Bird nest|Woodcutting||4
 Butterfly jar|Hunter||4
 Camo bottoms|Hunter||4
 Camo helmet|Hunter||4
@@ -2161,7 +2161,7 @@ Sapphire glacialis|Hunter||4
 Sapphire necklace|Jewellery||4
 Seal of Passage|Jewellery||4
 Silver necklace|Jewellery||4
-Tarnished locket|Jewellery||4
+Tarnished locket|Runecraft||4
 Topaz amulet (u)|Jewellery||4
 Topaz bracelet|Jewellery||4
 Topaz necklace|Jewellery||4
@@ -2178,8 +2178,8 @@ Gnome amulet|Jewellery||5
 Gold bracelet|Jewellery||5
 Gold necklace|Jewellery||5
 Gold ring|Jewellery||5
-Hallowed ring|Jewellery||5
-Hallowed symbol|Jewellery||5
+Hallowed ring|Agility||5
+Hallowed symbol|Agility||5
 Pendant of Ates (inert)|Jewellery||5
 Pre-nature amulet|Jewellery||5
 Ruby ring|Jewellery||5
@@ -2409,10 +2409,10 @@ Xerician top|Magic||3
 Zamorak cape|Magic||3
 Zamorak crozier|Magic||3
 Zamorak staff|Magic||3
-Zealot's boots|Magic||3
-Zealot's helm|Magic||3
-Zealot's robe bottom|Magic||3
-Zealot's robe top|Magic||3
+Zealot's boots|Prayer||3
+Zealot's helm|Prayer||3
+Zealot's robe bottom|Prayer||3
+Zealot's robe top|Prayer||3
 Zuriel's hood|Magic||3
 Zuriel's robe bottom|Magic||3
 Zuriel's robe top|Magic||3
@@ -2540,7 +2540,7 @@ Elite calamity breeches (broken)|Magic||5
 Elite calamity chest (broken)|Magic||5
 Elite void robe (l) (mangled)|Melee|Magic,Ranged|5
 Elite void top (l) (mangled)|Melee|Magic,Ranged|5
-Hallowed focus|Magic||5
+Hallowed focus|Agility||5
 Hood of darkness|Magic||5
 Icthlarin's hood|Cosmetic||5
 Smoke ancient sceptre (l) (mangled)|Magic||5
@@ -2777,7 +2777,7 @@ Void melee helm|Melee||2
 Volcanic abyssal whip|Melee||2
 War blessing|Melee|Ranged,Magic|2
 Zamorak godsword|Melee||2
-3rd Age axe|Melee||3
+3rd Age axe|Tools||3
 3rd Age cloak|Melee||3
 3rd Age full helmet|Melee||3
 3rd Age kiteshield|Melee||3
@@ -2903,7 +2903,7 @@ Granite maul|Melee||3
 Holy blessing|Melee|Ranged,Magic|3
 Holy ghrazi rapier|Melee||3
 Ivandis flail|Melee||3
-Jade machete|Melee||3
+Jade machete|Tools||3
 Keris|Melee||3
 Keris partisan|Melee||3
 Keris partisan of the sun|Melee||3
@@ -3296,7 +3296,7 @@ Necklace of Fangs|Melee||4
 Necklace of rupture|Melee||4
 Noxious halberd|Melee||4
 Nunchaku|Melee||4
-Opal machete|Melee||4
+Opal machete|Tools||4
 Pegasian boots|Melee||4
 Penance gloves|Melee||4
 Penance skirt|Melee||4
@@ -3310,7 +3310,7 @@ Raging echoes top (t1)|Cosmetic||4
 Rat pole|Quest||4
 Red cavalier|Cosmetic||4
 Red spiky vambraces|Melee||4
-Red topaz machete|Melee||4
+Red topaz machete|Tools||4
 Redwood shield|Melee||4
 Rogue's revenge|Cosmetic||4
 Ruby sickle (b)|Quest||4
@@ -3471,7 +3471,7 @@ Green goblin mail|Quest||5
 Group ironman bracers|Melee||5
 Group ironman bracers (unranked)|Melee||5
 Hallowed flail|Melee||5
-Hallowed hammer|Melee||5
+Hallowed hammer|Tools||5
 Hardcore group ironman bracers|Melee||5
 Hardened wristbands of the arena (broken)|Melee||5
 Harry's cutlass|Melee||5
@@ -3580,7 +3580,7 @@ Looting bag note|Misc||3
 Rope|Tools||3
 Shantay pass|Misc||3
 Ancient shard|Misc||4
-Annihilation blueprints|Misc||4
+Annihilation blueprints|Construction||4
 Annihilation weapon scroll|Cosmetic||4
 Arena book|Misc||4
 Armageddon weapon scroll|Cosmetic||4
@@ -3591,9 +3591,9 @@ Book of Darkness page set|Misc||4
 Book of Law page set|Misc||4
 Book of War page set|Misc||4
 Bucket|Tools||4
-Bullseye lantern|Misc||4
+Bullseye lantern|Firemaking||4
 Chugging barrel (disassembled)|Misc||4
-Clockwork|Misc||4
+Clockwork|Crafting||4
 Contract of Bloodied Blows|Misc||4
 Contract of Catalyst Acquisition|Misc||4
 Contract of Divine Severance|Misc||4
@@ -3622,9 +3622,9 @@ Dragon staff of collection|Misc||4
 Drake's claw|Melee||4
 Drake's tooth|Melee||4
 Eclipse red|Misc||4
-Elkhorn coral|Misc||4
+Elkhorn coral|Herblore||4
 Elkhorn frag|Farming||4
-Emerald lantern|Misc||4
+Emerald lantern|Firemaking||4
 Eternal crystal|Magic||4
 Eternal gem|Misc||4
 Explorer backpack|Cosmetic||4
@@ -3633,13 +3633,13 @@ Flippers|Misc||4
 Frozen tear|Misc||4
 Giant key|Misc||4
 Haemostatic dressing (4)|Misc||4
-Haemostatic poultice|Misc||4
+Haemostatic poultice|Herblore||4
 Horn of Plenty|Hunter||4
 Hydra tail|Prayer||4
 Hydra's claw|Melee||4
-Kebbit claws|Misc||4
-Kebbit spike|Misc||4
-Kebbit teeth|Misc||4
+Kebbit claws|Crafting||4
+Kebbit spike|Fletching||4
+Kebbit teeth|Herblore||4
 Kebbit teeth dust|Herblore||4
 Kraken tentacle|Melee||4
 Larran's key|Misc||4
@@ -3650,7 +3650,7 @@ Living record (tier 3)|Cosmetic||4
 Living record (tier 4)|Cosmetic||4
 Living record (tier 5)|Cosmetic||4
 Lizardman fang|Misc||4
-Long kebbit spike|Misc||4
+Long kebbit spike|Fletching||4
 Magic fang|Magic||4
 Magic lantern|Quest||4
 Malediction shard 1|Magic||4
@@ -3661,29 +3661,29 @@ Master scroll book (empty)|Teleports||4
 Mithril staff of collection|Misc||4
 Mokhaiotl waystone|Teleports||4
 Mole claw|Misc||4
-Moonlight antelope antler|Misc||4
+Moonlight antelope antler|Fletching||4
 Mort myre pear|Misc||4
 Mud pie|Misc||4
-Narwhal horn|Misc||4
+Narwhal horn|Crafting||4
 Numulite|Currency||4
-Oil lamp|Misc||4
-Oil lantern|Misc||4
-Purple dye|Misc||4
-Red dye|Misc||4
+Oil lamp|Firemaking||4
+Oil lantern|Firemaking||4
+Purple dye|Crafting||4
+Red dye|Crafting||4
 Red satchel|Cosmetic||4
-Redwood hiking staff|Misc||4
+Redwood hiking staff|Fletching||4
 Repair kit|Sailing||4
 Revenant ether|Misc||4
 Ring of visibility|Misc||4
 Rock-shell chunk|Misc||4
 Rock-shell shard|Misc||4
 Rock-shell splinter|Misc||4
-Rubium splinters|Misc||4
+Rubium splinters|Smithing||4
 Rune satchel|Cosmetic||4
 Rune staff of collection|Misc||4
 Sagacious spectacles|Cosmetic||4
 Saltpetre|Farming||4
-Sapphire lantern|Misc||4
+Sapphire lantern|Firemaking||4
 Saradomin banner|Misc||4
 Saturated heart|Magic||4
 Shark paint|Sailing||4
@@ -3753,10 +3753,10 @@ Ancient statuette|Misc||5
 Ancient totem|Misc||5
 Archibald|Misc||5
 Ascension shards|Misc||5
-Asyn remains|Misc||5
+Asyn remains|Prayer||5
 Banner|Misc||5
 Barrel|Misc||5
-Beer|Misc||5
+Beer|Food||5
 Beer barrel|Misc||5
 Beer glass|Misc||5
 Belle's folly|Melee||5
@@ -3776,7 +3776,7 @@ Bronze staff of collection|Misc||5
 Burnt meat|Misc||5
 Calcified moth|Teleports||5
 Candle|Misc||5
-Candle lantern|Misc||5
+Candle lantern|Firemaking||5
 Cat training medal|Cosmetic||5
 Chaotic handegg|Cosmetic||5
 Chores|Quest||5
@@ -3785,9 +3785,9 @@ Cider barrel|Misc||5
 Clan vexillum|Cosmetic||5
 Clean necklace|Cosmetic||5
 Cleaning cloth|Misc||5
-Cocktail glass|Misc||5
+Cocktail glass|Cooking||5
 Cocktail guide|Misc||5
-Cocktail shaker|Misc||5
+Cocktail shaker|Cooking||5
 Collector icon|Misc||5
 Commorb|Quest||5
 Crate of beer glasses|Misc||5
@@ -3835,7 +3835,7 @@ Evil chicken head|Cosmetic||5
 Evil chicken legs|Cosmetic||5
 Evil chicken wings|Cosmetic||5
 Evil eye|Misc||5
-Fat snail|Misc||5
+Fat snail|Cooking||5
 Fishbowl helmet|Misc||5
 Five barrels|Misc||5
 Fossilised dung|Misc||5
@@ -3843,13 +3843,13 @@ Four barrels|Misc||5
 Fox|Misc||5
 Giant boot|Cosmetic||5
 Giant boulder|Cosmetic||5
-Giant egg sac(full)|Misc||5
+Giant egg sac(full)|Herblore||5
 Giant present|Cosmetic||5
 Giant stopwatch|Cosmetic||5
 Gilded staff of collection|Misc||5
 Gnomeball|Misc||5
-Gnomebowl mould|Misc||5
-Goat horn|Misc||5
+Gnomebowl mould|Cooking||5
+Goat horn|Herblore||5
 Goblin book|Misc||5
 Goblin paint cannon|Cosmetic||5
 Gold coffin|Misc||5
@@ -3858,7 +3858,7 @@ Gold satchel|Cosmetic||5
 Gold seal|Thieving||5
 Golden scarab|Thieving||5
 Golden statuette|Thieving||5
-Greater siren|Misc||5
+Greater siren|Fishing||5
 Green banner|Cosmetic||5
 Green satchel|Cosmetic||5
 Gregg's eastdoor|Cosmetic||5
@@ -3898,7 +3898,7 @@ Key|Misc||5
 Kruk jr|Cosmetic||5
 Kruk monkey greegree|Misc||5
 Leaves|Misc||5
-Light orb|Misc||5
+Light orb|Crafting||5
 Lost bag|Cosmetic||5
 Lucky shot flag|Cosmetic||5
 Lyre|Misc||5
@@ -3907,14 +3907,14 @@ Maniacal monkey|Cosmetic||5
 Mask of Ranul|Cosmetic||5
 Mask of Rebirth|Cosmetic||5
 Monkey|Cosmetic||5
-Monkey tail|Misc||5
+Monkey tail|Fletching||5
 Mooleta|Melee||5
 Mouse toy|Cosmetic||5
 Mouth grip|Misc||5
 Mystic cards|Cosmetic||5
 New key|Quest||5
 Nihil dust|Herblore||5
-Nihil shard|Misc||5
+Nihil shard|Herblore||5
 Obligator|Melee||5
 Oddskull|Misc||5
 Ode to eternity|Quest||5
@@ -3923,12 +3923,12 @@ Ogre bellows|Misc||5
 One barrel|Misc||5
 Papyrus|Misc||5
 Pegasian crystal|Ranged||5
-Perfected quetzal whistle blueprint|Misc||5
+Perfected quetzal whistle blueprint|Hunter||5
 Pet cat|Misc||5
 Pet rock|Misc||5
-Phrin remains|Misc||5
+Phrin remains|Prayer||5
 Pile of salt|Quest||5
-Pillar coral|Misc||5
+Pillar coral|Herblore||5
 Pillar frag|Farming||5
 Pink candy|Misc||5
 Plain satchel|Cosmetic||5
@@ -3963,7 +3963,7 @@ Silver coffin|Misc||5
 Skull piece|Misc||5
 Sled|Misc||5
 Smelly sock|Misc||5
-Smouldering stone|Misc||5
+Smouldering stone|Tools||5
 Snowball|Misc||5
 Spine|Misc||5
 Stale baguette|Cosmetic||5
@@ -3975,7 +3975,7 @@ Stick|Misc||5
 Stone scarab|Thieving||5
 Stone seal|Thieving||5
 Stone statuette|Thieving||5
-Sulliuscep cap|Misc||5
+Sulliuscep cap|Cooking||5
 Swords and emblem|Cosmetic||5
 Teacher wand|Magic||5
 Terrifying charm|Cosmetic||5
@@ -3996,7 +3996,7 @@ Treat cauldron|Cosmetic||5
 Trouver parchment|Misc||5
 Twisted adamant trophy|Cosmetic||5
 Twisted banner|Cosmetic||5
-Twisted blueprints|Misc||5
+Twisted blueprints|Construction||5
 Twisted bronze trophy|Cosmetic||5
 Twisted dragon trophy|Cosmetic||5
 Twisted horns|Misc||5
@@ -4005,15 +4005,15 @@ Twisted mithril trophy|Cosmetic||5
 Twisted rune trophy|Cosmetic||5
 Twisted steel trophy|Cosmetic||5
 Two barrels|Misc||5
-Umbral coral|Misc||5
+Umbral coral|Herblore||5
 Umbral frag|Farming||5
 Undead chicken|Cosmetic||5
 Unholy book page set|Misc||5
-Unicorn horn|Misc||5
+Unicorn horn|Herblore||5
 Unidentified small fossil|Misc||5
 Unstrung emblem|Crafting||5
 Uri's hat|Cosmetic||5
-Urium remains|Misc||5
+Urium remains|Prayer||5
 Vacuum pump and gull|Misc||5
 Void seal(8)|Misc||5
 Warm gloves|Firemaking||5
@@ -4021,14 +4021,14 @@ Web cloak|Cosmetic||5
 Weeds|Farming||5
 Western banner 1|Misc||5
 White claws|Melee||5
-White lily|Misc||5
+White lily|Farming||5
 Wristbands of the arena (broken)|Misc||5
 Xeric's champion|Cosmetic||5
 Xeric's general|Cosmetic||5
 Xeric's guard|Cosmetic||5
 Xeric's sentinel|Cosmetic||5
 Xeric's warrior|Cosmetic||5
-Yew leaves|Misc||5
+Yew leaves|Woodcutting||5
 Zamorak banner|Misc||5
 Zamorak page 1|Misc||5
 Zombie pirate key|Misc||5
@@ -4225,7 +4225,7 @@ Monkey bones|Prayer||4
 Ourg bones|Prayer||4
 Raurg bones|Prayer||4
 Sigil of Pious Protection|Prayer||4
-Unblessed symbol|Prayer||4
+Unblessed symbol|Crafting||4
 Vile ashes|Prayer||4
 Wyrm bones|Prayer||4
 Zogre bones|Prayer||4
@@ -4388,8 +4388,8 @@ Ascension crossbows|Ranged||3
 Atlatl dart|Ranged||3
 Ava's assembler|Ranged||3
 Ava's attractor|Ranged||3
-Ballista limbs|Ranged||3
-Ballista spring|Ranged||3
+Ballista limbs|Fletching||3
+Ballista spring|Fletching||3
 Barb bolttips|Fletching||3
 Bellator ring|Melee||3
 Black chinchompa|Ranged||3
@@ -4609,11 +4609,11 @@ Guthix dragonhide set|Ranged||4
 Hard leather shield|Ranged||4
 Hardleather body|Ranged||4
 Hardleather gloves|Ranged||4
-Heavy frame|Ranged||4
+Heavy frame|Fletching||4
 Hunters' crossbow|Ranged||4
 Hunters' sunlight crossbow|Ranged||4
-Incomplete heavy ballista|Ranged||4
-Incomplete light ballista|Ranged||4
+Incomplete heavy ballista|Fletching||4
+Incomplete light ballista|Fletching||4
 Iron arrow(p+)|Ranged||4
 Iron arrow(p++)|Ranged||4
 Iron bolts|Ranged||4
@@ -4674,11 +4674,11 @@ Twisted boots (t3)|Cosmetic||4
 Twisted coat (t3)|Cosmetic||4
 Twisted hat (t3)|Cosmetic||4
 Twisted trousers (t3)|Cosmetic||4
-Unstrung heavy ballista|Ranged||4
-Unstrung light ballista|Ranged||4
-Venator fang|Ranged||4
+Unstrung heavy ballista|Fletching||4
+Unstrung light ballista|Fletching||4
+Venator fang|Fletching||4
 Venator shard|Ranged||4
-Venator tooth|Ranged||4
+Venator tooth|Fletching||4
 Void ranger helm (l)(or)|Ranged||4
 Webweaver bow (u)|Ranged||4
 Blessed Dizana's quiver (l) (mangled)|Ranged||5
@@ -4758,7 +4758,7 @@ Ring of nature|Cosmetic||5
 Tiara|Runecraft||3
 Aether catalyst|Runecraft||4
 Ancient essence|Runecraft||4
-Celestial signet (uncharged)|Runecraft||4
+Celestial signet (uncharged)|Mining||4
 Death talisman|Runecraft||4
 Fancy tiara|Cosmetic||5
 Imbued heart|Magic||3
@@ -4909,7 +4909,7 @@ Banshee mask|Cosmetic||4
 Banshee robe|Cosmetic||4
 Banshee top|Cosmetic||4
 Black demon mask|Cosmetic||4
-Efh salt|Slayer||4
+Efh salt|Mining||4
 Fungicide spray|Slayer||4
 Sigil of Slaughter|Slayer||4
 Slayer hood|Slayer||4
@@ -5103,12 +5103,12 @@ Gilded axe|Woodcutting||4
 Iron axe|Woodcutting||4
 Iron felling axe|Woodcutting||4
 Log basket|Woodcutting||4
-Magic roots|Woodcutting||4
-Maple roots|Woodcutting||4
+Magic roots|Farming||4
+Maple roots|Farming||4
 Open forestry basket|Woodcutting||4
 Open log basket|Woodcutting||4
 Sage's axe|Woodcutting||4
 Sigil of the Forager|Woodcutting||4
 Bronze axe|Woodcutting||5
 Bronze felling axe|Woodcutting||5
-Oak roots|Woodcutting||5
+Oak roots|Farming||5
