@@ -17,4 +17,12 @@ public class SmartBankSorterConfigTest
 		assertFalse(defaults.hidePlaceholders());
 		assertTrue(defaults.hideFillers());
 	}
+
+	@Test
+	public void categoryTabsStayOnTheirOwnStripByDefault()
+	{
+		// Joining Bank Tags' strip is opt-in: it changes what a drag onto a tab does.
+		assertTrue(defaults.categoryTabs());
+		assertFalse(defaults.tabsInBankTagsStrip());
+	}
 }

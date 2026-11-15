@@ -41,6 +41,7 @@ bank. Searching a category's full name also adds its items to the results.
 | Hide placeholders | Leave placeholders out of the sorted view, so you only see items you have (off by default) |
 | Category search | Suggest a category to jump to while searching, and show a category's items when you search its name |
 | Category tabs / Tabs | Show the left-edge tabs and choose what each tab contains |
+| Tabs among tag tabs | Put the category tabs in Bank Tags' tag tab strip, mixed with your tag tabs (off by default) |
 | Outfit layout | Outfits as columns (default) or rows |
 | Header size / Header colour / Show item counts / Divider lines | How category headers look |
 | Custom categories / Category order / Gear sets | Your own rules, the order of sections, and extra armour sets to keep together |
@@ -48,8 +49,11 @@ bank. Searching a category's full name also adds its items to the results.
 ## Compatibility
 
 Works alongside Bank Tags, including tag tabs: opening a tag tab shows it as normal, and the sorted view comes
-back when you close it. Both plugins use the left edge of the bank for tabs, so if you use tag tabs, turn off
-**Category tabs** in this plugin's settings to keep that edge for Bank Tags.
+back when you close it. Both plugins use the left edge of the bank for tabs. By default the category tabs go
+below the tag tabs; with **Tabs among tag tabs** on they join Bank Tags' strip instead, and you can drag any tab,
+tag or category, to put the strip in the order you like. The order is kept in this plugin's settings, and nothing
+is written to Bank Tags' own: an item dropped on a category tab is not tagged, and the category tabs leave with
+the plugin.
 
 Copies need free bank space: each copy uses one empty bank slot, so they don't show when your bank is full.
 

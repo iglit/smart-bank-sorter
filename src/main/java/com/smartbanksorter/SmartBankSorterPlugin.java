@@ -55,19 +55,25 @@ import net.runelite.client.game.SpriteManager;
 import net.runelite.client.input.KeyListener;
 import net.runelite.client.input.KeyManager;
 import net.runelite.client.plugins.Plugin;
+import net.runelite.client.plugins.PluginDependency;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.plugins.PluginManager;
 import net.runelite.client.plugins.bank.BankSearch;
+import net.runelite.client.plugins.banktags.BankTagsPlugin;
 import net.runelite.client.plugins.banktags.BankTagsService;
+import net.runelite.client.plugins.banktags.tabs.TabManager;
 import net.runelite.client.util.ColorUtil;
 import net.runelite.client.util.Text;
 
 @Slf4j
 @PluginDescriptor(
 	name = "Smart Bank Sorter",
-	description = "Groups and sorts your bank by category, client-side only. If you use Bank Tags tag tabs, turn off Category tabs.",
+	description = "Groups and sorts your bank by category, client-side only. Category tabs can share Bank Tags' tag tab strip.",
 	tags = {"bank", "sort", "category", "organize", "layout"}
 )
+// For Bank Tags' tag tab strip, which the category tabs can join. This only has Bank Tags load first; it doesn't
+// turn it on, and the plugin works without it.
+@PluginDependency(BankTagsPlugin.class)
 public class SmartBankSorterPlugin extends Plugin
 {
 	// Bank grid geometry; the bank is 8 columns wide in both fixed and resizable mode.
@@ -79,7 +85,7 @@ public class SmartBankSorterPlugin extends Plugin
 	static final int ITEM_HEIGHT = 32;
 	// The bank's item container has a widget per bank slot first. The tab separators, "Tab N" labels and row padding
 	// rectangles after them can't show an item, so copies never go there.
-	private static final int BANK_SLOTS = 1410;
+	static final int BANK_SLOTS = 1410;
 	private static final int GRID_WIDTH = COLUMNS * PITCH_X - 12;
 	private static final int SECTION_GAP = 4;
 	private static final int DIVIDER_COLOR = 0x4E4639;
@@ -116,6 +122,10 @@ public class SmartBankSorterPlugin extends Plugin
 	@Inject
 	private SpriteManager spriteManager;
 
+	// Bank Tags' tag tab list, which it draws its strip from. Shared with Bank Tags: a singleton of the client's.
+	@Inject
+	private TabManager tabManager;
+
 	private Categoriser categoriser;
 	private UserRules gearSets;
 	private List<String> categoryOrder;
@@ -145,6 +155,7 @@ public class SmartBankSorterPlugin extends Plugin
 	private String filterText;
 	private String filterCategory;
 	private TabStrip tabStrip;
+	private BankTagsStrip bankTagsStrip;
 	private ItemCopies itemCopies;
 	private MoveToMenu moveToMenu;
 
@@ -158,6 +169,9 @@ public class SmartBankSorterPlugin extends Plugin
 	protected void startUp()
 	{
 		tabStrip =new TabStrip(client, config, () -> focusedTab, this::focus);
+		bankTagsStrip = new BankTagsStrip(client, clientThread, config, configManager, tabManager,
+			() -> bankTags() != null, () -> focusedTab, this::focus, this::rebuildBank);
+		eventBus.register(beforeBankTags);
 		eventBus.register(afterBankTags);
 		itemCopies = new ItemCopies(this::equipmentOf);
 		moveToMenu = new MoveToMenu(client, config, configManager, itemManager, () -> categoryOrder);
@@ -171,6 +185,7 @@ public class SmartBankSorterPlugin extends Plugin
 	@Override
 	protected void shutDown()
 	{
+		eventBus.unregister(beforeBankTags);
 		eventBus.unregister(afterBankTags);
 		keyManager.unregisterKeyListener(searchEnter);
 		spriteManager.removeSpriteOverrides(TabSprite.values());
@@ -182,6 +197,8 @@ public class SmartBankSorterPlugin extends Plugin
 			suggestionWidgets.clear();
 			itemCopies.clear();
 			tabStrip.clear();
+			// Out of Bank Tags' list before the rebuild has it redraw the strip.
+			bankTagsStrip.remove();
 			focusedTab = null;
 			rebuildBank();
 		});
@@ -190,8 +207,12 @@ public class SmartBankSorterPlugin extends Plugin
 	@Subscribe
 	public void onConfigChanged(ConfigChanged event)
 	{
-		if (!SmartBankSorterConfig.GROUP.equals(event.getGroup()))
+		// Bank Tags saving its tab list, on whichever thread it does; in the same call, so nothing of ours stays there.
+		bankTagsStrip.onConfigChanged(event);
+		if (!SmartBankSorterConfig.GROUP.equals(event.getGroup())
+			|| SmartBankSorterConfig.TAB_ORDER_KEY.equals(event.getKey()))
 		{
+			// The tab order is the strip's own: it writes it and rebuilds the bank itself.
 			return;
 		}
 		// On the client thread: the config panel changes settings from the Swing thread, mid-layout for all we know.
@@ -431,12 +452,41 @@ public class SmartBankSorterPlugin extends Plugin
 		}
 	}
 
-	// Bank Tags' layoutTabs runs on this script, after the bank build, and treats every child of the item container
-	// past its first four as one of its own tab backgrounds and icons: it hides them all and repositions whichever
-	// pairs it thinks it owns, which includes ours. Run after it (priority -1) to put our tabs back.
 	/**
-	 * RuneLite requires a subscriber method to be named after its event, and the plugin already has an
-	 * onScriptPostFired, so this lower-priority one lives on its own object registered with the event bus.
+	 * Subscribers that run before Bank Tags' (priority 1). RuneLite requires a subscriber method to be named after
+	 * its event, and the plugin has its own at the default priority, so these live on their own object registered
+	 * with the event bus.
+	 */
+	public static final class BeforeBankTags
+	{
+		private final SmartBankSorterPlugin plugin;
+
+		BeforeBankTags(SmartBankSorterPlugin plugin)
+		{
+			this.plugin = plugin;
+		}
+
+		// Bank Tags rebuilds its strip from its tab list when the bank finishes building; the category tabs go in
+		// the list just before.
+		@Subscribe(priority = 1)
+		public void onScriptPreFired(ScriptPreFired event)
+		{
+			if (event.getScriptId() == ScriptID.BANKMAIN_FINISHBUILDING)
+			{
+				plugin.beforeBankTagsRebuild();
+			}
+		}
+
+		// A drag involving a category tab in Bank Tags' strip is ours, not a tag drop or a tag tab reorder.
+		@Subscribe(priority = 1)
+		public void onWidgetDrag(WidgetDrag event)
+		{
+			plugin.bankTagsStrip.onDragBefore();
+		}
+	}
+
+	/**
+	 * Subscribers that run after Bank Tags' (priority -1).
 	 */
 	public static final class AfterBankTags
 	{
@@ -447,14 +497,64 @@ public class SmartBankSorterPlugin extends Plugin
 			this.plugin = plugin;
 		}
 
+		// Bank Tags' layoutTabs runs on this script, after the bank build, and treats every child of the item
+		// container past its first four as one of its own tab backgrounds and icons: it hides them all and
+		// repositions whichever pairs it thinks it owns, which includes ours. Run after it to put our tabs back.
 		@Subscribe(priority = -1)
 		public void onScriptPostFired(ScriptPostFired event)
 		{
 			plugin.afterBankTagsScript(event);
 		}
+
+		// Bank Tags has just drawn its strip, the category tabs in it with its own tag tab ops.
+		@Subscribe(priority = -1)
+		public void onScriptPreFired(ScriptPreFired event)
+		{
+			if (event.getScriptId() == ScriptID.BANKMAIN_FINISHBUILDING)
+			{
+				plugin.bankTagsStrip.patch();
+			}
+		}
+
+		@Subscribe(priority = -1)
+		public void onWidgetDrag(WidgetDrag event)
+		{
+			plugin.afterBankTagsDrag();
+		}
 	}
 
+	private final BeforeBankTags beforeBankTags = new BeforeBankTags(this);
 	private final AfterBankTags afterBankTags = new AfterBankTags(this);
+
+	private void beforeBankTagsRebuild()
+	{
+		if (bankTagsStrip.active() && activeBankTag() != null)
+		{
+			// A tag tab is open, with the strip's active sprite: the category tab gives up its focus rather than
+			// show as active too.
+			focusedTab = null;
+		}
+		bankTagsStrip.sync();
+	}
+
+	// A drop on one of Bank Tags' tag tabs makes it rebuild its strip, which cuts the item container's children back
+	// to its own four: in Bank Tags' strip the category tabs are redrawn with it and only need their ops back; on
+	// their own strip they are gone and go back where they were.
+	private void afterBankTagsDrag()
+	{
+		if (client.getMouseCurrentButton() != 0)
+		{
+			return;
+		}
+		if (bankTagsStrip.active())
+		{
+			bankTagsStrip.onDragAfter();
+		}
+		else if (config.enabled() && config.categoryTabs() && shouldSort())
+		{
+			tabStrip.refresh();
+		}
+	}
 
 	private void afterBankTagsScript(ScriptPostFired event)
 	{
@@ -464,7 +564,8 @@ public class SmartBankSorterPlugin extends Plugin
 		{
 			return;
 		}
-		if (!config.enabled() || !config.categoryTabs() || !shouldSort())
+		// In Bank Tags' strip the category tabs are its to lay out.
+		if (!config.enabled() || !config.categoryTabs() || bankTagsStrip.active() || !shouldSort())
 		{
 			return;
 		}
@@ -485,6 +586,7 @@ public class SmartBankSorterPlugin extends Plugin
 		categoriser = new Categoriser(rules);
 		categoryCache.clear();
 		filterText = null;
+		bankTagsStrip.loadOrder(config.tabOrder());
 		// Tab lines are "Tab: category, category"; matching category names with the same rule syntax.
 		tabGroups = UserRules.parse(config.tabGroups());
 		// The user's sets first, so they can redefine a built-in one.
@@ -561,16 +663,25 @@ public class SmartBankSorterPlugin extends Plugin
 	}
 
 	/**
-	 * The tag Bank Tags currently shows, or null. Looked up rather than injected: injecting BankTagsService would
-	 * need a plugin dependency, which forces Bank Tags on.
+	 * The tag Bank Tags currently shows, or null.
 	 */
 	private String activeBankTag()
+	{
+		BankTagsService bankTags = bankTags();
+		return bankTags != null ? bankTags.getActiveTag() : null;
+	}
+
+	/**
+	 * Bank Tags, if the user has it on; null otherwise. Looked up rather than injected so that it is only used
+	 * while it is on, which the plugin dependency alone doesn't give.
+	 */
+	private BankTagsService bankTags()
 	{
 		for (Plugin plugin : pluginManager.getPlugins())
 		{
 			if (plugin instanceof BankTagsService && pluginManager.isPluginEnabled(plugin))
 			{
-				return ((BankTagsService) plugin).getActiveTag();
+				return (BankTagsService) plugin;
 			}
 		}
 		return null;
@@ -775,17 +886,23 @@ public class SmartBankSorterPlugin extends Plugin
 				}
 			}
 		}
+		List<String> tabs = new ArrayList<>();
+		List<Integer> icons = new ArrayList<>();
 		if (config.categoryTabs())
 		{
-			List<String> tabs = new ArrayList<>(tabGroups.categories());
+			tabs.addAll(tabGroups.categories());
 			tabs.retainAll(tabIcons.keySet());
-			List<Integer> icons = new ArrayList<>();
 			tabs.forEach(t -> icons.add(tabIcons.get(t)));
-			tabStrip.placeTabs(tabs, icons);
+		}
+		if (bankTagsStrip.active())
+		{
+			tabStrip.hideTabs(0);
+			bankTagsStrip.update(tabs, icons);
 		}
 		else
 		{
-			tabStrip.hideTabs(0);
+			// With no tabs this hides the strip.
+			tabStrip.placeTabs(tabs, icons);
 		}
 		itemCopies.hideFrom(copies);
 		hideHeaders(section);
@@ -1041,7 +1158,17 @@ public class SmartBankSorterPlugin extends Plugin
 	{
 		focusedTab = category.equals(focusedTab) ? null : category;
 		scrollToTop = true;
-		clientThread.invokeLater(this::rebuildBank);
+		BankTagsService bankTags = bankTags();
+		if (bankTags != null && bankTags.getActiveTag() != null)
+		{
+			// A category tab clicked in Bank Tags' strip while one of its tag tabs is open: closing the tag tab
+			// rebuilds the bank.
+			bankTags.closeBankTag();
+		}
+		else
+		{
+			clientThread.invokeLater(this::rebuildBank);
+		}
 	}
 
 	// Mirrors the bank's ~bankmain_searching: the search box is open, or closed with a search still applied.

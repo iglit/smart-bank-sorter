@@ -15,6 +15,7 @@ public class SubscriberTest
 		EventBus bus = new EventBus();
 		SmartBankSorterPlugin plugin = new SmartBankSorterPlugin();
 		bus.register(plugin);
+		bus.register(new SmartBankSorterPlugin.BeforeBankTags(plugin));
 		bus.register(new SmartBankSorterPlugin.AfterBankTags(plugin));
 	}
 }
