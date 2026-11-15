@@ -96,6 +96,8 @@ public class CategoriserTest
 		assertEquals(RUNES, Categoriser.builtIn("blighted teleport spell sack", NONE, null));
 		assertEquals(HERBLORE, Categoriser.builtIn("grimy ranarr weed", NONE, null));
 		assertEquals(HERBLORE, Categoriser.builtIn("ranarr potion (unf)", NONE, null));
+		assertEquals(LOGS_PLANKS, Categoriser.builtIn("dragon bolts (unf)", NONE, null));
+		assertEquals(LOGS_PLANKS, Categoriser.builtIn("adamant bolts(unf)", NONE, null));
 		assertEquals(FARMING, Categoriser.builtIn("ranarr seed", NONE, null));
 		assertEquals(MISC, Categoriser.builtIn("crystal armour seed", NONE, null));
 		assertEquals(MISC, Categoriser.builtIn("enhanced crystal weapon seed", NONE, null));

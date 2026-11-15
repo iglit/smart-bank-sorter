@@ -133,6 +133,11 @@ final class Categoriser
 		{
 			return FARMING;
 		}
+		// Unfinished bolts are fletched, not mixed into potions like the other "(unf)" items.
+		if (name.endsWith("(unf)") && name.contains(" bolts"))
+		{
+			return LOGS_PLANKS;
+		}
 		if (name.startsWith("grimy ") || name.endsWith("(unf)") || CLEAN_HERBS.contains(name)
 			|| name.startsWith("vial of ") || name.equals("vial"))
 		{
