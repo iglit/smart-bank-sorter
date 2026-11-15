@@ -630,21 +630,51 @@ public class SmartBankSorterPlugin extends Plugin
 		int copies = 0;
 		itemCopies.clearTargets();
 		itemCopies.setSpares(spares);
-		// Tab name -> icon item, for tabs that have something in them.
-		Map<String, Integer> tabIcons = new HashMap<>();
+		Map<String, Integer> tabIcons = tabsWithItems(groups);
+		checkFocus(tabIcons);
+
+		// Copies get the bank's empty slots in the order they're drawn. Those that don't fit are left out before the
+		// layout, so their rows close up and a category of nothing but those gets no header. Collapsed and
+		// filtered-out categories draw no copies, so they take no slots.
+		Map<String, List<List<Slot>>> rowsByCategory = new HashMap<>();
+		int freeSlots = spares.size();
 		for (Map.Entry<String, List<Slot>> group : groups.entrySet())
 		{
-			String tab = tabGroups.match(-1, group.getKey());
-			if (tab != null && !group.getValue().isEmpty())
+			String category = group.getKey();
+			List<List<Slot>> rows = rows(category, group.getValue(), comparator);
+			if (!collapsed.contains(category) && !filteredOut(category))
 			{
-				tabIcons.putIfAbsent(tab, -1);
+				List<Slot> unplaced = new ArrayList<>();
+				for (List<Slot> row : rows)
+				{
+					for (Slot slot : row)
+					{
+						if (slot == null || !slot.copy)
+						{
+							continue;
+						}
+						if (freeSlots > 0)
+						{
+							freeSlots--;
+						}
+						else
+						{
+							unplaced.add(slot);
+						}
+					}
+				}
+				if (!unplaced.isEmpty())
+				{
+					group.getValue().removeAll(unplaced);
+					rows = rows(category, group.getValue(), comparator);
+				}
 			}
+			rowsByCategory.put(category, rows);
 		}
-		// Without the strip there'd be no tab to click to show everything again.
-		if (focusedTab != null && (!config.categoryTabs() || !tabIcons.containsKey(focusedTab)))
-		{
-			focusedTab = null;
-		}
+		// A tab whose categories only had copies that didn't fit has nothing left to show.
+		tabIcons.keySet().retainAll(tabsWithItems(groups).keySet());
+		checkFocus(tabIcons);
+
 		boolean searching = searching();
 		String suggestion = searching && config.categorySearch()
 			? CategorySearch.suggest(client.getVarcStrValue(VarClientID.MESLAYERINPUT), shownCategories) : null;
@@ -665,19 +695,7 @@ public class SmartBankSorterPlugin extends Plugin
 				continue;
 			}
 			String category = group.getKey();
-
-			// Blighted supplies (Wilderness-only) always go last, laid out the same way as the rest.
-			List<Slot> normal = new ArrayList<>();
-			List<Slot> blighted = new ArrayList<>();
-			for (Slot s : groupSlots)
-			{
-				(s.name.toLowerCase().startsWith("blighted ") ? blighted : normal).add(s);
-			}
-			List<List<Slot>> rows = new ArrayList<>(orderRows(category, normal, comparator));
-			if (!blighted.isEmpty())
-			{
-				rows.addAll(orderRows(category, blighted, comparator));
-			}
+			List<List<Slot>> rows = rowsByCategory.get(category);
 			String tab = tabGroups.match(-1, category);
 			if (tab != null && tabIcons.get(tab) == -1)
 			{
@@ -685,7 +703,7 @@ public class SmartBankSorterPlugin extends Plugin
 			}
 
 			boolean isCollapsed = collapsed.contains(category);
-			boolean filteredOut = focusedTab != null && !focusedTab.equals(tab);
+			boolean filteredOut = filteredOut(category);
 			if (!filteredOut)
 			{
 				if (section > 0)
@@ -706,7 +724,7 @@ public class SmartBankSorterPlugin extends Plugin
 				for (int i = 0; i < row.size(); i++)
 				{
 					Slot slot = row.get(i);
-					if (slot == null || (slot.copy && filteredOut))
+					if (slot == null || (slot.copy && (filteredOut || isCollapsed)))
 					{
 						// Gap in an outfit column, or a copy we don't need to draw.
 						continue;
@@ -899,6 +917,53 @@ public class SmartBankSorterPlugin extends Plugin
 				pool.get(i).setHidden(true);
 			}
 		}
+	}
+
+	private List<List<Slot>> rows(String category, List<Slot> slots, Comparator<Slot> comparator)
+	{
+		// Blighted supplies (Wilderness-only) always go last, laid out the same way as the rest.
+		List<Slot> normal = new ArrayList<>();
+		List<Slot> blighted = new ArrayList<>();
+		for (Slot s : slots)
+		{
+			(s.name.toLowerCase().startsWith("blighted ") ? blighted : normal).add(s);
+		}
+		List<List<Slot>> rows = new ArrayList<>(orderRows(category, normal, comparator));
+		if (!blighted.isEmpty())
+		{
+			rows.addAll(orderRows(category, blighted, comparator));
+		}
+		return rows;
+	}
+
+	// Tab name -> icon item, for tabs that have something in them. The icons are filled in as the layout goes.
+	private Map<String, Integer> tabsWithItems(Map<String, List<Slot>> groups)
+	{
+		Map<String, Integer> tabIcons = new HashMap<>();
+		for (Map.Entry<String, List<Slot>> group : groups.entrySet())
+		{
+			String tab = tabGroups.match(-1, group.getKey());
+			if (tab != null && !group.getValue().isEmpty())
+			{
+				tabIcons.putIfAbsent(tab, -1);
+			}
+		}
+		return tabIcons;
+	}
+
+	private void checkFocus(Map<String, Integer> tabIcons)
+	{
+		// Without the strip there'd be no tab to click to show everything again.
+		if (focusedTab != null && (!config.categoryTabs() || !tabIcons.containsKey(focusedTab)))
+		{
+			focusedTab = null;
+		}
+	}
+
+	// A tab is showing and this category isn't in it.
+	private boolean filteredOut(String category)
+	{
+		return focusedTab != null && !focusedTab.equals(tabGroups.match(-1, category));
 	}
 
 	private List<List<Slot>> orderRows(String category, List<Slot> slots, Comparator<Slot> comparator)
