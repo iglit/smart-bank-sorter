@@ -922,7 +922,15 @@ public class SmartBankSorterPlugin extends Plugin
 		{
 			return Collections.singletonList(TeleportOrder.order(slots, s -> s.name, comparator));
 		}
-		slots.sort(Comparator.<Slot>comparingInt(s -> ItemData.tier(s.name)).thenComparing(comparator));
+		if (config.itemOrder() == SmartBankSorterConfig.ItemOrder.BANK_ORDER)
+		{
+			// The user arranged these themselves; the most-used-first tiers would reshuffle them.
+			slots.sort(comparator);
+		}
+		else
+		{
+			slots.sort(Comparator.<Slot>comparingInt(s -> ItemData.tier(s.name)).thenComparing(comparator));
+		}
 		return Collections.singletonList(slots);
 	}
 
