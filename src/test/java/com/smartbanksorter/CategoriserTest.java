@@ -96,8 +96,8 @@ public class CategoriserTest
 		assertEquals(RUNES, Categoriser.builtIn("blighted teleport spell sack", NONE, null));
 		assertEquals(HERBLORE, Categoriser.builtIn("grimy ranarr weed", NONE, null));
 		assertEquals(HERBLORE, Categoriser.builtIn("ranarr potion (unf)", NONE, null));
-		assertEquals(LOGS_PLANKS, Categoriser.builtIn("dragon bolts (unf)", NONE, null));
-		assertEquals(LOGS_PLANKS, Categoriser.builtIn("adamant bolts(unf)", NONE, null));
+		assertEquals(LOGS, Categoriser.builtIn("dragon bolts (unf)", NONE, null));
+		assertEquals(LOGS, Categoriser.builtIn("adamant bolts(unf)", NONE, null));
 		assertEquals(FARMING, Categoriser.builtIn("ranarr seed", NONE, null));
 		assertEquals(MISC, Categoriser.builtIn("crystal armour seed", NONE, null));
 		assertEquals(MISC, Categoriser.builtIn("enhanced crystal weapon seed", NONE, null));
@@ -111,7 +111,9 @@ public class CategoriserTest
 		assertEquals(GEMS, Categoriser.builtIn("uncut diamond", NONE, null));
 		assertEquals(ORES_BARS, Categoriser.builtIn("runite ore", NONE, null));
 		assertEquals(ORES_BARS, Categoriser.builtIn("coal", NONE, null));
-		assertEquals(LOGS_PLANKS, Categoriser.builtIn("magic logs", NONE, null));
+		assertEquals(LOGS, Categoriser.builtIn("magic logs", NONE, null));
+		assertEquals(PYRE_LOGS, Categoriser.builtIn("magic pyre logs", NONE, null));
+		assertEquals(PLANKS, Categoriser.builtIn("rosewood plank", NONE, null));
 		assertEquals(CURRENCY, Categoriser.builtIn("coins", NONE, null));
 		assertEquals(MISC, Categoriser.builtIn("feather", NONE, null));
 		assertEquals(RANGED, Categoriser.builtIn("cannon barrels", NONE, null));

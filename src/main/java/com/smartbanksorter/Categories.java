@@ -26,7 +26,9 @@ final class Categories
 	// Materials go to the skill that uses them.
 	static final String ORES_BARS = "Smithing";
 	static final String GEMS = "Crafting";
-	static final String LOGS_PLANKS = "Fletching";
+	static final String LOGS = "Fletching";
+	static final String PLANKS = "Construction";
+	static final String PYRE_LOGS = "Firemaking";
 	static final String CLUES = "Clues";
 	static final String QUEST = "Quest";
 	static final String COSMETIC = "Cosmetic";

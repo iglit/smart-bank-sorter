@@ -136,7 +136,7 @@ final class Categoriser
 		// Unfinished bolts are fletched, not mixed into potions like the other "(unf)" items.
 		if (name.endsWith("(unf)") && name.contains(" bolts"))
 		{
-			return LOGS_PLANKS;
+			return LOGS;
 		}
 		if (name.startsWith("grimy ") || name.endsWith("(unf)") || CLEAN_HERBS.contains(name)
 			|| name.startsWith("vial of ") || name.equals("vial"))
@@ -151,9 +151,18 @@ final class Categoriser
 		{
 			return ORES_BARS;
 		}
-		if (name.endsWith("logs") || name.endsWith("plank"))
+		// Pyre logs are burnt for Barbarian Firemaking and shade remains, not fletched.
+		if (name.endsWith("pyre logs"))
 		{
-			return LOGS_PLANKS;
+			return PYRE_LOGS;
+		}
+		if (name.endsWith("logs"))
+		{
+			return LOGS;
+		}
+		if (name.endsWith("plank"))
+		{
+			return PLANKS;
 		}
 		if (name.startsWith("clue scroll") || name.startsWith("reward casket") || name.startsWith("clue bottle")
 			|| name.startsWith("clue geode") || name.startsWith("clue nest") || name.startsWith("scroll box"))
