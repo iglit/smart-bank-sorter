@@ -17,6 +17,7 @@ Brimhaven voucher|Agility||4
 Runner boots|Melee||4
 Runner hat|Melee||4
 Sigil of the Gnomes|Agility||4
+Trap disarmer|Agility||4
 Wilderness agility ticket|Agility||4
 Casket|Clues||2
 Scroll box (beginner)|Clues||2
@@ -37,6 +38,9 @@ Kharedst's memoirs|Teleports||4
 M. treasure chest|Construction||4
 Scroll sack|Clues||4
 Sigil of the Treasure Hunter|Clues||4
+Torn clue scroll (part 1)|Clues||4
+Torn clue scroll (part 2)|Clues||4
+Torn clue scroll (part 3)|Clues||4
 Tooth half of key|Clues||4
 Clueless scroll|Clues||5
 Bolt of cloth|Construction||2
@@ -233,6 +237,7 @@ Ugthanki & tomato|Cooking||3
 Wrapped oomlie|Cooking||3
 Apple mush|Cooking||4
 Barley|Cooking||4
+Blue crab|Cooking|Fishing|4
 Cake tin|Cooking||4
 Chef's hat|Cooking||4
 Chocolate dust|Cooking||4
@@ -272,6 +277,7 @@ Gnome spice|Cooking||4
 Golden tench|Fishing||5
 Ham joint|Cooking||4
 Iron spit|Cooking||4
+Karambwanji|Cooking|Fishing|4
 Kebab mix|Cooking||4
 Meat tenderiser|Melee||5
 Oranges(5)|Cooking||4
@@ -284,6 +290,7 @@ Pitta bread|Cooking||4
 Pizza base|Cooking||4
 Pot of cornflour|Cooking||4
 Pot of flour|Cooking||4
+Rainbow crab|Cooking|Fishing|4
 Raw admiral pie|Cooking||4
 Raw anchovies|Cooking||4
 Raw barb-tailed kebbit|Cooking||4
@@ -292,6 +299,7 @@ Raw bear meat|Cooking||4
 Raw beast meat|Cooking||4
 Raw beef|Cooking||4
 Raw bird meat|Cooking||4
+Raw blue crab meat|Cooking||4
 Raw bluefin|Cooking||4
 Raw boar meat|Cooking||4
 Raw cave eel|Cooking||4
@@ -317,8 +325,10 @@ Raw oomlie|Cooking||4
 Raw pike|Cooking||4
 Raw pyre fox|Cooking||4
 Raw rabbit|Cooking||4
+Raw rainbow crab meat|Cooking||4
 Raw rainbow fish|Cooking||4
 Raw rat meat|Cooking||4
+Raw red crab meat|Cooking||4
 Raw salmon|Cooking||4
 Raw sardine|Cooking||4
 Raw shrimps|Cooking||4
@@ -332,6 +342,7 @@ Raw wild kebbit|Cooking||4
 Raw wild pie|Cooking||4
 Raw yak meat|Cooking||4
 Raw yellowfin|Cooking||4
+Red crab|Cooking|Fishing|4
 Redberries|Cooking||4
 Sigil of the Chef|Cooking||4
 Skewer stick|Cooking||4
@@ -636,6 +647,10 @@ Bronze set (lg)|Melee||5
 Bronze trimmed set|Melee||5
 Bronze trimmed set (lg)|Melee||5
 Brown apron|Crafting||5
+Adventurer's boots|Cosmetic||5
+Adventurer's hood|Cosmetic||5
+Adventurer's top|Cosmetic||5
+Adventurer's trousers|Cosmetic||5
 Brown headband|Cosmetic||5
 Brown naval shirt|Cosmetic||5
 Brown navy slacks|Cosmetic||5
@@ -732,8 +747,12 @@ Decorative helm|Cosmetic||5
 Decorative shield|Cosmetic||5
 Decorative sword|Cosmetic||5
 Deerstalker|Cosmetic||5
+Demonic boots|Cosmetic||5
+Demonic hood|Cosmetic||5
 Demonic pacts bronze trophy|Cosmetic||5
 Demonic pacts iron trophy|Cosmetic||5
+Demonic robe bottom|Cosmetic||5
+Demonic robe top|Cosmetic||5
 Desert camo legs|Cosmetic||5
 Desert camo top|Cosmetic||5
 Desert disguise|Cosmetic||5
@@ -1093,12 +1112,16 @@ Purple robe top|Cosmetic||5
 Purple tricorn hat|Cosmetic||5
 Raging echoes adamant trophy|Cosmetic||5
 Raging echoes banner|Cosmetic||5
+Raging echoes boots|Cosmetic||5
 Raging echoes bronze trophy|Cosmetic||5
 Raging echoes dragon trophy|Cosmetic||5
+Raging echoes hat|Cosmetic||5
 Raging echoes iron trophy|Cosmetic||5
 Raging echoes mithril trophy|Cosmetic||5
+Raging echoes robeskirt|Cosmetic||5
 Raging echoes rune trophy|Cosmetic||5
 Raging echoes steel trophy|Cosmetic||5
+Raging echoes top|Cosmetic||5
 Rainbow cape|Cosmetic||5
 Rainbow crown shirt|Cosmetic||5
 Rainbow jumper|Cosmetic||5
@@ -1150,6 +1173,8 @@ Santa jacket|Cosmetic||5
 Santa mask|Cosmetic||5
 Santa pantaloons|Cosmetic||5
 Scarecrow shirt|Cosmetic||5
+Shattered boots|Cosmetic||5
+Shattered hood|Cosmetic||5
 Shattered relics adamant trophy|Cosmetic||5
 Shattered relics bronze trophy|Cosmetic||5
 Shattered relics dragon trophy|Cosmetic||5
@@ -1160,6 +1185,8 @@ Shattered relics rune trophy|Cosmetic||5
 Shattered relics steel trophy|Cosmetic||5
 Shattered relics variety ornament kit|Cosmetic||5
 Shattered relics void ornament kit|Cosmetic||5
+Shattered top|Cosmetic||5
+Shattered trousers|Cosmetic||5
 Shirt|Cosmetic||5
 Shoes|Cosmetic||5
 Shorts|Cosmetic||5
@@ -1280,34 +1307,42 @@ Top hat|Cosmetic||5
 Top hat & monocle|Cosmetic||5
 Trailblazer adamant trophy|Cosmetic||5
 Trailblazer banner|Cosmetic||5
+Trailblazer boots|Cosmetic||5
 Trailblazer boots (t3)|Cosmetic||5
 Trailblazer bronze trophy|Cosmetic||5
 Trailblazer cane|Cosmetic||5
 Trailblazer dragon trophy|Cosmetic||5
 Trailblazer globe|Cosmetic||5
 Trailblazer graceful ornament kit|Cosmetic||5
+Trailblazer hood|Cosmetic||5
 Trailblazer hood (t3)|Cosmetic||5
 Trailblazer iron trophy|Cosmetic||5
 Trailblazer mithril trophy|Cosmetic||5
 Trailblazer reloaded adamant trophy|Cosmetic||5
 Trailblazer reloaded banner|Cosmetic||5
+Trailblazer reloaded boots|Cosmetic||5
 Trailblazer reloaded boots (t1)|Cosmetic||5
 Trailblazer reloaded bronze trophy|Cosmetic||5
 Trailblazer reloaded bulwark ornament kit|Cosmetic||5
 Trailblazer reloaded dragon trophy|Cosmetic||5
+Trailblazer reloaded headband|Cosmetic||5
 Trailblazer reloaded headband (t1)|Cosmetic||5
 Trailblazer reloaded iron trophy|Cosmetic||5
 Trailblazer reloaded mithril trophy|Cosmetic||5
 Trailblazer reloaded rune trophy|Cosmetic||5
 Trailblazer reloaded steel trophy|Cosmetic||5
+Trailblazer reloaded top|Cosmetic||5
 Trailblazer reloaded top (t1)|Cosmetic||5
 Trailblazer reloaded torch|Cosmetic||5
+Trailblazer reloaded trousers|Cosmetic||5
 Trailblazer reloaded trousers (t1)|Cosmetic||5
 Trailblazer rug|Cosmetic||5
 Trailblazer rune trophy|Cosmetic||5
 Trailblazer steel trophy|Cosmetic||5
 Trailblazer tool ornament kit|Cosmetic||5
+Trailblazer top|Cosmetic||5
 Trailblazer top (t3)|Cosmetic||5
+Trailblazer trousers|Cosmetic||5
 Trailblazer trousers (t3)|Cosmetic||5
 Tree skirt|Cosmetic||5
 Tree top|Cosmetic||5
@@ -1316,6 +1351,10 @@ Tri-jester scarf|Cosmetic||5
 Tribal mask|Cosmetic||5
 Tribal top|Cosmetic||5
 Trousers|Cosmetic||5
+Twisted boots|Cosmetic||5
+Twisted coat|Cosmetic||5
+Twisted hat|Cosmetic||5
+Twisted trousers|Cosmetic||5
 Ugly halloween jumper (black)|Cosmetic||5
 Ugly halloween jumper (orange)|Cosmetic||5
 Vampyre costume bottom|Cosmetic||5
@@ -1443,6 +1482,8 @@ Fine cloth|Crafting||3
 Flattened hide|Crafting||3
 Flax|Crafting||3
 Fur|Crafting||3
+Gem pouch|Crafting||3
+Gem sack|Crafting||3
 Goldsmith gauntlets|Crafting||3
 Green dragon leather|Crafting||3
 Green dragonhide|Crafting||3
@@ -1458,6 +1499,8 @@ Klank's gauntlets|Quest||4
 Masori crafting kit|Crafting||3
 Molten glass|Crafting||3
 Onyx|Crafting||3
+Open gem pouch|Crafting||3
+Open gem sack|Crafting||3
 Ring mould|Crafting||3
 Ruby|Crafting||3
 Sapphire|Crafting||3
@@ -1478,6 +1521,7 @@ Zenyte amulet (u)|Crafting||3
 Zenyte shard|Crafting||3
 Air orb|Crafting||4
 Armageddon cape fabric|Cosmetic||4
+Ball of cotton|Crafting||4
 Bear fur|Crafting||4
 Black tourmaline core|Melee||4
 Blamish bark shell|Crafting||4
@@ -1492,6 +1536,7 @@ Bullseye lantern (unf)|Crafting||4
 Cave goblin wire|Crafting||4
 Circular hide|Crafting||4
 Common kebbit fur|Crafting||4
+Cotton boll|Crafting|Farming|4
 Crate of alpaca wool|Crafting||4
 Crate of antelope fur|Crafting||4
 Crate of coral|Crafting||4
@@ -1686,16 +1731,20 @@ Forager's pouch|Farming||4
 Gardening boots|Farming||4
 Gilded spade|Cosmetic||5
 Large spade|Cosmetic||5
+Leprechaun charm|Farming||4
 Mushroom|Farming||4
 Mushroom spore|Farming||4
 Potato sack|Cosmetic||5
 Rake|Farming||4
 Ruby harvest|Hunter||4
 Secateurs attachment|Woodcutting||4
+Ritual mulch|Farming||4
+Secateurs blade|Farming||4
 Shears|Farming|Crafting|4
 Shrunk ogleroot|Quest||5
 Sigil of Enhanced Harvest|Farming||4
 Sigil of the Fortune Farmer|Farming||4
+Strawberries|Farming||4
 Teak sapling|Farming||4
 Tomatoes(5)|Farming||4
 White flowers|Farming||4
@@ -1825,7 +1874,9 @@ Fish food|Fishing||4
 Fish sack|Fishing||4
 Fish sack barrel|Fishing||4
 Giant seaweed|Crafting||4
+Minnow|Fishing||4
 Open fish sack barrel|Fishing||4
+Spirit flakes|Fishing||4
 Seaweed|Crafting||4
 Empty fishbowl|Fishing||5
 Knife|Fletching||1
@@ -1837,17 +1888,25 @@ Mahogany logs|Fletching|Firemaking|2
 Maple logs|Fletching|Firemaking|2
 Steel knife|Ranged||4
 Adamant knife|Ranged||4
+Oak logs|Fletching|Firemaking|2
+Teak logs|Fletching|Firemaking|2
+Willow logs|Fletching|Firemaking|2
+Yew logs|Fletching|Firemaking|2
 Amethyst arrowtips|Fletching||3
 Arrow shaft|Fletching||3
 Blue feather|Fletching||3
 Bow string|Fletching||3
+Camphor logs|Fletching|Firemaking|3
 Crossbow string|Fletching||3
 Dragon arrowtips|Fletching||3
 Gryphon feather|Fletching||3
 Mithril knife|Ranged||4
 Headless arrow|Fletching||3
+Ironwood logs|Fletching|Firemaking|3
 Mithril limbs|Fletching||3
 Onyx bolt tips|Fletching||3
+Redwood logs|Fletching|Firemaking|3
+Rosewood logs|Fletching|Firemaking|3
 Rune arrowtips|Fletching||3
 Unstrung comp bow|Fletching||3
 Willow longbow (u)|Fletching||3
@@ -1857,7 +1916,9 @@ Wooden stock|Fletching||3
 Yew longbow (u)|Fletching||3
 Yew shortbow (u)|Fletching||3
 Yew stock|Fletching||3
+Achey tree logs|Fletching|Firemaking|4
 Adamant arrowtips|Fletching||4
+Arctic pine logs|Fletching|Firemaking|4
 Bronze arrowtips|Fletching||4
 Crate of feathers|Fletching||4
 Iron knife|Ranged||5
@@ -1886,6 +1947,7 @@ Ray barbs|Sailing||4
 Red feather|Fletching||4
 Sigil of the Fletcher|Fletching||4
 Split log|Woodcutting||4
+Squid beak|Fletching||4
 Steel arrowtips|Fletching||4
 Stripy feather|Fletching||4
 Swift albatross feather|Sailing||4
@@ -1950,6 +2012,8 @@ Grimy toadflax|Herblore||2
 Herb sack|Herblore||2
 Limpwurt root|Herblore||2
 Open herb sack|Herblore||2
+Open silklined herb sack|Herblore||2
+Silklined herb sack|Herblore||2
 Snapdragon|Herblore||2
 Tarromin|Herblore||2
 Toadflax|Herblore||2
@@ -1996,6 +2060,7 @@ Dwarf weed|Herblore||4
 Dwarf weed potion (unf)|Herblore||4
 Elkhorn potion (unf)|Herblore||4
 Ground guam|Herblore||4
+Herb box|Herblore||4
 Irit potion (unf)|Herblore||4
 Irit tar|Herblore||4
 Krandorian hops|Farming||4
@@ -2008,6 +2073,7 @@ Marrentill tar|Herblore||4
 Moonlight moth mix (2)|Potions||4
 Mort myre fungus|Herblore||4
 Mort myre stem|Herblore||4
+Open herb box|Herblore||4
 Ranarr potion (unf)|Herblore||4
 Sigil of the Alchemist|Herblore||4
 Sigil of the Potion Master|Herblore||4
@@ -2070,12 +2136,14 @@ Guild hunter legs|Hunter||4
 Guild hunter top|Hunter||4
 Hunter spear tips|Hunter||4
 Hunter's honour|Cosmetic||5
+Hunters' loot sack|Hunter||4
 Hunting knife|Hunter||4
 Impling jar|Hunter||4
 Jerboa tail|Hunter||4
 Magpie impling jar|Hunter||4
 Moonlight moth|Hunter||4
 Nature impling jar|Hunter||4
+Net trap|Hunter||4
 Ninja impling jar|Hunter||4
 Oak bird house|Hunter||4
 Orange salamander|Hunter||4
@@ -4214,6 +4282,7 @@ Blessed bone statuette|Prayer||4
 Bone fragments|Prayer||4
 Burnt bones|Prayer||4
 Crushed superior dragon bones|Herblore||4
+Ecto-token|Prayer||4
 Ensouled elf head|Prayer||4
 Ensouled hellhound head|Prayer||4
 Holy book|Melee||4
@@ -4727,6 +4796,7 @@ Law talisman|Runecraft||2
 Medium pouch|Runecraft||2
 Rune essence|Runecraft||2
 Small pouch|Runecraft||2
+Abyssal pearls|Runecraft||3
 Air tiara|Runecraft||3
 Blood essence|Runecraft||3
 Blood shard|Melee||3
@@ -4759,6 +4829,7 @@ Tiara|Runecraft||3
 Aether catalyst|Runecraft||4
 Ancient essence|Misc||4
 Celestial signet (uncharged)|Mining||4
+Astral tiara|Runecraft||4
 Death talisman|Runecraft||4
 Fancy tiara|Cosmetic||5
 Imbued heart|Magic||3
@@ -4800,6 +4871,9 @@ Blighted teleport spell sack|Runes||4
 Blighted vengeance sack|Runes||4
 Crate of wrath runes|Runes||4
 Large dragon keel parts|Sailing||2
+Barracuda salvage|Sailing||3
+Fishy salvage|Sailing||3
+Fremennik salvage|Sailing||3
 Fremennik sea boots 1|Sailing||3
 Iron keel parts|Sailing||3
 Ironwood hull parts|Sailing||3
@@ -4811,14 +4885,19 @@ Large mahogany hull parts|Sailing||3
 Large mithril keel parts|Sailing||3
 Large rosewood hull parts|Sailing||3
 Large rune keel parts|Sailing||3
+Large salvage|Sailing||3
 Large steel keel parts|Sailing||3
 Large teak hull parts|Sailing||3
 Mahogany hull parts|Sailing||3
 Mahogany repair kit|Sailing||3
+Martial salvage|Sailing||3
 Mithril keel parts|Sailing||3
+Opulent salvage|Sailing||3
+Plundered salvage|Sailing||3
 Rosewood hull parts|Sailing||3
 Rune keel parts|Sailing||3
 Sailors' amulet|Teleports||3
+Small salvage|Sailing||3
 Steel keel parts|Sailing||3
 Wooden hull parts|Sailing||3
 Adamant keel parts|Sailing||4
@@ -4841,6 +4920,10 @@ Oak repair kit|Sailing||4
 Paddle|Sailing||4
 Rosewood repair kit|Sailing||4
 Sailors' amulet (inert)|Sailing||4
+Angler's paint|Sailing||5
+Barracuda paint|Sailing||5
+Merchant's paint|Sailing||5
+Salvor's paint|Sailing||5
 Ship ticket|Misc||5
 Storm cruiser's coat|Cosmetic||4
 Storm cruiser's hat|Cosmetic||4
@@ -4910,6 +4993,7 @@ Banshee robe|Cosmetic||4
 Banshee top|Cosmetic||4
 Black demon mask|Cosmetic||4
 Efh salt|Mining||4
+Fungicide|Slayer||4
 Fungicide spray|Slayer||4
 Sigil of Slaughter|Slayer||4
 Slayer hood|Slayer||4
@@ -5097,6 +5181,7 @@ Black felling axe|Woodcutting||4
 Bucket of sap|Woodcutting||4
 Dragon felling axe|Woodcutting||4
 Echo axe|Woodcutting||4
+Felling axe handle|Woodcutting||4
 Forestry basket|Woodcutting||4
 Forestry kit|Woodcutting||4
 Gilded axe|Woodcutting||4
@@ -5109,6 +5194,8 @@ Open forestry basket|Woodcutting||4
 Open log basket|Woodcutting||4
 Sage's axe|Woodcutting||4
 Sigil of the Forager|Woodcutting||4
+Smoker canister|Woodcutting||4
+Smoker fuel|Woodcutting||4
 Bronze axe|Woodcutting||5
 Bronze felling axe|Woodcutting||5
 Oak roots|Farming||5
