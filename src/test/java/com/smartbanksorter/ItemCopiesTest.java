@@ -31,6 +31,14 @@ public class ItemCopiesTest
 	}
 
 	@Test
+	public void bloodMoonStaysInMelee()
+	{
+		Map<String, List<Slot>> groups = bankWith(new Slot(null, 0, 29022, 1, "Blood moon chestplate", Categories.MELEE));
+		copies.addDataCopies(groups, s -> false);
+		assertEquals(1, groups.size());
+	}
+
+	@Test
 	public void ruleStopsCopies()
 	{
 		Map<String, List<Slot>> groups = bankWith(new Slot(null, 0, 13072, 1, "Elite void robe", "Void"));

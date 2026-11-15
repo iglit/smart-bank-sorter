@@ -2134,7 +2134,7 @@ Ancestral robes set|Magic||2
 Ancient staff|Magic||2
 Armadyl crozier|Magic||2
 Blue Moon armour set|Magic||2
-Chaos gauntlets|Magic|Melee|2
+Chaos gauntlets|Magic||2
 Confliction gauntlets|Magic||2
 Corrupted sceptre|Magic||2
 Corrupted staff (attuned)|Magic||2
@@ -2339,7 +2339,7 @@ Uncharged trident (e) (o)|Magic||3
 Warped sceptre (uncharged)|Magic||3
 Xerician robe|Magic||3
 Xerician top|Magic||3
-Zamorak cape|Magic|Melee|3
+Zamorak cape|Magic||3
 Zamorak crozier|Magic||3
 Zamorak staff|Magic||3
 Zealot's boots|Magic||3
@@ -2547,9 +2547,9 @@ Berserker helm|Melee||2
 Berserker necklace|Melee||2
 Berserker ring|Melee||2
 Blood Moon armour set|Melee||2
-Blood Moon chestplate|Melee|Magic|2
-Blood Moon helm|Melee|Magic|2
-Blood Moon tassets|Melee|Magic|2
+Blood Moon chestplate|Melee||2
+Blood Moon helm|Melee||2
+Blood Moon tassets|Melee||2
 Boots of Brimstone|Melee||2
 Cape of Legends|Melee|Ranged,Magic|2
 Corrupted body (attuned)|Melee||2
@@ -4227,8 +4227,8 @@ Armadyl cloak|Ranged||2
 Armadyl coif|Ranged||2
 Armadyl helmet|Ranged||2
 Ava's accumulator|Ranged||2
-Bandos d'hide body|Ranged|Melee|2
-Bandos d'hide boots|Ranged|Melee|2
+Bandos d'hide body|Ranged||2
+Bandos d'hide boots|Ranged||2
 Black d'hide body|Ranged||2
 Black d'hide chaps|Ranged||2
 Chinchompa|Ranged||2
