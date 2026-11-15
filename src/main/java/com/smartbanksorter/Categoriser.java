@@ -54,12 +54,12 @@ final class Categoriser
 		{
 			ItemData.Entry data = ItemData.get(name);
 			custom = data == null ? null : data.category;
-			// For combat gear the item's own stats decide the style, or Ammo for arrows, bolts and the like; the data
-			// only moves gear out of the styles (Slayer, a skill, Cosmetic...).
+			// For combat gear the item's own stats decide the style; the data only moves gear out of the styles
+			// (Slayer, a skill, Cosmetic...).
 			if (custom != null && equipment != null && COMBAT_STYLES.contains(custom))
 			{
 				String byStats = gear(name.toLowerCase(), equipment);
-				if (COMBAT_STYLES.contains(byStats) || byStats.equals(AMMO))
+				if (COMBAT_STYLES.contains(byStats))
 				{
 					custom = byStats;
 				}
@@ -177,8 +177,9 @@ final class Categoriser
 		int slot = e.getSlot();
 		if (slot == EquipmentInventorySlot.AMMO.getSlotIdx())
 		{
-			// God blessings use the ammo slot but suit every style; they live with Melee and get copies elsewhere.
-			return name.contains("blessing") ? MELEE : AMMO;
+			// Arrows, bolts and the rest of the ammo go with Ranged. God blessings use the ammo slot but suit every
+			// style; they live with Melee and get copies elsewhere.
+			return name.contains("blessing") ? MELEE : RANGED;
 		}
 
 		int meleeAttack = Math.max(e.getAstab(), Math.max(e.getAslash(), e.getAcrush()));

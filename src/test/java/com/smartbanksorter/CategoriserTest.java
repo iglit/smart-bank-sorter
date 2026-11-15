@@ -64,9 +64,9 @@ public class CategoriserTest
 		// Ring of suffering: defence only; games necklace: nothing
 		assertEquals(JEWELLERY, gear(slot(EquipmentInventorySlot.RING).dstab(20).dmagic(20)));
 		assertEquals(JEWELLERY, gear(slot(EquipmentInventorySlot.AMULET)));
-		assertEquals(AMMO, gear(slot(EquipmentInventorySlot.AMMO).rstr(49)));
+		assertEquals(RANGED, gear(slot(EquipmentInventorySlot.AMMO).rstr(49)));
 		assertEquals(MELEE, Categoriser.gear("honourable blessing", slot(EquipmentInventorySlot.AMMO).prayer(1).build()));
-		assertEquals(AMMO, Categoriser.gear("atlatl dart", slot(EquipmentInventorySlot.AMMO).build()));
+		assertEquals(RANGED, Categoriser.gear("atlatl dart", slot(EquipmentInventorySlot.AMMO).build()));
 	}
 
 	@Test
@@ -138,11 +138,12 @@ public class CategoriserTest
 	}
 
 	@Test
-	public void listedAmmoGoesToAmmo()
+	public void ammoGoesToRanged()
 	{
 		Categoriser c = new Categoriser(UserRules.parse(""));
-		// Listed under Ranged, but the ammo slot puts it with the unlisted ammo.
-		assertEquals(AMMO, c.categorise(21326, "Amethyst arrow", NONE, slot(EquipmentInventorySlot.AMMO).rstr(55).build()));
+		// Listed and unlisted ammo end up together.
+		assertEquals(RANGED, c.categorise(21326, "Amethyst arrow", NONE, slot(EquipmentInventorySlot.AMMO).rstr(55).build()));
+		assertEquals(RANGED, c.categorise(9341, "Dragon bolts", NONE, slot(EquipmentInventorySlot.AMMO).rstr(122).build()));
 		// Blessings stay with Melee, which copies them to the other styles.
 		assertEquals(MELEE, c.categorise(20220, "Holy blessing", NONE, slot(EquipmentInventorySlot.AMMO).prayer(1).build()));
 	}

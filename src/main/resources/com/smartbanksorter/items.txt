@@ -79,7 +79,7 @@ Sandstone (2kg)|Construction||3
 Sandstone (5kg)|Construction||3
 Saw|Construction||3
 Teak plank|Construction||3
-Bolt rack|Ammo||4
+Bolt rack|Ranged||4
 Bookcase|Construction||4
 Bronze nails|Construction||4
 Camphor plank|Construction||4
@@ -2030,9 +2030,9 @@ Empty vial|Herblore||3
 Eye of newt|Herblore||3
 Goat horn dust|Herblore||3
 Guam potion (unf)|Herblore||3
-Guam tar|Ammo||3
+Guam tar|Ranged||3
 Harralander potion (unf)|Herblore||3
-Harralander tar|Ammo||3
+Harralander tar|Ranged||3
 Huasca potion (unf)|Herblore||3
 Jug of water|Cooking||4
 Lye paste|Herblore||3
@@ -2062,14 +2062,14 @@ Elkhorn potion (unf)|Herblore||4
 Ground guam|Herblore||4
 Herb box|Herblore||4
 Irit potion (unf)|Herblore||4
-Irit tar|Ammo||4
+Irit tar|Ranged||4
 Krandorian hops|Farming||4
 Kwuarm potion (unf)|Herblore||4
 Lantadyme|Herblore||4
 Lantadyme potion (unf)|Herblore||4
 Marigolds|Farming||4
 Marrentill potion (unf)|Herblore||4
-Marrentill tar|Ammo||4
+Marrentill tar|Ranged||4
 Moonlight moth mix (2)|Potions||4
 Mort myre fungus|Herblore||4
 Mort myre stem|Herblore||4
@@ -2079,7 +2079,7 @@ Sigil of the Alchemist|Herblore||4
 Sigil of the Potion Master|Herblore||4
 Swamp paste|Herblore||4
 Swamp weed|Herblore||4
-Tarromin tar|Ammo||4
+Tarromin tar|Ranged||4
 Trollweiss|Quest||5
 Unicorn horn dust|Herblore||4
 Vial of blood|Herblore||4
