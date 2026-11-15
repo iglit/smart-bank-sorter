@@ -465,12 +465,12 @@ Mithril gold-trimmed set (lg)|Melee||4
 Mithril trimmed set|Melee||4
 Mithril trimmed set (lg)|Melee||4
 Mudskipper hat|Cosmetic||4
-Music cape|Cosmetic||4
-Music hood|Cosmetic||4
+Music cape|Teleports||4
+Music hood|Teleports||4
 Ninja monkey greegree|Cosmetic||4
 Occult ornament kit|Cosmetic||4
-Quest point cape|Cosmetic||4
-Quest point hood|Cosmetic||4
+Quest point cape|Teleports||4
+Quest point hood|Teleports||4
 Right eye patch|Cosmetic||4
 Royal crown|Cosmetic||4
 Royal sceptre|Cosmetic||4
@@ -2288,7 +2288,7 @@ Bones to peaches|Magic||3
 Book of Darkness|Magic||3
 Boots of the Eye|Runecraft||3
 Bryophyta's staff (uncharged)|Magic||3
-Camulet|Magic||3
+Camulet|Teleports||3
 Corrupted staff (basic)|Magic||3
 Corrupted zuriel's hood (bh)|Magic||3
 Corrupted zuriel's robe bottom (bh)|Magic||3
@@ -2303,7 +2303,7 @@ Dark squall robe top|Magic||3
 Demonic robe bottom (t1)|Cosmetic||3
 Demonic robe top (t1)|Cosmetic||3
 Dragon hunter wand|Magic||3
-Dramen staff|Magic||3
+Dramen staff|Teleports||3
 Druid's robe|Magic||3
 Druid's robe top|Magic||3
 Druidic wreath|Cosmetic||3
@@ -2380,8 +2380,8 @@ Saradomin staff|Magic||3
 Shade robe|Magic||3
 Shade robe top|Magic||3
 Shadow ancient sceptre|Magic||3
-Sinhaza shroud tier 1|Magic||3
-Skull sceptre|Magic||3
+Sinhaza shroud tier 1|Cosmetic||5
+Skull sceptre|Teleports||3
 Slayer's staff|Magic||3
 Smoke ancient sceptre|Magic||3
 Soulflame horn|Magic||3
@@ -3179,8 +3179,8 @@ Fighter torso (l)(or)|Melee||4
 Fire cape|Melee||4
 Fremennik shield|Melee||4
 Gadderhammer|Melee||4
-Ghommal's hilt 1|Melee||4
-Ghommal's hilt 2|Melee||4
+Ghommal's hilt 1|Teleports||4
+Ghommal's hilt 2|Teleports||4
 Gilded boots|Melee||4
 Gilded chainbody|Melee||4
 Gilded full helm|Melee||4
@@ -3227,7 +3227,7 @@ Hardcore group ironman platelegs|Melee||4
 Hardcore ironman helm|Melee||4
 Hardcore ironman platebody|Melee||4
 Hardcore ironman platelegs|Melee||4
-Helm of Raedwald|Melee||4
+Helm of Raedwald|Clues||4
 Hill giant club|Melee||4
 Hood of Ruin|Cosmetic||4
 Hornwood helm|Cosmetic||4
@@ -3579,17 +3579,17 @@ Looting bag|Misc||3
 Looting bag note|Misc||3
 Rope|Tools||3
 Shantay pass|Misc||3
-Ancient shard|Misc||4
+Ancient shard|Slayer||4
 Annihilation blueprints|Construction||4
 Annihilation weapon scroll|Cosmetic||4
 Arena book|Misc||4
 Armageddon weapon scroll|Cosmetic||4
 Banker's briefcase|Misc||4
 Book of Balance|Magic||4
-Book of Balance page set|Misc||4
-Book of Darkness page set|Misc||4
-Book of Law page set|Misc||4
-Book of War page set|Misc||4
+Book of Balance page set|Clues||4
+Book of Darkness page set|Clues||4
+Book of Law page set|Clues||4
+Book of War page set|Clues||4
 Bucket|Tools||4
 Bullseye lantern|Firemaking||4
 Chugging barrel (disassembled)|Misc||4
@@ -3630,7 +3630,7 @@ Eternal gem|Misc||4
 Explorer backpack|Cosmetic||4
 Fang of the hound|Misc||4
 Flippers|Misc||4
-Frozen tear|Misc||4
+Frozen tear|Teleports||4
 Giant key|Misc||4
 Haemostatic dressing (4)|Misc||4
 Haemostatic poultice|Herblore||4
@@ -3649,7 +3649,7 @@ Living record (tier 2)|Cosmetic||4
 Living record (tier 3)|Cosmetic||4
 Living record (tier 4)|Cosmetic||4
 Living record (tier 5)|Cosmetic||4
-Lizardman fang|Misc||4
+Lizardman fang|Teleports||4
 Long kebbit spike|Fletching||4
 Magic fang|Magic||4
 Magic lantern|Quest||4
@@ -3999,7 +3999,7 @@ Twisted banner|Cosmetic||5
 Twisted blueprints|Construction||5
 Twisted bronze trophy|Cosmetic||5
 Twisted dragon trophy|Cosmetic||5
-Twisted horns|Misc||5
+Twisted horns|Slayer||5
 Twisted iron trophy|Cosmetic||5
 Twisted mithril trophy|Cosmetic||5
 Twisted rune trophy|Cosmetic||5
@@ -4008,7 +4008,7 @@ Two barrels|Misc||5
 Umbral coral|Herblore||5
 Umbral frag|Farming||5
 Undead chicken|Cosmetic||5
-Unholy book page set|Misc||5
+Unholy book page set|Clues||5
 Unicorn horn|Herblore||5
 Unidentified small fossil|Misc||5
 Unstrung emblem|Crafting||5
@@ -4019,7 +4019,7 @@ Void seal(8)|Misc||5
 Warm gloves|Firemaking||5
 Web cloak|Cosmetic||5
 Weeds|Farming||5
-Western banner 1|Misc||5
+Western banner 1|Cosmetic||5
 White claws|Melee||5
 White lily|Farming||5
 Wristbands of the arena (broken)|Misc||5
@@ -4030,7 +4030,7 @@ Xeric's sentinel|Cosmetic||5
 Xeric's warrior|Cosmetic||5
 Yew leaves|Woodcutting||5
 Zamorak banner|Misc||5
-Zamorak page 1|Misc||5
+Zamorak page 1|Clues||5
 Zombie pirate key|Misc||5
 Zorya's tome|Magic||5
 Anti-venom+(4)|Potions||1
@@ -4229,35 +4229,35 @@ Unblessed symbol|Crafting||4
 Vile ashes|Prayer||4
 Wyrm bones|Prayer||4
 Zogre bones|Prayer||4
-Holy book page set|Prayer||5
+Holy book page set|Clues||5
 Book of Law|Ranged||4
 Burnt page|Magic||4
 Chronicle|Teleports||4
 Barcrawl card|Quest||4
 Crystal of Echoes|Quest||4
-Loop half of key|Quest||4
+Loop half of key|Clues||4
 Ogre coffin key|Quest||4
 Pendant of Lucien|Quest||4
-Saradomin page 1|Quest||4
+Saradomin page 1|Clues||4
 Saradomin's tear|Melee||4
 Searing page|Magic||4
 Shadowflame quadrant|Quest||4
 Soaked page|Magic||4
 Soiled page|Magic||4
-Ancient page 1|Quest||5
-Ancient tablet|Quest||5
-Armadyl page 1|Quest||5
-Bandos page 1|Quest||5
+Ancient page 1|Clues||5
+Ancient tablet|Teleports||5
+Armadyl page 1|Clues||5
+Bandos page 1|Clues||5
 Brass key|Quest||5
 Crystal trinket|Quest||5
 Damaged book|Quest||5
 Dark journal|Quest||5
-Dark totem|Quest||5
-Dark totem base|Quest||5
-Dark totem middle|Quest||5
-Dark totem top|Quest||5
-Demonic quill|Quest||5
-Desert amulet 1|Quest||5
+Dark totem|Slayer||5
+Dark totem base|Slayer||5
+Dark totem middle|Slayer||5
+Dark totem top|Slayer||5
+Demonic quill|Slayer||5
+Desert amulet 1|Teleports||5
 Desiccated page|Magic||5
 Dirty note|Quest||5
 Enchanted key|Quest||5
@@ -4267,7 +4267,7 @@ Fixed device|Quest||5
 Fossil island note book|Quest||5
 Gas mask|Quest||5
 Glarial's pebble|Quest||5
-Guthix page 1|Quest||5
+Guthix page 1|Clues||5
 Hazeel's mark|Quest||5
 Jewel of the Sun|Melee||5
 Kasonde's journal|Quest||5
@@ -4818,7 +4818,7 @@ Mahogany repair kit|Sailing||3
 Mithril keel parts|Sailing||3
 Rosewood hull parts|Sailing||3
 Rune keel parts|Sailing||3
-Sailors' amulet|Sailing||3
+Sailors' amulet|Teleports||3
 Steel keel parts|Sailing||3
 Wooden hull parts|Sailing||3
 Adamant keel parts|Sailing||4
@@ -4861,7 +4861,7 @@ Salve amulet (e)|Slayer|Melee|1
 Slayer cape|Slayer||1
 Slayer helmet|Slayer||1
 Slayer helmet (i)|Slayer||1
-Abyssal bracelet(5)|Slayer||2
+Abyssal bracelet(5)|Runecraft||3
 Araxyte slayer helmet|Slayer||2
 Black slayer helmet|Slayer||2
 Bracelet of slaughter|Slayer||2
