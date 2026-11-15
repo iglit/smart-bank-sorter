@@ -151,9 +151,9 @@ Teak table|Construction||4
 Teak toy box|Construction||4
 Teak treasure chest|Construction||4
 Teak wardrobe|Construction||4
-Thatch spar dense|Construction||4
-Thatch spar light|Construction||4
-Thatch spar med|Construction||4
+Thatch spar dense|Misc||5
+Thatch spar light|Misc||5
+Thatch spar med|Misc||5
 Thorny hedge|Construction||4
 Timber beam|Construction||4
 Topiary hedge|Construction||4
@@ -450,7 +450,7 @@ Emissary sandals|Quest||4
 Farmer's jacket|Farming||4
 Frog mask|Cosmetic||4
 Fury ornament kit|Cosmetic||4
-Gorilla greegree|Cosmetic||4
+Gorilla greegree|Misc||4
 Gravedigger boots|Cosmetic||4
 Gravedigger gloves|Cosmetic||4
 Gravedigger leggings|Cosmetic||4
@@ -467,7 +467,7 @@ Mithril trimmed set (lg)|Melee||4
 Mudskipper hat|Cosmetic||4
 Music cape|Teleports||4
 Music hood|Teleports||4
-Ninja monkey greegree|Cosmetic||4
+Ninja monkey greegree|Agility||4
 Occult ornament kit|Cosmetic||4
 Quest point cape|Teleports||4
 Quest point hood|Teleports||4
@@ -503,7 +503,7 @@ Tzhaar-ket-om ornament kit|Cosmetic||4
 White dark bow paint|Cosmetic||4
 Yellow dark bow paint|Cosmetic||4
 Zamorak godsword ornament kit|Cosmetic||4
-Zombie monkey greegree|Cosmetic||4
+Zombie monkey greegree|Misc||4
 10th birthday balloons|Cosmetic||5
 10th birthday cape|Cosmetic||5
 10th squad sigil|Quest||5
@@ -2420,7 +2420,7 @@ Zuriel's staff|Magic||3
 Accursed sceptre (u)|Magic||4
 Amulet of the Damned (full)|Magic||4
 Ancient bracers|Magic||4
-Ancient medallion|Magic||4
+Ancient medallion|Misc||4
 Ancient mitre|Magic||4
 Ancient robe legs|Magic||4
 Ancient robe top|Magic||4
@@ -2428,7 +2428,7 @@ Ancient stole|Magic||4
 Arcane grimoire|Magic||4
 Arceuus hood|Cosmetic||4
 Arceuus scarf|Cosmetic||4
-Awakener's orb|Magic||4
+Awakener's orb|Misc||4
 Battlestaff|Magic||4
 Black robe|Magic||4
 Black warlock|Hunter||4
@@ -2443,7 +2443,7 @@ Bottled dragonbreath|Magic||4
 Bottled dragonbreath (unpowered)|Magic||4
 Bottled storm|Sailing||4
 Charge dragonstone jewellery scroll|Magic||4
-Circlet of water (uncharged)|Magic|Runecraft|4
+Circlet of water|Misc||4
 Corrupted zuriel's hood (bh)(inactive)|Magic||4
 Corrupted zuriel's robe bottom (bh)(inactive)|Magic||4
 Corrupted zuriel's robe top (bh)(inactive)|Magic||4
@@ -2502,7 +2502,7 @@ Mage's book|Magic||4
 Magic hood|Magic||4
 Magic shield|Magic||4
 Master wand|Magic||4
-Merfolk trident|Magic||4
+Merfolk trident|Fishing||4
 Mind helmet|Magic||4
 Red robe bottoms|Cosmetic||4
 Red robe top|Cosmetic||4
@@ -3592,7 +3592,7 @@ Book of Law page set|Clues||4
 Book of War page set|Clues||4
 Bucket|Tools||4
 Bullseye lantern|Firemaking||4
-Chugging barrel (disassembled)|Misc||4
+Chugging barrel (disassembled)|Herblore||4
 Clockwork|Crafting||4
 Contract of Bloodied Blows|Misc||4
 Contract of Catalyst Acquisition|Misc||4
@@ -4699,7 +4699,7 @@ Bronze knife|Ranged||5
 Bronze knife(p+)|Ranged||5
 Bronze knife(p++)|Ranged||5
 Bronze limbs|Fletching||5
-Bronze locks|Ranged||5
+Bronze locks|Misc||5
 Bronze thrownaxe|Ranged||5
 Cursed goblin bow|Cosmetic||5
 Dizana's max cape (l) (mangled)|Ranged||5
@@ -4734,7 +4734,7 @@ Blood talisman|Runecraft||3
 Blood tiara|Runecraft||3
 Body talisman|Runecraft||3
 Body tiara|Runecraft||3
-Bracelet of ethereum|Runecraft||3
+Bracelet of ethereum|Jewellery||3
 Bryophyta's essence|Magic||4
 Catalytic talisman|Runecraft||3
 Catalytic tiara|Runecraft||3
@@ -4757,7 +4757,7 @@ Nature tiara|Runecraft||3
 Ring of nature|Cosmetic||5
 Tiara|Runecraft||3
 Aether catalyst|Runecraft||4
-Ancient essence|Runecraft||4
+Ancient essence|Misc||4
 Celestial signet (uncharged)|Mining||4
 Death talisman|Runecraft||4
 Fancy tiara|Cosmetic||5
@@ -4841,7 +4841,7 @@ Oak repair kit|Sailing||4
 Paddle|Sailing||4
 Rosewood repair kit|Sailing||4
 Sailors' amulet (inert)|Sailing||4
-Ship ticket|Sailing||4
+Ship ticket|Misc||5
 Storm cruiser's coat|Cosmetic||4
 Storm cruiser's hat|Cosmetic||4
 Storm cruiser's shoes|Cosmetic||4
@@ -4958,7 +4958,7 @@ Crate of steel bars|Smithing||4
 Double ammo mould|Smithing||4
 Flamtaer hammer|Smithing|Construction|4
 Granite hammer|Melee||4
-Orikalkum gravel|Smithing||4
+Orikalkum gravel|Misc||5
 Preform|Smithing||4
 Sigil of the Smith|Smithing||4
 Amulet of eternal glory|Teleports||1
@@ -4998,7 +4998,7 @@ Disk of Returning|Teleports||3
 Drakan's medallion|Teleports||3
 Enhanced quetzal whistle|Teleports|Hunter|3
 Escape crystal|Teleports||3
-Flamtaer bracelet|Teleports||3
+Flamtaer bracelet|Jewellery||3
 Giantsoul amulet|Teleports||3
 Grand seed pod|Teleports||3
 Kharyrll teleport|Teleports||3
@@ -5063,7 +5063,7 @@ Strange old lockpick (full)|Thieving||3
 Thieving cape|Thieving||3
 Thieving hood|Thieving||3
 Grubby key|Thieving||4
-Silver locks|Thieving||4
+Silver locks|Misc||5
 Spiked manacles|Melee||4
 Thieving bag|Cosmetic||5
 Willow blackjack|Thieving||4
