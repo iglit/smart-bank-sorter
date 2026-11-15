@@ -54,12 +54,12 @@ final class Categoriser
 		{
 			ItemData.Entry data = ItemData.get(name);
 			custom = data == null ? null : data.category;
-			// For combat gear the item's own stats decide the style; the data only moves gear out of the styles
-			// (Slayer, a skill, Cosmetic...).
+			// For combat gear the item's own stats decide the style, or Ammo for arrows, bolts and the like; the data
+			// only moves gear out of the styles (Slayer, a skill, Cosmetic...).
 			if (custom != null && equipment != null && COMBAT_STYLES.contains(custom))
 			{
 				String byStats = gear(name.toLowerCase(), equipment);
-				if (COMBAT_STYLES.contains(byStats))
+				if (COMBAT_STYLES.contains(byStats) || byStats.equals(AMMO))
 				{
 					custom = byStats;
 				}

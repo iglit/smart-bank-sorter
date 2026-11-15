@@ -132,6 +132,16 @@ public class CategoriserTest
 	}
 
 	@Test
+	public void listedAmmoGoesToAmmo()
+	{
+		Categoriser c = new Categoriser(UserRules.parse(""));
+		// Listed under Ranged, but the ammo slot puts it with the unlisted ammo.
+		assertEquals(AMMO, c.categorise(21326, "Amethyst arrow", NONE, slot(EquipmentInventorySlot.AMMO).rstr(55).build()));
+		// Blessings stay with Melee, which copies them to the other styles.
+		assertEquals(MELEE, c.categorise(20220, "Holy blessing", NONE, slot(EquipmentInventorySlot.AMMO).prayer(1).build()));
+	}
+
+	@Test
 	public void costumeNeedleIsCrafting()
 	{
 		Categoriser c = new Categoriser(UserRules.parse(""));
