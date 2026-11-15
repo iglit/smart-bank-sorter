@@ -111,7 +111,7 @@ public interface SmartBankSorterConfig extends Config
 		name = "Category search",
 		description = "While searching the bank, typing three or more letters of a category's name suggests it above"
 			+ " the search box: press Enter or click to jump to it. Searching a category's full name also shows its items.",
-		position = 6
+		position = 7
 	)
 	default boolean categorySearch()
 	{
