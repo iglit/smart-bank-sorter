@@ -29,9 +29,9 @@ Clue hunter gloves|Clues||3
 Clue hunter trousers|Clues||3
 Crystal key|Clues||3
 Heavy casket|Clues||3
-Crushed nest|Clues||4
-Kharedst's memoirs|Clues||4
-M. treasure chest|Clues||4
+Crushed nest|Herblore||4
+Kharedst's memoirs|Teleports||4
+M. treasure chest|Construction||4
 Scroll sack|Clues||4
 Sigil of the Treasure Hunter|Clues||4
 Tooth half of key|Clues||4
@@ -1556,12 +1556,12 @@ Coins|Currency||1
 Old school bond|Currency||1
 Tokkul|Currency||3
 Archery ticket|Currency||4
-Bounty hunter hat (tier 1)|Currency||4
-Bounty hunter hat (tier 2)|Currency||4
-Bounty hunter hat (tier 3)|Currency||4
-Bounty hunter hat (tier 4)|Currency||4
-Bounty hunter hat (tier 5)|Currency||4
-Bounty hunter hat (tier 6)|Currency||4
+Bounty hunter hat (tier 1)|Cosmetic||4
+Bounty hunter hat (tier 2)|Cosmetic||4
+Bounty hunter hat (tier 3)|Cosmetic||4
+Bounty hunter hat (tier 4)|Cosmetic||4
+Bounty hunter hat (tier 5)|Cosmetic||4
+Bounty hunter hat (tier 6)|Cosmetic||4
 Bounty supply crate (anglerfish)|Currency||4
 Bounty supply crate (manta ray)|Currency||4
 Crate of tokens|Currency||4
@@ -1569,7 +1569,7 @@ Frog token|Currency||4
 Pete's vouchers|Currency||4
 Warrior guild token|Currency||4
 Infinite money bag|Currency||5
-Ring of coins|Currency||5
+Ring of coins|Cosmetic||5
 Spade|Farming||1
 Bottomless compost bucket|Farming||2
 Gardening trowel|Farming||2
@@ -3490,12 +3490,12 @@ Bronze pickaxe|Mining||5
 Collection log|Misc||2
 Crystal armour seed|Misc||3
 Crystal blessing|Misc||3
-Crystal grail|Misc||3
+Crystal grail|Cosmetic||5
 Enhanced crystal weapon seed|Misc||3
 Insect repellent|Misc||3
 Looting bag|Misc||3
 Looting bag note|Misc||3
-Rope|Misc||3
+Rope|Tools||3
 Shantay pass|Misc||3
 Ancient shard|Misc||4
 Annihilation blueprints|Misc||4
@@ -3508,7 +3508,7 @@ Book of Balance page set|Misc||4
 Book of Darkness page set|Misc||4
 Book of Law page set|Misc||4
 Book of War page set|Misc||4
-Bucket|Misc||4
+Bucket|Tools||4
 Bullseye lantern|Misc||4
 Chugging barrel (disassembled)|Misc||4
 Clockwork|Misc||4
@@ -3530,7 +3530,7 @@ Crate of machinery parts|Misc||4
 Crate of pest remains|Misc||4
 Crate of poison|Misc||4
 Crate ring|Misc||4
-Crushed infernal shale|Misc||4
+Crushed infernal shale|Smithing||4
 Crystal pendant|Misc||4
 Crystal shard|Misc||4
 Demon tear|Misc||4
@@ -3541,56 +3541,56 @@ Drake's claw|Misc||4
 Drake's tooth|Misc||4
 Eclipse red|Misc||4
 Elkhorn coral|Misc||4
-Elkhorn frag|Misc||4
+Elkhorn frag|Farming||4
 Emerald lantern|Misc||4
-Eternal crystal|Misc||4
+Eternal crystal|Magic||4
 Eternal gem|Misc||4
-Explorer backpack|Misc||4
+Explorer backpack|Cosmetic||4
 Fang of the hound|Misc||4
 Flippers|Misc||4
 Frozen tear|Misc||4
 Giant key|Misc||4
 Haemostatic dressing (4)|Misc||4
 Haemostatic poultice|Misc||4
-Horn of Plenty|Misc||4
+Horn of Plenty|Hunter||4
 Hydra tail|Misc||4
-Hydra's claw|Misc||4
+Hydra's claw|Melee||4
 Kebbit claws|Misc||4
 Kebbit spike|Misc||4
 Kebbit teeth|Misc||4
-Kebbit teeth dust|Misc||4
+Kebbit teeth dust|Herblore||4
 Kraken tentacle|Misc||4
 Larran's key|Misc||4
-Lit bug lantern|Misc||4
-Living record (tier 1)|Misc||4
-Living record (tier 2)|Misc||4
-Living record (tier 3)|Misc||4
-Living record (tier 4)|Misc||4
-Living record (tier 5)|Misc||4
+Lit bug lantern|Slayer||4
+Living record (tier 1)|Cosmetic||4
+Living record (tier 2)|Cosmetic||4
+Living record (tier 3)|Cosmetic||4
+Living record (tier 4)|Cosmetic||4
+Living record (tier 5)|Cosmetic||4
 Lizardman fang|Misc||4
 Long kebbit spike|Misc||4
-Magic fang|Misc||4
+Magic fang|Magic||4
 Magic lantern|Misc||4
 Malediction shard 1|Misc||4
 Masori assembler|Ranged||4
 Masori assembler max cape|Ranged||4
-Masori assembler max hood|Misc||4
-Master scroll book (empty)|Misc||4
+Masori assembler max hood|Cosmetic||4
+Master scroll book (empty)|Teleports||4
 Mithril staff of collection|Misc||4
-Mokhaiotl waystone|Misc||4
+Mokhaiotl waystone|Teleports||4
 Mole claw|Misc||4
 Moonlight antelope antler|Misc||4
 Mort myre pear|Misc||4
 Mud pie|Misc||4
 Narwhal horn|Misc||4
-Numulite|Misc||4
+Numulite|Currency||4
 Oil lamp|Misc||4
 Oil lantern|Misc||4
 Purple dye|Misc||4
 Red dye|Misc||4
 Red satchel|Misc||4
 Redwood hiking staff|Misc||4
-Repair kit|Misc||4
+Repair kit|Sailing||4
 Revenant ether|Misc||4
 Ring of visibility|Misc||4
 Rock-shell chunk|Misc||4
@@ -3599,12 +3599,12 @@ Rock-shell splinter|Misc||4
 Rubium splinters|Misc||4
 Rune satchel|Misc||4
 Rune staff of collection|Misc||4
-Sagacious spectacles|Misc||4
-Saltpetre|Misc||4
+Sagacious spectacles|Cosmetic||4
+Saltpetre|Farming||4
 Sapphire lantern|Misc||4
 Saradomin banner|Misc||4
 Saturated heart|Misc||4
-Shark paint|Misc||4
+Shark paint|Sailing||4
 Shattered banner|Misc||4
 Shayzien banner|Misc||4
 Sieve|Misc||4
@@ -3646,19 +3646,19 @@ Sigil of the Serpent|Misc||4
 Sigil of the Skiller|Misc||4
 Sigil of Versatility|Misc||4
 Skis|Misc||4
-Skull of Vet'ion|Misc||4
+Skull of Vet'ion|Magic||4
 Steel key ring|Misc||4
 Sunfire splinters|Misc||4
-Teasing stick|Misc||4
+Teasing stick|Hunter||4
 Tormented synapse|Misc||4
 Ultimate ironman helm|Misc||4
 Ultimate ironman platebody|Misc||4
 Ultimate ironman platelegs|Misc||4
 Unidentified large fossil|Misc||4
 Unidentified medium fossil|Misc||4
-Unlit bug lantern|Misc||4
-Voidwaker gem|Misc||4
-Ward upgrade kit|Misc||4
+Unlit bug lantern|Slayer||4
+Voidwaker gem|Melee||4
+Ward upgrade kit|Cosmetic||4
 Zulrah's scales|Misc||4
 A chair|Misc||5
 Abyssal book|Misc||5
@@ -3677,7 +3677,7 @@ Barrel|Misc||5
 Beer|Misc||5
 Beer barrel|Misc||5
 Beer glass|Misc||5
-Belle's folly|Misc||5
+Belle's folly|Melee||5
 Bird book|Misc||5
 Black bead|Misc||5
 Black salamander|Misc||5
@@ -3687,12 +3687,12 @@ Blood pint|Misc||5
 Blue icon|Misc||5
 Book of Egg|Misc||5
 Bottle|Misc||5
-Briefcase|Misc||5
+Briefcase|Cosmetic||5
 Broav|Misc||5
-Bronze speedrun trophy|Misc||5
+Bronze speedrun trophy|Cosmetic||5
 Bronze staff of collection|Misc||5
 Burnt meat|Misc||5
-Calcified moth|Misc||5
+Calcified moth|Teleports||5
 Candle|Misc||5
 Candle lantern|Misc||5
 Cat training medal|Misc||5
@@ -3719,39 +3719,39 @@ Crate of sea shells|Misc||5
 Crate of secret stuff|Misc||5
 Crate of secret things|Misc||5
 Crate with zanik|Misc||5
-Crier bell|Misc||5
-Crimson kisten|Misc||5
+Crier bell|Cosmetic||5
+Crimson kisten|Melee||5
 Cruciferous codex|Misc||5
 Crystal chime|Misc||5
 Crystal saw seed|Misc||5
 Cursed banana|Misc||5
 Cutthroat flag|Misc||5
-Cyclops head|Misc||5
+Cyclops head|Cosmetic||5
 Damaged monkey tail|Misc||5
 Dark flippers|Misc||5
 Deadman's chest|Misc||5
 Deadman's legs|Misc||5
 Defender icon|Misc||5
-Demon feet|Misc||5
-Demonic pacts adamant trophy|Misc||5
-Demonic pacts banner|Misc||5
-Demonic pacts dragon trophy|Misc||5
-Demonic pacts mithril trophy|Misc||5
-Demonic pacts rune trophy|Misc||5
-Demonic pacts steel trophy|Misc||5
-Demonic tallow|Misc||5
+Demon feet|Cosmetic||5
+Demonic pacts adamant trophy|Cosmetic||5
+Demonic pacts banner|Cosmetic||5
+Demonic pacts dragon trophy|Cosmetic||5
+Demonic pacts mithril trophy|Cosmetic||5
+Demonic pacts rune trophy|Cosmetic||5
+Demonic pacts steel trophy|Cosmetic||5
+Demonic tallow|Herblore||5
 Desert devil fur|Misc||5
-Diamond speedrun trophy|Misc||5
+Diamond speedrun trophy|Cosmetic||5
 Druid pouch|Misc||5
 Dust|Misc||5
 Echo crystal|Misc||5
 Eek|Misc||5
 Empty sack|Misc||5
-Enchanted lyre|Misc||5
-Evil chicken feet|Misc||5
-Evil chicken head|Misc||5
-Evil chicken legs|Misc||5
-Evil chicken wings|Misc||5
+Enchanted lyre|Teleports||5
+Evil chicken feet|Cosmetic||5
+Evil chicken head|Cosmetic||5
+Evil chicken legs|Cosmetic||5
+Evil chicken wings|Cosmetic||5
 Evil eye|Misc||5
 Fat snail|Misc||5
 Fishbowl helmet|Misc||5
@@ -3759,7 +3759,7 @@ Five barrels|Misc||5
 Fossilised dung|Misc||5
 Four barrels|Misc||5
 Fox|Misc||5
-Giant boot|Misc||5
+Giant boot|Cosmetic||5
 Giant boulder|Misc||5
 Giant egg sac(full)|Misc||5
 Giant present|Misc||5
@@ -3773,28 +3773,28 @@ Goblin paint cannon|Misc||5
 Gold coffin|Misc||5
 Gold locks|Misc||5
 Gold satchel|Misc||5
-Gold seal|Misc||5
-Golden scarab|Misc||5
-Golden statuette|Misc||5
+Gold seal|Thieving||5
+Golden scarab|Thieving||5
+Golden statuette|Thieving||5
 Greater siren|Misc||5
 Green banner|Misc||5
 Green satchel|Misc||5
 Gregg's eastdoor|Misc||5
 Grey toy horsey|Misc||5
 Hair|Misc||5
-Hallowed grapple|Misc||5
-Hallowfell|Misc||5
+Hallowed grapple|Agility||5
+Hallowfell|Melee||5
 Hand fan|Misc||5
 Haunted wine bottle|Misc||5
 Headless head|Misc||5
 Hell cat|Misc||5
 Holy handegg|Misc||5
 Holy moleys|Misc||5
-Inky paint|Misc||5
+Inky paint|Sailing||5
 Instruction manual|Misc||5
 Iron sickle|Misc||5
 Iron staff of collection|Misc||5
-Ivory comb|Misc||5
+Ivory comb|Thieving||5
 Jar of Chemicals|Misc||5
 Jar of Darkness|Misc||5
 Jar of Decay|Misc||5
@@ -3809,7 +3809,7 @@ Jar of Spirits|Misc||5
 Jar of Stone|Misc||5
 Jar of Swamp|Misc||5
 Jewel of Amascut|Misc||5
-Jug|Misc||5
+Jug|Tools||5
 Karamjan monkey|Misc||5
 Karamjan monkey greegree|Misc||5
 Key|Misc||5
@@ -3820,40 +3820,40 @@ Light orb|Misc||5
 Lost bag|Misc||5
 Lucky shot flag|Misc||5
 Lyre|Misc||5
-Magic stone|Misc||5
+Magic stone|Construction||5
 Maniacal monkey|Misc||5
 Mask of Ranul|Misc||5
 Mask of Rebirth|Misc||5
 Monkey|Misc||5
 Monkey tail|Misc||5
-Mooleta|Misc||5
+Mooleta|Melee||5
 Mouse toy|Misc||5
 Mouth grip|Misc||5
 Mystic cards|Misc||5
 New key|Misc||5
-Nihil dust|Misc||5
+Nihil dust|Herblore||5
 Nihil shard|Misc||5
-Obligator|Misc||5
+Obligator|Melee||5
 Oddskull|Misc||5
 Ode to eternity|Misc||5
 Odium shard 1|Misc||5
 Ogre bellows|Misc||5
 One barrel|Misc||5
 Papyrus|Misc||5
-Pegasian crystal|Misc||5
+Pegasian crystal|Ranged||5
 Perfected quetzal whistle blueprint|Misc||5
 Pet cat|Misc||5
 Pet rock|Misc||5
 Phrin remains|Misc||5
 Pile of salt|Misc||5
 Pillar coral|Misc||5
-Pillar frag|Misc||5
+Pillar frag|Farming||5
 Pink candy|Misc||5
 Plain satchel|Misc||5
 Poison chalice|Misc||5
-Pottery scarab|Misc||5
-Pottery statuette|Misc||5
-Primordial crystal|Misc||5
+Pottery scarab|Thieving||5
+Pottery statuette|Thieving||5
+Primordial crystal|Melee||5
 Proboscis|Misc||5
 Pugel|Misc||5
 Pyrophosphite|Misc||5
@@ -3886,16 +3886,16 @@ Snowball|Misc||5
 Spine|Misc||5
 Stale baguette|Misc||5
 Star-face|Misc||5
-Steel limbs|Misc||5
+Steel limbs|Fletching||5
 Steel locks|Misc||5
 Steel staff of collection|Misc||5
 Stick|Misc||5
-Stone scarab|Misc||5
-Stone seal|Misc||5
-Stone statuette|Misc||5
+Stone scarab|Thieving||5
+Stone seal|Thieving||5
+Stone statuette|Thieving||5
 Sulliuscep cap|Misc||5
 Swords and emblem|Misc||5
-Teacher wand|Misc||5
+Teacher wand|Magic||5
 Terrifying charm|Misc||5
 Three barrels|Misc||5
 Tin cup|Misc||5
@@ -3906,51 +3906,51 @@ Toy mouse|Misc||5
 Toy mouse (wound)|Misc||5
 Toy soldier|Misc||5
 Toy soldier (wound)|Misc||5
-Trading sticks|Misc||5
+Trading sticks|Currency||5
 Translation book|Misc||5
 Transmutation ledger|Misc||5
 Treasure flag|Misc||5
 Treat cauldron|Misc||5
 Trouver parchment|Misc||5
-Twisted adamant trophy|Misc||5
-Twisted banner|Misc||5
+Twisted adamant trophy|Cosmetic||5
+Twisted banner|Cosmetic||5
 Twisted blueprints|Misc||5
-Twisted bronze trophy|Misc||5
-Twisted dragon trophy|Misc||5
+Twisted bronze trophy|Cosmetic||5
+Twisted dragon trophy|Cosmetic||5
 Twisted horns|Misc||5
-Twisted iron trophy|Misc||5
-Twisted mithril trophy|Misc||5
-Twisted rune trophy|Misc||5
-Twisted steel trophy|Misc||5
+Twisted iron trophy|Cosmetic||5
+Twisted mithril trophy|Cosmetic||5
+Twisted rune trophy|Cosmetic||5
+Twisted steel trophy|Cosmetic||5
 Two barrels|Misc||5
 Umbral coral|Misc||5
-Umbral frag|Misc||5
+Umbral frag|Farming||5
 Undead chicken|Misc||5
 Unholy book page set|Misc||5
 Unicorn horn|Misc||5
 Unidentified small fossil|Misc||5
-Unstrung emblem|Misc||5
-Uri's hat|Misc||5
+Unstrung emblem|Crafting||5
+Uri's hat|Cosmetic||5
 Urium remains|Misc||5
 Vacuum pump and gull|Misc||5
 Void seal(8)|Misc||5
-Warm gloves|Misc||5
+Warm gloves|Firemaking||5
 Web cloak|Misc||5
-Weeds|Misc||5
+Weeds|Farming||5
 Western banner 1|Misc||5
-White claws|Misc||5
+White claws|Melee||5
 White lily|Misc||5
 Wristbands of the arena (broken)|Misc||5
-Xeric's champion|Misc||5
-Xeric's general|Misc||5
-Xeric's guard|Misc||5
-Xeric's sentinel|Misc||5
-Xeric's warrior|Misc||5
+Xeric's champion|Cosmetic||5
+Xeric's general|Cosmetic||5
+Xeric's guard|Cosmetic||5
+Xeric's sentinel|Cosmetic||5
+Xeric's warrior|Cosmetic||5
 Yew leaves|Misc||5
 Zamorak banner|Misc||5
 Zamorak page 1|Misc||5
 Zombie pirate key|Misc||5
-Zorya's tome|Misc||5
+Zorya's tome|Magic||5
 Anti-venom+(4)|Potions||1
 Divine super combat potion(1)|Potions||1
 Divine super combat potion(2)|Potions||1
@@ -4024,7 +4024,7 @@ Super defence(3)|Potions||2
 Super energy(4)|Potions||2
 Superantipoison(3)|Potions||2
 Superantipoison(4)|Potions||2
-Ale of the gods|Potions||3
+Ale of the gods|Cosmetic||3
 Antidote+(4)|Potions||3
 Combat potion set|Potions||3
 Extended super antifire mix(2)|Potions||3
@@ -4038,7 +4038,7 @@ Sanfew serum(4)|Potions||3
 Serum 207 (4)|Potions||3
 Strength mix(1)|Potions||3
 Super antifire mix(2)|Potions||3
-Volcanic whip mix|Potions||3
+Volcanic whip mix|Cosmetic||3
 Weapon poison|Potions||3
 Weapon poison(+)|Potions||3
 Weapon poison(++)|Potions||3
@@ -4052,7 +4052,7 @@ Crate of potions|Potions||4
 Forgotten brew(4)|Potions||4
 Guthix balance(4)|Potions||4
 Holy elixir|Potions||4
-Holy water|Potions||4
+Holy water|Ranged||4
 Menaphite remedy(4)|Potions||4
 Sunlight moth mix (2)|Potions||4
 Super potion set|Potions||4
@@ -4069,7 +4069,7 @@ Crate of vodka|Potions||5
 Crate of wine|Potions||5
 Cup of hot water|Potions||5
 Cup of water|Potions||5
-Frozen whip mix|Potions||5
+Frozen whip mix|Cosmetic||5
 Jug of bad wine|Potions||5
 Poison|Potions||5
 Bones|Prayer||1
@@ -4084,7 +4084,7 @@ Wyrmling bones|Prayer||2
 Wyvern bones|Prayer||2
 Abyssal ashes|Prayer||3
 Arcane prayer scroll|Prayer||3
-Arcane sigil|Prayer||3
+Arcane sigil|Magic||3
 Arcane spirit shield|Magic||3
 Bonesack|Prayer||3
 Dexterous prayer scroll|Prayer||3
@@ -4129,7 +4129,7 @@ Blessed bone shards|Prayer||4
 Blessed bone statuette|Prayer||4
 Bone fragments|Prayer||4
 Burnt bones|Prayer||4
-Crushed superior dragon bones|Prayer||4
+Crushed superior dragon bones|Herblore||4
 Ensouled elf head|Prayer||4
 Ensouled hellhound head|Prayer||4
 Holy book|Melee||4
@@ -4147,18 +4147,18 @@ Wyrm bones|Prayer||4
 Zogre bones|Prayer||4
 Holy book page set|Prayer||5
 Book of Law|Ranged||4
-Burnt page|Quest||4
-Chronicle|Quest||4
+Burnt page|Magic||4
+Chronicle|Teleports||4
 Crystal of Echoes|Quest||4
 Loop half of key|Quest||4
 Ogre coffin key|Quest||4
 Pendant of Lucien|Quest||4
 Saradomin page 1|Quest||4
-Saradomin's tear|Quest||4
-Searing page|Quest||4
+Saradomin's tear|Melee||4
+Searing page|Magic||4
 Shadowflame quadrant|Quest||4
-Soaked page|Quest||4
-Soiled page|Quest||4
+Soaked page|Magic||4
+Soiled page|Magic||4
 Ancient page 1|Quest||5
 Ancient tablet|Quest||5
 Armadyl page 1|Quest||5
@@ -4184,7 +4184,7 @@ Gas mask|Quest||5
 Glarial's pebble|Quest||5
 Guthix page 1|Quest||5
 Hazeel's mark|Quest||5
-Jewel of the Sun|Quest||5
+Jewel of the Sun|Melee||5
 Kasonde's journal|Quest||5
 Mourner cloak|Quest||5
 Mourner top|Quest||5
@@ -4192,7 +4192,7 @@ Mourner trousers|Quest||5
 Movario's notes (volume 1)|Quest||5
 Movario's notes (volume 2)|Quest||5
 Muddy key|Quest||5
-Riyl remains|Quest||5
+Riyl remains|Prayer||5
 Salve shard|Quest||5
 Security book|Quest||5
 Sin'keth's diary|Quest||5
