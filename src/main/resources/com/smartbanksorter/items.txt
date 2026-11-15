@@ -14,8 +14,8 @@ Mith grapple tip|Agility||3
 Agility arena ticket|Agility||4
 Boots of lightness|Agility||4
 Brimhaven voucher|Agility||4
-Runner boots|Agility||4
-Runner hat|Agility||4
+Runner boots|Melee||4
+Runner hat|Melee||4
 Sigil of the Gnomes|Agility||4
 Wilderness agility ticket|Agility||4
 Casket|Clues||2
@@ -193,14 +193,14 @@ Bluegill|Fishing||4
 Bread dough|Cooking||3
 Bucket of milk|Cooking||3
 Chicken|Cooking||3
-Cleaver|Cooking||3
+Cleaver|Melee||5
 Coconut|Cooking||3
 Coconut milk|Herblore||3
 Cooking apple|Cooking||3
 Cooking cape|Cooking||3
 Cooking gauntlets|Cooking||3
 Cooking hood|Cooking||3
-Frying pan|Cooking||3
+Frying pan|Melee||5
 Garlic|Cooking||3
 Grain|Cooking||3
 Lean snail|Cooking||3
@@ -221,10 +221,10 @@ Raw monkfish|Cooking||3
 Raw sea turtle|Cooking||3
 Raw shark|Cooking||3
 Raw swordtip squid|Cooking|Fishing|3
-Rolling pin|Cooking||3
+Rolling pin|Melee||5
 Saucepan|Cosmetic||5
-Skewer|Cooking||3
-Spatula|Cooking||3
+Skewer|Melee||5
+Spatula|Melee||5
 Spice|Cooking||3
 Thin snail|Cooking||3
 Trout|Food||3
@@ -263,7 +263,7 @@ Crate of rabbit meat|Cooking||4
 Crate of spices|Cooking||4
 Crate of vegetables|Cooking||4
 Curry leaf|Cooking||4
-Egg whisk|Cooking||4
+Egg whisk|Melee||5
 Fine fish offcuts|Fishing||4
 Fish offcuts|Fishing||4
 Garlic powder|Cooking||4
@@ -273,7 +273,7 @@ Golden tench|Cooking||4
 Ham joint|Cooking||4
 Iron spit|Cooking||4
 Kebab mix|Cooking||4
-Meat tenderiser|Cooking||4
+Meat tenderiser|Melee||5
 Oranges(5)|Cooking||4
 Oyster|Cooking||4
 Pastry dough|Cooking||4
@@ -362,8 +362,8 @@ Gianne's cook book|Cooking||5
 Golden chef's hat|Cooking||5
 Pot|Cooking||5
 Pot lid|Cooking||5
-Spork|Cooking||5
-Wooden spoon|Cooking||5
+Spork|Melee||5
+Wooden spoon|Melee||5
 Max cape|Cosmetic||2
 Max hood|Cosmetic||2
 Saradomin max cape|Magic||2
@@ -419,12 +419,12 @@ Smithing hood|Cosmetic||3
 Zamorak max cape|Magic||3
 Zamorak max hood|Cosmetic||3
 Achievement diary hood|Teleports||4
-Adamant gold-trimmed set|Cosmetic||4
-Adamant gold-trimmed set (lg)|Cosmetic||4
-Adamant set|Cosmetic||4
-Adamant set (lg)|Cosmetic||4
-Adamant trimmed set|Cosmetic||4
-Adamant trimmed set (lg)|Cosmetic||4
+Adamant gold-trimmed set|Melee||4
+Adamant gold-trimmed set (lg)|Melee||4
+Adamant set|Melee||4
+Adamant set (lg)|Melee||4
+Adamant trimmed set|Melee||4
+Adamant trimmed set (lg)|Melee||4
 Agility hood|Cosmetic||4
 Ancient halo|Cosmetic||4
 Anguish ornament kit|Cosmetic||4
@@ -460,10 +460,10 @@ Guthix cloak|Cosmetic||4
 Hosidius hood|Cosmetic||4
 Infernal max cape (l) (mangled)|Melee||4
 Magic cape|Cosmetic||4
-Mithril gold-trimmed set|Cosmetic||4
-Mithril gold-trimmed set (lg)|Cosmetic||4
-Mithril trimmed set|Cosmetic||4
-Mithril trimmed set (lg)|Cosmetic||4
+Mithril gold-trimmed set|Melee||4
+Mithril gold-trimmed set (lg)|Melee||4
+Mithril trimmed set|Melee||4
+Mithril trimmed set (lg)|Melee||4
 Mudskipper hat|Cosmetic||4
 Music cape|Cosmetic||4
 Music hood|Cosmetic||4
@@ -488,7 +488,7 @@ Saradomin cape|Magic||4
 Saradomin cloak|Cosmetic||4
 Saradomin godsword ornament kit|Cosmetic||4
 Saradomin halo|Cosmetic||4
-Saradomin stole|Cosmetic||4
+Saradomin stole|Magic||4
 Seren halo|Cosmetic||4
 Shaman mask|Cosmetic||4
 Shattered cannon ornament kit|Cosmetic||4
@@ -526,8 +526,8 @@ Afro|Cosmetic||5
 Alchemist gloves|Cosmetic||5
 Alchemist labcoat|Cosmetic||5
 Alchemist pants|Cosmetic||5
-Ancient rune armour set|Cosmetic||5
-Ancient rune armour set (lg)|Cosmetic||5
+Ancient rune armour set|Melee||5
+Ancient rune armour set (lg)|Melee||5
 Ankou gloves|Cosmetic||5
 Ankou mask|Cosmetic||5
 Ankou socks|Cosmetic||5
@@ -540,8 +540,8 @@ Antisanta jacket|Cosmetic||5
 Antisanta mask|Cosmetic||5
 Antisanta pantaloons|Cosmetic||5
 Arceuus banner|Cosmetic||5
-Armadyl rune armour set|Cosmetic||5
-Armadyl rune armour set (lg)|Cosmetic||5
+Armadyl rune armour set|Melee||5
+Armadyl rune armour set (lg)|Melee||5
 Armageddon rug|Cosmetic||5
 Banana cape|Cosmetic||5
 Banana hat|Cosmetic||5
@@ -549,8 +549,8 @@ Bandana eyepatch (blue)|Cosmetic||5
 Bandana eyepatch (brown)|Cosmetic||5
 Bandana eyepatch (red)|Cosmetic||5
 Bandana eyepatch (white)|Cosmetic||5
-Bandos rune armour set|Cosmetic||5
-Bandos rune armour set (lg)|Cosmetic||5
+Bandos rune armour set|Melee||5
+Bandos rune armour set (lg)|Melee||5
 Beanie|Cosmetic||5
 Bear feet|Cosmetic||5
 Bedsheet|Cosmetic||5
@@ -571,15 +571,15 @@ Birthday balloons|Cosmetic||5
 Birthday cake|Cosmetic||5
 Black beret|Cosmetic||5
 Black boater|Cosmetic||5
-Black cane|Cosmetic||5
+Black cane|Melee||5
 Black cape|Cosmetic||5
 Black desert robe|Cosmetic||5
 Black desert shirt|Cosmetic||5
 Black dragon mask|Cosmetic||5
 Black elegant legs|Cosmetic||5
 Black elegant shirt|Cosmetic||5
-Black gold-trimmed set|Cosmetic||5
-Black gold-trimmed set (lg)|Cosmetic||5
+Black gold-trimmed set|Melee||5
+Black gold-trimmed set (lg)|Melee||5
 Black h'ween mask|Cosmetic||5
 Black headband|Cosmetic||5
 Black leprechaun hat|Cosmetic||5
@@ -588,13 +588,13 @@ Black naval shirt|Cosmetic||5
 Black navy slacks|Cosmetic||5
 Black partyhat|Cosmetic||5
 Black santa hat|Cosmetic||5
-Black set|Cosmetic||5
-Black set (lg)|Cosmetic||5
+Black set|Melee||5
+Black set (lg)|Melee||5
 Black skirt|Cosmetic||5
 Black toy horsey|Cosmetic||5
 Black tricorn hat|Cosmetic||5
-Black trimmed set|Cosmetic||5
-Black trimmed set (lg)|Cosmetic||5
+Black trimmed set|Melee||5
+Black trimmed set (lg)|Melee||5
 Black unicorn mask|Cosmetic||5
 Blue beret|Cosmetic||5
 Blue boater|Cosmetic||5
@@ -629,12 +629,12 @@ Brassica halo|Cosmetic||5
 Broken zombie helmet|Cosmetic||5
 Bronze dragon mask|Cosmetic||5
 Bronze fist flag|Cosmetic||5
-Bronze gold-trimmed set|Cosmetic||5
-Bronze gold-trimmed set (lg)|Cosmetic||5
-Bronze set|Cosmetic||5
-Bronze set (lg)|Cosmetic||5
-Bronze trimmed set|Cosmetic||5
-Bronze trimmed set (lg)|Cosmetic||5
+Bronze gold-trimmed set|Melee||5
+Bronze gold-trimmed set (lg)|Melee||5
+Bronze set|Melee||5
+Bronze set (lg)|Melee||5
+Bronze trimmed set|Melee||5
+Bronze trimmed set (lg)|Melee||5
 Brown apron|Crafting||5
 Brown headband|Cosmetic||5
 Brown naval shirt|Cosmetic||5
@@ -908,8 +908,8 @@ Grim reaper gloves|Cosmetic||5
 Grim reaper hood|Cosmetic||5
 Grim reaper top|Cosmetic||5
 Guthix halo|Cosmetic||5
-Guthix mitre|Cosmetic||5
-Guthix stole|Cosmetic||5
+Guthix mitre|Magic||5
+Guthix stole|Magic||5
 Hair clip|Cosmetic||5
 Half moon spectacles|Cosmetic||5
 Halloween mask set|Cosmetic||5
@@ -935,10 +935,10 @@ Hosidius scarf|Cosmetic||5
 Icy jumper|Cosmetic||5
 Imp mask|Cosmetic||5
 Inverted santa hat|Cosmetic||5
-Iron gold-trimmed set|Cosmetic||5
-Iron gold-trimmed set (lg)|Cosmetic||5
-Iron trimmed set|Cosmetic||5
-Iron trimmed set (lg)|Cosmetic||5
+Iron gold-trimmed set|Melee||5
+Iron gold-trimmed set (lg)|Melee||5
+Iron trimmed set|Melee||5
+Iron trimmed set (lg)|Melee||5
 Jack lantern mask|Cosmetic||5
 Jad jumper|Cosmetic||5
 Jad plush|Cosmetic||5
@@ -1203,12 +1203,12 @@ Spooky skirt|Cosmetic||5
 Staff of Bob the Cat|Cosmetic||5
 Starter cape|Cosmetic||5
 Steel dragon mask|Cosmetic||5
-Steel gold-trimmed set|Cosmetic||5
-Steel gold-trimmed set (lg)|Cosmetic||5
-Steel set|Cosmetic||5
-Steel set (lg)|Cosmetic||5
-Steel trimmed set|Cosmetic||5
-Steel trimmed set (lg)|Cosmetic||5
+Steel gold-trimmed set|Melee||5
+Steel gold-trimmed set (lg)|Melee||5
+Steel set|Melee||5
+Steel set (lg)|Melee||5
+Steel trimmed set|Melee||5
+Steel trimmed set (lg)|Melee||5
 Stray dog plush|Cosmetic||5
 Strength hood|Cosmetic||5
 Stripy pirate shirt|Cosmetic||5
@@ -1394,10 +1394,10 @@ Yellow pumpkin (silly)|Cosmetic||5
 Yellow robe bottoms|Cosmetic||5
 Yellow robe top|Cosmetic||5
 Zamorak halo|Cosmetic||5
-Zamorak mitre|Cosmetic||5
+Zamorak mitre|Magic||5
 Zamorak monk bottom|Cosmetic||5
 Zamorak monk top|Cosmetic||5
-Zamorak stole|Cosmetic||5
+Zamorak stole|Magic||5
 Zombie boots|Cosmetic||5
 Zombie gloves|Cosmetic||5
 Zombie head|Cosmetic||5
@@ -2092,7 +2092,7 @@ Wood camo top|Hunter||4
 Yew bird house|Hunter||4
 Ancient gorilla greegree|Hunter||5
 Bearded gorilla greegree|Hunter||5
-Bearhead|Hunter||5
+Bearhead|Melee||5
 Bird's egg|Hunter||5
 Dragon impling jar|Hunter||5
 Earth impling jar|Hunter||5
@@ -2113,7 +2113,7 @@ Dragonstone bracelet|Jewellery||3
 Dragonstone ring|Jewellery||3
 Regen bracelet|Melee||3
 Ring of Charos|Jewellery||3
-Ring of endurance (uncharged)|Jewellery||3
+Ring of endurance|Jewellery||3
 Ring of life|Jewellery||3
 Ring of wealth|Teleports||3
 Seers ring|Magic||3
@@ -2679,7 +2679,7 @@ Elidinis' ward|Melee||2
 Elysian sigil|Melee||2
 Elysian spirit shield|Melee||2
 Excalibur|Melee||2
-Fangs of Venenatis|Melee||2
+Fangs of Venenatis|Ranged||2
 Ferocious gloves|Melee||2
 Ghommal's avernic defender 5|Melee||2
 Ghrazi rapier|Melee||2
@@ -2759,7 +2759,7 @@ Swampbark boots|Melee||2
 Swampbark gauntlets|Melee||2
 Swampbark helm|Melee||2
 Swampbark legs|Melee||2
-Tanzanite fang|Melee||2
+Tanzanite fang|Ranged||2
 Toktz-mej-tal|Melee||2
 Torag's armour set|Melee||2
 Torag's hammers|Melee||2
@@ -3323,7 +3323,7 @@ Shattered hood (t1)|Cosmetic||4
 Shattered top (t1)|Cosmetic||4
 Shattered trousers (t1)|Cosmetic||4
 Silver sickle|Melee||4
-Skeletal visage|Melee||4
+Skeletal visage|Ranged||4
 Snakeskin shield|Melee||4
 Spiky vambraces|Melee||4
 Statius's full helm (bh)(inactive)|Melee||4
@@ -3615,12 +3615,12 @@ Crate ring|Cosmetic||4
 Crushed infernal shale|Smithing||4
 Crystal pendant|Quest||4
 Crystal shard|Misc||4
-Demon tear|Misc||4
+Demon tear|Magic||4
 Devil's element|Misc||4
 Diving apparatus|Misc||4
 Dragon staff of collection|Misc||4
-Drake's claw|Misc||4
-Drake's tooth|Misc||4
+Drake's claw|Melee||4
+Drake's tooth|Melee||4
 Eclipse red|Misc||4
 Elkhorn coral|Misc||4
 Elkhorn frag|Farming||4
@@ -3635,13 +3635,13 @@ Giant key|Misc||4
 Haemostatic dressing (4)|Misc||4
 Haemostatic poultice|Misc||4
 Horn of Plenty|Hunter||4
-Hydra tail|Misc||4
+Hydra tail|Prayer||4
 Hydra's claw|Melee||4
 Kebbit claws|Misc||4
 Kebbit spike|Misc||4
 Kebbit teeth|Misc||4
 Kebbit teeth dust|Herblore||4
-Kraken tentacle|Misc||4
+Kraken tentacle|Melee||4
 Larran's key|Misc||4
 Lit bug lantern|Slayer||4
 Living record (tier 1)|Cosmetic||4
@@ -3653,7 +3653,7 @@ Lizardman fang|Misc||4
 Long kebbit spike|Misc||4
 Magic fang|Magic||4
 Magic lantern|Quest||4
-Malediction shard 1|Misc||4
+Malediction shard 1|Magic||4
 Masori assembler|Ranged||4
 Masori assembler max cape|Ranged||4
 Masori assembler max hood|Cosmetic||4
@@ -3685,7 +3685,7 @@ Sagacious spectacles|Cosmetic||4
 Saltpetre|Farming||4
 Sapphire lantern|Misc||4
 Saradomin banner|Misc||4
-Saturated heart|Misc||4
+Saturated heart|Magic||4
 Shark paint|Sailing||4
 Shattered banner|Cosmetic||4
 Shayzien banner|Cosmetic||4
@@ -3733,9 +3733,9 @@ Steel key ring|Quest||4
 Sunfire splinters|Misc||4
 Teasing stick|Hunter||4
 Tormented synapse|Misc||4
-Ultimate ironman helm|Misc||4
-Ultimate ironman platebody|Misc||4
-Ultimate ironman platelegs|Misc||4
+Ultimate ironman helm|Melee||4
+Ultimate ironman platebody|Melee||4
+Ultimate ironman platelegs|Melee||4
 Unidentified large fossil|Misc||4
 Unidentified medium fossil|Misc||4
 Unlit bug lantern|Slayer||4
@@ -3826,7 +3826,7 @@ Desert devil fur|Misc||5
 Diamond speedrun trophy|Cosmetic||5
 Druid pouch|Misc||5
 Dust|Misc||5
-Echo crystal|Misc||5
+Echo crystal|Melee||5
 Eek|Misc||5
 Empty sack|Misc||5
 Enchanted lyre|Teleports||5
@@ -3890,7 +3890,7 @@ Jar of Souls|Misc||5
 Jar of Spirits|Misc||5
 Jar of Stone|Misc||5
 Jar of Swamp|Misc||5
-Jewel of Amascut|Misc||5
+Jewel of Amascut|Melee||5
 Jug|Tools||5
 Karamjan monkey|Cosmetic||5
 Karamjan monkey greegree|Misc||5
@@ -3918,7 +3918,7 @@ Nihil shard|Misc||5
 Obligator|Melee||5
 Oddskull|Misc||5
 Ode to eternity|Quest||5
-Odium shard 1|Misc||5
+Odium shard 1|Melee||5
 Ogre bellows|Misc||5
 One barrel|Misc||5
 Papyrus|Misc||5
@@ -4133,7 +4133,7 @@ Crate of khali brews|Potions||4
 Crate of potions|Potions||4
 Forgotten brew(4)|Potions||4
 Guthix balance(4)|Potions||4
-Holy elixir|Potions||4
+Holy elixir|Magic||4
 Holy water|Ranged||4
 Menaphite remedy(4)|Potions||4
 Sunlight moth mix (2)|Potions||4
@@ -4202,7 +4202,7 @@ Hydra bones|Prayer||3
 Infernal ashes|Prayer||3
 Lava dragon bones|Prayer||3
 Shaikahan bones|Prayer||3
-Soul cape|Prayer||3
+Soul cape|Melee||3
 Sun-kissed bones|Prayer||3
 Superior dragon bones|Prayer||3
 Torn prayer scroll|Prayer||3
@@ -4217,7 +4217,7 @@ Crushed superior dragon bones|Herblore||4
 Ensouled elf head|Prayer||4
 Ensouled hellhound head|Prayer||4
 Holy book|Melee||4
-Holy symbol|Prayer||4
+Holy symbol|Melee||4
 Jogre bones|Prayer||4
 Loar remains|Prayer||4
 Long bone|Prayer||4
@@ -4258,7 +4258,7 @@ Dark totem middle|Quest||5
 Dark totem top|Quest||5
 Demonic quill|Quest||5
 Desert amulet 1|Quest||5
-Desiccated page|Quest||5
+Desiccated page|Magic||5
 Dirty note|Quest||5
 Enchanted key|Quest||5
 Enchanted symbol|Quest||5
@@ -4391,7 +4391,7 @@ Ava's attractor|Ranged||3
 Ballista limbs|Ranged||3
 Ballista spring|Ranged||3
 Barb bolttips|Fletching||3
-Bellator ring|Ranged||3
+Bellator ring|Melee||3
 Black chinchompa|Ranged||3
 Black d'hide vambraces|Ranged||3
 Blessed Dizana's quiver|Ranged||3
@@ -4483,7 +4483,7 @@ Rangers' tights|Ranged||3
 Rangers' tunic|Ranged||3
 Ranging cape|Ranged||3
 Ranging hood|Ranged||3
-Red chinchompa|Ranged|Hunter|3
+Red chinchompa|Ranged||3
 Rosewood blowpipe|Ranged||3
 Ruby bolt tips|Fletching||3
 Rune arrow(p+)|Ranged||3
@@ -4735,7 +4735,7 @@ Blood tiara|Runecraft||3
 Body talisman|Runecraft||3
 Body tiara|Runecraft||3
 Bracelet of ethereum|Runecraft||3
-Bryophyta's essence|Runecraft||3
+Bryophyta's essence|Magic||4
 Catalytic talisman|Runecraft||3
 Catalytic tiara|Runecraft||3
 Chaos tiara|Runecraft||3
