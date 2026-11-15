@@ -381,28 +381,28 @@ Saradomin max cape|Magic||2
 Saradomin max hood|Cosmetic||2
 Accumulator max cape|Ranged||3
 Accumulator max hood|Cosmetic||3
-Agility cape|Cosmetic||3
+Agility cape|Agility||3
 Ardougne max cape|Melee||3
 Ardougne max hood|Cosmetic||3
 Assembler max cape|Ranged||3
 Assembler max hood|Cosmetic||3
 Attack cape|Cosmetic||3
-Farming cape|Cosmetic||3
-Farming hood|Cosmetic||3
-Firemaking cape|Cosmetic||3
-Firemaking hood|Cosmetic||3
-Fishing cape|Cosmetic||3
-Fishing hood|Cosmetic||3
-Fletching cape|Cosmetic||3
-Fletching hood|Cosmetic||3
+Farming cape|Farming||3
+Farming hood|Farming||3
+Firemaking cape|Firemaking||3
+Firemaking hood|Firemaking||3
+Fishing cape|Fishing||3
+Fishing hood|Fishing||3
+Fletching cape|Fletching||3
+Fletching hood|Fletching||3
 Guthix max cape|Magic||3
 Guthix max hood|Cosmetic||3
-Herblore cape|Cosmetic||3
-Herblore hood|Cosmetic||3
+Herblore cape|Herblore||3
+Herblore hood|Herblore||3
 Hitpoints cape|Cosmetic||3
 Hitpoints hood|Cosmetic||3
-Hunter cape|Cosmetic||3
-Hunter hood|Cosmetic||3
+Hunter cape|Hunter||3
+Hunter hood|Hunter||3
 Imbued ancient max cape|Magic||3
 Imbued ancient max hood|Cosmetic||3
 Imbued Guthix cape|Magic||3
@@ -421,12 +421,12 @@ Mythical max cape|Melee||3
 Mythical max hood|Cosmetic||3
 Prayer cape|Cosmetic||3
 Prayer hood|Cosmetic||3
-Runecraft cape|Cosmetic||3
-Runecraft hood|Cosmetic||3
-Sailing cape|Cosmetic||3
-Sailing hood|Cosmetic||3
-Smithing cape|Cosmetic||3
-Smithing hood|Cosmetic||3
+Runecraft cape|Runecraft||3
+Runecraft hood|Runecraft||3
+Sailing cape|Sailing||3
+Sailing hood|Sailing||3
+Smithing cape|Smithing||3
+Smithing hood|Smithing||3
 Zamorak max cape|Magic||3
 Zamorak max hood|Cosmetic||3
 Achievement diary hood|Teleports||4
@@ -436,7 +436,7 @@ Adamant set|Melee||4
 Adamant set (lg)|Melee||4
 Adamant trimmed set|Melee||4
 Adamant trimmed set (lg)|Melee||4
-Agility hood|Cosmetic||4
+Agility hood|Agility||4
 Ancient halo|Cosmetic||4
 Anguish ornament kit|Cosmetic||4
 Armadyl godsword ornament kit|Cosmetic||4
@@ -2567,7 +2567,7 @@ Lunar staff - pt1|Quest||4
 Lunar staff - pt2|Quest||4
 Lunar staff - pt3|Quest||4
 Mage's book|Magic||4
-Magic hood|Magic||4
+Magic hood|Cosmetic||4
 Magic shield|Magic||4
 Master wand|Magic||4
 Merfolk trident|Fishing||4
@@ -3098,7 +3098,7 @@ Spirit shield|Melee||3
 Steel platebody|Melee||3
 Steel plateskirt|Melee||3
 Strength amulet (t)|Melee||3
-Strength cape|Melee||3
+Strength cape|Cosmetic||3
 Tanzanite helm (uncharged)|Melee||3
 The dogsword|Melee||3
 Thunder khopesh|Melee||3
@@ -4550,8 +4550,8 @@ Ranger gloves|Ranged||3
 Ranger hat|Ranged||3
 Rangers' tights|Ranged||3
 Rangers' tunic|Ranged||3
-Ranging cape|Ranged||3
-Ranging hood|Ranged||3
+Ranging cape|Cosmetic||3
+Ranging hood|Cosmetic||3
 Red chinchompa|Ranged||3
 Rosewood blowpipe|Ranged||3
 Ruby bolt tips|Fletching||3
