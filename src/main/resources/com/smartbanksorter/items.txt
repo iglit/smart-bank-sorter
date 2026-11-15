@@ -70,7 +70,7 @@ Sandstone (2kg)|Construction||3
 Sandstone (5kg)|Construction||3
 Saw|Construction||3
 Teak plank|Construction||3
-Bolt rack|Construction||4
+Bolt rack|Ammo||4
 Bookcase|Construction||4
 Bronze nails|Construction||4
 Camphor plank|Construction||4
@@ -91,7 +91,7 @@ Kitchen table|Construction||4
 Large oak bed|Construction||4
 Large teak bed|Construction||4
 Limestone brick|Construction||4
-Log brace|Construction||4
+Log brace|Woodcutting||4
 Magic cape rack|Construction||4
 Mahogany armchair|Construction||4
 Mahogany armour case|Construction||4
@@ -106,7 +106,7 @@ Mahogany toy box|Construction||4
 Mahogany wardrobe|Construction||4
 Marble cape rack|Construction||4
 Marble magic wardrobe|Construction||4
-Nail beast nails|Construction||4
+Nail beast nails|Herblore||4
 Oak armchair|Construction||4
 Oak armour case|Construction||4
 Oak bed|Construction||4
@@ -141,7 +141,7 @@ Teak dresser|Construction||4
 Teak fancy dress box|Construction||4
 Teak kitchen table|Construction||4
 Teak magic wardrobe|Construction||4
-Teak repair kit|Construction||4
+Teak repair kit|Sailing||4
 Teak table|Construction||4
 Teak toy box|Construction||4
 Teak treasure chest|Construction||4
@@ -162,14 +162,14 @@ Black coffin|Construction||5
 Black nails|Construction||5
 Bronze coffin|Construction||5
 Fancy hedge|Construction||5
-Gilded armour set (lg)|Construction||5
+Gilded armour set (lg)|Melee||5
 Gilded cape rack|Construction||5
 Gilded clock|Construction||5
 Gilded dresser|Construction||5
 Gilded four-poster|Construction||5
 Gilded magic wardrobe|Construction||5
 Gilded wardrobe|Construction||5
-Guthix armour set (lg)|Construction||5
+Guthix armour set (lg)|Melee||5
 Nice hedge|Construction||5
 Oak treasure chest|Construction||5
 Open black coffin|Construction||5
@@ -184,13 +184,13 @@ Grapes|Cooking||2
 Leaping trout|Cooking||2
 Raw swordfish|Cooking||2
 Raw tuna|Cooking||2
-Bluegill|Cooking||3
+Bluegill|Fishing||4
 Bread dough|Cooking||3
 Bucket of milk|Cooking||3
 Chicken|Cooking||3
 Cleaver|Cooking||3
 Coconut|Cooking||3
-Coconut milk|Cooking||3
+Coconut milk|Herblore||3
 Cooking apple|Cooking||3
 Cooking cape|Cooking||3
 Cooking gauntlets|Cooking||3
@@ -201,7 +201,7 @@ Grain|Cooking||3
 Lean snail|Cooking||3
 Leaping salmon|Cooking||3
 Leaping sturgeon|Cooking||3
-Mottled eel|Cooking||3
+Mottled eel|Fishing||4
 Olive oil(4)|Cooking||3
 Onions(10)|Cooking||3
 Pie dish|Cooking||3
@@ -215,12 +215,12 @@ Raw monkfish|Cooking||3
 Raw sea turtle|Cooking||3
 Raw shark|Cooking||3
 Rolling pin|Cooking||3
-Saucepan|Cooking||3
+Saucepan|Cosmetic||5
 Skewer|Cooking||3
 Spatula|Cooking||3
 Spice|Cooking||3
 Thin snail|Cooking||3
-Trout|Cooking||3
+Trout|Food||3
 Ugthanki & onion|Cooking||3
 Ugthanki & tomato|Cooking||3
 Wrapped oomlie|Cooking||3
@@ -231,8 +231,8 @@ Chef's hat|Cooking||4
 Chocolate dust|Cooking||4
 Chopped garlic|Cooking||4
 Chopped ugthanki|Cooking||4
-Common tench|Cooking||4
-Crab paste|Cooking||4
+Common tench|Fishing||4
+Crab paste|Herblore||4
 Crate of antelope meat|Cooking||4
 Crate of bananas|Cooking||4
 Crate of barley|Cooking||4
@@ -256,8 +256,8 @@ Crate of spices|Cooking||4
 Crate of vegetables|Cooking||4
 Curry leaf|Cooking||4
 Egg whisk|Cooking||4
-Fine fish offcuts|Cooking||4
-Fish offcuts|Cooking||4
+Fine fish offcuts|Fishing||4
+Fish offcuts|Fishing||4
 Garlic powder|Cooking||4
 Gianne dough|Cooking||4
 Gnome spice|Cooking||4
@@ -338,10 +338,10 @@ Uncooked egg|Cooking||4
 Uncooked meat pie|Cooking||4
 Uncooked mushroom pie|Cooking||4
 Urt salt|Cooking||4
-Yellow fin|Cooking||4
+Yellow fin|Herblore||4
 Zamorak's grapes|Cooking||4
 Ale yeast|Cooking||5
-Amylase crystal|Cooking||5
+Amylase crystal|Herblore||4
 Barley malt|Cooking||5
 Batta tin|Cooking||5
 Bowl|Cooking||5
@@ -1447,9 +1447,9 @@ Zenyte|Crafting||3
 Zenyte amulet (u)|Crafting||3
 Zenyte shard|Crafting||3
 Air orb|Crafting||4
-Armageddon cape fabric|Crafting||4
+Armageddon cape fabric|Cosmetic||4
 Bear fur|Crafting||4
-Black tourmaline core|Crafting||4
+Black tourmaline core|Melee||4
 Blamish bark shell|Crafting||4
 Blamish blue shell|Crafting||4
 Blamish myre shell|Crafting||4
@@ -1488,7 +1488,7 @@ Dark kebbit fur|Crafting||4
 Dashing kebbit fur|Crafting||4
 Feldip weasel fur|Crafting||4
 Fire orb|Crafting||4
-Gold leaf|Crafting||4
+Gold leaf|Construction||4
 Graahk fur|Crafting||4
 Green dye|Crafting||4
 Heat-proof vessel|Crafting||4
@@ -1498,14 +1498,14 @@ Jute fibre|Crafting||4
 Kyatt fur|Crafting||4
 Lantern lens|Crafting||4
 Larupia fur|Crafting||4
-Lava scale|Crafting||4
-Lava scale shard|Crafting||4
+Lava scale|Herblore||4
+Lava scale shard|Herblore||4
 Leather|Crafting||4
 Leather gloves|Crafting||4
 Limestone|Crafting||4
 Linen|Crafting||4
 Linen yarn|Crafting||4
-Marlin scales|Crafting||4
+Marlin scales|Herblore||4
 Mole skin|Crafting||4
 Moonlight antelope fur|Crafting||4
 Necklace mould|Crafting||4
@@ -1519,7 +1519,7 @@ Polar kebbit fur|Crafting||4
 Red bead|Crafting||4
 Red dragon leather|Crafting||4
 Red dragonhide|Crafting||4
-Red dragonhide set|Crafting||4
+Red dragonhide set|Ranged||4
 Red topaz|Crafting||4
 Rose-tinted lens|Crafting||4
 Sapphire amulet (u)|Crafting||4
@@ -1549,7 +1549,7 @@ Yellow bead|Crafting||4
 Yellow dye|Crafting||4
 Bronze wire|Crafting||5
 Earth orb|Crafting||5
-Eldritch orb|Crafting||5
+Eldritch orb|Magic||4
 Oil lantern frame|Crafting||5
 Polished buttons|Crafting||5
 Coins|Currency||1
@@ -1619,7 +1619,7 @@ Papaya tree seed|Farming||3
 Pineapple sapling|Farming||3
 Pineapple seed|Farming||3
 Plant cure|Farming||3
-Potato cactus|Farming||3
+Potato cactus|Herblore||3
 Potatoes(10)|Farming||3
 Redwood sapling|Farming||3
 Scythe|Farming||3
@@ -1633,7 +1633,7 @@ Teak seed|Farming||3
 Torstol seed|Farming||3
 Ultracompost|Farming||3
 Watermelon seed|Farming||3
-White berries|Farming||3
+White berries|Herblore||3
 Whiteberry seed|Farming||3
 Acorn|Farming||4
 Apple sapling|Farming||4
@@ -1654,14 +1654,14 @@ Fairy mushroom|Farming||4
 Farmer's boots|Farming||4
 Forager's pouch|Farming||4
 Gardening boots|Farming||4
-Gilded spade|Farming||4
-Large spade|Farming||4
+Gilded spade|Cosmetic||5
+Large spade|Cosmetic||5
 Mushroom|Farming||4
 Mushroom spore|Farming||4
-Potato sack|Farming||4
+Potato sack|Cosmetic||5
 Rake|Farming||4
-Ruby harvest|Farming||4
-Secateurs attachment|Farming||4
+Ruby harvest|Hunter||4
+Secateurs attachment|Woodcutting||4
 Shears|Farming|Crafting|4
 Shrunk ogleroot|Farming||4
 Sigil of Enhanced Harvest|Farming||4
@@ -1677,27 +1677,27 @@ Yellow flowers|Farming||4
 Yew roots|Farming||4
 Assorted flowers|Farming||5
 Auguste's sapling|Farming||5
-Bagged bluebells|Farming||5
-Bagged daffodils|Farming||5
-Bagged dead tree|Farming||5
-Bagged flower|Farming||5
-Bagged magic tree|Farming||5
-Bagged maple tree|Farming||5
-Bagged marigolds|Farming||5
-Bagged nice tree|Farming||5
-Bagged oak tree|Farming||5
-Bagged plant 1|Farming||5
-Bagged roses|Farming||5
-Bagged sunflower|Farming||5
-Bagged willow tree|Farming||5
-Bagged yew tree|Farming||5
+Bagged bluebells|Construction||5
+Bagged daffodils|Construction||5
+Bagged dead tree|Construction||5
+Bagged flower|Construction||5
+Bagged magic tree|Construction||5
+Bagged maple tree|Construction||5
+Bagged marigolds|Construction||5
+Bagged nice tree|Construction||5
+Bagged oak tree|Construction||5
+Bagged plant 1|Construction||5
+Bagged roses|Construction||5
+Bagged sunflower|Construction||5
+Bagged willow tree|Construction||5
+Bagged yew tree|Construction||5
 Basket|Farming||5
 Beekeeper's legs|Farming||5
 Beekeeper's top|Farming||5
 Black flowers|Farming||5
 Blue flowers|Farming||5
 Cactus spine|Farming||5
-Lily of the Sands|Farming||5
+Lily of the Sands|Herblore||5
 Mixed flowers|Farming||5
 Nasturtiums|Farming||5
 Onion seed|Farming||5
@@ -1802,14 +1802,14 @@ Logs|Fletching|Firemaking|2
 Magic logs|Fletching|Firemaking|2
 Mahogany logs|Fletching|Firemaking|2
 Maple logs|Fletching|Firemaking|2
-Steel knife|Fletching||2
-Adamant knife|Fletching||3
+Steel knife|Ranged||4
+Adamant knife|Ranged||4
 Arrow shaft|Fletching||3
 Blue feather|Fletching||3
 Bow string|Fletching||3
 Crossbow string|Fletching||3
 Gryphon feather|Fletching||3
-Mithril knife|Fletching||3
+Mithril knife|Ranged||4
 Mithril limbs|Fletching||3
 Onyx bolt tips|Fletching||3
 Unstrung comp bow|Fletching||3
@@ -1821,35 +1821,35 @@ Yew longbow (u)|Fletching||3
 Yew shortbow (u)|Fletching||3
 Yew stock|Fletching||3
 Crate of feathers|Fletching||4
-Iron knife|Fletching||4
+Iron knife|Ranged||5
 Iron limbs|Fletching||4
 Javelin shaft|Fletching||4
 Longbow (u)|Fletching||4
 Magic longbow (u)|Fletching||4
 Magic shortbow (u)|Fletching||4
-Magic shortbow scroll|Fletching||4
+Magic shortbow scroll|Ranged||4
 Magic stock|Fletching||4
 Magic string|Fletching||4
 Mahogany stock|Fletching||4
 Maple longbow (u)|Fletching||4
 Maple shortbow (u)|Fletching||4
 Maple stock|Fletching||4
-Metal feather|Fletching||4
+Metal feather|Quest||5
 Oak longbow (u)|Fletching||4
 Oak shortbow (u)|Fletching||4
 Oak stock|Fletching||4
 Ogre arrow shaft|Fletching||4
 Orange feather|Fletching||4
-Ray barbs|Fletching||4
+Ray barbs|Sailing||4
 Red feather|Fletching||4
 Sigil of the Fletcher|Fletching||4
 Split log|Fletching|Firemaking|4
 Stripy feather|Fletching||4
-Swift albatross feather|Fletching||4
+Swift albatross feather|Sailing||4
 Teak stock|Fletching||4
 Willow branch|Fletching|Firemaking|4
 Yellow feather|Fletching||4
-Kitchen knife|Fletching||5
+Kitchen knife|Melee||5
 Banana|Food||2
 Blighted anglerfish|Food||2
 Blighted karambwan|Food||2
@@ -1912,7 +1912,7 @@ Cadantine|Herblore||3
 Cadantine blood potion (unf)|Herblore||3
 Cadantine potion (unf)|Herblore||3
 Cadava berries|Herblore||3
-Celastrus bark|Herblore||3
+Celastrus bark|Fletching||3
 Empty vial|Herblore||3
 Eye of newt|Herblore||3
 Goat horn dust|Herblore||3
@@ -1931,7 +1931,7 @@ Tarromin potion (unf)|Herblore||3
 Toadflax potion (unf)|Herblore||3
 Torstol potion (unf)|Herblore||3
 Amulet of chemistry|Herblore||4
-Asgarnian hops|Herblore||4
+Asgarnian hops|Farming||4
 Bowl of hot water|Herblore||4
 Bowl of water|Herblore||4
 Bucket of water|Herblore||4
@@ -1945,14 +1945,14 @@ Elkhorn potion (unf)|Herblore||4
 Ground guam|Herblore||4
 Irit potion (unf)|Herblore||4
 Irit tar|Herblore||4
-Krandorian hops|Herblore||4
+Krandorian hops|Farming||4
 Kwuarm potion (unf)|Herblore||4
 Lantadyme|Herblore||4
 Lantadyme potion (unf)|Herblore||4
-Marigolds|Herblore||4
+Marigolds|Farming||4
 Marrentill potion (unf)|Herblore||4
 Marrentill tar|Herblore||4
-Moonlight moth mix (2)|Herblore||4
+Moonlight moth mix (2)|Potions||4
 Mort myre fungus|Herblore||4
 Mort myre stem|Herblore||4
 Ranarr potion (unf)|Herblore||4
@@ -1964,11 +1964,11 @@ Tarromin tar|Herblore||4
 Trollweiss|Herblore||4
 Unicorn horn dust|Herblore||4
 Vial of blood|Herblore||4
-Volcanic ash|Herblore||4
+Volcanic ash|Farming||4
 Wine of Zamorak|Herblore||4
 Woad leaf|Herblore||4
-Wolfbane|Herblore||4
-Facility bottle (empty)|Herblore||5
+Wolfbane|Melee||4
+Facility bottle (empty)|Sailing||5
 Goutweed|Herblore||5
 Poison ivy berries|Herblore||5
 Rainbow crab paste|Herblore||5
@@ -1994,7 +1994,7 @@ Butterfly jar|Hunter||4
 Camo bottoms|Hunter||4
 Camo helmet|Hunter||4
 Camo top|Hunter||4
-Chompy bird hat|Hunter||4
+Chompy bird hat|Cosmetic||5
 Crate of salamanders|Hunter||4
 Falconer's glove|Hunter||4
 Gourmet impling jar|Hunter||4
@@ -2003,7 +2003,7 @@ Guild hunter headwear|Hunter||4
 Guild hunter legs|Hunter||4
 Guild hunter top|Hunter||4
 Hunter spear tips|Hunter||4
-Hunter's honour|Hunter||4
+Hunter's honour|Cosmetic||5
 Hunting knife|Hunter||4
 Impling jar|Hunter||4
 Jerboa tail|Hunter||4
@@ -2017,9 +2017,9 @@ Strung rabbit foot|Hunter||4
 Swamp toad|Hunter||4
 Teak bird house|Hunter||4
 Tecu salamander|Hunter||4
-Twisted relic hunter (t1) armour set|Hunter||4
-Twisted relic hunter (t2) armour set|Hunter||4
-Twisted relic hunter (t3) armour set|Hunter||4
+Twisted relic hunter (t1) armour set|Cosmetic||5
+Twisted relic hunter (t2) armour set|Cosmetic||5
+Twisted relic hunter (t3) armour set|Cosmetic||5
 Willow bird house|Hunter||4
 Wood camo legs|Hunter||4
 Wood camo top|Hunter||4
@@ -3465,11 +3465,11 @@ Golden prospector boots|Mining||3
 Golden prospector helmet|Mining||3
 Golden prospector jacket|Mining||3
 Golden prospector legs|Mining||3
-Icy basalt|Mining||3
+Icy basalt|Teleports||3
 Mithril pickaxe|Mining||3
 Prospector boots|Mining||3
 Reinforced goggles|Mining||3
-Sack of coal|Mining||3
+Sack of coal|Cosmetic||5
 Superior mining gloves|Mining||3
 Zalcano shard|Mining||3
 Basalt|Mining||4
@@ -3477,7 +3477,7 @@ Black pickaxe|Mining||4
 Calcite|Mining||4
 Crate of pickaxes|Mining||4
 Echo pickaxe|Mining||4
-Expeditious bracelet|Mining||4
+Expeditious bracelet|Slayer||4
 Gilded pickaxe|Mining||4
 Golden nugget|Mining||4
 Iron pickaxe|Mining||4
@@ -4638,7 +4638,7 @@ Rune essence|Runecraft||2
 Small pouch|Runecraft||2
 Air tiara|Runecraft||3
 Blood essence|Runecraft||3
-Blood shard|Runecraft||3
+Blood shard|Melee||3
 Blood tiara|Runecraft||3
 Body talisman|Runecraft||3
 Body tiara|Runecraft||3
@@ -4661,18 +4661,18 @@ Law tiara|Runecraft||3
 Monkey talisman|Runecraft||3
 Nature talisman|Runecraft||3
 Nature tiara|Runecraft||3
-Ring of nature|Runecraft||3
+Ring of nature|Cosmetic||5
 Tiara|Runecraft||3
 Aether catalyst|Runecraft||4
 Ancient essence|Runecraft||4
 Celestial signet (uncharged)|Runecraft||4
 Death talisman|Runecraft||4
-Fancy tiara|Runecraft||4
-Imbued heart|Runecraft||4
+Fancy tiara|Cosmetic||5
+Imbued heart|Magic||3
 Imbued tephra|Runecraft||4
 Mind talisman|Runecraft||4
 Mind tiara|Runecraft||4
-Stardust|Runecraft||4
+Stardust|Mining||3
 Tiara mould|Runecraft||4
 Water talisman|Runecraft||4
 Water tiara|Runecraft||4
@@ -4735,11 +4735,11 @@ Crate of kebabs|Sailing||4
 Crate of pies|Sailing||4
 Crate of ship parts|Sailing||4
 Dragon keel parts|Sailing||4
-Dragon limbs|Sailing||4
+Dragon limbs|Fletching||4
 Large bronze keel parts|Sailing||4
 Large iron keel parts|Sailing||4
 Large wooden hull parts|Sailing||4
-Light frame|Sailing||4
+Light frame|Fletching||4
 Oak hull parts|Sailing||4
 Oak repair kit|Sailing||4
 Paddle|Sailing||4
@@ -4837,8 +4837,8 @@ Blacksmith's helm|Smithing||3
 Crate of coal|Smithing||3
 Dragon metal sheet|Smithing||3
 Dragon metal slice|Smithing||3
-Dragon scale dust|Smithing||3
-Granite clamp|Smithing||3
+Dragon scale dust|Herblore||3
+Granite clamp|Cosmetic||4
 Imcando hammer|Smithing|Construction|3
 Imcando hammer (off-hand)|Smithing|Construction|3
 Ring of forging|Smithing||3
@@ -4848,8 +4848,8 @@ Smiths boots|Smithing||3
 Smiths gloves|Smithing||3
 Smiths trousers|Smithing||3
 Smiths tunic|Smithing||3
-Stony basalt|Smithing||3
-Aldarium|Smithing||4
+Stony basalt|Teleports||3
+Aldarium|Herblore||4
 Ammo mould|Smithing||4
 Chromium ingot|Smithing||4
 Crate of gold bars|Smithing||4
@@ -4857,7 +4857,7 @@ Crate of iron bars|Smithing||4
 Crate of ores|Smithing||4
 Crate of steel bars|Smithing||4
 Flamtaer hammer|Smithing|Construction|4
-Granite hammer|Smithing|Construction|4
+Granite hammer|Melee||4
 Orikalkum gravel|Smithing||4
 Preform|Smithing||4
 Sigil of the Smith|Smithing||4
@@ -4959,7 +4959,7 @@ Thieving hood|Thieving||3
 Grubby key|Thieving||4
 Silver locks|Thieving||4
 Spiked manacles|Melee||4
-Thieving bag|Thieving||4
+Thieving bag|Cosmetic||5
 Willow blackjack|Thieving||4
 Corrupted axe|Woodcutting||2
 Crystal axe|Woodcutting||2
