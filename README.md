@@ -38,6 +38,7 @@ bank. Searching a category's full name also adds its items to the results.
 | Arrange food & potions | Heal order for food, dose columns for potions, usefulness order for teleports |
 | Sort inside bank tabs | Also group items when a numbered bank tab is open |
 | Hide bank fillers | Leave bank fillers out of the sorted view |
+| Hide placeholders | Leave placeholders out of the sorted view, so you only see items you have (off by default) |
 | Category search | Suggest a category to jump to while searching, and show a category's items when you search its name |
 | Category tabs / Tabs | Show the left-edge tabs and choose what each tab contains |
 | Outfit layout | Outfits as columns (default) or rows |
