@@ -11,10 +11,13 @@ Mark of Grace|Agility||2
 Climbing boots|Agility|Melee|3
 Mith grapple|Agility||3
 Mith grapple tip|Agility||3
+Agility arena ticket|Agility||4
 Boots of lightness|Agility||4
+Brimhaven voucher|Agility||4
 Runner boots|Agility||4
 Runner hat|Agility||4
 Sigil of the Gnomes|Agility||4
+Wilderness agility ticket|Agility||4
 Casket|Clues||2
 Scroll box (beginner)|Clues||2
 Scroll box (easy)|Clues||2
@@ -39,6 +42,7 @@ Clueless scroll|Clues||5
 Bolt of cloth|Construction||2
 Iron nails|Construction||2
 Plank|Construction||2
+Plank sack|Construction||2
 Steel nails|Construction||2
 Adamantite nails|Construction||3
 Bolt of canvas|Construction||3
@@ -64,6 +68,7 @@ Marble block|Construction||3
 Mithril nails|Construction||3
 Oak plank|Construction||3
 Rune nails|Construction||3
+Sandstone|Construction||3
 Sandstone (10kg)|Construction||3
 Sandstone (1kg)|Construction||3
 Sandstone (2kg)|Construction||3
@@ -207,6 +212,7 @@ Onions(10)|Cooking||3
 Pie dish|Cooking||3
 Raw anglerfish|Cooking||3
 Raw dark crab|Cooking||3
+Raw jumbo squid|Cooking|Fishing|3
 Raw karambwan|Cooking||3
 Raw karambwanji|Cooking||3
 Raw lobster|Cooking||3
@@ -214,6 +220,7 @@ Raw marlin|Cooking||3
 Raw monkfish|Cooking||3
 Raw sea turtle|Cooking||3
 Raw shark|Cooking||3
+Raw swordtip squid|Cooking|Fishing|3
 Rolling pin|Cooking||3
 Saucepan|Cosmetic||5
 Skewer|Cooking||3
@@ -233,6 +240,7 @@ Chopped garlic|Cooking||4
 Chopped ugthanki|Cooking||4
 Common tench|Fishing||4
 Crab paste|Herblore||4
+Cornflour|Cooking||4
 Crate of antelope meat|Cooking||4
 Crate of bananas|Cooking||4
 Crate of barley|Cooking||4
@@ -285,6 +293,7 @@ Raw beast meat|Cooking||4
 Raw beef|Cooking||4
 Raw bird meat|Cooking||4
 Raw bluefin|Cooking||4
+Raw boar meat|Cooking||4
 Raw cave eel|Cooking||4
 Raw chicken|Cooking||4
 Raw chompy|Cooking||4
@@ -410,8 +419,11 @@ Smithing hood|Cosmetic||3
 Zamorak max cape|Magic||3
 Zamorak max hood|Cosmetic||3
 Achievement diary hood|Teleports||4
+Adamant gold-trimmed set|Cosmetic||4
 Adamant gold-trimmed set (lg)|Cosmetic||4
+Adamant set|Cosmetic||4
 Adamant set (lg)|Cosmetic||4
+Adamant trimmed set|Cosmetic||4
 Adamant trimmed set (lg)|Cosmetic||4
 Agility hood|Cosmetic||4
 Ancient halo|Cosmetic||4
@@ -448,7 +460,9 @@ Guthix cloak|Cosmetic||4
 Hosidius hood|Cosmetic||4
 Infernal max cape (l) (mangled)|Melee||4
 Magic cape|Cosmetic||4
+Mithril gold-trimmed set|Cosmetic||4
 Mithril gold-trimmed set (lg)|Cosmetic||4
+Mithril trimmed set|Cosmetic||4
 Mithril trimmed set (lg)|Cosmetic||4
 Mudskipper hat|Cosmetic||4
 Music cape|Cosmetic||4
@@ -512,6 +526,7 @@ Afro|Cosmetic||5
 Alchemist gloves|Cosmetic||5
 Alchemist labcoat|Cosmetic||5
 Alchemist pants|Cosmetic||5
+Ancient rune armour set|Cosmetic||5
 Ancient rune armour set (lg)|Cosmetic||5
 Ankou gloves|Cosmetic||5
 Ankou mask|Cosmetic||5
@@ -525,6 +540,7 @@ Antisanta jacket|Cosmetic||5
 Antisanta mask|Cosmetic||5
 Antisanta pantaloons|Cosmetic||5
 Arceuus banner|Cosmetic||5
+Armadyl rune armour set|Cosmetic||5
 Armadyl rune armour set (lg)|Cosmetic||5
 Armageddon rug|Cosmetic||5
 Banana cape|Cosmetic||5
@@ -533,6 +549,7 @@ Bandana eyepatch (blue)|Cosmetic||5
 Bandana eyepatch (brown)|Cosmetic||5
 Bandana eyepatch (red)|Cosmetic||5
 Bandana eyepatch (white)|Cosmetic||5
+Bandos rune armour set|Cosmetic||5
 Bandos rune armour set (lg)|Cosmetic||5
 Beanie|Cosmetic||5
 Bear feet|Cosmetic||5
@@ -561,6 +578,7 @@ Black desert shirt|Cosmetic||5
 Black dragon mask|Cosmetic||5
 Black elegant legs|Cosmetic||5
 Black elegant shirt|Cosmetic||5
+Black gold-trimmed set|Cosmetic||5
 Black gold-trimmed set (lg)|Cosmetic||5
 Black h'ween mask|Cosmetic||5
 Black headband|Cosmetic||5
@@ -570,10 +588,12 @@ Black naval shirt|Cosmetic||5
 Black navy slacks|Cosmetic||5
 Black partyhat|Cosmetic||5
 Black santa hat|Cosmetic||5
+Black set|Cosmetic||5
 Black set (lg)|Cosmetic||5
 Black skirt|Cosmetic||5
 Black toy horsey|Cosmetic||5
 Black tricorn hat|Cosmetic||5
+Black trimmed set|Cosmetic||5
 Black trimmed set (lg)|Cosmetic||5
 Black unicorn mask|Cosmetic||5
 Blue beret|Cosmetic||5
@@ -609,8 +629,11 @@ Brassica halo|Cosmetic||5
 Broken zombie helmet|Cosmetic||5
 Bronze dragon mask|Cosmetic||5
 Bronze fist flag|Cosmetic||5
+Bronze gold-trimmed set|Cosmetic||5
 Bronze gold-trimmed set (lg)|Cosmetic||5
+Bronze set|Cosmetic||5
 Bronze set (lg)|Cosmetic||5
+Bronze trimmed set|Cosmetic||5
 Bronze trimmed set (lg)|Cosmetic||5
 Brown apron|Cosmetic||5
 Brown headband|Cosmetic||5
@@ -702,6 +725,7 @@ Dark tuxedo cuffs|Cosmetic||5
 Dark tuxedo jacket|Cosmetic||5
 Dark tuxedo shoes|Cosmetic||5
 Decorative armour|Cosmetic||5
+Decorative boots|Cosmetic||5
 Decorative boots (broken)|Cosmetic||5
 Decorative full helm|Cosmetic||5
 Decorative helm|Cosmetic||5
@@ -911,7 +935,9 @@ Hosidius scarf|Cosmetic||5
 Icy jumper|Cosmetic||5
 Imp mask|Cosmetic||5
 Inverted santa hat|Cosmetic||5
+Iron gold-trimmed set|Cosmetic||5
 Iron gold-trimmed set (lg)|Cosmetic||5
+Iron trimmed set|Cosmetic||5
 Iron trimmed set (lg)|Cosmetic||5
 Jack lantern mask|Cosmetic||5
 Jad jumper|Cosmetic||5
@@ -1177,8 +1203,11 @@ Spooky skirt|Cosmetic||5
 Staff of Bob the Cat|Cosmetic||5
 Starter cape|Cosmetic||5
 Steel dragon mask|Cosmetic||5
+Steel gold-trimmed set|Cosmetic||5
 Steel gold-trimmed set (lg)|Cosmetic||5
+Steel set|Cosmetic||5
 Steel set (lg)|Cosmetic||5
+Steel trimmed set|Cosmetic||5
 Steel trimmed set (lg)|Cosmetic||5
 Stray dog plush|Cosmetic||5
 Strength hood|Cosmetic||5
@@ -1421,6 +1450,7 @@ Grey wolf fur|Crafting||3
 Hard leather|Crafting||3
 Hemp|Crafting||3
 Hemp yarn|Crafting||3
+Hueycoatl hide|Crafting||3
 Hydra leather|Crafting||3
 Jade|Crafting||3
 Jade amulet (u)|Crafting||3
@@ -1748,10 +1778,12 @@ Big fishing net|Fishing||2
 Corrupted harpoon|Fishing||2
 Crystal harpoon|Fishing||2
 Dragon harpoon|Fishing||2
+Fish barrel|Fishing||2
 Harpoon|Fishing||2
 Infernal harpoon|Fishing||2
 Karambwan vessel|Fishing||2
 Oily fishing rod|Fishing||2
+Open fish barrel|Fishing||2
 Small fishing net|Fishing||2
 Angler boots|Fishing||3
 Angler hat|Fishing||3
@@ -1776,6 +1808,7 @@ Spirit angler boots|Fishing||3
 Spirit angler headband|Fishing||3
 Spirit angler top|Fishing||3
 Spirit angler waders|Fishing||3
+Tackle box|Fishing||3
 Crabclaw hook|Fishing||4
 Crate of angler outfit pieces|Fishing||4
 Crate of bait|Fishing||4
@@ -1804,14 +1837,18 @@ Mahogany logs|Fletching|Firemaking|2
 Maple logs|Fletching|Firemaking|2
 Steel knife|Ranged||4
 Adamant knife|Ranged||4
+Amethyst arrowtips|Fletching||3
 Arrow shaft|Fletching||3
 Blue feather|Fletching||3
 Bow string|Fletching||3
 Crossbow string|Fletching||3
+Dragon arrowtips|Fletching||3
 Gryphon feather|Fletching||3
 Mithril knife|Ranged||4
+Headless arrow|Fletching||3
 Mithril limbs|Fletching||3
 Onyx bolt tips|Fletching||3
+Rune arrowtips|Fletching||3
 Unstrung comp bow|Fletching||3
 Willow longbow (u)|Fletching||3
 Willow shortbow (u)|Fletching||3
@@ -1820,8 +1857,12 @@ Wooden stock|Fletching||3
 Yew longbow (u)|Fletching||3
 Yew shortbow (u)|Fletching||3
 Yew stock|Fletching||3
+Adamant arrowtips|Fletching||4
+Bronze arrowtips|Fletching||4
 Crate of feathers|Fletching||4
 Iron knife|Ranged||5
+Headless atlatl dart|Fletching||4
+Iron arrowtips|Fletching||4
 Iron limbs|Fletching||4
 Javelin shaft|Fletching||4
 Longbow (u)|Fletching||4
@@ -1835,6 +1876,7 @@ Maple longbow (u)|Fletching||4
 Maple shortbow (u)|Fletching||4
 Maple stock|Fletching||4
 Metal feather|Quest||5
+Mithril arrowtips|Fletching||4
 Oak longbow (u)|Fletching||4
 Oak shortbow (u)|Fletching||4
 Oak stock|Fletching||4
@@ -1844,11 +1886,15 @@ Ray barbs|Sailing||4
 Red feather|Fletching||4
 Sigil of the Fletcher|Fletching||4
 Split log|Fletching|Firemaking|4
+Steel arrowtips|Fletching||4
 Stripy feather|Fletching||4
 Swift albatross feather|Sailing||4
 Teak stock|Fletching||4
+Unfinished broad bolts|Fletching||4
 Willow branch|Fletching|Firemaking|4
 Yellow feather|Fletching||4
+Flighted ogre arrow|Fletching||5
+Wolfbone arrowtips|Fletching||5
 Kitchen knife|Melee||5
 Banana|Food||2
 Blighted anglerfish|Food||2
@@ -1901,13 +1947,16 @@ Grimy kwuarm|Herblore||2
 Grimy marrentill|Herblore||2
 Grimy tarromin|Herblore||2
 Grimy toadflax|Herblore||2
+Herb sack|Herblore||2
 Limpwurt root|Herblore||2
+Open herb sack|Herblore||2
 Snapdragon|Herblore||2
 Tarromin|Herblore||2
 Toadflax|Herblore||2
 Torstol|Herblore||2
 Unfinished potion|Herblore||2
 Vial|Herblore||2
+Aga paste|Herblore||3
 Cadantine|Herblore||3
 Cadantine blood potion (unf)|Herblore||3
 Cadantine potion (unf)|Herblore||3
@@ -1922,6 +1971,10 @@ Harralander potion (unf)|Herblore||3
 Harralander tar|Herblore||3
 Huasca potion (unf)|Herblore||3
 Jug of water|Herblore||3
+Lye paste|Herblore||3
+Mox paste|Herblore||3
+Open reagent pouch|Herblore||3
+Reagent pouch|Herblore||3
 Red spiders' eggs|Herblore||3
 Rosemary|Herblore||3
 Snapdragon potion (unf)|Herblore||3
@@ -1977,13 +2030,26 @@ Noose wand|Hunter||2
 Bird house|Hunter||3
 Box trap|Hunter||3
 Butterfly net|Hunter||3
+Huntsman's kit|Hunter||3
+Insect net|Hunter||3
+Large fur pouch|Hunter||3
+Large fur pouch (open)|Hunter||3
+Large meat pouch|Hunter||3
+Large meat pouch (open)|Hunter||3
 Magic bird house|Hunter||3
 Magic box|Hunter||3
 Magic butterfly net|Hunter||3
+Magic insect net|Hunter||3
 Mahogany bird house|Hunter||3
 Maple bird house|Hunter||3
+Medium fur pouch|Hunter||3
+Medium fur pouch (open)|Hunter||3
 Red salamander|Hunter||3
 Redwood bird house|Hunter||3
+Small fur pouch|Hunter||3
+Small fur pouch (open)|Hunter||3
+Small meat pouch|Hunter||3
+Small meat pouch (open)|Hunter||3
 Spotted cape|Hunter||3
 Spottier cape|Hunter||3
 Swamp lizard|Hunter||3
@@ -2576,6 +2642,7 @@ Dharok's platelegs|Melee||2
 Dinh's blazing bulwark|Melee||2
 Dinh's bulwark|Melee||2
 Dragon 2h sword|Melee||2
+Dragon armour set|Melee||2
 Dragon armour set (lg)|Melee||2
 Dragon battleaxe|Melee||2
 Dragon boots|Melee||2
@@ -2649,6 +2716,7 @@ Radiant oathplate helm|Melee||2
 Radiant oathplate legs|Melee||2
 Ring of 3rd Age|Melee|Ranged,Magic|2
 Rune 2h sword|Melee||2
+Rune armour set|Melee||2
 Rune armour set (lg)|Melee||2
 Rune boots|Melee||2
 Rune chainbody|Melee||2
@@ -2869,6 +2937,7 @@ Mithril platebody|Melee||3
 Mithril platelegs|Melee||3
 Mithril plateskirt|Melee||3
 Mithril scimitar|Melee||3
+Mithril set|Melee||3
 Mithril set (lg)|Melee||3
 Mithril shortsword|Melee||3
 Mithril spear|Melee||3
@@ -2906,6 +2975,7 @@ Rune dagger(p+)|Melee||3
 Rune dagger(p++)|Melee||3
 Rune defender (l)(t)|Melee||3
 Rune gloves (wrapped)|Melee||3
+Rune gold-trimmed set|Melee||3
 Rune gold-trimmed set (lg)|Melee||3
 Rune hasta|Melee||3
 Rune hasta(p+)|Melee||3
@@ -2916,8 +2986,10 @@ Rune shield (h1)|Melee||3
 Rune spear|Melee||3
 Rune spear(p+)|Melee||3
 Rune spear(p++)|Melee||3
+Rune trimmed set|Melee||3
 Rune trimmed set (lg)|Melee||3
 Sara's blessed sword (full)|Melee||3
+Saradomin armour set|Melee||3
 Saradomin armour set (lg)|Melee||3
 Saradomin bracers|Melee||3
 Saradomin chaps|Melee||3
@@ -3188,6 +3260,7 @@ Iron platebody|Melee||4
 Iron platelegs|Melee||4
 Iron plateskirt|Melee||4
 Iron scimitar|Melee||4
+Iron set|Melee||4
 Iron set (lg)|Melee||4
 Iron shortsword|Melee||4
 Iron spear|Melee||4
@@ -3227,6 +3300,9 @@ Opal machete|Melee||4
 Pegasian boots|Melee||4
 Penance gloves|Melee||4
 Penance skirt|Melee||4
+Zamorak armour set|Melee||4
+Gilded armour set|Melee||5
+Guthix armour set|Melee||5
 Raging echoes boots (t1)|Cosmetic||4
 Raging echoes hat (t1)|Cosmetic||4
 Raging echoes robeskirt (t1)|Cosmetic||4
@@ -3449,9 +3525,13 @@ Dragon pickaxe|Mining||1
 Rune pickaxe|Mining||1
 Adamant pickaxe|Mining||2
 Celestial ring (uncharged)|Mining||2
+Coal bag|Mining|Smithing|2
 Corrupted pickaxe|Mining||2
 Crystal pickaxe|Mining||2
+Gem bag|Mining|Crafting|2
 Infernal pickaxe|Mining||2
+Open coal bag|Mining|Smithing|2
+Open gem bag|Mining|Crafting|2
 Prospector helmet|Mining||2
 Prospector jacket|Mining||2
 Prospector legs|Mining||2
@@ -3485,7 +3565,9 @@ Mining cape|Mining||4
 Mining gloves|Mining||4
 Mining helmet|Mining||4
 Mining hood|Mining||4
+Pay-dirt|Mining||4
 Sigil of the Dwarves|Mining||4
+Unidentified minerals|Mining||4
 Bronze pickaxe|Mining||5
 Collection log|Misc||2
 Crystal armour seed|Misc||3
@@ -4074,9 +4156,11 @@ Jug of bad wine|Potions||5
 Poison|Potions||5
 Bones|Prayer||1
 Dragon bones|Prayer||1
+Ash sanctifier|Prayer||2
 Ashes|Prayer||2
 Babydragon bones|Prayer||2
 Big bones|Prayer||2
+Bonecrusher|Prayer||2
 Bonecrusher necklace|Prayer||2
 Dagannoth bones|Prayer||2
 Jug of sunfire wine|Prayer||2
@@ -4149,6 +4233,7 @@ Holy book page set|Prayer||5
 Book of Law|Ranged||4
 Burnt page|Magic||4
 Chronicle|Teleports||4
+Barcrawl card|Quest||4
 Crystal of Echoes|Quest||4
 Loop half of key|Quest||4
 Ogre coffin key|Quest||4
@@ -4311,6 +4396,7 @@ Black chinchompa|Ranged||3
 Black d'hide vambraces|Ranged||3
 Blessed Dizana's quiver|Ranged||3
 Bolt mould|Tools||3
+Bolt pouch|Ranged||3
 Bow of Faerdhinen (inactive)|Ranged||3
 Broad arrowheads|Fletching||3
 Broad arrows|Ranged||3
@@ -4492,6 +4578,8 @@ Crate of gunpowder|Ranged||4
 Crate of javelins|Ranged||4
 Dizana's max cape|Ranged||4
 Dizana's max hood|Cosmetic||4
+Dizana's quiver|Ranged||4
+Dizana's quiver (l)|Ranged||4
 Dizana's quiver (l) (uncharged)|Ranged||4
 Dizana's quiver (uncharged)|Ranged||4
 Dragon cannon barrel|Ranged||4
@@ -4628,10 +4716,13 @@ Starter bow|Ranged||5
 Steel knife(p+)|Ranged||5
 Steel knife(p++)|Ranged||5
 Void ranger helm (l) (mangled)|Ranged||5
+Colossal pouch|Runecraft||1
 Pure essence|Runecraft||1
 Air talisman|Runecraft||2
 Chaos talisman|Runecraft||2
 Cosmic talisman|Runecraft||2
+Giant pouch|Runecraft||2
+Large pouch|Runecraft||2
 Law talisman|Runecraft||2
 Medium pouch|Runecraft||2
 Rune essence|Runecraft||2
@@ -4639,6 +4730,7 @@ Small pouch|Runecraft||2
 Air tiara|Runecraft||3
 Blood essence|Runecraft||3
 Blood shard|Melee||3
+Blood talisman|Runecraft||3
 Blood tiara|Runecraft||3
 Body talisman|Runecraft||3
 Body tiara|Runecraft||3
@@ -4648,6 +4740,7 @@ Catalytic talisman|Runecraft||3
 Catalytic tiara|Runecraft||3
 Chaos tiara|Runecraft||3
 Cosmic tiara|Runecraft||3
+Daeyalt essence|Runecraft||3
 Dark essence block|Runecraft||3
 Death tiara|Runecraft||3
 Earth talisman|Runecraft||3
@@ -4673,6 +4766,7 @@ Imbued tephra|Runecraft||4
 Mind talisman|Runecraft||4
 Mind tiara|Runecraft||4
 Stardust|Mining||3
+Soul talisman|Runecraft||4
 Tiara mould|Runecraft||4
 Water talisman|Runecraft||4
 Water tiara|Runecraft||4
@@ -4728,6 +4822,7 @@ Sailors' amulet|Sailing||3
 Steel keel parts|Sailing||3
 Wooden hull parts|Sailing||3
 Adamant keel parts|Sailing||4
+Boat bottle|Sailing||4
 Boat bottle (empty)|Sailing||4
 Camphor hull parts|Sailing||4
 Crate of bread|Sailing||4
@@ -4738,6 +4833,7 @@ Dragon keel parts|Sailing||4
 Dragon limbs|Fletching||4
 Large bronze keel parts|Sailing||4
 Large iron keel parts|Sailing||4
+Large oak hull parts|Sailing||4
 Large wooden hull parts|Sailing||4
 Light frame|Fletching||4
 Oak hull parts|Sailing||4
@@ -4758,6 +4854,7 @@ Teak hull parts|Sailing||4
 Bronze keel parts|Sailing||5
 Camphor crate|Sailing||5
 Camphor repair kit|Sailing||5
+Facility bottle|Sailing||5
 Bag of salt|Slayer||1
 Facemask|Slayer||1
 Salve amulet (e)|Slayer|Melee|1
@@ -4769,6 +4866,7 @@ Araxyte slayer helmet|Slayer||2
 Black slayer helmet|Slayer||2
 Bracelet of slaughter|Slayer||2
 Earmuffs|Slayer||2
+Enchanted gem|Slayer||2
 Hydra slayer helmet|Slayer||2
 Insulated boots|Slayer||2
 Nose peg|Slayer||2
@@ -4812,6 +4910,7 @@ Banshee robe|Cosmetic||4
 Banshee top|Cosmetic||4
 Black demon mask|Cosmetic||4
 Efh salt|Slayer||4
+Fungicide spray|Slayer||4
 Sigil of Slaughter|Slayer||4
 Slayer hood|Slayer||4
 Hammer|Smithing|Construction|1
@@ -4856,6 +4955,7 @@ Crate of gold bars|Smithing||4
 Crate of iron bars|Smithing||4
 Crate of ores|Smithing||4
 Crate of steel bars|Smithing||4
+Double ammo mould|Smithing||4
 Flamtaer hammer|Smithing|Construction|4
 Granite hammer|Melee||4
 Orikalkum gravel|Smithing||4
@@ -4865,7 +4965,9 @@ Amulet of eternal glory|Teleports||1
 Amulet of glory|Teleports||1
 Amulet of glory(3)|Teleports||1
 Amulet of glory(6)|Teleports||1
+Ectophial|Teleports||1
 Slayer ring (eternal)|Teleports||1
+Achievement diary cape|Teleports||2
 Achievement diary cape (t)|Teleports||2
 Ardougne teleport|Teleports||2
 Camelot teleport|Teleports||2
@@ -4887,12 +4989,14 @@ Skills necklace(5)|Teleports||2
 Skills necklace(6)|Teleports||2
 Slayer ring (8)|Teleports||2
 Ardougne cloak 1|Teleports||3
+Basic quetzal whistle|Teleports|Hunter|3
 Burning amulet(2)|Teleports||3
 Burning amulet(5)|Teleports||3
 Castle wars bracelet(3)|Teleports||3
 Crystal teleport seed|Teleports||3
 Disk of Returning|Teleports||3
 Drakan's medallion|Teleports||3
+Enhanced quetzal whistle|Teleports|Hunter|3
 Escape crystal|Teleports||3
 Flamtaer bracelet|Teleports||3
 Giantsoul amulet|Teleports||3
@@ -4904,6 +5008,7 @@ Lumbridge teleport|Teleports||3
 Lunar isle teleport|Teleports||3
 Necklace of passage(1)|Teleports||3
 Necklace of passage(5)|Teleports||3
+Perfected quetzal whistle|Teleports|Hunter|3
 Pharaoh's sceptre|Teleports||3
 Ring of dueling(1)|Teleports||3
 Ring of dueling(5)|Teleports||3
@@ -4930,6 +5035,7 @@ Digsite teleport|Teleports||4
 Ghorrock teleport|Teleports||4
 Guthixian temple teleport|Teleports||4
 Iorwerth camp teleport|Teleports||4
+Master scroll book|Teleports||4
 Revenant cave teleport|Teleports||4
 Sigil of Last Recall|Teleports||4
 Strange teleorb|Teleports||4
@@ -4972,6 +5078,7 @@ Steel axe|Woodcutting||2
 3rd Age felling axe|Woodcutting||3
 Adamant axe|Woodcutting||3
 Adamant felling axe|Woodcutting||3
+Anima-infused bark|Woodcutting||3
 Forestry boots|Woodcutting||3
 Forestry hat|Woodcutting||3
 Forestry legs|Woodcutting||3
