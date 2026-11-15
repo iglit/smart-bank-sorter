@@ -2555,13 +2555,13 @@ Boots of Brimstone|Melee||2
 Cape of Legends|Melee|Ranged,Magic|2
 Corrupted body (attuned)|Melee||2
 Corrupted halberd (attuned)|Melee||2
-Corrupted helm|Melee||2
+Corrupted helm|Cosmetic||2
 Corrupted helm (attuned)|Melee||2
-Corrupted kiteshield|Melee||2
+Corrupted kiteshield|Cosmetic||2
 Corrupted legs (attuned)|Melee||2
-Corrupted platebody|Melee||2
-Corrupted platelegs|Melee||2
-Corrupted plateskirt|Melee||2
+Corrupted platebody|Cosmetic||2
+Corrupted platelegs|Cosmetic||2
+Corrupted plateskirt|Cosmetic||2
 Crystal body|Melee||2
 Crystal body (attuned)|Melee||2
 Crystal halberd|Melee||2
@@ -2689,7 +2689,7 @@ Statius's platebody|Melee||2
 Statius's platelegs|Melee||2
 Statius's warhammer|Melee||2
 Sunspear|Melee||2
-Swampbark armour set|Melee||2
+Swampbark armour set|Magic||2
 Swampbark body|Melee||2
 Swampbark boots|Melee||2
 Swampbark gauntlets|Melee||2
@@ -2729,7 +2729,7 @@ Adamant chainbody|Melee||3
 Adamant claws|Melee||3
 Adamant dagger|Melee||3
 Adamant defender|Melee||3
-Adamant dragon mask|Melee||3
+Adamant dragon mask|Cosmetic||3
 Adamant full helm|Melee||3
 Adamant gloves|Melee||3
 Adamant halberd|Melee||3
@@ -2762,7 +2762,7 @@ Avernic treads (pe)(et)|Melee||3
 Avernic treads (pr)(pe)|Melee||3
 Bandos crozier|Melee||3
 Bandos d'hide shield|Melee||3
-Bandos dragonhide set|Melee||3
+Bandos dragonhide set|Ranged||3
 Bandos kiteshield|Melee||3
 Bandos mitre|Melee||3
 Bandos robe legs|Melee||3
@@ -2775,7 +2775,7 @@ Blade of Saeldor|Melee||3
 Blisterwood flail|Melee||3
 Blisterwood sickle|Melee||3
 Blisterwood stake|Melee||3
-Bloodbark armour set|Melee||3
+Bloodbark armour set|Magic||3
 Bloodbark body|Melee||3
 Bloodbark boots|Melee||3
 Bloodbark gauntlets|Melee||3
@@ -2799,10 +2799,10 @@ Crystal body (basic)|Melee||3
 Crystal halberd (basic)|Melee||3
 Crystal helm (basic)|Melee||3
 Crystal legs (basic)|Melee||3
-Dark dagger|Melee||3
+Dark dagger|Quest||3
 Darklight|Melee||3
-Demonic boots (t1)|Melee||3
-Demonic hood (t1)|Melee||3
+Demonic boots (t1)|Cosmetic||3
+Demonic hood (t1)|Cosmetic||3
 Devout boots|Melee||3
 Diamond sickle (b)|Melee||3
 Dragon dagger (p)(cr)|Melee||3
@@ -2818,7 +2818,7 @@ Dragon spear (p++)(cr)|Melee||3
 Dragon spear(p+)|Melee||3
 Dragon spear(p++)|Melee||3
 Dual sai|Melee||3
-Eclipse Moon armour set|Melee||3
+Eclipse Moon armour set|Ranged||3
 Elite black full helm|Melee||3
 Elite black platebody|Melee||3
 Elite black platelegs|Melee||3
@@ -2843,11 +2843,11 @@ Jade machete|Melee||3
 Keris|Melee||3
 Keris partisan|Melee||3
 Keris partisan of the sun|Melee||3
-Lava dragon mask|Melee||3
+Lava dragon mask|Cosmetic||3
 Leaf-bladed battleaxe|Melee||3
 Leaf-bladed spear|Melee||3
 Leaf-bladed sword|Melee||3
-Mask of Balance|Melee||3
+Mask of Balance|Cosmetic||3
 Mithril 2h sword|Melee||3
 Mithril battleaxe|Melee||3
 Mithril boots|Melee||3
@@ -2857,7 +2857,7 @@ Mithril dagger|Melee||3
 Mithril dagger(p+)|Melee||3
 Mithril dagger(p++)|Melee||3
 Mithril defender|Melee||3
-Mithril dragon mask|Melee||3
+Mithril dragon mask|Cosmetic||3
 Mithril full helm|Melee||3
 Mithril gloves|Melee||3
 Mithril gloves (wrapped)|Melee||3
@@ -2887,12 +2887,12 @@ Obsidian helmet|Melee||3
 Obsidian platebody|Melee||3
 Obsidian platelegs|Melee||3
 Odium ward|Melee||3
-Ornate boots|Melee||3
-Ornate cape|Melee||3
-Ornate gloves|Melee||3
-Ornate helm|Melee||3
-Ornate legs|Melee||3
-Ornate top|Melee||3
+Ornate boots|Cosmetic||3
+Ornate cape|Cosmetic||3
+Ornate gloves|Cosmetic||3
+Ornate helm|Cosmetic||3
+Ornate legs|Cosmetic||3
+Ornate top|Cosmetic||3
 Peaceful blessing|Melee|Ranged,Magic|3
 Phoenix necklace|Melee||3
 Rada's blessing 1|Melee|Ranged,Magic|3
@@ -2929,7 +2929,7 @@ Saradomin coif|Melee||3
 Saradomin d'hide body|Melee|Ranged|3
 Saradomin d'hide boots|Melee|Ranged|3
 Saradomin d'hide shield|Melee||3
-Saradomin dragonhide set|Melee|Ranged|3
+Saradomin dragonhide set|Ranged||3
 Saradomin full helm|Melee||3
 Saradomin hilt|Melee||3
 Saradomin kiteshield|Melee||3
@@ -2947,7 +2947,7 @@ Shayzien platebody (1)|Melee||3
 Shield left half|Melee||3
 Shield right half|Melee||3
 Silverlight|Melee||3
-Skeletal armour set|Melee||3
+Skeletal armour set|Magic||3
 Skeletal boots|Melee||3
 Skeletal bottoms|Melee||3
 Skeletal gloves|Melee||3
@@ -2973,7 +2973,7 @@ Toktz-xil-ul|Melee||3
 Turquoise boots|Melee||3
 Turquoise hat|Melee||3
 Twisted buckler|Melee||3
-Twisted cane|Melee||3
+Twisted cane|Cosmetic||3
 Tyras helm|Melee||3
 Ursine chainmace|Melee||3
 Verac's armour set|Melee||3
@@ -2989,7 +2989,7 @@ Voidwaker blade|Melee||3
 Zamorak d'hide body|Melee||3
 Zamorak d'hide boots|Melee||3
 Zamorak d'hide shield|Melee||3
-Zamorak dragonhide set|Melee||3
+Zamorak dragonhide set|Ranged||3
 Zamorakian hasta|Melee||3
 Zamorakian spear|Melee||3
 Abyssal dagger (bh)(p)|Melee||4
@@ -3007,7 +3007,7 @@ Adamant shield (h1)|Melee||4
 Adamant spear(p+)|Melee||4
 Adamant spear(p++)|Melee||4
 Amulet of avarice|Melee||4
-Amulet of rancour|Melee||4
+Amulet of rancour|Melee||1
 Ancient blessing|Melee|Ranged,Magic|4
 Ancient cloak|Melee||4
 Ancient d'hide shield|Melee||4
@@ -3017,10 +3017,10 @@ Ancient platebody|Melee||4
 Ancient platelegs|Melee||4
 Ancient plateskirt|Melee||4
 Ancient wyvern shield|Melee||4
-Anger battleaxe|Melee||4
-Anger mace|Melee||4
-Anger spear|Melee||4
-Anger sword|Melee||4
+Anger battleaxe|Quest||4
+Anger mace|Quest||4
+Anger spear|Quest||4
+Anger sword|Quest||4
 Antler guard|Melee||4
 Ardougne knight helm|Melee||4
 Ardougne knight platebody|Melee||4
@@ -3028,10 +3028,10 @@ Ardougne knight platelegs|Melee||4
 Arkan blade|Melee||4
 Arrav's axe|Melee||4
 Black 2h sword|Melee||4
-Black axe|Melee||4
+Black axe|Tools||4
 Black battleaxe|Melee||4
 Black boots|Melee||4
-Black cavalier|Melee||4
+Black cavalier|Cosmetic||4
 Black chainbody|Melee||4
 Black claws|Melee||4
 Black dagger|Melee||4
@@ -3076,10 +3076,10 @@ Boots of stone|Melee||4
 Broken dragon hasta|Melee||4
 Broodoo shield (10)|Melee||4
 Bruise blue snelm|Melee||4
-Bucket helm|Melee||4
-Carnillean armour|Melee||4
-Cattleprod|Melee||4
-Cavalier mask|Melee||4
+Bucket helm|Cosmetic||4
+Carnillean armour|Quest||4
+Cattleprod|Quest||4
+Cavalier mask|Cosmetic||4
 Colossal blade|Melee||4
 Corrupted statius's full helm (bh)(inactive)|Melee||4
 Corrupted statius's platebody (bh)(inactive)|Melee||4
@@ -3102,10 +3102,10 @@ Desert boots|Melee||4
 Draconic visage|Melee||4
 Dwarven helmet|Melee||4
 Earthbound tecpatl|Melee||4
-Echo boots|Melee||4
+Echo boots|Melee||2
 Efaritay's aid|Melee||4
-Eggshell platebody|Melee||4
-Eggshell platelegs|Melee||4
+Eggshell platebody|Cosmetic||4
+Eggshell platelegs|Cosmetic||4
 Falador shield 1|Melee||4
 Fighter torso (l)(or)|Melee||4
 Fire cape|Melee||4
@@ -3125,9 +3125,9 @@ Gilded plateskirt|Melee||4
 Gilded scimitar|Melee||4
 Gilded spear|Melee||4
 Gilded sq shield|Melee||4
-Gloves of Ruin|Melee||4
+Gloves of Ruin|Cosmetic||4
 Godsword shard 1|Melee||4
-Gold helmet|Melee||4
+Gold helmet|Quest||4
 Granite boots|Melee||4
 Granite gloves|Melee||4
 Granite helm|Melee||4
@@ -3161,8 +3161,8 @@ Hardcore ironman platebody|Melee||4
 Hardcore ironman platelegs|Melee||4
 Helm of Raedwald|Melee||4
 Hill giant club|Melee||4
-Hood of Ruin|Melee||4
-Hornwood helm|Melee||4
+Hood of Ruin|Cosmetic||4
+Hornwood helm|Cosmetic||4
 Hunter's spear|Melee||4
 Infernal cape (l) (mangled)|Melee||4
 Infernal tecpatl|Melee||4
@@ -3177,7 +3177,7 @@ Iron dagger|Melee||4
 Iron dagger(p+)|Melee||4
 Iron dagger(p++)|Melee||4
 Iron defender|Melee||4
-Iron dragon mask|Melee||4
+Iron dragon mask|Cosmetic||4
 Iron full helm|Melee||4
 Iron gloves|Melee||4
 Iron halberd|Melee||4
@@ -3203,12 +3203,12 @@ Karamja gloves 1|Melee||4
 Katana|Melee||4
 Keris(p+)|Melee||4
 Keris(p++)|Melee||4
-Khazard armour|Melee||4
-Khazard helmet|Melee||4
-Killer's knife|Melee||4
+Khazard armour|Quest||4
+Khazard helmet|Quest||4
+Killer's knife|Quest||4
 Lithic sceptre|Melee||4
 Magma helm (uncharged)|Melee||4
-Maple blackjack|Melee||4
+Maple blackjack|Thieving||4
 Maple shield|Melee||4
 Monk's robe|Melee||4
 Monk's robe top|Melee||4
@@ -3220,9 +3220,9 @@ Moonclan hat|Melee||4
 Moonclan helm|Melee||4
 Moonclan skirt|Melee||4
 Morytania legs 1|Melee||4
-Mourner boots|Melee||4
-Mourner gloves|Melee||4
-Navy cavalier|Melee||4
+Mourner boots|Quest||4
+Mourner gloves|Quest||4
+Navy cavalier|Cosmetic||4
 Necklace of Fangs|Melee||4
 Necklace of rupture|Melee||4
 Noxious halberd|Melee||4
@@ -3231,25 +3231,25 @@ Opal machete|Melee||4
 Pegasian boots|Melee||4
 Penance gloves|Melee||4
 Penance skirt|Melee||4
-Raging echoes boots (t1)|Melee||4
-Raging echoes hat (t1)|Melee||4
-Raging echoes robeskirt (t1)|Melee||4
-Raging echoes top (t1)|Melee||4
-Rat pole|Melee||4
-Red cavalier|Melee||4
+Raging echoes boots (t1)|Cosmetic||4
+Raging echoes hat (t1)|Cosmetic||4
+Raging echoes robeskirt (t1)|Cosmetic||4
+Raging echoes top (t1)|Cosmetic||4
+Rat pole|Quest||4
+Red cavalier|Cosmetic||4
 Red spiky vambraces|Melee||4
 Red topaz machete|Melee||4
 Redwood shield|Melee||4
-Rogue's revenge|Melee||4
+Rogue's revenge|Cosmetic||4
 Ruby sickle (b)|Melee||4
 Rune cane|Melee||4
-Saradomin's light|Melee||4
+Saradomin's light|Misc||4
 Searing boots|Melee||4
-Shattered boots (t1)|Melee||4
-Shattered cane|Melee||4
-Shattered hood (t1)|Melee||4
-Shattered top (t1)|Melee||4
-Shattered trousers (t1)|Melee||4
+Shattered boots (t1)|Cosmetic||4
+Shattered cane|Cosmetic||4
+Shattered hood (t1)|Cosmetic||4
+Shattered top (t1)|Cosmetic||4
+Shattered trousers (t1)|Cosmetic||4
 Silver sickle|Melee||4
 Skeletal visage|Melee||4
 Snakeskin shield|Melee||4
@@ -3280,7 +3280,7 @@ Torva platebody (damaged)|Melee||4
 Torva platelegs (damaged)|Melee||4
 Treasonous ring|Melee||4
 Tyrannical ring|Melee||4
-Ultor ring|Melee||4
+Ultor ring|Melee||1
 Unholy book|Melee||4
 Unholy symbol|Melee||4
 V's helm|Melee||4
@@ -3291,7 +3291,7 @@ Vesta's chainbody (bh)(inactive)|Melee||4
 Vesta's longsword (bh)(inactive)|Melee||4
 Vesta's plateskirt (bh)(inactive)|Melee||4
 Vesta's spear (bh)(inactive)|Melee||4
-Victor's cape (1)|Melee||4
+Victor's cape (1)|Cosmetic||4
 Void knight gloves (l)(or)|Melee|Magic,Ranged|4
 Void knight top (l)(or)|Melee|Magic,Ranged|4
 Void melee helm (l)(or)|Melee||4
@@ -3341,15 +3341,15 @@ Zamorak mjolnir|Melee||4
 Zamorak platebody|Melee||4
 Zamorak platelegs|Melee||4
 Zamorak plateskirt|Melee||4
-'24-carat' sword|Melee||5
+'24-carat' sword|Cosmetic||5
 Adamant cane|Melee||5
-Adventurer's boots (t1)|Melee||5
-Adventurer's hood (t1)|Melee||5
-Adventurer's top (t1)|Melee||5
-Adventurer's trousers (t1)|Melee||5
+Adventurer's boots (t1)|Cosmetic||5
+Adventurer's hood (t1)|Cosmetic||5
+Adventurer's top (t1)|Cosmetic||5
+Adventurer's trousers (t1)|Cosmetic||5
 Adventurer's vambraces|Melee||5
-Beach boxing gloves|Melee||5
-Blue gingerbread shield|Melee||5
+Beach boxing gloves|Cosmetic||5
+Blue gingerbread shield|Cosmetic||5
 Boxing gloves|Melee||5
 Broken bark snelm|Melee||5
 Bronze 2h sword|Melee||5
@@ -3384,17 +3384,17 @@ Bronze warhammer|Melee||5
 Cabbage round shield|Melee||5
 Calamity breeches (broken)|Melee||5
 Calamity chest (broken)|Melee||5
-Carrot sword|Melee||5
+Carrot sword|Cosmetic||5
 Centurion cuirass (broken)|Melee||5
-Cursed goblin hammer|Melee||5
-Dragon candle dagger|Melee||5
+Cursed goblin hammer|Cosmetic||5
+Dragon candle dagger|Cosmetic||5
 Fighter torso (l) (mangled)|Melee||5
-Giant bronze dagger|Melee||5
+Giant bronze dagger|Cosmetic||5
 Gloves of darkness|Melee||5
-Glowing dagger|Melee||5
+Glowing dagger|Quest||5
 Goblin mail|Melee||5
 Green boots|Melee||5
-Green gingerbread shield|Melee||5
+Green gingerbread shield|Cosmetic||5
 Green goblin mail|Melee||5
 Group ironman bracers|Melee||5
 Group ironman bracers (unranked)|Melee||5
@@ -3409,12 +3409,12 @@ Ironman helm|Melee||5
 Ironman platebody|Melee||5
 Ironman platelegs|Melee||5
 Lucky cutlass|Melee||5
-Machete|Melee||5
+Machete|Tools||5
 Maoma's full helm (broken)|Melee||5
 Maoma's great helm (broken)|Melee||5
 Maoma's med helm (broken)|Melee||5
 Mind shield|Melee||5
-Oak blackjack|Melee|Thieving|5
+Oak blackjack|Thieving||5
 Oak shield|Melee||5
 Orange goblin mail|Melee||5
 Ornate maul handle|Melee||5
