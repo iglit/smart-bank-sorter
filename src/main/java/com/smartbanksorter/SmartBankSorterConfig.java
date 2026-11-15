@@ -107,6 +107,18 @@ public interface SmartBankSorterConfig extends Config
 	}
 
 	@ConfigItem(
+		keyName = "hidePlaceholders",
+		name = "Hide placeholders",
+		description = "Don't show placeholders, only items you have. A category holding nothing but placeholders"
+			+ " is hidden too.",
+		position = 6
+	)
+	default boolean hidePlaceholders()
+	{
+		return false;
+	}
+
+	@ConfigItem(
 		keyName = "categorySearch",
 		name = "Category search",
 		description = "While searching the bank, typing three or more letters of a category's name suggests it above"

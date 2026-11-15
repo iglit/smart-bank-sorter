@@ -596,6 +596,14 @@ public class SmartBankSorterPlugin extends Plugin
 				w.setHidden(true);
 				continue;
 			}
+			// A placeholder is templated on the placeholder object. Its widget isn't a spare for copies: the game still
+			// treats it as the placeholder's slot.
+			if (config.hidePlaceholders()
+				&& itemManager.getItemComposition(items[i].getId()).getPlaceholderTemplateId() != -1)
+			{
+				w.setHidden(true);
+				continue;
+			}
 
 			int id = itemManager.canonicalize(items[i].getId());
 			String name = itemManager.getItemComposition(id).getName();
