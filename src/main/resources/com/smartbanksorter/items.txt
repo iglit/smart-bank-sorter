@@ -2030,9 +2030,9 @@ Empty vial|Herblore||3
 Eye of newt|Herblore||3
 Goat horn dust|Herblore||3
 Guam potion (unf)|Herblore||3
-Guam tar|Herblore||3
+Guam tar|Ammo||3
 Harralander potion (unf)|Herblore||3
-Harralander tar|Herblore||3
+Harralander tar|Ammo||3
 Huasca potion (unf)|Herblore||3
 Jug of water|Cooking||4
 Lye paste|Herblore||3
@@ -2062,14 +2062,14 @@ Elkhorn potion (unf)|Herblore||4
 Ground guam|Herblore||4
 Herb box|Herblore||4
 Irit potion (unf)|Herblore||4
-Irit tar|Herblore||4
+Irit tar|Ammo||4
 Krandorian hops|Farming||4
 Kwuarm potion (unf)|Herblore||4
 Lantadyme|Herblore||4
 Lantadyme potion (unf)|Herblore||4
 Marigolds|Farming||4
 Marrentill potion (unf)|Herblore||4
-Marrentill tar|Herblore||4
+Marrentill tar|Ammo||4
 Moonlight moth mix (2)|Potions||4
 Mort myre fungus|Herblore||4
 Mort myre stem|Herblore||4
@@ -2079,7 +2079,7 @@ Sigil of the Alchemist|Herblore||4
 Sigil of the Potion Master|Herblore||4
 Swamp paste|Herblore||4
 Swamp weed|Herblore||4
-Tarromin tar|Herblore||4
+Tarromin tar|Ammo||4
 Trollweiss|Quest||5
 Unicorn horn dust|Herblore||4
 Vial of blood|Herblore||4
@@ -2110,7 +2110,7 @@ Mahogany bird house|Hunter||3
 Maple bird house|Hunter||3
 Medium fur pouch|Hunter||3
 Medium fur pouch (open)|Hunter||3
-Red salamander|Hunter||3
+Red salamander|Melee||3
 Redwood bird house|Hunter||3
 Small fur pouch|Hunter||3
 Small fur pouch (open)|Hunter||3
@@ -2118,7 +2118,7 @@ Small meat pouch|Hunter||3
 Small meat pouch (open)|Hunter||3
 Spotted cape|Hunter||3
 Spottier cape|Hunter||3
-Swamp lizard|Hunter||3
+Swamp lizard|Melee||3
 Twitcher's gloves|Hunter||3
 Baby impling jar|Hunter||4
 Bird nest|Woodcutting||4
@@ -2146,11 +2146,11 @@ Nature impling jar|Hunter||4
 Net trap|Hunter||4
 Ninja impling jar|Hunter||4
 Oak bird house|Hunter||4
-Orange salamander|Hunter||4
+Orange salamander|Melee||4
 Strung rabbit foot|Hunter||4
 Swamp toad|Hunter||4
 Teak bird house|Hunter||4
-Tecu salamander|Hunter||4
+Tecu salamander|Melee||4
 Twisted relic hunter (t1) armour set|Cosmetic||5
 Twisted relic hunter (t2) armour set|Cosmetic||5
 Twisted relic hunter (t3) armour set|Cosmetic||5
@@ -3830,7 +3830,7 @@ Beer glass|Misc||5
 Belle's folly|Melee||5
 Bird book|Misc||5
 Black bead|Quest||5
-Black salamander|Misc||5
+Black salamander|Melee||5
 Black satchel|Cosmetic||5
 Black staff of collection|Misc||5
 Blood pint|Misc||5
