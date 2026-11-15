@@ -175,7 +175,8 @@ final class Categoriser
 			{
 				return MAGIC;
 			}
-			if (e.getArange() > 0 && e.getArange() >= meleeAttack)
+			// Darts have ranged strength but no ranged attack bonus.
+			if ((e.getArange() > 0 || e.getRstr() > 0) && e.getArange() >= meleeAttack)
 			{
 				return RANGED;
 			}

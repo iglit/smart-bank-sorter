@@ -29,6 +29,8 @@ public class CategoriserTest
 		assertEquals(RANGED, gear(slot(EquipmentInventorySlot.WEAPON).arange(69)));
 		// Staff of fire: crush bonus, but a staff
 		assertEquals(MAGIC, gear(slot(EquipmentInventorySlot.WEAPON).astab(2).acrush(10).amagic(10).str(7)));
+		// Rune dart: ranged strength, no attack bonus
+		assertEquals(RANGED, gear(slot(EquipmentInventorySlot.WEAPON).rstr(26)));
 		// Trident: magic damage only
 		assertEquals(MAGIC, gear(slot(EquipmentInventorySlot.WEAPON).amagic(25).mdmg(15)));
 	}
