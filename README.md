@@ -51,8 +51,9 @@ Works alongside Bank Tags, including tag tabs: opening a tag tab shows it as nor
 back when you close it. Both plugins use the left edge of the bank for tabs. The category tabs join Bank Tags'
 strip, and you can drag any tab, tag or category, to put the strip in the order you like. Like a tag tab, the open
 category tab is reopened with the bank when Bank Tags' **Remember last tag tab** is on. The order is kept in this
-plugin's settings; Bank Tags' own only ever get your tag tabs' order, as when you reorder them there. An item
-dropped on a category tab is not tagged, and the category tabs leave with the plugin.
+plugin's settings; Bank Tags' own only ever get your tag tabs' order, as when you reorder them there. Drag a
+sorted item, or a copy, onto a tag tab to tag it; an item dropped on a category tab is not tagged, and the
+category tabs leave with the plugin.
 
 Copies need free bank space: each copy uses one empty bank slot, so they don't show when your bank is full.
 
