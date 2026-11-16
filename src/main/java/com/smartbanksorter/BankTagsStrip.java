@@ -48,7 +48,9 @@ class BankTagsStrip
 	private static final String BANK_TAGS_USE_TABS = "useTabs";
 	// Starts a category tab's tag in Bank Tags' list. Bank Tags won't let a tag name have it, so a category tab
 	// can't share its tag (or the icon setting saved under it) with one of the user's tag tabs, whatever its name.
-	private static final String MARK = ":";
+	// Not ':', which Bank Tags also refuses: ConfigManager refuses it in a key, and Bank Tags saves an icon setting
+	// for every tab in its list.
+	private static final String MARK = "/";
 
 	private final Client client;
 	private final ClientThread clientThread;
