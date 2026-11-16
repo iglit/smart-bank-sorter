@@ -19,10 +19,10 @@ public class SmartBankSorterConfigTest
 	}
 
 	@Test
-	public void categoryTabsStayOnTheirOwnStripByDefault()
+	public void categoryTabsJoinBankTagsStripByDefault()
 	{
-		// Joining Bank Tags' strip is opt-in: it changes what a drag onto a tab does.
+		// Without tag tabs this changes nothing; with them, both kinds of tab share one strip.
 		assertTrue(defaults.categoryTabs());
-		assertFalse(defaults.tabsInBankTagsStrip());
+		assertTrue(defaults.tabsInBankTagsStrip());
 	}
 }

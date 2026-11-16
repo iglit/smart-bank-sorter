@@ -12,6 +12,7 @@ public interface SmartBankSorterConfig extends Config
 	String GROUP = "smartbanksorter";
 	String COLLAPSED_KEY = "collapsed";
 	String TAB_ORDER_KEY = "tabOrder";
+	String OPEN_TAB_KEY = "openTab";
 
 	enum ItemOrder
 	{
@@ -154,7 +155,7 @@ public interface SmartBankSorterConfig extends Config
 	)
 	default boolean tabsInBankTagsStrip()
 	{
-		return false;
+		return true;
 	}
 
 	@ConfigItem(
@@ -295,6 +296,18 @@ public interface SmartBankSorterConfig extends Config
 		hidden = true
 	)
 	default String tabOrder()
+	{
+		return "";
+	}
+
+	// The category tab that was open when the bank closed, reopened with it when Bank Tags remembers its last tab.
+	@ConfigItem(
+		keyName = OPEN_TAB_KEY,
+		name = "",
+		description = "",
+		hidden = true
+	)
+	default String openTab()
 	{
 		return "";
 	}

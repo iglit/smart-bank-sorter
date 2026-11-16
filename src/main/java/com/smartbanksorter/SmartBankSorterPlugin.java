@@ -89,6 +89,7 @@ public class SmartBankSorterPlugin extends Plugin
 	private static final int GRID_WIDTH = COLUMNS * PITCH_X - 12;
 	private static final int SECTION_GAP = 4;
 	private static final int DIVIDER_COLOR = 0x4E4639;
+	private static final String BANK_TAGS_GROUP = "banktags";
 	private static final String BUILT_IN_SETS = Resources.read("sets.txt");
 	private static final Map<String, Integer> FOOD_HEALS = parseHeals(Resources.read("food.txt"));
 
@@ -177,6 +178,8 @@ public class SmartBankSorterPlugin extends Plugin
 		moveToMenu = new MoveToMenu(client, config, configManager, itemManager, () -> categoryOrder);
 		ItemData.load();
 		loadSettings();
+		// Empty unless Bank Tags remembers its last tab; dropped by the first layout if it has gone.
+		focusedTab = Strings.emptyToNull(config.openTab());
 		keyManager.registerKeyListener(searchEnter);
 		spriteManager.addSpriteOverrides(TabSprite.values());
 		clientThread.invokeLater(this::rebuildBank);
@@ -210,9 +213,11 @@ public class SmartBankSorterPlugin extends Plugin
 		// Bank Tags saving its tab list, on whichever thread it does; in the same call, so nothing of ours stays there.
 		bankTagsStrip.onConfigChanged(event);
 		if (!SmartBankSorterConfig.GROUP.equals(event.getGroup())
-			|| SmartBankSorterConfig.TAB_ORDER_KEY.equals(event.getKey()))
+			|| SmartBankSorterConfig.TAB_ORDER_KEY.equals(event.getKey())
+			|| SmartBankSorterConfig.OPEN_TAB_KEY.equals(event.getKey()))
 		{
-			// The tab order is the strip's own: it writes it and rebuilds the bank itself.
+			// The tab order is the strip's own: it writes it and rebuilds the bank itself. The open tab is only
+			// saved as the bank closes.
 			return;
 		}
 		// On the client thread: the config panel changes settings from the Swing thread, mid-layout for all we know.
@@ -281,6 +286,26 @@ public class SmartBankSorterPlugin extends Plugin
 		if (event.getGroupId() == InterfaceID.BANKMAIN)
 		{
 			hideSuggestion();
+			rememberOpenTab();
+		}
+	}
+
+	// Like Bank Tags with its tag tabs: the open category tab comes back with the bank only if it remembers its own.
+	private void rememberOpenTab()
+	{
+		if (bankTags() == null)
+		{
+			return;
+		}
+		Boolean remember = configManager.getConfiguration(BANK_TAGS_GROUP, "rememberTab", Boolean.class);
+		if (remember != null && !remember)
+		{
+			focusedTab = null;
+		}
+		if (!Strings.nullToEmpty(focusedTab).equals(config.openTab()))
+		{
+			configManager.setConfiguration(SmartBankSorterConfig.GROUP, SmartBankSorterConfig.OPEN_TAB_KEY,
+				Strings.nullToEmpty(focusedTab));
 		}
 	}
 
