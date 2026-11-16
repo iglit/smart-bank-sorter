@@ -487,7 +487,59 @@ public class SmartBankSorterPlugin extends Plugin
 		{
 			// e.g. a Bank Tags tag tab is open: leave the bank to it.
 			hideOurWidgets();
+			if (bankTagsStrip.active() && activeBankTag() != null)
+			{
+				// Its strip still has the category tabs, even if the bank opened on a remembered tag tab.
+				updateTabsUnsorted();
+			}
 		}
+	}
+
+	/**
+	 * The category tabs and their icons as the sorted bank would have them, worked out from the bank's items
+	 * without laying them out.
+	 */
+	private void updateTabsUnsorted()
+	{
+		ItemContainer bank = client.getItemContainer(InventoryID.BANK);
+		if (bank == null)
+		{
+			return;
+		}
+		Map<String, List<Slot>> groups = new LinkedHashMap<>();
+		for (String category : categoryOrder)
+		{
+			groups.put(category, new ArrayList<>());
+		}
+		Item[] items = bank.getItems();
+		for (int i = 0; i < items.length; i++)
+		{
+			int itemId = items[i].getId();
+			if (itemId <= 0 || config.hideFillers() && itemId == ItemID.BANK_FILLER
+				|| config.hidePlaceholders() && itemManager.getItemComposition(itemId).getPlaceholderTemplateId() != -1)
+			{
+				continue;
+			}
+			int id = itemManager.canonicalize(itemId);
+			String name = itemManager.getItemComposition(id).getName();
+			Slot slot = new Slot(null, i, id, items[i].getQuantity(), name, categoryOf(id, name));
+			groups.computeIfAbsent(slot.category, k -> new ArrayList<>()).add(slot);
+		}
+		Map<String, Integer> tabIcons = tabsWithItems(groups);
+		Comparator<Slot> comparator = comparator();
+		groups.forEach((category, groupSlots) ->
+		{
+			String tab = tabGroups.match(-1, category);
+			if (tab != null && !groupSlots.isEmpty() && tabIcons.get(tab) == -1)
+			{
+				tabIcons.put(tab, firstItem(rows(category, groupSlots, comparator)));
+			}
+		});
+		List<String> tabs = new ArrayList<>(tabGroups.categories());
+		tabs.retainAll(tabIcons.keySet());
+		List<Integer> icons = new ArrayList<>();
+		tabs.forEach(t -> icons.add(tabIcons.get(t)));
+		bankTagsStrip.update(tabs, icons);
 	}
 
 	/**
