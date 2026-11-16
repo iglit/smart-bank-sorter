@@ -66,7 +66,7 @@ class MoveToMenu
 	}
 
 	// "Prayer potion(4)" -> "Prayer potion(*"; other names match exactly.
-	private static String movePattern(String name)
+	static String movePattern(String name)
 	{
 		return Doses.dose(name) < 0 ? name : name.substring(0, name.lastIndexOf('(')) + "(*";
 	}

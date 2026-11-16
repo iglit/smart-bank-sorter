@@ -11,11 +11,11 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import javax.inject.Inject;
+import javax.swing.SwingUtilities;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.FontID;
@@ -137,6 +137,8 @@ public class SmartBankSorterPlugin extends Plugin
 
 	private Categoriser categoriser;
 	private UserRules gearSets;
+	// Items the user shows in categories as well as where they are.
+	private UserRules alsoShow;
 	private List<String> categoryOrder;
 	private final Set<String> collapsed = new HashSet<>();
 	private final Map<Integer, String> categoryCache = new HashMap<>();
@@ -144,6 +146,8 @@ public class SmartBankSorterPlugin extends Plugin
 	// Header text + divider widgets we created inside the bank item container, reused between builds.
 	private final List<Widget> headerWidgets = new ArrayList<>();
 	private final List<Widget> dividerWidgets = new ArrayList<>();
+	// The button in the bank's title bar that opens the category editor.
+	private final List<Widget> editButton = new ArrayList<>();
 	// The "jump to <category>" line shown in the chatbox above the bank search prompt.
 	private final List<Widget> suggestionWidgets = new ArrayList<>();
 	// Category the tab strip currently filters to (null = all).
@@ -168,6 +172,7 @@ public class SmartBankSorterPlugin extends Plugin
 	private BankTagsStrip bankTagsStrip;
 	private ItemCopies itemCopies;
 	private MoveToMenu moveToMenu;
+	private CategoryEditor categoryEditor;
 
 	@Provides
 	SmartBankSorterConfig provideConfig(ConfigManager configManager)
@@ -191,22 +196,31 @@ public class SmartBankSorterPlugin extends Plugin
 		focusedTab = Strings.emptyToNull(config.openTab());
 		keyManager.registerKeyListener(searchEnter);
 		spriteManager.addSpriteOverrides(TabSprite.values());
+		spriteManager.addSpriteOverrides(EditButtonSprite.values());
 		clientThread.invokeLater(this::rebuildBank);
+
+		categoryEditor = new CategoryEditor(() -> CategorySettings.load(config), s -> s.save(configManager),
+			new GameItems(client, clientThread, itemManager, this::categoryOf));
 	}
 
 	@Override
 	protected void shutDown()
 	{
+		CategoryEditor editor = categoryEditor;
+		SwingUtilities.invokeLater(editor::close);
 		eventBus.unregister(beforeBankTags);
 		eventBus.unregister(afterBankTags);
 		keyManager.unregisterKeyListener(searchEnter);
 		spriteManager.removeSpriteOverrides(TabSprite.values());
+		spriteManager.removeSpriteOverrides(EditButtonSprite.values());
 		clientThread.invokeLater(() ->
 		{
 			hideOurWidgets();
 			headerWidgets.clear();
 			dividerWidgets.clear();
 			suggestionWidgets.clear();
+			editButton.forEach(w -> w.setHidden(true));
+			editButton.clear();
 			itemCopies.clear();
 			tabStrip.clear();
 			// Out of Bank Tags' list before the rebuild has it redraw the strip.
@@ -228,6 +242,12 @@ public class SmartBankSorterPlugin extends Plugin
 			// The tab order is the strip's own: it writes it and rebuilds the bank itself. The open tab is only
 			// saved as the bank closes.
 			return;
+		}
+		if (SmartBankSorterConfig.RULES_KEY.equals(event.getKey()) || SmartBankSorterConfig.ALSO_SHOW_KEY.equals(event.getKey())
+			|| SmartBankSorterConfig.ORDER_KEY.equals(event.getKey()) || SmartBankSorterConfig.TABS_KEY.equals(event.getKey()))
+		{
+			// Move to, or the text settings: the category editor shows them if it's open.
+			SwingUtilities.invokeLater(categoryEditor::reload);
 		}
 		// On the client thread: the config panel changes settings from the Swing thread, mid-layout for all we know.
 		clientThread.invokeLater(() ->
@@ -496,6 +516,49 @@ public class SmartBankSorterPlugin extends Plugin
 				updateTabsUnsorted();
 			}
 		}
+		placeEditButton();
+	}
+
+	/**
+	 * The category editor's button, in the bank's title bar after the game's own buttons there (settings and
+	 * tutorial), matching them in size and spacing.
+	 */
+	private void placeEditButton()
+	{
+		Widget universe = client.getWidget(InterfaceID.Bankmain.UNIVERSE);
+		Widget settings = shown(client.getWidget(InterfaceID.Bankmain.MENU_BUTTON));
+		// The tutorial button can be turned off in the bank's settings.
+		Widget tutorial = shown(client.getWidget(InterfaceID.Bankmain.BANK_TUT));
+		Widget anchor = tutorial != null ? tutorial : settings;
+		if (universe == null || anchor == null || !config.enabled() || !config.editButton())
+		{
+			editButton.forEach(w -> w.setHidden(true));
+			return;
+		}
+
+		int gap = settings != null && tutorial != null ? tutorial.getRelativeX() - settings.getRelativeX() - settings.getWidth()
+			: 3;
+		Widget button = WidgetPool.pooled(universe, editButton, 0, WidgetType.GRAPHIC);
+		button.setSpriteId(EditButtonSprite.EDIT.getSpriteId());
+		// The anchor may sit in a layer of its own: place by where both are on screen.
+		button.setOriginalX(anchor.getCanvasLocation().getX() - universe.getCanvasLocation().getX() + anchor.getWidth() + gap);
+		button.setOriginalY(anchor.getCanvasLocation().getY() - universe.getCanvasLocation().getY());
+		button.setOriginalWidth(anchor.getWidth());
+		button.setOriginalHeight(anchor.getHeight());
+		button.setName(ColorUtil.wrapWithColorTag("Categories", config.headerColor()));
+		button.setAction(0, "Edit");
+		button.setHasListener(true);
+		button.setOnOpListener((JavaScriptCallback) e -> SwingUtilities.invokeLater(() ->
+			categoryEditor.open(client.getCanvas())));
+		button.setOnMouseOverListener((JavaScriptCallback) e -> button.setSpriteId(EditButtonSprite.EDIT_HOVER.getSpriteId()));
+		button.setOnMouseLeaveListener((JavaScriptCallback) e -> button.setSpriteId(EditButtonSprite.EDIT.getSpriteId()));
+		button.setHidden(false);
+		button.revalidate();
+	}
+
+	private static Widget shown(Widget w)
+	{
+		return w != null && !w.isHidden() ? w : null;
 	}
 
 	/**
@@ -678,10 +741,8 @@ public class SmartBankSorterPlugin extends Plugin
 		gearSets = UserRules.parse(config.customSets() + "\n" + BUILT_IN_SETS);
 
 		// Rules only say what goes in a category, not where it sits: new categories they name go after the built-ins.
-		Set<String> order = new LinkedHashSet<>(splitList(config.categoryOrder()));
-		order.addAll(Categories.DEFAULT_ORDER);
-		order.addAll(rules.categories());
-		categoryOrder = new ArrayList<>(order);
+		alsoShow = UserRules.parse(config.alsoShow());
+		categoryOrder = CategorySettings.order(config.categoryOrder(), rules, alsoShow);
 
 		collapsed.clear();
 		collapsed.addAll(splitList(config.collapsed()));
@@ -841,6 +902,7 @@ public class SmartBankSorterPlugin extends Plugin
 			itemCopies.addHybridCopies(groups);
 		}
 		itemCopies.addDataCopies(groups, s -> categoriser.ruleCategory(s.itemId, s.name) != null);
+		itemCopies.addAlsoShown(groups, s -> alsoShow.matchAll(s.itemId, s.name));
 
 		Comparator<Slot> comparator = comparator();
 		boolean large = config.headerSize() == SmartBankSorterConfig.HeaderSize.LARGE;

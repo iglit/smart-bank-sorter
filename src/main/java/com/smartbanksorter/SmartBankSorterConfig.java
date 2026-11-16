@@ -10,6 +10,10 @@ import net.runelite.client.config.ConfigSection;
 public interface SmartBankSorterConfig extends Config
 {
 	String GROUP = "smartbanksorter";
+	String RULES_KEY = "customRules";
+	String ALSO_SHOW_KEY = "alsoShow";
+	String ORDER_KEY = "categoryOrder";
+	String TABS_KEY = "tabGroupsV3";
 	String COLLAPSED_KEY = "collapsed";
 	String TAB_ORDER_KEY = "tabOrder";
 	String OPEN_TAB_KEY = "openTab";
@@ -37,7 +41,7 @@ public interface SmartBankSorterConfig extends Config
 	@ConfigSection(name = "Layout", description = "How the sorted bank looks", position = 10)
 	String layoutSection = "layout";
 
-	@ConfigSection(name = "Categories", description = "Custom categories and their order", position = 20)
+	@ConfigSection(name = "Categories", description = "Your own categories, edited in the bank", position = 20)
 	String categoriesSection = "categories";
 
 	@ConfigItem(
@@ -206,14 +210,43 @@ public interface SmartBankSorterConfig extends Config
 	}
 
 	@ConfigItem(
-		keyName = "customRules",
+		keyName = "editButton",
+		name = "Edit categories button",
+		description = "A filing cabinet button at the top of the bank that opens the category editor",
+		position = 0,
+		section = categoriesSection
+	)
+	default boolean editButton()
+	{
+		return true;
+	}
+
+	// The category editor's settings, kept as text. Hidden: the editor is the way to change them.
+	@ConfigItem(
+		keyName = RULES_KEY,
 		name = "Custom categories",
 		description = "One per line, e.g. 'Slayer: slayer helm*, enchanted gem, 4155'. Item names (* = wildcard) or IDs."
 			+ " The first matching line wins and overrides the built-in categories.",
 		position = 0,
-		section = categoriesSection
+		section = categoriesSection,
+		hidden = true
 	)
 	default String customRules()
+	{
+		return "";
+	}
+
+	// Items shown in a category as well as where they'd be anyway, as copies: "Category: item, item", like the rules.
+	@ConfigItem(
+		keyName = ALSO_SHOW_KEY,
+		name = "Added items",
+		description = "One per line, e.g. 'Bossing: *salve amulet*'. Items stay where they are and are added to the"
+			+ " category too.",
+		position = 1,
+		section = categoriesSection,
+		hidden = true
+	)
+	default String alsoShow()
 	{
 		return "";
 	}
@@ -224,8 +257,8 @@ public interface SmartBankSorterConfig extends Config
 		description = "Extra armour sets to keep together in one outfit, one per line, e.g."
 			+ " 'Graceful: graceful*'. Built in: sets with set effects (Moons, Barrows, Void, Obsidian, Justiciar,"
 			+ " Inquisitor's, Virtus, Crystal, Bloodbark, Swampbark, Dagon'hai).",
-		position = 2,
-		section = categoriesSection
+		position = 4,
+		section = layoutSection
 	)
 	default String customSets()
 	{
@@ -233,12 +266,13 @@ public interface SmartBankSorterConfig extends Config
 	}
 
 	@ConfigItem(
-		keyName = "tabGroupsV3",
+		keyName = TABS_KEY,
 		name = "Tabs",
 		description = "The bank tabs, one per line: 'Tab name: category, category'. Categories not in any tab"
 			+ " only show in the full bank.",
 		position = 3,
-		section = categoriesSection
+		section = categoriesSection,
+		hidden = true
 	)
 	default String tabGroups()
 	{
@@ -250,13 +284,14 @@ public interface SmartBankSorterConfig extends Config
 	}
 
 	@ConfigItem(
-		keyName = "categoryOrder",
+		keyName = ORDER_KEY,
 		name = "Category order",
 		description = "Category names, one per line, top to bottom. Unlisted categories follow in their default order."
 			+ " Built-in: Currency, Melee, Ranged, Magic, Slayer, Ammo, Runes, Teleports, Potions, Food, Prayer,"
 			+ " one per skill (Mining ... Sailing), Tools, Clues, Quest, Jewellery, Cosmetic, Other gear, Misc",
 		position = 1,
-		section = categoriesSection
+		section = categoriesSection,
+		hidden = true
 	)
 	default String categoryOrder()
 	{

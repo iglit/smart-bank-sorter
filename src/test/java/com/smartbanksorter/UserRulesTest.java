@@ -26,6 +26,14 @@ public class UserRulesTest
 	}
 
 	@Test
+	public void matchAllFindsEveryCategoryOnce()
+	{
+		UserRules alsoShow = UserRules.parse("Bossing: *salve*, 4081\nRaids: Salve amulet(ei)\nBossing: salve amulet(ei)");
+		assertEquals(Arrays.asList("Bossing", "Raids"), new ArrayList<>(alsoShow.matchAll(1, "Salve amulet(ei)")));
+		assertEquals(Arrays.asList("Bossing"), new ArrayList<>(alsoShow.matchAll(4081, "Anything")));
+	}
+
+	@Test
 	public void matchesItemIds()
 	{
 		assertEquals("Slayer", rules.match(4155, "Anything"));

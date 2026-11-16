@@ -152,12 +152,37 @@ class ItemCopies
 			}
 			for (String extra : data.extras)
 			{
-				List<Slot> target = groups.computeIfAbsent(extra, k -> new ArrayList<>());
-				if (target.stream().noneMatch(t -> t.itemId == s.itemId))
+				addCopy(groups, s, extra);
+			}
+		}
+	}
+
+	/**
+	 * Items the user also shows in other categories get a withdrawable copy in each of them.
+	 */
+	void addAlsoShown(Map<String, List<Slot>> groups, Function<Slot, Set<String>> alsoShownIn)
+	{
+		List<Slot> originals = new ArrayList<>();
+		groups.values().forEach(list -> list.stream().filter(s -> !s.copy).forEach(originals::add));
+		for (Slot s : originals)
+		{
+			for (String category : alsoShownIn.apply(s))
+			{
+				if (!category.equals(s.category))
 				{
-					target.add(new Slot(s.widget, s.index, s.itemId, s.quantity, s.name, extra, true));
+					addCopy(groups, s, category);
 				}
 			}
+		}
+	}
+
+	// Unless the category already shows the item.
+	private static void addCopy(Map<String, List<Slot>> groups, Slot s, String category)
+	{
+		List<Slot> target = groups.computeIfAbsent(category, k -> new ArrayList<>());
+		if (target.stream().noneMatch(t -> t.itemId == s.itemId))
+		{
+			target.add(new Slot(s.widget, s.index, s.itemId, s.quantity, s.name, category, true));
 		}
 	}
 

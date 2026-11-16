@@ -99,6 +99,22 @@ final class UserRules
 	}
 
 	/**
+	 * @return the categories of every matching rule, each once, in the order they were declared
+	 */
+	Set<String> matchAll(int itemId, String name)
+	{
+		Set<String> categories = new LinkedHashSet<>();
+		for (Rule rule : rules)
+		{
+			if (rule.ids.contains(itemId) || rule.names.stream().anyMatch(p -> p.matcher(name).matches()))
+			{
+				categories.add(rule.category);
+			}
+		}
+		return categories;
+	}
+
+	/**
 	 * Category names in the order they were declared.
 	 */
 	Set<String> categories()
@@ -111,7 +127,7 @@ final class UserRules
 		return names;
 	}
 
-	private static Pattern glob(String pattern)
+	static Pattern glob(String pattern)
 	{
 		StringBuilder regex = new StringBuilder();
 		for (String part : pattern.split("\\*", -1))
