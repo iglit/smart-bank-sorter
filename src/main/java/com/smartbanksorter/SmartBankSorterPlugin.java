@@ -62,6 +62,7 @@ import net.runelite.client.plugins.PluginManager;
 import net.runelite.client.plugins.bank.BankSearch;
 import net.runelite.client.plugins.banktags.BankTagsPlugin;
 import net.runelite.client.plugins.banktags.BankTagsService;
+import net.runelite.client.plugins.banktags.TagManager;
 import net.runelite.client.plugins.banktags.tabs.TabManager;
 import net.runelite.client.util.ColorUtil;
 import net.runelite.client.util.Text;
@@ -128,6 +129,10 @@ public class SmartBankSorterPlugin extends Plugin
 	@Inject
 	private TabManager tabManager;
 
+	// Bank Tags' item tags, which a rename it doesn't finish needs moved; from its public module.
+	@Inject
+	private TagManager tagManager;
+
 	private Categoriser categoriser;
 	private UserRules gearSets;
 	private List<String> categoryOrder;
@@ -171,8 +176,8 @@ public class SmartBankSorterPlugin extends Plugin
 	protected void startUp()
 	{
 		tabStrip =new TabStrip(client, config, () -> focusedTab, this::focus);
-		bankTagsStrip = new BankTagsStrip(client, clientThread, config, configManager, tabManager,
-			() -> bankTags() != null, () -> focusedTab, this::focus, this::rebuildBank);
+		bankTagsStrip = new BankTagsStrip(client, clientThread, config, configManager, tabManager, tagManager,
+			() -> bankTags() != null, this::activeBankTag, () -> focusedTab, this::focus, this::rebuildBank);
 		eventBus.register(beforeBankTags);
 		eventBus.register(afterBankTags);
 		itemCopies = new ItemCopies(this::equipmentOf);

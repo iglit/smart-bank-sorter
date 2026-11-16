@@ -22,6 +22,7 @@ import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.plugins.banktags.BankTagsPlugin;
+import net.runelite.client.plugins.banktags.TagManager;
 import net.runelite.client.plugins.banktags.tabs.TabManager;
 import net.runelite.client.plugins.banktags.tabs.TabSprites;
 import net.runelite.client.plugins.banktags.tabs.TagTab;
@@ -57,8 +58,10 @@ class BankTagsStrip
 	private final SmartBankSorterConfig config;
 	private final ConfigManager configManager;
 	private final TabManager tabManager;
+	private final TagManager tagManager;
 	private final BooleanSupplier bankTagsOn;
 	// The category the plugin currently filters to (null = all), and what to do when a tab is clicked.
+	private final Supplier<String> activeTag;
 	private final Supplier<String> focused;
 	private final Consumer<String> onFocus;
 	private final Runnable rebuildBank;
@@ -76,17 +79,23 @@ class BankTagsStrip
 	private List<Integer> lastIcons = Collections.emptyList();
 	private List<String> syncedTabs = Collections.emptyList();
 	private boolean rebuildQueued;
+	// The layout Bank Tags last removed, the tag it was under, and the client cycle it went in.
+	private String removedLayoutTag;
+	private String removedLayout;
+	private int removedLayoutCycle;
 
 	BankTagsStrip(Client client, ClientThread clientThread, SmartBankSorterConfig config, ConfigManager configManager,
-		TabManager tabManager, BooleanSupplier bankTagsOn, Supplier<String> focused, Consumer<String> onFocus,
-		Runnable rebuildBank)
+		TabManager tabManager, TagManager tagManager, BooleanSupplier bankTagsOn, Supplier<String> activeTag,
+		Supplier<String> focused, Consumer<String> onFocus, Runnable rebuildBank)
 	{
 		this.client = client;
 		this.clientThread = clientThread;
 		this.config = config;
 		this.configManager = configManager;
 		this.tabManager = tabManager;
+		this.tagManager = tagManager;
 		this.bankTagsOn = bankTagsOn;
+		this.activeTag = activeTag;
 		this.focused = focused;
 		this.onFocus = onFocus;
 		this.rebuildBank = rebuildBank;
@@ -403,17 +412,39 @@ class BankTagsStrip
 	 */
 	void onConfigChanged(ConfigChanged event)
 	{
-		if (!BankTagsPlugin.CONFIG_GROUP.equals(event.getGroup()) || ourTabs.isEmpty() || event.getNewValue() == null)
+		if (!BankTagsPlugin.CONFIG_GROUP.equals(event.getGroup()))
 		{
 			return;
 		}
 		String key = event.getKey();
+		if (key.startsWith(BankTagsPlugin.TAG_LAYOUT_PREFIX) && event.getNewValue() == null)
+		{
+			// A rename removes the old layout before saving the tab list; kept in case the rename stops there.
+			removedLayoutTag = key.substring(BankTagsPlugin.TAG_LAYOUT_PREFIX.length());
+			removedLayout = event.getOldValue();
+			removedLayoutCycle = client.getGameCycle();
+			return;
+		}
+		if (ourTabs.isEmpty() || event.getNewValue() == null)
+		{
+			return;
+		}
 		if (BankTagsPlugin.TAG_TABS_CONFIG.equals(key))
 		{
 			List<String> saved = Text.fromCSV(event.getNewValue());
 			if (saved.stream().noneMatch(ourTabs::containsKey))
 			{
 				return;
+			}
+			String[] rename = rename(drawn, saved);
+			if (rename != null && activeTag.get() == null)
+			{
+				// Bank Tags' rename throws with no tag tab open (activeTag.equals), right after this save: the
+				// items' tags and the layout would stay under the old name. It removes the layout in the same
+				// cycle; one removed earlier (Disable layout) stays removed.
+				String layout = removedLayoutCycle == client.getGameCycle()
+					&& Text.standardize(rename[0]).equals(removedLayoutTag) ? removedLayout : null;
+				clientThread.invokeLater(() -> finishRename(rename[0], rename[1], layout));
 			}
 			order = keepRenamedInPlace(drawn, saved);
 			if (!order.equals(saved))
@@ -443,25 +474,49 @@ class BankTagsStrip
 	 */
 	static List<String> keepRenamedInPlace(List<String> before, List<String> after)
 	{
+		String[] rename = rename(before, after);
+		if (rename == null)
+		{
+			return new ArrayList<>(after);
+		}
+		List<String> renamed = new ArrayList<>(before);
+		renamed.set(before.indexOf(rename[0]), rename[1]);
+		return renamed;
+	}
+
+	/**
+	 * @return the old and new name if {@code after} is {@code before} with one tab renamed as Bank Tags does it,
+	 * otherwise null
+	 */
+	static String[] rename(List<String> before, List<String> after)
+	{
 		List<String> added = new ArrayList<>(after);
 		added.removeAll(before);
 		List<String> removed = new ArrayList<>(before);
 		removed.removeAll(after);
 		if (added.size() != 1 || removed.size() != 1)
 		{
-			return new ArrayList<>(after);
+			return null;
 		}
 		List<String> rest = new ArrayList<>(after);
 		rest.removeAll(added);
 		List<String> restBefore = new ArrayList<>(before);
 		restBefore.removeAll(removed);
-		if (!rest.equals(restBefore))
+		return rest.equals(restBefore) ? new String[]{removed.get(0), added.get(0)} : null;
+	}
+
+	/**
+	 * The rest of Bank Tags' rename, which it didn't get to: the items' tags, and the layout, under the new name.
+	 */
+	private void finishRename(String oldTag, String newTag, String layout)
+	{
+		tagManager.renameTag(oldTag, newTag);
+		if (layout != null)
 		{
-			return new ArrayList<>(after);
+			configManager.setConfiguration(BankTagsPlugin.CONFIG_GROUP,
+				BankTagsPlugin.TAG_LAYOUT_PREFIX + Text.standardize(newTag), layout);
 		}
-		List<String> renamed = new ArrayList<>(before);
-		renamed.set(before.indexOf(removed.get(0)), added.get(0));
-		return renamed;
+		queueRebuild(false);
 	}
 
 	// Bank Tags redraws its strip from its list right after saving it.
