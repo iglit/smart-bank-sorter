@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Deque;
+import java.util.IdentityHashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -45,6 +46,9 @@ class BankTagsStrip
 	private static final int TAGTAB_CHILD_OFFSET = 4;
 	// Bank Tags' "Use tag tabs" setting. Not a public constant there, unlike its group and tab list keys.
 	private static final String BANK_TAGS_USE_TABS = "useTabs";
+	// Starts a category tab's tag in Bank Tags' list. Bank Tags won't let a tag name have it, so a category tab
+	// can't share its tag (or the icon setting saved under it) with one of the user's tag tabs, whatever its name.
+	private static final String MARK = ":";
 
 	private final Client client;
 	private final ClientThread clientThread;
@@ -56,9 +60,11 @@ class BankTagsStrip
 	private final Supplier<String> focused;
 	private final Consumer<String> onFocus;
 	private final Runnable rebuildBank;
-	// Our tabs in Bank Tags' list, by name. The same objects go back in the list on every build, so they are told
+	// Our tabs in Bank Tags' list, by tag. The same objects go back in the list on every build, so they are told
 	// from the user's tag tabs by identity: TagTab's equals is by name.
 	private final Map<String, TagTab> ourTabs = new LinkedHashMap<>();
+	// The widgets Bank Tags drew for our tabs and patch() took over, which then carry the category's name.
+	private final Map<Widget, TagTab> patched = new IdentityHashMap<>();
 	// The tag tabs and category tabs together, as last arranged; what the strip is rebuilt to on each bank open.
 	private List<String> order = new ArrayList<>();
 	// The strip as it was last put together, every tab in order.
@@ -115,16 +121,10 @@ class BankTagsStrip
 		List<TagTab> mine = new ArrayList<>();
 		for (int i = 0; i < lastTabs.size(); i++)
 		{
-			String name = lastTabs.get(i);
-			if (list.stream().anyMatch(t -> Text.standardize(t.getTag()).equals(Text.standardize(name))))
-			{
-				log.debug("A tag tab is already called {}; leaving that category tab out", name);
-				continue;
-			}
-			TagTab tab = ourTabs.computeIfAbsent(name, n ->
+			TagTab tab = ourTabs.computeIfAbsent(MARK + lastTabs.get(i), tag ->
 			{
 				TagTab t = new TagTab();
-				t.setTag(n);
+				t.setTag(tag);
 				return t;
 			});
 			tab.setIconItemId(lastIcons.get(i));
@@ -188,6 +188,8 @@ class BankTagsStrip
 	 */
 	void patch()
 	{
+		// Bank Tags deletes the widgets it redraws.
+		patched.keySet().removeIf(w -> !isChild(w));
 		if (ourTabs.isEmpty())
 		{
 			return;
@@ -213,7 +215,8 @@ class BankTagsStrip
 			{
 				continue;
 			}
-			String category = tab.getTag();
+			patched.put(w, tab);
+			String category = category(tab);
 			boolean active = category.equals(focused.get());
 			boolean background = w.getSpriteId() == TabSprites.TAB_BACKGROUND.getSpriteId()
 				|| w.getSpriteId() == TabSprites.TAB_BACKGROUND_ACTIVE.getSpriteId();
@@ -249,13 +252,18 @@ class BankTagsStrip
 		}
 		for (int i = 0; i < tabs.size(); i++)
 		{
-			TagTab tab = ourTabs.get(tabs.get(i));
+			TagTab tab = ourTabs.get(MARK + tabs.get(i));
 			int icon = icons.get(i);
 			if (tab != null && tab.getIconItemId() != icon)
 			{
 				tab.setIconItemId(icon);
-				setIcon(client.getWidget(InterfaceID.Bankmain.ITEMS_CONTAINER), TAGTAB_CHILD_OFFSET, tab.getTag(), icon);
-				setIcon(client.getWidget(InterfaceID.Bankmain.ITEMS), SmartBankSorterPlugin.BANK_SLOTS, tab.getTag(), icon);
+				patched.forEach((w, t) ->
+				{
+					if (t == tab && w.getItemId() != -1)
+					{
+						w.setItemId(icon);
+					}
+				});
 			}
 		}
 	}
@@ -278,24 +286,6 @@ class BankTagsStrip
 			rebuildBank.run();
 		};
 		clientThread.invokeLater(afterBankTags ? () -> clientThread.invokeLater(rebuild) : rebuild);
-	}
-
-	private static void setIcon(Widget parent, int from, String category, int icon)
-	{
-		Widget[] children = parent == null ? null : parent.getChildren();
-		if (children == null)
-		{
-			return;
-		}
-		for (int i = from; i < children.length; i++)
-		{
-			Widget w = children[i];
-			if (w != null && w.getType() == WidgetType.GRAPHIC && w.getItemId() != -1 && w.getName() != null
-				&& category.equals(Text.removeTags(w.getName())))
-			{
-				w.setItemId(icon);
-			}
-		}
 	}
 
 	/**
@@ -387,6 +377,11 @@ class BankTagsStrip
 		if (!inStrip && !inTagTabTab)
 		{
 			return null;
+		}
+		TagTab ours = patched.get(w);
+		if (ours != null)
+		{
+			return ours;
 		}
 		String name = Text.removeTags(w.getName());
 		for (TagTab t : tabManager.getTabs())
@@ -484,6 +479,7 @@ class BankTagsStrip
 	{
 		tabManager.getTabs().removeIf(this::isOurs);
 		ourTabs.clear();
+		patched.clear();
 		drawn = Collections.emptyList();
 		lastTabs = Collections.emptyList();
 		lastIcons = Collections.emptyList();
@@ -495,6 +491,18 @@ class BankTagsStrip
 		order = new ArrayList<>();
 		list.forEach(t -> order.add(t.getTag()));
 		configManager.setConfiguration(SmartBankSorterConfig.GROUP, SmartBankSorterConfig.TAB_ORDER_KEY, Text.toCSV(order));
+	}
+
+	private static String category(TagTab tab)
+	{
+		return tab.getTag().substring(MARK.length());
+	}
+
+	private static boolean isChild(Widget w)
+	{
+		Widget parent = w.getParent();
+		Widget[] children = parent == null ? null : parent.getChildren();
+		return children != null && w.getIndex() < children.length && children[w.getIndex()] == w;
 	}
 
 	private boolean isOurs(TagTab tab)
