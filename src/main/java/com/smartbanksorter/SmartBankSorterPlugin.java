@@ -563,21 +563,12 @@ public class SmartBankSorterPlugin extends Plugin
 	}
 
 	// A drop on one of Bank Tags' tag tabs makes it rebuild its strip, which cuts the item container's children back
-	// to its own four: in Bank Tags' strip the category tabs are redrawn with it and only need their ops back; on
-	// their own strip they are gone and go back where they were.
+	// to its own four: the category tabs in it are redrawn with it and only need their ops back.
 	private void afterBankTagsDrag()
 	{
-		if (client.getMouseCurrentButton() != 0)
-		{
-			return;
-		}
-		if (bankTagsStrip.active())
+		if (client.getMouseCurrentButton() == 0 && bankTagsStrip.active())
 		{
 			bankTagsStrip.onDragAfter();
-		}
-		else if (config.enabled() && config.categoryTabs() && shouldSort())
-		{
-			tabStrip.refresh();
 		}
 	}
 

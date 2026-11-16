@@ -136,24 +136,10 @@ public interface SmartBankSorterConfig extends Config
 		keyName = "categoryTabs",
 		name = "Category tabs",
 		description = "Tabs down the left edge of the bank. Click one to show only its categories, again to show all.",
-		position = -3,
-		section = layoutSection
-	)
-	default boolean categoryTabs()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-		keyName = "tabsInBankTagsStrip",
-		name = "Tabs among tag tabs",
-		description = "With RuneLite's Bank Tags plugin showing tag tabs, put the category tabs in its strip, mixed"
-			+ " with the tag tabs: drag any of them to put the strip in the order you like. Otherwise the category"
-			+ " tabs go below the tag tabs.",
 		position = -2,
 		section = layoutSection
 	)
-	default boolean tabsInBankTagsStrip()
+	default boolean categoryTabs()
 	{
 		return true;
 	}

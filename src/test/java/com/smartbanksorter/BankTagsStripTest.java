@@ -33,6 +33,27 @@ public class BankTagsStripTest
 	}
 
 	@Test
+	public void aRenamedTagTabStaysWhereItWas()
+	{
+		// Bank Tags takes the tab out and adds it back, renamed, at the end.
+		assertEquals(Arrays.asList("zulrah", "Combat", "slayer"), BankTagsStrip.keepRenamedInPlace(
+			Arrays.asList("bossing", "Combat", "slayer"), Arrays.asList("Combat", "slayer", "zulrah")));
+	}
+
+	@Test
+	public void newAndDeletedTagTabsAreNotRenames()
+	{
+		List<String> before = Arrays.asList("bossing", "Combat", "slayer");
+		assertEquals(Arrays.asList("bossing", "Combat", "slayer", "zulrah"),
+			BankTagsStrip.keepRenamedInPlace(before, Arrays.asList("bossing", "Combat", "slayer", "zulrah")));
+		assertEquals(Arrays.asList("Combat", "slayer"),
+			BankTagsStrip.keepRenamedInPlace(before, Arrays.asList("Combat", "slayer")));
+		// A reorder with one name changed isn't Bank Tags' rename.
+		assertEquals(Arrays.asList("slayer", "Combat", "zulrah"),
+			BankTagsStrip.keepRenamedInPlace(before, Arrays.asList("slayer", "Combat", "zulrah")));
+	}
+
+	@Test
 	public void withNoOrderTheCategoryTabsFollowTheTagTabs()
 	{
 		assertEquals(Arrays.asList("bossing", "slayer", "Combat", "Skilling"),

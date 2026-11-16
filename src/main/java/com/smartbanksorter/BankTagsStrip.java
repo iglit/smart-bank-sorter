@@ -3,6 +3,7 @@ package com.smartbanksorter;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Deque;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -60,6 +61,8 @@ class BankTagsStrip
 	private final Map<String, TagTab> ourTabs = new LinkedHashMap<>();
 	// The tag tabs and category tabs together, as last arranged; what the strip is rebuilt to on each bank open.
 	private List<String> order = new ArrayList<>();
+	// The strip as it was last put together, every tab in order.
+	private List<String> drawn = Collections.emptyList();
 	// The category tabs the last layout wanted, with their icons, and what the strip was last synced to.
 	private List<String> lastTabs = Collections.emptyList();
 	private List<Integer> lastIcons = Collections.emptyList();
@@ -87,11 +90,11 @@ class BankTagsStrip
 	}
 
 	/**
-	 * Whether the category tabs go in Bank Tags' strip: the setting is on, and Bank Tags is on with its tag tabs.
+	 * Whether the category tabs go in Bank Tags' strip: they're on, and Bank Tags is on with its tag tabs.
 	 */
 	boolean active()
 	{
-		return config.enabled() && config.categoryTabs() && config.tabsInBankTagsStrip() && bankTagsOn.getAsBoolean()
+		return config.enabled() && config.categoryTabs() && bankTagsOn.getAsBoolean()
 			&& !"false".equals(configManager.getConfiguration(BankTagsPlugin.CONFIG_GROUP, BANK_TAGS_USE_TABS));
 	}
 
@@ -132,6 +135,8 @@ class BankTagsStrip
 		List<TagTab> merged = merge(order, new ArrayList<>(list), mine);
 		list.clear();
 		list.addAll(merged);
+		drawn = new ArrayList<>();
+		merged.forEach(t -> drawn.add(t.getTag()));
 	}
 
 	/**
@@ -413,9 +418,13 @@ class BankTagsStrip
 			{
 				return;
 			}
-			order = new ArrayList<>(saved);
+			order = keepRenamedInPlace(drawn, saved);
+			if (!order.equals(saved))
+			{
+				reorderList(order);
+			}
 			configManager.setConfiguration(SmartBankSorterConfig.GROUP, SmartBankSorterConfig.TAB_ORDER_KEY, Text.toCSV(order));
-			List<String> tagTabs = new ArrayList<>(saved);
+			List<String> tagTabs = new ArrayList<>(order);
 			tagTabs.removeAll(ourTabs.keySet());
 			configManager.setConfiguration(BankTagsPlugin.CONFIG_GROUP, BankTagsPlugin.TAG_TABS_CONFIG, Text.toCSV(tagTabs));
 			// Bank Tags redraws its strip after saving, with its own ops on the category tabs again.
@@ -432,12 +441,50 @@ class BankTagsStrip
 	}
 
 	/**
+	 * Bank Tags renames a tag tab by taking it out of its list and adding it back at the end. With exactly one name
+	 * gone and one new, and the rest in the same order, that's a rename: the tab stays where it was.
+	 */
+	static List<String> keepRenamedInPlace(List<String> before, List<String> after)
+	{
+		List<String> added = new ArrayList<>(after);
+		added.removeAll(before);
+		List<String> removed = new ArrayList<>(before);
+		removed.removeAll(after);
+		if (added.size() != 1 || removed.size() != 1)
+		{
+			return new ArrayList<>(after);
+		}
+		List<String> rest = new ArrayList<>(after);
+		rest.removeAll(added);
+		List<String> restBefore = new ArrayList<>(before);
+		restBefore.removeAll(removed);
+		if (!rest.equals(restBefore))
+		{
+			return new ArrayList<>(after);
+		}
+		List<String> renamed = new ArrayList<>(before);
+		renamed.set(before.indexOf(removed.get(0)), added.get(0));
+		return renamed;
+	}
+
+	// Bank Tags redraws its strip from its list right after saving it.
+	private void reorderList(List<String> names)
+	{
+		List<TagTab> list = tabManager.getTabs();
+		List<TagTab> sorted = new ArrayList<>(list);
+		sorted.sort(Comparator.comparingInt(t -> names.indexOf(t.getTag())));
+		list.clear();
+		list.addAll(sorted);
+	}
+
+	/**
 	 * Takes the category tabs out of Bank Tags' list, for when the plugin stops.
 	 */
 	void remove()
 	{
 		tabManager.getTabs().removeIf(this::isOurs);
 		ourTabs.clear();
+		drawn = Collections.emptyList();
 		lastTabs = Collections.emptyList();
 		lastIcons = Collections.emptyList();
 		syncedTabs = Collections.emptyList();

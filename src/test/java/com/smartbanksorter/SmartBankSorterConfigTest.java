@@ -17,12 +17,4 @@ public class SmartBankSorterConfigTest
 		assertFalse(defaults.hidePlaceholders());
 		assertTrue(defaults.hideFillers());
 	}
-
-	@Test
-	public void categoryTabsJoinBankTagsStripByDefault()
-	{
-		// Without tag tabs this changes nothing; with them, both kinds of tab share one strip.
-		assertTrue(defaults.categoryTabs());
-		assertTrue(defaults.tabsInBankTagsStrip());
-	}
 }
