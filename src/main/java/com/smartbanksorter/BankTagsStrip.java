@@ -165,7 +165,7 @@ class BankTagsStrip
 				out.add(category);
 				categoriesLeft.remove(category);
 			}
-			else if (tagsLeft.stream().anyMatch(t -> t.getTag().equals(name)))
+			else if (tagsLeft.stream().anyMatch(t -> sameTag(t, name)))
 			{
 				TagTab t;
 				do
@@ -173,7 +173,7 @@ class BankTagsStrip
 					t = tagsLeft.poll();
 					out.add(t);
 				}
-				while (!t.getTag().equals(name));
+				while (!sameTag(t, name));
 			}
 		}
 		out.addAll(tagsLeft);
@@ -491,6 +491,12 @@ class BankTagsStrip
 		order = new ArrayList<>();
 		list.forEach(t -> order.add(t.getTag()));
 		configManager.setConfiguration(SmartBankSorterConfig.GROUP, SmartBankSorterConfig.TAB_ORDER_KEY, Text.toCSV(order));
+	}
+
+	// Bank Tags keeps a tag as typed until it next loads its tabs from its settings, lowercased.
+	private static boolean sameTag(TagTab tab, String name)
+	{
+		return Text.standardize(tab.getTag()).equals(Text.standardize(name));
 	}
 
 	private static String category(TagTab tab)

@@ -54,6 +54,14 @@ public class BankTagsStripTest
 	}
 
 	@Test
+	public void aTagTabSavedWithCapitalsIsFoundLowercased()
+	{
+		// Bank Tags lowercases its tags when it loads them; the order has them as they were typed.
+		assertEquals(Arrays.asList("bossing", "magic", "Combat", "Skilling"), names(BankTagsStrip.merge(
+			Arrays.asList("bossing", "Magic", "Combat", "Skilling"), tabs("bossing", "magic"), tabs("Combat", "Skilling"))));
+	}
+
+	@Test
 	public void withNoOrderTheCategoryTabsFollowTheTagTabs()
 	{
 		assertEquals(Arrays.asList("bossing", "slayer", "Combat", "Skilling"),
