@@ -94,6 +94,8 @@ public class SmartBankSorterPlugin extends Plugin
 	private static final String BANK_TAGS_GROUP = "banktags";
 	private static final String BUILT_IN_SETS = Resources.read("sets.txt");
 	private static final Map<String, Integer> FOOD_HEALS = parseHeals(Resources.read("food.txt"));
+	// Categories as they'd be without the user's rules.
+	private static final Categoriser BUILT_IN = new Categoriser(UserRules.parse(""));
 
 	@Inject
 	private Client client;
@@ -138,6 +140,7 @@ public class SmartBankSorterPlugin extends Plugin
 	private List<String> categoryOrder;
 	private final Set<String> collapsed = new HashSet<>();
 	private final Map<Integer, String> categoryCache = new HashMap<>();
+	private final Map<Integer, String> builtInCache = new HashMap<>();
 	// Header text + divider widgets we created inside the bank item container, reused between builds.
 	private final List<Widget> headerWidgets = new ArrayList<>();
 	private final List<Widget> dividerWidgets = new ArrayList<>();
@@ -666,6 +669,7 @@ public class SmartBankSorterPlugin extends Plugin
 		UserRules rules = UserRules.parse(config.customRules());
 		categoriser = new Categoriser(rules);
 		categoryCache.clear();
+		builtInCache.clear();
 		filterText = null;
 		bankTagsStrip.loadOrder(config.tabOrder());
 		// Tab lines are "Tab: category, category"; matching category names with the same rule syntax.
@@ -1032,13 +1036,21 @@ public class SmartBankSorterPlugin extends Plugin
 
 	private String categoryOf(int itemId, String name)
 	{
-		return categoryCache.computeIfAbsent(itemId, id ->
-		{
-			ItemComposition comp = itemManager.getItemComposition(id);
-			ItemStats stats = itemManager.getItemStats(id);
-			return categoriser.categorise(id, name, comp.getInventoryActions(),
-				stats != null && stats.isEquipable() ? stats.getEquipment() : null);
-		});
+		return categoryCache.computeIfAbsent(itemId, id -> categorise(categoriser, id, name));
+	}
+
+	// Where an item would be if the user hadn't moved it.
+	private String builtInCategoryOf(Slot slot)
+	{
+		return builtInCache.computeIfAbsent(slot.itemId, id -> categorise(BUILT_IN, id, slot.name));
+	}
+
+	private String categorise(Categoriser categoriser, int itemId, String name)
+	{
+		ItemComposition comp = itemManager.getItemComposition(itemId);
+		ItemStats stats = itemManager.getItemStats(itemId);
+		return categoriser.categorise(itemId, name, comp.getInventoryActions(),
+			stats != null && stats.isEquipable() ? stats.getEquipment() : null);
 	}
 
 	private Comparator<Slot> comparator()
@@ -1207,6 +1219,25 @@ public class SmartBankSorterPlugin extends Plugin
 		if (config.smartConsumables() && Categories.TELEPORTS.equals(category))
 		{
 			return Collections.singletonList(TeleportOrder.order(slots, s -> s.name, comparator));
+		}
+		if (config.smartConsumables())
+		{
+			// Potions and food moved into another category are laid out as in Potions and Food, after its other items.
+			List<Slot> potions = new ArrayList<>();
+			List<Slot> food = new ArrayList<>();
+			List<Slot> rest = new ArrayList<>();
+			for (Slot slot : slots)
+			{
+				String home = builtInCategoryOf(slot);
+				(Categories.POTIONS.equals(home) ? potions : Categories.FOOD.equals(home) ? food : rest).add(slot);
+			}
+			if (!potions.isEmpty() || !food.isEmpty())
+			{
+				List<List<Slot>> rows = new ArrayList<>(orderRows(category, rest, comparator));
+				rows.addAll(orderRows(Categories.POTIONS, potions, comparator));
+				rows.addAll(orderRows(Categories.FOOD, food, comparator));
+				return rows;
+			}
 		}
 		if (config.itemOrder() == SmartBankSorterConfig.ItemOrder.BANK_ORDER)
 		{
