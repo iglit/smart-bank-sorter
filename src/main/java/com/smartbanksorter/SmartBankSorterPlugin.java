@@ -47,6 +47,7 @@ import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.EventBus;
 import net.runelite.client.eventbus.Subscribe;
+import net.runelite.client.events.ClientShutdown;
 import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.game.ItemEquipmentStats;
 import net.runelite.client.game.ItemManager;
@@ -288,6 +289,13 @@ public class SmartBankSorterPlugin extends Plugin
 			hideSuggestion();
 			rememberOpenTab();
 		}
+	}
+
+	// Quitting with the bank open closes no interface. RuneLite saves settings to disk after this.
+	@Subscribe
+	public void onClientShutdown(ClientShutdown event)
+	{
+		rememberOpenTab();
 	}
 
 	// Like Bank Tags with its tag tabs: the open category tab comes back with the bank only if it remembers its own.
