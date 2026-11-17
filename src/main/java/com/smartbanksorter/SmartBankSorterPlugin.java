@@ -25,6 +25,7 @@ import net.runelite.api.ItemContainer;
 import net.runelite.api.MenuAction;
 import net.runelite.api.MenuEntry;
 import net.runelite.api.ScriptID;
+import net.runelite.api.Skill;
 import net.runelite.api.events.MenuEntryAdded;
 import net.runelite.api.events.MenuOpened;
 import net.runelite.api.events.MenuOptionClicked;
@@ -137,6 +138,15 @@ public class SmartBankSorterPlugin extends Plugin
 
 	private Categoriser categoriser;
 	private UserRules gearSets;
+	// Recent combat layouts by category contents, levels and settings (see gearRows).
+	private final Map<String, List<List<String>>> gearRowsCache = new LinkedHashMap<String, List<List<String>>>(16, 0.75f, true)
+	{
+		@Override
+		protected boolean removeEldestEntry(Map.Entry<String, List<List<String>>> eldest)
+		{
+			return size() > 12;
+		}
+	};
 	// Items the user shows in categories as well as where they are.
 	private UserRules alsoShow;
 	private List<String> categoryOrder;
@@ -191,6 +201,7 @@ public class SmartBankSorterPlugin extends Plugin
 		itemCopies = new ItemCopies(this::equipmentOf);
 		moveToMenu = new MoveToMenu(client, config, configManager, itemManager, () -> categoryOrder);
 		ItemData.load();
+		WeaponLevels.load();
 		loadSettings();
 		// Empty unless Bank Tags remembers its last tab; dropped by the first layout if it has gone.
 		focusedTab = Strings.emptyToNull(config.openTab());
@@ -1258,6 +1269,111 @@ public class SmartBankSorterPlugin extends Plugin
 		return focusedTab != null && !focusedTab.equals(tabGroups.match(-1, category));
 	}
 
+	private GearOrder.Gear<Slot> gear(String category)
+	{
+		return new GearOrder.Gear<Slot>()
+		{
+			@Override
+			public ItemEquipmentStats stats(Slot s)
+			{
+				return equipmentOf(s);
+			}
+
+			@Override
+			public String name(Slot s)
+			{
+				return s.name;
+			}
+
+			@Override
+			public long price(Slot s)
+			{
+				return itemManager.getItemPrice(s.itemId);
+			}
+
+			@Override
+			public int upgrade(Slot s)
+			{
+				return GearOrder.upgradeRank(s.name, itemManager.getItemComposition(s.itemId).isTradeable());
+			}
+
+			@Override
+			public int weaponRank(Slot s)
+			{
+				return WeaponLevels.rank(s.name, category);
+			}
+
+			@Override
+			public int wieldLevel(Slot s)
+			{
+				return WeaponLevels.level(s.name, category);
+			}
+
+			@Override
+			public String set(Slot s)
+			{
+				return gearSets.match(s.itemId, s.name);
+			}
+		};
+	}
+
+	// The player's real (unboosted) combat levels, for weapon damage and which weapons they can wield.
+	private DpsCalc.Levels combatLevels()
+	{
+		return new DpsCalc.Levels(client.getRealSkillLevel(Skill.ATTACK), client.getRealSkillLevel(Skill.STRENGTH),
+			client.getRealSkillLevel(Skill.RANGED), client.getRealSkillLevel(Skill.MAGIC));
+	}
+
+	/**
+	 * Combat outfits, which are the slow part of a layout. They only change with the category's items, the
+	 * player's levels and a few settings, so recent results are kept as item ids and reused on later layouts.
+	 */
+	private List<List<Slot>> gearRows(String category, List<Slot> slots, Comparator<Slot> comparator)
+	{
+		boolean columns = config.outfitLayout() == SmartBankSorterConfig.OutfitLayout.COLUMNS;
+		DpsCalc.Levels levels = combatLevels();
+		Map<String, Slot> byKey = new HashMap<>();
+		for (Slot s : slots)
+		{
+			byKey.put(s.itemId + (s.copy ? "c" : ""), s);
+		}
+		List<String> items = new ArrayList<>(byKey.keySet());
+		Collections.sort(items);
+		String key = category + "|" + columns + config.hideEmptyOutfits() + config.packOutfits() + "|" + config.itemOrder()
+			+ "|" + config.customSets().hashCode() + "|"
+			+ levels.attack + "," + levels.strength + "," + levels.ranged + "," + levels.magic + "|" + items;
+
+		List<List<String>> cached = gearRowsCache.get(key);
+		if (cached == null)
+		{
+			List<List<Slot>> rows = GearOrder.order(slots, category, gear(category), levels, comparator, columns,
+				config.hideEmptyOutfits(), config.packOutfits(), COLUMNS);
+			cached = new ArrayList<>();
+			for (List<Slot> row : rows)
+			{
+				List<String> ids = new ArrayList<>();
+				for (Slot s : row)
+				{
+					ids.add(s == null ? null : s.itemId + (s.copy ? "c" : ""));
+				}
+				cached.add(ids);
+			}
+			gearRowsCache.put(key, cached);
+			return rows;
+		}
+		List<List<Slot>> rows = new ArrayList<>();
+		for (List<String> ids : cached)
+		{
+			List<Slot> row = new ArrayList<>();
+			for (String id : ids)
+			{
+				row.add(id == null ? null : byKey.get(id));
+			}
+			rows.add(row);
+		}
+		return rows;
+	}
+
 	private List<List<Slot>> orderRows(String category, List<Slot> slots, Comparator<Slot> comparator)
 	{
 		if (slots.isEmpty())
@@ -1266,9 +1382,7 @@ public class SmartBankSorterPlugin extends Plugin
 		}
 		if (config.gearByQuality() && Categories.COMBAT_STYLES.contains(category))
 		{
-			return GearOrder.order(slots, category, this::equipmentOf,
-				s -> itemManager.getItemPrice(s.itemId), s -> gearSets.match(s.itemId, s.name), comparator,
-				config.outfitLayout() == SmartBankSorterConfig.OutfitLayout.COLUMNS, COLUMNS);
+			return gearRows(category, slots, comparator);
 		}
 		if (config.smartConsumables() && Categories.FOOD.equals(category))
 		{

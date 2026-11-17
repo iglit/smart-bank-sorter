@@ -69,8 +69,8 @@ public interface SmartBankSorterConfig extends Config
 	@ConfigItem(
 		keyName = "gearByQuality",
 		name = "Rank combat gear",
-		description = "In Melee, Ranged and Magic: weapons first, then armour sets kept together head to feet,"
-			+ " best gear first. Overrides 'Order within category' for those categories.",
+		description = "In Melee, Ranged and Magic: each weapon with the gear that does the most damage with it,"
+			+ " strongest first. Overrides 'Order within category' for those categories.",
 		position = 2
 	)
 	default boolean gearByQuality()
@@ -151,14 +151,40 @@ public interface SmartBankSorterConfig extends Config
 	@ConfigItem(
 		keyName = "outfitLayout",
 		name = "Outfit layout",
-		description = "With 'Rank combat gear': Columns puts each outfit in a column read head to feet, best outfit"
-			+ " leftmost. Rows puts each outfit on its own row, best on top.",
+		description = "With 'Rank combat gear': Columns puts each outfit in a column under its weapon, read head to"
+			+ " feet, best leftmost. Rows puts each outfit on its own row, best on top.",
 		position = -1,
 		section = layoutSection
 	)
 	default OutfitLayout outfitLayout()
 	{
 		return OutfitLayout.COLUMNS;
+	}
+
+	@ConfigItem(
+		keyName = "hideEmptyOutfits",
+		name = "Hide empty outfits",
+		description = "With 'Rank combat gear': weapons that get no gear of their own go after the outfits instead"
+			+ " of heading an empty column or row.",
+		position = -1,
+		section = layoutSection
+	)
+	default boolean hideEmptyOutfits()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+		keyName = "packOutfits",
+		name = "Pack outfits",
+		description = "With 'Rank combat gear': packs gear left with no gaps, best first. Pieces no longer line up"
+			+ " under their weapon.",
+		position = -1,
+		section = layoutSection
+	)
+	default boolean packOutfits()
+	{
+		return false;
 	}
 
 	@ConfigItem(
