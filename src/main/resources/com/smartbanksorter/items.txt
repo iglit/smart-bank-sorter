@@ -4440,7 +4440,7 @@ Zaryte vambraces|Ranged||2
 Adamant arrow|Ranged||3
 Adamant bolts|Ranged||3
 Adamant brutal|Ranged||3
-Adamant cannonball|Ranged||3
+Adamant cannonball|Ranged|Slayer|3
 Adamant crossbow|Ranged||3
 Adamantite limbs|Fletching||3
 Aranea boots|Ranged||3
@@ -4469,16 +4469,18 @@ Bolt pouch|Ranged||3
 Bow of Faerdhinen (inactive)|Ranged||3
 Broad arrowheads|Fletching||3
 Broad arrows|Ranged||3
-Cannon barrels|Ranged||3
-Cannon base|Ranged||3
-Cannon furnace|Ranged||3
-Cannon stand|Ranged||3
+Cannon barrels|Ranged|Slayer|3
+Cannon base|Ranged|Slayer|3
+Cannon furnace|Ranged|Slayer|3
+Cannon stand|Ranged|Slayer|3
 Comp ogre bow|Ranged||3
 Corrupted bow (basic)|Ranged||3
 Corrupted morrigan's coif (bh)|Ranged||3
 Corrupted morrigan's leather body (bh)|Ranged||3
 Corrupted morrigan's leather chaps (bh)|Ranged||3
-Crate of cannonballs|Ranged||3
+Cannonball|Ranged|Slayer|3
+Crate of cannonballs|Ranged|Slayer|3
+Granite cannonball|Ranged|Slayer|3
 Crate of chinchompas|Ranged||3
 Crystal bow (basic)|Ranged||3
 Dorgeshuun crossbow|Ranged||3
@@ -4486,7 +4488,7 @@ Dragon arrow(p+)|Ranged||3
 Dragon arrow(p++)|Ranged||3
 Dragon bolts (p+)|Ranged||3
 Dragon bolts (p++)|Ranged||3
-Dragon cannonball|Ranged||3
+Dragon cannonball|Ranged|Slayer|3
 Dragon dart tip|Fletching||3
 Dragon dart(p+)|Ranged||3
 Dragon dart(p++)|Ranged||3
@@ -4496,7 +4498,7 @@ Dragon javelin(p+)|Ranged||3
 Dragon javelin(p++)|Ranged||3
 Dragon knife(p+)|Ranged||3
 Dragon knife(p++)|Ranged||3
-Dwarf cannon set|Ranged||3
+Dwarf cannon set|Ranged|Slayer|3
 Eclipse atlatl|Ranged||3
 Eclipse Moon chestplate|Ranged||3
 Eclipse Moon helm|Ranged||3
@@ -4524,7 +4526,7 @@ Mithril arrow(p++)|Ranged||3
 Mithril bolts (p+)|Ranged||3
 Mithril bolts (p++)|Ranged||3
 Mithril brutal|Ranged||3
-Mithril cannonball|Ranged||3
+Mithril cannonball|Ranged|Slayer|3
 Mithril crossbow|Ranged||3
 Mithril dart tip|Fletching||3
 Mithril dart(p+)|Ranged||3
@@ -4558,7 +4560,7 @@ Ruby bolt tips|Fletching||3
 Rune arrow(p+)|Ranged||3
 Rune arrow(p++)|Ranged||3
 Rune brutal|Ranged||3
-Rune cannonball|Ranged||3
+Rune cannonball|Ranged|Slayer|3
 Rune dart tip|Fletching||3
 Rune dart(p+)|Ranged||3
 Rune dart(p++)|Ranged||3
@@ -4583,7 +4585,7 @@ Snakeskin body|Ranged||3
 Snakeskin boots|Ranged||3
 Snakeskin chaps|Ranged||3
 Snakeskin vambraces|Ranged||3
-Steel cannonball|Ranged||3
+Steel cannonball|Ranged|Slayer|3
 Topaz bolts (e)|Ranged||3
 Topaz dragon bolts (e)|Ranged||3
 Venator ring|Ranged||3
@@ -4651,7 +4653,7 @@ Dizana's quiver|Ranged||4
 Dizana's quiver (l)|Ranged||4
 Dizana's quiver (l) (uncharged)|Ranged||4
 Dizana's quiver (uncharged)|Ranged||4
-Dragon cannon barrel|Ranged||4
+Dragon cannon barrel|Ranged|Slayer|4
 Echo venator bow|Ranged||4
 Frog-leather boots|Ranged||4
 Frog-leather chaps|Ranged||4
@@ -4689,7 +4691,7 @@ Iron bolts|Ranged||4
 Iron bolts (p+)|Ranged||4
 Iron bolts (p++)|Ranged||4
 Iron brutal|Ranged||4
-Iron cannonball|Ranged||4
+Iron cannonball|Ranged|Slayer|4
 Iron crossbow|Ranged||4
 Iron dart tip|Fletching||4
 Iron dart(p+)|Ranged||4
@@ -4756,7 +4758,7 @@ Bronze arrow(p++)|Ranged||5
 Bronze bolts (p+)|Ranged||5
 Bronze bolts (p++)|Ranged||5
 Bronze brutal|Ranged||5
-Bronze cannonball|Ranged||5
+Bronze cannonball|Ranged|Slayer|5
 Bronze crossbow|Ranged||5
 Bronze dart tip|Fletching||5
 Bronze dart(p+)|Ranged||5
