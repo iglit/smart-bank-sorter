@@ -1,0 +1,487 @@
+# Weapons from the OSRS Wiki (2026-11-16). Format: Weapon name|Skill level, Skill level|Tier.
+# Levels: the Attack, Ranged and Magic level up tables, the Attack weapons table and weapon pages.
+# Tier: where the wiki's gear progression guides use the weapon: the stage's level, 99 endgame, 100 megarare.
+# Weapons rank by tier (their wield level when the guides leave them out), then wield level, then stats.
+# Variants (charges, (or), (i)) fall back to the base name.
+3rd Age axe|Attack 65
+3rd Age bow|Ranged 65
+3rd Age felling axe|Attack 65
+3rd Age longsword|Attack 65
+3rd Age pickaxe|Attack 65
+3rd Age wand|Magic 65
+Abyssal bludgeon|Attack 70
+Abyssal dagger|Attack 70
+Abyssal dagger (bh)|Attack 70
+Abyssal dagger (bh) (beta)|Attack 70
+Abyssal tentacle|Attack 75|90
+Abyssal whip|Attack 70|70
+Accursed sceptre|Magic 70
+Accursed sceptre (beta)|Magic 70
+Adamant 2h sword|Attack 30
+Adamant axe|Attack 30
+Adamant battleaxe|Attack 30
+Adamant cane|Attack 30
+Adamant claws|Attack 30
+Adamant crossbow|Attack 30, Ranged 46
+Adamant dagger|Attack 30
+Adamant dart|Attack 30, Ranged 30
+Adamant felling axe|Attack 30
+Adamant halberd|Attack 30
+Adamant hasta|Attack 30
+Adamant knife|Attack 30, Ranged 30
+Adamant longsword|Attack 30
+Adamant mace|Attack 30
+Adamant pickaxe|Attack 30
+Adamant scimitar|Attack 30|30
+Adamant shortsword|Attack 30
+Adamant spear|Attack 30
+Adamant staff of collection|Attack 30
+Adamant thrownaxe|Attack 30, Ranged 30
+Adamant warhammer|Attack 30
+Ahrim's staff|Attack 70, Magic 70
+Ahrim's staff (Last Man Standing)|Attack 70
+Air battlestaff|Attack 30, Magic 30
+Amethyst dart|Ranged 50
+Ancient godsword|Attack 75
+Ancient mace|Attack 15
+Ancient sceptre|Attack 50, Magic 70|75
+Ancient staff|Attack 50, Magic 50|70
+Apprentice wand|Magic 50
+Arclight|Attack 75
+Arkan blade|Attack 60
+Armadyl crossbow|Ranged 70
+Armadyl godsword|Attack 75
+Ascension crossbows|Ranged 80|99
+Bandos godsword|Attack 75
+Barrelchest anchor|Attack 60
+Barrelchest anchor (bh)|Attack 50
+Barrelchest anchor (bh) (beta)|Attack 60
+Barronite mace|Attack 40
+Battlestaff|Attack 30, Magic 30
+Beginner wand|Magic 45
+Belle's folly|Attack 65
+Black 2h sword|Attack 10
+Black axe|Attack 10
+Black battleaxe|Attack 10
+Black cane|Attack 10
+Black chinchompa|Attack 10, Ranged 65
+Black claws|Attack 10
+Black dagger|Attack 10
+Black dart|Attack 10, Ranged 10
+Black felling axe|Attack 10
+Black flowers|Attack 10
+Black halberd|Attack 10
+Black knife|Attack 10, Ranged 10
+Black longsword|Attack 10
+Black mace|Attack 10
+Black pickaxe|Attack 10
+Black salamander|Attack 70, Ranged 70, Magic 70
+Black scimitar|Attack 10
+Black shortsword|Attack 10
+Black spear|Attack 10
+Black staff of collection|Attack 10
+Black warhammer|Attack 10
+Blade of Saeldor|Attack 80|95
+Blade of Saeldor (c)|Attack 80|95
+Blessed axe|Attack 1
+Blisterwood flail|Attack 50
+Blisterwood sickle|Attack 50
+Blue Moon spear|Attack 70, Magic 75
+Blurite crossbow|Ranged 16
+Blurite sword|Attack 1
+Bone club|Attack 1
+Bone dagger|Attack 1
+Bone mace|Attack 50
+Bone shortbow|Ranged 50
+Bone spear|Attack 1
+Bone staff|Magic 50
+Bow of Faerdhinen|Ranged 80|85
+Bow of Faerdhinen (c)|Ranged 80|85
+Brine sabre|Attack 40
+Bronze 2h sword|Attack 1
+Bronze axe|Attack 1
+Bronze battleaxe|Attack 1
+Bronze claws|Attack 1
+Bronze crossbow|Attack 1, Ranged 1
+Bronze dagger|Attack 1
+Bronze dart|Attack 1, Ranged 1
+Bronze felling axe|Attack 1
+Bronze fist flag|Attack 1
+Bronze halberd|Attack 1
+Bronze hasta|Attack 1
+Bronze knife|Attack 1, Ranged 1
+Bronze longsword|Attack 1
+Bronze mace|Attack 1
+Bronze pickaxe|Attack 1
+Bronze scimitar|Attack 1
+Bronze shortsword|Attack 1
+Bronze spear|Attack 1
+Bronze speedrun trophy|Attack 1
+Bronze staff of collection|Attack 1
+Bronze thrownaxe|Attack 1, Ranged 1
+Bronze warhammer|Attack 1
+Bryophyta's staff|Attack 30, Magic 30
+Burning claws|Attack 60
+Camphor blowpipe|Ranged 45
+Chinchompa|Ranged 45
+Colossal blade|Attack 60
+Comp ogre bow|Ranged 30
+Corrupted armadyl godsword|Attack 75
+Corrupted dark bow|Ranged 50
+Corrupted dragon claws|Attack 40
+Corrupted Scythe of Vitur|Attack 60
+Corrupted tumeken's shadow|Magic 75
+Corrupted twisted bow|Ranged 70
+Corrupted voidwaker|Attack 65
+Corrupted Volatile Nightmare staff|Magic 50
+Craw's bow|Ranged 60
+Crimson kisten|Attack 60
+Crossbow|Ranged 1
+Crystal axe|Attack 70
+Crystal bow|Ranged 70
+Crystal felling axe|Attack 70
+Crystal halberd|Attack 70
+Dark bow|Ranged 60
+Dark bow (bh)|Ranged 60
+Dark bow (bh) (beta)|Ranged 60
+Dark dagger|Attack 1
+Darklight|Attack 1
+Decorative sword (gold)|Attack 30
+Decorative sword (red)|Attack 5
+Decorative sword (white)|Attack 20
+Dharok's greataxe|Attack 70
+Dharok's greataxe (Last Man Standing)|Attack 70
+Dinh's bulwark|Attack 75
+Dorgeshuun crossbow|Ranged 28|40
+Dragon 2h sword|Attack 60
+Dragon 2h sword (cr)|Attack 60
+Dragon axe|Attack 60
+Dragon axe (or)|Attack 60
+Dragon battleaxe|Attack 60
+Dragon battleaxe (cr)|Attack 60
+Dragon candle dagger|Attack 60
+Dragon cane|Attack 60
+Dragon claws|Attack 60
+Dragon claws (cr)|Attack 60
+Dragon claws (Last Man Standing)|Attack 60
+Dragon claws (or)|Attack 60
+Dragon claws (or) (beta)|Attack 60
+Dragon crossbow|Attack 60, Ranged 64|70
+Dragon crossbow (cr)|Attack 60|70
+Dragon crossbow (Last Man Standing)|Attack 60|70
+Dragon dagger|Attack 60
+Dragon dagger (cr)|Attack 60
+Dragon dagger (Last Man Standing)|Attack 60
+Dragon dart|Attack 60, Ranged 60
+Dragon felling axe|Attack 60
+Dragon halberd|Attack 60
+Dragon halberd (cr)|Attack 60
+Dragon harpoon|Attack 60
+Dragon harpoon (or)|Attack 60
+Dragon hasta|Attack 60
+Dragon hunter crossbow|Attack 60, Ranged 70
+Dragon hunter crossbow (b)|Attack 60
+Dragon hunter crossbow (t)|Attack 60
+Dragon hunter lance|Attack 78
+Dragon hunter wand|Attack 60, Magic 65
+Dragon knife|Attack 60, Ranged 60
+Dragon knife (Last Man Standing)|Attack 60
+Dragon longsword|Attack 60
+Dragon longsword (bh)|Attack 60
+Dragon longsword (bh) (beta)|Attack 60
+Dragon longsword (cr)|Attack 60
+Dragon mace|Attack 60
+Dragon mace (bh)|Attack 60
+Dragon mace (bh) (beta)|Attack 60
+Dragon mace (cr)|Attack 60
+Dragon pickaxe|Attack 60
+Dragon pickaxe (or)|Attack 60
+Dragon pickaxe (or) (Trailblazer)|Attack 60
+Dragon pickaxe (upgraded)|Attack 60
+Dragon scimitar|Attack 60|65
+Dragon scimitar (cr)|Attack 60|65
+Dragon scimitar (Last Man Standing)|Attack 60|65
+Dragon scimitar (or)|Attack 60|65
+Dragon shortsword|Attack 60
+Dragon shortsword (cr)|Attack 60
+Dragon spear|Attack 60
+Dragon spear (cr)|Attack 60
+Dragon staff of collection|Attack 60
+Dragon thrownaxe|Attack 60, Ranged 61
+Dragon warhammer|Attack 60
+Dragon warhammer (cr)|Attack 60
+Dragon warhammer (or)|Attack 60
+Dragon warhammer (or) (beta)|Attack 60
+Dual macuahuitl|Attack 70
+Dust battlestaff|Attack 30, Magic 30
+Earth battlestaff|Attack 30, Magic 30
+Earthbound tecpatl|Attack 55
+Eclipse atlatl|Attack 50, Ranged 75
+Elder maul|Attack 75
+Eldritch Nightmare staff|Magic 82
+Emberlight|Attack 77
+Excalibur|Attack 20
+Eye of Ayak|Magic 83|99
+Fire battlestaff|Attack 30, Magic 30
+Fixed device|Ranged 60
+Fremennik blade|Attack 30
+Gadderhammer|Attack 1
+Ghrazi rapier|Attack 80|95
+Gilded 2h sword|Attack 40
+Gilded hasta|Attack 40
+Gilded scimitar|Attack 40
+Gilded spear|Attack 40
+Glacial temotli|Attack 55
+Granite hammer|Attack 50
+Granite longsword|Attack 50
+Granite maul|Attack 50
+Guthan's warspear|Attack 70
+Guthix staff|Magic 60
+Hallowed flail|Attack 50
+Hallowfell|Attack 75
+Harmonised Nightmare staff|Magic 82|99
+Harry's cutlass|Attack 20
+Heavy ballista|Ranged 75
+Hill giant club|Attack 40
+Holy ghrazi rapier|Attack 80|95
+Holy sanguinesti staff|Magic 82
+Holy Scythe of Vitur|Attack 80|100
+Hunter's spear|Ranged 55
+Hunters' crossbow|Ranged 50
+Hunters' sunlight crossbow|Ranged 66|70
+Iban's staff|Attack 50, Magic 50
+Iban's staff (u)|Magic 50|60
+Inquisitor's mace|Attack 80
+Iron 2h sword|Attack 1
+Iron axe|Attack 1
+Iron battleaxe|Attack 1
+Iron claws|Attack 1
+Iron crossbow|Attack 1, Ranged 26
+Iron dagger|Attack 1
+Iron dart|Attack 1, Ranged 1
+Iron felling axe|Attack 1
+Iron halberd|Attack 1
+Iron hasta|Attack 1
+Iron knife|Attack 1, Ranged 1
+Iron longsword|Attack 1
+Iron mace|Attack 1
+Iron pickaxe|Attack 1
+Iron pickaxe (nz)|Attack 1
+Iron scimitar|Attack 1|1
+Iron shortsword|Attack 1
+Iron sickle|Attack 1
+Iron spear|Attack 1
+Iron staff of collection|Attack 1
+Iron thrownaxe|Attack 1, Ranged 1
+Iron warhammer|Attack 1
+Ironwood blowpipe|Ranged 55
+Ivandis flail|Attack 40
+Karil's crossbow|Attack 70, Ranged 70
+Katana|Attack 40
+Keris|Attack 50
+Keris partisan|Attack 65
+Keris partisan of amascut|Attack 80
+Keris partisan of breaching|Attack 80
+Keris partisan of corruption|Attack 80
+Keris partisan of the sun|Attack 80
+Kodai wand|Magic 80|99
+Larch blowpipe|Ranged 45
+Lava battlestaff|Attack 30, Magic 30
+Leaf-bladed battleaxe|Attack 65
+Leaf-bladed spear|Attack 50
+Leaf-bladed sword|Attack 50
+Light ballista|Ranged 65
+Longbow|Ranged 1
+Lucky cutlass|Attack 30
+Magic comp bow|Ranged 50
+Magic longbow|Ranged 50
+Magic shortbow|Ranged 50|50
+Magic shortbow (i)||60
+Maple longbow|Ranged 30
+Maple shortbow|Ranged 30|40
+Master wand|Magic 60
+Mist battlestaff|Attack 30, Magic 30
+Mithril 2h sword|Attack 20
+Mithril axe|Attack 20
+Mithril battleaxe|Attack 20
+Mithril claws|Attack 20
+Mithril crossbow|Attack 20, Ranged 36
+Mithril dagger|Attack 20
+Mithril dart|Attack 20, Ranged 20
+Mithril felling axe|Attack 20
+Mithril halberd|Attack 20
+Mithril hasta|Attack 20
+Mithril knife|Attack 20, Ranged 20
+Mithril longsword|Attack 20
+Mithril mace|Attack 20
+Mithril pickaxe|Attack 20
+Mithril pickaxe (nz)|Attack 20
+Mithril scimitar|Attack 20|20
+Mithril shortsword|Attack 20
+Mithril spear|Attack 20
+Mithril staff of collection|Attack 20
+Mithril thrownaxe|Attack 20, Ranged 20
+Mithril warhammer|Attack 20
+Mud battlestaff|Attack 30, Magic 30
+Mystic air staff|Attack 40, Magic 40
+Mystic dust staff|Attack 40, Magic 40
+Mystic earth staff|Attack 40, Magic 40
+Mystic fire staff|Attack 40, Magic 40
+Mystic lava staff|Attack 40, Magic 40
+Mystic mist staff|Attack 40, Magic 40
+Mystic mud staff|Attack 40, Magic 40
+Mystic smoke staff|Attack 40, Magic 40
+Mystic steam staff|Attack 40, Magic 40
+Mystic water staff|Attack 40, Magic 40
+Nightmare staff|Magic 72|80
+Noxious halberd|Attack 80
+Oak longbow|Ranged 5
+Oak shortbow|Ranged 5
+Obligator|Attack 85|99
+Ogre bow|Ranged 30
+Orange salamander|Attack 50, Ranged 50, Magic 50
+Osmumten's fang|Attack 82|99
+Pharaoh's sceptre|Attack 30, Magic 30
+Phoenix crossbow|Ranged 1
+Purging staff|Attack 50, Magic 77
+Rapier|Attack 40
+Red chinchompa|Ranged 55|70
+Red salamander|Attack 60, Ranged 60, Magic 60
+Rosewood blowpipe|Ranged 65
+Rune 2h sword|Attack 40
+Rune axe|Attack 40
+Rune battleaxe|Attack 40
+Rune cane|Attack 40
+Rune claws|Attack 40
+Rune crossbow|Attack 40, Ranged 61
+Rune crossbow (Last Man Standing)|Attack 40
+Rune crossbow (or)|Attack 40
+Rune dagger|Attack 40
+Rune dart|Attack 40, Ranged 40
+Rune felling axe|Attack 40
+Rune halberd|Attack 40
+Rune hasta|Attack 40
+Rune knife|Attack 40, Ranged 40
+Rune longsword|Attack 40
+Rune mace|Attack 40
+Rune pickaxe|Attack 40
+Rune pickaxe (nz)|Attack 40
+Rune scimitar|Attack 40|40
+Rune scimitar (guthix)|Attack 40|40
+Rune scimitar (saradomin)|Attack 40|40
+Rune scimitar (zamorak)|Attack 40|40
+Rune shortsword|Attack 40
+Rune spear|Attack 40
+Rune staff of collection|Attack 40
+Rune thrownaxe|Attack 40, Ranged 40
+Rune warhammer|Attack 40
+Sanguine Scythe of Vitur|Attack 80|100
+Sanguinesti staff|Magic 82
+Sarachnis cudgel|Attack 65
+Saradomin godsword|Attack 75
+Saradomin staff|Magic 60
+Saradomin sword|Attack 70
+Saradomin's blessed sword|Attack 75
+Scorching bow|Ranged 77
+Scythe of Vitur|Attack 80|100
+Seercull|Ranged 50
+Shadow sword|Attack 1
+Shortbow|Ranged 1|1
+Silverlight|Attack 1
+Slayer's staff|Magic 50
+Slayer's staff (e)|Magic 75
+Smoke battlestaff|Attack 30, Magic 30
+Soulflame horn|Magic 80
+Soulreaper axe|Attack 80
+Staff of air||40
+Staff of Balance|Attack 75, Magic 75
+Staff of Light|Attack 75, Magic 75
+Staff of the Dead|Attack 75, Magic 75
+Steam battlestaff|Attack 30, Magic 30
+Steel 2h sword|Attack 5
+Steel axe|Attack 5
+Steel battleaxe|Attack 5
+Steel claws|Attack 5
+Steel crossbow|Attack 5, Ranged 31
+Steel dagger|Attack 5
+Steel dart|Attack 5, Ranged 5
+Steel felling axe|Attack 5
+Steel halberd|Attack 5
+Steel hasta|Attack 5
+Steel knife|Attack 5, Ranged 5
+Steel longsword|Attack 5
+Steel mace|Attack 5
+Steel pickaxe|Attack 5
+Steel scimitar|Attack 5|5
+Steel shortsword|Attack 5
+Steel spear|Attack 5
+Steel staff of collection|Attack 5
+Steel thrownaxe|Attack 5, Ranged 5
+Steel warhammer|Attack 5
+Sulphur blades|Attack 55
+Sunspear|Attack 50
+Swamp lizard|Attack 30, Ranged 30, Magic 30
+Teacher wand|Magic 55
+Tecu salamander|Attack 80, Ranged 80, Magic 80
+Thammaron's sceptre|Magic 60
+The dogsword|Attack 75
+The dogsword (Deadman Mode)|Attack 60
+Thunder khopesh (Deadman Mode)|Attack 60
+Toktz-mej-tal|Attack 60, Magic 60
+Toktz-xil-ak|Attack 60
+Toktz-xil-ek|Attack 60
+Toktz-xil-ul|Attack 60, Ranged 60
+Torag's hammers|Attack 70
+Toxic blowpipe|Ranged 75|99
+Toxic Staff of the Dead|Attack 75, Magic 75
+Trident of the Seas|Magic 75
+Trident of the Seas (e)|Magic 75
+Trident of the Swamp|Magic 78|78
+Trident of the Swamp (e)|Magic 78|78
+Tumeken's shadow|Magic 85|100
+Twinflame staff|Magic 60|70
+Twisted bow|Ranged 85|100
+Tzhaar-ket-em|Attack 60
+Tzhaar-ket-om|Attack 60
+Tzhaar-ket-om (t)|Attack 60
+Ursine chainmace|Attack 70
+Ursine chainmace (beta)|Attack 70
+Venator bow|Ranged 80|99
+Verac's flail|Attack 70
+Verac's flail (Last Man Standing)|Attack 70
+Vesta's blighted longsword|Attack 75
+Viggora's chainmace|Attack 60
+Void knight mace|Attack 42
+Voidwaker|Attack 75
+Voidwaker (beta)|Attack 75
+Volatile Nightmare staff|Magic 82
+Warped sceptre|Magic 62
+Water battlestaff|Attack 30, Magic 30
+Webweaver bow|Ranged 70
+Webweaver bow (beta)|Ranged 70
+White 2h sword|Attack 10
+White battleaxe|Attack 10
+White claws|Attack 10
+White dagger|Attack 10
+White flowers|Attack 10
+White halberd|Attack 10
+White longsword|Attack 10
+White mace|Attack 10
+White magic staff|Attack 10
+White scimitar|Attack 10
+White shortsword|Attack 10
+White warhammer|Attack 10
+Willow comp bow|Ranged 20
+Willow longbow|Ranged 20
+Willow shortbow|Ranged 20|20
+Wolfbane|Attack 1
+Yew comp bow|Ranged 40
+Yew longbow|Ranged 40
+Yew shortbow|Ranged 40
+Zamorak godsword|Attack 75
+Zamorak staff|Magic 60
+Zamorakian hasta|Attack 70
+Zamorakian spear|Attack 70
+Zaryte crossbow|Ranged 80
+Zombie axe|Attack 65
+Zorya's tome|Magic 85

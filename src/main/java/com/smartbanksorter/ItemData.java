@@ -60,10 +60,18 @@ final class ItemData
 	 */
 	static Entry get(String name)
 	{
+		return lookup(ITEMS, name);
+	}
+
+	/**
+	 * Value for this exact name (lower-case keys), else for the name with variant suffixes stripped one at a time.
+	 */
+	static <V> V lookup(Map<String, V> byName, String name)
+	{
 		String n = name.toLowerCase().trim();
 		while (true)
 		{
-			Entry e = ITEMS.get(n);
+			V e = byName.get(n);
 			if (e != null)
 			{
 				return e;
