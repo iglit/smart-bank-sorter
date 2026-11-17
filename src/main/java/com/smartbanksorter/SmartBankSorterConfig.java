@@ -32,6 +32,26 @@ public interface SmartBankSorterConfig extends Config
 		ROWS,
 	}
 
+	enum CompactLayout
+	{
+		OFF("Off"),
+		OUTFITS("Outfits"),
+		EVERYTHING("Outfits and potions");
+
+		private final String label;
+
+		CompactLayout(String label)
+		{
+			this.label = label;
+		}
+
+		@Override
+		public String toString()
+		{
+			return label;
+		}
+	}
+
 	enum HeaderSize
 	{
 		SMALL,
@@ -162,27 +182,27 @@ public interface SmartBankSorterConfig extends Config
 	}
 
 	@ConfigItem(
-		keyName = "hideEmptyOutfits",
-		name = "Hide empty outfits",
-		description = "With 'Rank combat gear': weapons that get no gear of their own go after the outfits instead"
-			+ " of heading an empty column or row.",
+		keyName = "compactLayout",
+		name = "Compact layout",
+		description = "Closes up the gaps, keeping the layout. Outfits: each outfit's gear stacks under its weapon."
+			+ " Outfits and potions: each potion column also stacks straight down.",
 		position = -1,
 		section = layoutSection
 	)
-	default boolean hideEmptyOutfits()
+	default CompactLayout compactLayout()
 	{
-		return false;
+		return CompactLayout.OFF;
 	}
 
 	@ConfigItem(
-		keyName = "packOutfits",
-		name = "Pack outfits",
-		description = "With 'Rank combat gear': packs gear left with no gaps, best first. Pieces no longer line up"
-			+ " under their weapon.",
+		keyName = "bestOutfitsOnly",
+		name = "Best outfits only",
+		description = "Gives a weapon its own outfit only if at least half the outfit adds damage. Weapons whose"
+			+ " outfits are mostly plain armour go with the spare weapons, and that armour with the spare gear.",
 		position = -1,
 		section = layoutSection
 	)
-	default boolean packOutfits()
+	default boolean bestOutfitsOnly()
 	{
 		return false;
 	}

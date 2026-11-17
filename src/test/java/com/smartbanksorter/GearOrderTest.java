@@ -96,6 +96,7 @@ public class GearOrderTest
 		}
 	};
 	private final Map<String, Integer> wieldLevels = new HashMap<>();
+	private boolean bestOnly;
 
 	private List<List<String>> order(boolean columns, String... names)
 	{
@@ -105,7 +106,7 @@ public class GearOrderTest
 	private List<List<String>> order(String category, boolean columns, String... names)
 	{
 		return GearOrder.order(new ArrayList<>(Arrays.asList(names)), category, gear, DpsCalc.Levels.MAXED,
-			Comparator.naturalOrder(), columns, false, false, 8);
+			Comparator.naturalOrder(), columns, false, bestOnly, 8);
 	}
 
 	private void addBank()
@@ -136,17 +137,80 @@ public class GearOrderTest
 	public void columnsAreOutfitsHeadToFeetUnderTheirWeapon()
 	{
 		addBank();
+		// The scimitar's outfit would only be three pieces of nine, so it goes after the outfits, its pieces packed.
 		assertEquals(Arrays.asList(
-			Arrays.asList("Abyssal whip", "Dragon scimitar"),
+			Arrays.asList("Abyssal whip"),
 			Arrays.asList("Honourable blessing"),
-			Arrays.asList("Blood moon helm", "Rune full helm"),
+			Arrays.asList("Blood moon helm"),
 			Arrays.asList("Fire cape"),
-			Arrays.asList("Blood moon chestplate", "Rune platebody"),
+			Arrays.asList("Blood moon chestplate"),
 			Arrays.asList("Rune kiteshield"),
-			Arrays.asList("Blood moon tassets", "Rune platelegs"),
+			Arrays.asList("Blood moon tassets"),
 			Arrays.asList("Barrows gloves"),
+			Arrays.asList("Dragon scimitar"),
+			Arrays.asList("Rune full helm", "Rune platebody", "Rune platelegs"),
 			Arrays.asList("Cannonball")),
 			order(true, BANK));
+	}
+
+	@Test
+	public void aHalfFullOutfitKeepsItsColumn()
+	{
+		stats.put("Abyssal whip", melee(EquipmentInventorySlot.WEAPON, 0, 82, 0, 82, 4, false));
+		stats.put("Dragon scimitar", melee(EquipmentInventorySlot.WEAPON, 8, 67, -2, 66, 4, false));
+		stats.put("Torva full helm", melee(EquipmentInventorySlot.HEAD, 0, 0, 0, 8, 0, false));
+		stats.put("Helm of neitiznot", melee(EquipmentInventorySlot.HEAD, 0, 0, 0, 3, 0, false));
+		stats.put("Infernal cape", melee(EquipmentInventorySlot.CAPE, 4, 4, 4, 8, 0, false));
+		stats.put("Fire cape", melee(EquipmentInventorySlot.CAPE, 1, 1, 1, 4, 0, false));
+		stats.put("Amulet of torture", melee(EquipmentInventorySlot.AMULET, 15, 15, 15, 10, 0, false));
+		stats.put("Amulet of fury", melee(EquipmentInventorySlot.AMULET, 10, 10, 10, 8, 0, false));
+		stats.put("Torva platebody", melee(EquipmentInventorySlot.BODY, 0, 0, 0, 6, 0, false));
+		stats.put("Fighter torso", melee(EquipmentInventorySlot.BODY, 0, 0, 0, 4, 0, false));
+		stats.put("Torva platelegs", melee(EquipmentInventorySlot.LEGS, 0, 0, 0, 4, 0, false));
+		stats.put("Rune platelegs", melee(EquipmentInventorySlot.LEGS, 0, 0, 0, 2, 0, false));
+		// Five pieces of nine add damage: the scimitar keeps its column.
+		assertEquals(Arrays.asList(
+			Arrays.asList("Abyssal whip", "Dragon scimitar"),
+			Arrays.asList("Torva full helm", "Helm of neitiznot"),
+			Arrays.asList("Infernal cape", "Fire cape"),
+			Arrays.asList("Amulet of torture", "Amulet of fury"),
+			Arrays.asList("Torva platebody", "Fighter torso"),
+			Arrays.asList("Torva platelegs", "Rune platelegs")),
+			order(true, "Rune platelegs", "Fire cape", "Dragon scimitar", "Torva platebody", "Amulet of fury",
+				"Helm of neitiznot", "Abyssal whip", "Infernal cape", "Torva full helm", "Fighter torso", "Torva platelegs",
+				"Amulet of torture"));
+	}
+
+	@Test
+	public void withBestOutfitsOnlyPiecesThatAddNoDamageDontKeepAColumn()
+	{
+		bestOnly = true;
+		stats.put("Abyssal whip", melee(EquipmentInventorySlot.WEAPON, 0, 82, 0, 82, 4, false));
+		stats.put("Dragon scimitar", melee(EquipmentInventorySlot.WEAPON, 8, 67, -2, 66, 4, false));
+		stats.put("Torva full helm", melee(EquipmentInventorySlot.HEAD, 0, 0, 0, 8, 0, false));
+		stats.put("Helm of neitiznot", melee(EquipmentInventorySlot.HEAD, 0, 0, 0, 3, 0, false));
+		stats.put("Infernal cape", melee(EquipmentInventorySlot.CAPE, 4, 4, 4, 8, 0, false));
+		stats.put("Fire cape", melee(EquipmentInventorySlot.CAPE, 1, 1, 1, 4, 0, false));
+		stats.put("Amulet of torture", melee(EquipmentInventorySlot.AMULET, 15, 15, 15, 10, 0, false));
+		stats.put("Amulet of fury", melee(EquipmentInventorySlot.AMULET, 10, 10, 10, 8, 0, false));
+		stats.put("Torva platebody", melee(EquipmentInventorySlot.BODY, 0, 0, 0, 6, 0, false));
+		stats.put("Fighter torso", melee(EquipmentInventorySlot.BODY, 0, 0, 0, 4, 0, false));
+		stats.put("Torva platelegs", melee(EquipmentInventorySlot.LEGS, 0, 0, 0, 4, 0, false));
+		stats.put("Rune platelegs", melee(EquipmentInventorySlot.LEGS, 0, 0, 0, 0, 0, false));
+		// Five pieces of nine, but the platelegs add no damage: four isn't half, so the scimitar goes after the
+		// outfits and its pieces join the spare gear.
+		assertEquals(Arrays.asList(
+			Arrays.asList("Abyssal whip"),
+			Arrays.asList("Torva full helm"),
+			Arrays.asList("Infernal cape"),
+			Arrays.asList("Amulet of torture"),
+			Arrays.asList("Torva platebody"),
+			Arrays.asList("Torva platelegs"),
+			Arrays.asList("Dragon scimitar"),
+			Arrays.asList("Helm of neitiznot", "Fire cape", "Amulet of fury", "Fighter torso", "Rune platelegs")),
+			order(true, "Rune platelegs", "Fire cape", "Dragon scimitar", "Torva platebody", "Amulet of fury",
+				"Helm of neitiznot", "Abyssal whip", "Infernal cape", "Torva full helm", "Fighter torso", "Torva platelegs",
+				"Amulet of torture"));
 	}
 
 	@Test
@@ -157,8 +221,8 @@ public class GearOrderTest
 		assertEquals(Arrays.asList(
 			Arrays.asList("Abyssal whip", "Blood moon helm", "Fire cape", "Blood moon chestplate", "Rune kiteshield",
 				"Blood moon tassets", "Barrows gloves"),
-			Arrays.asList("Dragon scimitar", "Rune full helm", "Rune platebody", "Rune platelegs"),
-			Arrays.asList("Honourable blessing", "Cannonball")),
+			Arrays.asList("Dragon scimitar", "Rune full helm", "Rune platebody", "Rune platelegs", "Honourable blessing",
+				"Cannonball")),
 			order(false, BANK));
 	}
 
@@ -210,6 +274,40 @@ public class GearOrderTest
 	}
 
 	@Test
+	public void strengthPiecesThatOnlyHelpTogetherAreFound()
+	{
+		// Wiki stats. Alone, neither Fire cape for Ardougne cloak nor Berserker ring for Brimstone raises the fang's
+		// max hit, so each loses on accuracy; together they do, and hit a little harder.
+		stats.put("Osmumten's fang", melee(EquipmentInventorySlot.WEAPON, 105, 75, 0, 103, 5, false));
+		stats.put("Blood moon helm", melee(EquipmentInventorySlot.HEAD, 0, 0, 0, 4, 0, false));
+		stats.put("Blood moon chestplate", melee(EquipmentInventorySlot.BODY, 0, 0, 0, 4, 0, false));
+		stats.put("Blood moon tassets", melee(EquipmentInventorySlot.LEGS, 0, 0, 0, 2, 0, false));
+		stats.put("Amulet of fury", melee(EquipmentInventorySlot.AMULET, 10, 10, 10, 8, 0, false));
+		stats.put("Dragon defender", melee(EquipmentInventorySlot.SHIELD, 25, 24, 23, 6, 0, false));
+		stats.put("Barrows gloves", melee(EquipmentInventorySlot.GLOVES, 12, 12, 12, 12, 0, false));
+		stats.put("Dragon boots", melee(EquipmentInventorySlot.BOOTS, 0, 0, 0, 4, 0, false));
+		stats.put("Ardougne cloak 1", melee(EquipmentInventorySlot.CAPE, 2, 0, 0, 0, 0, false));
+		stats.put("Fire cape", melee(EquipmentInventorySlot.CAPE, 1, 1, 1, 4, 0, false));
+		stats.put("Brimstone ring", melee(EquipmentInventorySlot.RING, 4, 4, 4, 4, 0, false));
+		stats.put("Berserker ring (i)", melee(EquipmentInventorySlot.RING, 0, 0, 0, 8, 0, false));
+		assertEquals(Arrays.asList(
+			Arrays.asList("Osmumten's fang"),
+			Arrays.asList("Blood moon helm"),
+			Arrays.asList("Fire cape"),
+			Arrays.asList("Amulet of fury"),
+			Arrays.asList("Blood moon chestplate"),
+			Arrays.asList("Dragon defender"),
+			Arrays.asList("Blood moon tassets"),
+			Arrays.asList("Barrows gloves"),
+			Arrays.asList("Dragon boots"),
+			Arrays.asList("Berserker ring (i)"),
+			Arrays.asList("Ardougne cloak 1", "Brimstone ring")),
+			order(true, "Osmumten's fang", "Blood moon helm", "Blood moon chestplate", "Blood moon tassets",
+				"Amulet of fury", "Dragon defender", "Barrows gloves", "Dragon boots", "Ardougne cloak 1", "Fire cape",
+				"Brimstone ring", "Berserker ring (i)"));
+	}
+
+	@Test
 	public void weaponsRankByTheDamageOfTheirOutfit()
 	{
 		// Wiki stats. The scythe's three hits on large targets beat the fang's double accuracy roll and the
@@ -225,14 +323,17 @@ public class GearOrderTest
 	@Test
 	public void eachOutfitSuitsItsWeapon()
 	{
-		// Bellator (+20 slash) suits the scythe; Ultor (+12 strength) suits the crush weapon.
+		// Bellator (+20 slash) suits the scythe; Ultor (+12 strength) suits the crush weapon. The mace's outfit is
+		// just the ring, so the mace and the ring go after the outfits.
 		stats.put("Scythe of vitur", melee(EquipmentInventorySlot.WEAPON, 70, 125, 30, 75, 5, true));
 		stats.put("Inquisitor's mace", melee(EquipmentInventorySlot.WEAPON, 52, -4, 102, 96, 4, false));
 		stats.put("Bellator ring", melee(EquipmentInventorySlot.RING, 0, 20, 0, 6, 0, false));
 		stats.put("Ultor ring", melee(EquipmentInventorySlot.RING, 0, 0, 0, 12, 0, false));
 		assertEquals(Arrays.asList(
-			Arrays.asList("Scythe of vitur", "Inquisitor's mace"),
-			Arrays.asList("Bellator ring", "Ultor ring")),
+			Arrays.asList("Scythe of vitur"),
+			Arrays.asList("Bellator ring"),
+			Arrays.asList("Inquisitor's mace"),
+			Arrays.asList("Ultor ring")),
 			order(true, "Ultor ring", "Inquisitor's mace", "Bellator ring", "Scythe of vitur"));
 	}
 
@@ -261,7 +362,8 @@ public class GearOrderTest
 	public void aSetIsWornWholeOrNotAtAll()
 	{
 		// Without its weapon, Blood moon only goes into the scythe's outfit as a whole set: its chestplate alone
-		// would beat the rune platebody, but the helm and tassets lose to the others, so the set waits together.
+		// would beat the rune platebody, but the helm and tassets lose to the others, so the set waits together with
+		// the spare gear.
 		stats.put("Scythe of vitur", melee(EquipmentInventorySlot.WEAPON, 70, 125, 30, 75, 5, true));
 		stats.put("Blood moon helm", melee(EquipmentInventorySlot.HEAD, 0, 0, 0, 1, 0, false));
 		stats.put("Blood moon chestplate", melee(EquipmentInventorySlot.BODY, 0, 0, 0, 4, 0, false));
@@ -271,8 +373,9 @@ public class GearOrderTest
 			"Torva full helm", "Blood moon helm");
 		assertEquals(Arrays.asList(
 			Arrays.asList("Scythe of vitur"),
-			Arrays.asList("Torva full helm", "Blood moon helm"),
-			Arrays.asList("Rune platebody", "Blood moon chestplate")),
+			Arrays.asList("Torva full helm"),
+			Arrays.asList("Rune platebody"),
+			Arrays.asList("Blood moon helm", "Blood moon chestplate")),
 			order);
 	}
 
@@ -288,10 +391,12 @@ public class GearOrderTest
 			stats.put(ammo[0], ItemEquipmentStats.builder().slot(EquipmentInventorySlot.AMMO.getSlotIdx())
 				.rstr(Integer.parseInt(ammo[1])).build());
 		}
+		// The crossbow's outfit would be only its bolts, so it goes after the outfits and the bolts join the spare ammo.
 		assertEquals(Arrays.asList(
-			Arrays.asList("Twisted bow", "Rune crossbow"),
-			Arrays.asList("Dragon arrow", "Runite bolts"),
-			Arrays.asList("Rune arrow")),
+			Arrays.asList("Twisted bow"),
+			Arrays.asList("Dragon arrow"),
+			Arrays.asList("Rune crossbow"),
+			Arrays.asList("Runite bolts", "Rune arrow")),
 			order(Categories.RANGED, true, "Rune arrow", "Runite bolts", "Rune crossbow", "Dragon arrow", "Twisted bow"));
 	}
 
@@ -299,7 +404,7 @@ public class GearOrderTest
 	public void aStrongerWeaponCanWearAnotherWeaponsSet()
 	{
 		// Blue moon armour (+58 magic attack, +3% damage) beats mystic on the eye of Ayak, which out-damages the
-		// spear even with its set, so the set goes to the eye.
+		// spear even with its set, so the set goes to the eye. Three pieces of mystic don't make the spear an outfit.
 		stats.put("Eye of ayak", ItemEquipmentStats.builder().slot(EquipmentInventorySlot.WEAPON.getSlotIdx()).amagic(30)
 			.aspeed(3).build());
 		stats.put("Blue moon spear", ItemEquipmentStats.builder().slot(EquipmentInventorySlot.WEAPON.getSlotIdx())
@@ -316,15 +421,17 @@ public class GearOrderTest
 		stats.put("Mystic robe bottom", ItemEquipmentStats.builder().slot(EquipmentInventorySlot.LEGS.getSlotIdx())
 			.amagic(15).build());
 		assertEquals(Arrays.asList(
-			Arrays.asList("Eye of ayak", "Blue moon spear"),
-			Arrays.asList("Blue moon helm", "Mystic hat"),
-			Arrays.asList("Blue moon chestplate", "Mystic robe top"),
-			Arrays.asList("Blue moon tassets", "Mystic robe bottom")),
+			Arrays.asList("Eye of ayak"),
+			Arrays.asList("Blue moon helm"),
+			Arrays.asList("Blue moon chestplate"),
+			Arrays.asList("Blue moon tassets"),
+			Arrays.asList("Blue moon spear"),
+			Arrays.asList("Mystic hat", "Mystic robe top", "Mystic robe bottom")),
 			order(Categories.MAGIC, true, "Mystic hat", "Blue moon spear", "Blue moon tassets", "Mystic robe top",
 				"Eye of ayak", "Blue moon helm", "Mystic robe bottom", "Blue moon chestplate"));
 	}
 
-	private List<List<String>> compact(boolean hideEmpty, boolean pack)
+	private List<List<String>> compact(boolean pack)
 	{
 		// Scythe (2h, no shield) gets the helm; the whip gets the defender; the dart gets nothing.
 		stats.put("Scythe of vitur", melee(EquipmentInventorySlot.WEAPON, 70, 125, 30, 75, 5, true));
@@ -334,30 +441,33 @@ public class GearOrderTest
 		stats.put("Dragon defender", melee(EquipmentInventorySlot.SHIELD, 25, 24, 23, 6, 0, false));
 		return GearOrder.order(new ArrayList<>(Arrays.asList("Rune dart", "Dragon defender", "Abyssal whip",
 			"Torva full helm", "Scythe of vitur")), Categories.MELEE, gear, DpsCalc.Levels.MAXED, Comparator.naturalOrder(),
-			true, hideEmpty, pack, 8);
+			true, pack, false, 8);
 	}
 
 	@Test
-	public void outfitsCanHideEmptyColumnsAndPackGaps()
+	public void sparseOutfitsGoAfterTheOutfits()
 	{
-		assertEquals(Arrays.asList(
-			Arrays.asList("Scythe of vitur", "Abyssal whip", "Rune dart"),
+		// The whip would head just the defender and the dart nothing, so both follow the outfits, the defender with
+		// the spare gear.
+		List<List<String>> expected = Arrays.asList(
+			Arrays.asList("Scythe of vitur"),
 			Arrays.asList("Torva full helm"),
-			Arrays.asList(null, "Dragon defender")),
-			compact(false, false));
-		// The dart heads no gear, so it follows the outfits.
-		assertEquals(Arrays.asList(
-			Arrays.asList("Scythe of vitur", "Abyssal whip"),
-			Arrays.asList("Torva full helm"),
-			Arrays.asList(null, "Dragon defender"),
-			Arrays.asList("Rune dart")),
-			compact(true, false));
-		// Packed: each outfit stacks straight under its weapon, so the defender moves up under the whip.
-		assertEquals(Arrays.asList(
-			Arrays.asList("Scythe of vitur", "Abyssal whip"),
-			Arrays.asList("Torva full helm", "Dragon defender"),
-			Arrays.asList("Rune dart")),
-			compact(true, true));
+			Arrays.asList("Abyssal whip", "Rune dart"),
+			Arrays.asList("Dragon defender"));
+		assertEquals(expected, compact(false));
+		assertEquals(expected, compact(true));
+	}
+
+	@Test
+	public void spareAmmoFollowsWeaponsThatHaveNoOutfit()
+	{
+		stats.put("Rune crossbow", ItemEquipmentStats.builder().slot(EquipmentInventorySlot.WEAPON.getSlotIdx()).arange(90)
+			.aspeed(6).build());
+		// A crossbow can't fire arrows.
+		stats.put("Rune arrow", ItemEquipmentStats.builder().slot(EquipmentInventorySlot.AMMO.getSlotIdx()).rstr(49).build());
+		List<List<String>> order = GearOrder.order(new ArrayList<>(Arrays.asList("Rune arrow", "Rune crossbow")),
+			Categories.RANGED, gear, DpsCalc.Levels.MAXED, Comparator.naturalOrder(), true, false, false, 8);
+		assertEquals(Arrays.asList(Arrays.asList("Rune crossbow"), Arrays.asList("Rune arrow")), order);
 	}
 
 	@Test

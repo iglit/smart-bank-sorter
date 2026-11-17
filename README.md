@@ -18,9 +18,9 @@ moves, and turning the plugin off gives you your normal bank back.
 - **Tabs**: tabs down the left edge show just Combat, Runes & teleports, Food & potions, or Skilling.
 - **Your own categories**: click the filing cabinet at the top of the bank to open the category editor. Make
   categories, search for items and **Move** them in, or **Add** them so they also stay where they are. Items you
-  add but don't have show as placeholders, as a reminder of what to get; right-click, **Release** to drop one. A `*` matches any part of a name, e.g.
-  `*salve amulet*`. Drag categories to reorder them and pick the tab each shows
-  in. For a quick fix, right-click an item in the bank, **Move to**, and pick a category.
+  add but don't have show as placeholders, as a reminder of what to get; right-click, **Release** to drop one. A
+  `*` matches any part of a name, e.g. `*salve amulet*`. Drag categories to reorder them and pick the tab each
+  shows in. For a quick fix, right-click an item in the bank, **Move to**, and pick a category.
 
 **Turning it on and off**: right-click the bank's search button (the magnifying glass under the items) and pick
 **Sort** or **Unsort**, or use *Sort bank* in the plugin's settings.
@@ -45,6 +45,8 @@ bank. Searching a category's full name also adds its items to the results.
 | Category search | Suggest a category to jump to while searching, and show a category's items when you search its name |
 | Category tabs | Show the left-edge tabs |
 | Outfit layout | Outfits as columns (default) or rows |
+| Compact layout | Close up gaps in the outfits, or in the outfits and the potion columns (off by default) |
+| Best outfits only | Give a weapon its own outfit only if at least half of it adds damage; the rest go with the spare gear (off by default) |
 | Header size / Header colour / Show item counts / Divider lines | How category headers look |
 | Gear sets | Extra armour sets to keep together in one outfit |
 | Edit categories button | Show the filing cabinet button that opens the category editor |

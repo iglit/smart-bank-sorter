@@ -40,7 +40,30 @@ public class ConsumableOrderTest
 			Arrays.asList("Super combat potion(2)"),
 			Arrays.asList(null, null, null, "Stamina potion(1)"),
 			Arrays.asList("Jug of wine")),
-			ConsumableOrder.potions(new ArrayList<>(pots), Function.identity(), Comparator.naturalOrder(), 8));
+			ConsumableOrder.potions(new ArrayList<>(pots), Function.identity(), Comparator.naturalOrder(), 8, false));
+	}
+
+	@Test
+	public void compactPotionColumnsCloseUp()
+	{
+		List<String> pots = Arrays.asList("Stamina potion(1)", "Prayer potion(3)", "Super combat potion(2)",
+			"Prayer potion(4)", "Super combat potion(4)", "Ranging potion(4)", "Agility potion(3)", "Jug of wine");
+		// The same columns, each potion's doses stacked from the top.
+		assertEquals(Arrays.asList(
+			Arrays.asList("Super combat potion(4)", "Ranging potion(4)", "Prayer potion(4)", "Stamina potion(1)",
+				"Agility potion(3)"),
+			Arrays.asList("Super combat potion(2)", null, "Prayer potion(3)"),
+			Arrays.asList("Jug of wine")),
+			ConsumableOrder.potions(new ArrayList<>(pots), Function.identity(), Comparator.naturalOrder(), 8, true));
+		// Two columns: each column's potions run on into the next block with no gap.
+		assertEquals(Arrays.asList(
+			Arrays.asList("Super combat potion(4)", "Ranging potion(4)"),
+			Arrays.asList("Super combat potion(2)", "Stamina potion(1)"),
+			Arrays.asList("Prayer potion(4)"),
+			Arrays.asList("Prayer potion(3)"),
+			Arrays.asList("Agility potion(3)"),
+			Arrays.asList("Jug of wine")),
+			ConsumableOrder.potions(new ArrayList<>(pots), Function.identity(), Comparator.naturalOrder(), 2, true));
 	}
 
 	@Test

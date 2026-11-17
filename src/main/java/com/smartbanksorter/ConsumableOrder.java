@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
@@ -69,37 +70,49 @@ final class ConsumableOrder
 	}
 
 	/**
+	 * @param compact stack each column's potions straight down, each potion's doses highest first, with no gaps
 	 * @return rows of cells; each block of up to {@code columns} potions has one row per dose, highest first,
-	 * with null where a potion lacks that dose. Undosed drinks follow.
+	 * with null where a potion lacks that dose (unless compact). Undosed drinks follow.
 	 */
-	static <T> List<List<T>> potions(List<T> items, Function<T, String> name, Comparator<T> tiebreak, int columns)
+	static <T> List<List<T>> potions(List<T> items, Function<T, String> name, Comparator<T> tiebreak, int columns,
+		boolean compact)
 	{
 		Map<String, Map<Integer, T>> families = new LinkedHashMap<>();
 		List<T> loose = new ArrayList<>();
-		List<T> sorted = new ArrayList<>(items);
-		sorted.sort(tiebreak);
-		for (T item : sorted)
-		{
-			String itemName = name.apply(item);
-			int dose = Doses.dose(itemName);
-			if (dose < 0)
-			{
-				loose.add(item);
-				continue;
-			}
-			Map<Integer, T> doses = families.computeIfAbsent(Doses.baseName(itemName).toLowerCase(), k -> new LinkedHashMap<>());
-			// A second item with the same name and dose (rare) can't share the cell.
-			if (doses.putIfAbsent(dose, item) != null)
-			{
-				loose.add(item);
-			}
-		}
-
-		List<String> order = new ArrayList<>(families.keySet());
-		order.sort(Comparator.comparingInt(ConsumableOrder::potionRank).thenComparing(Comparator.naturalOrder()));
+		List<String> order = families(items, name, tiebreak, families, loose);
 
 		List<List<T>> rows = new ArrayList<>();
-		for (int first = 0; first < order.size(); first += columns)
+		if (compact)
+		{
+			// Each column keeps the potions it has in the block layout, stacked straight down with no gaps between
+			// blocks.
+			List<List<T>> stacks = new ArrayList<>();
+			for (int i = 0; i < order.size(); i++)
+			{
+				if (i < columns)
+				{
+					stacks.add(new ArrayList<>());
+				}
+				Map<Integer, T> byDose = new TreeMap<>(Comparator.reverseOrder());
+				byDose.putAll(families.get(order.get(i)));
+				stacks.get(i % columns).addAll(byDose.values());
+			}
+			int height = stacks.stream().mapToInt(List::size).max().orElse(0);
+			for (int r = 0; r < height; r++)
+			{
+				List<T> row = new ArrayList<>();
+				for (List<T> stack : stacks)
+				{
+					row.add(r < stack.size() ? stack.get(r) : null);
+				}
+				while (!row.isEmpty() && row.get(row.size() - 1) == null)
+				{
+					row.remove(row.size() - 1);
+				}
+				rows.add(row);
+			}
+		}
+		for (int first = 0; !compact && first < order.size(); first += columns)
 		{
 			List<String> block = order.subList(first, Math.min(first + columns, order.size()));
 			TreeSet<Integer> doses = new TreeSet<>(Comparator.reverseOrder());
@@ -123,6 +136,38 @@ final class ConsumableOrder
 			rows.add(loose);
 		}
 		return rows;
+	}
+
+	/**
+	 * Sorts the items into potions by name, each a map of dose to item, and drinks without doses.
+	 *
+	 * @return the potions in layout order
+	 */
+	private static <T> List<String> families(List<T> items, Function<T, String> name, Comparator<T> tiebreak,
+		Map<String, Map<Integer, T>> families, List<T> loose)
+	{
+		List<T> sorted = new ArrayList<>(items);
+		sorted.sort(tiebreak);
+		for (T item : sorted)
+		{
+			String itemName = name.apply(item);
+			int dose = Doses.dose(itemName);
+			if (dose < 0)
+			{
+				loose.add(item);
+				continue;
+			}
+			Map<Integer, T> doses = families.computeIfAbsent(Doses.baseName(itemName).toLowerCase(), k -> new LinkedHashMap<>());
+			// A second item with the same name and dose (rare) can't share the cell.
+			if (doses.putIfAbsent(dose, item) != null)
+			{
+				loose.add(item);
+			}
+		}
+
+		List<String> order = new ArrayList<>(families.keySet());
+		order.sort(Comparator.comparingInt(ConsumableOrder::potionRank).thenComparing(Comparator.naturalOrder()));
+		return order;
 	}
 
 	static int potionRank(String family)

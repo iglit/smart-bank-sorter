@@ -14,6 +14,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
+import java.util.stream.Collectors;
 import net.runelite.api.EquipmentInventorySlot;
 import net.runelite.client.game.ItemEquipmentStats;
 
@@ -67,12 +68,13 @@ final class GearOrder
 	/**
 	 * @param levels the player's levels, for damage and for which weapons they can wield
 	 * @param columns lay outfits out as columns rather than rows
-	 * @param hideEmpty weapons that get no gear go after the outfits instead of heading an empty one
 	 * @param pack pack each row of gear left, with no gaps
+	 * @param bestOnly count only pieces that add damage towards keeping an outfit, so outfits made up from plain
+	 * armour join the spare gear
 	 * @return rows of cells, each starting on a new bank row; null cells are left empty
 	 */
 	static <T> List<List<T>> order(List<T> items, String category, Gear<T> gear, DpsCalc.Levels levels,
-		Comparator<T> tiebreak, boolean columns, boolean hideEmpty, boolean pack, int bankColumns)
+		Comparator<T> tiebreak, boolean columns, boolean pack, boolean bestOnly, int bankColumns)
 	{
 		Comparator<T> byStats = Comparator.comparingInt((T t) -> score(category, gear.stats(t))).reversed();
 		Comparator<T> byPrice = Comparator.comparingLong(gear::price).reversed();
@@ -125,6 +127,9 @@ final class GearOrder
 
 		Outfits<T> outfits = new Outfits<>(category, gear, levels, bySlot, ranged ? blessings : Collections.emptyList());
 		Map<Integer, List<T>> grid = new HashMap<>();
+		// Weapons without an outfit of their own, and gear no outfit took.
+		List<T> spareWeapons = new ArrayList<>();
+		List<T> spareGear = new ArrayList<>();
 		if (!weapons.isEmpty())
 		{
 			// Weapons by the damage of their best outfit from everything owned; ones the player can't wield yet last.
@@ -154,10 +159,54 @@ final class GearOrder
 					used.add(piece.getValue());
 				}
 			}
+			// A weapon keeps its outfit only if at least half its slots are filled (best outfits only: by pieces that
+			// add damage, through offensive stats or an effect), or it wears a set (Dharok's greataxe in Dharok's); the
+			// strongest keeps any it has. The others go after the outfits, and their pieces join the spare gear.
+			for (int i = weapons.size() - 1; i >= 0; i--)
+			{
+				int column = i;
+				T weapon = weapons.get(i);
+				Map<Integer, T> outfit = new HashMap<>();
+				grid.forEach((slot, c) ->
+				{
+					if (column < c.size() && c.get(column) != null)
+					{
+						outfit.put(slot, c.get(column));
+					}
+				});
+				double full = round(outfits.damage(weapon, outfit));
+				int adding = 0;
+				for (EquipmentInventorySlot slot : COLUMN_ORDER)
+				{
+					Map<Integer, T> without = new HashMap<>(outfit);
+					T piece = without.remove(slot.getSlotIdx());
+					if (piece != null && (!bestOnly || offence(category, gear.stats(piece)) > 0
+						|| round(outfits.damage(weapon, without)) < full))
+					{
+						adding++;
+					}
+				}
+				boolean wearsSet = outfit.values().stream().map(gear::set).filter(Objects::nonNull)
+					.collect(Collectors.groupingBy(set -> set, Collectors.counting())).values().stream().anyMatch(n -> n >= 2);
+				int slots = COLUMN_ORDER.length - (gear.stats(weapon).isTwoHanded() ? 1 : 0);
+				if (i == 0 ? !outfit.isEmpty() : adding * 2 >= slots || wearsSet)
+				{
+					continue;
+				}
+				spareWeapons.add(0, weapons.remove(i));
+				for (List<T> slotColumn : grid.values())
+				{
+					if (column < slotColumn.size())
+					{
+						used.remove(slotColumn.remove(column));
+					}
+				}
+			}
 			blessings.removeIf(used::contains);
 
 			// The rest: by what they'd add to the best outfit, then by stats.
-			Map<Integer, T> best = outfits.best(weapons.get(0), Collections.emptySet());
+			T bestWeapon = weapons.isEmpty() ? spareWeapons.get(0) : weapons.get(0);
+			Map<Integer, T> best = outfits.best(bestWeapon, Collections.emptySet());
 			Map<Integer, List<T>> rest = new HashMap<>();
 			for (Map.Entry<Integer, List<T>> entry : bySlot.entrySet())
 			{
@@ -174,50 +223,16 @@ final class GearOrder
 				{
 					Map<Integer, T> swapped = new HashMap<>(best);
 					swapped.put(entry.getKey(), item);
-					added.put(item, round(outfits.damage(weapons.get(0), swapped)));
+					added.put(item, round(outfits.damage(bestWeapon, swapped)));
 				}
 				left.sort(Comparator.comparingDouble((T t) -> added.get(t)).reversed().thenComparing(byScore));
 				rest.put(entry.getKey(), left);
 			}
-			int first = weapons.size();
-			for (Map.Entry<Integer, List<T>> entry : assignTiers(rest, COLUMN_ORDER, gear::set).entrySet())
-			{
-				List<T> slotColumn = grid.computeIfAbsent(entry.getKey(), k -> new ArrayList<>());
-				List<T> tiered = entry.getValue();
-				for (int i = 0; i < tiered.size(); i++)
-				{
-					while (slotColumn.size() <= first + i)
-					{
-						slotColumn.add(null);
-					}
-					slotColumn.set(first + i, tiered.get(i));
-				}
-			}
+			spareGear.addAll(spareGear(rest, gear::set));
 		}
 		else
 		{
 			grid = assignTiers(bySlot, COLUMN_ORDER, gear::set);
-		}
-
-		// Weapons whose outfit got nothing: out of the outfits, and their empty columns closed up.
-		List<T> spareWeapons = new ArrayList<>();
-		if (hideEmpty)
-		{
-			for (int i = weapons.size() - 1; i >= 0; i--)
-			{
-				int column = i;
-				if (grid.values().stream().noneMatch(c -> column < c.size() && c.get(column) != null))
-				{
-					spareWeapons.add(0, weapons.remove(i));
-					for (List<T> slotColumn : grid.values())
-					{
-						if (column < slotColumn.size())
-						{
-							slotColumn.remove(column);
-						}
-					}
-				}
-			}
 		}
 
 		List<List<T>> rows = new ArrayList<>();
@@ -230,8 +245,10 @@ final class GearOrder
 		if (columns)
 		{
 			// Blocks of up to bankColumns outfits side by side, each column under its weapon and the ammo it fires.
-			// Blessings follow the first row of weapons; spare ammo follows the outfits.
-			if (weapons.isEmpty() && !blessings.isEmpty())
+			// Blessings follow the first row of weapons; spare ammo follows the outfits. Either goes after weapons with
+			// no outfit when no weapon has one.
+			boolean anyWeapons = !weapons.isEmpty() || !spareWeapons.isEmpty();
+			if (!anyWeapons && !blessings.isEmpty())
 			{
 				rows.add(blessings);
 			}
@@ -292,7 +309,11 @@ final class GearOrder
 			{
 				rows.add(spareWeapons);
 			}
-			if (ranged && !weapons.isEmpty() && !blessings.isEmpty())
+			if (!spareGear.isEmpty())
+			{
+				rows.add(spareGear);
+			}
+			if (anyWeapons && (ranged || weapons.isEmpty()) && !blessings.isEmpty())
 			{
 				rows.add(blessings);
 			}
@@ -304,7 +325,8 @@ final class GearOrder
 		}
 
 		// Row layout: one outfit per row, its weapon first, then its ammo and gear head to feet. A full outfit is
-		// longer than a bank row, so it carries on in the next. Gear no weapon took, blessings and spare ammo follow.
+		// longer than a bank row, so it carries on in the next. Weapons without an outfit, gear no outfit took,
+		// blessings and spare ammo follow.
 		if (weapons.isEmpty())
 		{
 			// No weapons: shields and blessings first, so each outfit fits in one row.
@@ -345,6 +367,7 @@ final class GearOrder
 			}
 		}
 		tail.addAll(spareWeapons);
+		tail.addAll(spareGear);
 		tail.addAll(blessings);
 		tail.addAll(other);
 		if (!tail.isEmpty())
@@ -406,6 +429,8 @@ final class GearOrder
 		// Per slot, the pieces sorted by each stat damage depends on, then the pieces with modelled effects.
 		private final Map<Integer, List<List<T>>> byKey = new HashMap<>();
 		private static final int SHORTLIST = 6;
+		// Pieces per slot tried in pairs.
+		private static final int PAIRS = 3;
 
 		Outfits(String category, Gear<T> gear, DpsCalc.Levels levels, Map<Integer, List<T>> bySlot, List<T> ammo)
 		{
@@ -615,7 +640,110 @@ final class GearOrder
 					}
 				}
 			}
+			pairUp(weapon, fixed, outfit, used);
 			return outfit;
+		}
+
+		/**
+		 * One slot at a time misses strength pieces that only raise the max hit together: Fire cape and Berserker
+		 * ring beat Ardougne cloak and Brimstone ring, but neither swap does alone. Tries the strongest few pieces of
+		 * each two free slots together, keeping any pair that adds damage.
+		 */
+		private void pairUp(T weapon, Map<Integer, T> fixed, Map<Integer, T> outfit, Set<T> used)
+		{
+			boolean twoHanded = gear.stats(weapon).isTwoHanded();
+			List<Integer> free = new ArrayList<>();
+			Map<Integer, List<T>> strongest = new HashMap<>();
+			for (EquipmentInventorySlot slot : COLUMN_ORDER)
+			{
+				int idx = slot.getSlotIdx();
+				if (fixed.containsKey(idx) || twoHanded && slot == EquipmentInventorySlot.SHIELD)
+				{
+					continue;
+				}
+				List<T> pieces = new ArrayList<>();
+				List<List<T>> lists = byKey.getOrDefault(idx, Collections.emptyList());
+				for (T item : lists.isEmpty() ? Collections.<T>emptyList() : lists.get(strengthKey()))
+				{
+					if (pieces.size() >= PAIRS)
+					{
+						break;
+					}
+					if (!used.contains(item) && !inOwnedSet(item))
+					{
+						pieces.add(item);
+					}
+				}
+				if (!pieces.isEmpty())
+				{
+					free.add(idx);
+					strongest.put(idx, pieces);
+				}
+			}
+			double current = round(damage(weapon, outfit));
+			boolean improved = true;
+			for (int pass = 0; improved && pass < 2; pass++)
+			{
+				improved = false;
+				for (int i = 0; i < free.size(); i++)
+				{
+					for (int j = i + 1; j < free.size(); j++)
+					{
+						int a = free.get(i);
+						int b = free.get(j);
+						T oldA = outfit.get(a);
+						T oldB = outfit.get(b);
+						for (T x : strongest.get(a))
+						{
+							for (T y : strongest.get(b))
+							{
+								if (x == oldA || y == oldB)
+								{
+									continue;
+								}
+								outfit.put(a, x);
+								outfit.put(b, y);
+								double d = round(damage(weapon, outfit));
+								if (d > current)
+								{
+									current = d;
+									oldA = x;
+									oldB = y;
+									improved = true;
+								}
+							}
+						}
+						restore(outfit, a, oldA);
+						restore(outfit, b, oldB);
+					}
+				}
+			}
+		}
+
+		/** Index into {@link #byKey}'s lists (see the keys in the constructor) of the stat the max hit grows with. */
+		private int strengthKey()
+		{
+			switch (category)
+			{
+				case Categories.RANGED:
+					return 6;
+				case Categories.MAGIC:
+					return 7;
+				default:
+					return 5;
+			}
+		}
+
+		private static <V> void restore(Map<Integer, V> outfit, int slot, V piece)
+		{
+			if (piece == null)
+			{
+				outfit.remove(slot);
+			}
+			else
+			{
+				outfit.put(slot, piece);
+			}
 		}
 
 		private DpsCalc.Piece piece(T item)
@@ -641,6 +769,39 @@ final class GearOrder
 			default:
 				return levels.attack;
 		}
+	}
+
+	/**
+	 * Gear no outfit took, packed: owned sets first, each kept together head to feet, then the other pieces slot by
+	 * slot head to feet, each slot in the order given.
+	 */
+	private static <T> List<T> spareGear(Map<Integer, List<T>> bySlot, Function<T, String> set)
+	{
+		Map<String, List<T>> sets = new LinkedHashMap<>();
+		for (EquipmentInventorySlot slot : COLUMN_ORDER)
+		{
+			for (T item : bySlot.getOrDefault(slot.getSlotIdx(), Collections.emptyList()))
+			{
+				String name = set.apply(item);
+				if (name != null)
+				{
+					sets.computeIfAbsent(name, k -> new ArrayList<>()).add(item);
+				}
+			}
+		}
+		List<T> packed = new ArrayList<>();
+		sets.values().stream().filter(pieces -> pieces.size() >= 2).forEach(packed::addAll);
+		for (EquipmentInventorySlot slot : COLUMN_ORDER)
+		{
+			for (T item : bySlot.getOrDefault(slot.getSlotIdx(), Collections.emptyList()))
+			{
+				if (!packed.contains(item))
+				{
+					packed.add(item);
+				}
+			}
+		}
+		return packed;
 	}
 
 	/**

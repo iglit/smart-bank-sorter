@@ -1368,7 +1368,7 @@ public class SmartBankSorterPlugin extends Plugin
 		}
 		List<String> items = new ArrayList<>(byKey.keySet());
 		Collections.sort(items);
-		String key = category + "|" + columns + config.hideEmptyOutfits() + config.packOutfits() + "|" + config.itemOrder()
+		String key = category + "|" + columns + config.compactLayout() + config.bestOutfitsOnly() + "|" + config.itemOrder()
 			+ "|" + config.customSets().hashCode() + "|"
 			+ levels.attack + "," + levels.strength + "," + levels.ranged + "," + levels.magic + "|" + items;
 
@@ -1376,7 +1376,7 @@ public class SmartBankSorterPlugin extends Plugin
 		if (cached == null)
 		{
 			List<List<Slot>> rows = GearOrder.order(slots, category, gear(category), levels, comparator, columns,
-				config.hideEmptyOutfits(), config.packOutfits(), COLUMNS);
+				config.compactLayout() != SmartBankSorterConfig.CompactLayout.OFF, config.bestOutfitsOnly(), COLUMNS);
 			cached = new ArrayList<>();
 			for (List<Slot> row : rows)
 			{
@@ -1419,7 +1419,7 @@ public class SmartBankSorterPlugin extends Plugin
 		}
 		if (config.smartConsumables() && Categories.POTIONS.equals(category))
 		{
-			return ConsumableOrder.potions(slots, s -> s.name, comparator, COLUMNS);
+			return ConsumableOrder.potions(slots, s -> s.name, comparator, COLUMNS, compactCategories());
 		}
 		if (config.smartConsumables() && Categories.TELEPORTS.equals(category))
 		{
@@ -1454,6 +1454,11 @@ public class SmartBankSorterPlugin extends Plugin
 			slots.sort(Comparator.<Slot>comparingInt(s -> ItemData.tier(s.name)).thenComparing(comparator));
 		}
 		return Collections.singletonList(slots);
+	}
+
+	private boolean compactCategories()
+	{
+		return config.compactLayout() == SmartBankSorterConfig.CompactLayout.EVERYTHING;
 	}
 
 	private static int firstItem(List<List<Slot>> rows)
