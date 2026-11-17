@@ -9,13 +9,18 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import net.runelite.api.EquipmentInventorySlot;
+import net.runelite.api.Point;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.gameval.InterfaceID;
+import net.runelite.api.widgets.ItemQuantityMode;
 import net.runelite.api.widgets.Widget;
 import net.runelite.client.game.ItemEquipmentStats;
 
 class ItemCopies
 {
+	// How faded the bank draws placeholders.
+	private static final int PLACEHOLDER_OPACITY = 120;
+
 	private final Function<Slot, ItemEquipmentStats> equipmentOf;
 	// Spare empty-slot widgets the bank interface already has past the last item. Copies reuse these, like
 	// core Bank Tags layouts do for duplicates: the game treats them as real bank slots, so it builds their
@@ -23,6 +28,8 @@ class ItemCopies
 	private List<Widget> spares = new ArrayList<>();
 	// Copy widget's child index -> the real item's bank slot index.
 	private final Map<Integer, Integer> copyTargets = new HashMap<>();
+	// Child index of a spare widget showing a not-owned item -> that item.
+	private final Map<Integer, Slot> ghosts = new HashMap<>();
 
 	ItemCopies(Function<Slot, ItemEquipmentStats> equipmentOf)
 	{
@@ -37,11 +44,34 @@ class ItemCopies
 	void clearTargets()
 	{
 		copyTargets.clear();
+		ghosts.clear();
 	}
 
 	boolean isCopy(Widget w)
 	{
-		return copyTargets.containsKey(w.getIndex());
+		return copyTargets.containsKey(w.getIndex()) || ghosts.containsKey(w.getIndex());
+	}
+
+	/**
+	 * The not-owned item drawn under the mouse, or null.
+	 *
+	 * @param container the bank's item container, whose visible area clips the items
+	 */
+	Slot ghostAt(Point mouse, Widget container)
+	{
+		if (mouse == null || container == null || !container.getBounds().contains(mouse.getX(), mouse.getY()))
+		{
+			return null;
+		}
+		for (Widget w : spares)
+		{
+			Slot ghost = ghosts.get(w.getIndex());
+			if (ghost != null && !w.isHidden() && w.getBounds().contains(mouse.getX(), mouse.getY()))
+			{
+				return ghost;
+			}
+		}
+		return null;
 	}
 
 	void hideFrom(int from)
@@ -56,6 +86,7 @@ class ItemCopies
 	{
 		spares = new ArrayList<>();
 		copyTargets.clear();
+		ghosts.clear();
 	}
 
 	/**
@@ -257,6 +288,34 @@ class ItemCopies
 		w.setDragDeadTime(real.getDragDeadTime());
 		w.setHidden(false);
 		copyTargets.put(w.getIndex(), slot.index);
+		return w;
+	}
+
+	/**
+	 * Draws a not-owned item in the next spare slot widget exactly as the bank draws a placeholder: the placeholder
+	 * item, faded, with a quantity of 0. Unlike a placeholder it gets no options, so the game gives it no menu entries
+	 * and a click on it sends nothing; the plugin adds its Release entry itself.
+	 *
+	 * @param placeholderId the item's placeholder, or -1 if it has none
+	 * @return the widget, or null when the bank has no spare slots left
+	 */
+	Widget placeGhost(int index, Slot slot, int placeholderId)
+	{
+		if (index >= spares.size())
+		{
+			return null;
+		}
+		Widget w = spares.get(index);
+		w.setItemId(placeholderId != -1 ? placeholderId : slot.itemId);
+		w.setItemQuantity(0);
+		w.setItemQuantityMode(ItemQuantityMode.ALWAYS);
+		w.setOpacity(PLACEHOLDER_OPACITY);
+		w.setBorderType(1);
+		w.setTextShadowed(true);
+		w.setName("");
+		w.clearActions();
+		w.setHidden(false);
+		ghosts.put(w.getIndex(), slot);
 		return w;
 	}
 }

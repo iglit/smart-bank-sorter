@@ -17,8 +17,9 @@ moves, and turning the plugin off gives you your normal bank back.
   their other categories. These copies work exactly like the real item, including withdrawing.
 - **Tabs**: tabs down the left edge show just Combat, Runes & teleports, Food & potions, or Skilling.
 - **Your own categories**: click the filing cabinet at the top of the bank to open the category editor. Make
-  categories, search for items and **Move** them in, or **Add** them so they also stay where they are. A `*`
-  matches any part of a name, e.g. `*salve amulet*`. Drag categories to reorder them and pick the tab each shows
+  categories, search for items and **Move** them in, or **Add** them so they also stay where they are. Items you
+  add but don't have show as placeholders, as a reminder of what to get; right-click, **Release** to drop one. A `*` matches any part of a name, e.g.
+  `*salve amulet*`. Drag categories to reorder them and pick the tab each shows
   in. For a quick fix, right-click an item in the bank, **Move to**, and pick a category.
 
 **Turning it on and off**: right-click the bank's search button (the magnifying glass under the items) and pick

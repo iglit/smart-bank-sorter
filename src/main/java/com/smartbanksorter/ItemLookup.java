@@ -60,7 +60,12 @@ interface ItemLookup
 	 */
 	static boolean isGroup(Row row)
 	{
-		return row.pattern.contains("*") && !row.pattern.endsWith("(*");
+		return isGroup(row.pattern);
+	}
+
+	static boolean isGroup(String pattern)
+	{
+		return pattern.contains("*") && !pattern.endsWith("(*");
 	}
 
 	/**

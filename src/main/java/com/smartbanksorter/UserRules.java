@@ -2,8 +2,10 @@ package com.smartbanksorter;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
@@ -22,6 +24,8 @@ final class UserRules
 		final String category;
 		final Set<Integer> ids = new HashSet<>();
 		final List<Pattern> names = new ArrayList<>();
+		// As written, IDs included.
+		final List<String> written = new ArrayList<>();
 
 		Rule(String category)
 		{
@@ -62,6 +66,7 @@ final class UserRules
 					continue;
 				}
 
+				rule.written.add(pattern);
 				if (pattern.matches("\\d+"))
 				{
 					rule.ids.add(Integer.parseInt(pattern));
@@ -125,6 +130,19 @@ final class UserRules
 			names.add(rule.category);
 		}
 		return names;
+	}
+
+	/**
+	 * Each category's patterns as written, categories in the order they were declared.
+	 */
+	Map<String, List<String>> patterns()
+	{
+		Map<String, List<String>> patterns = new LinkedHashMap<>();
+		for (Rule rule : rules)
+		{
+			patterns.computeIfAbsent(rule.category, k -> new ArrayList<>()).addAll(rule.written);
+		}
+		return patterns;
 	}
 
 	static Pattern glob(String pattern)

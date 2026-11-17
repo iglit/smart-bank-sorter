@@ -92,6 +92,8 @@ public class SmartBankSorterPlugin extends Plugin
 	private static final int GRID_WIDTH = COLUMNS * PITCH_X - 12;
 	private static final int SECTION_GAP = 4;
 	private static final int DIVIDER_COLOR = 0x4E4639;
+	// The colour the game names items in their menus.
+	private static final Color ITEM_NAME_COLOR = new Color(0xFF9040);
 	private static final String BANK_TAGS_GROUP = "banktags";
 	private static final String BUILT_IN_SETS = Resources.read("sets.txt");
 	private static final Map<String, Integer> FOOD_HEALS = parseHeals(Resources.read("food.txt"));
@@ -181,6 +183,7 @@ public class SmartBankSorterPlugin extends Plugin
 	private TabStrip tabStrip;
 	private BankTagsStrip bankTagsStrip;
 	private ItemCopies itemCopies;
+	private NotOwnedItems notOwnedItems;
 	private MoveToMenu moveToMenu;
 	private CategoryEditor categoryEditor;
 
@@ -199,6 +202,7 @@ public class SmartBankSorterPlugin extends Plugin
 		eventBus.register(beforeBankTags);
 		eventBus.register(afterBankTags);
 		itemCopies = new ItemCopies(this::equipmentOf);
+		notOwnedItems = new NotOwnedItems(client, itemManager);
 		moveToMenu = new MoveToMenu(client, config, configManager, itemManager, () -> categoryOrder);
 		ItemData.load();
 		WeaponLevels.load();
@@ -291,6 +295,23 @@ public class SmartBankSorterPlugin extends Plugin
 	{
 		if (!config.enabled())
 		{
+			return;
+		}
+		Slot ghost = itemCopies.ghostAt(client.getMouseCanvasPosition(), client.getWidget(InterfaceID.Bankmain.ITEMS));
+		if (ghost != null)
+		{
+			// As a placeholder's Release, but it only takes the item out of the category it was added to. Nothing is
+			// sent to the server.
+			client.getMenu().createMenuEntry(-1)
+				.setOption("Release")
+				.setTarget(ColorUtil.wrapWithColorTag(ghost.name, ITEM_NAME_COLOR))
+				.setType(MenuAction.RUNELITE)
+				.onClick(e ->
+				{
+					CategorySettings settings = CategorySettings.load(config);
+					settings.removeItem(ghost.category, ghost.pattern);
+					settings.save(configManager);
+				});
 			return;
 		}
 		for (MenuEntry entry : event.getMenuEntries())
@@ -914,6 +935,12 @@ public class SmartBankSorterPlugin extends Plugin
 		}
 		itemCopies.addDataCopies(groups, s -> categoriser.ruleCategory(s.itemId, s.name) != null);
 		itemCopies.addAlsoShown(groups, s -> alsoShow.matchAll(s.itemId, s.name));
+		boolean searching = searching();
+		// Only the whole bank shows what isn't in it; a search or bank tab shows what's there.
+		if (!searching && client.getVarbitValue(VarbitID.BANK_CURRENTTAB) == 0)
+		{
+			notOwnedItems.addGhosts(groups, alsoShow, slots);
+		}
 
 		Comparator<Slot> comparator = comparator();
 		boolean large = config.headerSize() == SmartBankSorterConfig.HeaderSize.LARGE;
@@ -968,7 +995,6 @@ public class SmartBankSorterPlugin extends Plugin
 		tabIcons.keySet().retainAll(tabsWithItems(groups).keySet());
 		checkFocus(tabIcons);
 
-		boolean searching = searching();
 		String suggestion = searching && config.categorySearch()
 			? CategorySearch.suggest(client.getVarcStrValue(VarClientID.MESLAYERINPUT), shownCategories) : null;
 		if (suggestion != null)
@@ -1022,7 +1048,9 @@ public class SmartBankSorterPlugin extends Plugin
 						// Gap in an outfit column, or a copy we don't need to draw.
 						continue;
 					}
-					Widget w = slot.copy ? itemCopies.placeCopy(copies++, slot) : slot.widget;
+					Widget w = slot.ghost
+						? itemCopies.placeGhost(copies++, slot, itemManager.getItemComposition(slot.itemId).getPlaceholderId())
+						: slot.copy ? itemCopies.placeCopy(copies++, slot) : slot.widget;
 					if (w == null)
 					{
 						// No spare bank slot left for this copy.
@@ -1070,7 +1098,8 @@ public class SmartBankSorterPlugin extends Plugin
 			List<String> shownGroups = new ArrayList<>();
 			groups.forEach((category, groupSlots) ->
 			{
-				groupSlots.forEach(s -> shown.computeIfAbsent(s.itemId, k -> new HashSet<>()).add(category));
+				groupSlots.stream().filter(s -> !s.ghost)
+					.forEach(s -> shown.computeIfAbsent(s.itemId, k -> new HashSet<>()).add(category));
 				if (!groupSlots.isEmpty())
 				{
 					shownGroups.add(category);

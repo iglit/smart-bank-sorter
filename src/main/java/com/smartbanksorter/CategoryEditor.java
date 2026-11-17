@@ -437,11 +437,15 @@ final class CategoryEditor
 		{
 			ItemLookup.Row row = rows.get(i);
 			boolean wasMoved = i < moved;
+			// An added item the bank doesn't have shows as a placeholder.
+			boolean notOwned = !wasMoved && !row.inBank && row.itemId >= 0 && !ItemLookup.isGroup(row);
 			ItemLookup.Row labelled = new ItemLookup.Row(row.itemId, row.name, row.pattern,
-				(wasMoved ? "Moved here" : "Added here · " + stillIn(row)) + (row.detail.isEmpty() ? "" : " · " + row.detail),
+				(wasMoved ? "Moved here" : notOwned ? "Added here · shown as a placeholder" : "Added here · " + stillIn(row))
+					+ (row.detail.isEmpty() ? "" : " · " + row.detail),
 				row.category, row.inBank);
 			JButton remove = new JButton("Remove");
 			remove.setToolTipText(wasMoved ? "Send it back to its usual category"
+				: notOwned ? "Stop showing it in " + selected
 				: "Take it out of " + selected + ". It stays in " + stillIn(row).substring("still in ".length()) + ".");
 			remove.addActionListener(e -> edit(s -> s.removeItem(selected, row.pattern)));
 			itemRows.add(itemRow(labelled, remove));
@@ -496,7 +500,7 @@ final class CategoryEditor
 				move.setText("Moved");
 				move.setEnabled(false);
 			}
-			else if (selected.equals(row.category))
+			else if (selected.equals(row.category) && (row.inBank || ItemLookup.isGroup(row)))
 			{
 				// It's here without a rule: nothing to move or show.
 				move.setText("Here");
@@ -504,6 +508,13 @@ final class CategoryEditor
 				add.setEnabled(false);
 				move.setToolTipText("Already sorted into " + selected);
 				add.setToolTipText("Already sorted into " + selected);
+			}
+			else if (selected.equals(row.category))
+			{
+				// Its category, but not in the bank: it can still be added to show it as a placeholder.
+				move.setText("Here");
+				move.setEnabled(false);
+				move.setToolTipText("Already sorted into " + selected);
 			}
 			if (shownHere.stream().anyMatch(row.pattern::equalsIgnoreCase))
 			{
@@ -519,7 +530,8 @@ final class CategoryEditor
 			}
 			if (add.isEnabled())
 			{
-				add.setToolTipText((group ? "Keep them where they are" : "Keep it in " + from)
+				add.setToolTipText(!group && !row.inBank ? "Show it as a placeholder in " + selected + " while it isn't in your bank"
+					: (group ? "Keep them where they are" : "Keep it in " + from)
 					+ " and add " + (group ? "them" : "it") + " to " + selected + " too");
 				add.addActionListener(e -> edit(s -> s.addAlsoShown(selected, row.pattern)));
 			}
