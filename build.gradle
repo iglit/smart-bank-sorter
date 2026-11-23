@@ -39,7 +39,9 @@ tasks.register('run', JavaExec) {
 	classpath = sourceSets.test.runtimeClasspath
 	mainClass = pluginMainClass
 
-	jvmArgs "-ea"
+	// Assertions on, except the GPU plugin's: one in its model upload trips in busy scenes (ToA Wardens) and kills the
+	// client, which the normal client, run without assertions, never does.
+	jvmArgs "-ea", "-da:net.runelite.client.plugins.gpu..."
 	args "--developer-mode", "--debug"
 }
 
