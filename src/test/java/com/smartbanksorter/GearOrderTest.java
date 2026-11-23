@@ -8,6 +8,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.Map;
 import java.util.Set;
 import net.runelite.api.EquipmentInventorySlot;
@@ -359,11 +360,10 @@ public class GearOrderTest
 	}
 
 	@Test
-	public void aSetIsWornWholeOrNotAtAll()
+	public void aSetWithNoBonusIsJustPieces()
 	{
-		// Without its weapon, Blood moon only goes into the scythe's outfit as a whole set: its chestplate alone
-		// would beat the rune platebody, but the helm and tassets lose to the others, so the set waits together with
-		// the spare gear.
+		// Without its weapon, Blood moon has no bonus to keep it together: its chestplate beats the rune platebody on
+		// its own, while the helm loses to the torva.
 		stats.put("Scythe of vitur", melee(EquipmentInventorySlot.WEAPON, 70, 125, 30, 75, 5, true));
 		stats.put("Blood moon helm", melee(EquipmentInventorySlot.HEAD, 0, 0, 0, 1, 0, false));
 		stats.put("Blood moon chestplate", melee(EquipmentInventorySlot.BODY, 0, 0, 0, 4, 0, false));
@@ -374,9 +374,27 @@ public class GearOrderTest
 		assertEquals(Arrays.asList(
 			Arrays.asList("Scythe of vitur"),
 			Arrays.asList("Torva full helm"),
-			Arrays.asList("Rune platebody"),
-			Arrays.asList("Blood moon helm", "Blood moon chestplate")),
+			Arrays.asList("Blood moon chestplate"),
+			Arrays.asList("Blood moon helm", "Rune platebody")),
 			order);
+	}
+
+	@Test
+	public void piecesThatDoTheSameDamageGoByStats()
+	{
+		// With the whip, Blood moon's extra strength doesn't raise the max hit: the same damage, so its better
+		// strength wins each slot.
+		stats.put("Abyssal whip", melee(EquipmentInventorySlot.WEAPON, 0, 82, 0, 82, 4, false));
+		stats.put("Helm of neitiznot", melee(EquipmentInventorySlot.HEAD, 0, 0, 0, 3, 0, false));
+		stats.put("Fighter torso", melee(EquipmentInventorySlot.BODY, 0, 0, 0, 4, 0, false));
+		stats.put("Dragon platelegs", melee(EquipmentInventorySlot.LEGS, 0, 0, 0, 0, 0, false));
+		stats.put("Blood moon helm", melee(EquipmentInventorySlot.HEAD, 0, 0, 0, 4, 0, false));
+		stats.put("Blood moon chestplate", melee(EquipmentInventorySlot.BODY, 0, 0, 0, 4, 0, false));
+		stats.put("Blood moon tassets", melee(EquipmentInventorySlot.LEGS, 0, 0, 0, 2, 0, false));
+		List<List<String>> order = order(true, "Abyssal whip", "Helm of neitiznot", "Fighter torso", "Dragon platelegs",
+			"Blood moon helm", "Blood moon chestplate", "Blood moon tassets");
+		assertEquals(Arrays.asList("Abyssal whip", "Blood moon helm", "Blood moon chestplate", "Blood moon tassets"),
+			order.subList(0, 4).stream().map(row -> row.get(0)).collect(Collectors.toList()));
 	}
 
 	@Test

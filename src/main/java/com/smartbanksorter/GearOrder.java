@@ -132,6 +132,8 @@ final class GearOrder
 		List<T> spareGear = new ArrayList<>();
 		if (!weapons.isEmpty())
 		{
+			outfits.keepSets(weapons);
+			Function<T, String> keptSet = t -> outfits.keeps(gear.set(t)) ? gear.set(t) : null;
 			// Weapons by the damage of their best outfit from everything owned; ones the player can't wield yet last.
 			Map<T, Double> damage = new HashMap<>();
 			for (T weapon : weapons)
@@ -186,7 +188,7 @@ final class GearOrder
 						adding++;
 					}
 				}
-				boolean wearsSet = outfit.values().stream().map(gear::set).filter(Objects::nonNull)
+				boolean wearsSet = outfit.values().stream().map(keptSet).filter(Objects::nonNull)
 					.collect(Collectors.groupingBy(set -> set, Collectors.counting())).values().stream().anyMatch(n -> n >= 2);
 				int slots = COLUMN_ORDER.length - (gear.stats(weapon).isTwoHanded() ? 1 : 0);
 				if (i == 0 ? !outfit.isEmpty() : adding * 2 >= slots || wearsSet)
@@ -228,7 +230,7 @@ final class GearOrder
 				left.sort(Comparator.comparingDouble((T t) -> added.get(t)).reversed().thenComparing(byScore));
 				rest.put(entry.getKey(), left);
 			}
-			spareGear.addAll(spareGear(rest, gear::set));
+			spareGear.addAll(spareGear(rest, keptSet));
 		}
 		else
 		{
@@ -410,10 +412,11 @@ final class GearOrder
 	 * work together (accuracy and strength) settle. Pieces that add no damage are chosen by stats, so defence and
 	 * prayer still fill empty slots.
 	 * <p>
-	 * Owned sets (two or more pieces of one {@link Gear#set}) are never split: a set goes into an outfit whole, its
-	 * best piece per slot, or not at all. Weapons pick in order of strength, so a set goes to the strongest weapon
-	 * it does the most for (Blue moon armour with the eye of Ayak), else its own weapon (Dharok's greataxe) wears it.
-	 * Ranged weapons also take the strongest owned ammo they can fire.
+	 * Owned sets (two or more pieces of one {@link Gear#set}) stay together only if their bonus pays: for some weapon,
+	 * wearing the set beats the best outfit of single pieces. Those go into an outfit whole, their best piece per
+	 * slot, or not at all. Weapons pick in order of strength, so such a set goes to the strongest weapon it does the
+	 * most for (Blue moon armour with the eye of Ayak), else its own weapon (Dharok's greataxe) wears it. The pieces
+	 * of other sets are single pieces like any other. Ranged weapons also take the strongest owned ammo they can fire.
 	 */
 	private static final class Outfits<T>
 	{
@@ -424,6 +427,8 @@ final class GearOrder
 		private final Map<T, DpsCalc.Piece> pieces = new HashMap<>();
 		// Owned sets, members best first.
 		private final Map<String, List<T>> sets = new LinkedHashMap<>();
+		// The owned sets kept together, see keepSets.
+		private final Set<String> kept = new HashSet<>();
 		// Ranged ammo, best first.
 		private final List<T> ammo;
 		// Per slot, the pieces sorted by each stat damage depends on, then the pieces with modelled effects.
@@ -451,6 +456,57 @@ final class GearOrder
 				}
 			}
 			sets.values().removeIf(members -> members.size() < 2);
+			shortlist();
+		}
+
+		/**
+		 * Keeps together the owned sets whose bonus pays: for some weapon, wearing the set does more damage than the
+		 * best outfit of single pieces, theirs included. A set whose own weapon is owned is kept too, as not every
+		 * set effect is modelled (Dharok's, Verac's...). The other sets' pieces are single pieces from then on.
+		 */
+		void keepSets(List<T> weapons)
+		{
+			Set<String> keep = new HashSet<>();
+			for (T weapon : weapons)
+			{
+				if (sets.containsKey(gear.set(weapon)))
+				{
+					keep.add(gear.set(weapon));
+				}
+			}
+			for (String name : sets.keySet())
+			{
+				for (T weapon : keep.contains(name) ? Collections.<T>emptyList() : weapons)
+				{
+					Map<Integer, T> set = block(name, weapon, Collections.emptySet());
+					if (set == null)
+					{
+						continue;
+					}
+					Map<Integer, T> base = ammoFor(weapon, Collections.emptySet());
+					set.putAll(base);
+					if (round(damage(weapon, fill(weapon, set, Collections.emptySet())))
+						> round(damage(weapon, fill(weapon, base, Collections.emptySet()))))
+					{
+						keep.add(name);
+						break;
+					}
+				}
+			}
+			kept.addAll(keep);
+			shortlist();
+		}
+
+		boolean keeps(String set)
+		{
+			return set != null && kept.contains(set);
+		}
+
+		// Per slot, the pieces sorted by each stat damage depends on, then the pieces with modelled effects; the kept
+		// sets' pieces aren't single pieces.
+		private void shortlist()
+		{
+			byKey.clear();
 			List<ToIntFunction<ItemEquipmentStats>> keys = Arrays.asList(ItemEquipmentStats::getAstab,
 				ItemEquipmentStats::getAslash, ItemEquipmentStats::getAcrush, ItemEquipmentStats::getArange,
 				ItemEquipmentStats::getAmagic, ItemEquipmentStats::getStr, ItemEquipmentStats::getRstr,
@@ -516,7 +572,8 @@ final class GearOrder
 		}
 
 		/** The best outfit for the weapon from pieces not in {@code used}, by slot. */
-		Map<Integer, T> best(T weapon, Set<T> used)
+		// The strongest unused ammo the weapon fires, if any.
+		private Map<Integer, T> ammoFor(T weapon, Set<T> used)
 		{
 			Map<Integer, T> base = new HashMap<>();
 			for (T a : ammo)
@@ -527,8 +584,14 @@ final class GearOrder
 					break;
 				}
 			}
+			return base;
+		}
+
+		Map<Integer, T> best(T weapon, Set<T> used)
+		{
+			Map<Integer, T> base = ammoFor(weapon, used);
 			String own = gear.set(weapon);
-			if (own != null && sets.containsKey(own))
+			if (keeps(own))
 			{
 				Map<Integer, T> set = block(own, weapon, used);
 				if (set != null)
@@ -539,22 +602,24 @@ final class GearOrder
 			}
 			Map<Integer, T> best = fill(weapon, base, used);
 			double bestDamage = round(damage(weapon, best));
-			for (String name : sets.keySet())
+			for (String name : kept)
 			{
 				Map<Integer, T> set = block(name, weapon, used);
 				if (set != null)
 				{
 					set.putAll(base);
-					// Quick check: the set swapped into the current best outfit. Only search around it if it helps.
+					// Quick check: the set swapped into the current best outfit. Only search around it if it helps, or
+					// does as much with more strength or accuracy (not just defence: Dharok's stays with its greataxe).
 					Map<Integer, T> swapped = new HashMap<>(best);
 					swapped.putAll(set);
-					if (round(damage(weapon, swapped)) <= bestDamage)
+					double quick = round(damage(weapon, swapped));
+					if (quick < bestDamage || quick == bestDamage && !strongerOutfit(swapped, best))
 					{
 						continue;
 					}
 					Map<Integer, T> withSet = fill(weapon, set, used);
 					double d = round(damage(weapon, withSet));
-					if (d > bestDamage)
+					if (d > bestDamage || d == bestDamage && strongerOutfit(withSet, best))
 					{
 						best = withSet;
 						bestDamage = d;
@@ -591,10 +656,26 @@ final class GearOrder
 			return set.size() >= 2 ? set : null;
 		}
 
+		// More offence over the whole outfit.
+		private boolean strongerOutfit(Map<Integer, T> outfit, Map<Integer, T> than)
+		{
+			return total(outfit, e -> offence(category, e)) > total(than, e -> offence(category, e));
+		}
+
+		private int total(Map<Integer, T> outfit, ToIntFunction<ItemEquipmentStats> stat)
+		{
+			return outfit.values().stream().mapToInt(t -> stat.applyAsInt(gear.stats(t))).sum();
+		}
+
+		private boolean betterStats(T item, T than)
+		{
+			int offence = Integer.compare(offence(category, gear.stats(item)), offence(category, gear.stats(than)));
+			return offence > 0 || offence == 0 && score(category, gear.stats(item)) > score(category, gear.stats(than));
+		}
+
 		private boolean inOwnedSet(T item)
 		{
-			String set = gear.set(item);
-			return set != null && sets.containsKey(set);
+			return keeps(gear.set(item));
 		}
 
 		/** Fills the free slots of {@code fixed} with the single pieces that add the most. */
@@ -622,9 +703,9 @@ final class GearOrder
 						}
 						outfit.put(idx, item);
 						double d = round(damage(weapon, outfit));
-						// Same damage: the better stats win, and any piece beats an empty slot.
-						if (d > bestDamage || d == bestDamage && (bestPiece == null
-							|| score(category, gear.stats(item)) > score(category, gear.stats(bestPiece))))
+						// Same damage: the better offence wins (it may count once a potion boosts the level), then the
+						// better stats; any piece beats an empty slot.
+						if (d > bestDamage || d == bestDamage && (bestPiece == null || betterStats(item, bestPiece)))
 						{
 							bestDamage = d;
 							bestPiece = item;

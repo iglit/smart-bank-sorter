@@ -10,7 +10,8 @@ moves, and turning the plugin off gives you your normal bank back.
 - **Combat gear as outfits**: each weapon heads a column with the gear that does the most damage with it, read head
   to feet, strongest weapon leftmost. Damage is worked out from the OSRS Wiki's formulas at your levels against a
   typical boss, including weapon effects (Scythe of Vitur, Twisted bow, Tumeken's shadow...). Armour sets with set
-  effects (Barrows, the Moons, Void, Inquisitor's...) stay together, under their own weapon when you have it.
+  effects (Barrows, the Moons, Void, Inquisitor's...) stay together when the effect adds damage, under their own
+  weapon when you have it.
 - **Supplies laid out properly**: potions in dose columns with raid potions first, food by how much it heals with
   combo food on its own row, teleports by how often they're used, blighted supplies last.
 - **Items in more than one place**: multi-use items (Barrows gloves, glory, Graceful, logs...) also appear in

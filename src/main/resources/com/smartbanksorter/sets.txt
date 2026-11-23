@@ -1,5 +1,6 @@
-# Sets whose strength comes from a set effect. Owned pieces of one set are never split: they share one outfit
-# column, under the set's own weapon when it's listed and owned. Same format as the "Gear sets" setting:
+# Sets whose strength comes from a set effect. Owned pieces of one set stay together when the effect adds damage
+# with a weapon you own: they share one outfit column, under the set's own weapon when it's listed and owned.
+# Otherwise they're single pieces like any other. Same format as the "Gear sets" setting:
 # Set name: item names (* = wildcard), comma separated.
 Blood moon: Blood moon helm*, Blood moon chestplate*, Blood moon tassets*, Dual macuahuitl*
 Blue moon: Blue moon helm*, Blue moon chestplate*, Blue moon tassets*, Blue moon spear*
