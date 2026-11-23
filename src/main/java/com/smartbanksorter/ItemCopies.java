@@ -207,6 +207,16 @@ class ItemCopies
 		}
 	}
 
+	/**
+	 * Items for which {@code show} holds get a withdrawable copy in {@code category}.
+	 */
+	void addCopies(Map<String, List<Slot>> groups, String category, Predicate<Slot> show)
+	{
+		List<Slot> originals = new ArrayList<>();
+		groups.values().forEach(list -> list.stream().filter(s -> !s.copy && show.test(s)).forEach(originals::add));
+		originals.forEach(s -> addCopy(groups, s, category));
+	}
+
 	// Unless the category already shows the item.
 	private static void addCopy(Map<String, List<Slot>> groups, Slot s, String category)
 	{

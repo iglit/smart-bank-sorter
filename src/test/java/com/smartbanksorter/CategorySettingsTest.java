@@ -140,6 +140,8 @@ public class CategorySettingsTest
 		assertNotNull(CategorySettings.nameProblem("A: b", Collections.emptyList()));
 		assertNotNull(CategorySettings.nameProblem("a, b", Collections.emptyList()));
 		assertNotNull(CategorySettings.nameProblem("melee", Arrays.asList("Melee")));
+		// The plugin's own.
+		assertNotNull(CategorySettings.nameProblem("recently Deposited", Collections.emptyList()));
 	}
 
 	@Test

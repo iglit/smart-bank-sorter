@@ -84,6 +84,10 @@ final class CategorySettings
 		{
 			return "Keep it to 30 letters or fewer.";
 		}
+		if (name.equalsIgnoreCase(RecentDeposits.CATEGORY))
+		{
+			return "'" + RecentDeposits.CATEGORY + "' is the plugin's own.";
+		}
 		for (String other : taken)
 		{
 			if (other.equalsIgnoreCase(name))

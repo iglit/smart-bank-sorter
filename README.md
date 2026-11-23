@@ -16,6 +16,8 @@ moves, and turning the plugin off gives you your normal bank back.
   combo food on its own row, teleports by how often they're used, blighted supplies last.
 - **Items in more than one place**: multi-use items (Barrows gloves, glory, Graceful, logs...) also appear in
   their other categories. These copies work exactly like the real item, including withdrawing.
+- **Recently deposited**: copies of what you deposited lately at the top of the bank, newest first: by default
+  what you've gained in the last 6 hours, so loot shows but supplies you took out and put back don't.
 - **Tabs**: tabs down the left edge show just Combat, Runes & teleports, Food & potions, or Skilling.
 - **Your own categories**: click the filing cabinet at the top of the bank to open the category editor. Make
   categories, search for items and **Move** them in, or **Add** them so they also stay where they are. Items you
@@ -37,13 +39,15 @@ bank. Searching a category's full name also adds its items to the results.
 | Setting | What it does |
 |---|---|
 | Sort bank | Turn the sorted view on or off |
-| Order within category | Most valuable first (stack or item, GE or HA value), or your own bank order, for categories without a special layout |
+| Order within category | Most valuable first (stack or item, GE or HA value), or as in the bank's All items view, for categories without a special layout |
 | Rank combat gear | Outfit columns for Melee, Ranged and Magic |
 | Arrange food & potions | Heal order for food, dose columns for potions, usefulness order for teleports |
 | Sort inside bank tabs | Also group items when a numbered bank tab is open |
 | Hide bank fillers | Leave bank fillers out of the sorted view |
 | Hide placeholders | Leave placeholders out of the sorted view, so you only see items you have (off by default) |
 | Category search | Suggest a category to jump to while searching, and show a category's items when you search its name |
+| Recently deposited: Show | Off, or the last hour to 7 days (6 hours by default) of deposits, as copies at the top of the bank |
+| Recently deposited: Filter | Only changes (default): items you have more of than then. All deposits: everything you deposited, even if you've since taken it out again |
 | Category tabs | Show the left-edge tabs |
 | Outfit layout | Outfits as columns (default) or rows |
 | Compact layout | Close up gaps in the outfits, or in the outfits and the potion columns (off by default) |
@@ -63,6 +67,7 @@ sorted item, or a copy, onto a tag tab to tag it; an item dropped on a category 
 category tabs leave with the plugin.
 
 Copies need free bank space: each copy uses one empty bank slot, so they don't show when your bank is full.
+Recently deposited's copies get only the slots the others leave, so they're the first to go.
 
 ## Item data
 

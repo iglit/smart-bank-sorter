@@ -14,10 +14,12 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.LongSupplier;
 import javax.inject.Inject;
 import javax.swing.SwingUtilities;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
+import net.runelite.api.GameState;
 import net.runelite.api.FontID;
 import net.runelite.api.Item;
 import net.runelite.api.ItemComposition;
@@ -26,6 +28,8 @@ import net.runelite.api.MenuAction;
 import net.runelite.api.MenuEntry;
 import net.runelite.api.ScriptID;
 import net.runelite.api.Skill;
+import net.runelite.api.events.GameStateChanged;
+import net.runelite.api.events.ItemContainerChanged;
 import net.runelite.api.events.MenuEntryAdded;
 import net.runelite.api.events.MenuOpened;
 import net.runelite.api.events.MenuOptionClicked;
@@ -71,7 +75,8 @@ import net.runelite.client.util.Text;
 @Slf4j
 @PluginDescriptor(
 	name = "Smart Bank Sorter",
-	description = "Groups and sorts your bank by category, client-side only. Category tabs can share Bank Tags' tag tab strip.",
+	description = "Groups and sorts your bank by category, client-side only, with best-in-slot outfits and what you"
+		+ " deposited lately at the top. Category tabs can share Bank Tags' tag tab strip.",
 	tags = {"bank", "sort", "category", "organize", "layout"}
 )
 // For Bank Tags' tag tab strip, which the category tabs can join. This only has Bank Tags load first; it doesn't
@@ -191,6 +196,13 @@ public class SmartBankSorterPlugin extends Plugin
 	private NotOwnedItems notOwnedItems;
 	private MoveToMenu moveToMenu;
 	private CategoryEditor categoryEditor;
+	// What the logged-in account deposited lately, loaded for recentProfile.
+	private RecentDeposits recentDeposits;
+	private String recentProfile;
+	// The items in the Recently deposited category, each with when it last grew. Worked out each layout.
+	private Map<Integer, Long> recentTimes = Collections.emptyMap();
+	// Milliseconds since the epoch.
+	LongSupplier clock = System::currentTimeMillis;
 
 	@Provides
 	SmartBankSorterConfig provideConfig(ConfigManager configManager)
@@ -201,6 +213,7 @@ public class SmartBankSorterPlugin extends Plugin
 	@Override
 	protected void startUp()
 	{
+		forgetDeposits();
 		tabStrip =new TabStrip(client, config, () -> focusedTab, this::focus);
 		bankTagsStrip = new BankTagsStrip(client, clientThread, config, configManager, tabManager, tagManager,
 			() -> bankTags() != null, this::activeBankTag, () -> focusedTab, this::focus, this::rebuildBank);
@@ -257,10 +270,11 @@ public class SmartBankSorterPlugin extends Plugin
 		bankTagsStrip.onConfigChanged(event);
 		if (!SmartBankSorterConfig.GROUP.equals(event.getGroup())
 			|| SmartBankSorterConfig.TAB_ORDER_KEY.equals(event.getKey())
-			|| SmartBankSorterConfig.OPEN_TAB_KEY.equals(event.getKey()))
+			|| SmartBankSorterConfig.OPEN_TAB_KEY.equals(event.getKey())
+			|| SmartBankSorterConfig.DEPOSITS_KEY.equals(event.getKey()))
 		{
 			// The tab order is the strip's own: it writes it and rebuilds the bank itself. The open tab is only
-			// saved as the bank closes.
+			// saved as the bank closes. The deposit history is saved as the bank changes, which rebuilds it anyway.
 			return;
 		}
 		if (SmartBankSorterConfig.RULES_KEY.equals(event.getKey()) || SmartBankSorterConfig.ALSO_SHOW_KEY.equals(event.getKey())
@@ -343,6 +357,77 @@ public class SmartBankSorterPlugin extends Plugin
 		{
 			scrollBeforeBuild = client.getVarcIntValue(VarClientID.BANK_SCROLLPOS);
 			sortingThisBuild = config.enabled() && shouldSort();
+		}
+	}
+
+	@Subscribe
+	public void onGameStateChanged(GameStateChanged event)
+	{
+		// The bank may change on another client before the next login; what was last seen of it says nothing then.
+		if (event.getGameState() == GameState.LOGIN_SCREEN)
+		{
+			forgetDeposits();
+		}
+	}
+
+	// Drops the loaded history and the bank last seen. The history stays saved, for the next look at the bank.
+	private void forgetDeposits()
+	{
+		recentDeposits = null;
+		recentProfile = null;
+	}
+
+	@Subscribe
+	public void onItemContainerChanged(ItemContainerChanged event)
+	{
+		if (event.getContainerId() == InventoryID.BANK)
+		{
+			trackDeposits(event.getItemContainer());
+		}
+	}
+
+	/**
+	 * Records the bank's quantities for the Recently deposited category, for the logged-in account.
+	 */
+	private void trackDeposits(ItemContainer bank)
+	{
+		SmartBankSorterConfig.RecentWindow window = config.recentDeposits();
+		String profile = configManager.getRSProfileKey();
+		if (window == SmartBankSorterConfig.RecentWindow.OFF || profile == null)
+		{
+			// Turned back on, it starts from what it sees then, as after a restart.
+			forgetDeposits();
+			return;
+		}
+		if (!profile.equals(recentProfile))
+		{
+			recentProfile = profile;
+			recentDeposits = new RecentDeposits(
+				configManager.getRSProfileConfiguration(SmartBankSorterConfig.GROUP, SmartBankSorterConfig.DEPOSITS_KEY));
+		}
+		Map<Integer, Long> quantities = new HashMap<>();
+		for (Item item : bank.getItems())
+		{
+			int id = item.getId();
+			if (id <= 0 || id == ItemID.BANK_FILLER)
+			{
+				continue;
+			}
+			boolean placeholder = itemManager.getItemComposition(id).getPlaceholderTemplateId() != -1;
+			quantities.merge(itemManager.canonicalize(id), placeholder ? 0L : item.getQuantity(), Long::sum);
+		}
+		if (recentDeposits.update(quantities, clock.getAsLong(), SmartBankSorterConfig.RecentWindow.longest()))
+		{
+			String saved = recentDeposits.save();
+			if (saved.isEmpty())
+			{
+				configManager.unsetRSProfileConfiguration(SmartBankSorterConfig.GROUP, SmartBankSorterConfig.DEPOSITS_KEY);
+			}
+			else
+			{
+				configManager.setRSProfileConfiguration(SmartBankSorterConfig.GROUP, SmartBankSorterConfig.DEPOSITS_KEY,
+					saved);
+			}
 		}
 	}
 
@@ -879,6 +964,17 @@ public class SmartBankSorterPlugin extends Plugin
 			return;
 		}
 
+		// The bank may be built before ItemContainerChanged has told us of the change.
+		trackDeposits(bank);
+		boolean searching = searching();
+		// Only the whole bank shows what isn't in it, and what was deposited; a search or bank tab shows what's there.
+		boolean wholeBank = !searching && client.getVarbitValue(VarbitID.BANK_CURRENTTAB) == 0;
+		SmartBankSorterConfig.RecentWindow window = config.recentDeposits();
+		recentTimes = wholeBank && recentDeposits != null && window != SmartBankSorterConfig.RecentWindow.OFF
+			? recentDeposits.recent(clock.getAsLong(), window.millis,
+				config.recentCounts() == SmartBankSorterConfig.RecentCounts.NET_GAIN)
+			: Collections.emptyMap();
+
 		Widget[] children = container.getChildren();
 		Item[] items = bank.getItems();
 		Set<Widget> ours = new HashSet<>(headerWidgets);
@@ -924,6 +1020,10 @@ public class SmartBankSorterPlugin extends Plugin
 		}
 
 		Map<String, List<Slot>> groups = new LinkedHashMap<>();
+		if (!recentTimes.isEmpty())
+		{
+			groups.put(RecentDeposits.CATEGORY, new ArrayList<>());
+		}
 		for (String category : categoryOrder)
 		{
 			groups.put(category, new ArrayList<>());
@@ -940,9 +1040,8 @@ public class SmartBankSorterPlugin extends Plugin
 		}
 		itemCopies.addDataCopies(groups, s -> categoriser.ruleCategory(s.itemId, s.name) != null);
 		itemCopies.addAlsoShown(groups, s -> alsoShow.matchAll(s.itemId, s.name));
-		boolean searching = searching();
-		// Only the whole bank shows what isn't in it; a search or bank tab shows what's there.
-		if (!searching && client.getVarbitValue(VarbitID.BANK_CURRENTTAB) == 0)
+		itemCopies.addCopies(groups, RecentDeposits.CATEGORY, s -> s.quantity > 0 && recentTimes.containsKey(s.itemId));
+		if (wholeBank)
 		{
 			notOwnedItems.addGhosts(groups, alsoShow, slots);
 		}
@@ -958,12 +1057,15 @@ public class SmartBankSorterPlugin extends Plugin
 		Map<String, Integer> tabIcons = tabsWithItems(groups);
 		checkFocus(tabIcons);
 
-		// Copies get the bank's empty slots in the order they're drawn. Those that don't fit are left out before the
-		// layout, so their rows close up and a category of nothing but those gets no header. Collapsed and
-		// filtered-out categories draw no copies, so they take no slots.
+		// Copies get the bank's empty slots in the order they're drawn, except Recently deposited's, which get what's
+		// left. Those that don't fit are left out before the layout, so their rows close up and a category of nothing
+		// but those gets no header. Collapsed and filtered-out categories draw no copies, so they take no slots.
 		Map<String, List<List<Slot>>> rowsByCategory = new HashMap<>();
 		int freeSlots = spares.size();
-		for (Map.Entry<String, List<Slot>> group : groups.entrySet())
+		List<Map.Entry<String, List<Slot>>> byPriority = new ArrayList<>(groups.entrySet());
+		// Recently deposited copies get only the slots the rest leave: their items show where they belong anyway.
+		byPriority.sort(Comparator.comparing(e -> isRecent(e.getKey())));
+		for (Map.Entry<String, List<Slot>> group : byPriority)
 		{
 			String category = group.getKey();
 			List<List<Slot>> rows = rows(category, group.getValue(), comparator);
@@ -1038,7 +1140,8 @@ public class SmartBankSorterPlugin extends Plugin
 				{
 					jumpY = y;
 				}
-				int realCount = (int) groupSlots.stream().filter(s -> !s.copy).count();
+				int realCount = isRecent(category) ? groupSlots.size()
+					: (int) groupSlots.stream().filter(s -> !s.copy).count();
 				placeHeader(container, section++, category, realCount, isCollapsed, y, headerHeight, large);
 				y += headerHeight + 2;
 			}
@@ -1225,7 +1328,8 @@ public class SmartBankSorterPlugin extends Plugin
 		{
 			price = itemManager.getItemComposition(slot.itemId).getHaPrice();
 		}
-		return order.perItem ? price : price * slot.quantity;
+		// A placeholder or not-owned item has no stack: it ranks by one of its item.
+		return order.perItem || slot.quantity <= 0 ? price : price * slot.quantity;
 	}
 
 	private void placeHeader(Widget container, int index, String category, int count, boolean isCollapsed,
@@ -1278,6 +1382,10 @@ public class SmartBankSorterPlugin extends Plugin
 
 	private List<List<Slot>> rows(String category, List<Slot> slots, Comparator<Slot> comparator)
 	{
+		if (isRecent(category))
+		{
+			return orderRows(category, slots, comparator);
+		}
 		// Blighted supplies (Wilderness-only) always go last, laid out the same way as the rest.
 		List<Slot> normal = new ArrayList<>();
 		List<Slot> blighted = new ArrayList<>();
@@ -1321,6 +1429,11 @@ public class SmartBankSorterPlugin extends Plugin
 	private boolean filteredOut(String category)
 	{
 		return focusedTab != null && !focusedTab.equals(tabGroups.match(-1, category));
+	}
+
+	private static boolean isRecent(String category)
+	{
+		return RecentDeposits.CATEGORY.equals(category);
 	}
 
 	private GearOrder.Gear<Slot> gear(String category)
@@ -1433,6 +1546,13 @@ public class SmartBankSorterPlugin extends Plugin
 		if (slots.isEmpty())
 		{
 			return Collections.emptyList();
+		}
+		if (isRecent(category))
+		{
+			// Newest first.
+			slots.sort(Comparator.comparingLong((Slot s) -> recentTimes.getOrDefault(s.itemId, 0L)).reversed()
+				.thenComparing(comparator));
+			return Collections.singletonList(slots);
 		}
 		if (config.gearByQuality() && Categories.COMBAT_STYLES.contains(category))
 		{

@@ -17,6 +17,8 @@ public interface SmartBankSorterConfig extends Config
 	String COLLAPSED_KEY = "collapsed";
 	String TAB_ORDER_KEY = "tabOrder";
 	String OPEN_TAB_KEY = "openTab";
+	// Per account: what RecentDeposits keeps.
+	String DEPOSITS_KEY = "depositHistory";
 
 	// 1.7.0 replaced NAME, VALUE_HIGH_TO_LOW and VALUE_LOW_TO_HIGH. RuneLite resets a saved value it can't read to the
 	// default before the plugin starts, so those become STACK_GE_VALUE with no migration. Don't unset the key: the config
@@ -40,6 +42,55 @@ public interface SmartBankSorterConfig extends Config
 			this.label = label;
 			this.perItem = perItem;
 			this.haOnly = haOnly;
+		}
+
+		@Override
+		public String toString()
+		{
+			return label;
+		}
+	}
+
+	enum RecentWindow
+	{
+		OFF("Off", 0),
+		ONE_HOUR("Last hour", 1),
+		SIX_HOURS("Last 6 hours", 6),
+		ONE_DAY("Last 24 hours", 24),
+		ONE_WEEK("Last 7 days", 24 * 7);
+
+		private final String label;
+		final long millis;
+
+		RecentWindow(String label, int hours)
+		{
+			this.label = label;
+			this.millis = hours * 3_600_000L;
+		}
+
+		// How long the history is kept, whatever is shown: changing to a longer window loses nothing.
+		static long longest()
+		{
+			return ONE_WEEK.millis;
+		}
+
+		@Override
+		public String toString()
+		{
+			return label;
+		}
+	}
+
+	enum RecentCounts
+	{
+		NET_GAIN("Only changes"),
+		EVERY_DEPOSIT("All deposits");
+
+		private final String label;
+
+		RecentCounts(String label)
+		{
+			this.label = label;
 		}
 
 		@Override
@@ -81,6 +132,10 @@ public interface SmartBankSorterConfig extends Config
 		LARGE,
 	}
 
+	@ConfigSection(name = "Recently deposited", description = "A category at the top of the bank with copies of what you"
+		+ " deposited lately", position = 9)
+	String recentSection = "recent";
+
 	@ConfigSection(name = "Layout", description = "How the sorted bank looks", position = 10)
 	String layoutSection = "layout";
 
@@ -101,9 +156,9 @@ public interface SmartBankSorterConfig extends Config
 	@ConfigItem(
 		keyName = "itemOrder",
 		name = "Order within category",
-		description = "Most valuable first, by the whole stack (value x quantity) or one item. GE value: untradeables go"
-			+ " after the GE-priced items, by their HA value. HA value: everything by high alchemy value. Bank order keeps"
-			+ " the order items have in your bank.",
+		description = "Most valuable first, by the whole stack (value x quantity) or one item. GE value: items without a GE"
+			+ " price (untradeables) go after the rest, by their HA value. HA value: everything by high alchemy value. Bank"
+			+ " order: as in the bank's All items view.",
 		position = 1
 	)
 	default ItemOrder itemOrder()
@@ -127,7 +182,8 @@ public interface SmartBankSorterConfig extends Config
 		keyName = "smartConsumables",
 		name = "Arrange food & potions",
 		description = "Food by how much it heals, with combo food on its own rows. Potions in columns, one per potion,"
-			+ " doses going down, combat potions first. Overrides 'Order within category' for those categories.",
+			+ " doses going down, combat potions first. Teleports by how often they're used. Overrides 'Order within"
+			+ " category' for those categories.",
 		position = 3
 	)
 	default boolean smartConsumables()
@@ -182,10 +238,37 @@ public interface SmartBankSorterConfig extends Config
 	}
 
 	@ConfigItem(
+		keyName = "recentDeposits",
+		name = "Show",
+		description = "What you deposited in this time, newest first, as copies at the top of the bank. Copies need free"
+			+ " bank slots, and these get only what the others leave.",
+		position = 0,
+		section = recentSection
+	)
+	default RecentWindow recentDeposits()
+	{
+		return RecentWindow.SIX_HOURS;
+	}
+
+	@ConfigItem(
+		keyName = "recentCounts",
+		name = "Filter",
+		description = "Only changes: items you have more of than at the start of that time, so supplies you took out and"
+			+ " put back don't show. All deposits: everything you deposited in that time, even if you have since taken"
+			+ " as much or more out.",
+		position = 1,
+		section = recentSection
+	)
+	default RecentCounts recentCounts()
+	{
+		return RecentCounts.NET_GAIN;
+	}
+
+	@ConfigItem(
 		keyName = "categoryTabs",
 		name = "Category tabs",
 		description = "Tabs down the left edge of the bank. Click one to show only its categories, again to show all.",
-		position = -2,
+		position = -4,
 		section = layoutSection
 	)
 	default boolean categoryTabs()
@@ -198,7 +281,7 @@ public interface SmartBankSorterConfig extends Config
 		name = "Outfit layout",
 		description = "With 'Rank combat gear': Columns puts each outfit in a column under its weapon, read head to"
 			+ " feet, best leftmost. Rows puts each outfit on its own row, best on top.",
-		position = -1,
+		position = -3,
 		section = layoutSection
 	)
 	default OutfitLayout outfitLayout()
@@ -211,7 +294,7 @@ public interface SmartBankSorterConfig extends Config
 		name = "Compact layout",
 		description = "Closes up the gaps, keeping the layout. Outfits: each outfit's gear stacks under its weapon."
 			+ " Outfits and potions: each potion column also stacks straight down.",
-		position = -1,
+		position = -2,
 		section = layoutSection
 	)
 	default CompactLayout compactLayout()
