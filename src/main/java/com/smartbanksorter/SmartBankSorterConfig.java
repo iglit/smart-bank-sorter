@@ -18,12 +18,35 @@ public interface SmartBankSorterConfig extends Config
 	String TAB_ORDER_KEY = "tabOrder";
 	String OPEN_TAB_KEY = "openTab";
 
+	// 1.7.0 replaced NAME, VALUE_HIGH_TO_LOW and VALUE_LOW_TO_HIGH. RuneLite resets a saved value it can't read to the
+	// default before the plugin starts, so those become STACK_GE_VALUE with no migration. Don't unset the key: the config
+	// panel needs a stored value.
 	enum ItemOrder
 	{
-		NAME,
-		VALUE_HIGH_TO_LOW,
-		VALUE_LOW_TO_HIGH,
-		BANK_ORDER,
+		STACK_GE_VALUE("Stack GE value", false, false),
+		ITEM_GE_VALUE("Item GE value", true, false),
+		STACK_HA_VALUE("Stack HA value", false, true),
+		ITEM_HA_VALUE("Item HA value", true, true),
+		BANK_ORDER("Bank order", false, false);
+
+		private final String label;
+		// Ranks by the price of one item rather than the whole stack.
+		final boolean perItem;
+		// Ranks everything by HA value, ignoring GE prices.
+		final boolean haOnly;
+
+		ItemOrder(String label, boolean perItem, boolean haOnly)
+		{
+			this.label = label;
+			this.perItem = perItem;
+			this.haOnly = haOnly;
+		}
+
+		@Override
+		public String toString()
+		{
+			return label;
+		}
 	}
 
 	enum OutfitLayout
@@ -78,12 +101,14 @@ public interface SmartBankSorterConfig extends Config
 	@ConfigItem(
 		keyName = "itemOrder",
 		name = "Order within category",
-		description = "How items are ordered inside each category",
+		description = "Most valuable first, by the whole stack (value x quantity) or one item. GE value: untradeables go"
+			+ " after the GE-priced items, by their HA value. HA value: everything by high alchemy value. Bank order keeps"
+			+ " the order items have in your bank.",
 		position = 1
 	)
 	default ItemOrder itemOrder()
 	{
-		return ItemOrder.NAME;
+		return ItemOrder.STACK_GE_VALUE;
 	}
 
 	@ConfigItem(

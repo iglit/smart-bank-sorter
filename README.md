@@ -36,7 +36,7 @@ bank. Searching a category's full name also adds its items to the results.
 | Setting | What it does |
 |---|---|
 | Sort bank | Turn the sorted view on or off |
-| Order within category | Name, value, or bank order for categories without a special layout |
+| Order within category | Most valuable first (stack or item, GE or HA value), or your own bank order, for categories without a special layout |
 | Rank combat gear | Outfit columns for Melee, Ranged and Magic |
 | Arrange food & potions | Heal order for food, dose columns for potions, usefulness order for teleports |
 | Sort inside bank tabs | Also group items when a numbered bank tab is open |
@@ -66,7 +66,7 @@ Copies need free bank space: each copy uses one empty bank slot, so they don't s
 ## Item data
 
 Categories come from bundled data classified from the OSRS Wiki (`src/main/resources/com/smartbanksorter/`):
-`items.txt` (category and tier for ~5,000 items), `food.txt` (heal amounts), `sets.txt` (set-effect armour sets)
+`items.txt` (categories for ~5,000 items), `food.txt` (heal amounts), `sets.txt` (set-effect armour sets)
 and `overrides.txt`. Items not listed fall back to rules based on their stats and right-click options.
 Corrections are welcome as pull requests.
 

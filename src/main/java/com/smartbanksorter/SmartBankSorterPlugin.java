@@ -99,6 +99,11 @@ public class SmartBankSorterPlugin extends Plugin
 	private static final Map<String, Integer> FOOD_HEALS = parseHeals(Resources.read("food.txt"));
 	// Categories as they'd be without the user's rules.
 	private static final Categoriser BUILT_IN = new Categoriser(UserRules.parse(""));
+	// How many items each bank tab, 1 to 9, holds.
+	private static final int[] TAB_SIZES = {
+		VarbitID.BANK_TAB_1, VarbitID.BANK_TAB_2, VarbitID.BANK_TAB_3, VarbitID.BANK_TAB_4, VarbitID.BANK_TAB_5,
+		VarbitID.BANK_TAB_6, VarbitID.BANK_TAB_7, VarbitID.BANK_TAB_8, VarbitID.BANK_TAB_9
+	};
 
 	@Inject
 	private Client client;
@@ -1157,22 +1162,32 @@ public class SmartBankSorterPlugin extends Plugin
 
 	private Comparator<Slot> comparator()
 	{
-		Comparator<Slot> byIndex = Comparator.comparingInt(s -> s.index);
+		// As "All items" shows the bank: untabbed items first, then tab 1 to 9. The bank holds the tabbed ones first.
+		// Not-owned items, with no bank slot, go last.
+		int tabbed = 0;
+		for (int varbit : TAB_SIZES)
+		{
+			tabbed += client.getVarbitValue(varbit);
+		}
+		int firstUntabbed = tabbed;
+		Comparator<Slot> byIndex = Comparator.comparing((Slot s) -> s.ghost)
+			.thenComparing(s -> s.index < firstUntabbed)
+			.thenComparingInt(s -> s.index);
 		// Doses of one potion stay together, highest first.
 		Comparator<Slot> byName = Comparator.<Slot, String>comparing(s -> Doses.baseName(s.name), String.CASE_INSENSITIVE_ORDER)
 			.thenComparing(Comparator.comparingInt((Slot s) -> Doses.dose(s.name)).reversed())
 			.thenComparing(byIndex);
-		switch (config.itemOrder())
+		if (config.itemOrder() == SmartBankSorterConfig.ItemOrder.BANK_ORDER)
 		{
-			case VALUE_HIGH_TO_LOW:
-				return Comparator.comparingLong(this::stackValue).reversed().thenComparing(byName);
-			case VALUE_LOW_TO_HIGH:
-				return Comparator.comparingLong(this::stackValue).thenComparing(byName);
-			case BANK_ORDER:
-				return byIndex;
-			default:
-				return byName;
+			return byIndex;
 		}
+		Comparator<Slot> byValue = Comparator.comparingLong(this::value).reversed();
+		if (!config.itemOrder().haOnly)
+		{
+			// Untradeables and anything else the GE doesn't price go after what it does, ranked by HA value.
+			byValue = Comparator.comparing((Slot s) -> itemManager.getItemPrice(s.itemId) <= 0).thenComparing(byValue);
+		}
+		return byValue.thenComparing(byName);
 	}
 
 	/**
@@ -1198,9 +1213,19 @@ public class SmartBankSorterPlugin extends Plugin
 		return stats != null && stats.isEquipable() ? stats.getEquipment() : null;
 	}
 
-	private long stackValue(Slot slot)
+	/**
+	 * The GE value, or HA value of an item the GE doesn't price (or of every item, as set), of the whole stack or one
+	 * item as set.
+	 */
+	private long value(Slot slot)
 	{
-		return (long) itemManager.getItemPrice(slot.itemId) * slot.quantity;
+		SmartBankSorterConfig.ItemOrder order = config.itemOrder();
+		long price = order.haOnly ? 0 : itemManager.getItemPrice(slot.itemId);
+		if (price <= 0)
+		{
+			price = itemManager.getItemComposition(slot.itemId).getHaPrice();
+		}
+		return order.perItem ? price : price * slot.quantity;
 	}
 
 	private void placeHeader(Widget container, int index, String category, int count, boolean isCollapsed,
@@ -1444,15 +1469,7 @@ public class SmartBankSorterPlugin extends Plugin
 				return rows;
 			}
 		}
-		if (config.itemOrder() == SmartBankSorterConfig.ItemOrder.BANK_ORDER)
-		{
-			// The user arranged these themselves; the most-used-first tiers would reshuffle them.
-			slots.sort(comparator);
-		}
-		else
-		{
-			slots.sort(Comparator.<Slot>comparingInt(s -> ItemData.tier(s.name)).thenComparing(comparator));
-		}
+		slots.sort(comparator);
 		return Collections.singletonList(slots);
 	}
 

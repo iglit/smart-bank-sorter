@@ -22,13 +22,13 @@ public class ItemDataTest
 	@Test
 	public void numberedEntriesCoverTheirSiblings()
 	{
-		Map<String, ItemData.Entry> items = ItemData.parse("Ardougne cloak 1|Teleports||3\nBlack mask (10)|Slayer||3\n"
-			+ "Ring of dueling(8)|Teleports||2\nRing of dueling(1)|Teleports||3\nGames necklace|Misc||5\n"
-			+ "Games necklace(8)|Teleports||2\nSaika's hood (broken)|Misc||5");
+		Map<String, ItemData.Entry> items = ItemData.parse("Ardougne cloak 1|Teleports|\nBlack mask (10)|Slayer|\n"
+			+ "Ring of dueling(8)|Teleports|\nRing of dueling(1)|Misc|\nGames necklace|Misc|\n"
+			+ "Games necklace(8)|Teleports|\nSaika's hood (broken)|Misc|");
 		assertEquals("Teleports", items.get("ardougne cloak").category);
 		assertEquals("Slayer", items.get("black mask").category);
 		// The first sibling listed wins; a listed base name wins over any sibling.
-		assertEquals(2, items.get("ring of dueling").tier);
+		assertEquals("Teleports", items.get("ring of dueling").category);
 		assertEquals("Misc", items.get("games necklace").category);
 		// "(broken)" isn't a number: the real hood mustn't follow the broken one.
 		assertNull(items.get("saika's hood"));

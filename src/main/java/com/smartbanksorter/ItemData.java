@@ -10,24 +10,20 @@ import java.util.regex.Pattern;
 
 /**
  * Bundled per-item data, classified from the OSRS Wiki. One line per item:
- * {@code Item name|Main category|Extra categories, comma separated|Tier 1-5}. Extra categories get
- * withdrawable copies of the item; tier orders items within a category (1 = most used).
+ * {@code Item name|Main category|Extra categories, comma separated}. Extra categories get withdrawable copies of
+ * the item.
  */
 final class ItemData
 {
-	static final int UNKNOWN_TIER = 6;
-
 	static final class Entry
 	{
 		final String category;
 		final List<String> extras;
-		final int tier;
 
-		Entry(String category, List<String> extras, int tier)
+		Entry(String category, List<String> extras)
 		{
 			this.category = category;
 			this.extras = extras;
-			this.tier = tier;
 		}
 	}
 
@@ -85,12 +81,6 @@ final class ItemData
 		}
 	}
 
-	static int tier(String name)
-	{
-		Entry e = get(name);
-		return e == null ? UNKNOWN_TIER : e.tier;
-	}
-
 	static Map<String, Entry> parse(String text)
 	{
 		Map<String, Entry> items = new HashMap<>();
@@ -114,20 +104,8 @@ final class ItemData
 					}
 				}
 			}
-			int tier = UNKNOWN_TIER;
-			if (parts.length > 3)
-			{
-				try
-				{
-					tier = Integer.parseInt(parts[3].trim());
-				}
-				catch (NumberFormatException ignored)
-				{
-					// Leave as unknown.
-				}
-			}
 			String name = parts[0].trim().toLowerCase();
-			Entry entry = new Entry(parts[1].trim(), Collections.unmodifiableList(extras), tier);
+			Entry entry = new Entry(parts[1].trim(), Collections.unmodifiableList(extras));
 			items.put(name, entry);
 			Matcher m = NUMBER.matcher(name);
 			if (m.find() && m.start() > 0)
