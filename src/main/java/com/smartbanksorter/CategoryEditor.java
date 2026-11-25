@@ -131,7 +131,7 @@ final class CategoryEditor
 	}
 
 	/**
-	 * Picks up settings changed elsewhere: Move to in the bank, or the text settings.
+	 * Picks up settings changed elsewhere: Move to or Add to in the bank, or the text settings.
 	 */
 	void reload()
 	{
@@ -344,7 +344,7 @@ final class CategoryEditor
 		footer.setOpaque(false);
 		footer.setBorder(new EmptyBorder(8, 10, 10, 10));
 		footer.add(hint("Changes show in your bank straight away. In the bank, right-click an item and pick Move to"
-			+ " for a quick move."), BorderLayout.CENTER);
+			+ " or Add to for a quick change."),BorderLayout.CENTER);
 		JButton done = new JButton("Done");
 		done.addActionListener(e -> dialog.setVisible(false));
 		footer.add(done, BorderLayout.EAST);

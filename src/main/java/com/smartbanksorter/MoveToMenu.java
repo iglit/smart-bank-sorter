@@ -1,9 +1,10 @@
 package com.smartbanksorter;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 import net.runelite.api.Client;
 import net.runelite.api.Menu;
@@ -20,48 +21,89 @@ class MoveToMenu
 	private final ConfigManager configManager;
 	private final ItemManager itemManager;
 	private final Supplier<List<String>> categoryOrder;
+	private final BiFunction<Integer, String, String> categoryOf;
 
 	MoveToMenu(Client client, SmartBankSorterConfig config, ConfigManager configManager, ItemManager itemManager,
-		Supplier<List<String>> categoryOrder)
+		Supplier<List<String>> categoryOrder, BiFunction<Integer, String, String> categoryOf)
 	{
 		this.client = client;
 		this.config = config;
 		this.configManager = configManager;
 		this.itemManager = itemManager;
 		this.categoryOrder = categoryOrder;
+		this.categoryOf = categoryOf;
 	}
 
 	/**
-	 * "Move to" sub-menu on bank items. Picking a category writes a rule to the Custom categories setting, so
-	 * one-off fixes don't need a plugin change. Doses and charges are covered by one rule.
+	 * "Move to" and "Add to" sub-menus on bank items, as the category editor's Move and Add buttons: Move to takes
+	 * the item out of its category, Add to shows it in another one as well. Both write to the settings the editor
+	 * edits, so one-off fixes don't need a plugin change. Doses and charges are covered by one entry.
 	 */
 	void addMenu(int itemId)
 	{
-		String name = itemManager.getItemComposition(itemManager.canonicalize(itemId)).getName();
+		int id = itemManager.canonicalize(itemId);
+		String name = itemManager.getItemComposition(id).getName();
 		String pattern = movePattern(name);
-		boolean hasRule = findRule(pattern) >= 0;
-
-		MenuEntry parent = client.getMenu().createMenuEntry(1)
-			.setOption("Move to")
-			.setTarget(ColorUtil.wrapWithColorTag(name, config.headerColor()))
-			.setType(MenuAction.RUNELITE);
-		Menu sub = parent.createSubMenu();
+		String sortedInto = categoryOf.apply(id, name);
+		CategorySettings settings = CategorySettings.load(config);
 		List<String> targets = new ArrayList<>(categoryOrder.get());
+		// Entries made later go above earlier ones, so the categories go in from the bottom up.
 		Collections.reverse(targets);
+
+		Menu move = subMenu("Move to", name);
 		for (String category : targets)
 		{
-			sub.createMenuEntry(-1)
-				.setOption(category)
-				.setType(MenuAction.RUNELITE)
-				.onClick(e -> setRule(pattern, category));
+			entry(move, category, null, s -> s.addItem(category, pattern));
 		}
-		if (hasRule)
+		if (settings.movedTo(pattern) != null)
 		{
-			sub.createMenuEntry(-1)
-				.setOption("Reset")
-				.setTarget(ColorUtil.wrapWithColorTag("automatic", config.headerColor()))
-				.setType(MenuAction.RUNELITE)
-				.onClick(e -> setRule(pattern, null));
+			entry(move, "Reset", "automatic", s -> s.unmove(pattern));
+		}
+
+		// Each sub-menu goes in just above Cancel, so Add to, made second, sits below Move to.
+		Menu add = subMenu("Add to", name);
+		List<String> addedTo = new ArrayList<>();
+		for (String category : targets)
+		{
+			if (settings.alsoShown(category).stream().anyMatch(pattern::equalsIgnoreCase))
+			{
+				addedTo.add(category);
+			}
+			else if (!category.equals(sortedInto))
+			{
+				entry(add, category, null, s -> s.addAlsoShown(category, pattern));
+			}
+		}
+		for (String category : addedTo)
+		{
+			entry(add, "Remove from", category, s -> s.removeItem(category, pattern));
+		}
+	}
+
+	private Menu subMenu(String option, String name)
+	{
+		MenuEntry parent = client.getMenu().createMenuEntry(1)
+			.setOption(option)
+			.setTarget(ColorUtil.wrapWithColorTag(name, config.headerColor()))
+			.setType(MenuAction.RUNELITE);
+		return parent.createSubMenu();
+	}
+
+	// The settings are read again on click: they may have changed while the menu was open.
+	private void entry(Menu menu, String option, String target, Consumer<CategorySettings> edit)
+	{
+		MenuEntry entry = menu.createMenuEntry(-1)
+			.setOption(option)
+			.setType(MenuAction.RUNELITE)
+			.onClick(e ->
+			{
+				CategorySettings settings = CategorySettings.load(config);
+				edit.accept(settings);
+				settings.save(configManager);
+			});
+		if (target != null)
+		{
+			entry.setTarget(ColorUtil.wrapWithColorTag(target, config.headerColor()));
 		}
 	}
 
@@ -69,42 +111,5 @@ class MoveToMenu
 	static String movePattern(String name)
 	{
 		return Doses.dose(name) < 0 ? name : name.substring(0, name.lastIndexOf('(')) + "(*";
-	}
-
-	/**
-	 * Line index of the "Category: pattern" rule written for this exact pattern, or -1.
-	 */
-	private int findRule(String pattern)
-	{
-		String[] lines = config.customRules().split("\\R", -1);
-		for (int i = 0; i < lines.length; i++)
-		{
-			int colon = lines[i].indexOf(':');
-			if (colon > 0 && lines[i].substring(colon + 1).trim().equalsIgnoreCase(pattern))
-			{
-				return i;
-			}
-		}
-		return -1;
-	}
-
-	/**
-	 * Replaces this item's rule with one for {@code category}, or removes it when null. New rules go first so
-	 * they win over broader lines the user wrote.
-	 */
-	private void setRule(String pattern, String category)
-	{
-		List<String> lines = new ArrayList<>(Arrays.asList(config.customRules().split("\\R", -1)));
-		int existing = findRule(pattern);
-		if (existing >= 0)
-		{
-			lines.remove(existing);
-		}
-		if (category != null)
-		{
-			lines.add(0, category + ": " + pattern);
-		}
-		lines.removeIf(String::isEmpty);
-		configManager.setConfiguration(SmartBankSorterConfig.GROUP, "customRules", String.join("\n", lines));
 	}
 }

@@ -123,6 +123,18 @@ public class CategorySettingsTest
 	}
 
 	@Test
+	public void resetUndoesAMoveButKeepsAdds()
+	{
+		CategorySettings s = new CategorySettings("Melee: Abyssal whip, Dragon scimitar", "Slayer: Abyssal whip", "", "", "");
+		assertEquals("Melee", s.movedTo("abyssal whip"));
+		assertNull(s.movedTo("Rune scimitar"));
+		s.unmove("abyssal whip");
+		assertNull(s.movedTo("Abyssal whip"));
+		assertEquals("Melee: Dragon scimitar", s.rulesText());
+		assertEquals("Slayer: Abyssal whip", s.alsoShowText());
+	}
+
+	@Test
 	public void renameAndDeleteCoverAlsoShown()
 	{
 		CategorySettings s = new CategorySettings("", "Bossing: a\nRaids: b", "", "", "");

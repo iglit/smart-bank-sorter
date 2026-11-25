@@ -23,7 +23,7 @@ moves, and turning the plugin off gives you your normal bank back.
   categories, search for items and **Move** them in, or **Add** them so they also stay where they are. Items you
   add but don't have show as placeholders, as a reminder of what to get; right-click, **Release** to drop one. A
   `*` matches any part of a name, e.g. `*salve amulet*`. Drag categories to reorder them and pick the tab each
-  shows in. For a quick fix, right-click an item in the bank, **Move to**, and pick a category.
+  shows in. For a quick fix, right-click an item in the bank, **Move to** or **Add to**, and pick a category.
 
 **Turning it on and off**: right-click the bank's search button (the magnifying glass under the items) and pick
 **Sort** or **Unsort**, or use *Sort bank* in the plugin's settings.

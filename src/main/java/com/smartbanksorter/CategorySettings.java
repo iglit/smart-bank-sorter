@@ -159,6 +159,20 @@ final class CategorySettings
 		alsoShow.append(category, pattern);
 	}
 
+	/**
+	 * The category a rule for exactly this pattern moves it to, or null.
+	 */
+	String movedTo(String pattern)
+	{
+		return rules.keyOf(pattern);
+	}
+
+	// Back to where it'd be without a rule for this pattern.
+	void unmove(String pattern)
+	{
+		rules.removeValue(null, pattern);
+	}
+
 	// Whether it was moved here or also shown here.
 	void removeItem(String category, String pattern)
 	{

@@ -223,7 +223,8 @@ public class SmartBankSorterPlugin extends Plugin
 		eventBus.register(afterBankTags);
 		itemCopies = new ItemCopies(this::equipmentOf);
 		notOwnedItems = new NotOwnedItems(client, itemManager);
-		moveToMenu = new MoveToMenu(client, config, configManager, itemManager, () -> categoryOrder);
+		moveToMenu = new MoveToMenu(client, config, configManager, itemManager, () -> categoryOrder,
+			this::categoryOf);
 		ItemData.load();
 		WeaponLevels.load();
 		loadSettings();
@@ -282,7 +283,7 @@ public class SmartBankSorterPlugin extends Plugin
 		if (SmartBankSorterConfig.RULES_KEY.equals(event.getKey()) || SmartBankSorterConfig.ALSO_SHOW_KEY.equals(event.getKey())
 			|| SmartBankSorterConfig.ORDER_KEY.equals(event.getKey()) || SmartBankSorterConfig.TABS_KEY.equals(event.getKey()))
 		{
-			// Move to, or the text settings: the category editor shows them if it's open.
+			// Move to or Add to, or the text settings: the category editor shows them if it's open.
 			SwingUtilities.invokeLater(categoryEditor::reload);
 		}
 		// On the client thread: the config panel changes settings from the Swing thread, mid-layout for all we know.
