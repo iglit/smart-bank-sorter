@@ -6,7 +6,7 @@ moves, and turning the plugin off gives you your normal bank back.
 ## What it does
 
 - **Categories**: one per combat style, Slayer, every skill, plus Food, Potions, Runes, Teleports, Prayer, Clues,
-  Quest, Jewellery, Cosmetic and Misc. Each has a header you can click to collapse it.
+  Quest, Jewellery, Cosmetic and Misc. Each has a header you can click to collapse it; right-click it to collapse or expand them all.
 - **Combat gear as outfits**: each weapon heads a column with the gear that does the most damage with it, read head
   to feet, strongest weapon leftmost. Damage is worked out from the OSRS Wiki's formulas at your levels against a
   typical boss, including weapon effects (Scythe of Vitur, Twisted bow, Tumeken's shadow...). Armour sets with set

@@ -163,6 +163,8 @@ public class SmartBankSorterPlugin extends Plugin
 	private UserRules alsoShow;
 	private List<String> categoryOrder;
 	private final Set<String> collapsed = new HashSet<>();
+	// Categories with a header in the last layout, in order: what Collapse all and Expand all act on.
+	private List<String> headedCategories = Collections.emptyList();
 	private final Map<Integer, String> categoryCache = new HashMap<>();
 	private final Map<Integer, String> builtInCache = new HashMap<>();
 	// Header text + divider widgets we created inside the bank item container, reused between builds.
@@ -1051,6 +1053,7 @@ public class SmartBankSorterPlugin extends Plugin
 		int headerHeight = large ? 18 : 14;
 		int y = 0;
 		int section = 0;
+		List<String> headed = new ArrayList<>();
 		int copies = 0;
 		itemCopies.clearTargets();
 		itemCopies.setSpares(spares);
@@ -1143,6 +1146,7 @@ public class SmartBankSorterPlugin extends Plugin
 				int realCount = isRecent(category) ? groupSlots.size()
 					: (int) groupSlots.stream().filter(s -> !s.copy).count();
 				placeHeader(container, section++, category, realCount, isCollapsed, y, headerHeight, large);
+				headed.add(category);
 				y += headerHeight + 2;
 			}
 
@@ -1200,6 +1204,15 @@ public class SmartBankSorterPlugin extends Plugin
 		}
 		itemCopies.hideFrom(copies);
 		hideHeaders(section);
+		headedCategories = headed;
+		boolean anyCollapsed = headed.stream().anyMatch(collapsed::contains);
+		boolean anyExpanded = !headed.stream().allMatch(collapsed::contains);
+		for (int i = 0; i < section; i++)
+		{
+			Widget header = headerWidgets.get(i);
+			header.setAction(1, anyExpanded ? "Collapse all" : null);
+			header.setAction(2, anyCollapsed ? "Expand all" : null);
+		}
 		if (!searching)
 		{
 			Map<Integer, Set<String>> shown = new HashMap<>();
@@ -1354,7 +1367,7 @@ public class SmartBankSorterPlugin extends Plugin
 		header.setName(ColorUtil.wrapWithColorTag(category, config.headerColor()));
 		header.setAction(0, isCollapsed ? "Expand" : "Collapse");
 		header.setHasListener(true);
-		header.setOnOpListener((JavaScriptCallback) e -> toggleCollapsed(category));
+		header.setOnOpListener((JavaScriptCallback) e -> onHeaderOp(category, e.getOp()));
 		header.setHidden(false);
 		header.revalidate();
 
@@ -1649,12 +1662,28 @@ public class SmartBankSorterPlugin extends Plugin
 		itemCopies.clearTargets();
 	}
 
-	private void toggleCollapsed(String category)
+	// Op 1 is the header's own Collapse or Expand, ops 2 and 3 Collapse all and Expand all.
+	private void onHeaderOp(String category, int op)
 	{
-		if (!collapsed.remove(category))
+		switch (op)
 		{
-			collapsed.add(category);
+			case 2:
+				collapsed.addAll(headedCategories);
+				break;
+			case 3:
+				collapsed.removeAll(headedCategories);
+				break;
+			default:
+				if (!collapsed.remove(category))
+				{
+					collapsed.add(category);
+				}
 		}
+		saveCollapsed();
+	}
+
+	private void saveCollapsed()
+	{
 		List<String> sorted = new ArrayList<>(collapsed);
 		Collections.sort(sorted);
 		configManager.setConfiguration(SmartBankSorterConfig.GROUP, SmartBankSorterConfig.COLLAPSED_KEY, Text.toCSV(sorted));
